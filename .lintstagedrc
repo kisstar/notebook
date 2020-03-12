@@ -1,0 +1,5 @@
+{
+  "*.js": ["yarn run lint:js"],
+  "*.md": ["yarn run lint:md"],
+  "**/*.{js,jsx,tsx,ts,less,md,json}": ["prettier --write"]
+}

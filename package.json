@@ -1,0 +1,50 @@
+{
+  "name": "notebook",
+  "version": "0.0.1",
+  "description": "Kisstar's personal study notes",
+  "private": true,
+  "scripts": {
+    "commit": "git-cz",
+    "lint:md": "markdownlint **/*.md",
+    "lint:js": "eslint --cache --ext .js .",
+    "lint:prettier": "prettier --check \"**/*\" --end-of-line auto",
+    "prettier": "prettier -c --write \"**/*\""
+  },
+  "config": {
+    "commitizen": {
+      "path": "./lib/commit/cz-conventional-changelog.js"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "keywords": [
+    "webpack",
+    "vuepress",
+    "notebook"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:kisstar/notebook.git"
+  },
+  "author": "kisstar <dwh.chn@foxmail.com>",
+  "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "commitizen": "^4.0.3",
+    "cz-conventional-changelog": "^3.1.0",
+    "eslint": "6.1.0",
+    "eslint-config-airbnb-base": "14.0.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-import": "2.18.2",
+    "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.0.8",
+    "markdownlint": "^0.19.0",
+    "markdownlint-cli": "^0.22.0",
+    "prettier": "^1.19.1"
+  },
+  "license": "MIT"
+}
