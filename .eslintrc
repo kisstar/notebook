@@ -4,7 +4,7 @@
     "es6": true,
     "node": true
   },
-  "extends": ["airbnb-base", "plugin:prettier/recommended"],
+  "extends": ["airbnb-base", "plugin:vue/recommended", "plugin:prettier/recommended"],
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
@@ -12,6 +12,20 @@
   "parserOptions": {
     "ecmaVersion": 2018,
     "sourceType": "module"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {},
+      "webpack": {
+        "config": {
+          "resolve": {
+            "alias": {
+              "@parent-theme": "@vuepress/theme-default"
+            }
+          }
+        }
+      }
+    }
   },
   "rules": {
     "linebreak-style": [0, "error", "windows"]
