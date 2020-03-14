@@ -12,7 +12,8 @@
     "lint:js": "eslint --cache --ext .js .",
     "lint:vue": "eslint --cache --ext .vue docs/.vuepress",
     "lint:prettier": "prettier --check \"**/*\" --end-of-line auto",
-    "prettier": "prettier -c --write \"**/*\""
+    "prettier": "prettier -c --write \"**/*\"",
+    "release": "standard-version"
   },
   "config": {
     "commitizen": {
@@ -51,6 +52,7 @@
     "markdownlint": "^0.19.0",
     "markdownlint-cli": "^0.22.0",
     "prettier": "^1.19.1",
+    "standard-version": "^7.1.0",
     "stylelint": "^13.2.1",
     "stylelint-config-css-modules": "^2.2.0",
     "stylelint-config-prettier": "^8.0.1",

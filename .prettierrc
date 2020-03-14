@@ -34,6 +34,12 @@
       "options": {
         "parser": "json"
       }
+    },
+    {
+      "files": ".versionrc",
+      "options": {
+        "parser": "json"
+      }
     }
   ]
 }
