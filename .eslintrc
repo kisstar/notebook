@@ -20,7 +20,8 @@
         "config": {
           "resolve": {
             "alias": {
-              "@parent-theme": "@vuepress/theme-default"
+              "@parent-theme": "@vuepress/theme-default",
+              "@theme": "@vuepress/theme-default"
             }
           }
         }
@@ -29,5 +30,13 @@
   },
   "rules": {
     "linebreak-style": [0, "error", "windows"]
-  }
+  },
+  "overrides": [
+    {
+      "files": ["docs/.vuepress/theme/**/*.vue"],
+      "rules": {
+        "prettier/prettier": 0
+      }
+    }
+  ]
 }
