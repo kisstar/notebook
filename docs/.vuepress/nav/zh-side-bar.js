@@ -25,5 +25,12 @@ module.exports = {
       title: '其它',
     },
   ],
+  '/npm/': [
+    {
+      title: '基础',
+      sidebarDepth: 2,
+      children: ['', 'pkg-json'],
+    },
+  ],
   '/': [''],
 };
