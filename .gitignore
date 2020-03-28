@@ -23,6 +23,7 @@ lerna-debug.log
 /dist
 /tmp
 /out-tsc
+/docs/.vuepress/dist
 
 # Runtime data
 pids

@@ -40,6 +40,12 @@
       "options": {
         "parser": "json"
       }
+    },
+    {
+      "files": "*.styl",
+      "options": {
+        "parser": "less"
+      }
     }
   ]
 }

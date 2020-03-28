@@ -5,11 +5,15 @@ package.json
 .gitignore
 .prettierignore
 .markdownlintignore
+.stylelintignore
 .nvmrc
 .yarnrc
 **/*.svg
+*.ico
+*.jpg
 *.png
 /dist
+/docs/.vuepress/dist
 /lib/yarn/releases
 .DS_Store
 yarn-error.log
