@@ -1,8 +1,19 @@
 module.exports = {
+  '/css/': [
+    {
+      title: '基础',
+      sidebarDepth: 2,
+      children: [''],
+    },
+    {
+      title: '面试',
+      sidebarDepth: 2,
+      children: ['css-hv-center'],
+    },
+  ],
   '/js/': [
     {
       title: '基础',
-      collapsable: false,
       sidebarDepth: 2,
       children: [''],
     },
@@ -14,9 +25,8 @@ module.exports = {
     },
     {
       title: '面试',
-      collapsable: false,
       sidebarDepth: 2,
-      children: ['css-hv-center'],
+      children: [],
     },
     {
       title: '奇思妙想',
