@@ -1,51 +1,25 @@
 <template>
-  <main
-    class="home"
-    aria-labelledby="main-title"
-  >
+  <main class="home" aria-labelledby="main-title">
     <!-- create an empty element and let it participate in the flex layout, let hero be in the middle -->
     <div />
     <header class="hero">
-      <img
-        v-if="data.heroImage"
-        :src="$withBase(data.heroImage)"
-        :alt="data.heroAlt || 'hero'"
-      >
+      <img v-if="data.heroImage" :src="$withBase(data.heroImage)" :alt="data.heroAlt || 'hero'" />
 
-      <h1
-        v-if="data.heroText !== null"
-        id="main-title"
-      >
+      <h1 v-if="data.heroText !== null" id="main-title">
         {{ data.heroText || $title || 'Hello' }}
       </h1>
 
-      <p
-        v-if="data.tagline !== null"
-        class="description"
-      >
+      <p v-if="data.tagline !== null" class="description">
         {{ data.tagline || $description || 'Welcome to your VuePress site' }}
       </p>
 
-      <p
-        v-if="data.actionText && data.actionLink"
-        class="action"
-      >
-        <NavLink
-          class="action-button"
-          :item="actionLink"
-        />
+      <p v-if="data.actionText && data.actionLink" class="action">
+        <NavLink class="action-button" :item="actionLink" />
       </p>
     </header>
 
-    <div
-      v-if="data.features && data.features.length"
-      class="features"
-    >
-      <div
-        v-for="(feature, index) in data.features"
-        :key="index"
-        class="feature"
-      >
+    <div v-if="data.features && data.features.length" class="features">
+      <div v-for="(feature, index) in data.features" :key="index" class="feature">
         <h2>{{ feature.title }}</h2>
         <p>{{ feature.details }}</p>
       </div>
@@ -53,10 +27,7 @@
 
     <!-- <Content class="theme-default-content custom" /> -->
 
-    <div
-      v-if="data.footer"
-      class="footer"
-    >
+    <div v-if="data.footer" class="footer">
       {{ data.footer }}
     </div>
   </main>
