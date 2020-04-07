@@ -1,3 +1,7 @@
 {
-  "eslint.validate": ["javascript", "javascriptreact", "vue"]
+  "eslint.validate": ["javascript", "javascriptreact", "vue"],
+  "editor.tabSize": 2,
+  "prettier.useTabs": true,
+  "files.eol": "\n",
+  "files.insertFinalNewline": true
 }

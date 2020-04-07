@@ -13,7 +13,11 @@
     "lint:vue": "eslint --cache --ext .vue docs/.vuepress",
     "lint:prettier": "prettier --check \"**/*\" --end-of-line auto",
     "prettier": "prettier -c --write \"**/*\"",
-    "release": "standard-version"
+    "release": "standard-version",
+    "predeploy": "yarn run build",
+    "deploy:gitee": "gh-pages -d docs/.vuepress/dist -b master -r https://gitee.com/dongwanhong/notebook.git",
+    "deploy:github": "gh-pages -d docs/.vuepress/dist -b gh-pages -r https://github.com/kisstar/notebook.git",
+    "deploy": "yarn run deploy:gitee && yarn run deploy:github"
   },
   "config": {
     "commitizen": {
@@ -47,6 +51,7 @@
     "eslint-plugin-import": "2.18.2",
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-vue": "^6.2.2",
+    "gh-pages": "^2.2.0",
     "husky": "^4.2.3",
     "lint-staged": "^10.0.8",
     "markdownlint": "^0.19.0",
