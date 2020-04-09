@@ -35,6 +35,18 @@ module.exports = {
       title: '其它',
     },
   ],
+  '/vue/': [
+    {
+      title: '基础',
+      sidebarDepth: 2,
+      children: [''],
+    },
+    {
+      title: '面试',
+      sidebarDepth: 2,
+      children: ['comm-between-comp'],
+    },
+  ],
   '/npm/': [
     {
       title: '基础',
