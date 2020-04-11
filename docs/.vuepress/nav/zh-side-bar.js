@@ -47,6 +47,18 @@ module.exports = {
       children: ['comm-between-comp'],
     },
   ],
+  '/react/': [
+    {
+      title: '基础',
+      sidebarDepth: 2,
+      children: [''],
+    },
+    {
+      title: '基础',
+      sidebarDepth: 2,
+      children: ['react-hooks'],
+    },
+  ],
   '/npm/': [
     {
       title: '基础',

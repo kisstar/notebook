@@ -1,4 +1,4 @@
-const zhNav = require('./nav/zh-cn');
+const zhNav = require('./nav/zh-nav');
 const sidebarNav = require('./nav/zh-side-bar');
 
 module.exports = {

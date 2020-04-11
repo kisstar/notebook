@@ -31,7 +31,7 @@ module.exports = [
           },
           {
             text: 'React',
-            link: '/ract/',
+            link: '/react/',
           },
         ],
       },
