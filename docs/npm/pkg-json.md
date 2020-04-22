@@ -115,7 +115,7 @@ npm install pkg-name
 
 那么，如何选择开源许可证？
 
-<img :src="$withBase('/images/free_software_licenses.png')" alt="licenses">
+<img :src="$withBase('/images/npm/free_software_licenses.png')" alt="licenses">
 
 ## 链接类字段
 
