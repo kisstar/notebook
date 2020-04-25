@@ -33,6 +33,10 @@ module.exports = [
             text: 'React',
             link: '/react/',
           },
+          {
+            text: 'WEB',
+            link: '/web/',
+          },
         ],
       },
       {

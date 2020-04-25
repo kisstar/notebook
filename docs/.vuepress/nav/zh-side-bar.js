@@ -51,12 +51,7 @@ module.exports = {
     {
       title: '基础',
       sidebarDepth: 2,
-      children: [''],
-    },
-    {
-      title: '基础',
-      sidebarDepth: 2,
-      children: ['react-hooks'],
+      children: ['', 'react-hooks'],
     },
   ],
   '/npm/': [
@@ -64,6 +59,18 @@ module.exports = {
       title: '基础',
       sidebarDepth: 2,
       children: ['', 'pkg-json'],
+    },
+  ],
+  '/web/': [
+    {
+      title: '基础',
+      sidebarDepth: 2,
+      children: [''],
+    },
+    {
+      title: '面试',
+      sidebarDepth: 2,
+      children: ['url2ui'],
     },
   ],
   '/': [''],
