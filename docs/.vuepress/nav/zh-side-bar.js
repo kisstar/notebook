@@ -73,5 +73,17 @@ module.exports = {
       children: ['url2ui'],
     },
   ],
+  '/git/': [
+    {
+      title: '基础',
+      sidebarDepth: 2,
+      children: [''],
+    },
+    {
+      title: '问题',
+      sidebarDepth: 2,
+      children: ['bugfix', 'bugfix/00'],
+    },
+  ],
   '/': [''],
 };
