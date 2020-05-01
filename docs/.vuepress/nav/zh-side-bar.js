@@ -8,7 +8,7 @@ module.exports = {
     {
       title: '面试',
       sidebarDepth: 2,
-      children: ['css-hv-center'],
+      children: ['interview/css-hv-center'],
     },
   ],
   '/js/': [
@@ -44,21 +44,21 @@ module.exports = {
     {
       title: '面试',
       sidebarDepth: 2,
-      children: ['comm-between-comp'],
+      children: ['interview/comm-between-comp'],
     },
   ],
   '/react/': [
     {
       title: '基础',
       sidebarDepth: 2,
-      children: ['', 'react-hooks'],
+      children: ['', 'basis/react-hooks'],
     },
   ],
   '/npm/': [
     {
       title: '基础',
       sidebarDepth: 2,
-      children: ['', 'pkg-json'],
+      children: ['', 'basis/pkg-json'],
     },
   ],
   '/web/': [
@@ -70,7 +70,7 @@ module.exports = {
     {
       title: '面试',
       sidebarDepth: 2,
-      children: ['url2ui'],
+      children: ['interview/url2ui'],
     },
   ],
   '/git/': [

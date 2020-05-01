@@ -20,13 +20,13 @@
 </template>
 
 <script>
-import Son from './Son'
+  import Son from './Son';
 
-export default {
-  components: {
-    Son
-  }
-}
+  export default {
+    components: {
+      Son,
+    },
+  };
 </script>
 
 <!-- Son.vue -->
@@ -35,13 +35,13 @@ export default {
 </template>
 
 <script>
-export default {
-  props: {
-    value: {
-      type: String
-    }
-  }
-}
+  export default {
+    props: {
+      value: {
+        type: String,
+      },
+    },
+  };
 </script>
 ```
 
@@ -61,18 +61,18 @@ export default {
 </template>
 
 <script>
-import Son from './Son'
+  import Son from './Son';
 
-export default {
-  components: {
-    Son
-  },
-  data() {
-    return {
-      value: 'Hello'
-    }
-  }
-}
+  export default {
+    components: {
+      Son,
+    },
+    data() {
+      return {
+        value: 'Hello',
+      };
+    },
+  };
 </script>
 
 <!-- Son.vue -->
@@ -84,16 +84,16 @@ export default {
 </template>
 
 <script>
-export default {
-  props: {
-    value: {
-      type: String
+  export default {
+    props: {
+      value: {
+        type: String,
+      },
+      input: {
+        type: Function,
+      },
     },
-    input: {
-      type: Function
-    }
-  }
-}
+  };
 </script>
 ```
 
@@ -113,18 +113,18 @@ export default {
 </template>
 
 <script>
-import Son from './Son'
+  import Son from './Son';
 
-export default {
-  components: {
-    Son
-  },
-  data() {
-    return {
-      value: 'Hello'
-    }
-  }
-}
+  export default {
+    components: {
+      Son,
+    },
+    data() {
+      return {
+        value: 'Hello',
+      };
+    },
+  };
 </script>
 
 <!-- Son.vue -->
@@ -136,13 +136,13 @@ export default {
 </template>
 
 <script>
-export default {
-  props: {
-    value: {
-      type: String
-    }
-  }
-}
+  export default {
+    props: {
+      value: {
+        type: String,
+      },
+    },
+  };
 </script>
 ```
 
@@ -171,17 +171,17 @@ export default {
 </template>
 
 <script>
-export default {
-  model: {
-    prop: 'msg',
-    event: 'change'
-  },
-  props: {
-    msg: {
-      type: String
-    }
-  }
-}
+  export default {
+    model: {
+      prop: 'msg',
+      event: 'change',
+    },
+    props: {
+      msg: {
+        type: String,
+      },
+    },
+  };
 </script>
 ```
 
@@ -199,18 +199,18 @@ export default {
 </template>
 
 <script>
-import Son from './Son'
+  import Son from './Son';
 
-export default {
-  components: {
-    Son
-  },
-  data() {
-    return {
-      msg: 'Hello'
-    }
-  }
-}
+  export default {
+    components: {
+      Son,
+    },
+    data() {
+      return {
+        msg: 'Hello',
+      };
+    },
+  };
 </script>
 
 <!-- Son -->
@@ -222,13 +222,13 @@ export default {
 </template>
 
 <script>
-export default {
-  props: {
-    value: {
-      type: String
-    }
-  }
-}
+  export default {
+    props: {
+      value: {
+        type: String,
+      },
+    },
+  };
 </script>
 ```
 
@@ -249,24 +249,24 @@ export default {
 </template>
 
 <script>
-import Son from './Son'
+  import Son from './Son';
 
-export default {
-  components: {
-    Son
-  },
-  data() {
-    return {
-      value: ''
-    }
-  },
-  methods: {
-    change() {
-      const { son } = this.$refs
-      this.value = son.msg
-    }
-  }
-}
+  export default {
+    components: {
+      Son,
+    },
+    data() {
+      return {
+        value: '',
+      };
+    },
+    methods: {
+      change() {
+        const { son } = this.$refs;
+        this.value = son.msg;
+      },
+    },
+  };
 </script>
 
 <!-- Son.vue -->
@@ -275,17 +275,17 @@ export default {
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      msg: 'Hello'
-    }
-  }
-}
+  export default {
+    data() {
+      return {
+        msg: 'Hello',
+      };
+    },
+  };
 </script>
 ```
 
-- **$children 属性**
+- **\$children 属性**
 
 在每个 `new Vue` 实例的组件中，可以通过 `$children` 属性来访问当前实例的直接子组件。需要注意 `$children` 并不保证顺序，也不是响应式的。
 
@@ -300,24 +300,24 @@ export default {
 </template>
 
 <script>
-import Son from './Son'
+  import Son from './Son';
 
-export default {
-  components: {
-    Son
-  },
-  data() {
-    return {
-      value: ''
-    }
-  },
-  methods: {
-    change() {
-      const [son] = this.$children
-      this.value = son.msg
-    }
-  }
-}
+  export default {
+    components: {
+      Son,
+    },
+    data() {
+      return {
+        value: '',
+      };
+    },
+    methods: {
+      change() {
+        const [son] = this.$children;
+        this.value = son.msg;
+      },
+    },
+  };
 </script>
 
 <!-- Son.vue -->
@@ -326,19 +326,19 @@ export default {
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      msg: 'Hello'
-    }
-  }
-}
+  export default {
+    data() {
+      return {
+        msg: 'Hello',
+      };
+    },
+  };
 </script>
 ```
 
 因为这里只有一个子组件，所以数据的来源很明确。如果一个组件下存在多个子组件的话，可以给每个组件添加一个名字，然后父组件在遍历子组件通过实例的 `$options.name` 的值来判断要操作目标。
 
-- **$parent 属性**
+- **\$parent 属性**
 
 与 `$children` 属性 类似，`$parent` 属性可以用来访问父组件的实例。它提供了一种机会，可以在后期随时触达父级组件，以替代将数据以 `prop` 的方式传入子组件的方式。
 
@@ -352,18 +352,18 @@ export default {
 </template>
 
 <script>
-import Son from './Son'
+  import Son from './Son';
 
-export default {
-  components: {
-    Son
-  },
-  data() {
-    return {
-      msg: 'Hello'
-    }
-  }
-}
+  export default {
+    components: {
+      Son,
+    },
+    data() {
+      return {
+        msg: 'Hello',
+      };
+    },
+  };
 </script>
 
 <!-- Son.vue -->
@@ -396,23 +396,23 @@ export default {
 </template>
 
 <script>
-import Son from './Son'
+  import Son from './Son';
 
-export default {
-  components: {
-    Son
-  },
-  provide() {
-    return {
-      parent: this
-    }
-  },
-  data() {
-    return {
-      msg: 'Hello'
-    }
-  }
-}
+  export default {
+    components: {
+      Son,
+    },
+    provide() {
+      return {
+        parent: this,
+      };
+    },
+    data() {
+      return {
+        msg: 'Hello',
+      };
+    },
+  };
 </script>
 
 <!-- Son.vue -->
@@ -424,13 +424,13 @@ export default {
 </template>
 
 <script>
-import GrandSon from './GrandSon'
+  import GrandSon from './GrandSon';
 
-export default {
-  components: {
-    GrandSon
-  }
-}
+  export default {
+    components: {
+      GrandSon,
+    },
+  };
 </script>
 
 <!-- GrandSon.vue -->
@@ -439,9 +439,9 @@ export default {
 </template>
 
 <script>
-export default {
-  inject: ['parent']
-}
+  export default {
+    inject: ['parent'],
+  };
 </script>
 ```
 
@@ -459,22 +459,18 @@ export default {
  * @param {string} “响应”的组件名称
  * @param {any[]} 额外的参数
  */
-Vue.prototype.$dispatch = function $dispatch(
-  eventName,
-  componentName,
-  ...args
-) {
-  let parent = this.$parent
-  this.$emit.call(this, eventName, ...args)
+Vue.prototype.$dispatch = function $dispatch(eventName, componentName, ...args) {
+  let parent = this.$parent;
+  this.$emit.call(this, eventName, ...args);
 
   while (parent) {
     if (parent.$options.name === componentName) {
-      parent.$emit.call(parent, eventName, ...args)
-      break
+      parent.$emit.call(parent, eventName, ...args);
+      break;
     }
-    parent = parent.$parent
+    parent = parent.$parent;
   }
-}
+};
 ```
 
 ```html
@@ -487,25 +483,25 @@ Vue.prototype.$dispatch = function $dispatch(
 </template>
 
 <script>
-import Son from './Son'
+  import Son from './Son';
 
-export default {
-  name: 'Parent',
-  components: {
-    Son
-  },
-  data() {
-    return {
-      value: ''
-    }
-  },
-  beforeCreate() {
-    this.$on('change-value', function(newValue) {
-      console.log(this.$options.name)
-      this.value = newValue
-    })
-  }
-}
+  export default {
+    name: 'Parent',
+    components: {
+      Son,
+    },
+    data() {
+      return {
+        value: '',
+      };
+    },
+    beforeCreate() {
+      this.$on('change-value', function(newValue) {
+        console.log(this.$options.name);
+        this.value = newValue;
+      });
+    },
+  };
 </script>
 
 <!-- Son.vue -->
@@ -517,19 +513,19 @@ export default {
 </template>
 
 <script>
-import GrandSon from './GrandSon'
+  import GrandSon from './GrandSon';
 
-export default {
-  name: 'Son',
-  components: {
-    GrandSon
-  },
-  beforeCreate() {
-    this.$on('change-value', function() {
-      console.log('这里的事件不会被触发!')
-    })
-  }
-}
+  export default {
+    name: 'Son',
+    components: {
+      GrandSon,
+    },
+    beforeCreate() {
+      this.$on('change-value', function() {
+        console.log('这里的事件不会被触发!');
+      });
+    },
+  };
 </script>
 
 <!-- GrandSon.vue -->
@@ -541,35 +537,31 @@ export default {
 </template>
 
 <script>
-export default {
-  methods: {
-    change() {
-      this.$dispatch('change-value', 'Parent', 'Hello')
-    }
-  }
-}
+  export default {
+    methods: {
+      change() {
+        this.$dispatch('change-value', 'Parent', 'Hello');
+      },
+    },
+  };
 </script>
 ```
 
 与 `$dispatch` 相反，`$broadcast` 负责向下传播到当前实例的所有后代。当它触发指定子组件上的事件侦听器时，每个路径的传播将会停止。
 
 ```javascript
-Vue.prototype.$broadcast = function $broadcast(
-  eventName,
-  componentName,
-  ...args
-) {
+Vue.prototype.$broadcast = function $broadcast(eventName, componentName, ...args) {
   this.$children.some(child => {
-    const { name } = child.$options
+    const { name } = child.$options;
 
     if (name === componentName) {
-      child.$emit.call(child, eventName, ...args)
-      return true
+      child.$emit.call(child, eventName, ...args);
+      return true;
     } else {
-      $broadcast.call(child, eventName, componentName, ...args)
+      $broadcast.call(child, eventName, componentName, ...args);
     }
-  })
-}
+  });
+};
 ```
 
 ```html
@@ -582,19 +574,19 @@ Vue.prototype.$broadcast = function $broadcast(
 </template>
 
 <script>
-import Son from './Son'
+  import Son from './Son';
 
-export default {
-  name: 'Parent',
-  components: {
-    Son
-  },
-  methods: {
-    change() {
-      this.$broadcast('change-value', 'GrandSon', 'Hello')
-    }
-  }
-}
+  export default {
+    name: 'Parent',
+    components: {
+      Son,
+    },
+    methods: {
+      change() {
+        this.$broadcast('change-value', 'GrandSon', 'Hello');
+      },
+    },
+  };
 </script>
 
 <!-- Son.vue -->
@@ -606,19 +598,19 @@ export default {
 </template>
 
 <script>
-import GrandSon from './GrandSon'
+  import GrandSon from './GrandSon';
 
-export default {
-  name: 'Son',
-  components: {
-    GrandSon
-  },
-  beforeCreate() {
-    this.$on('change-value', function() {
-      console.log('这里的事件不会被触发!')
-    })
-  }
-}
+  export default {
+    name: 'Son',
+    components: {
+      GrandSon,
+    },
+    beforeCreate() {
+      this.$on('change-value', function() {
+        console.log('这里的事件不会被触发!');
+      });
+    },
+  };
 </script>
 
 <!-- GrandSon.vue -->
@@ -627,19 +619,19 @@ export default {
 </template>
 
 <script>
-export default {
-  name: 'GrandSon',
-  data() {
-    return {
-      value: ''
-    }
-  },
-  mounted() {
-    this.$on('change-value', function(newValue) {
-      this.value = newValue
-    })
-  }
-}
+  export default {
+    name: 'GrandSon',
+    data() {
+      return {
+        value: '',
+      };
+    },
+    mounted() {
+      this.$on('change-value', function(newValue) {
+        this.value = newValue;
+      });
+    },
+  };
 </script>
 ```
 
@@ -650,7 +642,7 @@ export default {
 如此以来，只要你订阅了一种事件，当该事件被出发时，无论是在何处触发的，所有的点阅者都会收到通知，对应的处理函数将会被执行。
 
 ```javascript
-Vue.prototype.$bus = new Vue()
+Vue.prototype.$bus = new Vue();
 ```
 
 ```html
@@ -663,19 +655,19 @@ Vue.prototype.$bus = new Vue()
 </template>
 
 <script>
-import Son from './Son'
+  import Son from './Son';
 
-export default {
-  name: 'Parent',
-  components: {
-    Son
-  },
-  methods: {
-    change() {
-      this.$bus.$emit('change-value', 'GrandSon', 'Hello')
-    }
-  }
-}
+  export default {
+    name: 'Parent',
+    components: {
+      Son,
+    },
+    methods: {
+      change() {
+        this.$bus.$emit('change-value', 'GrandSon', 'Hello');
+      },
+    },
+  };
 </script>
 
 <!-- Son.vue -->
@@ -687,19 +679,19 @@ export default {
 </template>
 
 <script>
-import GrandSon from './GrandSon'
+  import GrandSon from './GrandSon';
 
-export default {
-  name: 'Son',
-  components: {
-    GrandSon
-  },
-  beforeCreate() {
-    this.$bus.$on('change-value', function() {
-      console.log('这里的事件也会被触发!')
-    })
-  }
-}
+  export default {
+    name: 'Son',
+    components: {
+      GrandSon,
+    },
+    beforeCreate() {
+      this.$bus.$on('change-value', function() {
+        console.log('这里的事件也会被触发!');
+      });
+    },
+  };
 </script>
 
 <!-- GrandSon.vue -->
@@ -708,19 +700,19 @@ export default {
 </template>
 
 <script>
-export default {
-  name: 'GrandSon',
-  data() {
-    return {
-      value: ''
-    }
-  },
-  mounted() {
-    this.$bus.$on('change-value', function(newValue) {
-      this.value = newValue
-    })
-  }
-}
+  export default {
+    name: 'GrandSon',
+    data() {
+      return {
+        value: '',
+      };
+    },
+    mounted() {
+      this.$bus.$on('change-value', function(newValue) {
+        this.value = newValue;
+      });
+    },
+  };
 </script>
 ```
 
