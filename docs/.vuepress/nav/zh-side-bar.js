@@ -85,5 +85,15 @@ module.exports = {
       children: ['bugfix', 'bugfix/00'],
     },
   ],
+  '/vim/': [
+    {
+      title: '基础',
+      sidebarDepth: 2,
+      children: [''],
+    },
+    {
+      title: '插件',
+    },
+  ],
   '/': [''],
 };

@@ -69,6 +69,10 @@ module.exports = [
         text: 'VSCode',
         link: '/vscode/',
       },
+      {
+        text: 'Vim',
+        link: '/vim/',
+      },
     ],
   },
   {
