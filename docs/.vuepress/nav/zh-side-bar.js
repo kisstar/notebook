@@ -89,7 +89,7 @@ module.exports = {
     {
       title: '基础',
       sidebarDepth: 2,
-      children: [''],
+      children: ['', 'basis/usage'],
     },
     {
       title: '插件',
