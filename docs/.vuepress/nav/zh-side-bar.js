@@ -95,5 +95,20 @@ module.exports = {
       title: '插件',
     },
   ],
+  '/algorithm/': [
+    {
+      title: '基础',
+      sidebarDepth: 2,
+      children: [''],
+    },
+    {
+      title: '栈',
+      sidebarDepth: 2,
+      children: ['stack/'],
+    },
+    {
+      title: '队列',
+    },
+  ],
   '/': [''],
 };

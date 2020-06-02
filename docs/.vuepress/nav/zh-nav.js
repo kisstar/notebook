@@ -83,6 +83,10 @@ module.exports = [
         link: '/cp/',
       },
       {
+        text: 'Algorithm',
+        link: '/algorithm/',
+      },
+      {
         text: 'Linux',
         link: '/linux/',
       },
