@@ -108,6 +108,8 @@ module.exports = {
     },
     {
       title: '队列',
+      sidebarDepth: 2,
+      children: ['queue/'],
     },
   ],
   '/': [''],

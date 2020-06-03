@@ -12,6 +12,7 @@
 - `isEmpty()`：如果栈里没有任何元素就返回 `true`，否则返回 `false`
 - `clear()`：移除栈里的所有元素
 - `size()`：返回栈里的元素个数
+- `print()`：打印栈内元素
 
 ## 栈的实现
 
@@ -46,6 +47,10 @@ class Stack {
   clear() {
     this._list.length = 0;
   }
+
+  print() {
+    this._list.toString();
+  }
 }
 ```
 
@@ -70,8 +75,10 @@ function _parseInt(num = 0, base = 10) {
   while (!stack.isEmpty()) {
     ret += digits[stack.pop()];
   }
-  return ret || 0;
+  return +ret || 0;
 }
+
+_parseInt(100, 2); // 1100100
 ```
 
 ## 参考
