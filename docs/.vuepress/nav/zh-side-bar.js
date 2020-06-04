@@ -111,6 +111,11 @@ module.exports = {
       sidebarDepth: 2,
       children: ['queue/'],
     },
+    {
+      title: '链表',
+      sidebarDepth: 2,
+      children: ['linked-list/'],
+    },
   ],
   '/': [''],
 };

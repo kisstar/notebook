@@ -16,8 +16,6 @@
 
 ## 栈的实现
 
-JavaScript：
-
 ```javascript
 class Stack {
   constructor() {
@@ -49,7 +47,7 @@ class Stack {
   }
 
   print() {
-    this._list.toString();
+    console.log(this._list.toString());
   }
 }
 ```

@@ -13,8 +13,6 @@
 
 ## 队列的实现
 
-JavaScript：
-
 ```javascript
 class Queue {
   constructor() {
@@ -42,7 +40,7 @@ class Queue {
   }
 
   print() {
-    this._list.toString();
+    console.log(this._list.toString());
   }
 }
 ```
@@ -111,7 +109,7 @@ class PriorityQueue extends Queue {
   }
 
   print() {
-    this._list.forEach(item => console.log(`${item.element} -       ${item.priority}`));
+    this._list.forEach(item => console.log(`${item.element} - ${item.priority}`));
   }
 }
 
