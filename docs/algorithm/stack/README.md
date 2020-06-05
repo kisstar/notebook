@@ -46,8 +46,12 @@ class Stack {
     this._list.length = 0;
   }
 
+  toString() {
+    this._list.toString();
+  }
+
   print() {
-    console.log(this._list.toString());
+    console.log(this.toString());
   }
 }
 ```

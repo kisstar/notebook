@@ -50,16 +50,20 @@ class LinkedList {
     this.length++;
   }
 
-  print() {
+  toString() {
     let str = '';
     let current = this.head;
 
     while (current) {
-      str = str ? `${str}->${current.element}` : `${current.element}`;
+      str = str ? `${str} -> ${current.element}` : `${current.element}`;
       current = current.next;
     }
 
-    console.log(str);
+    return str;
+  }
+
+  print() {
+    console.log(this.toString());
   }
 }
 
