@@ -114,7 +114,7 @@ module.exports = {
     {
       title: '链表',
       sidebarDepth: 2,
-      children: ['linked-list/'],
+      children: ['linked-list/', 'linked-list/doubly-linked-list'],
     },
   ],
   '/': [''],

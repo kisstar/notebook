@@ -123,17 +123,20 @@ class LinkedList {
     }
 
     let current = this.head,
+      previous = null,
       index = 0;
     if (0 === position) {
       this.head = current.next;
     } else {
-      while (++index < position) {
+      while (index++ < position) {
+        previous = current;
         current = current.next;
       }
-      current.next = current.next.next;
+      previous.next = current.next;
     }
 
     this.length--;
+    return current.element;
   }
 }
 const ll = new LinkedList();
@@ -169,6 +172,8 @@ class LinkedList {
         }
       }
     }
+
+    return current.element;
   }
 }
 const ll = new LinkedList();
@@ -224,6 +229,145 @@ class LinkedList {
 
   getHead() {
     return this.head;
+  }
+}
+```
+
+完整代码：
+
+```javascript
+class LinkedList {
+  constructor() {
+    this.length = 0;
+    this.head = null;
+  }
+
+  append(element) {
+    let current = this.head;
+    const node = new Node(element);
+
+    if (!current) {
+      this.head = node;
+    } else {
+      while (current.next) {
+        current = current.next;
+      }
+      current.next = node;
+    }
+
+    this.length++;
+  }
+
+  insert(position, element) {
+    if (0 > position || position > this.length) {
+      // 越界检查
+      return;
+    }
+
+    const node = new Node(element);
+    let current = this.head,
+      index = 0;
+    if (0 === position) {
+      node.next = current;
+      this.head = node;
+    } else {
+      while (++index < position) {
+        current = current.next;
+      }
+      node.next = current.next;
+      current.next = node;
+    }
+
+    this.length++;
+  }
+
+  remove(element) {
+    let current = this.head,
+      previous = null;
+
+    if (current.element === element) {
+      this.head = current.next;
+      this.length--;
+    } else {
+      while (current) {
+        if (current.element === element) {
+          previous.next = current.next;
+          this.length--;
+          break;
+        } else {
+          previous = current;
+          current = current.next;
+        }
+      }
+    }
+
+    return current.element;
+  }
+
+  removeAt(position) {
+    if (0 > position || position >= this.length) {
+      return;
+    }
+
+    let current = this.head,
+      previous = null,
+      index = 0;
+    if (0 === position) {
+      this.head = current.next;
+    } else {
+      while (index++ < position) {
+        previous = current;
+        current = current.next;
+      }
+      previous.next = current.next;
+    }
+
+    this.length--;
+    return current.element;
+  }
+
+  indexOf(element) {
+    let index = 0,
+      current = this.head;
+
+    while (current) {
+      if (current.element === element) {
+        return index;
+      } else {
+        current = current.next;
+        index++;
+      }
+    }
+
+    return -1;
+  }
+
+  isEmpty() {
+    return this.length === 0;
+  }
+
+  size() {
+    return this.length;
+  }
+
+  getHead() {
+    return this.head;
+  }
+
+  toString() {
+    let str = '';
+    let current = this.head;
+
+    while (current) {
+      str = str ? `${str} -> ${current.element}` : `${current.element}`;
+      current = current.next;
+    }
+
+    return str;
+  }
+
+  print() {
+    console.log(this.toString());
   }
 }
 ```
