@@ -116,6 +116,11 @@ module.exports = {
       sidebarDepth: 2,
       children: ['linked-list/', 'linked-list/doubly-linked-list'],
     },
+    {
+      title: '集合',
+      sidebarDepth: 2,
+      children: ['set/'],
+    },
   ],
   '/': [''],
 };
