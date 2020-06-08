@@ -121,6 +121,11 @@ module.exports = {
       sidebarDepth: 2,
       children: ['set/'],
     },
+    {
+      title: '字典',
+      sidebarDepth: 2,
+      children: ['dictionary/'],
+    },
   ],
   '/wechat/': [
     {
