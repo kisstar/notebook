@@ -124,7 +124,7 @@ module.exports = {
     {
       title: '字典',
       sidebarDepth: 2,
-      children: ['dictionary/'],
+      children: ['dictionary/', 'dictionary/hash-table'],
     },
   ],
   '/wechat/': [
