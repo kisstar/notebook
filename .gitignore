@@ -2,6 +2,7 @@
 
 # IDEs and editors
 .idea
+.DS_Store
 .project
 .classpath
 .c9/
