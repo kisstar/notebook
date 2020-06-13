@@ -126,6 +126,11 @@ module.exports = {
       sidebarDepth: 2,
       children: ['dictionary/', 'dictionary/hash-table'],
     },
+    {
+      title: '树',
+      sidebarDepth: 2,
+      children: ['tree/'],
+    },
   ],
   '/wechat/': [
     {
