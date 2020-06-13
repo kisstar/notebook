@@ -122,5 +122,12 @@ module.exports = {
       children: ['set/'],
     },
   ],
+  '/wechat/': [
+    {
+      title: '基础',
+      sidebarDepth: 2,
+      children: ['', 'basis/offiaccount'],
+    },
+  ],
   '/': [''],
 };

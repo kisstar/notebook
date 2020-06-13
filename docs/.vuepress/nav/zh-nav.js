@@ -56,6 +56,15 @@ module.exports = [
           },
         ],
       },
+      {
+        text: 'OTHER',
+        items: [
+          {
+            text: 'WeChat',
+            link: '/wechat/',
+          },
+        ],
+      },
     ],
   },
   {
