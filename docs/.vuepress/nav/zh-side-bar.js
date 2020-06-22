@@ -146,5 +146,12 @@ module.exports = {
       children: ['', 'basis/key-map'],
     },
   ],
+  '/docker/': [
+    {
+      title: '基础',
+      sidebarDepth: 2,
+      children: ['', 'basis/meet-docker'],
+    },
+  ],
   '/': [''],
 };
