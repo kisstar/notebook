@@ -99,6 +99,10 @@ module.exports = [
         text: 'Linux',
         link: '/linux/',
       },
+      {
+        text: 'Windows',
+        link: '/windows/',
+      },
     ],
   },
   {
