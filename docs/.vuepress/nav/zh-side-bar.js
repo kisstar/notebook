@@ -129,7 +129,7 @@ module.exports = {
     {
       title: '树',
       sidebarDepth: 2,
-      children: ['tree/'],
+      children: ['tree/', 'tree/avl-tree'],
     },
   ],
   '/wechat/': [
