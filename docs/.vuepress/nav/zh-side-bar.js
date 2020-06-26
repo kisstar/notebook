@@ -157,6 +157,7 @@ module.exports = {
         'basis/image',
         'basis/dockerfile',
         'basis/data-volume',
+        'basis/docker-compose',
       ],
     },
   ],
