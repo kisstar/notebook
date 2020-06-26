@@ -150,7 +150,7 @@ module.exports = {
     {
       title: '基础',
       sidebarDepth: 2,
-      children: ['', 'basis/meet-docker', 'basis/command', 'basis/image'],
+      children: ['', 'basis/meet-docker', 'basis/command', 'basis/image', 'basis/dockerfile'],
     },
   ],
   '/': [''],
