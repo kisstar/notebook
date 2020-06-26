@@ -12,6 +12,7 @@ package.json
 *.ico
 *.jpg
 *.png
+.md
 /dist
 /docs/.vuepress/dist
 /lib/yarn/releases
