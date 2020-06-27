@@ -158,6 +158,7 @@ module.exports = {
         'basis/dockerfile',
         'basis/data-volume',
         'basis/docker-compose',
+        'basis/private-registry',
       ],
     },
   ],
