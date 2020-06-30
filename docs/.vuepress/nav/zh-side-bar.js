@@ -166,7 +166,7 @@ module.exports = {
     {
       title: '基础',
       sidebarDepth: 2,
-      children: ['', 'basis/meet-nginx'],
+      children: ['', 'basis/meet-nginx', 'basis/config'],
     },
   ],
   '/': [''],
