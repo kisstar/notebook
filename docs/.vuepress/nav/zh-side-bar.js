@@ -173,7 +173,7 @@ module.exports = {
     {
       title: '基础',
       sidebarDepth: 2,
-      children: ['', 'basis/child-process', 'basis/cluster'],
+      children: ['', 'basis/child-process', 'basis/cluster', 'basis/pm2'],
     },
   ],
   '/': [''],
