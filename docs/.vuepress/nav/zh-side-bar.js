@@ -169,5 +169,12 @@ module.exports = {
       children: ['', 'basis/meet-nginx', 'basis/config'],
     },
   ],
+  '/nodejs/': [
+    {
+      title: '基础',
+      sidebarDepth: 2,
+      children: ['', 'basis/child-process'],
+    },
+  ],
   '/': [''],
 };
