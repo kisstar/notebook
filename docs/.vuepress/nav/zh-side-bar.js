@@ -211,6 +211,11 @@ module.exports = {
         'basis/view-help',
       ],
     },
+    {
+      title: 'Ubuntu',
+      sidebarDepth: 2,
+      children: ['ubuntu/install', 'ubuntu/dev-0', 'ubuntu/dev-1'],
+    },
   ],
   '/': [''],
 };
