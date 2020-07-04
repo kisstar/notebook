@@ -189,5 +189,28 @@ module.exports = {
       ],
     },
   ],
+  '/linux/': [
+    {
+      title: '基础',
+      sidebarDepth: 2,
+      children: [
+        '',
+        'basis/meet-linux',
+        'basis/open-close',
+        'basis/file-search',
+        'basis/file-handling',
+        'basis/file-view',
+        'basis/dir-manage',
+        'basis/compress-file',
+        'basis/linux-link',
+        'basis/disk-management',
+        'basis/mount',
+        'basis/user-log',
+        'basis/user-manage',
+        'basis/shell',
+        'basis/view-help',
+      ],
+    },
+  ],
   '/': [''],
 };
