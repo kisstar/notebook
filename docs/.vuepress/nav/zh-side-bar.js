@@ -217,5 +217,17 @@ module.exports = {
       children: ['ubuntu/install', 'ubuntu/dev-0', 'ubuntu/dev-1'],
     },
   ],
+  '/webpack/': [
+    {
+      title: '基础',
+      sidebarDepth: 2,
+      children: ['', 'basis/meet-webpack'],
+    },
+    {
+      title: '基础',
+      sidebarDepth: 2,
+      children: ['advanced/know-webpack'],
+    },
+  ],
   '/': [''],
 };
