@@ -166,7 +166,7 @@ module.exports = {
     {
       title: '基础',
       sidebarDepth: 2,
-      children: ['', 'basis/child-process', 'basis/cluster', 'basis/pm2'],
+      children: ['', 'basis/nvm-use', 'basis/child-process', 'basis/cluster', 'basis/pm2'],
     },
     {
       title: 'Npm',
