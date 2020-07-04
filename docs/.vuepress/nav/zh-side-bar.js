@@ -11,6 +11,18 @@ module.exports = {
       children: ['interview/css-hv-center'],
     },
   ],
+  '/less/': [
+    {
+      title: '基础',
+      sidebarDepth: 2,
+      children: ['', 'basis/meet-less'],
+    },
+    {
+      title: '进阶',
+      sidebarDepth: 2,
+      children: ['advanced/use-advanced'],
+    },
+  ],
   '/js/': [
     {
       title: '基础',
