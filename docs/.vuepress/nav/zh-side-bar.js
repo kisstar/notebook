@@ -27,7 +27,19 @@ module.exports = {
     {
       title: '基础',
       sidebarDepth: 2,
-      children: [''],
+      children: [
+        '',
+        'basis/meet-js',
+        'basis/data-type',
+        'basis/reference-type',
+        'basis/data-type-memory',
+        'basis/create-object',
+        'basis/context-scope',
+        'basis/this',
+        'basis/closure',
+        'basis/inherit',
+        'basis/prototype',
+      ],
     },
     {
       title: '进阶',
