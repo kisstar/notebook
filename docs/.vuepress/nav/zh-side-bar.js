@@ -136,6 +136,17 @@ module.exports = {
       sidebarDepth: 2,
       children: ['tree/', 'tree/avl-tree'],
     },
+    {
+      title: '排序',
+      sidebarDepth: 2,
+      children: [
+        'sort/',
+        'sort/bubble-sort',
+        'sort/insertion-sort',
+        'sort/merge-sort',
+        'sort/selection-sort',
+      ],
+    },
   ],
   '/wechat/': [
     {
