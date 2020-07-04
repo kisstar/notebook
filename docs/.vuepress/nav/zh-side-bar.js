@@ -3,7 +3,7 @@ module.exports = {
     {
       title: '基础',
       sidebarDepth: 2,
-      children: [''],
+      children: ['', 'basis/box-model'],
     },
     {
       title: '面试',
