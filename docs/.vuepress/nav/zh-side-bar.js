@@ -58,7 +58,12 @@ module.exports = {
     {
       title: '基础',
       sidebarDepth: 2,
-      children: ['', 'basis/pkg-json'],
+      children: ['', 'basis/npm-use', 'basis/pkg-json', 'basis/pkg-lock'],
+    },
+    {
+      title: '进阶',
+      sidebarDepth: 2,
+      children: ['advanced/npm-command'],
     },
   ],
   '/web/': [
