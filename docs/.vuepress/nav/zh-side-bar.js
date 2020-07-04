@@ -176,5 +176,18 @@ module.exports = {
       children: ['', 'basis/child-process', 'basis/cluster', 'basis/pm2'],
     },
   ],
+  '/cp/': [
+    {
+      title: '基础',
+      sidebarDepth: 2,
+      children: [
+        '',
+        'basis/cp-system',
+        'basis/process-thread',
+        'basis/network',
+        'basis/how-internet-work',
+      ],
+    },
+  ],
   '/': [''],
 };
