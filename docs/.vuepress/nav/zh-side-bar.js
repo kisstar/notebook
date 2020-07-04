@@ -273,9 +273,9 @@ module.exports = {
       children: ['', 'basis/meet-webpack'],
     },
     {
-      title: '基础',
+      title: '进阶',
       sidebarDepth: 2,
-      children: ['advanced/know-webpack'],
+      children: ['advanced/know-webpack', 'advanced/tapable'],
     },
   ],
   '/': [''],
