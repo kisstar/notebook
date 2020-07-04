@@ -179,6 +179,11 @@ module.exports = {
         'npm/advanced/npm-command',
       ],
     },
+    {
+      title: 'Yarn',
+      sidebarDepth: 2,
+      children: ['yarn/', 'yarn/basis/yarn-use'],
+    },
   ],
   '/cp/': [
     {
