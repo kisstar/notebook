@@ -54,18 +54,6 @@ module.exports = {
       children: ['', 'basis/react-hooks'],
     },
   ],
-  '/npm/': [
-    {
-      title: '基础',
-      sidebarDepth: 2,
-      children: ['', 'basis/npm-use', 'basis/pkg-json', 'basis/pkg-lock'],
-    },
-    {
-      title: '进阶',
-      sidebarDepth: 2,
-      children: ['advanced/npm-command'],
-    },
-  ],
   '/web/': [
     {
       title: '基础',
@@ -179,6 +167,17 @@ module.exports = {
       title: '基础',
       sidebarDepth: 2,
       children: ['', 'basis/child-process', 'basis/cluster', 'basis/pm2'],
+    },
+    {
+      title: 'Npm',
+      sidebarDepth: 2,
+      children: [
+        'npm/',
+        'npm/basis/npm-use',
+        'npm/basis/pkg-json',
+        'npm/basis/pkg-lock',
+        'npm/advanced/npm-command',
+      ],
     },
   ],
   '/cp/': [

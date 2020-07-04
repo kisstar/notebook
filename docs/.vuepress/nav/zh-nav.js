@@ -47,10 +47,6 @@ module.exports = [
             link: '/nodejs/',
           },
           {
-            text: 'NPM',
-            link: '/npm/',
-          },
-          {
             text: 'Webpack',
             link: '/webpack/',
           },
