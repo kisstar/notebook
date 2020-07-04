@@ -97,9 +97,14 @@ module.exports = {
       children: [''],
     },
     {
+      title: '进阶',
+      sidebarDepth: 2,
+      children: ['advanced/git-object', 'advanced/git-ref', 'advanced/deep'],
+    },
+    {
       title: '问题',
       sidebarDepth: 2,
-      children: ['bugfix', 'bugfix/00'],
+      children: ['bugfix', 'bugfix/00', 'bugfix/01'],
     },
   ],
   '/vim/': [
