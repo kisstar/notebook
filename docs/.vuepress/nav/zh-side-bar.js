@@ -78,7 +78,12 @@ module.exports = {
     {
       title: '基础',
       sidebarDepth: 2,
-      children: [''],
+      children: ['', 'basis/vue-common-qa'],
+    },
+    {
+      title: '进阶',
+      sidebarDepth: 2,
+      children: ['advanced/vue-mvvm'],
     },
     {
       title: '面试',
@@ -151,7 +156,12 @@ module.exports = {
     {
       title: '链表',
       sidebarDepth: 2,
-      children: ['linked-list/', 'linked-list/doubly-linked-list'],
+      children: [
+        'linked-list/',
+        'linked-list/doubly-linked-list',
+        'linked-list/reverse-list',
+        'linked-list/swap-pairs',
+      ],
     },
     {
       title: '集合',
