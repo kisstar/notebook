@@ -278,5 +278,12 @@ module.exports = {
       children: ['advanced/know-webpack', 'advanced/tapable'],
     },
   ],
+  '/database/': [
+    {
+      title: '基础',
+      sidebarDepth: 2,
+      children: ['', 'basis/meet-database', 'basis/common-command'],
+    },
+  ],
   '/': [''],
 };

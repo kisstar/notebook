@@ -99,6 +99,10 @@ module.exports = [
         text: 'Windows',
         link: '/windows/',
       },
+      {
+        text: 'Database',
+        link: '/database/',
+      },
     ],
   },
   {
