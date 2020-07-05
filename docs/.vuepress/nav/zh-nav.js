@@ -123,6 +123,10 @@ module.exports = [
     link: '/collection/',
   },
   {
+    text: 'Other',
+    link: '/other/',
+  },
+  {
     text: 'GitHub',
     link: 'https://github.com/kisstar/notebook/',
     target: '_blank',

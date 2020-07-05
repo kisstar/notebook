@@ -310,5 +310,17 @@ module.exports = {
       children: ['', 'basis/meet-database', 'basis/common-command'],
     },
   ],
+  '/other/': [
+    {
+      title: 'Want',
+      sidebarDepth: 2,
+      children: [''],
+    },
+    {
+      title: 'GitBook',
+      sidebarDepth: 2,
+      children: ['gitbook/'],
+    },
+  ],
   '/': [''],
 };
