@@ -55,20 +55,20 @@ export default {
 
 <style lang="stylus">
 .home
-  box-sizing border-box
   display flex
   flex-direction column
   justify-content space-between
-  margin 0px auto
-  padding $navbarHeight 2rem 0
+  box-sizing border-box
   max-width $homePageWidth
   min-height 100vh
+  margin 0 auto
+  padding $navbarHeight 2rem 0
   .hero
     text-align center
     img
+      display block
       max-width: 100%
       max-height 280px
-      display block
       margin 3rem auto 1.5rem
       box-shadow: 6px 10px 6px #acacac;
     h1
@@ -76,47 +76,47 @@ export default {
     h1, .description, .action
       margin 1.8rem auto
     .description
+      color lighten($textColor, 40%)
       font-size 1.6rem
       line-height 1.3
-      color lighten($textColor, 40%)
     .action-button
       display inline-block
-      font-size 1.2rem
-      color #fff
-      background-color $accentColor
+      box-sizing border-box
       padding 0.8rem 1.6rem
+      color #fff
+      font-size 1.2rem
+      background-color $accentColor
+      border-bottom 1px solid darken($accentColor, 10%)
       border-radius 4px
       transition background-color .1s ease
-      box-sizing border-box
-      border-bottom 1px solid darken($accentColor, 10%)
       &:hover
         background-color lighten($accentColor, 10%)
   .features
-    border-top 1px solid $borderColor
-    padding 1.2rem 0
-    margin-top 2.5rem
     display flex
     flex-wrap wrap
-    align-items flex-start
     align-content stretch
+    align-items flex-start
     justify-content space-between
+    margin-top 2.5rem
+    padding 1.2rem 0
+    border-top 1px solid $borderColor
   .feature
-    flex-grow 1
     flex-basis 30%
+    flex-grow 1
     max-width 30%
     h2
-      font-size 1.4rem
-      font-weight 500
-      border-bottom none
       padding-bottom 0
       color lighten($textColor, 10%)
+      font-weight 500
+      font-size 1.4rem
+      border-bottom none
     p
       color lighten($textColor, 25%)
   .footer
     padding 2.5rem
-    border-top 1px solid $borderColor
-    text-align center
     color lighten($textColor, 25%)
+    text-align center
+    border-top 1px solid $borderColor
 @media (max-width: $MQMobile)
   .home
     .features
@@ -126,8 +126,8 @@ export default {
       padding 0 2.5rem
 @media (max-width: $MQMobileNarrow)
   .home
-    padding-left 1.5rem
     padding-right 1.5rem
+    padding-left 1.5rem
     .hero
       img
         max-height 210px
@@ -139,8 +139,8 @@ export default {
       .description
         font-size 1.2rem
       .action-button
-        font-size 1rem
         padding 0.6rem 1.2rem
+        font-size 1rem
     .feature
       h2
         font-size 1.25rem
