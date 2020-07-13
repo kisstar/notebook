@@ -6716,10 +6716,10 @@ markdown-table@^2.0.0:
   dependencies:
     repeat-string "^1.0.0"
 
-markdownlint-cli@^0.22.0:
-  version "0.22.0"
-  resolved "https://registry.npm.taobao.org/markdownlint-cli/download/markdownlint-cli-0.22.0.tgz#e5e3251ae6207a41eeb01640363fe2aa0f663a51"
-  integrity sha1-5eMlGuYgekHusBZANj/iqg9mOlE=
+markdownlint-cli@^0.23.2:
+  version "0.23.2"
+  resolved "https://registry.npm.taobao.org/markdownlint-cli/download/markdownlint-cli-0.23.2.tgz#43f0a96e2699542b74fb5e6188c025e4934357fc"
+  integrity sha1-Q/CpbiaZVCt0+15hiMAl5JNDV/w=
   dependencies:
     commander "~2.9.0"
     deep-extend "~0.5.1"
@@ -6730,20 +6730,21 @@ markdownlint-cli@^0.22.0:
     jsonc-parser "~2.2.0"
     lodash.differencewith "~4.5.0"
     lodash.flatten "~4.4.0"
-    markdownlint "~0.19.0"
-    markdownlint-rule-helpers "~0.7.0"
+    markdownlint "~0.20.4"
+    markdownlint-rule-helpers "~0.11.0"
     minimatch "~3.0.4"
+    minimist "~1.2.5"
     rc "~1.2.7"
 
-markdownlint-rule-helpers@~0.7.0:
-  version "0.7.0"
-  resolved "https://registry.npm.taobao.org/markdownlint-rule-helpers/download/markdownlint-rule-helpers-0.7.0.tgz#66476c373fcad6727ac5b64cb662e900cbe46bfe"
-  integrity sha1-ZkdsNz/K1nJ6xbZMtmLpAMvka/4=
+markdownlint-rule-helpers@~0.11.0:
+  version "0.11.0"
+  resolved "https://registry.npm.taobao.org/markdownlint-rule-helpers/download/markdownlint-rule-helpers-0.11.0.tgz#faaaae4337771c7d88ca38ef6265afb4fbe0fb3f"
+  integrity sha1-+qquQzd3HH2IyjjvYmWvtPvg+z8=
 
-markdownlint@^0.19.0, markdownlint@~0.19.0:
-  version "0.19.0"
-  resolved "https://registry.npm.taobao.org/markdownlint/download/markdownlint-0.19.0.tgz#a692c7b5c077874d4ee8b74e188d6c464ccce81e"
-  integrity sha1-ppLHtcB3h01O6LdOGI1sRkzM6B4=
+markdownlint@^0.20.4, markdownlint@~0.20.4:
+  version "0.20.4"
+  resolved "https://registry.npm.taobao.org/markdownlint/download/markdownlint-0.20.4.tgz#3b34681494cdad174e14a27182b5cdefaa537823"
+  integrity sha1-OzRoFJTNrRdOFKJxgrXN76pTeCM=
   dependencies:
     markdown-it "10.0.0"
 
@@ -7041,7 +7042,7 @@ minimist-options@^4.0.2:
     is-plain-obj "^1.1.0"
     kind-of "^6.0.3"
 
-minimist@1.2.5, minimist@^1.1.3, minimist@^1.2.0, minimist@^1.2.5:
+minimist@1.2.5, minimist@^1.1.3, minimist@^1.2.0, minimist@^1.2.5, minimist@~1.2.5:
   version "1.2.5"
   resolved "https://registry.npm.taobao.org/minimist/download/minimist-1.2.5.tgz?cache=0&sync_timestamp=1584051509720&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fminimist%2Fdownload%2Fminimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
   integrity sha1-Z9ZgFLZqaoqqDAg8X9WN9OTpdgI=
