@@ -21,7 +21,7 @@
   },
   "config": {
     "commitizen": {
-      "path": "./lib/commit/cz-conventional-changelog.js"
+      "path": "./node_modules/cz-conventional-changelog"
     }
   },
   "commitlint": {
