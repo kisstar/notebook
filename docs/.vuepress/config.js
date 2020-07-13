@@ -10,5 +10,6 @@ module.exports = {
     nav: zhNav,
     sidebar: sidebarNav,
   },
+  plugins: ['vuepress-plugin-mermaidjs'],
   nextLinks: false,
 }
