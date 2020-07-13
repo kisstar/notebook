@@ -181,7 +181,7 @@ npm install pkg-name
 
 另外，对于在 GitHub、GitHub gist、Bitbucket 或 GitLab 的存储库，也可以使用与 `npm install` 相同的快捷语法。
 
-```textplain
+```bash
 "repository": "npm/npm"
 
 "repository": "github:user/repo"
