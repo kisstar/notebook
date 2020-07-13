@@ -64,7 +64,7 @@ function unique(arr) {
       // 上面的操作（删除当前项）会导致后续元素在内存中的地址都要向前移动
       // 一种优化方案时将当前项替换末尾项，然后删除末尾项
       // 将会改变数组的顺序
-      arr[i] = arr[arr.length - 1];
+      arr[i] = arr[arr.length - 1]
       arr.pop()
       continue
     }
@@ -81,6 +81,6 @@ function unique(arr) {
 
 ```javascript
 function unique(arr) {
-    return [...new Set(arr)]
+  return [...new Set(arr)]
 }
 ```

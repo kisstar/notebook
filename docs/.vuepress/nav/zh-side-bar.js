@@ -30,18 +30,14 @@ module.exports = {
       children: [
         '',
         'basis/meet-js',
-        'basis/data-type',
         'basis/reference-type',
         'basis/data-type-memory',
+        'basis/data-type',
         'basis/create-object',
         'basis/ergodic',
         'basis/handle-error',
         'basis/canvas',
         'basis/ajax-to-north',
-        'basis/require-js-0',
-        'basis/require-js-1',
-        'basis/require-js-2',
-        'basis/require-js-3',
       ],
     },
     {
@@ -53,25 +49,34 @@ module.exports = {
         'advanced/closure',
         'advanced/prototype',
         'advanced/inherit',
-        'advanced/advanced-func',
         'advanced/single-thread',
         'advanced/func-progression',
-        'advanced/cross-domain',
       ],
-    },
-    {
-      title: '高阶',
     },
     {
       title: '面试',
       sidebarDepth: 2,
-      children: ['interview/unique-array', 'interview/scope', 'interview/all-around'],
+      children: [
+        'interview/unique-array',
+        'interview/scope',
+        'interview/all-around',
+        'interview/cross-domain',
+      ],
+    },
+    {
+      title: '第三方',
+      sidebarDepth: 2,
+      children: [
+        'third-party/require-js-0',
+        'third-party/require-js-1',
+        'third-party/require-js-2',
+        'third-party/require-js-3',
+      ],
     },
     {
       title: '奇思妙想',
-    },
-    {
-      title: '其它',
+      sidebarDepth: 2,
+      children: ['fantastic-ideas/advanced-func'],
     },
   ],
   '/vue/': [
@@ -323,4 +328,4 @@ module.exports = {
     },
   ],
   '/': [''],
-};
+}

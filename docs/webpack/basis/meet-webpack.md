@@ -1,8 +1,8 @@
 # 尝新
 
-`Webpack` 是一个现代 `JavaScript` 应用程序的静态模块打包器(module bundler)。
+`Webpack` 是一个现代 JavaScript 应用程序的静态模块打包器(module bundler)。
 
-它做的事情是，分析你的项目结构，递归地构建一个依赖关系图(dependency graph)，找到应用程序需要的每个模块以及其它的一些浏览器不能直接运行的拓展语言（Scss，TypeScript等），将其转换和打包为合适的一个或多个 `bundle`。
+它做的事情是，分析你的项目结构，递归地构建一个依赖关系图(dependency graph)，找到应用程序需要的每个模块以及其它的一些浏览器不能直接运行的拓展语言（Scss，TypeScript 等），将其转换和打包为合适的一个或多个 `bundle`。
 
 ## 初始化
 
@@ -48,14 +48,14 @@ yarn add -D webpack webpack-cli
 
 从 `Webpack 4.0` 开始秉承约定优于配置的理念的思想，现在我们可以进行零配置使用，默认情况下它约定：
 
-* `entry` 的默认值是 `./src`。
-* `output.path` 的默认值是 `./dist`。
-* `mode` 的默认值是 `production`。
+- `entry` 的默认值是 `./src`。
+- `output.path` 的默认值是 `./dist`。
+- `mode` 的默认值是 `production`。
 
 现在，创建项目的入口文件 `./src/index.js`，并在其中输入一些测试代码：
 
 ```javascript
-console.log('Hello world!');
+console.log('Hello world!')
 ```
 
 然后使用下面的命令进行打包：
@@ -76,17 +76,17 @@ npx webpack
 
 ```javascript
 // webpack.common.js
-const path = require('path');
+const path = require('path')
 
 const baseConfig = {
-    entry: '../src/index.js', // 入口文件
-    output: {
-        path: path.resolve(__dirname, '../dist'), // 指定输出文件所在目录
-        filename: '[name].js' // 输出文件名，其中 name 为变量，值为入口文件名
-    }
-};
+  entry: '../src/index.js', // 入口文件
+  output: {
+    path: path.resolve(__dirname, '../dist'), // 指定输出文件所在目录
+    filename: '[name].js', // 输出文件名，其中 name 为变量，值为入口文件名
+  },
+}
 
-module.exports = baseConfig;
+module.exports = baseConfig
 ```
 
 需要注意的是指定的输出文件所在目录必须使用绝对地址，这里可以使用 `path` 模块来处理。
@@ -117,23 +117,20 @@ entry: {
 然后，创建 `nps` 模块的配置文件 `./package-scripts.js` 来指定一些命令：
 
 ```javascript
-const npsUtils = require('nps-utils');
+const npsUtils = require('nps-utils')
 // Accepts any number of scripts, filters out any falsy ones and joins them with ' && '
-const { series }  = npsUtils;
+const { series } = npsUtils
 // The UNIX command `rm -rf` for node
-const { rimraf }  = npsUtils;
+const { rimraf } = npsUtils
 
 module.exports = {
-    scripts: {
-        build: {
-            description: 'Clean dist directory and run all builds',
-            default: series(
-                rimraf('dist/*'),
-                'webpack --config config/webpack.common.js'
-            )
-        }
-    }
-};
+  scripts: {
+    build: {
+      description: 'Clean dist directory and run all builds',
+      default: series(rimraf('dist/*'), 'webpack --config config/webpack.common.js'),
+    },
+  },
+}
 ```
 
 现在你可以使用命令 `nps build` 来进行打包了。如果没有进行全局安装，也没有修改环境变量的话，你依然可以通过 `npx nps build` 来执行打包。
@@ -166,24 +163,24 @@ yarn add -D webpack-merge
 
 ```javascript
 // ./config/webpack.dev.js
-const merge = require('webpack-merge');
-const common = require('./webpack.common');
+const merge = require('webpack-merge')
+const common = require('./webpack.common')
 
 const devConfig = {
-    mode: 'development'
-};
+  mode: 'development',
+}
 
-module.exports = merge(common, devConfig);
+module.exports = merge(common, devConfig)
 
 // ./config/webpack.prod.js
-const merge = require('webpack-merge');
-const common = require('./webpack.common');
+const merge = require('webpack-merge')
+const common = require('./webpack.common')
 
 const prodConfig = {
-    mode: 'production'
-};
+  mode: 'production',
+}
 
-module.exports = merge(common, prodConfig);
+module.exports = merge(common, prodConfig)
 ```
 
 最后在 `./package-scripts` 文件中添加启用两种模式的命令：
@@ -228,24 +225,22 @@ yarn add -D html-webpack-plugin
 然后我们移除 `./index.html` 文件，并在 `./index.html` 目录下创建该插件使用的 HTML 模版文件 `./app/index.html`，随便将 `/favicon.ico` 也移动到 `./app/image` 目录，然后改变配置文件：
 
 ```javascript
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const merge = require('webpack-merge');
-const common = require('./webpack.common');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const merge = require('webpack-merge')
+const common = require('./webpack.common')
 
 const htmlWebpackPluginConf = {
   template: './app/index.html', // 指定模版
   filename: 'index.html', // 输出文件名
-  favicon: './app/images/favicon.ico'
-};
+  favicon: './app/images/favicon.ico',
+}
 
 const prodConfig = {
   mode: 'development',
-  plugins: [
-    new HtmlWebpackPlugin(htmlWebpackPluginConf)
-  ]
-};
+  plugins: [new HtmlWebpackPlugin(htmlWebpackPluginConf)],
+}
 
-module.exports = merge(common, prodConfig);
+module.exports = merge(common, prodConfig)
 ```
 
 在 `development` 模式下还应该在 `htmlWebpackPluginConf` 中添加 `minify` 属性：
@@ -263,24 +258,25 @@ minify: {
 前面我们已经可以动态的创建 HTML 文件了，现在开始处理一些样式文件。首先我们创建一个样式文件 `./app/styles/app.css`：
 
 ```css
-html, body {
-    width: 100%;
-    height: 100%;
+html,
+body {
+  width: 100%;
+  height: 100%;
 }
 
 body {
-    background: linear-gradient(#c0c0c0, #707070);
+  background: linear-gradient(#c0c0c0, #707070);
 }
 ```
 
 然后在入口文件中引入:
 
 ```javascript
-import './styles/app.css';
+import './styles/app.css'
 // ...
 ```
 
-但是现在直接打包的话会报错，因为它并不是一个模块文件，所以此时我们需要使用 `css-lodaer` 来将 CSS 转化成 CommonJS 模块，另外我们还需要使用 `style-loader` 将 `JavaScript` 字符串生成为 `style` 节点。同样我们需要对其进行安装：
+但是现在直接打包的话会报错，因为它并不是一个模块文件，所以此时我们需要使用 `css-lodaer` 来将 CSS 转化成 CommonJS 模块，另外我们还需要使用 `style-loader` 将 JavaScript 字符串生成为 `style` 节点。同样我们需要对其进行安装：
 
 ```bash
 yarn add -D css-loader style-loader
@@ -291,21 +287,26 @@ yarn add -D css-loader style-loader
 ```javascript
 // webpack-common.js
 // ...
-const rules = [{
+const rules = [
+  {
     test: /\.css$/,
-    use: [{
-        loader: 'style-loader'
-    }, {
-        loader: 'css-loader'
-    }]
-}];
+    use: [
+      {
+        loader: 'style-loader',
+      },
+      {
+        loader: 'css-loader',
+      },
+    ],
+  },
+]
 
 const baseConfig = {
-    // ...
-    module: {
-        rules: rules
-    }
-};
+  // ...
+  module: {
+    rules: rules,
+  },
+}
 ```
 
 尽管它已经可以工作了，但是更多的在开发过程中我们使用的会是 `less`、`sass` 或者是 `stylus`，对此我们需要做的就是安装相应的依赖和 `loader`，并添加相应的匹配规则，然后同上一样进行配置，只需要在最后再添加上安装的 `loader` 即可，比如将上面的 `app.css` 改为 `app.less` 并安装 `less` 和 `less-loader`：
@@ -358,10 +359,8 @@ yarn add -D postcss-loader autoprefixer
 
 ```javascript
 module.exports = {
-  plugins: [
-    require('autoprefixer')
-  ]
-};
+  plugins: [require('autoprefixer')],
+}
 ```
 
 ## 使用环境变量
@@ -372,15 +371,18 @@ module.exports = {
 
 ```javascript
 const htmlWebpackPluginConf = {
-    template: './app/index.html', // 指定模版
-    filename: 'index.html', // 输出文件名
-    favicon: './app/images/favicon.ico',
-    minify: process.env.NODE_ENV !== 'production' ? null : {
-        removeComments: true, // 移除注释
-        removeRedundantAttributes: true, // 移除冗余属性
-        collapseWhitespace: true // 移除空白
-    }
-};
+  template: './app/index.html', // 指定模版
+  filename: 'index.html', // 输出文件名
+  favicon: './app/images/favicon.ico',
+  minify:
+    process.env.NODE_ENV !== 'production'
+      ? null
+      : {
+          removeComments: true, // 移除注释
+          removeRedundantAttributes: true, // 移除冗余属性
+          collapseWhitespace: true, // 移除空白
+        },
+}
 ```
 
 那么，其中的 process.env.NODE_ENV 变量怎么得到呢，这就需要使用到上面安装的 `cross-env`，我们不能在 `package-scripts.js` 中用队列设置，因为它用 `&&` 进行拼接导致 `cross-env` 模块下，它划分出前后两个环境，因此我们直接在 `package.json` 中配置：
@@ -404,36 +406,41 @@ yarn add -D mini-css-extract-plugin
 
 ```javascript
 // ...
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
-const rules = [{
-  test: /\.(le|c)ss$/,
-  use: [{
-    loader: MiniCssExtractPlugin.loader,
-    options: {
-      hmr: devMode,
-    }
-  }, {
-    loader: 'css-loader'
-  }, {
-    loader: 'postcss-loader'
-  }, {
-    loader: 'less-loader'
-  }]
-}];
+const rules = [
+  {
+    test: /\.(le|c)ss$/,
+    use: [
+      {
+        loader: MiniCssExtractPlugin.loader,
+        options: {
+          hmr: devMode,
+        },
+      },
+      {
+        loader: 'css-loader',
+      },
+      {
+        loader: 'postcss-loader',
+      },
+      {
+        loader: 'less-loader',
+      },
+    ],
+  },
+]
 
 const miniCssExtractPluginCfg = {
   name: 'styles/[name].css',
-};
+}
 
 const baseConfig = {
-    // ...
-    plugins: [
-        new MiniCssExtractPlugin(miniCssExtractPluginCfg),
-    ]
-};
+  // ...
+  plugins: [new MiniCssExtractPlugin(miniCssExtractPluginCfg)],
+}
 
-module.exports = baseConfig;
+module.exports = baseConfig
 ```
 
 可见，我们将样式的处理最后一步从 `style-loader` 的手中转交给了 `MiniCssExtractPlugin` 插件并在相应位置启用了它。
@@ -454,45 +461,42 @@ yarn add -D optimize-css-assets-webpack-plugin terser-webpack-plugin
 
 ```javascript
 // ...
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const TerserJSPlugin = require('terser-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const TerserJSPlugin = require('terser-webpack-plugin')
 
 const prodConfig = {
   mode: 'production',
   optimization: {
-    minimizer: [
-      new OptimizeCSSAssetsPlugin(),
-      new TerserJSPlugin()
-    ]
-  }
-};
+    minimizer: [new OptimizeCSSAssetsPlugin(), new TerserJSPlugin()],
+  },
+}
 // ...
 ```
 
 ## 编译 JavaScript
 
-现在，开发中我们通常会使用版本更新的 `JavaScript`，但是同层叠样式一样存在许多兼容上的问题，为了解决这个问题，我们需要一个名为 `Babel` 的强大编译器。
+现在，开发中我们通常会使用版本更新的 JavaScript，但是同层叠样式一样存在许多兼容上的问题，为了解决这个问题，我们需要一个名为 `Babel` 的强大编译器。
 
-`Babel` 是一个工具链，主要用于将 `ECMAScript 2015+` 版本的代码转换为向后兼容的 `JavaScript` 语法，以便能够运行在当前和旧版本的浏览器或其他环境中。
+`Babel` 是一个工具链，主要用于将 `ECMAScript 2015+` 版本的代码转换为向后兼容的 JavaScript 语法，以便能够运行在当前和旧版本的浏览器或其他环境中。
 
 首先将入口文件打印 'Hello world!' 得语句包含在一个箭头函数中：
 
 ```javascript
 // index.js
 // ...
-const sayHello = () => console.log('Hello world!');
+const sayHello = () => console.log('Hello world!')
 
-sayHello();
+sayHello()
 ```
 
-然后，我们在对其进行编译，现在打开打包后的 HTML 文件查看控制台，可以发现依然顺利的输出了 'Hello world!'，但是查看打包后的 `JavaScript` 文件会看到其中的箭头函数依然存在，并没有转换为低版本中的语法。
+然后，我们在对其进行编译，现在打开打包后的 HTML 文件查看控制台，可以发现依然顺利的输出了 'Hello world!'，但是查看打包后的 JavaScript 文件会看到其中的箭头函数依然存在，并没有转换为低版本中的语法。
 
 现在准备使用 `Babel` 来进行转换，要使用它首先我们得对相关依赖进行安装：
 
-* `babel-loader`      => 使能够使用 `Babel` 和 `Webpack` 来转换生产 `JavaScript` 文件。
-* `@babel/cli`        => `Babel` 的命令行工具。
-* `@babel/core`       => `Babel` 的核心功能，包含各种转换方法。
-* `@babel/preset-env` => `Babel` 的插件集合（官方预设），定义如何转换，可以根据定制。
+- `babel-loader` => 使能够使用 `Babel` 和 `Webpack` 来转换生产 JavaScript 文件。
+- `@babel/cli` => `Babel` 的命令行工具。
+- `@babel/core` => `Babel` 的核心功能，包含各种转换方法。
+- `@babel/preset-env` => `Babel` 的插件集合（官方预设），定义如何转换，可以根据定制。
 
 ```bash
 yarn add -D babel-loader @babel/cli @babel/core @babel/preset-env
@@ -502,31 +506,31 @@ yarn add -D babel-loader @babel/cli @babel/core @babel/preset-env
 
 ```javascript
 const rules = [
-    // ...
-    {
-        test: /\.js$/,
-        loader: 'babel-loader'
-    }
-];
+  // ...
+  {
+    test: /\.js$/,
+    loader: 'babel-loader',
+  },
+]
 ```
 
 接着在根目录下创建一个配置文件 `babel.config.js`：
 
 ```javascript
 module.exports = function(api) {
-  api.cache(true);
+  api.cache(true)
 
-  const presets = ['@babel/preset-env'];
-  const plugins = [];
+  const presets = ['@babel/preset-env']
+  const plugins = []
 
   return {
     presets,
-    plugins
-  };
-};
+    plugins,
+  }
+}
 ```
 
-到这里它已经可以正常工作了，至少将我们的箭头函数转换为了普通的函数，现在我们还需要创建一个配置文件 `.browserslistrc`（也可以在 package.josn 文件中通过 字段设置），它指定了项目的目标浏览器的范围。这个值会被 `@babel/preset-env`, `Autoprefixer`, `stylelint`, `eslint-plugin-compat` 等用来确定需要转译的 `JavaScript` 特性和需要添加的 CSS 浏览器前缀。
+到这里它已经可以正常工作了，至少将我们的箭头函数转换为了普通的函数，现在我们还需要创建一个配置文件 `.browserslistrc`（也可以在 package.josn 文件中通过 字段设置），它指定了项目的目标浏览器的范围。这个值会被 `@babel/preset-env`, `Autoprefixer`, `stylelint`, `eslint-plugin-compat` 等用来确定需要转译的 JavaScript 特性和需要添加的 CSS 浏览器前缀。
 
 ```bash
 [production staging]
@@ -547,15 +551,15 @@ last 1 safari version
 如果你需要使用更高级的语法，比如 `class` 和 `decorate`，需要我们安装配置相应的插件，现在我们在入口文件中来创建使用这两个语法：
 
 ```javascript
-function sayName (target) {
-    console.log(target.name);
+function sayName(target) {
+  console.log(target.name)
 }
 
 @sayName
 class TestClass {
-    constructor() {
-        console.log('Hello world!')
-    }
+  constructor() {
+    console.log('Hello world!')
+  }
 }
 
 new TestClass()
@@ -573,11 +577,14 @@ yarn add -D @babel/plugin-proposal-decorators @babel/plugin-proposal-class-prope
 // babal.config.js
 // ...
 const plugins = [
-    ["@babel/plugin-proposal-decorators", {
+  [
+    '@babel/plugin-proposal-decorators',
+    {
       legacy: true,
-    }],
-    "@babel/plugin-proposal-class-properties",
-];
+    },
+  ],
+  '@babel/plugin-proposal-class-properties',
+]
 // ...
 ```
 
@@ -608,12 +615,15 @@ yarn add @babel/polyfill core-js@3
 ```javascript
 // ...
 const presets = [
-    // 如果 preset 名称的前缀为 babel-preset- 可以省略该前缀
-    ['@babel/preset-env', {
-        useBuiltIns: "usage",
-        corejs: 3,
-    }]
-];
+  // 如果 preset 名称的前缀为 babel-preset- 可以省略该前缀
+  [
+    '@babel/preset-env',
+    {
+      useBuiltIns: 'usage',
+      corejs: 3,
+    },
+  ],
+]
 // ...
 ```
 
@@ -656,12 +666,12 @@ yarn add -D url-loader file-loader
 
 当 `Webpack` 打包源代码时，可能会很难追踪到错误和警告在源代码中的原始位置，因为在提示错误时，只会提示到打包后文件中的位置，这通常对我们来说没有多大的帮助。
 
-所幸 `JavaScript` 提供了 `source map` 功能，将编译后的代码映射回原始源代码，并提供了很多不同的选项可用。
+所幸 JavaScript 提供了 `source map` 功能，将编译后的代码映射回原始源代码，并提供了很多不同的选项可用。
 
-* source-map：单独生成一个 `source-map` 文件，报错会定位到行和列。
-* eval-source-map：不会生成单独的文件，报错会定位到行和列。
-* cheap-module-source-map：生成一个单独的映射文件，报错仅提示所在行。
-* cheap-module-eval-source-map：不会生成单独的文件，报错仅提示所在行。
+- source-map：单独生成一个 `source-map` 文件，报错会定位到行和列。
+- eval-source-map：不会生成单独的文件，报错会定位到行和列。
+- cheap-module-source-map：生成一个单独的映射文件，报错仅提示所在行。
+- cheap-module-eval-source-map：不会生成单独的文件，报错仅提示所在行。
 
 你可以在 [这里](https://webpack.js.org/configuration/devtool) 查看更加详细的介绍，实现的基本原理就是一个 JSON 键值对，利用 VLQ 编码与特定的规则存储位置信息。
 
@@ -673,7 +683,7 @@ yarn add -D url-loader file-loader
 const devConfig = {
   mode: 'development',
   devtool: 'cheap-module-eval-source-map',
-};
+}
 // ...
 ```
 
@@ -692,7 +702,6 @@ yarn add -D webpack-dev-server
 然后在开发配置文件中对其进行配置：
 
 ```javascript
-
 ```
 
 随后为了使用方便，再在 `package-scripts.js` 文件中配置启动命令：
@@ -723,14 +732,14 @@ dev: {
 
 ## tree shaking
 
-`tree shaking` 是一个术语，通常用于描述移除 `JavaScript` 上下文中的未引用代码(dead-code)。它依赖于 `ES2015` 模块系统中的静态结构特性，例如 `import` 和 `export`。
+`tree shaking` 是一个术语，通常用于描述移除 JavaScript 上下文中的未引用代码(dead-code)。它依赖于 `ES2015` 模块系统中的静态结构特性，例如 `import` 和 `export`。
 
 具体表现为在我们的项目中添加一个新的通用模块文件 `src/math.js`，此文件导出两个函数：
 
 ```javascript
-export const sum = (a, b) => a + b;
+export const sum = (a, b) => a + b
 
-export const square = (num) => num ** 2;
+export const square = num => num ** 2
 ```
 
 然后在入口文件中引用其中一个函数：
@@ -745,9 +754,9 @@ console.log(square(2))
 
 现在我们来 开始使用 `tree shaking`：
 
-* 使用 `ES2015` 模块语法（即 import 和 export）。
-* 在项目 `package.json` 文件中，添加一个 "sideEffects" 入口，向 `compiler` 提供提示，表明项目中的哪些文件是 "pure(纯的 ES2015 模块)"，由此可以安全地删除文件中未使用的部分。
-* 引入一个能够删除未引用代码(dead code)的压缩工具(minifier)（例如 UglifyJSPlugin）。
+- 使用 `ES2015` 模块语法（即 import 和 export）。
+- 在项目 `package.json` 文件中，添加一个 "sideEffects" 入口，向 `compiler` 提供提示，表明项目中的哪些文件是 "pure(纯的 ES2015 模块)"，由此可以安全地删除文件中未使用的部分。
+- 引入一个能够删除未引用代码(dead code)的压缩工具(minifier)（例如 UglifyJSPlugin）。
 
 显然上面我们使用了符合标准的语法，而且压缩工具我们在之前也在 <a href="#压缩样式文件">压缩样式文件</a> 进行了配置，现在只需要添加 `sideEffects` 字段。
 
@@ -765,19 +774,19 @@ yarn add -D glob-all purifycss-webpack purify-css
 
 ```javascript
 // ...
-const path = require('path');
-const glob = require('glob-all');
-const PurifyCSSPlugin = require('purifycss-webpack');
+const path = require('path')
+const glob = require('glob-all')
+const PurifyCSSPlugin = require('purifycss-webpack')
 // ...
 plugins: [
-    new PurifyCSSPlugin({
-        // Give paths to parse for rules. These should be absolute
-        paths: glob.sync([
-            path.join(process.cwd(), 'app/**/*.html'),
-            path.join(process.cwd(), 'app/**/*.js'),
-        ]),
-    }),
-  ]
+  new PurifyCSSPlugin({
+    // Give paths to parse for rules. These should be absolute
+    paths: glob.sync([
+      path.join(process.cwd(), 'app/**/*.html'),
+      path.join(process.cwd(), 'app/**/*.js'),
+    ]),
+  }),
+]
 // ...
 ```
 
@@ -794,7 +803,7 @@ plugins: [
 const ele = document.createElement('button')
 ele.innerHTML = '加载 lazy.js'
 ele.onclick = () => {
-    import(/* webpackChunkName: "lazy" */ './lazy.js').then(data => console.log(data.default))
+  import(/* webpackChunkName: "lazy" */ './lazy.js').then(data => console.log(data.default))
 }
 document.body.appendChild(ele)
 ```
@@ -802,7 +811,7 @@ document.body.appendChild(ele)
 然后在 `app` 目录下创建 `lazy.js` 并输入一下内容：
 
 ```javascript
-export default 'Hello world!';
+export default 'Hello world!'
 ```
 
 显然现在打包会报错，因为不支持上面所使用的懒加载语法，现在我们需要安装 `@babel/plugin-syntax-dynamic-import` 来提供支持：
@@ -816,9 +825,9 @@ yarn add -D @babel/plugin-syntax-dynamic-import
 ```javascript
 // ...
 const plugins = [
-    // ...
-    "@babel/plugin-syntax-dynamic-import",
-];
+  // ...
+  '@babel/plugin-syntax-dynamic-import',
+]
 // ...
 ```
 
@@ -826,10 +835,10 @@ const plugins = [
 
 从 `Webpck 4` 开始使用 `optimization.splitChunks` 来代替了之前被大家所熟知的 `CommonsChunkPlugin`，默认情况下 `Webpack` 会按照下面的条件进行拆分代码块：
 
-* 可以被共享的新代码块或者模块来自 `node_modules` 目录。
-* 新的代码块大于 30kb（min+gziped之前的体积）。
-* 当按需加载块时，并行请求的最大数目将小于或等于5 。
-* 初始页面加载时的最大并行请求数将小于或等于 3。
+- 可以被共享的新代码块或者模块来自 `node_modules` 目录。
+- 新的代码块大于 30kb（min+gziped 之前的体积）。
+- 当按需加载块时，并行请求的最大数目将小于或等于 5 。
+- 初始页面加载时的最大并行请求数将小于或等于 3。
 
 块打包默认情况下只会影响按需加载模块，因为对初始块也进行优化打包会影响 HTML 中的 `script` 标签数，增加请求数，当然我们可以对其进行配置。
 
@@ -879,8 +888,8 @@ import(/* webpackChunkName: "async-util" */ 'util').then(data => console.log(dat
 const ele = document.createElement('button')
 ele.innerHTML = '加载 lazy.js'
 ele.onclick = () => {
-    // 被 @babel/plugin-syntax-dynamic-import 插件匹配
-    import(/* webpackChunkName: "lazy" */ './lazy.js').then(data => console.log(data.default))
+  // 被 @babel/plugin-syntax-dynamic-import 插件匹配
+  import(/* webpackChunkName: "lazy" */ './lazy.js').then(data => console.log(data.default))
 }
 document.body.appendChild(ele)
 ```
@@ -920,10 +929,10 @@ javascript/vendors-async-util.js   9.62 KiB       3  [emitted]  vendors-async-ut
 ```javascript
 // ...
 const baseConfig = {
-    // ...
-    externals: {
-        $: 'jquery'
-    }
+  // ...
+  externals: {
+    $: 'jquery',
+  },
 }
 // ...
 ```
@@ -942,16 +951,16 @@ yarn add lodash
 
 ```javascript
 // ...
-const webpack = require('webpack');
+const webpack = require('webpack')
 // ...
 const baseConfig = {
   plugins: [
-      // ...
-        new webpack.ProvidePlugin({
-            _: 'lodash'
-        }),
-    ]
-};
+    // ...
+    new webpack.ProvidePlugin({
+      _: 'lodash',
+    }),
+  ],
+}
 // ...
 ```
 
@@ -965,16 +974,16 @@ yarn add -D exports-loader
 
 ```javascript
 // ...
-const webpack = require('webpack');
+const webpack = require('webpack')
 // ...
 const baseConfig = {
   plugins: [
-      // ...
-        new webpack.ProvidePlugin({
-            clone: 'exports-loader?clone!lodash/clone',
-        }),
-    ]
-};
+    // ...
+    new webpack.ProvidePlugin({
+      clone: 'exports-loader?clone!lodash/clone',
+    }),
+  ],
+}
 // ...
 ```
 
@@ -997,8 +1006,8 @@ module.exports = {
   //...
   module: {
     noParse: /jquery/,
-  }
-};
+  },
+}
 ```
 
 需要注意的是，这样匹配的话这个第三方库应当是全部引入的，否则会出现错误。比如之前我们按需加载了 `lodash` 的 `clone` 方法，如果在此直接匹配 `lodash` 不处理其中依赖的话是行不通的。
@@ -1018,11 +1027,11 @@ yarn add moment
 然后在入口文件中引入，并使用它：
 
 ```javascript
-import moment from 'moment';
-import 'moment/locale/zh-cn'; // 由于忽略了语言包的引入，所以需要单独引入我们所需的语言包
+import moment from 'moment'
+import 'moment/locale/zh-cn' // 由于忽略了语言包的引入，所以需要单独引入我们所需的语言包
 
-moment.locale('zh-cn');
-console.log(moment().format('MMMM Do YYYY, h:mm:ss a'));
+moment.locale('zh-cn')
+console.log(moment().format('MMMM Do YYYY, h:mm:ss a'))
 ```
 
 最后在通用配置文件中配置：
@@ -1030,7 +1039,7 @@ console.log(moment().format('MMMM Do YYYY, h:mm:ss a'));
 ```javascript
 new webpack.IgnorePlugin({
   resourceRegExp: /^\.\/locale$/,
-  contextRegExp: /moment$/
+  contextRegExp: /moment$/,
 })
 ```
 
@@ -1049,13 +1058,17 @@ yarn add -D expose-loader
 ```javascript
 // webpack.config.js
 module: {
-    rules: [{
-        test: require.resolve('jquery'),
-        use: [{
-            loader: 'expose-loader',
-            options: '$'
-        }]
-    }]
+  rules: [
+    {
+      test: require.resolve('jquery'),
+      use: [
+        {
+          loader: 'expose-loader',
+          options: '$',
+        },
+      ],
+    },
+  ]
 }
 ```
 
@@ -1074,51 +1087,56 @@ yarn add -D happypack
 2、配置
 
 ```javascript
-const HappyPack = require('happypack');
-const happyThreadPool = HappyPack.ThreadPool({ size: 5 });
+const HappyPack = require('happypack')
+const happyThreadPool = HappyPack.ThreadPool({ size: 5 })
 // ...
 exports.module = {
-    rules: [
+  rules: [
+    {
+      test: /\.(le|c)ss$/,
+      use: [
         {
-            test: /\.(le|c)ss$/,
-            use: [{
-                // 这里我们并没有将 MiniCssExtractPlugin 中的 loader 移到 HappyPack 中
-                // 因为一些原因移动进去后并不能工作
-                loader: MiniCssExtractPlugin.loader,
-                options: {
-                    hmr: devMode,
-                },
-            }, {
-                loader: 'happypack/loader?id=styles',
-            }],
+          // 这里我们并没有将 MiniCssExtractPlugin 中的 loader 移到 HappyPack 中
+          // 因为一些原因移动进去后并不能工作
+          loader: MiniCssExtractPlugin.loader,
+          options: {
+            hmr: devMode,
+          },
         },
         {
-            test: /.js$/,
-            use: 'happypack/loader?id=js',
-        }
-    ]
-};
+          loader: 'happypack/loader?id=styles',
+        },
+      ],
+    },
+    {
+      test: /.js$/,
+      use: 'happypack/loader?id=js',
+    },
+  ],
+}
 // ...
 exports.plugins = [
-    new HappyPack({
-        id: 'js',
-        threadPool: happyThreadPool, // 使用共享进程池
-        loaders: [
-            'babel-loader',
-        ],
-    }),
-    new HappyPack({
-        id: 'styles',
-        threadPool: happyThreadPool,
-        loaders: [{
-            loader: 'css-loader',
-        }, {
-            loader: 'postcss-loader',
-        }, {
-            loader: 'less-loader',
-        }],
-    })
-];
+  new HappyPack({
+    id: 'js',
+    threadPool: happyThreadPool, // 使用共享进程池
+    loaders: ['babel-loader'],
+  }),
+  new HappyPack({
+    id: 'styles',
+    threadPool: happyThreadPool,
+    loaders: [
+      {
+        loader: 'css-loader',
+      },
+      {
+        loader: 'postcss-loader',
+      },
+      {
+        loader: 'less-loader',
+      },
+    ],
+  }),
+]
 ```
 
 当然，并不是分配的进程越多越好，毕竟开启子进程和进程间的交互也是比较耗时和资源的，因此，推荐在打包大型项目的时候使用该插件，可以更明显的加快打包的速度。
@@ -1130,31 +1148,31 @@ exports.plugins = [
 ```javascript
 // webpack.common.js
 module.exports = {
-    //...
-    resolve: {
-        extensions: ['.js', '.json', '.less', '.css', '.mjs']
-    }
-};
+  //...
+  resolve: {
+    extensions: ['.js', '.json', '.less', '.css', '.mjs'],
+  },
+}
 ```
 
 另外，我们还可以通过其上的 `alias` 来做一些别名，最常用的就是路径别名，对于一些比较的路径用一个名称去代替。
 
 ```javascript
 module.exports = {
-    //...
-    resolve: {
-        alias: {
-            '@style': path.resolve(__dirname, '../app/styles/'),
-        }
-    }
-};
+  //...
+  resolve: {
+    alias: {
+      '@style': path.resolve(__dirname, '../app/styles/'),
+    },
+  },
+}
 ```
 
 现在，我们就可以改变入口文件引入样式文件的方式了。
 
 ## Eslint
 
-`ESLint` 是一个 `JavaScript` 语法规则和代码风格的检查工具，它的目标是保证代码的一致性和避免错误。
+`ESLint` 是一个 JavaScript 语法规则和代码风格的检查工具，它的目标是保证代码的一致性和避免错误。
 
 首先，我们需要安装 `ESLint`：
 
@@ -1167,29 +1185,28 @@ yarn add -D eslint
 ```javascript
 // .eslintrc.js
 module.exports = {
-    "env": {
-        "browser": true,
-        "es6": true
-    },
-    "extends": "eslint:recommended",
-    "globals": {
-        "Atomics": "readonly",
-        "SharedArrayBuffer": "readonly"
-    },
-    "parserOptions": {
-        "ecmaVersion": 2018,
-        "sourceType": "module"
-    },
-    "rules": {
-    }
-};
+  env: {
+    browser: true,
+    es6: true,
+  },
+  extends: 'eslint:recommended',
+  globals: {
+    Atomics: 'readonly',
+    SharedArrayBuffer: 'readonly',
+  },
+  parserOptions: {
+    ecmaVersion: 2018,
+    sourceType: 'module',
+  },
+  rules: {},
+}
 ```
 
 通常，如果我们需要忽略掉一些文件或目录的检测我们可以添加 `.eslintignore` 文件。
 
 ## Prettier
 
-在 `Prettier` 环境下，所有的 `javascript` 代码都会转换为抽象语法树，然后被重新格式化。因此，它确保不会对编写的代码进行任何破坏更改。
+在 `Prettier` 环境下，所有的 JavaScript 代码都会转换为抽象语法树，然后被重新格式化。因此，它确保不会对编写的代码进行任何破坏更改。
 
 与 `ESLint` `不同，ESLint` 只是一个代码质量工具 (确保没有未使用的变量、没有全局变量，等等)。而 `Prettier` 只关心格式化文件 (最大长度、混合标签和空格、引用样式等)。你可以将 `ESLint` 和 `Prettier` 结合起来使用，以获得双赢的组合。
 
@@ -1205,12 +1222,12 @@ yarn add -D prettier
 
 ```javascript
 module.exports = {
-    printWidth: 100,
-    trailingComma: 'none',
-    singleQuote: true,
-    semi: false,
-    jsxBracketSameLine: false,
-    bracketSpacing: true
+  printWidth: 100,
+  trailingComma: 'none',
+  singleQuote: true,
+  semi: false,
+  jsxBracketSameLine: false,
+  bracketSpacing: true,
 }
 ```
 
@@ -1243,27 +1260,22 @@ yarn add - D husky lint-staged
 
 ```json
 {
-    "scripts": {
-        "lint:base": "eslint --rule \"prettier/prettier: 2\"",
-        "lint": "yarn run lint:base -- .",
-        "lint:fix": "yarn run lint -- --fix"
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "lint-staged"
-        }
-    },
-    "lint-staged": {
-        "linters": {
-            "*.{ts,js,less,css,json}": [
-                "yarn run lint",
-                "git add"
-            ]
-        },
-        "ignore": [
-            "dist/**/*"
-        ]
+  "scripts": {
+    "lint:base": "eslint --rule \"prettier/prettier: 2\"",
+    "lint": "yarn run lint:base -- .",
+    "lint:fix": "yarn run lint -- --fix"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
     }
+  },
+  "lint-staged": {
+    "linters": {
+      "*.{ts,js,less,css,json}": ["yarn run lint", "git add"]
+    },
+    "ignore": ["dist/**/*"]
+  }
 }
 ```
 
@@ -1283,11 +1295,10 @@ yarn add -D prettier stylelint-config-recommended
 
 ```javascript
 module.exports = {
-    processors: [],
-    plugins: [],
-    extends: ['stylelint-config-standard'],
-    rules: {
-    }
+  processors: [],
+  plugins: [],
+  extends: ['stylelint-config-standard'],
+  rules: {},
 }
 ```
 
@@ -1306,56 +1317,56 @@ yarn add -D stylelint-config-prettier eslint-config-prettier
 ```javascript
 // stylelintrc.js
 module.exports = {
-    // ...
-    extends: [
-        // 继承的规则
-        'stylelint-config-standard',
-        'stylelint-config-prettier'
-    ],
-    // ...
+  // ...
+  extends: [
+    // 继承的规则
+    'stylelint-config-standard',
+    'stylelint-config-prettier',
+  ],
+  // ...
 }
 
 // eslintrc.js
 module.exports = {
-    // ...
-    extends: ['eslint:recommended', 'prettier'],
-    // ...
-    rules: {
-        'prettier/prettier': 'error'
-    }
+  // ...
+  extends: ['eslint:recommended', 'prettier'],
+  // ...
+  rules: {
+    'prettier/prettier': 'error',
+  },
 }
 ```
 
 ## 注释
 
-* 文中文件的相对路径均是相对于项目跟路径而言的。
-* 代码快中的 `// ...` 表示省略了一些其它代码。
+- 文中文件的相对路径均是相对于项目跟路径而言的。
+- 代码快中的 `// ...` 表示省略了一些其它代码。
 
 ## 参考资料
 
-* [概念 | Webpack 中文网](https://www.webpackjs.com/concepts/)
-* [Webpack 4 Tutorial: from 0 Conf to Production Mode (Updated)](https://www.valentinog.com/blog/webpack/)
-* [Webpack 中文文档 - 印记中文](https://webpack.docschina.org)
-* [指南 | webpack 中文网](https://www.webpackjs.com/guides/)
-* [nps - Github](https://github.com/kentcdodds/nps)
-* [nps-utils - API Document](https://doc.esdoc.org/github.com/kentcdodds/nps-utils/)
-* [入门Webpack，看这篇就够了 - 简书](https://www.jianshu.com/p/42e11515c10f)
-* [What is an npmignore file and what is it used for](https://javascript.tutorialhorizon.com//2015/06/25/what-is-an-npmignore-file-and-what-is-it-used-for/)
-* [npm-developers | npm Documentation](https://docs.npmjs.com/misc/developers)
-* [如何降低在 npm 模块中发布敏感信息的可能性 - 知乎](https://zhuanlan.zhihu.com/p/31875370)
-* [npx 使用教程 - 阮一峰的网络日志](http://www.ruanyifeng.com/blog/2019/02/npx.html)
-* [webpack中的hash、chunkhash、contenthash区别 - 掘金](https://juejin.im/post/5a4502be6fb9a0450d1162ed)
-* [Webpack 4 如何优雅打包缓存文件 - IMWeb前端博客](https://imweb.io/topic/5b6f224a3cb5a02f33c013ba)
-* [Webpack中的sourcemap以及如何在生产和开发环境中合理的设置sourcemap的类型 - CSDN](https://blog.csdn.net/liwusen/article/details/79414508)
-* [JavaScript Source Map 详解](http://www.ruanyifeng.com/blog/2013/01/javascript_source_map.html)
-* [Webpack, loaders, Babel, sourcemaps, React, Hot Module Reload, TypeScript, modules, code splitting and lazy loading full tutorial to transpile and bundle your code](https://blog.wax-o.com/2018/05/webpack-loaders-babel-sourcemaps-react-hot-module-reload-typescript-modules-code-splitting-and-lazy-loading-full-tutorial-to-transpile-and-bundle-your-code/)
-* [Webpack 中的 sideEffects 到底该怎么用？](https://zhuanlan.zhihu.com/p/40052192)
-* [webpack--css：消除未使用的CSS - segmentfault](https://segmentfault.com/a/1190000016934089)
-* [webpack4---生产环境css样式丢失问题 - CSDN](https://blog.csdn.net/qq_37800886/article/details/87856352)
-* [webpack SplitChunksPlugin实用指南](https://juejin.im/post/5b99b9cd6fb9a05cff32007a)
-* [没有了CommonsChunkPlugin，咱拿什么来分包（译）](https://github.com/yesvods/Blog/issues/15)
-* [Tree-shaking-with-Bootstrap-4-and-webpack](https://volaresystems.com/blog/post/2018/02/24/Tree-shaking-with-Bootstrap-4-and-webpack)
-* [webpack优化之HappyPack 实战](https://www.jianshu.com/p/b9bf995f3712)
-* [Can HappyPack support MiniCssExtractPlugin？ - Github](https://github.com/amireh/happypack/issues/223)
-* [用 Prettier 格式化 JavaScript 代码](https://www.infoq.cn/article/using-prettier-format-javascript-code)
-* [用 husky 和 lint-staged 构建超溜的代码检查工作流 - 知乎](https://zhuanlan.zhihu.com/p/27094880)
+- [概念 | Webpack 中文网](https://www.webpackjs.com/concepts/)
+- [Webpack 4 Tutorial: from 0 Conf to Production Mode (Updated)](https://www.valentinog.com/blog/webpack/)
+- [Webpack 中文文档 - 印记中文](https://webpack.docschina.org)
+- [指南 | webpack 中文网](https://www.webpackjs.com/guides/)
+- [nps - Github](https://github.com/kentcdodds/nps)
+- [nps-utils - API Document](https://doc.esdoc.org/github.com/kentcdodds/nps-utils/)
+- [入门 Webpack，看这篇就够了 - 简书](https://www.jianshu.com/p/42e11515c10f)
+- [What is an npmignore file and what is it used for](https://javascript.tutorialhorizon.com//2015/06/25/what-is-an-npmignore-file-and-what-is-it-used-for/)
+- [npm-developers | npm Documentation](https://docs.npmjs.com/misc/developers)
+- [如何降低在 npm 模块中发布敏感信息的可能性 - 知乎](https://zhuanlan.zhihu.com/p/31875370)
+- [npx 使用教程 - 阮一峰的网络日志](http://www.ruanyifeng.com/blog/2019/02/npx.html)
+- [webpack 中的 hash、chunkhash、contenthash 区别 - 掘金](https://juejin.im/post/5a4502be6fb9a0450d1162ed)
+- [Webpack 4 如何优雅打包缓存文件 - IMWeb 前端博客](https://imweb.io/topic/5b6f224a3cb5a02f33c013ba)
+- [Webpack 中的 sourcemap 以及如何在生产和开发环境中合理的设置 sourcemap 的类型 - CSDN](https://blog.csdn.net/liwusen/article/details/79414508)
+- [JavaScript Source Map 详解](http://www.ruanyifeng.com/blog/2013/01/javascript_source_map.html)
+- [Webpack, loaders, Babel, sourcemaps, React, Hot Module Reload, TypeScript, modules, code splitting and lazy loading full tutorial to transpile and bundle your code](https://blog.wax-o.com/2018/05/webpack-loaders-babel-sourcemaps-react-hot-module-reload-typescript-modules-code-splitting-and-lazy-loading-full-tutorial-to-transpile-and-bundle-your-code/)
+- [Webpack 中的 sideEffects 到底该怎么用？](https://zhuanlan.zhihu.com/p/40052192)
+- [webpack--css：消除未使用的 CSS - segmentfault](https://segmentfault.com/a/1190000016934089)
+- [webpack4---生产环境 css 样式丢失问题 - CSDN](https://blog.csdn.net/qq_37800886/article/details/87856352)
+- [webpack SplitChunksPlugin 实用指南](https://juejin.im/post/5b99b9cd6fb9a05cff32007a)
+- [没有了 CommonsChunkPlugin，咱拿什么来分包（译）](https://github.com/yesvods/Blog/issues/15)
+- [Tree-shaking-with-Bootstrap-4-and-webpack](https://volaresystems.com/blog/post/2018/02/24/Tree-shaking-with-Bootstrap-4-and-webpack)
+- [webpack 优化之 HappyPack 实战](https://www.jianshu.com/p/b9bf995f3712)
+- [Can HappyPack support MiniCssExtractPlugin？ - Github](https://github.com/amireh/happypack/issues/223)
+- [用 Prettier 格式化 JavaScript 代码](https://www.infoq.cn/article/using-prettier-format-javascript-code)
+- [用 husky 和 lint-staged 构建超溜的代码检查工作流 - 知乎](https://zhuanlan.zhihu.com/p/27094880)

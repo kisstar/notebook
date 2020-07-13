@@ -1,9 +1,9 @@
 # 数据类型检测
 
-`JavaScript` 中包括两种数据类型，包括：
+在 JavaScript 中包括两种数据类型：
 
-- **基本数据类型**(值类型)：字符串（String）、数字(Number)、布尔(Boolean)、对空（Null）、未定义（Undefined）、Symbol。
-- **引用数据类型**：对象(Object)、数组(Array)、函数(Function)。
+- **基本数据类型**(值类型)：字符串（String）、数字(Number)、布尔(Boolean)、对空（Null）、未定义（Undefined）、Symbol 等。
+- **引用数据类型**：对象(Object)、数组(Array)、函数(Function)等。
 
 ## 类型检测的方法
 
@@ -26,11 +26,11 @@
 ```javascript
 // 方式一：
 function isString(value) {
-    return 'string' === typeof value;
+  return 'string' === typeof value
 }
 // 方式二：
 function isString(value) {
-    return Object.prototype.toString.call(value) === '[object String]';
+  return Object.prototype.toString.call(value) === '[object String]'
 }
 ```
 
@@ -39,11 +39,11 @@ function isString(value) {
 ```javascript
 // 方式一：
 function isNumber(value) {
-    return 'number' === typeof value;
+  return 'number' === typeof value
 }
 // 方式二：
 function isNumber(value) {
-    return Object.prototype.toString.call(value) === '[object Number]';
+  return Object.prototype.toString.call(value) === '[object Number]'
 }
 ```
 
@@ -52,11 +52,11 @@ function isNumber(value) {
 ```javascript
 // 方式一：
 function isBoolean(value) {
-    return 'boolean' === typeof value;
+  return 'boolean' === typeof value
 }
 // 方式二：
 function isBoolean(value) {
-    return Object.prototype.toString.call(value) === '[object Boolean]';
+  return Object.prototype.toString.call(value) === '[object Boolean]'
 }
 ```
 
@@ -65,15 +65,15 @@ function isBoolean(value) {
 ```javascript
 // 方式一：
 function isUndefined(value) {
-    return undefined === value;
+  return undefined === value
 }
 // 方式二：
 function isUndefined(value) {
-    return 'undefined' === typeof value;
+  return 'undefined' === typeof value
 }
 // 方式三：
 function isUndefined(value) {
-    return Object.prototype.toString.call(value) === '[object Undefined]';
+  return Object.prototype.toString.call(value) === '[object Undefined]'
 }
 ```
 
@@ -82,11 +82,11 @@ function isUndefined(value) {
 ```javascript
 // 方式一：
 function isNull(value) {
-    return null === value;
+  return null === value
 }
 // 方式二：
 function isNull(value) {
-    return Object.prototype.toString.call(value) === '[object Null]';
+  return Object.prototype.toString.call(value) === '[object Null]'
 }
 ```
 
@@ -94,7 +94,7 @@ function isNull(value) {
 
 ```javascript
 function isObject(value) {
-    return null !== value && 'object' === typeof value;
+  return null !== value && 'object' === typeof value
 }
 ```
 
@@ -103,15 +103,15 @@ function isObject(value) {
 ```javascript
 // 方式一：
 function isArray(value) {
-    return Array.isArray(value);
+  return Array.isArray(value)
 }
 // 方式二：
 function isArray(value) {
-    return Object.prototype.toString.call(value) === '[object Array]';
+  return Object.prototype.toString.call(value) === '[object Array]'
 }
 // 方式三：
 function isArray(value) {
-    return value instanceof Array;
+  return value instanceof Array
 }
 ```
 
@@ -119,24 +119,24 @@ function isArray(value) {
 
 ```javascript
 function isFunction(value) {
-    return typeof value === 'function';
+  return typeof value === 'function'
 }
 // 判断是否是原生函数
 function isFunction(value) {
-    return Object.prototype.toString.call(value) === "[object Function]";
+  return Object.prototype.toString.call(value) === '[object Function]'
 }
 ```
 
 ::: warning
 
 - 开发人员定义的任何构造函数都将返回 `[object Object]`。
-- 对于在 `IE` 中以 `COM` 对象形式实现的任何函数，它们不是原生的 `JavaScript` 函数。
+- 对于在 IE 中以 COM 对象形式实现的任何函数，它们不是原生的 JavaScript 函数。
 
 :::
 
 ## undefined 和 null 的区别
 
-通俗来讲就是 `undefined` 是定义了但是未赋值，而 `null` 是定义了只是赋值为了 `null`。
+通俗来讲就是 `undefined` 是定义了但是未赋值，而 `null` 是定义了只是赋值为 `null`。
 
 事实上，当一个声明了一个变量未初始化时，这个变量的值就是 `undefined`，而 `null` 值则是表示空对象指针，即一个不存在的对象的占位符。
 
@@ -150,5 +150,5 @@ function isFunction(value) {
 ## 参考资料
 
 - [JavaScript 指南](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide)
-- JavaScript 高级程序设计(第3版)
+- JavaScript 高级程序设计(第 3 版)
 - [JavaScript 对象参考手册](http://www.runoob.com/jsref/jsref-tutorial.html)

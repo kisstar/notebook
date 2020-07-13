@@ -1,6 +1,6 @@
 # 尝新
 
-`npm` 是 `JavaScript` 世界的包管理工具，并且是 `Node.js` 平台的默认包管理工具。通过 `npm` 可以安装、共享、分发代码,管理项目依赖关系。
+`npm` 是 JavaScript 世界的包管理工具，并且是 `Node.js` 平台的默认包管理工具。通过 `npm` 可以安装、共享、分发代码,管理项目依赖关系。
 
 ## 版本信息
 
@@ -12,7 +12,7 @@ npm -v
 
 ## 使用淘宝镜像
 
-国内直接使用 `npm` 的官方镜像是非常慢的，这里推荐使用淘宝NPM镜像。
+国内直接使用 `npm` 的官方镜像是非常慢的，这里推荐使用淘宝 NPM 镜像。
 
 ```bash
 npm install -g cnpm --registry=https://registry.npm.taobao.org
@@ -24,7 +24,7 @@ npm install -g cnpm --registry=https://registry.npm.taobao.org
 
 `npm init` 用来初始化生成一个新的 `package.json` 文件。它会向用户提问一系列问题，如果你觉得不用修改默认配置，可以一路回车。
 
-如果使用了 `-f`（代表force）、-y（代表yes），则跳过提问阶段，直接生成一个新的 `package.json` 文件，后续你也可以随时直接更改该文件。
+如果使用了 `-f`（代表 force）、-y（代表 yes），则跳过提问阶段，直接生成一个新的 `package.json` 文件，后续你也可以随时直接更改该文件。
 
 ```bash
 npm init -y
@@ -83,7 +83,7 @@ npm search <Reg | String>
 
 ## 安装包
 
-* 安装的方式通常分为全局安装和局部安装，比如现在需要安装 `lodash`：
+- 安装的方式通常分为全局安装和局部安装，比如现在需要安装 `lodash`：
 
 ```bash
 # 不加任何参数会根据项目下的 package.json 文件中定义的依赖进行安装
@@ -95,7 +95,7 @@ npm install -global lodash
 npm intall -g lodah # 使用 -global 简写模式 -g
 ```
 
-* 除了指定包名外，还可以直接输入 `Github` 代码库地址。
+- 除了指定包名外，还可以直接输入 `Github` 代码库地址。
 
 ```bash
 npm install https://github.com/lodash/lodash
@@ -103,20 +103,20 @@ npm install https://github.com/lodash/lodash
 
 安装之前，`npm install` 会先检查，`node_modules` 目录之中是否已经存在指定模块。如果存在，就不再重新安装了，即使远程仓库已经有了一个新版本，也是如此。
 
-* 如果你希望，一个模块不管是否安装过，`npm` 都要强制重新安装，可以使用 `-f` 或 `--force` 参数。
+- 如果你希望，一个模块不管是否安装过，`npm` 都要强制重新安装，可以使用 `-f` 或 `--force` 参数。
 
-* 另外，使用 `npm install` 总会安装最新的版本，如果你需呀安装特定的版本则需要在后面进行指定。
+- 另外，使用 `npm install` 总会安装最新的版本，如果你需呀安装特定的版本则需要在后面进行指定。
 
 ```bash
 npm install <packageName>@[version]
 npm install <packageName>@[tag]
 ```
 
-* 对于一个项目所需要的依赖，一般分为开发环境的依赖和生产环境的依赖。在安装模块时，可以根据依赖所处分类而写入 `package.json` 文件中的不同字段中。
+- 对于一个项目所需要的依赖，一般分为开发环境的依赖和生产环境的依赖。在安装模块时，可以根据依赖所处分类而写入 `package.json` 文件中的不同字段中。
 
-当我们在安装模块时使用 `--save` 参数时，将模块安装到项目目录下，并在 `package.json` 文件的 `dependencies` 字段写入依赖，而使用 `--save-dev` 的意思是将模块安装到项目目录下，并在 `package.json` 文件的 `devDependencies` 字段写入依赖，运行 `npm install --production` 或者注明NODE_ENV变量值为 `production` 时，不会自动下载模块到 `node_modules` 目录中。
+当我们在安装模块时使用 `--save` 参数时，将模块安装到项目目录下，并在 `package.json` 文件的 `dependencies` 字段写入依赖，而使用 `--save-dev` 的意思是将模块安装到项目目录下，并在 `package.json` 文件的 `devDependencies` 字段写入依赖，运行 `npm install --production` 或者注明 NODE_ENV 变量值为 `production` 时，不会自动下载模块到 `node_modules` 目录中。
 
-简单而言，`devDependencies` 节点下的模块是我们在开发时需要用的，比如项目中压缩`CSS`、`JavaScript`的模块。这些模块在我们的项目部署后是不需要的，所以我们可以使用 `--save-dev` 的形式安装。像 `express` 这些模块是项目运行必备的，应该安装在 `dependencies` 节点下，所以我们应该使用 `--save` 的形式安装。
+简单而言，`devDependencies` 节点下的模块是我们在开发时需要用的，比如项目中压缩`CSS`、JavaScript 的模块。这些模块在我们的项目部署后是不需要的，所以我们可以使用 `--save-dev` 的形式安装。像 `express` 这些模块是项目运行必备的，应该安装在 `dependencies` 节点下，所以我们应该使用 `--save` 的形式安装。
 
 ```bash
 npm install webpack --save-dev
@@ -194,7 +194,7 @@ npm shrinkwrap
 
 ```json
 {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "test": "echo \"Error: no test specified\" && exit 1"
 }
 ```
 
@@ -210,10 +210,10 @@ npm test
 
 ```json
 {
-    "scripts": {
-        "predeploy": "gitbook build",
-        "deploy": "gh-pages --dist _book  --dest /  --branch gh-pages --dotfiles=true --add=true"
-    },
+  "scripts": {
+    "predeploy": "gitbook build",
+    "deploy": "gh-pages --dist _book  --dest /  --branch gh-pages --dotfiles=true --add=true"
+  }
 }
 ```
 
@@ -241,9 +241,9 @@ npm install -g npx
 
 ## 参考资料
 
-* [npm](https://www.npmjs.com/)
-* [让人倾倒的 11 个 npm trick](https://www.zcfy.cc/article/1206)
-* [NPM 学习笔记整理](https://segmentfault.com/p/1210000009653830/read)
-* [NPM install -save 和 -save-dev 傻傻分不清](https://www.limitcode.com/detail/59a15b1a69e95702e0780249.html)
-* [npx 使用教程](http://www.ruanyifeng.com/blog/2019/02/npx.html)
-* [11 Simple npm Tricks That Will Knock Your Wombat Socks Off](https://nodesource.com/blog/eleven-npm-tricks-that-will-knock-your-wombat-socks-off/)
+- [npm](https://www.npmjs.com/)
+- [让人倾倒的 11 个 npm trick](https://www.zcfy.cc/article/1206)
+- [NPM 学习笔记整理](https://segmentfault.com/p/1210000009653830/read)
+- [NPM install -save 和 -save-dev 傻傻分不清](https://www.limitcode.com/detail/59a15b1a69e95702e0780249.html)
+- [npx 使用教程](http://www.ruanyifeng.com/blog/2019/02/npx.html)
+- [11 Simple npm Tricks That Will Knock Your Wombat Socks Off](https://nodesource.com/blog/eleven-npm-tricks-that-will-knock-your-wombat-socks-off/)

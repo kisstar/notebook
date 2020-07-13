@@ -15,19 +15,19 @@ AVL 树在添加或移除节点时，会尝试自平衡。任意一个节点（�
 ```javascript
 function insertNode(node, element) {
   if (node === null) {
-    node = new Node(element);
+    node = new Node(element)
   } else if (element < node.key) {
-    node.left = insertNode(node.left, element);
+    node.left = insertNode(node.left, element)
     if (node.left !== null) {
       // 确认是否需要平衡
     }
   } else if (element > node.key) {
-    node.right = insertNode(node.right, element);
+    node.right = insertNode(node.right, element)
     if (node.right !== null) {
       // 确认是否需要平衡
     }
   }
-  return node;
+  return node
 }
 ```
 
@@ -42,9 +42,9 @@ function insertNode(node, element) {
 ```javascript
 function heightNode(node) {
   if (null === node) {
-    return -1;
+    return -1
   } else {
-    return Math.max(heightNode(node.left), heightNode(node.right)) + 1;
+    return Math.max(heightNode(node.left), heightNode(node.right)) + 1
   }
 }
 ```
@@ -72,10 +72,10 @@ function heightNode(node) {
 
 ```javascript
 function rotationLL(node) {
-  const tmp = node.left;
-  node.left = tmp.right;
-  tmp.right = node;
-  return tmp;
+  const tmp = node.left
+  node.left = tmp.right
+  tmp.right = node
+  return tmp
 }
 ```
 
@@ -87,10 +87,10 @@ function rotationLL(node) {
 
 ```javascript
 function rotationRR(node) {
-  const tmp = node.right;
-  node.right = tmp.left;
-  tmp.left = node;
-  return tmp;
+  const tmp = node.right
+  node.right = tmp.left
+  tmp.left = node
+  return tmp
 }
 ```
 
@@ -98,13 +98,13 @@ function rotationRR(node) {
 
 ```javascript
 function rotationLR(node) {
-  node.left = rotationRR(node.left);
-  return rotationLL(node);
+  node.left = rotationRR(node.left)
+  return rotationLL(node)
 }
 
 function rotationRL(node) {
-  node.right = rotationLL(node.right);
-  return rotationRR(node);
+  node.right = rotationLL(node.right)
+  return rotationRR(node)
 }
 ```
 
@@ -119,31 +119,31 @@ function rotationRL(node) {
 ```javascript
 function insertNode(node, element) {
   if (null === node) {
-    node = new Node(element);
+    node = new Node(element)
   } else if (element < node.key) {
-    node.left = insertNode(node.left, element);
+    node.left = insertNode(node.left, element)
     if (null !== node.left) {
       if (heightNode(node.left) - heightNode(node.right) > 1) {
         if (element < node.left.key) {
-          node = rotationLL(node);
+          node = rotationLL(node)
         } else {
-          node = rotationLR(node);
+          node = rotationLR(node)
         }
       }
     }
   } else if (element > node.key) {
-    node.right = insertNode(node.right, element);
+    node.right = insertNode(node.right, element)
     if (null !== node.right) {
       if (heightNode(node.right) - heightNode(node.left) > 1) {
         if (element > node.right.key) {
-          node = rotationRR(node);
+          node = rotationRR(node)
         } else {
-          node = rotationRL(node);
+          node = rotationRL(node)
         }
       }
     }
   }
-  return node;
+  return node
 }
 ```
 

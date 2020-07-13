@@ -311,7 +311,7 @@ MSL（Maximum Segment Lifetime），TCP 允许不同的实现可以设置不同�
 
 HTTP 协议（超文本传输协议，英文：Hyper Text Transfer Protocol），是用于从万维网（WWW:World Wide Web ）服务器传输超文本到本地浏览器的传送协议。
 
-通常，由浏览器作为 HTTP 客户端通过 URL 向 HTTP 服务端即 WEB 服务器发送所有请求。WEB 服务器根据接收到的请求后，向客户端发送响应信息。
+通常，由浏览器作为 HTTP 客户端通过 URL 向 HTTP 服务端即 Web 服务器发送所有请求。Web 服务器根据接收到的请求后，向客户端发送响应信息。
 
 假如服务器配置了 HTTP 重定向，就会返回一个重定向响应，浏览器就会根据响应，重新发送 HTTP 请求。
 
@@ -380,9 +380,9 @@ HTTP 协议（超文本传输协议，英文：Hyper Text Transfer Protocol）�
 
 ## 服务器处理
 
-终于，HTTP 请求发送到了服务器。常见的 WEB 服务器包括：[Apache HTTP Server][apache http server]、[Internet Information Server][iis] 以及 [NGINX][nginx]。
+终于，HTTP 请求发送到了服务器。常见的 Web 服务器包括：[Apache HTTP Server][apache http server]、[Internet Information Server][iis] 以及 [NGINX][nginx]。
 
-由于 `Nginx` 具有在高并发下保持低资源低消耗高性能和高度模块化的设计，模块编写简单，以及配置文件简洁等优点。一大部分 WEB 服务器都会使用 `Nginx`，通常作为负载均衡器。
+由于 `Nginx` 具有在高并发下保持低资源低消耗高性能和高度模块化的设计，模块编写简单，以及配置文件简洁等优点。一大部分 Web 服务器都会使用 `Nginx`，通常作为负载均衡器。
 
 <!-- nginx 四大特点介绍和配置 -->
 
@@ -417,7 +417,7 @@ HTML 的解析不能使用常见的自顶向下或自底向上方法来进行分
 
 ### CSS 解析
 
-- 根据 [CSS 词法和句法](http://www.w3.org/TR/CSS2/grammar.html) 分析 CSS 文件和 `<style>` 标签包含的内容以及 `style` 属性的值；
+- 根据 [CSS 词法和句法](http://www.w3.org/TR/CSS2/grammar.html) 分析 CSS 文件和 `<style>` 标签包含的内容以及属性的值；
 - 每个 CSS 文件都被解析成一个样式表对象（StyleSheet object），这个对象里包含了带有选择器的 CSS 规则，和对应 CSS 语法的对象；
 - CSS 解析器可能是自顶向下的，也可能是使用解析器生成器生成的自底向上的解析器。
 
@@ -440,7 +440,7 @@ HTML 的解析不能使用常见的自顶向下或自底向上方法来进行分
 
 为了避免这种情况，应该以下原则：
 
-- CSS 资源排在 `JavaScript` 资源前面；
+- CSS 资源排在 JavaScript 资源前面；
 - JS 放在 HTML 最底部，也就是 `</body>` 前。
 
 另外，如果要改变阻塞模式，可以使用 `script` 标签的 `defer` 与 `async` 属性。

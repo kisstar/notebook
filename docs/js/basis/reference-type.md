@@ -2,9 +2,9 @@
 
 引用类型的值（对象）是引用类型的一个实例。
 
-在 `ECMAScript` 中，引用类型是一种数据结构，用于将数据和功能组织在一起。它也常被称为类，但这种称呼并不妥当。
+在 ECMAScript 中，引用类型是一种数据结构，用于将数据和功能组织在一起。它也常被称为类，但这种称呼并不妥当。
 
-尽管 `ECMAScript` 从技术上讲是一门面向对象的语言，但它不具备传统的面向对象语言所支持的类和接口等基本结构。
+尽管 ECMAScript 从技术上讲是一门面向对象的语言，但它不具备传统的面向对象语言所支持的类和接口等基本结构。
 
 ## Object 类型
 
@@ -13,23 +13,23 @@
 创建 `Object` 实例的方式有两种。第一种是使用 `new` 操作符后跟 `Object` 构造函数：
 
 ```javascript
-var person = new Object();
-person.name = 'Anani';
-person.age = 24;
+var person = new Object()
+person.name = 'Anani'
+person.age = 24
 ```
 
 另一种方式是使用对象字面量表示法：
 
 ```javascript
 var person = {
-    name: 'Anani',
-    age: 24
-};
+  name: 'Anani',
+  age: 24,
+}
 ```
 
-`ECMAScript` 中赋值操作符表示后面是一个值，而表达式上下文指的是能够返回一个值（表达式）。所以对象字面量表示法中左边的花括号表示对象字面量的开始，因为它出现在表达式上下文中。同样的花括号如果出现在语句的后面则表示语句块的开始。
+ECMAScript 中赋值操作符表示后面是一个值，而表达式上下文指的是能够返回一个值（表达式）。所以对象字面量表示法中左边的花括号表示对象字面量的开始，因为它出现在表达式上下文中。同样的花括号如果出现在语句的后面则表示语句块的开始。
 
-通常访问对象属性时使用的都是点表示法，然而，在 `JavaScript` 中也可以使用方括号表示法来访问对象的属性。在使用方括号语法时，应该将要访问的属性以字符串的形式放在方括号中。另外后者还具有以下特点：
+通常访问对象属性时使用的都是点表示法，然而，在 JavaScript 中也可以使用方括号表示法来访问对象的属性。在使用方括号语法时，应该将要访问的属性以字符串的形式放在方括号中。另外后者还具有以下特点：
 
 - 方括号语法的主要优点是可以通过变量来访问属性。
 - 如果属性名中包含会导致语法错误的字符，或者属性名使用的是关键字或保留字，也可以使用方括号表示法。
@@ -37,13 +37,13 @@ var person = {
 ::: tip
 
 - 通常，除非必须使用变量来访问属性，否则我们建议使用点表示法。
-- 所有对象都具有 `toLocaleString()`、`toString()`和`valueOf()`方法。
+- 所有对象都具有 `toLocaleString()`、`toString()` 和 `valueOf()`方法。
 
 :::
 
 ## Array 类型
 
-`ECMAScript` 数组与其他语言中的数组都是数据的有序列表，不同的是，它每一项可以保存任何类型的数据。
+ECMAScript 数组与其他语言中的数组都是数据的有序列表，不同的是，它每一项可以保存任何类型的数据。
 
 创建数组的基本方式有两种。第一种是使用 `Array` 构造函数：
 
@@ -57,8 +57,8 @@ vai features = new Array();
 创建数组的第二种基本方式是使用数组字面量表示法，数组字面量由一对包含数组项的方括号表示，多个数组项之间以逗号隔开：
 
 ```javascript
-var values = [1, 2,];   // 会创建一个包含 2 或在 IE8 及更早版包含 3 项的数组
-var options = [,,,,,];  // 会创建一个包含 5 或在 IE8 及更早版包含 6 项的数组
+var values = [1, 2] // 会创建一个包含 2 或在 IE8 及更早版包含 3 项的数组
+var options = [, , , , ,] // 会创建一个包含 5 或在 IE8 及更早版包含 6 项的数组
 ```
 
 在读取和设置数组的值时，要使用方括号并提供相应值的基于 0 的数字索引，数组的项数保存在其 `length` 属性中，这个属性始终会返回 0 或更大的值。该属性还具有以下特征：
@@ -68,7 +68,7 @@ var options = [,,,,,];  // 会创建一个包含 5 或在 IE8 及更早版包含
 - 当把一个值放在超出当前数组大小的位置上时，数组就会重新计算其长度值。
 - 当设置 `length` 的值为零时，则清空整个数组。
 
-如果数组中的某一项的值是 `null` 或者 `undefined`，那么该值在 `join()`、`toLocaleString()`、`toString()`和`valueOf()`方法返回的结果中以空字符串表示。
+如果数组中的某一项的值是 `null` 或者 `undefined`，那么该值在 `join()`、`toLocaleString()`、`toString()` 和 `valueOf()`方法返回的结果中以空字符串表示。
 
 ## Date 类型
 
@@ -77,23 +77,23 @@ var options = [,,,,,];  // 会创建一个包含 5 或在 IE8 及更早版包含
 创建一个日期对象，使用 `new` 操作符和 `Date` 构造函数即可：
 
 ```javascript
-var now = new Date();
+var now = new Date()
 ```
 
-如果想根据特定的日期和时间创建日期对象，必须传入表示该日期的毫秒数(即从 UTC 时间 1970 年 1 月 1 日午 夜起至该日期止经过的毫秒数)，。为了简化这一计算过程，`ECMAScript` 提供了两个方法：`Date.parse()` 和 `Date.UTC()`。
+如果想根据特定的日期和时间创建日期对象，必须传入表示该日期的毫秒数(即从 UTC 时间 1970 年 1 月 1 日午 夜起至该日期止经过的毫秒数)。为了简化这一计算过程，ECMAScript 提供了两个方法：`Date.parse()` 和 `Date.UTC()`。
 
 `Date.parse()` 方法接收一个表示日期的字符串参数，然后尝试根据这个字符串返回相应日期的毫秒数。
 
-<font class="text-muted"><code>ECMA-262</code> 没有定义 <code>Date.parse()</code> 应该支持哪种日期格式，因此这个方法的行为因实现而异，而且通常是因地区而异。</font>
+<em class="text-muted"><code>ECMA-262</code> 没有定义 <code>Date.parse()</code> 应该支持哪种日期格式，因此这个方法的行为因实现而异，而且通常是因地区而异。</em>
 
 如果传入 `Date.parse()` 方法的字符串不能表示日期，那么它会返回 NaN。实际上，如果直接将表示日期的字符串传递给 `Date` 构造函数，也会在后台调用 `Date.parse()`。
 
 ```javascript
 // 如为 2004年 5 月 25 日创建一个日期对象
 // 可以使用下面的代码：
-var someDate = new Date(Date.parse("May 25, 2004"));
+var someDate = new Date(Date.parse('May 25, 2004'))
 // 与下面的代码等价
-var someDate = new Date("May 25, 2004");
+var someDate = new Date('May 25, 2004')
 ```
 
 `Date.UTC()` 方法同样也返回表示日期的毫秒数，但它与 `Date.parse()` 在构建值时使用不同的信息。
@@ -104,19 +104,19 @@ var someDate = new Date("May 25, 2004");
 
 ```javascript
 // 本地时间 2005 年5 月 5 日下午 5:55:55
-var allFives = new Date(2005, 4, 5, 17, 55, 55);
+var allFives = new Date(2005, 4, 5, 17, 55, 55)
 ```
 
-`ECMAScript 5` 添加了 `Data.now()` 方法，返回表示调用这个方法时的日期和时间的毫秒数。
+ECMAScript 5 添加了 `Data.now()` 方法，返回表示调用这个方法时的日期和时间的毫秒数。
 
 ## RegExp 类型
 
-`ECMAScript` 通过 `RegExp` 类型来支持正则表达式。使用下面类似 `Perl` 的语法，就可以创建一个正则表达式：
+ECMAScript 通过 `RegExp` 类型来支持正则表达式。使用下面类似 `Perl` 的语法，就可以创建一个正则表达式：
 
 ```javascript
 // pattern 部分可以是任何简单或复杂的正则表达式
 // 每个正则表达式都可带有一或多个标志(flags)，用以标明正则表达式的行为
-var expression = /pattern/flags;
+var expression = /pattern/afgls
 ```
 
 正则表达式的匹配模式支持下列 3 个标志：
@@ -126,7 +126,9 @@ var expression = /pattern/flags;
 - **m**：表示多行（multiline）模式，即在到达一行文本末尾时还会继续查找下一行中是否存在与模式匹配的项。
 
 ::: tip
-模式中使用的所有元字符都必须转义。正则表达式中的元字符包括：`( [ { \ ^ $ | ) ? * + .]}`
+
+模式中使用的所有元字符都必须转义。正则表达式中的元字符包括：`( [ { \ ^ $ | ) ? * + .]}`。
+
 :::
 
 前面我们使用的是字面量形式定义的正则表达式，另一种创建正则表达式的方式就是使用 `RegExp` 构造函数，它接收两个参数：
@@ -136,17 +138,17 @@ var expression = /pattern/flags;
 
 ```javascript
 // 匹配第一个"bat"或"cat"，不区分大小写
-var pattern = new RegExp("[bc]at", "i");
+var pattern = new RegExp('[bc]at', 'i')
 ```
 
 `RegExp` 构造函数的模式参数是字符串，所以在某些情况下要对字符进行双重转义。所有元字符都必须双重转义，那些已经转义过的字符也是如此。
 
-| 字面量模式 | 等价的字符串 |
-| :--- | :---|
-| `/\[bc\]at/` | `"\\[bc\\]at"` |
-| `/\.at/` | `"\\.at"` |
-| `/name\/age/` | `"name\\/age"` |
-| `/\d.\d{1,2}/` | `"\\d.\\d{1,2}"` |
+| 字面量模式         | 等价的字符串            |
+| :----------------- | :---------------------- |
+| `/\[bc\]at/`       | `"\\[bc\\]at"`          |
+| `/\.at/`           | `"\\.at"`               |
+| `/name\/age/`      | `"name\\/age"`          |
+| `/\d.\d{1,2}/`     | `"\\d.\\d{1,2}"`        |
 | `/\w\\hello\\123/` | `"\\w\\\\hello\\\\123"` |
 
 ## Function 类型
@@ -157,7 +159,7 @@ var pattern = new RegExp("[bc]at", "i");
 
 ```javascript
 function sayHello(name) {
-    console.log('Hello' + name);
+  console.log('Hello' + name)
 }
 ```
 
@@ -165,7 +167,7 @@ function sayHello(name) {
 
 ```javascript
 var sayHello = function(name) {
-    console.log('Hello' + name);
+  console.log('Hello' + name)
 }
 ```
 
@@ -173,26 +175,28 @@ var sayHello = function(name) {
 
 ```javascript
 // 该语法会导致解析两次代码（第一次是解析常规 ECMAScript 代码，第二次是解析传入构造函数中的字符串）
-var sayHello = new Function("name", "console.log('Hello' + name);");
+var sayHello = new Function('name', "console.log('Hello' + name);")
 ```
 
 解析器会率先读取函数声明，并使其在执行任何代码之前可用（可以访问）；至于函数表达式，则必须等到解析器执行到它所在的代码行，才会真正被解释执行。
 
 ## 基本包装类型
 
-`ECMAScript` 还提供了 3 个特殊的引用类型：`Boolean`、`Number` 和 `String`。每当读取一个基本类型值的时候，后台就会创建一个对应的基本包装类型的对象，从而让我们能够调用一些方法来操作这些数据。
+ECMAScript 还提供了 3 个特殊的引用类型：`Boolean`、`Number` 和 `String`。每当读取一个基本类型值的时候，后台就会创建一个对应的基本包装类型的对象，从而让我们能够调用一些方法来操作这些数据。
 
-读取模式中访问字符串时，后台都会自动完成下列处理(这三个步骤也分别类似地适用于 Boolean 和 Number 类型对应的布尔值和数字值)：
+读取模式中访问字符串时，后台都会自动完成下列处理(这三个步骤也分别类似地适用于 `Boolean` 和 `Number` 类型对应的布尔值和数字值)：
 
-1. 创建 String 类型的一个实例；
+1. 创建 `String` 类型的一个实例；
 2. 在实例上调用指定的方法；
 3. 销毁这个实例。
 
-当然，可以显式地调用 `Boolean`、`Number`和`String`来创建基本包装类型的对象。不过，应该在绝对必要的情况下再这样做，另外 `Object` 构造函数也会像工厂方法一样，根据传入值的类型返回相应基本包装类型的实例。
+当然，可以显式地调用 `Boolean`、`Number` 和 `String`来创建基本包装类型的对象。不过，应该在绝对必要的情况下再这样做。
+
+另外 `Object` 构造函数也会像工厂方法一样，根据传入值的类型返回相应基本包装类型的实例。
 
 ```javascript
-var obj = new Object("some text");
-console.log(obj instanceof String);   //true
+var obj = new Object('some text')
+console.log(obj instanceof String) // true
 ```
 
 尽管我们不建议显式地创建基本包装类型的对象，但它们操作基本类型值的能力还是相当重要的。而每个基本包装类型都提供了操作相应值的便捷方法。
@@ -204,7 +208,7 @@ console.log(obj instanceof String);   //true
 ```javascript
 // 如果布尔对象无初始值或者其值为:0 -0 null "" false undefined NaN 那么对象的值为 false
 // 否则，其值为 true
-var booleanObject = new Boolean(true);
+var booleanObject = new Boolean(true)
 ```
 
 ### Number 类型
@@ -212,7 +216,7 @@ var booleanObject = new Boolean(true);
 `Number` 是与数字值对应的引用类型。要创建 `Number` 对象，可以在调用 `Number` 构造函数时向其中传递相应的数值。下面是一个例子：
 
 ```javascript
-var numberObject = new Number(10);
+var numberObject = new Number(10)
 ```
 
 ### String 类型
@@ -220,39 +224,41 @@ var numberObject = new Number(10);
 `String` 类型是字符串的对象包装类型，可以像下面这样使用 `String` 构造函数来创建：
 
 ```javascript
-var stringObject = new String("hello world");
+var stringObject = new String('hello world')
 ```
 
-`String` 类型的每个实例都有一个 `length` 属性，表示字符串中包含多个字符。应该注意的是，即使字符串中包含双字节字符（不是占一个字节的 ASCII字符），每个字符也仍然算一个字符。
+`String` 类型的每个实例都有一个 `length` 属性，表示字符串中包含多个字符。应该注意的是，即使字符串中包含双字节字符（不是占一个字节的 ASCII 字符），每个字符也仍然算一个字符。
 
 ## 单体内置对象
 
-`ECMA-262` 对内置对象的定义是：“由 `ECMAScript` 实现提供的、不依赖于宿主环境的对象，这些对象在 `ECMAScript` 程序执行之前就已经存在了。”。
+ECMA-262 对内置对象的定义是：“由 ECMAScript 实现提供的、不依赖于宿主环境的对象，这些对象在 ECMAScript 程序执行之前就已经存在了。”。
 
 比如前面介绍的 `Object`、`Array` 和 `String`，另外还有两个单体内置对象：`Global` 和 `Math`。
 
 ### Global 对象
 
-`ECMAScript` 中的 `Global` 对象在某种意义上是作为一个终极的“兜底儿对象”，不属于任何其他对象的属性和方法，最终都是它的属性和方法。诸如 `isNaN()`、`isFinite()`、`parseInt()`以及`parseFloat()`等，实际上全都是 `Global` 对象的方法。
+ECMAScript 中的 `Global` 对象在某种意义上是作为一个终极的“兜底儿对象”，不属于任何其他对象的属性和方法，最终都是它的属性和方法。
 
-`ECMAScript` 虽然没有指出如何直接访问 `Global` 对象，但 `Web` 浏览器都是将这个全局对象作为 `window` 对象的一部分加以实现的。在全局作用域中声明的所有变量和函数，就都成为了 `window` 对象的属性。
+诸如 `isNaN()`、`isFinite()`、`parseInt()`以及`parseFloat()`等，实际上全都是 `Global` 对象的方法。
+
+ECMAScript 虽然没有指出如何直接访问 `Global` 对象，但 `Web` 浏览器都是将这个全局对象作为 `window` 对象的一部分加以实现的。在全局作用域中声明的所有变量和函数，就都成为了 `window` 对象的属性。
 
 另一种取得 Global 对象的方法是使用以下代码：
 
 ```javascript
-var global = function() {
-    return this;
-}();
+var global = (function() {
+  return this
+})()
 ```
 
 ### Math 对象
 
-`ECMAScript` 还为保存数学公式和信息提供了一个公共位置，即 `Math` 对象。
+ECMAScript 还为保存数学公式和信息提供了一个公共位置，即 `Math` 对象。
 
 `Math` 对象提供了很多属性和方法，用于辅助完成复杂的数学计算任务。
 
 ## 参考资料
 
 - [JavaScript 指南](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide)
-- JavaScript 高级程序设计(第3版)
+- JavaScript 高级程序设计(第 3 版)
 - [JavaScript 对象参考手册](http://www.runoob.com/jsref/jsref-tutorial.html)

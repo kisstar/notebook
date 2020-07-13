@@ -37,15 +37,15 @@
 ```javascript
 class Node {
   constructor(key) {
-    this.key = key;
-    this.left = null;
-    this.right = null;
+    this.key = key
+    this.left = null
+    this.right = null
   }
 }
 
 class BinarySearchTree {
   constructor() {
-    this._root = null;
+    this._root = null
   }
 }
 ```
@@ -59,47 +59,47 @@ class BinarySearchTree {
 ```javascript
 class BinarySearchTree {
   insert(key) {
-    const node = new Node(key);
+    const node = new Node(key)
     if (null === this._root) {
-      this._root = node;
+      this._root = node
     } else {
-      this._insertNode(this._root, node);
+      this._insertNode(this._root, node)
     }
   }
 
   _insertNode(node, newNode) {
     if (newNode.key < node.key) {
       if (null === node.left) {
-        node.left = newNode;
+        node.left = newNode
       } else {
-        this._insertNode(node.left, newNode);
+        this._insertNode(node.left, newNode)
       }
     } else {
       if (null === node.right) {
-        node.right = newNode;
+        node.right = newNode
       } else {
-        this._insertNode(node.right, newNode);
+        this._insertNode(node.right, newNode)
       }
     }
   }
 }
 
-const tree = new BinarySearchTree();
-tree.insert(11);
-tree.insert(7);
-tree.insert(15);
-tree.insert(5);
-tree.insert(3);
-tree.insert(9);
-tree.insert(8);
-tree.insert(10);
-tree.insert(13);
-tree.insert(12);
-tree.insert(14);
-tree.insert(20);
-tree.insert(18);
-tree.insert(25);
-tree.insert(6);
+const tree = new BinarySearchTree()
+tree.insert(11)
+tree.insert(7)
+tree.insert(15)
+tree.insert(5)
+tree.insert(3)
+tree.insert(9)
+tree.insert(8)
+tree.insert(10)
+tree.insert(13)
+tree.insert(12)
+tree.insert(14)
+tree.insert(20)
+tree.insert(18)
+tree.insert(25)
+tree.insert(6)
 ```
 
 `inOrderTraverse` 方法：
@@ -109,18 +109,18 @@ tree.insert(6);
 ```javascript
 class BinarySearchTree {
   inOrderTraverse(node = this._root) {
-    if (null === node) return;
+    if (null === node) return
     if (node.left) {
-      this.inOrderTraverse(node.left);
+      this.inOrderTraverse(node.left)
     }
-    console.log(node.value);
+    console.log(node.value)
     if (node.right) {
-      this.inOrderTraverse(node.right);
+      this.inOrderTraverse(node.right)
     }
   }
 }
 
-tree.inOrderTraverse(); // 3 5 6 7 8 9 10 11 12 13 14 15 18 20 25
+tree.inOrderTraverse() // 3 5 6 7 8 9 10 11 12 13 14 15 18 20 25
 ```
 
 `preOrderTraverse` 方法：
@@ -130,18 +130,18 @@ tree.inOrderTraverse(); // 3 5 6 7 8 9 10 11 12 13 14 15 18 20 25
 ```javascript
 class BinarySearchTree {
   preOrderTraverse(node = this._root) {
-    if (null === node) return;
-    console.log(node.key);
+    if (null === node) return
+    console.log(node.key)
     if (node.left) {
-      this.preOrderTraverse(node.left);
+      this.preOrderTraverse(node.left)
     }
     if (node.right) {
-      this.preOrderTraverse(node.right);
+      this.preOrderTraverse(node.right)
     }
   }
 }
 
-tree.preOrderTraverse(); // 11 7 5 3 6 9 8 10 15 13 12 14 20 18 25
+tree.preOrderTraverse() // 11 7 5 3 6 9 8 10 15 13 12 14 20 18 25
 ```
 
 `postOrderTraverse` 方法：
@@ -151,18 +151,18 @@ tree.preOrderTraverse(); // 11 7 5 3 6 9 8 10 15 13 12 14 20 18 25
 ```javascript
 class BinarySearchTree {
   postOrderTraverse(node = this._root) {
-    if (null === node) return;
+    if (null === node) return
     if (node.left) {
-      this.postOrderTraverse(node.left);
+      this.postOrderTraverse(node.left)
     }
     if (node.right) {
-      this.postOrderTraverse(node.right);
+      this.postOrderTraverse(node.right)
     }
-    console.log(node.key);
+    console.log(node.key)
   }
 }
 
-tree.postOrderTraverse(); // 3 6 5 8 10 9 7 12 14 13 18 25 20 15 11
+tree.postOrderTraverse() // 3 6 5 8 10 9 7 12 14 13 18 25 20 15 11
 ```
 
 `min` 方法：
@@ -171,13 +171,13 @@ tree.postOrderTraverse(); // 3 6 5 8 10 9 7 12 14 13 18 25 20 15 11
 class BinarySearchTree {
   min(node = this._root) {
     while (node && node.left) {
-      node = node.left;
+      node = node.left
     }
-    return node && node.key;
+    return node && node.key
   }
 }
 
-tree.min(); // 3
+tree.min() // 3
 ```
 
 `max` 方法：
@@ -186,13 +186,13 @@ tree.min(); // 3
 class BinarySearchTree {
   max(node = this._root) {
     while (node && node.right) {
-      node = node.right;
+      node = node.right
     }
-    return node && node.key;
+    return node && node.key
   }
 }
 
-tree.max(); // 5
+tree.max() // 5
 ```
 
 `search` 方法：
@@ -200,23 +200,23 @@ tree.max(); // 5
 ```javascript
 class BinarySearchTree {
   search(key) {
-    return this._searchNode(this._root, key);
+    return this._searchNode(this._root, key)
   }
 
   _searchNode(node, key) {
-    if (node === null) return false;
+    if (node === null) return false
     if (key < node.key) {
-      return this._searchNode(node.left, key);
+      return this._searchNode(node.left, key)
     } else if (key > node.key) {
-      return this._searchNode(node.right, key);
+      return this._searchNode(node.right, key)
     } else {
-      return true;
+      return true
     }
   }
 }
 
-console.log(tree.search(6)); // true
-console.log(tree.search(16)); // false
+console.log(tree.search(6)) // true
+console.log(tree.search(16)) // false
 ```
 
 `remove` 方法：
@@ -237,32 +237,32 @@ console.log(tree.search(16)); // false
 ```javascript
 class BinarySearchTree {
   remove(key) {
-    this._root = this._removeNode(this._root, key);
+    this._root = this._removeNode(this._root, key)
   }
 
   _removeNode(node, key) {
-    if (null === node) return node;
+    if (null === node) return node
     if (key < node.key) {
-      node.left = this._removeNode(node.left, key);
-      return node;
+      node.left = this._removeNode(node.left, key)
+      return node
     } else if (key > node.key) {
-      node.right = this._removeNode(node.right, key);
-      return node;
+      node.right = this._removeNode(node.right, key)
+      return node
     } else {
       if (null === node.left && null === node.right) {
-        node = null;
-        return node;
+        node = null
+        return node
       } else if (null === node.left) {
-        node = node.right;
-        return node;
+        node = node.right
+        return node
       } else if (null === node.right) {
-        node = node.left;
-        return node;
+        node = node.left
+        return node
       } else {
-        const min = this.min(node.right); // 找出该节点右侧最小的节点
-        node.key = min;
-        this._removeNode(node.right, min);
-        return node;
+        const min = this.min(node.right) // 找出该节点右侧最小的节点
+        node.key = min
+        this._removeNode(node.right, min)
+        return node
       }
     }
   }
@@ -274,131 +274,131 @@ class BinarySearchTree {
 ```javascript
 class Node {
   constructor(key) {
-    this.key = key;
-    this.left = null;
-    this.right = null;
+    this.key = key
+    this.left = null
+    this.right = null
   }
 }
 
 class BinarySearchTree {
   constructor() {
-    this._root = null;
+    this._root = null
   }
 
   insert(key) {
-    const node = new Node(key);
+    const node = new Node(key)
     if (null === this._root) {
-      this._root = node;
+      this._root = node
     } else {
-      this._insertNode(this._root, node);
+      this._insertNode(this._root, node)
     }
   }
 
   _insertNode(node, newNode) {
     if (newNode.key < node.key) {
       if (null === node.left) {
-        node.left = newNode;
+        node.left = newNode
       } else {
-        this._insertNode(node.left, newNode);
+        this._insertNode(node.left, newNode)
       }
     } else {
       if (null === node.right) {
-        node.right = newNode;
+        node.right = newNode
       } else {
-        this._insertNode(node.right, newNode);
+        this._insertNode(node.right, newNode)
       }
     }
   }
 
   preOrderTraverse(node = this._root) {
-    if (null === node) return;
-    console.log(node.key);
+    if (null === node) return
+    console.log(node.key)
     if (node.left) {
-      this.preOrderTraverse(node.left);
+      this.preOrderTraverse(node.left)
     }
     if (node.right) {
-      this.preOrderTraverse(node.right);
+      this.preOrderTraverse(node.right)
     }
   }
 
   inOrderTraverse(node = this._root) {
-    if (null === node) return;
+    if (null === node) return
     if (node.left) {
-      this.inOrderTraverse(node.left);
+      this.inOrderTraverse(node.left)
     }
-    console.log(node.key);
+    console.log(node.key)
     if (node.right) {
-      this.inOrderTraverse(node.right);
+      this.inOrderTraverse(node.right)
     }
   }
 
   postOrderTraverse(node = this._root) {
-    if (null === node) return;
+    if (null === node) return
     if (node.left) {
-      this.postOrderTraverse(node.left);
+      this.postOrderTraverse(node.left)
     }
     if (node.right) {
-      this.postOrderTraverse(node.right);
+      this.postOrderTraverse(node.right)
     }
-    console.log(node.key);
+    console.log(node.key)
   }
 
   min(node = this._root) {
     while (node && node.left) {
-      node = node.left;
+      node = node.left
     }
-    return node && node.key;
+    return node && node.key
   }
 
   max(node = this._root) {
     while (node && node.right) {
-      node = node.right;
+      node = node.right
     }
-    return node && node.key;
+    return node && node.key
   }
 
   search(key) {
-    return this._searchNode(this._root, key);
+    return this._searchNode(this._root, key)
   }
 
   _searchNode(node, key) {
-    if (node === null) return false;
+    if (node === null) return false
     if (key < node.key) {
-      return this._searchNode(node.left, key);
+      return this._searchNode(node.left, key)
     } else if (key > node.key) {
-      return this._searchNode(node.right, key);
+      return this._searchNode(node.right, key)
     } else {
-      return true;
+      return true
     }
   }
 
   remove(key) {
-    this._root = this._removeNode(this._root, key);
+    this._root = this._removeNode(this._root, key)
   }
 
   _removeNode(node, key) {
-    if (null === node) return node;
+    if (null === node) return node
     if (key < node.key) {
-      node.left = this._removeNode(node.left, key);
-      return node;
+      node.left = this._removeNode(node.left, key)
+      return node
     } else if (key > node.key) {
-      node.right = this._removeNode(node.right, key);
-      return node;
+      node.right = this._removeNode(node.right, key)
+      return node
     } else {
       if (null === node.left && null === node.right) {
-        node = null;
-        return node;
+        node = null
+        return node
       } else if (null === node.left) {
-        node = node.right;
-        return node;
+        node = node.right
+        return node
       } else if (null === node.right) {
-        node = node.left;
-        return node;
+        node = node.left
+        return node
       } else {
-        const min = this.min(node.right); // 找出该节点右侧最小的节点
-        node.key = min;
-        this._removeNode(node.right, min);
-        return node;
+        const min = this.min(node.right) // 找出该节点右侧最小的节点
+        node.key = min
+        this._removeNode(node.right, min)
+        return node
       }
     }
   }

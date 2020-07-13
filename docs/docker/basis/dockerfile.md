@@ -135,7 +135,7 @@ RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-
   && curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/SHASUMS256.txt.asc"
 ```
 
-示例中设置 `NODE_VERSION = 7.2.0`，在后续的指令中可以通过 $NODE_VERSION 来引用。
+示例中设置 `NODE_VERSION = 7.2.0`，在后续的指令中可以通过 \$NODE_VERSION 来引用。
 
 ### ADD
 
@@ -192,7 +192,9 @@ VOLUME <路径>
 如果用户启动容器时候指定了运行的命令，则会覆盖掉 CMD 指定的命令。
 
 ::: waring
+
 如果 Dockerfile 中如果存在多个 CMD 指令，仅最后一个生效。
+
 :::
 
 ### ENTRYPOINT
@@ -210,7 +212,9 @@ ENTRYPOINT command param1 param2（shell 中执行）
 如果运行 `docker run` 时使用了 `--entrypoint` 选项，此选项的参数可当作要运行的程序覆盖 ENTRYPOINT 指令指定的程序。
 
 ::: waring
+
 每个 Dockerfile 中只能有一个 ENTRYPOINT，当指定多个时，只有最后一个起效。
+
 :::
 
 ### ONBUILD
@@ -266,4 +270,4 @@ CMD /usr/local/apache-tomcat-9.0.8/bin/startup.sh && tail -F /usr/local/apache-t
 
 - [Dockerfile reference | Docker Documentation](https://docs.docker.com/engine/reference/builder/)
 - [Docker Dockerfile | 菜鸟教程](https://www.runoob.com/docker/docker-dockerfile.html)
-- [指令 - Docker —— 从入门到实践 - 极客学院Wiki](https://wiki.jikexueyuan.com/project/docker-technology-and-combat/instructions.html)
+- [指令 - Docker —— 从入门到实践 - 极客学院 Wiki](https://wiki.jikexueyuan.com/project/docker-technology-and-combat/instructions.html)

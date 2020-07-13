@@ -4,8 +4,8 @@
 
 不能修改列表节点中的值，只能更改节点本身。
 
-```html
-Given 1->2->3->4, you should return the list as 2->1->4->3.
+```bash
+<!-- Given 1->2->3->4, you should return the list as 2->1->4->3. -->
 ```
 
 ## 思路

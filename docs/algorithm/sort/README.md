@@ -1,4 +1,3 @@
-
 # 算法
 
 算法（Algorithm）是指解题方案的准确而完整的描述，是一系列解决问题的清晰指令，算法代表着用系统的方法描述解决问题的策略机制。
@@ -26,13 +25,13 @@
 
 名词解释：
 
-* `n`：数据规模，也就是参与排序的个数。
-* `k`："桶"的个数。
-* `In-place`：占用常数内存，不占用额外内存。
-* `Out-place`：占用额外内存。
-* 稳定性：排序后 2 个相等键值的顺序和排序之前它们的顺序是否相同，相同则稳定。
+- `n`：数据规模，也就是参与排序的个数。
+- `k`："桶"的个数。
+- `In-place`：占用常数内存，不占用额外内存。
+- `Out-place`：占用额外内存。
+- 稳定性：排序后 2 个相等键值的顺序和排序之前它们的顺序是否相同，相同则稳定。
 
 ## 参考资料
 
-* [markdown 数学公式Latex语法 - 掘金](https://juejin.im/post/5af93ec6518825428b38e7f4)
-* [1.0 十大经典排序算法 | 菜鸟教程](https://www.runoob.com/w3cnote/ten-sorting-algorithm.html)
+- [markdown 数学公式 Latex 语法 - 掘金](https://juejin.im/post/5af93ec6518825428b38e7f4)
+- [1.0 十大经典排序算法 | 菜鸟教程](https://www.runoob.com/w3cnote/ten-sorting-algorithm.html)

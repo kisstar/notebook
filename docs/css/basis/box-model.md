@@ -12,23 +12,25 @@
 
 <img :src="$withBase('/images/css/boxmodel.png')" alt="boxmodel">
 
-- 内容边界（Content edge）：由内容边界限制，容纳着元素的“真实”内容，例如文本、图像等，它的尺寸就是的 `content-box` 的尺寸。
+- 内容边界（Content Edge）：由内容边界限制，容纳着元素的“真实”内容，例如文本、图像等，它的尺寸就是 `content-box` 的尺寸。
 - 内边距边界（Padding Edge）：由内边距边界限制，扩展自内容区域，负责延伸内容区域的背景，填充元素中内容与边框的间距。它的尺寸就是 `padding-box` 的尺寸。
 - 边框边界（Border Edge）：由边框边界限制，扩展自内边距区域，是容纳边框的区域。其尺寸就是 `border-box` 的尺寸。
 - 外边框边界（Margin Edge）：由外边距边界限制，用空白区域扩展边框区域，以分开相邻的元素。它的尺寸为 `margin-box` 的尺寸。
 
-同几者密切相关的 CSS 属性包括  `box-sizing` 和 `background-clip`。`box-sizing` 属性定义了 `user agent` 应该如何计算一个元素的总宽度和总高度，可能的值主要包括 `content-box`（默认）和 `border-box`。
+同几者密切相关的 CSS 属性包括 `box-sizing` 和 `background-clip`。
 
-- 在默认情况（标准盒模型）下，`width` 与 `height` 只包括内容的宽和高， 不包括边框（border），内边距（padding），外边距（margin）。
+`box-sizing` 属性定义了 `user agent` 应该如何计算一个元素的总宽度和总高度，可能的值主要包括 `content-box`（默认）和 `border-box`。
+
+- 在默认情况（标准盒模型）下，`width` 与 `height` 只包括内容的宽和高， 不包括边框（border）、内边距（padding）和边距（margin）。
 - 而后者（IE 模型）的 `width` 和 `height` 属性则包括内容，内边距和边框，但不包括外边距。
 
 <img :src="$withBase('/images/css/W3C_and_Internet_Explorer_box_models.png')" alt="W3C_and_Internet_Explorer_box_models">
 
-对于 `background-clip`  属性，它被用来设置元素的背景（背景图片或颜色）是否延伸到边框下面。可能的值主要包括 `border-box`（默认）、`padding-box`、`content-box`。
+对于 `background-clip` 属性，它被用来设置元素的背景（背景图片或颜色）是否延伸到边框下面。可能的值主要包括 `border-box`（默认）、`padding-box`、`content-box`。
 
 - 默认情况下（`border-box`），背景延伸至边框外沿，且在边框下层。
 - 当设置为 `padding-box` 时，背景延伸至内边距外沿。
-- 而对于 `content-box`，背景被裁剪至内容区（content box）外沿。
+- 而对于 `content-box`，背景被裁剪至内容区外沿。
 
 ## 规定元素的盒类型
 
@@ -36,13 +38,46 @@
 
 当我们把 CSS 属性 `display` 设置为 `block`、`list-item`、`table` 等时就会使元素变为块级元素，每个块级元素生成一个主块级盒来包含子级盒。
 
-对应的，每个行级元素也会生成一个块级盒，行级盒可分布于多行中。当我们把 CSS 属性 `display` 设置为 `inline`，`inline-block` 等时就会使元素变为行级元素。
+对应的，每个行级元素也会生成一个行级盒，行级盒可分布于多行中。当我们把 CSS 属性 `display` 设置为 `inline`，`inline-block` 等时就会使元素变为行级元素。
 
-行级盒子的 `margin-top` 和 `margin-bottom` 不会产生效果，而其 `padding-top` 和 `padding-bottom` 则不会影响布局。
+```html
+<style>
+  p {
+    width: 50em;
+    padding: 1em;
+    line-height: 2;
+    background-color: #ccf;
+    border: 2px solid #00f;
+  }
 
-而且，由于行级盒子内容过多时会产生换行，而对于换行后的几行内容仍然属于一个行级盒子，所以我们在对多行的行级盒子设置 `margin-left` 时会发现只对第一行有效。
+  span {
+    margin-top: 1px;
+    padding-top: 1px;
+    background-color: #fcc;
+    border: 2px solid #f00;
+  }
+</style>
 
-另外，需要注意的是，当 `display` 设置为 `inline-block` 时，此元素会生成一个行级盒，所以会在行内显示，而同时又为其内容产生了块级盒，所以除了在行内显示外，它表现出的确是块级元素的特征。
+<p>
+  <span>
+    Learn to Code HTML & CSS is a simple and comprehensive guide dedicated to helping beginners
+    learn HTML and CSS. Outlining the fundamentals, this guide works through all common elements of
+    front-end design and development.
+  </span>
+</p>
+```
+
+运行上面的例子，可以发现由 `span` 标签产生的行级盒子在内容过多时产生了换行，但只在第一行有左边框，在最后一行有右边框，这正是因为行级盒子内容过多时产生了自动换行，而对于换行后的几行内容仍然属于一个行级盒子。
+
+也正是由于上面的特性，我们在对多行的行级盒子设置 `margin-left` 时会发现只对第一行有效。
+
+另外，行级盒子的 `margin-top` 和 `margin-bottom` 不会产生效果，其 `padding-top` 和 `padding-bottom` 也不会影响布局（不会撑开父元素）。
+
+::: tip
+
+当 `display` 设置为 `inline-block` 时，此元素会生成一个行级盒，所以会在行内显示，而同时又为其内容产生了块级盒，所以除了在行内显示外，它表现出的确是块级元素的特征。
+
+:::
 
 ## 盒子的嵌套
 
@@ -50,13 +85,13 @@
 
 - 可以包含多个子块级盒子。
 - 可以包含多个子行级盒子。
-- 其中不在行级元素中的文字，会生成匿名的块级盒。
+- 其中不在行级元素中的文字，会生成匿名的行级盒。
 - 其中不能同时存在块级和行级盒子，遇到此种情况，将会生成匿名的块级盒子来包裹行级盒。
 
 在行级盒子中：
 
 - 可以包含行级盒子。
-- 可以包含一个块级盒子，会被块级盒子拆分成两个行级盒子，这两个行级盒子又分别被匿名块级盒子所包含。
+- 可以包含一个块级盒子，其中与块级盒子并列的行级盒子会被匿名的块级盒子包裹。
 
 ## 外边距合并
 
@@ -70,28 +105,30 @@
 
 - 父元素与其第一个或最后一个子元素之间
 
-    如果在父元素与其第一个子元素之间不存在边框、内边距、行内内容，也没有创建块格式化上下文、或者清除浮动将两者的 `margin-top` 分开；或者在父元素与其最后一个子元素之间不存在边框、内边距、行内内容、`height`、`min-height`、`max-height` 将两者的 `margin-bottom` 分开，那么这两对外边距之间会产生折叠。此时子元素的外边距会“溢出”到父元素的外面。
+  如果在父元素与其第一个子元素之间不存在边框、内边距、行内内容，也没有创建块格式化上下文、或者清除浮动将两者的 `margin-top` 分开；或者在父元素与其最后一个子元素之间不存在边框、内边距、行内内容、`height`、`min-height`、`max-height` 将两者的 `margin-bottom` 分开，那么这两对外边距之间会产生折叠。此时子元素的外边距会“溢出”到父元素的外面。
 
 - 空的块级元素
 
-    如果一个块级元素中不包含任何内容，并且在其 `margin-top` 与 `margin-bottom` 之间没有边框、内边距、行内内容、`height`、`min-height` 将两者分开，则该元素的上下外边距会折叠。
+  如果一个块级元素中不包含任何内容，并且在其 `margin-top` 与 `margin-bottom` 之间没有边框、内边距、行内内容、`height`、`min-height` 将两者分开，则该元素的上下外边距会折叠。
 
-对外边距的含义，可以简单的理解为规定了元素外多大区域内不能摆放其它盒子，这对于理解外边距合并很有用。以相邻元素为例。
+对外边距的含义，可以简单的理解为规定了元素外多大区域内不能摆放其它盒子，这对于理解外边距合并很有用。
+
+以相邻元素为例：
 
 ```less
 .top {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .bottom {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 ```
 
 ```html
 <body>
-    <div class="top">top</div>
-    <div class="bottom">bottom</div>
+  <div class="top">top</div>
+  <div class="bottom">bottom</div>
 </body>
 ```
 
@@ -106,7 +143,7 @@
 
 ## 块格式化上下文（BFC）
 
-**块格式化上下文（Block Formatting Context，BFC）** 是 WEB 页面可视化 CSS 渲染的一部分，是块盒子的布局过程发生的区域，也是浮动元素与其他元素交互的区域。
+**块格式化上下文（Block Formatting Context，BFC）** 是 Web 页面可视化 CSS 渲染的一部分，是块盒子的布局过程发生的区域，也是浮动元素与其他元素交互的区域。
 
 常见的产生块级上下文的方式包括：
 
@@ -119,25 +156,25 @@
 
 ```less
 .generate-bfc {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .top {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .bottom {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 ```
 
 ```html
 <body>
-    <div class="generate-bfc">
-        <div class="top">top</div>
-    </div>
+  <div class="generate-bfc">
+    <div class="top">top</div>
+  </div>
 
-    <div class="bottom">bottom</div>
+  <div class="bottom">bottom</div>
 </body>
 ```
 
@@ -148,4 +185,4 @@
 ## 参考资料
 
 - [CSS 基础框盒模型 - CSS（层叠样式表） | MDN](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Box_Model)
-- [去除inline-block元素间间距的N种方法 « 张鑫旭-鑫空间-鑫生活](https://www.zhangxinxu.com/wordpress/2012/04/inline-block-space-remove-%e5%8e%bb%e9%99%a4%e9%97%b4%e8%b7%9d/)
+- [去除 inline-block 元素间间距的 N 种方法 « 张鑫旭-鑫空间-鑫生活](https://www.zhangxinxu.com/wordpress/2012/04/inline-block-space-remove-%e5%8e%bb%e9%99%a4%e9%97%b4%e8%b7%9d/)

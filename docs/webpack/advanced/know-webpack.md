@@ -1,23 +1,23 @@
 # 理解 Webpack 工作方式
 
-**Webpack** 的核心是一个现代 `JavaScript` 应用程序的静态模块打包工具。
+**Webpack** 的核心是一个现代 JavaScript 应用程序的静态模块打包工具。
 
 它处理应用程序时，会在内部构建一个依赖图(dependency graph)，这个依赖图会映射项目所需的每个模块，并生成一个或多个 `bundle`。
 
 在深入理解 `Webpack` 之前，我们需要知道它的本质其实是一种事件流的机制。如果我们查看源码会发现其中最核心的负责编译的 `Compiler` 和负责创建 `bundles` 的 `Compilation` 都是 `Tapable` 的实例。
 
-[Tapable](https://github.com/webpack/tapable) 是一个小型的库，允许你对一个 `JavaScript` 模块添加和应用插件。它可以被继承或混入到其他模块中，其核心原理依赖于发布订阅模式。
+[Tapable](https://github.com/webpack/tapable) 是一个小型的库，允许你对一个 JavaScript 模块添加和应用插件。它可以被继承或混入到其他模块中，其核心原理依赖于发布订阅模式。
 
 ## 发布订阅模式
 
-发布订阅模式被广泛用于 `JavaScript` 编程中，比如我们熟知的 `redux`、`EventEmitter` 等。在这中模式中，一个对象会订阅另一个对象的特定活动并在状态改变后获得通知。订阅者也可以被称为观察者，而被观察的对象称为发布者或者主题。
+发布订阅模式被广泛用于 JavaScript 编程中，比如我们熟知的 `redux`、`EventEmitter` 等。在这中模式中，一个对象会订阅另一个对象的特定活动并在状态改变后获得通知。订阅者也可以被称为观察者，而被观察的对象称为发布者或者主题。
 
 日常生活中的杂志订阅于此非常类似，订阅日志的人将会在特定日期收到日志。一个订阅者通常会包含四个部分：
 
-* `subscribers`，一个数组存储所有的订阅。
-* `subscribe`，一个接口，将订阅者添加到 `subscribers` 数组中。
-* `unsubscribe`，一个接口，将从 `subscribers` 数组中取消指定的订阅。
-* `publish`，一个方法，将循环遍历 `subscribers` 数组中的每个元素以通知（调用）它们。
+- `subscribers`，一个数组存储所有的订阅。
+- `subscribe`，一个接口，将订阅者添加到 `subscribers` 数组中。
+- `unsubscribe`，一个接口，将从 `subscribers` 数组中取消指定的订阅。
+- `publish`，一个方法，将循环遍历 `subscribers` 数组中的每个元素以通知（调用）它们。
 
 所有这三种方法都需要一个 type 参数，因为一个发布者可能发布多个事件，而订阅者只想订阅其中一种情况。由于这些事件对于任何发布者对象来说都是通用的，所以我们把它们放在一个对象中进行管理。接下来是一个简单的实现示例：
 
@@ -25,38 +25,38 @@
 class Publisher {
   constructor() {
     this.subscribers = {
-      any: []
-    };
+      any: [],
+    }
   }
 
   subscribe(fn, type) {
-    const { subscribers } = this;
-    type = type || "any";
+    const { subscribers } = this
+    type = type || 'any'
     if (typeof subscribers[type] === undefined) {
-      subscribers[type] = [];
+      subscribers[type] = []
     }
-    subscribers[type].push(fn);
+    subscribers[type].push(fn)
   }
 
   unsubscribe(fn, type) {
-    this.operateSubscribers("unsubscribe", fn, type);
+    this.operateSubscribers('unsubscribe', fn, type)
   }
 
   publish(type) {
-    this.operateSubscribers("publish", arg, type);
+    this.operateSubscribers('publish', arg, type)
   }
 
   operateSubscribers(action, arg, type) {
-    const { subscribers } = this;
-    type = type || "any";
+    const { subscribers } = this
+    type = type || 'any'
     subscribers.some((subscribe, i) => {
-      if (action === "publish") {
-        subscribe(arg);
+      if (action === 'publish') {
+        subscribe(arg)
       } else if (subscribe === arg) {
-        subscribers.splice(i, 1);
-        return true;
+        subscribers.splice(i, 1)
+        return true
       }
-    });
+    })
   }
 }
 ```
@@ -82,7 +82,7 @@ mkdir bin && cd $_ && touch my-pack.js
 ```json
 {
   "name": "my-pack",
-  "bin": "./bin/my-pack.js",
+  "bin": "./bin/my-pack.js"
 }
 ```
 
@@ -137,46 +137,47 @@ module.exports = ret
 为了打包后的内容好分析，所以我们需要指定打包的模式，为此我们在模块根目录下新建 `webpack.config.js` 文件。
 
 ```javascript
-const path = require("path")
+const path = require('path')
 
 module.exports = {
-    mode: "development",
-    output: {
-        path: path.resolve(__dirname, "./dist"),
-        filename: "main.js"
-    }
+  mode: 'development',
+  output: {
+    path: path.resolve(__dirname, './dist'),
+    filename: 'main.js',
+  },
 }
 ```
 
 现在我们可以进行打包了，打包后将其中无用的注释去掉我们可以看到下面的内容。
 
 ```javascript
-(function (modules) {
-  var installedModules = {};
+;(function(modules) {
+  var installedModules = {}
   function __webpack_require__(moduleId) {
     if (installedModules[moduleId]) {
-      return installedModules[moduleId].exports;
+      return installedModules[moduleId].exports
     }
-    var module = installedModules[moduleId] = {
+    var module = (installedModules[moduleId] = {
       i: moduleId,
       l: false,
-      exports: {}
-    };
-    modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-    module.l = true;
+      exports: {},
+    })
+    modules[moduleId].call(module.exports, module, module.exports, __webpack_require__)
+    module.l = true
     // 移除了 __webpack_require__ 上的属性便于查看整体结构
-    return module.exports;
+    return module.exports
   }
-  return __webpack_require__(__webpack_require__.s = "./src/index.js");
+  return __webpack_require__((__webpack_require__.s = './src/index.js'))
+})({
+  './src/index.js': function(module, exports, __webpack_require__) {
+    eval(
+      "const str = __webpack_require__(/*! ./other */ \"./src/other.js\")\r\nconst ret = 'index' + '-' + str\r\nconsole.log(ret)\r\nmodule.exports = ret\n\n//# sourceURL=webpack:///./src/index.js?",
+    )
+  },
+  './src/other.js': function(module, exports) {
+    eval("module.exports = 'other'\n\n//# sourceURL=webpack:///./src/other.js?")
+  },
 })
-({
-  "./src/index.js": (function (module, exports, __webpack_require__) {
-    eval("const str = __webpack_require__(/*! ./other */ \"./src/other.js\")\r\nconst ret = 'index' + '-' + str\r\nconsole.log(ret)\r\nmodule.exports = ret\n\n//# sourceURL=webpack:///./src/index.js?");
-  }),
-  "./src/other.js": (function (module, exports) {
-    eval("module.exports = 'other'\n\n//# sourceURL=webpack:///./src/other.js?");
-  })
-});
 ```
 
 结构一目了然，它显示了一个立即执行的匿名函数，并为其传入了一个包含项目中模块依赖关系的一个对象。
@@ -195,38 +196,38 @@ module.exports = {
 const path = require('path')
 
 class Compiler {
-    constructor(config) {
-        this.config = config
-        // 工作路径
-        this.root = process.cwd()
-        // 入口路径
-        this.entry = this.config.entry || './src/index.js'
-        // 入口文件的路径
-        this.entryId = './src/index.js'
-        // 存储依赖关系
-        this.modules = {}
-    }
+  constructor(config) {
+    this.config = config
+    // 工作路径
+    this.root = process.cwd()
+    // 入口路径
+    this.entry = this.config.entry || './src/index.js'
+    // 入口文件的路径
+    this.entryId = './src/index.js'
+    // 存储依赖关系
+    this.modules = {}
+  }
 
-    /**
-     * @description
-     * 创建模块的依赖关系
-     * @param {string} modulePath 模块路径
-     * @param {boolean} isEntry 是否是入口文件
-     */
-    buildMoudle(modulePath, isEntry) {}
+  /**
+   * @description
+   * 创建模块的依赖关系
+   * @param {string} modulePath 模块路径
+   * @param {boolean} isEntry 是否是入口文件
+   */
+  buildMoudle(modulePath, isEntry) {}
 
-    /**
-     * @description
-     * 发送打包后的文件
-     */
-    emitFile() {}
+  /**
+   * @description
+   * 发送打包后的文件
+   */
+  emitFile() {}
 
-    run() {
-        // 创建模块的依赖关系
-        this.buildMoudle(path.resolve(this.root, this.entry), true)
-        // 发送打包后的文件
-        this.emitFile()
-    }
+  run() {
+    // 创建模块的依赖关系
+    this.buildMoudle(path.resolve(this.root, this.entry), true)
+    // 发送打包后的文件
+    this.emitFile()
+  }
 }
 
 module.exports = Compiler
@@ -248,7 +249,7 @@ const Compiler = require('../lib/Compiler')
 const compiler = new Compiler(config)
 
 // 开始编译
-compiler.run();
+compiler.run()
 ```
 
 接下来我们来实现 `buildMoudle` 函数的具体内容，为了得到依赖关系，首先我们先获取依赖对象中入口文件对应的 `key` 值，它是相对于工作目录的相对路径。
@@ -361,8 +362,9 @@ buildMoudle(modulePath, isEntry) {
 在测试之前，先把 `my-pack` 目录下的 `src` 目录和 `webpack.config.js` 文件分别复制一份到 `my-project` 目录，然后在该目录执行命令 `npx my-pack`，顺利的话你应该在 `run` 函数中执行 `buildMoudle` 函数后可以打印 `this.modules` 来得到正确的依赖关系了。
 
 ```html
-{ './src\\index.js': 'const str = __webpack_require__("./src\\\\other.js");\n\nconst ret = \'index\' + \'-\' + str;\nconsole.log(ret);\nmodule.exports = ret;',
-  './src\\other.js': 'module.exports = \'other\';' }
+{ './src\\index.js': 'const str = __webpack_require__("./src\\\\other.js");\n\nconst ret = \'index\'
++ \'-\' + str;\nconsole.log(ret);\nmodule.exports = ret;', './src\\other.js': 'module.exports =
+\'other\';' }
 ```
 
 ## 生成打包结果
@@ -423,15 +425,15 @@ emitFile() {
 
 ```javascript
 module: {
-    rules: [
-        {
-            test: /\.less$/,
-            use: [
-                path.resolve(__dirname, "./loader/style-loader"),
-                path.resolve(__dirname, "./loader/less-loader")
-            ]
-        }
-    ]
+  rules: [
+    {
+      test: /\.less$/,
+      use: [
+        path.resolve(__dirname, './loader/style-loader'),
+        path.resolve(__dirname, './loader/less-loader'),
+      ],
+    },
+  ]
 }
 ```
 
@@ -445,27 +447,27 @@ npm install --save-dev less
 
 ```javascript
 // my-project/loader/style-loader.js
-const less = require("less")
+const less = require('less')
 
 function loader(src) {
-    let ret = ""
-    less.render(src, function(err, r) {
-        ret = r.css
-    })
-    ret = ret.replace(/\n/g, "\\n")
-    return ret
+  let ret = ''
+  less.render(src, function(err, r) {
+    ret = r.css
+  })
+  ret = ret.replace(/\n/g, '\\n')
+  return ret
 }
 
 module.exports = loader
 
 // my-project/loader/less-loader.js
 function loader(src) {
-    const style = `
+  const style = `
         let styleEle = document.createElement('style');
         styleEle.innerHTML = ${JSON.stringify(src)};
         document.head.appendChild(styleEle);
     `
-    return style
+  return style
 }
 
 module.exports = loader
@@ -475,7 +477,7 @@ module.exports = loader
 
 ```less
 body {
-    background: red;
+  background: red;
 }
 ```
 
@@ -502,7 +504,7 @@ getSource(modulePath) {
 
 在实现 `loader` 之后，接着就需要让插件来为我们工作了。
 
-插件在 `webpack` 中是一个具有 `apply` 方法的 `JavaScript` 对象。`apply` 方法会被 `webpack compiler` 调用，并且 `compiler` 对象可在整个编译生命周期访问。
+插件在 `webpack` 中是一个具有 `apply` 方法的 JavaScript 对象。`apply` 方法会被 `webpack compiler` 调用，并且 `compiler` 对象可在整个编译生命周期访问。
 
 现在我们在 `my-pack` 项目下先安装一下 `tapable`。
 
@@ -514,33 +516,33 @@ npm install -save-dev tapable
 
 ```javascript
 // ...
-const { SyncHook } = require("tapable")
+const { SyncHook } = require('tapable')
 
 class Compiler {
-    constructor(config) {
-        // ...
-        // 钩子
-        this.hooks = {
-            // ...
-            compiler: new SyncHook()
-        }
-        // 调用插件进行点阅
-        const plugins = this.config.plugins
-        if (Array.isArray(plugins)) {
-            plugins.forEach(plugin => {
-                plugin.apply(this)
-            })
-        }
-    }
+  constructor(config) {
     // ...
-    run() {
-        // 发布
-        this.hooks.compiler.call()
-        // 创建模块的依赖关系
-        this.buildMoudle(path.resolve(this.root, this.entry), true)
-        // 发送打包后的文件
-        this.emitFile()
+    // 钩子
+    this.hooks = {
+      // ...
+      compiler: new SyncHook(),
     }
+    // 调用插件进行点阅
+    const plugins = this.config.plugins
+    if (Array.isArray(plugins)) {
+      plugins.forEach(plugin => {
+        plugin.apply(this)
+      })
+    }
+  }
+  // ...
+  run() {
+    // 发布
+    this.hooks.compiler.call()
+    // 创建模块的依赖关系
+    this.buildMoudle(path.resolve(this.root, this.entry), true)
+    // 发送打包后的文件
+    this.emitFile()
+  }
 }
 ```
 
@@ -548,13 +550,13 @@ class Compiler {
 
 ```javascript
 plugins: [
-    new (class TestPlugin {
-        apply(compiler) {
-            compiler.hooks.compiler.tap("TestPlugin", function() {
-                console.log("compiler")
-            })
-        }
-    })()
+  new (class TestPlugin {
+    apply(compiler) {
+      compiler.hooks.compiler.tap('TestPlugin', function() {
+        console.log('compiler')
+      })
+    }
+  })(),
 ]
 ```
 
@@ -564,13 +566,13 @@ plugins: [
 
 ## 注意
 
-* 经测试调用所有钩子构造函数时传入的可选参数中的空字符串是无效的，并且如果里面是纯数字的字符串会报错。
+- 经测试调用所有钩子构造函数时传入的可选参数中的空字符串是无效的，并且如果里面是纯数字的字符串会报错。
 
 ## 参考
 
-* [webpack](https://webpack.js.org/)
-* [JavaScript模式 (豆瓣)](https://book.douban.com/subject/11506062/)
-* [Tapable](https://github.com/webpack/tapable)
-* [一口(很长的)气了解 babel - 掘金](https://juejin.im/post/5c19c5e0e51d4502a232c1c6)
-* [深入Babel，这一篇就够了 - 掘金](https://juejin.im/post/5c21b584e51d4548ac6f6c99)
-* [EJS -- 嵌入式 JavaScript 模板引擎 | EJS 中文文档](https://ejs.bootcss.com/)
+- [webpack](https://webpack.js.org/)
+- [JavaScript 模式 (豆瓣)](https://book.douban.com/subject/11506062/)
+- [Tapable](https://github.com/webpack/tapable)
+- [一口(很长的)气了解 babel - 掘金](https://juejin.im/post/5c19c5e0e51d4502a232c1c6)
+- [深入 Babel，这一篇就够了 - 掘金](https://juejin.im/post/5c21b584e51d4548ac6f6c99)
+- [EJS -- 嵌入式 JavaScript 模板引擎 | EJS 中文文档](https://ejs.bootcss.com/)

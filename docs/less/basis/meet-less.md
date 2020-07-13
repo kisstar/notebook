@@ -19,20 +19,22 @@
 ```less
 // 传统的写法
 .container p {
-    margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 // Less
 .container {
-    p {
-        margin-bottom: .5rem;
-    }
+  p {
+    margin-bottom: 0.5rem;
+  }
 }
 ```
 
 ### `&` 符号
 
-另外，还有一些伪类选择器在使用时需要注意，如果我们在嵌套的结果中直接书写，编译过后的 CSS 代码中，与前面的选择器之间会存在一个空客，可以使用 `&` 解决这个问题。比如 `:hover`：
+另外，还有一些伪类选择器在使用时需要注意，如果我们在嵌套的结果中直接书写，编译过后的 CSS 代码中，与前面的选择器之间会存在一个空客，可以使用 `&` 解决这个问题。
+
+比如 `:hover`：
 
 ```less
 // 传统的写法
@@ -42,11 +44,11 @@
 
 // Less
 .container {
-    p {
-        &:hover {
-            color: #f00;
-        }
+  p {
+    &:hover {
+      color: #f00;
     }
+  }
 }
 ```
 
@@ -59,13 +61,13 @@
 ```less
 // 传统用法
 p {
-    color: pink;
+  color: pink;
 }
 
 // Less
 @color: pink; // 定义变量
 p {
-    color: @color;
+  color: @color;
 }
 ```
 
@@ -86,23 +88,23 @@ p {
 @wth: width;
 // 使用
 @{selector} {
-    @{wth}: 80%;
+  @{wth}: 80%;
 }
 ```
 
 ### URL 变量
 
-另外，在我们也可以定义一些URL变量，在更换域名或图片路径时显得特别有用。
+另外，在我们也可以定义一些 URL 变量，在更换域名或图片路径时显得特别有用。
 
 ```less
-@images: "./pathto/";
+@images: './pathto/';
 body {
-    background: url("@{images}image_name.png"); // 变量名必须使用大括号包裹
+  background: url('@{images}image_name.png'); // 变量名必须使用大括号包裹
 }
 
 // 编译后的CSS
 body {
-  background: url("./pathto/image_name.png");
+  background: url('./pathto/image_name.png');
 }
 ```
 
@@ -112,11 +114,11 @@ body {
 
 ```less
 @p {
-    margin-bottom: .5rem;
-    background-color: #f00;
+  margin-bottom: 0.5rem;
+  background-color: #f00;
 }
 p {
-    @p();
+  @p();
 }
 
 // 编译后的CSS
@@ -132,9 +134,9 @@ p {
 @text: 'Hello Less!';
 @var: 'text';
 .P-text {
-    &::after {
-        content: @@var; // @@var => @text
-    }
+  &::after {
+    content: @@var; // @@var => @text
+  }
 }
 
 // 编译后的CSS
@@ -152,11 +154,11 @@ Less 的变量运算非常的强大，在处理加减法时结果以第一个数
 @width: 100px;
 @color: #f00;
 p {
-    width: @width - 50;
-    height: @width - 10 * 5;
-    margin: (@width - 98) * 5;
-    color: @color * 2;
-    background-color: @color + #0f0;
+  width: @width - 50;
+  height: @width - 10 * 5;
+  margin: (@width - 98) * 5;
+  color: @color * 2;
+  background-color: @color + #0f0;
 }
 
 // 编译后的CSS
@@ -201,11 +203,11 @@ p {
 
 ```less
 .danger() {
-    font-size: 12px;
-    color: #f00;
+  font-size: 12px;
+  color: #f00;
 }
 p {
-    .danger() !important;
+  .danger() !important;
 }
 
 // 编译结果
@@ -222,20 +224,20 @@ p {
 ```less
 // 传统的写法
 .container {
-    width: 80%;
+  width: 80%;
 }
-@media screen and (maxwidth:768px) {
-    width: 100%;
+@media screen and (maxwidth: 768px) {
+  width: 100%;
 }
 
 // Less
 .container {
-    width: 100%;
-    @media screen {
-        @media (maxwidth:768px) {
-            width: 100%;
-        }
+  width: 100%;
+  @media screen {
+    @media (maxwidth: 768px) {
+      width: 100%;
     }
+  }
 }
 ```
 
@@ -245,19 +247,19 @@ p {
 
 ### 普通混合
 
-混合的声明，通常以 `.` 开头（# 也行），所以普通的混合和一个类选择器一样。
+混合的声明，通常以 `.` 开头（# 也行），所以普通的混合和一个类（或 ID）选择器一样。
 
 ```less
 .triangle {
-    width: 0;
-    height: 0;
-    border-width: 50px;
-    border-color: transparent transparent #f00 transparent;
-    border-style: dashed dashed solid dashed;
-    overflow: hidden;
+  width: 0;
+  height: 0;
+  border-width: 50px;
+  border-color: transparent transparent #f00 transparent;
+  border-style: dashed dashed solid dashed;
+  overflow: hidden;
 }
 .triangle {
-    .triangle;
+  .triangle(); // 这里的括号是可选的，但在后续可能会变成必须的
 }
 
 // 编译后的CSS
@@ -285,15 +287,15 @@ p {
 
 ```less
 .triangle() {
-    width: 0;
-    height: 0;
-    border-width: 50px;
-    border-color: transparent transparent #f00 transparent;
-    border-style: dashed dashed solid dashed;
-    overflow: hidden;
+  width: 0;
+  height: 0;
+  border-width: 50px;
+  border-color: transparent transparent #f00 transparent;
+  border-style: dashed dashed solid dashed;
+  overflow: hidden;
 }
 .triangle {
-    .triangle;
+  .triangle();
 }
 
 // 编译后的CSS
@@ -315,15 +317,15 @@ p {
 
 ```less
 .triangle(@width: 50px, @color) {
-    width: 0;
-    height: 0;
-    border-width: @width;
-    border-color: transparent transparent @color transparent;
-    border-style: dashed dashed solid dashed;
-    overflow: hidden;
+  width: 0;
+  height: 0;
+  border-width: @width;
+  border-color: transparent transparent @color transparent;
+  border-style: dashed dashed solid dashed;
+  overflow: hidden;
 }
 .triangle {
-    .triangle(@color: #f00);
+  .triangle(@color: #f00);
 }
 
 // 编译后的CSS
@@ -343,10 +345,10 @@ p {
 
 ```less
 .border(@width, @style, @color) {
-    border: @arguments;
+  border: @arguments;
 }
 .border {
-    .border(50px, solid, #f00);
+  .border(50px, solid, #f00);
 }
 
 // 编译后的CSS
@@ -359,10 +361,10 @@ p {
 
 ```less
 .border(...) {
-    border: @arguments;
+  border: @arguments;
 }
 .border {
-    .border(50px, solid, #f00);
+  .border(50px, solid, #f00);
 }
 ```
 
@@ -372,42 +374,42 @@ p {
 
 ```less
 .center {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: auto;
-    &:hover {
-        background: #f00 !important;
-    }
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  &:hover {
+    background: #f00 !important;
+  }
 }
 
 .outter {
-    position: relative;
-    width: 300px;
-    height: 300px;
-    border: 1px solid #000;
-    .inner {
-        &:nth-child(1) {
-            &:extend(.center);
-            width: 150px;
-            height: 150px;
-            background: pink;
-        }
-        &:nth-child(2) {
-            &:extend(.center);
-            width: 50px;
-            height: 50px;
-            background: deeppink;
-        }
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border: 1px solid #000;
+  .inner {
+    &:nth-child(1) {
+      &:extend(.center);
+      width: 150px;
+      height: 150px;
+      background: pink;
     }
+    &:nth-child(2) {
+      &:extend(.center);
+      width: 50px;
+      height: 50px;
+      background: deeppink;
+    }
+  }
 }
 
 // 编译后的CSS
 .center,
-    .outter .inner:nth-child(1),
-    .outter .inner:nth-child(2) {
+.outter .inner:nth-child(1),
+.outter .inner:nth-child(2) {
   position: absolute;
   top: 0;
   right: 0;
@@ -439,7 +441,7 @@ p {
 可见，上面并没能匹配到伪类 `:hover` 的规则，如果我们需要使用 `all`。
 
 ```less
-&:extend(.center, all);
+&:extend(.center all);
 ```
 
 ## 避免编译
@@ -450,7 +452,7 @@ p {
 
 ```less
 .content {
-    height: ~"cacl(100% - 60px)";
+  height: ~'cacl(100% - 60px)';
 }
 
 // 编译后的CSS
@@ -465,12 +467,12 @@ p {
 // 编译的结果和上面的一样
 @width: 60px;
 .content {
-    height: ~"cacl(100% - @{width})";
+  height: ~'cacl(100% - @{width})';
 }
 ```
 
 ## 参考资料
 
-* [Less 中文网](http://lesscss.cn/)
-* [CSS 选择器 | 菜鸟教程](http://www.runoob.com/cssref/css-selectors.html)
-* [学习Less-看这篇就够了](https://segmentfault.com/a/1190000012360995?utm_source=tag-newest)
+- [Less 中文网](http://lesscss.cn/)
+- [CSS 选择器 | 菜鸟教程](http://www.runoob.com/cssref/css-selectors.html)
+- [学习 Less-看这篇就够了](https://segmentfault.com/a/1190000012360995?utm_source=tag-newest)

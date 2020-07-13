@@ -20,18 +20,18 @@ pm2 start app.js
 
 常用选项：
 
-| 选项 | 描述 |
-| :-- | :-- |
-| `--name <app_name>` | 指定名称 |
-| `--watch` | 监听文件的更改，自动重启（默认忽略 node_modules 目录） |
-| `--max-memory-restart <200MB>` | 设置应用程序重新加载的内存阈值 |
-| `--log <log_path>` | 指定日志存放地址 |
-| `-- arg1 arg2 arg3` | 向脚本传递额外的参数 |
-| `--restart-delay <delay in ms>` | 自动重新启动之间的延迟 |
-| `--time` | 为日志添加时间前缀 |
-| `--no-autorestart` | 不自动重新启动应用程序 |
-| `--cron <cron_pattern>` | 指定 cron 规律，强制重启 |
-| `--no-daemon` | 附加到应用程序日志 |
+| 选项                            | 描述                                                   |
+| :------------------------------ | :----------------------------------------------------- |
+| `--name <app_name>`             | 指定名称                                               |
+| `--watch`                       | 监听文件的更改，自动重启（默认忽略 node_modules 目录） |
+| `--max-memory-restart <200MB>`  | 设置应用程序重新加载的内存阈值                         |
+| `--log <log_path>`              | 指定日志存放地址                                       |
+| `-- arg1 arg2 arg3`             | 向脚本传递额外的参数                                   |
+| `--restart-delay <delay in ms>` | 自动重新启动之间的延迟                                 |
+| `--time`                        | 为日志添加时间前缀                                     |
+| `--no-autorestart`              | 不自动重新启动应用程序                                 |
+| `--cron <cron_pattern>`         | 指定 cron 规律，强制重启                               |
+| `--no-daemon`                   | 附加到应用程序日志                                     |
 
 ## 列出托管应用程序
 
@@ -69,11 +69,11 @@ pm2 log
 
 常用参数：
 
-| 选项 | 类型 | 描述 |
-| :-- | :-- | :-- |
+| 选项      | 类型                      | 描述 |
+| :-------- | :------------------------ | :--- |
 | `--lines` | 倒数多少行（--lines 200） |
-| `<id>` | 显示指定（ID）程序的日志 |
-| `--json` | 以 JSON 格式输出日志 |
+| `<id>`    | 显示指定（ID）程序的日志  |
+| `--json`  | 以 JSON 格式输出日志      |
 
 ## 清空日志
 
@@ -114,11 +114,13 @@ pm2 start app.js -i max
 
 ```js
 module.exports = {
-  apps : [{
-    script    : "api.js",
-    instances : "max",
-    exec_mode : "cluster"
-  }]
+  apps: [
+    {
+      script: 'api.js',
+      instances: 'max',
+      exec_mode: 'cluster',
+    },
+  ],
 }
 ```
 
@@ -296,12 +298,12 @@ module.exports = {
       },
     },
   },
-};
+}
 ```
 
 ## 监测和诊断面
 
-基于 WEB 的仪表板，带诊断系统的跨服务器：
+基于 Web 的仪表板，带诊断系统的跨服务器：
 
 ```bash
 pm2 plus

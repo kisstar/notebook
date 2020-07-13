@@ -47,7 +47,7 @@ $ git update-ref refs/heads/master a495e2cc498bfcf1f676fff2a905ec26b09f7015
 git update-ref refs/heads/test 97bf78e
 ```
 
-*当运行类似于 `git branch <branchname>` 这样的命令时，Git 实际上会运行 `update-ref` 命令，取得当前所在分支最新提交对应的 SHA-1 值，并将其加入你想要创建的任何新引用中。*
+_当运行类似于 `git branch <branchname>` 这样的命令时，Git 实际上会运行 `update-ref` 命令，取得当前所在分支最新提交对应的 SHA-1 值，并将其加入你想要创建的任何新引用中。_
 
 ## HEAD 引用
 

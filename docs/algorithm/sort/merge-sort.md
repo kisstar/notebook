@@ -23,33 +23,33 @@
 
 ```javascript
 function mergeSort(arr) {
-    const length = arr.length,
-        result = []
-    let leftLen = 0,
-        rightLen = 0,
-        leftI = 0,
-        rightI = 0
-    if (length < 2) {
-        // 当元素少于两个时退出递归
-        return arr
-    }
-    const mid = Math.round(length / 2),
-        left = mergeSort(arr.slice(0, mid)),
-        right = mergeSort(arr.slice(mid))
+  const length = arr.length,
+    result = []
+  let leftLen = 0,
+    rightLen = 0,
+    leftI = 0,
+    rightI = 0
+  if (length < 2) {
+    // 当元素少于两个时退出递归
+    return arr
+  }
+  const mid = Math.round(length / 2),
+    left = mergeSort(arr.slice(0, mid)),
+    right = mergeSort(arr.slice(mid))
 
-    leftLen = left.length
-    rightLen = right.length
-    while (leftI < leftLen && rightI < rightLen) {
-        if (left[leftI] < right[rightI]) {
-            result.push(left[leftI])
-            leftI++
-        } else {
-            result.push(right[rightI])
-            rightI++
-        }
+  leftLen = left.length
+  rightLen = right.length
+  while (leftI < leftLen && rightI < rightLen) {
+    if (left[leftI] < right[rightI]) {
+      result.push(left[leftI])
+      leftI++
+    } else {
+      result.push(right[rightI])
+      rightI++
     }
+  }
 
-    return result.concat(left.slice(leftI), right.slice(rightI))
+  return result.concat(left.slice(leftI), right.slice(rightI))
 }
 ```
 

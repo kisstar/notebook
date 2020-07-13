@@ -83,8 +83,8 @@ body {
 ```css
 .parent {
   display: table-cell;
-  vertical-align: middle;
   text-align: center;
+  vertical-align: middle;
 }
 
 .child {
@@ -167,8 +167,8 @@ body {
 ```css
 .parent {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 ```
 
@@ -177,14 +177,14 @@ body {
 ```css
 .parent {
   display: grid;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 ```
 
 ### JavaScript
 
-当然，可行和通常都不会采用的就是使用 `JavaScript` 来获取父子的宽高，然后设置相应的样式来达到居中的目的。
+当然，可行和通常都不会采用的就是使用 JavaScript 来获取父子的宽高，然后设置相应的样式来达到居中的目的。
 
 ```javascript
 // 仅供参考
@@ -194,13 +194,13 @@ const parent = $('.parent'),
   pw = parent.clientWidth,
   ph = parent.clientHeight,
   cw = child.clientWidth,
-  ch = child.clientHeight;
+  ch = child.clientHeight
 
-parent.style.position = 'relative';
-child.style.cssText = `position: absolute; top: ${(ph - ch) / 2}px; left: ${(pw - cw) / 2}px;`;
+parent.style.position = 'relative'
+child.style.cssText = `position: absolute; top: ${(ph - ch) / 2}px; left: ${(pw - cw) / 2}px;`
 
 function $(selecter) {
-  return document.querySelector(selecter);
+  return document.querySelector(selecter)
 }
 ```
 
@@ -219,8 +219,8 @@ function $(selecter) {
 
 ```css
 .grandson {
-  line-height: 1.5;
   display: inline-block;
+  line-height: 1.5;
   vertical-align: middle;
 }
 ```
@@ -238,8 +238,8 @@ img {
 
 ```css
 .child {
-  margin-left: auto;
   margin-right: auto;
+  margin-left: auto;
 }
 ```
 

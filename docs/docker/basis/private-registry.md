@@ -82,7 +82,7 @@ tar xvf harbor-offline-installer-version.tgz
 
 ## 参考
 
-- [安装Harbor管理镜像服务 - 东北小狐狸 - 博客园](https://www.cnblogs.com/hellxz/p/install_harbor.html)
+- [安装 Harbor 管理镜像服务 - 东北小狐狸 - 博客园](https://www.cnblogs.com/hellxz/p/install_harbor.html)
 
 [harbor_releases]: https://github.com/goharbor/harbor/releases
 [harbor_install_config]: https://github.com/goharbor/harbor/blob/master/docs/install-config/_index.md

@@ -6,8 +6,7 @@
 
 ## 牛刀小试
 
-假设有一个对象数组，我们想要根据某个对象属性对数组进行排序。而传递给数组 `sort()` 方法的比较函数要接收两个参数，即要比较的值。可是，我们需要一种方式来指明按照哪个属性来排序。
-要解决这个问题，可以定义一个函数，它接收一个属性名，然后根据这个属性名来创建一个比较函数，下面就是这个函数的定义：
+假设有一个对象数组，我们想要根据某个对象属性对数组进行排序。而传递给数组 `sort()` 方法的比较函数要接收两个参数，即要比较的值。可是，我们需要一种方式来指明按照哪个属性来排序。要解决这个问题，可以定义一个函数，它接收一个属性名，然后根据这个属性名来创建一个比较函数，下面就是这个函数的定义：
 
 ```javascript
 /**
@@ -24,17 +23,17 @@
  * @returns {array} 经过排序后的数组
  */
 function createComparisonFunction(propertyName) {
-    return function (object1, object2) {
-        var value1 = object1[propertyName];
-        var value2 = object2[propertyName];
-        if (value1 < value2) {
-            return -1;
-        } else if (value1 > value2) {
-            return 1;
-        } else {
-            return 0;
-        }
-    };
+  return function(object1, object2) {
+    var value1 = object1[propertyName]
+    var value2 = object2[propertyName]
+    if (value1 < value2) {
+      return -1
+    } else if (value1 > value2) {
+      return 1
+    } else {
+      return 0
+    }
+  }
 }
 ```
 
@@ -51,19 +50,19 @@ function createComparisonFunction(propertyName) {
 ```javascript
 // 下面的做法有一个缺陷，就是这个函数的执行与函数名 factorial 紧紧耦合在了一起
 function factorial(num) {
-    if (num <= 1) {
-        return 1;
-    } else {
-        return num * factorial(num - 1);
-    }
+  if (num <= 1) {
+    return 1
+  } else {
+    return num * factorial(num - 1)
+  }
 }
 // 使用 `arguments` 对象的 `callee` 属性
 function factorial(num) {
-    if (num <= 1) {
-        return 1;
-    } else {
-        return num * arguments.callee(num - 1);
-    }
+  if (num <= 1) {
+    return 1
+  } else {
+    return num * arguments.callee(num - 1)
+  }
 }
 // 现在无论引用函数时使用的是什么名字，都可以保证正常完成递归调用
 ```
@@ -72,7 +71,7 @@ function factorial(num) {
 
 函数直接或间接调用自身，称为**递归**，该函数称为**递归函数**。
 
-函数调用会在内存形成一个“调用记录”，又称“调用帧”（call frame），保存调用位置和内部变量等信息。如果在函数 `A` 的内部调用函数B，那么在 `A` 的调用帧上方，还会形成一个 `B` 的调用帧。等到 `B` 运行结束，将结果返回到 `A`，`B` 的调用帧才会消失。如果函数 `B` 内部还调用函数 `C`，那就还有一个 `C` 的调用帧，以此类推。所有的调用帧，就形成一个“调用栈”（call stack）。
+函数调用会在内存形成一个“调用记录”，又称“调用帧”（call frame），保存调用位置和内部变量等信息。如果在函数 `A` 的内部调用函数 B，那么在 `A` 的调用帧上方，还会形成一个 `B` 的调用帧。等到 `B` 运行结束，将结果返回到 `A`，`B` 的调用帧才会消失。如果函数 `B` 内部还调用函数 `C`，那就还有一个 `C` 的调用帧，以此类推。所有的调用帧，就形成一个“调用栈”（call stack）。
 
 递归非常耗费内存，因为可能需要同时保存成千上百个调用帧，很容易发生“栈溢出”错误（stack overflow）。
 
@@ -88,8 +87,8 @@ function factorial(num) {
 
 ```javascript
 function factorial(n, total) {
-  if (n === 1) return total;
-  return factorial(n - 1, n * total);
+  if (n === 1) return total
+  return factorial(n - 1, n * total)
 }
 
 factorial(5, 1) // 120
@@ -105,35 +104,35 @@ factorial(5, 1) // 120
 
 ```javascript
 // 调用函数，得到返回值。强制运算符使函数调用执行
-(function (x, y) {
-    alert(x + y);
-    return x + y;
-}(3, 5));
+;(function(x, y) {
+  alert(x + y)
+  return x + y
+})(3, 5)
 // 调用函数，得到返回值。强制函数直接量执行再返回一个引用，引用再去调用执行
-(function (x, y) {
-    alert(x + y);
-    return x + y;
-})(3, 5);
+;(function(x, y) {
+  alert(x + y)
+  return x + y
+})(3, 5)
 ```
 
 匿名函数的常见用法就是用来充当块级作用域，避免变量污染外部作用域。
 
 ## 函数属性
 
-`ECMAScript` 中的函数是对象，因此函数也有属性和方法。
+ECMAScript 中的函数是对象，因此函数也有属性和方法。
 
 每个函数都包含三个属性：`caller`、`length` 和 `prototype`。
 
 ### caller 属性
 
-`ECMAScript 5` 规范化了一个函数对象的属性：`caller`。这个属性中保存着调用当前函数的函数的引用，如果是在全局作用域中调用当前函数，它的值为 `null`。
+ECMAScript 5 规范化了一个函数对象的属性：`caller`。这个属性中保存着调用当前函数的函数的引用，如果是在全局作用域中调用当前函数，它的值为 `null`。
 
 通过提及的函数内部的属性，可以在函数的内部通过 `arguments.callee.caller` 来访问相同的信息。
 
 ::: warning
 
-* 当函数在严格模式下运行时，访问 `arguments.callee` 会导致错误。
-* 当函数在严格模式下运行时，不能为函数的 `caller` 属性赋值，否则会导致错误。
+- 当函数在严格模式下运行时，访问 `arguments.callee` 会导致错误。
+- 当函数在严格模式下运行时，不能为函数的 `caller` 属性赋值，否则会导致错误。
 
 :::
 
@@ -143,19 +142,19 @@ factorial(5, 1) // 120
 
 ```javascript
 function sayHi() {
-    alert("hi");
+  alert('hi')
 }
 function sayName(name) {
-    alert(name);
+  alert(name)
 }
 
-console.log(sayHi.length);  //0
-console.log(sayName.length);//1
+console.log(sayHi.length) //0
+console.log(sayName.length) //1
 ```
 
 ### prototype 属性
 
-对于 `ECMAScript` 中的引用类型而言，`prototype` 是保存它们所有实例方法的真正所在。通常我们把它称作为函数的原型，由于它是不可枚举的，所以使用 `for-in` 语句时无法发现它的存在。
+对于 ECMAScript 中的引用类型而言，`prototype` 是保存它们所有实例方法的真正所在。通常我们把它称作为函数的原型，由于它是不可枚举的，所以使用 `for-in` 语句时无法发现它的存在。
 
 ## 函数方法
 
@@ -167,23 +166,23 @@ console.log(sayName.length);//1
 
 ```javascript
 function sum(num1, num2) {
-    return num1 + num2;
+  return num1 + num2
 }
 function callSum1(num1, num2) {
-    return sum.apply(this, arguments);   // 传入arguments 对象
+  return sum.apply(this, arguments) // 传入arguments 对象
 }
 function callSum2(num1, num2) {
-    return sum.apply(this, [num1, num2]);// 传入数组
+  return sum.apply(this, [num1, num2]) // 传入数组
 }
-alert(callSum1(10, 10));  //20
-alert(callSum2(10, 10));   //20
+alert(callSum1(10, 10)) //20
+alert(callSum2(10, 10)) //20
 ```
 
-`call()` 方法与 `apply()` 方法真正强大的地方是能够扩充函数 赖以 运行的作用域。`ECMAScript 5` 还定义了一个方法：`bind()`。这个方法会创建一个函数的实例，其 `this` 值会被绑定到传给 `bind()` 函数的值。
+`call()` 方法与 `apply()` 方法真正强大的地方是能够扩充函数 赖以 运行的作用域。ECMAScript 5 还定义了一个方法：`bind()`。这个方法会创建一个函数的实例，其 `this` 值会被绑定到传给 `bind()` 函数的值。
 
 ## 参考资料
 
-* [Helephant.com](http://helephant.com/2012/07/14/javascript-function-declaration-vs-expression/#function-operator-is-an-expression)
-* [ECMAScript 6 入门](http://es6.ruanyifeng.com/#docs/function)
-* [匿名函数自调用 (IIFE)](https://juejin.im/entry/57406b0e1ea493006038c58a)
-* JavaScript 高级程序设计(第3版)
+- [Helephant.com](http://helephant.com/2012/07/14/javascript-function-declaration-vs-expression/#function-operator-is-an-expression)
+- [ECMAScript 6 入门](http://es6.ruanyifeng.com/#docs/function)
+- [匿名函数自调用 (IIFE)](https://juejin.im/entry/57406b0e1ea493006038c58a)
+- JavaScript 高级程序设计(第 3 版)

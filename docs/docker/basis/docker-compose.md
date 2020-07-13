@@ -1,4 +1,5 @@
 # Docker Compose
+
 <!-- markdownlint-disable MD024 -->
 
 Dockerfile 可以让用户管理一个单独的应用容器；而 Compose 则允许用户在一个模板（YAML 格式）中定义一组相关联的应用容器（被称为一个 project，即项目）。
@@ -55,7 +56,7 @@ docker-compose version 1.24.1, build 4667896b
 虽然可以作为服务声明的一部分动态声明卷，但同样允许您创建可跨多个服务重用的命名卷（不依赖卷），并且可以使用 Docker 命令行或 API 轻松检索和检查。
 
 ```yaml
-version: "3.8"
+version: '3.8'
 
 services:
   db:
@@ -102,7 +103,7 @@ networks:
 例如 `webapp` 服务，指定为从上下文路径 `./dir/Dockerfile` 所构建的镜像：
 
 ```yaml
-version: "3.8"
+version: '3.8'
 services:
   webapp:
     build: ./dir
@@ -111,7 +112,7 @@ services:
 或者，作为具有在上下文指定的路径的对象，以及可选的 Dockerfile 和 `args`：
 
 ```yaml
-version: "3.8"
+version: '3.8'
 services:
   webapp:
     build:
@@ -181,13 +182,13 @@ env_file:
 将主机的数据卷或着文件挂载到容器里。
 
 ```yaml
-version: "3.7"
+version: '3.7'
 services:
   db:
     image: postgres:latest
     volumes:
-      - "/localhost/postgres.sock:/var/run/postgres/postgres.sock"
-      - "/localhost/data:/var/lib/postgresql/data"
+      - '/localhost/postgres.sock:/var/run/postgres/postgres.sock'
+      - '/localhost/data:/var/lib/postgresql/data'
 ```
 
 ### networks
@@ -200,10 +201,10 @@ services:
     networks:
       some-network:
         aliases:
-         - alias1
+          - alias1
       other-network:
         aliases:
-         - alias2
+          - alias2
 ```
 
 `aliases`：同一网络上的其他容器可以使用服务名称或此别名来连接到对应容器的服务。
@@ -216,8 +217,8 @@ services:
 
 ```yaml
 expose:
- - "3000"
- - "8000"
+  - '3000'
+  - '8000'
 ```
 
 ### command
@@ -225,7 +226,7 @@ expose:
 覆盖容器启动的默认命令。
 
 ```yaml
-command: ["bundle", "exec", "thin", "-p", "3000"]
+command: ['bundle', 'exec', 'thin', '-p', '3000']
 ```
 
 ### entrypoint
@@ -257,7 +258,7 @@ entrypoint:
 - docker-compose stop：按依赖关系顺序停止服务。在以下示例中，`web` 在 `db` 和 `redis` 之前停止。
 
 ```yaml
-version: "3.7"
+version: '3.7'
 services:
   web:
     build: .
@@ -302,8 +303,8 @@ driver: "none"
 logging:
   driver: json-file
   options:
-    max-size: "200k" # 单个文件大小为200k
-    max-file: "10" # 最多10个文件
+    max-size: '200k' # 单个文件大小为200k
+    max-file: '10' # 最多10个文件
 ```
 
 当达到文件限制上限，会自动删除旧得文件。
@@ -314,7 +315,7 @@ logging:
 logging:
   driver: syslog
   options:
-    syslog-address: "tcp://192.168.0.42:123"
+    syslog-address: 'tcp://192.168.0.42:123'
 ```
 
 ### secrets
@@ -322,7 +323,7 @@ logging:
 存储敏感数据，例如密码：
 
 ```yaml
-version: "3.1"
+version: '3.1'
 services:
 
 mysql:
@@ -341,8 +342,8 @@ secrets:
 
 - `no`：是默认的重启策略，在任何情况下都不会重启容器。
 - `always`：容器总是重新启动。
-- `on-failure`：在容器非正常退出时（退出状态非0），才会重启容器。
-- `unless-stopped`：在容器退出时总是重启容器，但是不考虑在Docker守护进程启动时就已经停止了的容器
+- `on-failure`：在容器非正常退出时（退出状态非 0），才会重启容器。
+- `unless-stopped`：在容器退出时总是重启容器，但是不考虑在 Docker 守护进程启动时就已经停止了的容器
 
 ```yaml
 restart: "no"
@@ -359,8 +360,8 @@ restart: unless-stopped
 
 ```yaml
 extra_hosts:
- - "somehost:162.242.195.82"
- - "otherhost:50.31.209.229"
+  - 'somehost:162.242.195.82'
+  - 'otherhost:50.31.209.229'
 ```
 
 以上会在此服务的内部容器中 `/etc/hosts` 创建一个具有 `ip` 地址和主机名的映射关系：
@@ -376,7 +377,7 @@ extra_hosts:
 
 ```yaml
 devices:
-  - "/dev/ttyUSB0:/dev/ttyUSB0"
+  - '/dev/ttyUSB0:/dev/ttyUSB0'
 ```
 
 ### dns
@@ -429,7 +430,7 @@ cgroup_parent: m-executor-abcd
 
 ```yaml
 healthcheck:
-  test: ["CMD", "curl", "-f", "http://localhost"] # 设置检测程序
+  test: ['CMD', 'curl', '-f', 'http://localhost'] # 设置检测程序
   interval: 1m30s # 设置检测间隔
   timeout: 10s # 设置检测超时时间
   retries: 3 # 设置重试次数

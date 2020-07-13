@@ -8,15 +8,15 @@
 
 对程序的管理是操作系统的主要工作之一，在 `Windows` 中，大多数可执行程序的扩展名是 `.exe`，少部分也有 `.com`。
 
-| 常用应用程序 | 文件名 |
-| :-- | :-- |
-| Windows 资源管理器 | explorer.ext |
-| 记事本 | notepad.ext |
-| 写字本 | write.exe |
-| 画图 | mspaint.ext |
-| 命令提示符 | cmd.ext |
+| 常用应用程序         | 文件名       |
+| :------------------- | :----------- |
+| Windows 资源管理器   | explorer.ext |
+| 记事本               | notepad.ext  |
+| 写字本               | write.exe    |
+| 画图                 | mspaint.ext  |
+| 命令提示符           | cmd.ext      |
 | Windows Media Player | iexplore.ext |
-| Internet Explorer | msimn.ext |
+| Internet Explorer    | msimn.ext    |
 
 ## 进程与线程
 
@@ -48,8 +48,7 @@ graph TD;
     B-- 时间片完 --> A;
 ```
 
-就绪状态：除 CPU 外的一切资源。
-阻塞状态：可能需要调用其他的物理设备等情况就会进入该状态。
+就绪状态：除 CPU 外的一切资源。阻塞状态：可能需要调用其他的物理设备等情况就会进入该状态。
 
 ### 进程和程序的区别
 
@@ -81,12 +80,12 @@ graph TD;
 
 ## 总结
 
-* 计算机为完成特定任务所执行的指令序列，以文件的形式存储在磁盘中。
-* 进程是计算机程序的执行过程，是除 CPU 外资源分配的基本单位。
-* 线程是 CPU 调度的基本单位。
+- 计算机为完成特定任务所执行的指令序列，以文件的形式存储在磁盘中。
+- 进程是计算机程序的执行过程，是除 CPU 外资源分配的基本单位。
+- 线程是 CPU 调度的基本单位。
 
 ## 参考资料
 
-* [大学计算机_大连理工大学](https://www.icourse163.org/course/DLUT-1001938002)
-* [进程与线程的一个简单解释 - 阮一峰的网络日志](http://www.ruanyifeng.com/blog/2013/04/processes_and_threads.html)
-* [进程和线程 - 廖雪峰的官方网站](https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/0014319272686365ec7ceaeca33428c914edf8f70cca383000)
+- [大学计算机\_大连理工大学](https://www.icourse163.org/course/DLUT-1001938002)
+- [进程与线程的一个简单解释 - 阮一峰的网络日志](http://www.ruanyifeng.com/blog/2013/04/processes_and_threads.html)
+- [进程和线程 - 廖雪峰的官方网站](https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/0014319272686365ec7ceaeca33428c914edf8f70cca383000)

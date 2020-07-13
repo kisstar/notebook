@@ -1,4 +1,4 @@
-# This
+# THIS
 
 函数其实也是一个值（引用类型），因此它可以被赋值给不同的变量，也可以在不同的环境（上下文）执行。那么在不同的环境运行，怎么访问运行时的当前环境的其它变量呢？
 
@@ -10,17 +10,17 @@
 
 ```javascript
 var obj = {
-    name: 'Anani',
-    fn: function () {
-        console.log(this.name)
-    }
-};
+  name: 'Anani',
+  fn: function() {
+    console.log(this.name)
+  },
+}
 
-var Fn = obj.fn;
-var name = 'Sharon';
+var Fn = obj.fn
+var name = 'Sharon'
 
-obj.fn(); // ???
-Fn();     // ???
+obj.fn() // ???
+Fn() // ???
 ```
 
 当然结果是不一样的，原因就是方法中使用了 `this` 关键字。在绝大多数情况下，函数的调用方式决定了 `this` 的值。
@@ -31,7 +31,7 @@ Fn();     // ???
 
 ```javascript
 // 在浏览器中, window 对象同时也是全局对象：
-console.log(this === window); // true
+console.log(this === window) // true
 ```
 
 ## 函数（运行内）环境
@@ -44,21 +44,21 @@ console.log(this === window); // true
 
 ```javascript
 function fn() {
-    return this;
+  return this
 }
 // 在浏览器中：
-fn() === window; // true
+fn() === window // true
 ```
 
 在严格模式下，`this` 将保持他进入执行环境时的值，所以下面的 `this` 将会默认为 `undefined`。
 
 ```javascript
 function fn() {
-    'use strict';
-    return this;
+  'use strict'
+  return this
 }
 // 在浏览器中：
-fn() === window; // true
+fn() === window // true
 ```
 
 ### 作为对象的方法
@@ -69,13 +69,13 @@ fn() === window; // true
 
 ```javascript
 function fn() {
-    console.log(this.name);
+  console.log(this.name)
 }
 var obj = {
-    name: 'Anani',
-    fn: fn
-};
-obj.fn(); // Anani
+  name: 'Anani',
+  fn: fn,
+}
+obj.fn() // Anani
 ```
 
 #### 原型链中的 this
@@ -84,15 +84,15 @@ obj.fn(); // Anani
 
 ```javascript
 var obj = {
-    name: 'Anani',
-    fn: function () {
-        console.log(this.name);
-    }
-};
-var othObj = Object.create(obj);
-othObj.name = 'Sharon';
+  name: 'Anani',
+  fn: function() {
+    console.log(this.name)
+  },
+}
+var othObj = Object.create(obj)
+othObj.name = 'Sharon'
 
-console.log(othObj.fn()); // Sharon
+console.log(othObj.fn()) // Sharon
 ```
 
 #### getter 与 setter 中的 this
@@ -101,13 +101,13 @@ console.log(othObj.fn()); // Sharon
 
 ```javascript
 var obj = {
-    name: 'Anani',
-    get upperCaseName() {
-        return this.name.toUpperCase();
-    }
-};
+  name: 'Anani',
+  get upperCaseName() {
+    return this.name.toUpperCase()
+  },
+}
 
-console.log(obj.upperCaseName); // ANANI
+console.log(obj.upperCaseName) // ANANI
 ```
 
 ### 作为构造函数
@@ -116,56 +116,55 @@ console.log(obj.upperCaseName); // ANANI
 
 ```javascript
 /**
-     * 构造函数这样工作:
-     * function Constructor(){
-     *   // 函数实体写在这里
-     *   // 根据需要在 this 上创建属性，然后赋值给它们
-     *   // 如果函数具有返回对象的 return语句，
-     *   // 则该对象将是 new 表达式的结果。
-     *   // 否则，表达式的结果是当前绑定到 this 的对象。
-     * }
-     *
-     * 其实质就是：
-     * 1.声明一个中间对象
-     * 2.将该中间对象的隐式原型指向构造函数的显式原型
-     * 3.将构造函数的 this 通过 apply 指向中间对象
-     * 4.返回该中间对象,也就是返回了实例对象
-     */
+ * 构造函数这样工作:
+ * function Constructor(){
+ *   // 函数实体写在这里
+ *   // 根据需要在 this 上创建属性，然后赋值给它们
+ *   // 如果函数具有返回对象的 return语句，
+ *   // 则该对象将是 new 表达式的结果。
+ *   // 否则，表达式的结果是当前绑定到 this 的对象。
+ * }
+ *
+ * 其实质就是：
+ * 1.声明一个中间对象
+ * 2.将该中间对象的隐式原型指向构造函数的显式原型
+ * 3.将构造函数的 this 通过 apply 指向中间对象
+ * 4.返回该中间对象,也就是返回了实例对象
+ */
 
 function Constructor() {
-    this.num = 3; // "僵尸"代码：执行了，但无意义。因为手动的设置了返回对象，与 this 绑定的默认对象被丢弃了
-    return {
-        num: 5
-    };
+  this.num = 3 // "僵尸"代码：执行了，但无意义。因为手动的设置了返回对象，与 this 绑定的默认对象被丢弃了
+  return {
+    num: 5,
+  }
 }
 
-obj = new Constructor();
-console.log(obj.num); // 5
+obj = new Constructor()
+console.log(obj.num) // 5
 ```
 
-### 作为一个DOM事件处理函数
+### 作为一个 DOM 事件处理函数
 
 当函数被用作事件处理函数时，它的 `this` 指向触发事件的元素（一些浏览器在使用非 `addEventListener` 的函数动态添加监听函数时不遵守这个约定）。
 
 ```javascript
 // 获取文档中的所有元素的列表
-var elements = document.getElementsByTagName('*');
+var elements = document.getElementsByTagName('*')
 
 // 将bluify作为元素的点击监听函数，当元素被点击时，就会变成蓝色
 for (var i = 0; i < elements.length; i++) {
-    elements[i].addEventListener('click', bluify, false);
+  elements[i].addEventListener('click', bluify, false)
 }
 
-
 function bluify(e) {
-    // 总是 true
-    console.log(this === e.currentTarget);
+  // 总是 true
+  console.log(this === e.currentTarget)
 
-    // 当 currentTarget 和 target 是同一个对象时为 true
-    console.log(this === e.target);
+  // 当 currentTarget 和 target 是同一个对象时为 true
+  console.log(this === e.target)
 
-    // 将关联的元素变成蓝色
-    this.style.backgroundColor = '#A5D9F3';
+  // 将关联的元素变成蓝色
+  this.style.backgroundColor = '#A5D9F3'
 }
 ```
 

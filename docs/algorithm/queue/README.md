@@ -16,35 +16,35 @@
 ```javascript
 class Queue {
   constructor() {
-    this._list = [];
+    this._list = []
   }
 
   enqueue(...items) {
-    this._list.push(...items);
+    this._list.push(...items)
   }
 
   dequeue() {
-    return this._list.shift();
+    return this._list.shift()
   }
 
   front() {
-    return this._list[0];
+    return this._list[0]
   }
 
   size() {
-    return this._list.length;
+    return this._list.length
   }
 
   isEmpty() {
-    return this._list.length === 0;
+    return this._list.length === 0
   }
 
   toString() {
-    this._list.toString();
+    this._list.toString()
   }
 
   print() {
-    console.log(this.toString());
+    console.log(this.toString())
   }
 }
 ```
@@ -61,22 +61,22 @@ class Queue {
 
 ```javascript
 function hotPotato(nameList, num) {
-  const queue = new Queue();
-  queue.enqueue(...nameList);
+  const queue = new Queue()
+  queue.enqueue(...nameList)
 
   while (queue.size() > 1) {
     for (let i = 0; i < num; i++) {
-      queue.enqueue(queue.dequeue());
+      queue.enqueue(queue.dequeue())
     }
-    queue.dequeue();
+    queue.dequeue()
   }
 
-  return queue.dequeue();
+  return queue.dequeue()
 }
 
-const names = ['John', 'Jack', 'Camila', 'Ingrid', 'Carl'];
-const winner = hotPotato(names, 7);
-console.log(`The winner is: ${winner}`); // The winner is: John
+const names = ['John', 'Jack', 'Camila', 'Ingrid', 'Carl']
+const winner = hotPotato(names, 7)
+console.log(`The winner is: ${winner}`) // The winner is: John
 ```
 
 ## 优先队列
@@ -90,38 +90,38 @@ console.log(`The winner is: ${winner}`); // The winner is: John
 ```javascript
 class QueueElement {
   constructor(element, priority) {
-    this.element = element;
-    this.priority = priority;
+    this.element = element
+    this.priority = priority
   }
 }
 
 class PriorityQueue extends Queue {
   enqueue(element, priority) {
-    const queueElement = new QueueElement(element, priority);
+    const queueElement = new QueueElement(element, priority)
     const isInserted = this._list.some((item, index) => {
       // 数字越小, 优先级越高
       if (queueElement.priority < item.priority) {
-        this._list.splice(index, 0, queueElement);
-        return true;
+        this._list.splice(index, 0, queueElement)
+        return true
       }
-      return false;
-    });
+      return false
+    })
 
     if (!isInserted) {
-      this._list.push(queueElement);
+      this._list.push(queueElement)
     }
   }
 
   print() {
-    this._list.forEach(item => console.log(`${item.element} - ${item.priority}`));
+    this._list.forEach(item => console.log(`${item.element} - ${item.priority}`))
   }
 }
 
-const priorityQueue = new PriorityQueue();
-priorityQueue.enqueue('John', 2);
-priorityQueue.enqueue('Jack', 1);
-priorityQueue.enqueue('Camila', 1);
-priorityQueue.print();
+const priorityQueue = new PriorityQueue()
+priorityQueue.enqueue('John', 2)
+priorityQueue.enqueue('Jack', 1)
+priorityQueue.enqueue('Camila', 1)
+priorityQueue.print()
 // Jack -       1
 // Camila -       1
 // John -       2

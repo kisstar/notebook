@@ -13,60 +13,60 @@
 ```javascript
 class Dictionary {
   constructor() {
-    this._obj = Object.create(null);
+    this._obj = Object.create(null)
   }
 
   has(key) {
-    return Reflect.has(this._obj, key);
+    return Reflect.has(this._obj, key)
   }
 
   set(key, value) {
-    this._obj[key] = value;
+    this._obj[key] = value
   }
 
   delete(key) {
     if (this.has(key)) {
-      return Reflect.deleteProperty(this._obj, key);
+      return Reflect.deleteProperty(this._obj, key)
     }
-    return false;
+    return false
   }
 
   get(key) {
-    return this._obj[key];
+    return this._obj[key]
   }
 
   values() {
-    return Object.values(this._obj);
+    return Object.values(this._obj)
   }
 
   clear() {
-    this._obj = Object.create(null);
+    this._obj = Object.create(null)
   }
 
   size() {
-    return this.values().length;
+    return this.values().length
   }
 
   keys() {
-    return Object.keys(this._obj);
+    return Object.keys(this._obj)
   }
 
   getItems() {
-    return this._obj;
+    return this._obj
   }
 }
 
-var dictionary = new Dictionary();
-dictionary.set('Gandalf', 'gandalf@email.com');
-dictionary.set('John', 'johnsnow@email.com');
-dictionary.set('Tyrion', 'tyrion@email.com');
-console.log(dictionary.has('Gandalf')); // true
-console.log(dictionary.size()); // 3
-console.log(dictionary.keys()); // ["Gandalf", "John", "Tyrion"]
-console.log(dictionary.values()); // ["gandalf@email.com", "johnsnow@email.com", "tyrion@email.com"]
-console.log(dictionary.get('Tyrion')); // tyrion@email.com
-dictionary.delete('John');
-console.log(dictionary.keys()); // ["Gandalf", "Tyrion"]
-console.log(dictionary.values()); // ["gandalf@email.com", "tyrion@email.com"]
-console.log(dictionary.getItems()); // Object {Gandalf: "gandalf@email.com", Tyrion: "tyrion@email.com"}
+var dictionary = new Dictionary()
+dictionary.set('Gandalf', 'gandalf@email.com')
+dictionary.set('John', 'johnsnow@email.com')
+dictionary.set('Tyrion', 'tyrion@email.com')
+console.log(dictionary.has('Gandalf')) // true
+console.log(dictionary.size()) // 3
+console.log(dictionary.keys()) // ["Gandalf", "John", "Tyrion"]
+console.log(dictionary.values()) // ["gandalf@email.com", "johnsnow@email.com", "tyrion@email.com"]
+console.log(dictionary.get('Tyrion')) // tyrion@email.com
+dictionary.delete('John')
+console.log(dictionary.keys()) // ["Gandalf", "Tyrion"]
+console.log(dictionary.values()) // ["gandalf@email.com", "tyrion@email.com"]
+console.log(dictionary.getItems()) // Object {Gandalf: "gandalf@email.com", Tyrion: "tyrion@email.com"}
 ```

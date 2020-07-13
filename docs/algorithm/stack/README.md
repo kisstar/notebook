@@ -19,39 +19,39 @@
 ```javascript
 class Stack {
   constructor() {
-    this._list = [];
+    this._list = []
   }
 
   push(...items) {
-    this._list.push(...items);
+    this._list.push(...items)
   }
 
   pop() {
-    return this._list.pop();
+    return this._list.pop()
   }
 
   peek() {
-    return this._list[this._list.length - 1];
+    return this._list[this._list.length - 1]
   }
 
   size() {
-    return this._list.length;
+    return this._list.length
   }
 
   isEmpty() {
-    return this._list.length === 0;
+    return this._list.length === 0
   }
 
   clear() {
-    this._list.length = 0;
+    this._list.length = 0
   }
 
   toString() {
-    this._list.toString();
+    this._list.toString()
   }
 
   print() {
-    console.log(this.toString());
+    console.log(this.toString())
   }
 }
 ```
@@ -67,20 +67,20 @@ class Stack {
  * @param {number} base 基数
  */
 function _parseInt(num = 0, base = 10) {
-  const stack = new Stack();
-  const digits = '0123456789ABCDEF';
-  let ret = '';
+  const stack = new Stack()
+  const digits = '0123456789ABCDEF'
+  let ret = ''
   while (num > 0) {
-    stack.push(Math.floor(num % base));
-    num = Math.floor(num / base);
+    stack.push(Math.floor(num % base))
+    num = Math.floor(num / base)
   }
   while (!stack.isEmpty()) {
-    ret += digits[stack.pop()];
+    ret += digits[stack.pop()]
   }
-  return +ret || 0;
+  return +ret || 0
 }
 
-_parseInt(100, 2); // 1100100
+_parseInt(100, 2) // 1100100
 ```
 
 ## 参考

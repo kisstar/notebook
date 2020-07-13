@@ -14,7 +14,7 @@
 
 ```javascript
 function loseloseHashCode(str) {
-  return [...str].reduce((total, cur, index) => total + str.codePointAt(index), 0) % 37;
+  return [...str].reduce((total, cur, index) => total + str.codePointAt(index), 0) % 37
 }
 ```
 
@@ -28,24 +28,24 @@ function loseloseHashCode(str) {
 
 ```javascript
 function HashTable() {
-  this._table = [];
+  this._table = []
 }
 
 HashTable.prototype.put = function(key, value) {
-  this._table[loseloseHashCode(key)] = value;
-};
+  this._table[loseloseHashCode(key)] = value
+}
 
 HashTable.prototype.get = function(key) {
-  return this._table[loseloseHashCode(key)];
-};
+  return this._table[loseloseHashCode(key)]
+}
 ```
 
 删除时注意不要将位置本身从数组中移除（这会改变其他元素的位置），否则，当下次需要获得或移除一个元素的时候，这个元素会不在我们用散列函数求出的位置上。
 
 ```javascript
 HashTable.prototype.remove = function(key) {
-  this._table[loseloseHashCode(key)] = undefined;
-};
+  this._table[loseloseHashCode(key)] = undefined
+}
 ```
 
 现在有一个明显的问题：我们根据函数求得的值前后很可能会重复，所以容易对原本位置上的值进行覆盖，如果不加处理将会导致整个表遭到破坏而无法使用。
@@ -60,11 +60,11 @@ HashTable.prototype.remove = function(key) {
 
 ```javascript
 function ValueFactory(key, value) {
-  this.key = key;
-  this.value = value;
+  this.key = key
+  this.value = value
   this.toString = function() {
-    return '[' + this.key + ' - ' + this.value + ']';
-  };
+    return '[' + this.key + ' - ' + this.value + ']'
+  }
 }
 ```
 
@@ -72,57 +72,57 @@ function ValueFactory(key, value) {
 
 ```javascript
 HashTable.prototype.put = function(key, value) {
-  const position = loseloseHashCode(key);
+  const position = loseloseHashCode(key)
   if (undefined == table[position]) {
-    table[position] = new LinkedList();
+    table[position] = new LinkedList()
   }
-  table[position].append(new ValueFactory(key, value));
-};
+  table[position].append(new ValueFactory(key, value))
+}
 
 HashTable.prototype.get = function(key) {
-  const position = loseloseHashCode(key);
+  const position = loseloseHashCode(key)
   if (undefined !== table[position]) {
     // 遍历链表来寻找键/值
-    let current = table[position].getHead();
+    let current = table[position].getHead()
     while (current.next) {
       if (current.element.key === key) {
-        return current.element.value;
+        return current.element.value
       }
-      current = current.next;
+      current = current.next
     }
     // 检查元素在链表第一个或最后一个节点的情况
     if (current.element.key === key) {
-      return current.element.value;
+      return current.element.value
     }
   }
-  return undefined;
-};
+  return undefined
+}
 
 HashTable.prototype.remove = function(key) {
-  const position = loseloseHashCode(key);
+  const position = loseloseHashCode(key)
   if (undefined !== table[position]) {
-    let current = table[position].getHead();
+    let current = table[position].getHead()
     while (current.next) {
       if (current.element.key === key) {
-        table[position].remove(current.element);
+        table[position].remove(current.element)
         if (table[position].isEmpty()) {
-          table[position] = undefined;
+          table[position] = undefined
         }
-        return true;
+        return true
       }
-      current = current.next;
+      current = current.next
     }
     // 检查是否为第一个或最后一个元素
     if (current.element.key === key) {
-      table[position].remove(current.element);
+      table[position].remove(current.element)
       if (table[position].isEmpty()) {
-        table[position] = undefined;
+        table[position] = undefined
       }
-      return true;
+      return true
     }
   }
-  return false;
-};
+  return false
+}
 ```
 
 ## 线性探查
@@ -135,38 +135,38 @@ HashTable.prototype.remove = function(key) {
 
 ```javascript
 HashTable.prototype.put = function(key, value) {
-  let pos = loseloseHashCode(key);
+  let pos = loseloseHashCode(key)
   while (this._table[pos]) {
-    pos++;
+    pos++
   }
-  this._table[pos] = new ValueFactory(key, value);
-};
+  this._table[pos] = new ValueFactory(key, value)
+}
 
 HashTable.prototype.get = function(key) {
-  let cur = null;
-  let pos = loseloseHashCode(key);
-  const len = this._table.length;
+  let cur = null
+  let pos = loseloseHashCode(key)
+  const len = this._table.length
   while (pos < len) {
-    cur = this._table[pos];
+    cur = this._table[pos]
     if (cur && cur.key === key) {
-      return this._table[pos];
+      return this._table[pos]
     }
-    pos++;
+    pos++
   }
-};
+}
 
 HashTable.prototype.remove = function(key) {
-  let cur = null;
-  let pos = loseloseHashCode(key);
-  const len = this._table.length;
+  let cur = null
+  let pos = loseloseHashCode(key)
+  const len = this._table.length
   while (pos < len) {
-    cur = this._table[pos];
+    cur = this._table[pos]
     if (cur && cur.key === key) {
-      this._table[pos] = undefined;
+      this._table[pos] = undefined
     }
-    pos++;
+    pos++
   }
-};
+}
 ```
 
 ## 总结
@@ -175,14 +175,14 @@ HashTable.prototype.remove = function(key) {
 
 ```javascript
 var djb2HashCode = function(key) {
-  var hash = 5381; // 初始化一个 hash 变量并赋值为一个质数
+  var hash = 5381 // 初始化一个 hash 变量并赋值为一个质数
   for (var i = 0; i < key.length; i++) {
     // 迭代参数 key
     // 将 hash 与 33 相乘（用来当作一个魔力数），并和当前迭代到的字符的 ASCII 码值相加
-    hash = hash * 33 + key.charCodeAt(i);
+    hash = hash * 33 + key.charCodeAt(i)
   }
-  return hash % 1013; // 将相加的和与另一个随机质数（比我们认为的散列表的大小要大）相除的取余
-};
+  return hash % 1013 // 将相加的和与另一个随机质数（比我们认为的散列表的大小要大）相除的取余
+}
 ```
 
 和散列表相类似的还有散列集合的实现。
@@ -193,67 +193,67 @@ var djb2HashCode = function(key) {
 
 ```javascript
 function ValueFactory(key, value) {
-  this.key = key;
-  this.value = value;
+  this.key = key
+  this.value = value
   this.toString = function() {
-    return '[' + this.key + ' - ' + this.value + ']';
-  };
+    return '[' + this.key + ' - ' + this.value + ']'
+  }
 }
 
 function HashTable() {
-  this._table = [];
+  this._table = []
 }
 
 HashTable.prototype.put = function(key, value) {
-  const position = loseloseHashCode(key);
+  const position = loseloseHashCode(key)
   if (undefined == table[position]) {
-    table[position] = new LinkedList();
+    table[position] = new LinkedList()
   }
-  table[position].append(new ValueFactory(key, value));
-};
+  table[position].append(new ValueFactory(key, value))
+}
 
 HashTable.prototype.get = function(key) {
-  const position = loseloseHashCode(key);
+  const position = loseloseHashCode(key)
   if (undefined !== table[position]) {
     // 遍历链表来寻找键/值
-    let current = table[position].getHead();
+    let current = table[position].getHead()
     while (current.next) {
       if (current.element.key === key) {
-        return current.element.value;
+        return current.element.value
       }
-      current = current.next;
+      current = current.next
     }
     // 检查元素在链表第一个或最后一个节点的情况
     if (current.element.key === key) {
-      return current.element.value;
+      return current.element.value
     }
   }
-  return undefined;
-};
+  return undefined
+}
 
 HashTable.prototype.remove = function(key) {
-  const position = loseloseHashCode(key);
+  const position = loseloseHashCode(key)
   if (undefined !== table[position]) {
-    let current = table[position].getHead();
+    let current = table[position].getHead()
     while (current.next) {
       if (current.element.key === key) {
-        table[position].remove(current.element);
+        table[position].remove(current.element)
         if (table[position].isEmpty()) {
-          table[position] = undefined;
+          table[position] = undefined
         }
-        return true;
+        return true
       }
-      current = current.next;
+      current = current.next
     }
     // 检查是否为第一个或最后一个元素
     if (current.element.key === key) {
-      table[position].remove(current.element);
+      table[position].remove(current.element)
       if (table[position].isEmpty()) {
-        table[position] = undefined;
+        table[position] = undefined
       }
-      return true;
+      return true
     }
   }
-  return false;
-};
+  return false
+}
 ```

@@ -16,51 +16,51 @@
 ```javascript
 class _Set {
   constructor() {
-    this._obj = Object.create(null);
+    this._obj = Object.create(null)
   }
 
   has(value) {
-    return Reflect.has(this._obj, value);
+    return Reflect.has(this._obj, value)
   }
 
   add(value) {
     if (this.has(value)) {
-      return false;
+      return false
     }
-    this._obj[value] = value;
-    return true;
+    this._obj[value] = value
+    return true
   }
 
   remove(value) {
-    return Reflect.deleteProperty(this._obj, value);
+    return Reflect.deleteProperty(this._obj, value)
   }
 
   clear() {
-    this._obj = Object.create(null);
+    this._obj = Object.create(null)
   }
 
   size() {
-    return this.values().length;
+    return this.values().length
   }
 
   values() {
-    return Object.keys(this._obj);
+    return Object.keys(this._obj)
   }
 }
 
-const set = new _Set();
-set.add(1);
-console.log(set.values()); // ["1"]
-console.log(set.has(1)); // true
-console.log(set.size()); // 1
-set.add(2);
-console.log(set.values()); // ["1", "2"]
-console.log(set.has(2)); // true
-console.log(set.size()); // 2
-set.remove(1);
-console.log(set.values()); // ["2"]
-set.remove(2);
-console.log(set.values()); // []
+const set = new _Set()
+set.add(1)
+console.log(set.values()) // ["1"]
+console.log(set.has(1)) // true
+console.log(set.size()) // 1
+set.add(2)
+console.log(set.values()) // ["1", "2"]
+console.log(set.has(2)) // true
+console.log(set.size()) // 2
+set.remove(1)
+console.log(set.values()) // ["2"]
+set.remove(2)
+console.log(set.values()) // []
 ```
 
 ## 集合操作
@@ -71,29 +71,29 @@ console.log(set.values()); // []
 class _Set {
   // ...
   union(otherSet) {
-    const unionSet = new _Set();
+    const unionSet = new _Set()
     this.values()
       .concat(otherSet.values())
       .forEach(item => {
         if (!unionSet.has(item)) {
-          unionSet.add(item);
+          unionSet.add(item)
         }
-      });
-    return unionSet;
+      })
+    return unionSet
   }
 }
 
-const setA = new _Set();
-setA.add(1);
-setA.add(2);
-setA.add(3);
-const setB = new _Set();
-setB.add(3);
-setB.add(4);
-setB.add(5);
-setB.add(6);
-const unionAB = setA.union(setB);
-console.log(unionAB.values()); // [ '1', '2', '3', '4', '5', '6' ]
+const setA = new _Set()
+setA.add(1)
+setA.add(2)
+setA.add(3)
+const setB = new _Set()
+setB.add(3)
+setB.add(4)
+setB.add(5)
+setB.add(6)
+const unionAB = setA.union(setB)
+console.log(unionAB.values()) // [ '1', '2', '3', '4', '5', '6' ]
 ```
 
 **交集**：对于给定的两个集合，返回一个包含两个集合中共有元素的新集合。
@@ -101,26 +101,26 @@ console.log(unionAB.values()); // [ '1', '2', '3', '4', '5', '6' ]
 ```javascript
 class _Set {
   intersection(otherSet) {
-    const intersectionSet = new _Set();
+    const intersectionSet = new _Set()
     this.values().forEach(item => {
       if (otherSet.has(item)) {
-        intersectionSet.add(item);
+        intersectionSet.add(item)
       }
-    });
-    return intersectionSet;
+    })
+    return intersectionSet
   }
 }
 
-const setA = new _Set();
-setA.add(1);
-setA.add(2);
-setA.add(3);
-const setB = new _Set();
-setB.add(2);
-setB.add(3);
-setB.add(4);
-const intersectionAB = setA.intersection(setB);
-console.log(intersectionAB.values()); // [ '2', '3' ]
+const setA = new _Set()
+setA.add(1)
+setA.add(2)
+setA.add(3)
+const setB = new _Set()
+setB.add(2)
+setB.add(3)
+setB.add(4)
+const intersectionAB = setA.intersection(setB)
+console.log(intersectionAB.values()) // [ '2', '3' ]
 ```
 
 **差集**：对于给定的两个集合，返回一个包含所有存在于第一个集合且不存在于第二个集合的元素的新集合。
@@ -128,26 +128,26 @@ console.log(intersectionAB.values()); // [ '2', '3' ]
 ```javascript
 class _Set {
   difference(otherSet) {
-    const differenceSet = new _Set();
+    const differenceSet = new _Set()
     this.values().forEach(item => {
       if (!otherSet.has(item)) {
-        differenceSet.add(item);
+        differenceSet.add(item)
       }
-    });
-    return differenceSet;
+    })
+    return differenceSet
   }
 }
 
-const setA = new _Set();
-setA.add(1);
-setA.add(2);
-setA.add(3);
-const setB = new _Set();
-setB.add(2);
-setB.add(3);
-setB.add(4);
-const differenceAB = setA.difference(setB);
-console.log(differenceAB.values()); // [ '1' ]
+const setA = new _Set()
+setA.add(1)
+setA.add(2)
+setA.add(3)
+const setB = new _Set()
+setB.add(2)
+setB.add(3)
+setB.add(4)
+const differenceAB = setA.difference(setB)
+console.log(differenceAB.values()) // [ '1' ]
 ```
 
 **子集**：验证一个给定集合是否是另一集合的子集。
@@ -156,29 +156,29 @@ console.log(differenceAB.values()); // [ '1' ]
 class _Set {
   subset(otherSet) {
     if (this.size() > otherSet.size()) {
-      return false;
+      return false
     }
 
     return this.values().every(itme => {
       if (!otherSet.has(itme)) {
-        return false;
+        return false
       }
-      return true;
-    });
+      return true
+    })
   }
 }
 
-const setA = new _Set();
-setA.add(1);
-setA.add(2);
-const setB = new _Set();
-setB.add(1);
-setB.add(2);
-setB.add(3);
-const setC = new _Set();
-setC.add(2);
-setC.add(3);
-setC.add(4);
-console.log(setA.subset(setB)); // true
-console.log(setA.subset(setC)); // false
+const setA = new _Set()
+setA.add(1)
+setA.add(2)
+const setB = new _Set()
+setB.add(1)
+setB.add(2)
+setB.add(3)
+const setC = new _Set()
+setC.add(2)
+setC.add(3)
+setC.add(4)
+console.log(setA.subset(setB)) // true
+console.log(setA.subset(setC)) // false
 ```

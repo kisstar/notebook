@@ -78,7 +78,7 @@ sudo apt install fcitx-table
 
 安装完成之后我们需要进行相应的设置，在设置之前先重启一下，然后在系统设置里将键盘输入法系统改为 `fcitx`，并在 `fcitx` 设置中选择需要的输入法。
 
-输入法的安装由于是第一次安装，所以相关的操作比较混乱，介绍比较模糊，具体的安装步骤可以参考 [Ubuntu 18.04 添加中文输入法](https://blog.csdn.net/rznice/article/details/79841790) 和 [解决Ubuntu 18.04中文输入法的问题，安装搜狗拼音](https://blog.csdn.net/fx_yzjy101/article/details/80243710)。
+输入法的安装由于是第一次安装，所以相关的操作比较混乱，介绍比较模糊，具体的安装步骤可以参考 [Ubuntu 18.04 添加中文输入法](https://blog.csdn.net/rznice/article/details/79841790) 和 [解决 Ubuntu 18.04 中文输入法的问题，安装搜狗拼音](https://blog.csdn.net/fx_yzjy101/article/details/80243710)。
 
 由于我在安装 `Ubuntu` 系统时选择的是中文，所以中文输入法的使用只需要通过右上角来切换并可以直接使用。
 
@@ -199,25 +199,25 @@ sudo apt-get install sublime-text
 
 安装 `babel-sublime` 译支持 `ES6`， `React.js`, `jsx` 代码高亮。
 
-* `ctrl+shift+p` 打开命令输入框，输入 `install`
-* 选择 `install package` 输入 `babel` 进行安装
-* 安装完成后打开 `.js`或`.jsx` 后缀的文件
-* 然后打开菜单`view`， Syntax -> Open all with current extension as... -> Babel -> JavaScript (Babel)
-* 选择 `babel` 为默认 `javascript` 打开 `syntax`，这样就实现了对 `jsx` 语法的支持。
+- `ctrl+shift+p` 打开命令输入框，输入 `install`
+- 选择 `install package` 输入 `babel` 进行安装
+- 安装完成后打开 `.js`或`.jsx` 后缀的文件
+- 然后打开菜单`view`， Syntax -> Open all with current extension as... -> Babel -> JavaScript (Babel)
+- 选择 `babel` 为默认 JavaScript 打开 `syntax`，这样就实现了对 `jsx` 语法的支持。
 
 安装 `sublimeLinter-jsxhint` 实现 `JSX` 代码审查，实时提示语法错误.
 
-* 按照上面同样的步骤安装 `sublimeLinter-jsx`，然后我们还需要通过 `npm` 来全局安装 `jsxhint` 这个包。
+- 按照上面同样的步骤安装 `sublimeLinter-jsx`，然后我们还需要通过 `npm` 来全局安装 `jsxhint` 这个包。
 
 安装 `JsFormat` 格式化 `js` 代码，以同样的步骤安装 `JsFormat`，安装完成后对其进行简单的配置：
 
-* 打开 preferences -> Package Settings -> JsFormat -> Setting - Users，输入以下代码：
+- 打开 preferences -> Package Settings -> JsFormat -> Setting - Users，输入以下代码：
 
 ```json
 {
-    "e4x": true, // 支持 jsx
-    // jsformat options
-    "format_on_save": true // 保存时自动格式化
+  "e4x": true, // 支持 jsx
+  // jsformat options
+  "format_on_save": true // 保存时自动格式化
 }
 ```
 

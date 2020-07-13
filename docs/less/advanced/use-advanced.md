@@ -9,12 +9,12 @@
 ```less
 @color: #f00;
 .outter {
+  color: @color;
+  .inner {
+    @color: #0f0;
     color: @color;
-    .inner {
-        @color: #0f0;
-        color: @color;
-        @color: #00f;
-    }
+    @color: #00f;
+  }
 }
 
 // 编译后的CSS
@@ -28,18 +28,20 @@
 
 ## 命名空间
 
-- 在原生的CSS中 `>` 选择器，选择的是直接子元素，当然Less里面依然支持。不过在引入命令空间时，如使用 `>` 选择器，它表示引入所指空间下的规则。
+在原生的 CSS 中 `>` 选择器，选择的是直接子元素，当然这在 Less 里面依然支持。不过在引入命令空间时，如使用 `>` 选择器，它表示引入所指空间下的规则。
+
+利用这一点，你可以对混合（mixins）进行分组。
 
 ```less
 .container() {
-    background: #0f0;
-    .text {
-        color: #f00;
-    }
+  background: #0f0;
+  .text {
+    color: #f00;
+  }
 }
 p {
-    background: #000;
-    .container > .text; // 引用 .container 下 .text 的规则
+  background: #000;
+  .container > .text; // 引用 .container 下 .text 的规则，.container.text 也有效
 }
 
 // 编译结果
@@ -57,20 +59,20 @@ p {
 
 ```less
 .container() {
-    background: #0f0;
-    .p(@width: 50%) {
-        width: @width;
-        .text(@color) {
-            color: @color;
-            width: @width;
-        }
+  background: #0f0;
+  .p(@width: 50%) {
+    width: @width;
+    .text(@color) {
+      color: @color;
+      width: @width;
     }
+  }
 }
 .result1 {
-    .container; // .container 等价于 .container()
+  .container();
 }
 .result2 {
-    .container > .p(100%);
+  .container > .p(100%);
 }
 // .container > .p > .text(#f00); 或者 .container > .p(100%) > .text(#f00); // 都会报错，父级不能使用参数
 // .p() // 错误，不能直接调用子方法
@@ -78,36 +80,36 @@ p {
 
 ## 匹配参数的混合
 
-就像下面这样，第一个参数 `top` 和 `bottom` 要会找到方法中的匹配，如果匹配，将全部选择。另外，如果想要对任何匹配都匹配中，可以在混合函数中使用 `@_`。
+就像下面这样，第一个参数 `top` 和 `bottom` 要先找到方法中的匹配，如果匹配，将全部选择。如果想要对任何匹配都匹配中，可以在混合函数中使用 `@_`。
 
 ```less
 // mixin.less
 .triangle(@_, @width, @color) {
-    width: 0;
-    height: 0;
-    overflow: hidden;
+  width: 0;
+  height: 0;
+  overflow: hidden;
 }
 .triangle(top, @width, @color) {
-    border-width: @width;
-    border-color: transparent transparent @color transparent;
-    border-style: dashed dashed solid dashed;
+  border-width: @width;
+  border-color: transparent transparent @color transparent;
+  border-style: dashed dashed solid dashed;
 }
 .triangle(bottom, @width, @color) {
-    border-width: @width;
-    border-color: @color transparent transparent transparent;
-    border-style: solid dashed dashed dashed;
+  border-width: @width;
+  border-color: @color transparent transparent transparent;
+  border-style: solid dashed dashed dashed;
 }
 
 // triangle.less
 @import '../pathto/mixin.less';
 
 .triangle {
-    .top {
-        .triangle(top, 50px, #f00);
-    }
-    .bottom {
-        .triangle(bottom, 50px, #f00);
-    }
+  .top {
+    .triangle(top, 50px, #f00);
+  }
+  .bottom {
+    .triangle(bottom, 50px, #f00);
+  }
 }
 
 // 编译后的CSS
@@ -129,7 +131,7 @@ p {
 }
 ```
 
-当然，上面的结果（编译后的CSS）并不是最优的，实际开发中会把上面公共的样式放在 `.triangle` 中，这里只是为匹配功能做示范。
+当然，上面的结果（编译后的 CSS）并不是最优的，实际开发中会把上面公共的样式放在 `.triangle` 中，这里只是为匹配功能做示范。
 
 ## 属性的合并
 
@@ -137,11 +139,11 @@ p {
 
 ```less
 .mixin() {
-    box-shadow+: 10px 10px 5px #cccccc;
+  box-shadow+: 10px 10px 5px #cccccc;
 }
 .box-shadow {
-    .mixin();
-    box-shadow+: 10px 10px 5px #888888;
+  .mixin();
+  box-shadow+: 10px 10px 5px #888888;
 }
 
 // 编译结果
@@ -154,11 +156,11 @@ p {
 
 ```less
 .mixin() {
-    background+_: #f00;
+  background+_: #f00;
 }
 .background {
-    .mixin();
-    background+_: url('../pathto/file-name.png');
+  .mixin();
+  background+_: url('../pathto/file-name.png');
 }
 
 // 编译结果
@@ -169,7 +171,7 @@ p {
 
 ## 函数
 
-Less内置了许多函数，比如一些类型检测函数。
+Less 内置了许多函数，比如一些类型检测函数。
 
 ```less
 isnumber(9) // true
@@ -195,27 +197,27 @@ isunit(value, unit);
 
 ## 条件表达式
 
-在Less中使用比较运算符（>,>=,=,<,<=）来进行判断，根据不同的结果输出不同的值得。需要注意的是除去关键字 `true` 以外的值都被视为 `false`。
+在 Less 中使用比较运算符（>, >=, =, <, <=）来进行判断，根据不同的结果输出不同的值得。需要注意的是除去关键字 `true` 以外的值都被视为 `false`。
 
 ```less
 .mixin(@num) when(isnumber(@num)) {
-    // 当 @num 为数字时，使用该规则
-    background: #f00;
+  // 当 @num 为数字时，使用该规则
+  background: #f00;
 }
 .mixin(@num) when(@num > 50) {
-    // 当 @num 为数字时且大于 50，使用该规则
-    color: #000;
+  // 当 @num 为数字时且大于 50，使用该规则
+  color: #000;
 }
 .mixin(@num) when(@num <=50) {
-    // 当 @num 为数字时且小于 50，使用该规则
-    color: #00f;
+  // 当 @num 为数字时且小于 50，使用该规则
+  color: #00f;
 }
 .mixin(@num) {
-    // 只要传入了一个参数就使用该规则
-    font-size: 12px;
+  // 只要传入了一个参数就使用该规则
+  font-size: 12px;
 }
 .result {
-    .mixin(50);
+  .mixin(50);
 }
 
 // 编译结果
@@ -231,10 +233,10 @@ isunit(value, unit);
 ```less
 // and 运算符相当于与运算，必须条件全部符合才会匹配，使用里面的规则
 .mixin(@width, @style, @color) when (@width > 5) and (@style = solid) {
-    border: @width @style @color;
+  border: @width @style @color;
 }
 .border {
-    .mixin(6px, solid, #f00);
+  .mixin(6px, solid, #f00);
 }
 
 // 编译结果
@@ -249,15 +251,16 @@ isunit(value, unit);
 
 ## 循环
 
-在Less中，混合可以调用自身。这样当一个混合递归的调用自己，再结合Guard表达式和模式匹配这两个特性，就可以写出循环结构。
+在 Less 中，混合可以调用自身。这样当一个混合递归的调用自己，再结合 Guard 表达式和模式匹配这两个特性，就可以写出循环结构。
 
 ```less
-.loop(@num) when(@num > 0) { // 退出循环的条件
-    .loop(@num - 1); // 递归调用
-    width: 10px * @num; // 每次循环产生样式的代码
+.loop(@num) when(@num > 0) {
+  // 退出循环的条件
+  .loop(@num - 1); // 递归调用
+  width: 10px * @num; // 每次循环产生样式的代码
 }
 .result {
-    .loop(2);
+  .loop(2);
 }
 
 // 编译结果
@@ -273,11 +276,11 @@ isunit(value, unit);
 
 ```less
 .average(@x, @y) {
-    @average: ((@x + @y) / 2);
+  @average: ((@x + @y) / 2);
 }
 div {
-    .average(16px, 50px); // 调用 方法
-    padding: @average;    // 使用返回值
+  .average(16px, 50px); // 调用 方法
+  padding: @average; // 使用返回值
 }
 
 // 生成的 CSS
@@ -288,10 +291,10 @@ div {
 
 ```less
 .generate-cols(@n, @i: 1) when (@i =< @n) {
-    .col-@{i} {
-        width: (@i * 100% / @n);
-    }
-    .generate-cols(@n, (@i + 1));
+  .col-@{i} {
+    width: (@i * 100% / @n);
+  }
+  .generate-cols(@n, (@i + 1));
 }
 .generate-cols(4);
 
@@ -314,4 +317,4 @@ div {
 
 - [Less 中文网](http://lesscss.cn/)
 - [CSS 选择器 | 菜鸟教程](http://www.runoob.com/cssref/css-selectors.html)
-- [学习Less-看这篇就够了](https://segmentfault.com/a/1190000012360995?utm_source=tag-newest)
+- [学习 Less-看这篇就够了](https://segmentfault.com/a/1190000012360995?utm_source=tag-newest)

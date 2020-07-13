@@ -11,27 +11,27 @@
 
 ```javascript
 function swap(index1, index2, arr) {
-    var temp = arr[index1]
-    arr[index1] = arr[index2]
-    arr[index2] = temp
+  var temp = arr[index1]
+  arr[index1] = arr[index2]
+  arr[index2] = temp
 }
 
 function insertionSort(arr) {
-    var i = 1,
-        length = arr.length
+  var i = 1,
+    length = arr.length
 
-    for (; i < length; i++) {
-        j = i
-        while (j > 0) {
-            if (arr[j] < arr[j - 1]) {
-                swap(j, j - 1, arr)
-            } else {
-                break
-            }
-            j--
-        }
+  for (; i < length; i++) {
+    j = i
+    while (j > 0) {
+      if (arr[j] < arr[j - 1]) {
+        swap(j, j - 1, arr)
+      } else {
+        break
+      }
+      j--
     }
-    return arr
+  }
+  return arr
 }
 ```
 
@@ -53,4 +53,4 @@ def insertion_sort(arr):
 
 ## 总结
 
-* 插入排序和冒泡排序一样，也有一种优化算法，叫做拆半插入排序。
+- 插入排序和冒泡排序一样，也有一种优化算法，叫做拆半插入排序。

@@ -749,7 +749,7 @@ delta
 
 ## 参考
 
-- [深入Git索引（一）：索引文件结构篇](https://zhuanlan.zhihu.com/p/76634986)
+- [深入 Git 索引（一）：索引文件结构篇](https://zhuanlan.zhihu.com/p/76634986)
 - [理解 Git index 文件](https://wolfsonliu.github.io/archive/2018/li-jie-git-index-wen-jian.html)
 - [Git 内部原理 - Git 对象](https://git-scm.com/book/zh/v2/Git-%E5%86%85%E9%83%A8%E5%8E%9F%E7%90%86-Git-%E5%AF%B9%E8%B1%A1)
 - [Git from the inside out](https://codewords.recurse.com/issues/two/git-from-the-inside-out)

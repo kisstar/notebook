@@ -163,7 +163,7 @@ docker pull registry.cn-beijing.aliyuncs.com/kisstar/centos:[镜像版本号]
 
 ## 参考
 
-- [Docker —— 从入门到实践-极客学院Wiki][docker_technology_and_combat]
+- [Docker —— 从入门到实践-极客学院 Wiki][docker_technology_and_combat]
 
 [docker_technology_and_combat]: https://wiki.jikexueyuan.com/project/docker-technology-and-combat/
 [docker_hub]: https://hub.docker.com/

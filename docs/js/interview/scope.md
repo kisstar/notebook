@@ -2,7 +2,7 @@
 
 当代码在一个环境中执行时，会创建变量对象的一个作用域链。
 
-如果一个变量或者其他表达式不在 "当前的作用域"，那么 `JavaScript` 机制会继续沿着作用域链上查找直到全局作用域（global 或浏览器中的 window）为止（如果依旧找不到，通常会导致错误）。
+如果一个变量或者其他表达式不在 "当前的作用域"，那么 JavaScript 机制会继续沿着作用域链上查找直到全局作用域（global 或浏览器中的 window）为止（如果依旧找不到，通常会导致错误）。
 
 ## Example_0
 
@@ -39,17 +39,17 @@ function Person(name, age, weight) {
 }
 
 function fn1(person) {
-  person.name = "p2"
-  person = new Person("p3", 18, 45)
+  person.name = 'p2'
+  person = new Person('p3', 18, 45)
 }
 
-var p = new Person("p1", 18, 45)
+var p = new Person('p1', 18, 45)
 console.log(p.name) // p1
 fn1(p)
 console.log(p.name) // p2
 ```
 
-**在 `ECMAscript` 中所有函数的参数都是按值传递的。**在函数 `fn1` 的内部给 `person` 赋值之前，`person` 和外部 `p` 其实指向的是内存中同一个地址，因此修改后的内容会同时反应在外部。但由于按值传递的原因，我们继续改变内容 `person` 的值（指向）后，它们就不再指向同一个地址了，后续也就再无关系。
+**在 ECMAScript 中所有函数的参数都是按值传递的。**在函数 `fn1` 的内部给 `person` 赋值之前，`person` 和外部 `p` 其实指向的是内存中同一个地址，因此修改后的内容会同时反应在外部。但由于按值传递的原因，我们继续改变内容 `person` 的值（指向）后，它们就不再指向同一个地址了，后续也就再无关系。
 
 ## Example_2
 
@@ -117,8 +117,8 @@ console.log(a)
 ## Example_5
 
 ```javascript
-var foo = 'Hello';
-(function (foo) {
+var foo = 'Hello'
+;(function(foo) {
   console.log(foo)
   var foo = foo || 'world'
   console.log(foo)

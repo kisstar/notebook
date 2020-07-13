@@ -8,7 +8,7 @@
 
 如今流行的 `Linux` 发行版在包管理工具、方式和形式都大同小异，这里主要就 `Ubuntu` 做一个说明。
 
-最近发布的 `debian` 衍生版(如Ubuntu、Raspbian等)大多数都包含了 `apt` 命令，它提供了一个简洁统一的接口，可用于通常由 `apt-get` 和 `apt-cache` 命令处理的常见操作。
+最近发布的 `debian` 衍生版(如 Ubuntu、Raspbian 等)大多数都包含了 `apt` 命令，它提供了一个简洁统一的接口，可用于通常由 `apt-get` 和 `apt-cache` 命令处理的常见操作。
 
 这里就 `apt` 相关常用命令做了一个简单的描述：
 
@@ -60,7 +60,7 @@ Git 是一个免费的开源分布式版本控制系统，旨在快速，高效�
 
 由于它可以有效、高速地处理从很小到非常大的项目版本管理，这对我们开发工作的进行异常有利，所以这里我们先对它进行安装。
 
-首先安装Git：
+首先安装 Git：
 
 ```bash
 sudo apt-get install git
@@ -73,7 +73,7 @@ git config --global user.name "Your Name"
 git config --global user.email "email@example.com"
 ```
 
-最后我们来生成和配置Git SSH密钥，在生成密钥之前我们先检测之前是否生成过 SSh 密钥，其原理就是检测家目录下 `.ssh` 文件是否存在，所以我们可以通过直接切换 `cd ~/.ssh` 或者查看家目录 `ls -a ~/`。
+最后我们来生成和配置 Git SSH 密钥，在生成密钥之前我们先检测之前是否生成过 SSh 密钥，其原理就是检测家目录下 `.ssh` 文件是否存在，所以我们可以通过直接切换 `cd ~/.ssh` 或者查看家目录 `ls -a ~/`。
 
 如果不存在则通过该命令生成：
 
@@ -99,7 +99,7 @@ wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | 
 
 安装成功后，需要关闭终端，重新启动。Nvm 才会生效。
 
-Node.js 是一个事件驱动 I/O 服务端 `JavaScript` 环境，基于 Google 的 V8 引擎，V8 引擎执行 `Javascript` 的速度非常快，性能非常好。
+Node.js 是一个事件驱动 I/O 服务端 JavaScript 环境，基于 Google 的 V8 引擎，V8 引擎执行 JavaScript 的速度非常快，性能非常好。
 
 我们这里安装现在最新稳定版 `v10.14.2`：
 
