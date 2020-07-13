@@ -2,6 +2,7 @@
   "extends": [
     "stylelint-config-standard",
     "stylelint-config-css-modules",
+    "stylelint-plugin-stylus",
     "stylelint-config-rational-order",
     "stylelint-config-prettier"
   ],

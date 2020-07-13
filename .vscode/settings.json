@@ -4,5 +4,7 @@
   "prettier.useTabs": true,
   "files.eol": "\n",
   "files.insertFinalNewline": true,
-  "files.trimTrailingWhitespace": true
+  "files.trimTrailingWhitespace": true,
+  "stylelint.customSyntax": "stylelint-plugin-stylus/custom-syntax",
+  "stylelint.validate": ["css", "vue", "stylus"]
 }
