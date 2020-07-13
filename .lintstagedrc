@@ -3,5 +3,5 @@
   "*.js": ["yarn run lint:js"],
   "*.vue": ["yarn run lint:vue"],
   "*.md": ["yarn run lint:md"],
-  "**/*.{js,jsx,tsx,ts,less,json}": ["prettier --write"]
+  "**/*.{js,jsx,tsx,ts,less,json,md}": ["prettier --write"]
 }
