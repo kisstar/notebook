@@ -8,7 +8,7 @@ Linux，一个基于 POSIX 和 UNIX 的多用户、多任务、支持多线程�
 
 前往下载 [VMware Workstation](https://www.vmware.com/products/workstation-pro/workstation-pro-evaluation.html)
 
-Ubuntu（友帮拓、优般图、乌班图）是一个以桌面应用为主的开源 `GNU/Linux` 操作系统，基于 `Debian GNU/Linux`，支持 `x86`、`amd64`（即x64）和 `ppc` 架构，由全球化的专业开发团队（Canonical Ltd）打造的。
+Ubuntu（友帮拓、优般图、乌班图）是一个以桌面应用为主的开源 `GNU/Linux` 操作系统，基于 `Debian GNU/Linux`，支持 `x86`、`amd64`（即 x64）和 `ppc` 架构，由全球化的专业开发团队（Canonical Ltd）打造的。
 
 前往下载 [Ubuntu](https://www.ubuntu.com/download)
 
@@ -56,7 +56,7 @@ Ubuntu（友帮拓、优般图、乌班图）是一个以桌面应用为主的�
 
 <img :src="$withBase('/images/linux/LinuxSystemInstallation-6.png')" alt="LinuxSystemInstallation-6">
 
-分配的空间一般 20 个G就够了，当然没有 20 个G的空间直接点击下一步也没有问题，因为分配的是最大空间，并不会立即被占用，实际上需要占用多少空间就是多少，但不会超过你设置的上限。
+分配的空间一般 20 个 G 就够了，当然没有 20 个 G 的空间直接点击下一步也没有问题，因为分配的是最大空间，并不会立即被占用，实际上需要占用多少空间就是多少，但不会超过你设置的上限。
 
 <img :src="$withBase('/images/linux/LinuxSystemInstallation-7.png')" alt="LinuxSystemInstallation-7">
 
@@ -96,7 +96,7 @@ Ubuntu（友帮拓、优般图、乌班图）是一个以桌面应用为主的�
 
 通过了解了上面的基本知识后我们通过点击 `VMware` 上面绿色的开启按钮开机，继续进行安装。当我们不再使用时，记得先挂起该虚拟机或挂机后再关闭 `VMware`，直接关闭会导致系统崩溃。
 
-点击开启虚拟机后应快速点击虚拟机然后按 `F2` 键，进入BIOS界面来修改启动顺序，因为默认的启动顺序是硬盘位于光盘前面。另外按住 `Ctrl + alt` 可以退出虚拟机。由于虚拟机上会自动判断，所以这里我们不需要进行此操作，但在实体机上必须如此操作。
+点击开启虚拟机后应快速点击虚拟机然后按 `F2` 键，进入 BIOS 界面来修改启动顺序，因为默认的启动顺序是硬盘位于光盘前面。另外按住 `Ctrl + alt` 可以退出虚拟机。由于虚拟机上会自动判断，所以这里我们不需要进行此操作，但在实体机上必须如此操作。
 
 所以通过虚拟机安装，我们只需要在点击开启后进行等待，直到出现如下的图片，然后根据提示继续操作。
 

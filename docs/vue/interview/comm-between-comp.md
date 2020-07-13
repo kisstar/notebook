@@ -20,13 +20,13 @@
 </template>
 
 <script>
-  import Son from './Son';
+  import Son from './Son'
 
   export default {
     components: {
       Son,
     },
-  };
+  }
 </script>
 
 <!-- Son.vue -->
@@ -41,7 +41,7 @@
         type: String,
       },
     },
-  };
+  }
 </script>
 ```
 
@@ -61,7 +61,7 @@
 </template>
 
 <script>
-  import Son from './Son';
+  import Son from './Son'
 
   export default {
     components: {
@@ -70,9 +70,9 @@
     data() {
       return {
         value: 'Hello',
-      };
+      }
     },
-  };
+  }
 </script>
 
 <!-- Son.vue -->
@@ -93,7 +93,7 @@
         type: Function,
       },
     },
-  };
+  }
 </script>
 ```
 
@@ -113,7 +113,7 @@
 </template>
 
 <script>
-  import Son from './Son';
+  import Son from './Son'
 
   export default {
     components: {
@@ -122,9 +122,9 @@
     data() {
       return {
         value: 'Hello',
-      };
+      }
     },
-  };
+  }
 </script>
 
 <!-- Son.vue -->
@@ -142,7 +142,7 @@
         type: String,
       },
     },
-  };
+  }
 </script>
 ```
 
@@ -181,7 +181,7 @@
         type: String,
       },
     },
-  };
+  }
 </script>
 ```
 
@@ -199,7 +199,7 @@
 </template>
 
 <script>
-  import Son from './Son';
+  import Son from './Son'
 
   export default {
     components: {
@@ -208,9 +208,9 @@
     data() {
       return {
         msg: 'Hello',
-      };
+      }
     },
-  };
+  }
 </script>
 
 <!-- Son -->
@@ -228,7 +228,7 @@
         type: String,
       },
     },
-  };
+  }
 </script>
 ```
 
@@ -249,7 +249,7 @@
 </template>
 
 <script>
-  import Son from './Son';
+  import Son from './Son'
 
   export default {
     components: {
@@ -258,15 +258,15 @@
     data() {
       return {
         value: '',
-      };
+      }
     },
     methods: {
       change() {
-        const { son } = this.$refs;
-        this.value = son.msg;
+        const { son } = this.$refs
+        this.value = son.msg
       },
     },
-  };
+  }
 </script>
 
 <!-- Son.vue -->
@@ -279,9 +279,9 @@
     data() {
       return {
         msg: 'Hello',
-      };
+      }
     },
-  };
+  }
 </script>
 ```
 
@@ -300,7 +300,7 @@
 </template>
 
 <script>
-  import Son from './Son';
+  import Son from './Son'
 
   export default {
     components: {
@@ -309,15 +309,15 @@
     data() {
       return {
         value: '',
-      };
+      }
     },
     methods: {
       change() {
-        const [son] = this.$children;
-        this.value = son.msg;
+        const [son] = this.$children
+        this.value = son.msg
       },
     },
-  };
+  }
 </script>
 
 <!-- Son.vue -->
@@ -330,9 +330,9 @@
     data() {
       return {
         msg: 'Hello',
-      };
+      }
     },
-  };
+  }
 </script>
 ```
 
@@ -352,7 +352,7 @@
 </template>
 
 <script>
-  import Son from './Son';
+  import Son from './Son'
 
   export default {
     components: {
@@ -361,9 +361,9 @@
     data() {
       return {
         msg: 'Hello',
-      };
+      }
     },
-  };
+  }
 </script>
 
 <!-- Son.vue -->
@@ -396,7 +396,7 @@
 </template>
 
 <script>
-  import Son from './Son';
+  import Son from './Son'
 
   export default {
     components: {
@@ -405,14 +405,14 @@
     provide() {
       return {
         parent: this,
-      };
+      }
     },
     data() {
       return {
         msg: 'Hello',
-      };
+      }
     },
-  };
+  }
 </script>
 
 <!-- Son.vue -->
@@ -424,13 +424,13 @@
 </template>
 
 <script>
-  import GrandSon from './GrandSon';
+  import GrandSon from './GrandSon'
 
   export default {
     components: {
       GrandSon,
     },
-  };
+  }
 </script>
 
 <!-- GrandSon.vue -->
@@ -441,7 +441,7 @@
 <script>
   export default {
     inject: ['parent'],
-  };
+  }
 </script>
 ```
 
@@ -460,17 +460,17 @@
  * @param {any[]} 额外的参数
  */
 Vue.prototype.$dispatch = function $dispatch(eventName, componentName, ...args) {
-  let parent = this.$parent;
-  this.$emit.call(this, eventName, ...args);
+  let parent = this.$parent
+  this.$emit.call(this, eventName, ...args)
 
   while (parent) {
     if (parent.$options.name === componentName) {
-      parent.$emit.call(parent, eventName, ...args);
-      break;
+      parent.$emit.call(parent, eventName, ...args)
+      break
     }
-    parent = parent.$parent;
+    parent = parent.$parent
   }
-};
+}
 ```
 
 ```html
@@ -483,7 +483,7 @@ Vue.prototype.$dispatch = function $dispatch(eventName, componentName, ...args) 
 </template>
 
 <script>
-  import Son from './Son';
+  import Son from './Son'
 
   export default {
     name: 'Parent',
@@ -493,15 +493,15 @@ Vue.prototype.$dispatch = function $dispatch(eventName, componentName, ...args) 
     data() {
       return {
         value: '',
-      };
+      }
     },
     beforeCreate() {
       this.$on('change-value', function(newValue) {
-        console.log(this.$options.name);
-        this.value = newValue;
-      });
+        console.log(this.$options.name)
+        this.value = newValue
+      })
     },
-  };
+  }
 </script>
 
 <!-- Son.vue -->
@@ -513,7 +513,7 @@ Vue.prototype.$dispatch = function $dispatch(eventName, componentName, ...args) 
 </template>
 
 <script>
-  import GrandSon from './GrandSon';
+  import GrandSon from './GrandSon'
 
   export default {
     name: 'Son',
@@ -522,10 +522,10 @@ Vue.prototype.$dispatch = function $dispatch(eventName, componentName, ...args) 
     },
     beforeCreate() {
       this.$on('change-value', function() {
-        console.log('这里的事件不会被触发!');
-      });
+        console.log('这里的事件不会被触发!')
+      })
     },
-  };
+  }
 </script>
 
 <!-- GrandSon.vue -->
@@ -540,10 +540,10 @@ Vue.prototype.$dispatch = function $dispatch(eventName, componentName, ...args) 
   export default {
     methods: {
       change() {
-        this.$dispatch('change-value', 'Parent', 'Hello');
+        this.$dispatch('change-value', 'Parent', 'Hello')
       },
     },
-  };
+  }
 </script>
 ```
 
@@ -552,16 +552,16 @@ Vue.prototype.$dispatch = function $dispatch(eventName, componentName, ...args) 
 ```javascript
 Vue.prototype.$broadcast = function $broadcast(eventName, componentName, ...args) {
   this.$children.some(child => {
-    const { name } = child.$options;
+    const { name } = child.$options
 
     if (name === componentName) {
-      child.$emit.call(child, eventName, ...args);
-      return true;
+      child.$emit.call(child, eventName, ...args)
+      return true
     } else {
-      $broadcast.call(child, eventName, componentName, ...args);
+      $broadcast.call(child, eventName, componentName, ...args)
     }
-  });
-};
+  })
+}
 ```
 
 ```html
@@ -574,7 +574,7 @@ Vue.prototype.$broadcast = function $broadcast(eventName, componentName, ...args
 </template>
 
 <script>
-  import Son from './Son';
+  import Son from './Son'
 
   export default {
     name: 'Parent',
@@ -583,10 +583,10 @@ Vue.prototype.$broadcast = function $broadcast(eventName, componentName, ...args
     },
     methods: {
       change() {
-        this.$broadcast('change-value', 'GrandSon', 'Hello');
+        this.$broadcast('change-value', 'GrandSon', 'Hello')
       },
     },
-  };
+  }
 </script>
 
 <!-- Son.vue -->
@@ -598,7 +598,7 @@ Vue.prototype.$broadcast = function $broadcast(eventName, componentName, ...args
 </template>
 
 <script>
-  import GrandSon from './GrandSon';
+  import GrandSon from './GrandSon'
 
   export default {
     name: 'Son',
@@ -607,10 +607,10 @@ Vue.prototype.$broadcast = function $broadcast(eventName, componentName, ...args
     },
     beforeCreate() {
       this.$on('change-value', function() {
-        console.log('这里的事件不会被触发!');
-      });
+        console.log('这里的事件不会被触发!')
+      })
     },
-  };
+  }
 </script>
 
 <!-- GrandSon.vue -->
@@ -624,14 +624,14 @@ Vue.prototype.$broadcast = function $broadcast(eventName, componentName, ...args
     data() {
       return {
         value: '',
-      };
+      }
     },
     mounted() {
       this.$on('change-value', function(newValue) {
-        this.value = newValue;
-      });
+        this.value = newValue
+      })
     },
-  };
+  }
 </script>
 ```
 
@@ -642,7 +642,7 @@ Vue.prototype.$broadcast = function $broadcast(eventName, componentName, ...args
 如此以来，只要你订阅了一种事件，当该事件被出发时，无论是在何处触发的，所有的点阅者都会收到通知，对应的处理函数将会被执行。
 
 ```javascript
-Vue.prototype.$bus = new Vue();
+Vue.prototype.$bus = new Vue()
 ```
 
 ```html
@@ -655,7 +655,7 @@ Vue.prototype.$bus = new Vue();
 </template>
 
 <script>
-  import Son from './Son';
+  import Son from './Son'
 
   export default {
     name: 'Parent',
@@ -664,10 +664,10 @@ Vue.prototype.$bus = new Vue();
     },
     methods: {
       change() {
-        this.$bus.$emit('change-value', 'GrandSon', 'Hello');
+        this.$bus.$emit('change-value', 'GrandSon', 'Hello')
       },
     },
-  };
+  }
 </script>
 
 <!-- Son.vue -->
@@ -679,7 +679,7 @@ Vue.prototype.$bus = new Vue();
 </template>
 
 <script>
-  import GrandSon from './GrandSon';
+  import GrandSon from './GrandSon'
 
   export default {
     name: 'Son',
@@ -688,10 +688,10 @@ Vue.prototype.$bus = new Vue();
     },
     beforeCreate() {
       this.$bus.$on('change-value', function() {
-        console.log('这里的事件也会被触发!');
-      });
+        console.log('这里的事件也会被触发!')
+      })
     },
-  };
+  }
 </script>
 
 <!-- GrandSon.vue -->
@@ -705,14 +705,14 @@ Vue.prototype.$bus = new Vue();
     data() {
       return {
         value: '',
-      };
+      }
     },
     mounted() {
       this.$bus.$on('change-value', function(newValue) {
-        this.value = newValue;
-      });
+        this.value = newValue
+      })
     },
-  };
+  }
 </script>
 ```
 

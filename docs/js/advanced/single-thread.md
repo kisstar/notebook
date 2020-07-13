@@ -18,12 +18,12 @@ JavaScript 中有许多操作看起来都像是多线程执行的，比如 AJAX 
 
 内核不同对于网页的解析也会不同，现在常见的浏览器内核包括：
 
-| 内核 | 浏览器 |
-| :-- | :-- |
-| Trident | IE，MaxThon，TT，The World，360，搜狗浏览器等 |
-| Gecko | NETSCAPE6 及以上版本，FF，MozillaSuite / SeaMonkey 等 |
-| Presto | Opera7 及以上 |
-| Webkit | Safari，Chrome 等 |
+| 内核    | 浏览器                                                |
+| :------ | :---------------------------------------------------- |
+| Trident | IE，MaxThon，TT，The World，360，搜狗浏览器等         |
+| Gecko   | NETSCAPE6 及以上版本，FF，MozillaSuite / SeaMonkey 等 |
+| Presto  | Opera7 及以上                                         |
+| Webkit  | Safari，Chrome 等                                     |
 
 虽然内核有多重，但是执行 JavaScript 的方式大同小异，需要注意的是浏览器不是单线程的，比如上面定时器模块、事件响应模块、网络请求模块都是在分线程中完成的。
 
@@ -32,8 +32,8 @@ JavaScript 中有许多操作看起来都像是多线程执行的，比如 AJAX 
 单线程就意味着，所有任务需要排队，前一个任务结束，才会执行后一个任务。如果前一个任务耗时很长，后一个任务就不得不一直等着。
 
 ```javascript
-alert('stop');
-console.log('done');
+alert('stop')
+console.log('done')
 ```
 
 上面的代码就是一个很简单的例子，如果我们不点击确认，那么控制台永远不会输出下面的字符串。
@@ -42,7 +42,7 @@ console.log('done');
 
 在 JavaScript 中代码可以简单的分为两种代码，即初始化代码和回调代码。
 
-JavaScript 引擎执行代码的基本流程就是先执行初始化代码，包括设置定时器，绑定事件监听和发送AJAX请求。
+JavaScript 引擎执行代码的基本流程就是先执行初始化代码，包括设置定时器，绑定事件监听和发送 AJAX 请求。
 
 能很好的说明 JavaScript 是单线程执行的例子就是 `setTimeout()` 的回调函数只有在运行栈中的代码执行完成后才会执行。
 
@@ -61,7 +61,7 @@ JavaScript 引擎执行代码的基本流程就是先执行初始化代码，包
 3. "执行栈"中的所有同步任务执行完毕，系统就会读取"任务队列"。里面等待的事件，进入执行栈，开始执行。
 4. 主线程不断重复上面的第三步。
 
-第三步中，主线程从”任务队列”中读取事件，这个过程是循环不断的，所以整个的这种运行机制又称为Event Loop（事件循环）。
+第三步中，主线程从”任务队列”中读取事件，这个过程是循环不断的，所以整个的这种运行机制又称为 Event Loop（事件循环）。
 
 ## Web Workers
 
@@ -69,48 +69,49 @@ JavaScript 引擎执行代码的基本流程就是先执行初始化代码，包
 
 ```javascript
 // 主线程
-if ('undefined' !== typeof (Worker)) {
-    /** 检测浏览器是否支持 */
-    if (typeof (w) == 'undefined') {
-        /* 创建一个 Worker */
-        WorkerInstance = new Worker('demo_workers.js');
-    }
-    /** 以事件监听的方式进行交互信息 */
-    WorkerInstance.onmessage = function (event) {
-        console.log(event.data);
-    };
+if ('undefined' !== typeof Worker) {
+  /** 检测浏览器是否支持 */
+  if (typeof w == 'undefined') {
+    /* 创建一个 Worker */
+    WorkerInstance = new Worker('demo_workers.js')
+  }
+  /** 以事件监听的方式进行交互信息 */
+  WorkerInstance.onmessage = function(event) {
+    console.log(event.data)
+  }
 
-    /** 向分线程中发送数据 */
-    WorkerInstance.postMessage(number);
+  /** 向分线程中发送数据 */
+  WorkerInstance.postMessage(number)
 } else {
-    console.log('抱歉，你的浏览器不支持 Web Workers...');
+  console.log('抱歉，你的浏览器不支持 Web Workers...')
 }
 // 分线程（demo_workers.js）
 function fibonacci(number) {
-    return arguments.callee(number-1) + arguments.callee(number-2);
+  return arguments.callee(number - 1) + arguments.callee(number - 2)
 }
-function onmessage(number) { // 分线程中启动事件监听
-    postMessage(fibonacci(number)); // 向主线程返回数据
+function onmessage(number) {
+  // 分线程中启动事件监听
+  postMessage(fibonacci(number)) // 向主线程返回数据
 }
 ```
 
 当我们创建 `web worker` 对象后，它会继续监听消息（即使在外部脚本完成之后）直到其被终止为止。如需终止 `web worker`，并释放浏览器/计算机资源，请使用 `terminate()` 方法：
 
 ```javascript
-WorkerInstance.terminate();
-WorkerInstance = undefined;
+WorkerInstance.terminate()
+WorkerInstance = undefined
 ```
 
 由于 `web worker` 位于外部文件中，其全局对象不再是 `window`，而且它们无法访问下列 JavaScript 对象：
 
-* `window` 对象
-* `document` 对象
-* `parent` 对象
+- `window` 对象
+- `document` 对象
+- `parent` 对象
 
 所以它不能改变 DOM，也没有改变 JavaScript 是单线程执行的本质。另外，在一个分线程中有多个任务时，一样存在着一个队列，然后挨个处理。
 
 ## 参考资料
 
-* [为什么javascript是单线程？](https://blog.csdn.net/baidu_24024601/article/details/51861792)
-* [Javascript是单线程的深入分析](https://www.cnblogs.com/Mainz/p/3552717.html)
-* [深入理解JavaScript执行（单线程的JS）](https://juejin.im/post/5a7bf0acf265da4e9449a4b1)
+- [为什么 javascript 是单线程？](https://blog.csdn.net/baidu_24024601/article/details/51861792)
+- [Javascript 是单线程的深入分析](https://www.cnblogs.com/Mainz/p/3552717.html)
+- [深入理解 JavaScript 执行（单线程的 JS）](https://juejin.im/post/5a7bf0acf265da4e9449a4b1)

@@ -30,7 +30,7 @@ const obj = Object.defineProperty(Object.create(null), 'name', {
   set: function(newValue) {
     console.log('设置属性')
     this._value = newValue
-  }
+  },
 })
 
 obj.name = 'Sharon' // 设置属性
@@ -60,7 +60,7 @@ const obj = Object.defineProperty(Object.create(null), 'name', {
     }
     this._value = newValue
     updateView() // 当属性值改变时，调用更新视图的函数
-  }
+  },
 })
 
 obj.name = 'Anani' // 视图更新
@@ -86,7 +86,7 @@ const defineReactive = (target, key, value) => {
       }
       value = newValue
       updateView()
-    }
+    },
   })
 }
 
@@ -107,7 +107,7 @@ const observe = target => {
 ```javascript
 const obj = {
   name: 'Anani',
-  age: 18
+  age: 18,
 }
 observe(obj)
 obj.name = 'Sharon' // 视图更新
@@ -123,8 +123,8 @@ obj.age = 17 // 视图更新
 ```javascript
 const obj = {
   name: {
-    firstName: 'Anani'
-  }
+    firstName: 'Anani',
+  },
 }
 observe(obj)
 obj.name.firstName = 'Sharon' // 目前，这里的改动将得不到提示
@@ -145,7 +145,7 @@ const defineReactive = (target, key, value) => {
       }
       value = newValue
       updateView()
-    }
+    },
   })
 }
 ```
@@ -159,12 +159,12 @@ const defineReactive = (target, key, value) => {
 ```javascript
 const obj = {
   name: {
-    firstName: 'Anani'
-  }
+    firstName: 'Anani',
+  },
 }
 observe(obj)
 obj.name = {
-  firstName: 'Sharon'
+  firstName: 'Sharon',
 }
 obj.name.firstName = 'Eleven' // 目前，这里的改动将得不到提示
 ```
@@ -186,7 +186,7 @@ const defineReactive = (target, key, value) => {
       observe(newValue)
       value = newValue
       updateView()
-    }
+    },
   })
 }
 ```
@@ -199,7 +199,7 @@ const defineReactive = (target, key, value) => {
 
 ```javascript
 const obj = {
-  name: ['Anani', 'Sharon']
+  name: ['Anani', 'Sharon'],
 }
 observe(obj)
 obj.name.push('Eleven') // 目前，这里的改动将得不到提示
@@ -212,15 +212,7 @@ obj.name.push('Eleven') // 目前，这里的改动将得不到提示
 ```javascript
 const arrayProto = Array.prototype
 const newProto = Object.create(arrayProto)
-const methodsToPatch = [
-  'push',
-  'pop',
-  'shift',
-  'unshift',
-  'splice',
-  'sort',
-  'reverse'
-]
+const methodsToPatch = ['push', 'pop', 'shift', 'unshift', 'splice', 'sort', 'reverse']
 methodsToPatch.forEach(method => {
   newProto[method] = function(...args) {
     const result = arrayProto[method].call(this, ...args)
@@ -235,8 +227,8 @@ const observe = target => {
     return
   }
   if (Array.isArray(target)) {
-      Object.setPrototypeOf(target, newProto)
-      target.forEach(item => observe(item))
+    Object.setPrototypeOf(target, newProto)
+    target.forEach(item => observe(item))
   } else {
     Object.entries(target).forEach(([key, value]) => {
       defineReactive(target, key, value)
@@ -253,11 +245,11 @@ const observe = target => {
 
 ```javascript
 const obj = {
-  name: ['Anani', 'Sharon']
+  name: ['Anani', 'Sharon'],
 }
 observe(obj)
 obj.name.push({
-  firstName: ''
+  firstName: '',
 })
 obj.name[obj.name.length - 1].firstName = 'Eleven' // 目前，这里的改动将得不到提示
 ```
@@ -366,7 +358,7 @@ const defineReactive = (target, key, value) => {
       value = newValue
       // 当属性改变时同时每个 Watcher 执行
       dep.notify()
-    }
+    },
   })
 }
 ```
@@ -375,7 +367,7 @@ const defineReactive = (target, key, value) => {
 
 ```javascript
 const obj = {
-  name: 'Anani'
+  name: 'Anani',
 }
 observe(obj)
 new Watcher() // 在构造函数中将 Dep.targe 指向当前 Watcher 实例
@@ -422,7 +414,7 @@ class Observer {
       value: this,
       enumerable: false,
       writable: true,
-      configurable: true
+      configurable: true,
     }) // 指定指向 Observer 实例的特有属性
 
     if (Array.isArray(target)) {
@@ -471,7 +463,7 @@ methodsToPatch.forEach(method => {
 
 ```javascript
 const obj = {
-  name: ['Anani']
+  name: ['Anani'],
 }
 observe(obj)
 new Watcher()
@@ -516,7 +508,7 @@ const defineReactive = (target, key, value) => {
       childOb = observe(newValue)
       value = newValue
       dep.notify()
-    }
+    },
   })
 }
 ```
@@ -559,15 +551,15 @@ class Vue {
 试一试吧。
 
 ```html
-<input class="name" type="text">
+<input class="name" type="text" />
 <div id="name"></div>
 ```
 
 ```javascript
 const opt = {
   data: {
-    message: 'Hello world!'
-  }
+    message: 'Hello world!',
+  },
 }
 new Vue(opt).$mount('#app')
 ```
@@ -581,8 +573,7 @@ new Vue(opt).$mount('#app')
 对于双向绑定我们最常见的就是结合文本输入框，因为通过监听其 `input` 事件我们就可以去更新数据。
 
 ```javascript
-document.querySelector('.name').oninput = e =>
-  (opt.data.message = e.target.value)
+document.querySelector('.name').oninput = e => (opt.data.message = e.target.value)
 ```
 
 现在，当我们改变输入框的值时，就可以看到其值会同步显示在下面了。
@@ -590,19 +581,16 @@ document.querySelector('.name').oninput = e =>
 其实，这就是 `v-model` 所做的核心工作，当然对于不同的表单元素绑定事件和值会略有差异，一个组件上的 `v-model` 默认会利用名为 `value` 的 `prop` 和名为 `input` 的事件。
 
 ```html
-<input v-model="searchText">
+<input v-model="searchText" />
 
 <!-- 等价于 -->
 
-<input
-  v-bind:value="searchText"
-  v-on:input="searchText = $event.target.value"
->
+<input v-bind:value="searchText" v-on:input="searchText = $event.target.value" />
 ```
 
 所以，从本质上来讲，`v-model` 就是一个语法糖。它负责监听用户的输入事件以更新数据，并对一些极端场景进行一些特殊处理。
 
-## Vue.set || this.$set
+## Vue.set || this.\$set
 
 ## 总结
 
@@ -612,10 +600,10 @@ document.querySelector('.name').oninput = e =>
 - 受现代 JavaScript 的限制 (而且 Object.observe 也已经被废弃)，Vue 无法检测到对象属性的添加或删除。由于 Vue 会在初始化实例时对属性执行 getter/setter 转化，所以属性必须在 data 对象上存在才能让 Vue 将它转换为响应式的。
 - 由于我们需要递归的对对象的属性设置 getter/setter，所以当观察的对象层次非常深时，可能会造成些微的性能问题。
 - 通过 length 改变数组的值时无法得到响应式效果。
-<!-- https://github.com/creeperyang/blog/issues/45 -->
-<!-- https://segmentfault.com/a/1190000009054946 -->
-<!-- https://juejin.im/post/5b66e3296fb9a04f9e23321c -->
-<!-- https://juejin.im/entry/5a7c3e826fb9a0635c0468cc -->
+  <!-- https://github.com/creeperyang/blog/issues/45 -->
+  <!-- https://segmentfault.com/a/1190000009054946 -->
+  <!-- https://juejin.im/post/5b66e3296fb9a04f9e23321c -->
+  <!-- https://juejin.im/entry/5a7c3e826fb9a0635c0468cc -->
 
 ## 参考
 

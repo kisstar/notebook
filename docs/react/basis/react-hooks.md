@@ -36,14 +36,14 @@ Hook 是 React 16.8 的新增特性。它可以让你在不编写 `class` 的情
 
 ```javascript
 function Counter() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0)
 
   return (
     <>
       <p>You clicked {count} times</p>
       <button onClick={() => setCount(count + 1)}>Add count</button>
     </>
-  );
+  )
 }
 ```
 
@@ -51,19 +51,19 @@ function Counter() {
 
 ```javascript
 const initSate = () => {
-  console.log('初始化 state');
-  return 0; // 返回初始 satte
-};
+  console.log('初始化 state')
+  return 0 // 返回初始 satte
+}
 
 function Counter() {
-  const [count, setCount] = useState(initSate);
+  const [count, setCount] = useState(initSate)
 
   return (
     <>
       <p>You clicked {count} times</p>
       <button onClick={() => setCount(count + 1)}>Add count</button>
     </>
-  );
+  )
 }
 ```
 
@@ -73,7 +73,7 @@ function Counter() {
 
 ```javascript
 function Counter() {
-  const [counter, setCounter] = useState({ name: '计数器：', count: 0 });
+  const [counter, setCounter] = useState({ name: '计数器：', count: 0 })
 
   return (
     <>
@@ -81,7 +81,7 @@ function Counter() {
       <p>You clicked {counter.count} times</p>
       <button onClick={() => setCounter({ count: counter.count + 1 })}>Add count</button>
     </>
-  );
+  )
 }
 ```
 
@@ -91,8 +91,8 @@ function Counter() {
 
 ```javascript
 function Counter() {
-  const [count, setCount] = useState(0);
-  const logCount = () => setTimeout(() => console.log(count), 3000);
+  const [count, setCount] = useState(0)
+  const logCount = () => setTimeout(() => console.log(count), 3000)
 
   return (
     <>
@@ -100,7 +100,7 @@ function Counter() {
       <button onClick={() => setCount(count + 1)}>Add count</button>
       <button onClick={logCount}>Log count</button>
     </>
-  );
+  )
 }
 ```
 
@@ -112,8 +112,8 @@ function Counter() {
 
 ```javascript
 function Counter() {
-  const [count, setCount] = useState(0);
-  const lazyAdd = () => setTimeout(() => setCount(state => state + 2), 3000);
+  const [count, setCount] = useState(0)
+  const lazyAdd = () => setTimeout(() => setCount(state => state + 2), 3000)
 
   return (
     <>
@@ -121,7 +121,7 @@ function Counter() {
       <button onClick={() => setCount(count + 1)}>Add count</button>
       <button onClick={lazyAdd}>Lazy add</button>
     </>
-  );
+  )
 }
 ```
 
@@ -131,16 +131,16 @@ function Counter() {
 
 ```javascript
 function Counter() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0)
 
-  console.log('render');
+  console.log('render')
 
   return (
     <>
       <p>You clicked {count} times</p>
       <button onClick={() => setCount(count)}>Add count</button>
     </>
-  );
+  )
 }
 ```
 
@@ -151,14 +151,14 @@ function Counter() {
 `useCallback` 接受一个回调函数和一个依赖项数组作为参数，它将返回该回调函数的 `memoized` 版本，新的回调函数仅在某个依赖项改变时才会更新。
 
 ```javascript
-let prevFn = null;
+let prevFn = null
 function Counter() {
-  const [count, setCount] = useState(0);
-  const [name, setName] = useState('计数器：');
+  const [count, setCount] = useState(0)
+  const [name, setName] = useState('计数器：')
 
-  const updateName = () => setName(`新的${name}`);
-  console.log(prevFn === updateName);
-  prevFn = updateName;
+  const updateName = () => setName(`新的${name}`)
+  console.log(prevFn === updateName)
+  prevFn = updateName
 
   return (
     <>
@@ -167,7 +167,7 @@ function Counter() {
       <button onClick={() => setCount(count + 1)}>Add count</button>
       <button onClick={updateName}>Change name</button>
     </>
-  );
+  )
 }
 ```
 
@@ -177,20 +177,20 @@ function Counter() {
 
 ```javascript
 const Child = memo(function ChildComponent(props) {
-  console.log('render child');
+  console.log('render child')
 
   return (
     <>
       <p>{props.name}</p>
       <button onClick={props.updateName}>Change name</button>
     </>
-  );
-});
+  )
+})
 
 function Counter() {
-  const [count, setCount] = useState(0);
-  const [name, setName] = useState('计数器：');
-  const updateName = () => setName(`新的${name}`);
+  const [count, setCount] = useState(0)
+  const [name, setName] = useState('计数器：')
+  const updateName = () => setName(`新的${name}`)
 
   return (
     <>
@@ -198,7 +198,7 @@ function Counter() {
       <button onClick={() => setCount(count + 1)}>Add count</button>
       <Child name={name} updateName={updateName} />
     </>
-  );
+  )
 }
 ```
 
@@ -208,20 +208,20 @@ function Counter() {
 
 ```javascript
 const Child = memo(function ChildComponent(props) {
-  console.log('render child');
+  console.log('render child')
 
   return (
     <>
       <p>{props.name}</p>
       <button onClick={props.updateName}>Change name</button>
     </>
-  );
-});
+  )
+})
 
 function Counter() {
-  const [count, setCount] = useState(0);
-  const [name, setName] = useState('计数器：');
-  const updateName = useCallback(() => setName(`新的${name}`), [name]);
+  const [count, setCount] = useState(0)
+  const [name, setName] = useState('计数器：')
+  const updateName = useCallback(() => setName(`新的${name}`), [name])
 
   return (
     <>
@@ -229,7 +229,7 @@ function Counter() {
       <button onClick={() => setCount(count + 1)}>Add count</button>
       <Child name={name} updateName={updateName} />
     </>
-  );
+  )
 }
 ```
 
@@ -243,21 +243,21 @@ function Counter() {
 
 ```javascript
 const Child = memo(function ChildComponent(props) {
-  console.log('render child');
+  console.log('render child')
 
   return (
     <>
       <p>{props.computedName.name}</p>
       <button onClick={props.updateName}>Change name</button>
     </>
-  );
-});
+  )
+})
 
 function Counter() {
-  const [count, setCount] = useState(0);
-  const [name, setName] = useState('计数器：');
-  const updateName = useCallback(() => setName(`新的${name}`), [name]);
-  const computedName = { name: `新的${name}：` };
+  const [count, setCount] = useState(0)
+  const [name, setName] = useState('计数器：')
+  const updateName = useCallback(() => setName(`新的${name}`), [name])
+  const computedName = { name: `新的${name}：` }
 
   return (
     <>
@@ -265,7 +265,7 @@ function Counter() {
       <button onClick={() => setCount(count + 1)}>Add count</button>
       <Child computedName={computedName} updateName={updateName} />
     </>
-  );
+  )
 }
 ```
 
@@ -277,21 +277,21 @@ function Counter() {
 
 ```javascript
 const Child = memo(function ChildComponent(props) {
-  console.log('render child');
+  console.log('render child')
 
   return (
     <>
       <p>{props.computedName.name}</p>
       <button onClick={props.updateName}>Change name</button>
     </>
-  );
-});
+  )
+})
 
 function Counter() {
-  const [count, setCount] = useState(0);
-  const [name, setName] = useState('计数器：');
-  const updateName = useCallback(() => setName(`新的${name}`), [name]);
-  const computedName = useMemo(() => ({ name: `新的${name}：` }), [name]);
+  const [count, setCount] = useState(0)
+  const [name, setName] = useState('计数器：')
+  const updateName = useCallback(() => setName(`新的${name}`), [name])
+  const computedName = useMemo(() => ({ name: `新的${name}：` }), [name])
 
   return (
     <>
@@ -299,7 +299,7 @@ function Counter() {
       <button onClick={() => setCount(count + 1)}>Add count</button>
       <Child computedName={computedName} updateName={updateName} />
     </>
-  );
+  )
 }
 ```
 
@@ -312,29 +312,29 @@ function Counter() {
 在某些场景下，`useReducer` 会比 `useState` 更适用，例如 `state` 逻辑较复杂且包含多个子值，或者下一个 `state` 依赖于之前的 `state` 等。
 
 ```javascript
-const initialState = 0;
-const init = initialCount => ({ count: initialCount });
+const initialState = 0
+const init = initialCount => ({ count: initialCount })
 
 function reducer(state, action) {
   switch (action.type) {
     case 'increment':
-      return { count: state.count + 1 };
+      return { count: state.count + 1 }
     case 'decrement':
-      return { count: state.count - 1 };
+      return { count: state.count - 1 }
     default:
-      throw new Error();
+      throw new Error()
   }
 }
 
 function Counter() {
-  const [state, dispatch] = useReducer(reducer, initialState, init);
+  const [state, dispatch] = useReducer(reducer, initialState, init)
   return (
     <>
       <p>Count: {state.count}</p>
       <button onClick={() => dispatch({ type: 'decrement' })}>-</button>
       <button onClick={() => dispatch({ type: 'increment' })}>+</button>
     </>
-  );
+  )
 }
 ```
 
@@ -344,15 +344,15 @@ function Counter() {
 
 ```javascript
 function useState(initialState) {
-  const reducer = (state, action) => action.payload;
-  const [state, dispatch] = useReducer(reducer, initialState);
-  const setState = newState => dispatch({ payload: newState });
+  const reducer = (state, action) => action.payload
+  const [state, dispatch] = useReducer(reducer, initialState)
+  const setState = newState => dispatch({ payload: newState })
 
-  return [state, setState];
+  return [state, setState]
 }
 
 function Counter() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0)
 
   return (
     <>
@@ -360,7 +360,7 @@ function Counter() {
       <button onClick={() => setCount(count - 1)}>-</button>
       <button onClick={() => setCount(count + 1)}>+</button>
     </>
-  );
+  )
 }
 ```
 
@@ -373,7 +373,7 @@ function Counter() {
 创建和使用的方式和之前几乎完全一致。
 
 ```javascript
-const TestContext = React.createContext('test');
+const TestContext = React.createContext('test')
 ```
 
 只是，之前我们获取值时是通过 `Consumer` 组件来实现的。
@@ -387,7 +387,7 @@ const TestContext = React.createContext('test');
 而使用 `useContext` 后显得更加方便。
 
 ```javascript
-const value = useContext(TestContext);
+const value = useContext(TestContext)
 ```
 
 当组件上层最近的 `<Provider>` 更新时，该 Hook 会使用最新传递给 `<Provider>` 的 `value` 值触发重渲染，即使祖先使用 `React.memo` 或 `shouldComponentUpdate`，也会在组件本身使用 `useContext` 时重新渲染。
@@ -404,12 +404,12 @@ const value = useContext(TestContext);
 
 ```javascript
 function Counter() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0)
   useEffect(() => {
-    setInterval(() => setCount(count + 1), 1000);
-  }, [count]);
+    setInterval(() => setCount(count + 1), 1000)
+  }, [count])
 
-  return <p>{count}</p>;
+  return <p>{count}</p>
 }
 ```
 
@@ -421,14 +421,14 @@ function Counter() {
 
 ```javascript
 function Counter() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0)
   useEffect(() => {
-    const timer = setInterval(() => setCount(count + 1), 1000);
+    const timer = setInterval(() => setCount(count + 1), 1000)
 
-    return () => clearInterval(timer);
-  }, [count]);
+    return () => clearInterval(timer)
+  }, [count])
 
-  return <p>{count}</p>;
+  return <p>{count}</p>
 }
 ```
 
@@ -444,18 +444,18 @@ function Counter() {
 
 ```javascript
 function LayoutEffect() {
-  const [color, setColor] = useState('red');
+  const [color, setColor] = useState('red')
   useLayoutEffect(() => {
-    alert();
-    setColor('blue');
-  }, [color]);
+    alert()
+    setColor('blue')
+  }, [color])
 
   return (
     <>
       <p style={{ background: color }}>Hello world!</p>
       <button onClick={() => setColor('yellow')}>yellow</button>
     </>
-  );
+  )
 }
 ```
 
@@ -469,32 +469,32 @@ function LayoutEffect() {
 
 ```javascript
 function TextInputWithFocusButton() {
-  const inputEl = useRef(null);
+  const inputEl = useRef(null)
   const onButtonClick = () => {
     // `current` 指向已挂载到 DOM 上的文本输入元素
-    inputEl.current.focus();
-  };
+    inputEl.current.focus()
+  }
   return (
     <>
       <input ref={inputEl} type="text" />
       <button onClick={onButtonClick}>Focus the input</button>
     </>
-  );
+  )
 }
 ```
 
 返回的 `ref` 对象在组件的整个生命周期内保持不变。
 
 ```javascript
-let prevRef = null;
+let prevRef = null
 function TextInputWithFocusButton() {
-  const inputEl = useRef(null);
+  const inputEl = useRef(null)
   const onButtonClick = () => {
-    inputEl.current.focus();
-  };
+    inputEl.current.focus()
+  }
 
-  console.log(prevRef === inputEl);
-  prevRef = inputEl;
+  console.log(prevRef === inputEl)
+  prevRef = inputEl
 
   return (
     <>
@@ -503,11 +503,11 @@ function TextInputWithFocusButton() {
       </p>
       <button onClick={onButtonClick}>Focus the input</button>
     </>
-  );
+  )
 }
 
 function Parent() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0)
 
   return (
     <>
@@ -515,7 +515,7 @@ function Parent() {
       <button onClick={() => setCount(count + 1)}>Add count</button>
       <TextInputWithFocusButton />
     </>
-  );
+  )
 }
 ```
 
@@ -535,23 +535,23 @@ function TextInputWithFocusButton(props, ref) {
     <p>
       <input ref={ref} type="text" />
     </p>
-  );
+  )
 }
 
-const Child = React.forwardRef(TextInputWithFocusButton);
+const Child = React.forwardRef(TextInputWithFocusButton)
 
 function Parent() {
-  const inputEl = useRef(null);
+  const inputEl = useRef(null)
   const onButtonClick = () => {
-    inputEl.current.focus();
-  };
+    inputEl.current.focus()
+  }
 
   return (
     <>
       <Child ref={inputEl} />
       <button onClick={onButtonClick}>Focus the input</button>
     </>
-  );
+  )
 }
 ```
 
@@ -561,32 +561,32 @@ function Parent() {
 
 ```javascript
 function TextInputWithFocusButton(props, ref) {
-  const inputEl = useRef(null);
+  const inputEl = useRef(null)
   useImperativeHandle(ref, () => ({
     focus: () => inputEl.current.focus(),
-  }));
+  }))
 
   return (
     <p>
       <input ref={inputEl} type="text" />
     </p>
-  );
+  )
 }
 
-const Child = React.forwardRef(TextInputWithFocusButton);
+const Child = React.forwardRef(TextInputWithFocusButton)
 
 function Parent() {
-  const inputEl = useRef(null);
+  const inputEl = useRef(null)
   const onButtonClick = () => {
-    inputEl.focus();
-  };
+    inputEl.focus()
+  }
 
   return (
     <>
       <Child ref={inputEl} />
       <button onClick={onButtonClick}>Focus the input</button>
     </>
-  );
+  )
 }
 ```
 

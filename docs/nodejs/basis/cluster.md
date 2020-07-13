@@ -87,11 +87,7 @@ if (cluster.isMaster) {
   }
   // 当任何一个工作进程关闭的时候，`cluster` 模块都将会触发 'exit' 事件
   cluster.on('exit', (worker, code, signal) => {
-    console.log(
-      '工作进程 %d 关闭 (%s). 重启中...',
-      worker.process.pid,
-      signal || code
-    )
+    console.log('工作进程 %d 关闭 (%s). 重启中...', worker.process.pid, signal || code)
     cluster.fork() // 重启
   })
 } else {

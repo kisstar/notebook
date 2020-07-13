@@ -163,7 +163,7 @@
 
 OSI 模型（OSI model），即开放式系统互联通信参考模型(Open System Interconnection Reference Model，缩写为 OSI)，一种概念模型，由国际标准化组织提出，一个试图使各种计算机在世界范围内互连为网络的标准框架。
 
-<img :src="$withBase('/images/cp/osi_model')" alt="osi model">
+<img :src="$withBase('/images/cp/osi_model.png')" alt="osi model">
 
 TCP/IP 模型 借鉴了 OSI 模型，所以相似的是它们都是分层结构并如上表所示具有一定的对应关系，但前者是先有协议然后再提出的模型，所以不适用于非 TCP/IP 网络。
 

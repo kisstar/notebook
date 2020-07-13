@@ -38,15 +38,15 @@ const { spawn } = require('child_process')
 
 const cp = spawn('node', ['calculate.js'])
 
-cp.stdout.on('data', (data) => {
+cp.stdout.on('data', data => {
   console.log(`stdout: ${data}`)
 })
 
-cp.stderr.on('data', (data) => {
+cp.stderr.on('data', data => {
   console.error(`stderr: ${data}`)
 })
 
-cp.on('close', (code) => {
+cp.on('close', code => {
   console.log(`子进程退出，退出码 ${code}`)
 })
 ```
@@ -93,11 +93,11 @@ const cp = spawn('node', ['calculate.js'], {
   stdio: ['ipc'],
 })
 
-cp.on('message', (data) => {
+cp.on('message', data => {
   console.log(data)
 })
 
-cp.on('close', (code) => {
+cp.on('close', code => {
   console.log(`子进程退出，退出码 ${code}`)
 })
 ```
@@ -207,7 +207,7 @@ lsExample()
 
 ```js
 // calculate.js
-while(true) {}
+while (true) {}
 
 // app.js
 const { spawn } = require('child_process')

@@ -6,7 +6,7 @@
 
 执行环境定义了变量或函数有权访问的其他数据，决定了它们各自的行为。每个执行环境都有一个与之关联的变量对象（variable object），环境中定义的所有变量和函数都保存在这个对象中。
 
-全局执行环境是最外围的一个执行环境。在Web浏览器中，全局环境被认为是 `window` 对象，因此所有全局变量和函数都是作为 `window` 对象的属性和方法创建的。
+全局执行环境是最外围的一个执行环境。在 Web 浏览器中，全局环境被认为是 `window` 对象，因此所有全局变量和函数都是作为 `window` 对象的属性和方法创建的。
 
 当 JavaScript 解释器初始化执行代码时，它首先默认进入全局执行环境，从此刻开始，函数的每次调用都会创建一个新的执行环境。
 
@@ -18,28 +18,28 @@ Javascript 引擎以推栈的方式（后进先出）处理执行环境，栈底
 
 执行环境分为两个阶段：
 
-* 执行上下文初始阶段，变量对象按如下的顺序填充:
-   1. 进行 `this` 赋值。
-   2. 函数参数赋值（若未传入，初始化值为 `undefined`）。
-   3. 函数声明（每找到一个函数声明，就在变量对象中用函数名建立一个属性，值指向该函数在内存中的地址的一个引用人，若以函数名为属性名已经存在在变量对象中，则会被覆盖）。
-   4. 变量声明（初始化值为 `undefined`，若命名重复则忽略）。
-* 代码执行阶段：执行函数中的代码，给变量对象中的变量属性赋值。
+- 执行上下文初始阶段，变量对象按如下的顺序填充:
+  1. 进行 `this` 赋值。
+  2. 函数参数赋值（若未传入，初始化值为 `undefined`）。
+  3. 函数声明（每找到一个函数声明，就在变量对象中用函数名建立一个属性，值指向该函数在内存中的地址的一个引用人，若以函数名为属性名已经存在在变量对象中，则会被覆盖）。
+  4. 变量声明（初始化值为 `undefined`，若命名重复则忽略）。
+- 代码执行阶段：执行函数中的代码，给变量对象中的变量属性赋值。
 
 ### 变量提升和函数提升
 
 变量声明提升：通过 `var` 定义（声明）的变量，在定义语句之前就可以访问到值：`undefined`。
 
 ```javascript
-console.log(name); // undefined
-var name = 'Anani';
+console.log(name) // undefined
+var name = 'Anani'
 ```
 
 函数声明提升：通过 `function` 声明的函数，在定义之前就可以调用。
 
 ```javascript
-sayHi(); // hello
-function sayHi () {
-    console.log('hello');
+sayHi() // hello
+function sayHi() {
+  console.log('hello')
 }
 ```
 
@@ -74,20 +74,20 @@ function sayHi () {
 ## Show me the code
 
 ```javascript
-console.log('begin with' + i);
-var i = 0;
+console.log('begin with' + i)
+var i = 0
 
-function fn (i) {
-    if (i === 4) {
-        return;
-    }
-    console.log('foo() begin with' + i);
-    fn(i + 1);
-    console.log('foo() end with' + i);
+function fn(i) {
+  if (i === 4) {
+    return
+  }
+  console.log('foo() begin with' + i)
+  fn(i + 1)
+  console.log('foo() end with' + i)
 }
 
-fn(i);
-console.log('end with' + i);
+fn(i)
+console.log('end with' + i)
 
 // begin withundefined
 // VM49:8 foo() begin with0
@@ -106,78 +106,78 @@ console.log('end with' + i);
 其中的几行输出体现了函数运行时压栈和出栈的特点。
 
 ```javascript
-function fn () {}
-var fn;
-console.log(typeof fn); // function
+function fn() {}
+var fn
+console.log(typeof fn) // function
 ```
 
 就像上面所说的，函数提升遇到同名的会覆盖，而变量提升遇到同等情况则会忽略。换句话说，相当于先执行变量声明再执行函数声明。
 
 ```javascript
-if(!("Name" in window)) {
-    var Name = 'Anani';
+if (!('Name' in window)) {
+  var Name = 'Anani'
 }
-console.log(Name); // undefined
+console.log(Name) // undefined
 ```
 
 这里主要涉及的也是变量提升的问题，在代码执行前，在全局作用域的变量都已经声明为了 `undefined`。
 
 ```javascript
-var fn = 'Anani';
-function fn (fn) {
-    console.log(fn);
+var fn = 'Anani'
+function fn(fn) {
+  console.log(fn)
 }
 
-fn('Sharon'); // fn is not a function
+fn('Sharon') // fn is not a function
 ```
 
 因为存在变量提升和函数提升，所以赋值语句是在这两者之后执行，当上面的代码执行到第五行时，`fn` 已经是一个字符串咯，下面使它真正执行是的步骤：
 
 ```javascript
-var fn = 'Anani';
-function fn (fn) {
-    console.log(fn);
+var fn = 'Anani'
+function fn(fn) {
+  console.log(fn)
 }
-fn = 'Anani';
-fn('Sharon'); // fn is not a function
+fn = 'Anani'
+fn('Sharon') // fn is not a function
 ```
 
 这样看起来就很明确了。
 
 ```javascript
-var name = 'Anani';
-function fn () {
-    console.log(name);
+var name = 'Anani'
+function fn() {
+  console.log(name)
 }
-function show (fn) {
-    var name = 'Sharon';
-    fn();
+function show(fn) {
+  var name = 'Sharon'
+  fn()
 }
 
-show(fn);
+show(fn)
 ```
 
 这里需要注意的就是，函数作用域在函数定义时就已经确定了，并无关它在哪里执行。由于函数 `fn` 是在全局作用域定义的，所以在访问变量时，如果自身作用域不存在，就会在全局作用域中查找。
 
 ```javascript
 // 第一种
-var fn = function () {
-    console.log(fn);
+var fn = function() {
+  console.log(fn)
 }
-fn(); // 打印函数
+fn() // 打印函数
 
 // 第二种
 var obj = {
-    fn: function () {
-        console.log(fn);
-    }
+  fn: function() {
+    console.log(fn)
+  },
 }
-obj.fn(); // fn is not undefined
+obj.fn() // fn is not undefined
 ```
 
 第一种比较简单就不提了，第二种也不难，在函数 `fn` 中没有找到变量，那么就去外层作用域中查找，也就是全局作用域，由于此时我们定义在全局中的变量只有 `obj`，所以根本不会找到读取的变量，从而导致报错。
 
 ## 参考资料
 
-* [JavaScript 闭包](https://dongwanhong.github.io/BlogV1.0.0/blog-js/2017/10/closure.html)
-* JavaScript 高级程序设计(第3版)
+- [JavaScript 闭包](https://dongwanhong.github.io/BlogV1.0.0/blog-js/2017/10/closure.html)
+- JavaScript 高级程序设计(第 3 版)

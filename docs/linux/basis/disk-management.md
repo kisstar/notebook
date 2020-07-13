@@ -16,9 +16,9 @@
 
 目前常见的硬盘大可分为三类：
 
-* 机械硬盘（HDD）采用磁性碟片来存储；
-* 固态硬盘（SSD）采用闪存颗粒来存储；
-* 混合硬盘（HHD）是把磁性碟片和闪存集成到一起的一种硬盘。
+- 机械硬盘（HDD）采用磁性碟片来存储；
+- 固态硬盘（SSD）采用闪存颗粒来存储；
+- 混合硬盘（HHD）是把磁性碟片和闪存集成到一起的一种硬盘。
 
 硬盘的接口主要有 IDE、SATA、SCSI 、SAS 和光纤通道等五种类型。
 
@@ -50,8 +50,7 @@ SCSI 、SAS 主要应用于服务器上，普通家用设备一般不支持 SCSI
 
 **磁道**: 每个盘面都有 `n` 个同心圆组成，每个同心圆称之为一个磁道。由外向内分为 0 磁道到 `n` 磁道。
 
-**扇区**: 从磁盘中心向外画直线，可以将磁道划分为若干个弧段。每个磁道上一个弧段被称之为一个扇区。扇区是硬盘的最小组成单元，通常是 512 字节。磁道上的扇区数最大为 63 (6 个二进制位)。
-**簇**: 将物理相邻的若干个扇区称为了一个簇。操作系统读写磁盘的基本单位是扇区，而文件系统的基本单位是簇(Cluster)。
+**扇区**: 从磁盘中心向外画直线，可以将磁道划分为若干个弧段。每个磁道上一个弧段被称之为一个扇区。扇区是硬盘的最小组成单元，通常是 512 字节。磁道上的扇区数最大为 63 (6 个二进制位)。 **簇**: 将物理相邻的若干个扇区称为了一个簇。操作系统读写磁盘的基本单位是扇区，而文件系统的基本单位是簇(Cluster)。
 
 由于磁盘里面可能会有多个盘片，因此在所有盘片上面的同一个磁道可以组合成所谓的柱面（cylinder）。
 
@@ -107,14 +106,14 @@ IDE 接口类型的硬盘设备映射的文件名称前缀为 “hd”，SCSI、
 
 创建磁盘分区大概有下面几个目的：
 
-* 提升数据的安全性(一个分区的数据损坏不会影响其他分区的数据)。
-* 在不损失数据的情况下重装系统，比如独立设置 `/home` 挂载点,重装系统的时候直接标记回 `/home`，数据不会有任何损失。
-* 支持安装多个操作系统。
-* 多个小分区对比一个大分区会有性能提升。
-* 针对不同挂载点的特性分配合适的文件系统以合理发挥性能。
-* 针对不同的挂载点开启不同的挂载选项，如是否需要即时同步，是否开启日志，是否启用压缩。
-* 磁盘配额只能对分区做设定。
-* `/home`、`/var`、`/usr/local` 经常单独分区，因为经常会被操作，容易产生碎片。
+- 提升数据的安全性(一个分区的数据损坏不会影响其他分区的数据)。
+- 在不损失数据的情况下重装系统，比如独立设置 `/home` 挂载点,重装系统的时候直接标记回 `/home`，数据不会有任何损失。
+- 支持安装多个操作系统。
+- 多个小分区对比一个大分区会有性能提升。
+- 针对不同挂载点的特性分配合适的文件系统以合理发挥性能。
+- 针对不同的挂载点开启不同的挂载选项，如是否需要即时同步，是否开启日志，是否启用压缩。
+- 磁盘配额只能对分区做设定。
+- `/home`、`/var`、`/usr/local` 经常单独分区，因为经常会被操作，容易产生碎片。
 
 ### 分区的模式
 
@@ -126,8 +125,8 @@ IDE 接口类型的硬盘设备映射的文件名称前缀为 “hd”，SCSI、
 
 对于 MBR 而言，开机管理程序纪录区与分区表则通通放在磁盘的第一个扇区，这个扇区通常是 512Bytes 的大小，其中：
 
-* 主要开机记录区（Master Boot Record, MBR）: 可以安装开机管理程序的地方，有 446 Bytes。
-* 分区表（partition table）: 记录整颗硬盘分区的状态，有 64 Bytes。
+- 主要开机记录区（Master Boot Record, MBR）: 可以安装开机管理程序的地方，有 446 Bytes。
+- 分区表（partition table）: 记录整颗硬盘分区的状态，有 64 Bytes。
 
 由于分区表所在区块仅有 64 Bytes 容量，因此最多仅能有四组记录区（也就是通常说的主分区），每组记录区记录了该区段的启始与结束的柱面号码。
 
@@ -143,10 +142,10 @@ GPT 意为 GUID 分区表，驱动器上的每个分区都有一个全局唯一�
 
 GPT 克服了 MBR 分区的两个限制：
 
-* 单个分区容量最大为 2 TB。
-* 主分区最多只能有 4 个。
+- 单个分区容量最大为 2 TB。
+- 主分区最多只能有 4 个。
 
-支持的最大磁盘可达 18EB，它没有主分区和逻辑分区之分，每个硬盘最多可以有128个分区，具有更强的健壮性与更大的兼容性，并且将逐步取代 MBR 分区方式。
+支持的最大磁盘可达 18EB，它没有主分区和逻辑分区之分，每个硬盘最多可以有 128 个分区，具有更强的健壮性与更大的兼容性，并且将逐步取代 MBR 分区方式。
 
 GPT 分区的命名和 MBR 类似，只不过没有主分区、扩展分区和逻辑分区之分，分区号直接从 1 开始累加一直到 128。
 
@@ -173,12 +172,12 @@ Device        Start      End  Sectors Size Type
 /dev/sda5  14684160 41940991 27256832  13G Linux filesystem
 ```
 
-* **Device** 显示了磁盘分区对应的设备文件名。
-* **Start** 表示磁盘分区的起始位置。
-* **End** 表示磁盘分区的结束位置。
-* **Sectors** 表示分区占用的扇区数目。
-* **Size** 显示分区的大小。
-* **type** 对分区类型的名字描述，有的系统还会显示对应的ID。
+- **Device** 显示了磁盘分区对应的设备文件名。
+- **Start** 表示磁盘分区的起始位置。
+- **End** 表示磁盘分区的结束位置。
+- **Sectors** 表示分区占用的扇区数目。
+- **Size** 显示分区的大小。
+- **type** 对分区类型的名字描述，有的系统还会显示对应的 ID。
 
 `Linux` 下用 83 表示主分区和逻辑分区，5 表示扩展分区，`8e` 表示 LVM 分区，82 表示交换分区，7 表示 NTFS 分区。有的系统还会显示 `Boot` 列，表示是否为引导分区。
 
@@ -260,8 +259,8 @@ Created a new partition 6 of type 'Linux' and of size 522 MiB.
 
 注意：
 
-* 如果我们后续指定的分区的范围包含了前面指定的，那么系统会除去之前指定的，并询问是否以余下的空间创建分区。
-* 指定开始结束位置的单位默认为 MB，可以通过 `unit` 进行改变，比如通过 `unit GB` 设置单位为 GB。
+- 如果我们后续指定的分区的范围包含了前面指定的，那么系统会除去之前指定的，并询问是否以余下的空间创建分区。
+- 指定开始结束位置的单位默认为 MB，可以通过 `unit` 进行改变，比如通过 `unit GB` 设置单位为 GB。
 
 ## 格式化
 
@@ -279,13 +278,13 @@ Created a new partition 6 of type 'Linux' and of size 522 MiB.
 
 在 `inode` 中的信息通常包括：
 
-* 该档案的拥有者与群组(owner/group)。
-* 该档案的存取模式。
-* 该档案的类型。
-* 该档案的建立日期(ctime)、最近一次的读取时间(atime)、最近修改的时间 (mtime)。
-* 该档案的容量。
-* 定义档案特性的旗标(flag)，如 SetUID...。
-* 该档案真正内容的指向 (pointer)。
+- 该档案的拥有者与群组(owner/group)。
+- 该档案的存取模式。
+- 该档案的类型。
+- 该档案的建立日期(ctime)、最近一次的读取时间(atime)、最近修改的时间 (mtime)。
+- 该档案的容量。
+- 定义档案特性的旗标(flag)，如 SetUID...。
+- 该档案真正内容的指向 (pointer)。
 
 因此当要读取一个树状目录下的档案时，操作系统会先读取该档案所在目录的 `inode` ，并取得该目录的关连区域(在 Block 区域里面)，然后根据该关连资料读取该档案所在的 `inode` ，并再进一步经由档案的 `inode` 来取得档案的最后内容。
 
@@ -299,11 +298,11 @@ mkfs [-V] [-t fstype] [fs-options] filesys [blocks]
 
 #### 常用选项
 
-* **-t**: 给定档案系统的型式，Linux 的预设值为 ext2。
-* **-c**: 在制做档案系统前，检查该 · 是否有坏轨。
-* **-l bad_blocks_file**: 将有坏轨的block资料加到 bad_blocks_file 里面
-* **block**: 给定 `block` 的大小。
-* **-V**: 显示详细信息。
+- **-t**: 给定档案系统的型式，Linux 的预设值为 ext2。
+- **-c**: 在制做档案系统前，检查该 · 是否有坏轨。
+- **-l bad_blocks_file**: 将有坏轨的 block 资料加到 bad_blocks_file 里面
+- **block**: 给定 `block` 的大小。
+- **-V**: 显示详细信息。
 
 #### 实例
 
@@ -315,8 +314,8 @@ mkfs -t ext4 /dev/sdb1
 
 注意：
 
-* MBR 模式下的扩展分区不能进行格式化。
-* `Block` 单位的规划并不是越大越好，因为一个 `Block` 最多仅能容纳一个档案。
+- MBR 模式下的扩展分区不能进行格式化。
+- `Block` 单位的规划并不是越大越好，因为一个 `Block` 最多仅能容纳一个档案。
 
 ## 挂载
 
@@ -342,19 +341,19 @@ df [选项] [文件]
 
 #### 常用选项
 
-| 名称 | 描述 |
-| :-- | :-- |
-| -h, --human-readable | 使用人类可读的格式。 |
-| -a, --all | 包含所有的具有 0 Blocks 的文件系统。 |
-| -i, --inodes | 列出 inode 资讯，不列出已使用 block。 |
-| --block-size={SIZE} | 使用 {SIZE} 大小的 Blocks。 |
-| -k, --kilobytes | 就像是 --block-size=1024。 |
-| -m, --megabytes | 就像 --block-size=1048576。 |
-| -H, --si | 很像 -h, 但是用 1000 为单位而不是用 1024。 |
-| -l, --local | 限制列出的文件结构。 |
-| -T, --print-type | 显示文件系统的形式。 |
-| -t, --type=TYPE | 限制列出文件系统的 TYPE。 |
-| -x, --exclude-type=TYPE | 限制列出文件系统不要显示 TYPE。 |
+| 名称                    | 描述                                       |
+| :---------------------- | :----------------------------------------- |
+| -h, --human-readable    | 使用人类可读的格式。                       |
+| -a, --all               | 包含所有的具有 0 Blocks 的文件系统。       |
+| -i, --inodes            | 列出 inode 资讯，不列出已使用 block。      |
+| --block-size={SIZE}     | 使用 {SIZE} 大小的 Blocks。                |
+| -k, --kilobytes         | 就像是 --block-size=1024。                 |
+| -m, --megabytes         | 就像 --block-size=1048576。                |
+| -H, --si                | 很像 -h, 但是用 1000 为单位而不是用 1024。 |
+| -l, --local             | 限制列出的文件结构。                       |
+| -T, --print-type        | 显示文件系统的形式。                       |
+| -t, --type=TYPE         | 限制列出文件系统的 TYPE。                  |
+| -x, --exclude-type=TYPE | 限制列出文件系统不要显示 TYPE。            |
 
 ### DU
 
@@ -379,7 +378,7 @@ du [选项] [文件]
 | --exclude=<目录或文件> | 略过指定的目录或文件。 |
 | --max-depth=<目录层数> | 超过指定层数的目录后，予以忽略。 |
 | -D 或 --dereference-args | 显示指定符号连接的源文件大小。 |
-| -H 或 --si | 与-h参数相同，但是K，M，G是以1000为换算单位。 |
+| -H 或 --si | 与-h 参数相同，但是 K，M，G 是以 1000 为换算单位。 |
 | -S 或 --separate-dirs | 显示个别目录的大小时，并不含其子目录的大小。 |
 | -x 或 --one-file-xystem | 以一开始处理时的文件系统为准，若遇上其它不同的文件系统目录则略过。 |
 | -l 或 --count-links | 重复计算硬件连接的文件。 |
@@ -395,15 +394,15 @@ du -h test
 
 ## 参考资料
 
-* [学习 Linux，101: 硬盘布局](https://www.ibm.com/developerworks/cn/linux/l-lpic1-v3-102-1/)
-* [玩转 Linux 之：磁盘分区、挂载知多少？](https://cloud.tencent.com/developer/article/1043832)
-* [磁盘、硬盘、软盘、U盘联系与区别](https://blog.csdn.net/qq_40780910/article/details/81624255)
-* [硬盘 - 维基百科，自由的百科全书](https://zh.wikipedia.org/wiki/%E7%A1%AC%E7%9B%98)
-* [Linux磁盘分区和逻辑卷详解](https://www.linuxidc.com/Linux/2018-04/152069.htm)
-* [鸟哥的 Linux 私房菜](https://www.kancloud.cn/wizardforcel/vbird-linux-basic-4e/152195)
-* [计算机机械硬盘的结构和工作原理](https://blog.csdn.net/xingjiarong/article/details/46312571)
-* [Linux 磁盘与磁盘分区](https://www.cnblogs.com/sparkdev/p/10095916.html)
-* [磁盘分区的4K对齐（普及帖）_知识库_IT天空](https://www.itsk.com/thread-385047-1-1.html)
-* [怎样简单的解释硬盘”4K“以及4K对齐？ - 知乎](https://www.zhihu.com/question/52510166)
-* [Linux 达人养成计划 II - 慕课网](https://www.imooc.com/learn/111)
-* [鸟哥的 Linux 私房菜 -- 磁盘与硬件管理](http://cn.linux.vbird.org/linux_basic/Mandrake9.0/0230filesystem.php)
+- [学习 Linux，101: 硬盘布局](https://www.ibm.com/developerworks/cn/linux/l-lpic1-v3-102-1/)
+- [玩转 Linux 之：磁盘分区、挂载知多少？](https://cloud.tencent.com/developer/article/1043832)
+- [磁盘、硬盘、软盘、U 盘联系与区别](https://blog.csdn.net/qq_40780910/article/details/81624255)
+- [硬盘 - 维基百科，自由的百科全书](https://zh.wikipedia.org/wiki/%E7%A1%AC%E7%9B%98)
+- [Linux 磁盘分区和逻辑卷详解](https://www.linuxidc.com/Linux/2018-04/152069.htm)
+- [鸟哥的 Linux 私房菜](https://www.kancloud.cn/wizardforcel/vbird-linux-basic-4e/152195)
+- [计算机机械硬盘的结构和工作原理](https://blog.csdn.net/xingjiarong/article/details/46312571)
+- [Linux 磁盘与磁盘分区](https://www.cnblogs.com/sparkdev/p/10095916.html)
+- [磁盘分区的 4K 对齐（普及帖）\_知识库\_IT 天空](https://www.itsk.com/thread-385047-1-1.html)
+- [怎样简单的解释硬盘”4K“以及 4K 对齐？ - 知乎](https://www.zhihu.com/question/52510166)
+- [Linux 达人养成计划 II - 慕课网](https://www.imooc.com/learn/111)
+- [鸟哥的 Linux 私房菜 -- 磁盘与硬件管理](http://cn.linux.vbird.org/linux_basic/Mandrake9.0/0230filesystem.php)

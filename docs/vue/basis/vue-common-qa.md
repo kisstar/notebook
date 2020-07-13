@@ -116,11 +116,7 @@ Vue 提供了数据响应式、声明式渲染和基于配置的组件系统等�
 
 更快:
 
-虚拟 DOM 重写
-优化 slots 的生成
-静态树提升
-静态属性提升
-基于 proxy 的响应式系统
+虚拟 DOM 重写优化 slots 的生成静态树提升静态属性提升基于 proxy 的响应式系统
 
 更小：
 
@@ -136,6 +132,4 @@ TypeScript + 模块化
 
 更易使用：
 
-对 TypeScript 的支持
-独立的响应式模块
-Composition API
+对 TypeScript 的支持独立的响应式模块 Composition API

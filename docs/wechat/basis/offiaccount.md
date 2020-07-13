@@ -61,39 +61,39 @@
 对于得到的测试号，在配置接口配置信息时会和上面一样进行认证，你需要在你的服务器上原样返回 `echostr` 参数内容来完成配置。
 
 ```javascript
-const Koa = require('koa');
-const Router = require('@koa/router');
-const crypto = require('crypto');
+const Koa = require('koa')
+const Router = require('@koa/router')
+const crypto = require('crypto')
 
 /* 配置 */
-const TOKEN = 'TOKEN';
+const TOKEN = 'TOKEN'
 
-const app = new Koa();
-const router = new Router();
+const app = new Koa()
+const router = new Router()
 
 function getSignature(nonce, token, timestamp) {
-  const srotedStr = [nonce, token, timestamp].sort().join('');
+  const srotedStr = [nonce, token, timestamp].sort().join('')
   const _signature = crypto
     .createHash('sha1')
     .update(srotedStr)
-    .digest('hex');
-  return _signature;
+    .digest('hex')
+  return _signature
 }
 
 router.get('/wechat', async ctx => {
-  const { nonce, timestamp, signature, echostr } = ctx.query;
-  const _signature = getSignature(nonce, TOKEN, timestamp);
+  const { nonce, timestamp, signature, echostr } = ctx.query
+  const _signature = getSignature(nonce, TOKEN, timestamp)
   if (signature === _signature) {
-    ctx.body = echostr;
+    ctx.body = echostr
   } else {
-    ctx.body = '';
+    ctx.body = ''
   }
-});
+})
 
-app.use(router.routes());
-app.use(router.allowedMethods());
+app.use(router.routes())
+app.use(router.allowedMethods())
 
-app.listen(80);
+app.listen(80)
 ```
 
 随后扫描页面下方的测试号二维码，关注公众号，以便后续的测试。
@@ -104,9 +104,9 @@ app.listen(80);
 
 ```javascript
 // ...
-const getRawBody = require('raw-body');
-const parseString = require('xml2js').parseStringPromise;
-const ejs = require('ejs');
+const getRawBody = require('raw-body')
+const parseString = require('xml2js').parseStringPromise
+const ejs = require('ejs')
 
 const TEMPLATE = `
 <xml>
@@ -116,31 +116,31 @@ const TEMPLATE = `
   <MsgType><![CDATA[<%=msgType%>]]></MsgType>
   <Content><![CDATA[<%-content%>]]></Content>
 </xml>
-`;
+`
 
 router.post('/wechat', async ctx => {
-  const { nonce, timestamp, signature } = ctx.query;
-  const _signature = getSignature(nonce, TOKEN, timestamp);
+  const { nonce, timestamp, signature } = ctx.query
+  const _signature = getSignature(nonce, TOKEN, timestamp)
   if (signature !== _signature) {
-    ctx.status = 401;
-    ctx.body = 'Invalid signature';
-    return;
+    ctx.status = 401
+    ctx.body = 'Invalid signature'
+    return
   }
 
   const str = await getRawBody(ctx.req, {
     length: ctx.request.headers['content-length'],
     encoding: ctx.request.charset,
-  });
-  const { xml: params } = await parseString(str, { trim: true });
+  })
+  const { xml: params } = await parseString(str, { trim: true })
   const replyXML = ejs.compile(TEMPLATE)({
     toUsername: params.FromUserName[0],
     fromUsername: params.ToUserName[0],
     createTime: new Date().getTime(),
     msgType: 'text',
     content: 'Hello',
-  });
-  ctx.body = replyXML;
-});
+  })
+  ctx.body = replyXML
+})
 ```
 
 回复图片（不支持 gif 动图）等多媒体消息时需要预先通过素材管理接口上传临时素材到微信服务器，可以使用素材管理中的临时素材，也可以使用永久素材。
@@ -153,56 +153,56 @@ router.post('/wechat', async ctx => {
 
 ```javascript
 // ...
-const axios = require('axios').default;
-const redis = require('redis');
-const { promisify } = require('util');
+const axios = require('axios').default
+const redis = require('redis')
+const { promisify } = require('util')
 
-const HOST = '127.0.0.1';
-const PORT = 6379;
-const APP_ID = 'APP_ID';
-const APP_SECRET = 'APP_SECRET';
+const HOST = '127.0.0.1'
+const PORT = 6379
+const APP_ID = 'APP_ID'
+const APP_SECRET = 'APP_SECRET'
 
-const client = redis.createClient(PORT, HOST);
-const HGETALL = promisify(client.HGETALL).bind(client);
-const hmset = promisify(client.hmset).bind(client);
+const client = redis.createClient(PORT, HOST)
+const HGETALL = promisify(client.HGETALL).bind(client)
+const hmset = promisify(client.hmset).bind(client)
 
 async function checkAccessToken() {
-  const tokenInfo = await HGETALL('tokenCache');
-  const { access_token, expires_in, updateTime } = tokenInfo || {};
+  const tokenInfo = await HGETALL('tokenCache')
+  const { access_token, expires_in, updateTime } = tokenInfo || {}
   if (!access_token) {
-    return false;
+    return false
   }
   if (new Date().getTime() > parseInt(updateTime) + parseInt(expires_in) * 1000) {
-    return false;
+    return false
   }
-  return true;
+  return true
 }
 
 async function getAccessToken(appId, appSecret) {
   if (await checkAccessToken()) {
-    const tokenInfo = await HGETALL('tokenCache');
-    return tokenInfo;
+    const tokenInfo = await HGETALL('tokenCache')
+    return tokenInfo
   }
-  const url = 'https://api.weixin.qq.com/cgi-bin/token';
+  const url = 'https://api.weixin.qq.com/cgi-bin/token'
   const { data } = await axios.get(url, {
     params: {
       grant_type: 'client_credential',
       appid: appId,
       secret: appSecret,
     },
-  });
-  const { access_token, expires_in, errmsg } = data;
+  })
+  const { access_token, expires_in, errmsg } = data
   if (errmsg) {
-    console.log(errmsg);
-    return {};
+    console.log(errmsg)
+    return {}
   } else {
     const tokenInfo = {
       access_token,
       expires_in,
       updateTime: new Date().getTime(),
-    };
-    await hmset('tokenCache', tokenInfo);
-    return tokenInfo;
+    }
+    await hmset('tokenCache', tokenInfo)
+    return tokenInfo
   }
 }
 ```
@@ -240,31 +240,31 @@ async function getAccessToken(appId, appSecret) {
       el: '#root',
       methods: {
         auth() {
-          location.href = '/auth';
+          location.href = '/auth'
         },
       },
       mounted() {
-        const query = Object.create(null);
+        const query = Object.create(null)
         location.search
           .slice(1)
           .split('&')
           .forEach(item => {
-            const tmpArr = item.split('=');
-            query[tmpArr[0]] = decodeURIComponent(tmpArr[1]);
-          });
+            const tmpArr = item.split('=')
+            query[tmpArr[0]] = decodeURIComponent(tmpArr[1])
+          })
         if (!query.token) {
-          return this.auth();
+          return this.auth()
         }
         // 把 Token 保存到 localStorage 中。也可以保存当前时间，发起请求前做一个是否过期的判断
-        localStorage.setItem('token', query.token);
+        localStorage.setItem('token', query.token)
         // 使用了 axios 的请求拦截器，每次请求都会把 token 放到 headers 中
         axios.interceptors.request.use(config => {
-          const token = localStorage.getItem('token');
-          config.headers.common['Authorization'] = 'Bearer ' + token;
-          return config;
-        });
+          const token = localStorage.getItem('token')
+          config.headers.common['Authorization'] = 'Bearer ' + token
+          return config
+        })
       },
-    });
+    })
   </script>
 </body>
 ```
@@ -272,15 +272,15 @@ async function getAccessToken(appId, appSecret) {
 为了让前台可以访问，还需要做一点小小的配置：
 
 ```javascript
-const serve = require('koa-static');
+const serve = require('koa-static')
 
-app.use(serve(__dirname + '/public'));
+app.use(serve(__dirname + '/public'))
 ```
 
 然后，打开微信开发者工具，点击公众号网页。在地址栏访问静态服务器的地址（如上面的 sunny.free.idcfengye.com）。由于没有首次进入没有 Token 就会请求我们的授权接口：
 
 ```javascript
-const REDIRECT_URI = 'http://sunny.free.idcfengye.com/auth_cb';
+const REDIRECT_URI = 'http://sunny.free.idcfengye.com/auth_cb'
 
 /**
  * 获取授权页面的 URL 地址
@@ -289,21 +289,21 @@ const REDIRECT_URI = 'http://sunny.free.idcfengye.com/auth_cb';
  * @param {string} scope 作用范围
  */
 function getAuthURL(appId, redirect, state, scope) {
-  const url = 'https://open.weixin.qq.com/connect/oauth2/authorize';
+  const url = 'https://open.weixin.qq.com/connect/oauth2/authorize'
   const info = {
     appid: appId,
     redirect_uri: redirect,
     response_type: 'code',
     scope: scope || 'snsapi_userinfo',
     state: state || '',
-  };
-  return `${url}?${querystring.stringify(info)}#wechat_redirect`;
+  }
+  return `${url}?${querystring.stringify(info)}#wechat_redirect`
 }
 
 router.get('/auth', async ctx => {
-  const redirectURL = getAuthURL(APP_ID, REDIRECT_URI);
-  ctx.redirect(redirectURL);
-});
+  const redirectURL = getAuthURL(APP_ID, REDIRECT_URI)
+  ctx.redirect(redirectURL)
+})
 ```
 
 在上面的代码中，我们根据微信给定的 URL 结构拼接除了授权页面的地址，并重定向到该地址。如果用户同意授权，页面将跳转至我们指定的重定向地址：`REDIRECT_URI/?code=CODE&state=STATE`：
@@ -312,30 +312,30 @@ router.get('/auth', async ctx => {
 // 根据授权获取到的 code 获取 access_token
 async function getWEBAccessToken(code, appId, appSecret) {
   if (await checkAccessToken('webTokenCache')) {
-    const tokenInfo = await HGETALL('webTokenCache');
-    return tokenInfo;
+    const tokenInfo = await HGETALL('webTokenCache')
+    return tokenInfo
   }
   const info = {
     appid: appId,
     secret: appSecret,
     code,
     grant_type: 'authorization_code',
-  };
-  const url = `https://api.weixin.qq.com/sns/oauth2/access_token?${querystring.stringify(info)}`;
+  }
+  const url = `https://api.weixin.qq.com/sns/oauth2/access_token?${querystring.stringify(info)}`
   const { data: webTokenInfo } = await axios.get(url, {
     headers: {
       accept: 'application/json',
     },
-  });
-  await hmset('webTokenCache', Object.assign({ updateTime: new Date().getTime() }, webTokenInfo));
-  return webTokenInfo;
+  })
+  await hmset('webTokenCache', Object.assign({ updateTime: new Date().getTime() }, webTokenInfo))
+  return webTokenInfo
 }
 
 router.get('/auth_cb', async ctx => {
-  const code = ctx.query.code; // 微信回调此接口时回携带 code 参数
-  const webTokenInfo = await getWEBAccessToken(code, APP_ID, APP_SECRET);
-  const { openid } = webTokenInfo;
-});
+  const code = ctx.query.code // 微信回调此接口时回携带 code 参数
+  const webTokenInfo = await getWEBAccessToken(code, APP_ID, APP_SECRET)
+  const { openid } = webTokenInfo
+})
 ```
 
 这里处理的逻辑和之前获取 `access_token` 的逻辑基本一致，首先根据拿到的 CODE 和 APP_ID 等信息获取 `access_token` 并存储在 Redis 中，下次获取前先判断是否过期。
@@ -347,44 +347,44 @@ router.get('/auth_cb', async ctx => {
 首先，在我们设置的微信回调接口处，我们拿到登录的 `access_token` 后就可以通过调用 `jsonwebtoken` 的 `sign()` 方法来生成 `token`，然后传递给前台：
 
 ```javascript
-const jwt = require('jsonwebtoken');
+const jwt = require('jsonwebtoken')
 
-const TOKEN_PRIVATE_KEY = 'TOKEN_PRIVATE_KEY';
+const TOKEN_PRIVATE_KEY = 'TOKEN_PRIVATE_KEY'
 
 router.get('/auth_cb', async ctx => {
   // ...
-  const { openid } = webTokenInfo;
+  const { openid } = webTokenInfo
   const token = jwt.sign(
     {
       openid,
     },
     TOKEN_PRIVATE_KEY,
     { expiresIn: '2h' },
-  );
-  ctx.redirect(`/?token=${token}`);
-});
+  )
+  ctx.redirect(`/?token=${token}`)
+})
 ```
 
 为了完善鉴权，可以引入 `koa-jwt` 中间件来进行验证：
 
 ```javascript
-const koaJwt = require('koa-jwt');
+const koaJwt = require('koa-jwt')
 
 app.use((ctx, next) => {
   return next().catch(err => {
     if (err.status === 401) {
-      ctx.status = 401;
-      ctx.body = 'Protected resource, please log in first';
+      ctx.status = 401
+      ctx.body = 'Protected resource, please log in first'
     } else {
-      throw err;
+      throw err
     }
-  });
-});
+  })
+})
 app.use(
   koaJwt({ secret: TOKEN_PRIVATE_KEY }).unless({
     path: [/^\/$/, /^\/wechat$/, /^\/auth$/, /^\/auth_cb$/],
   }),
-);
+)
 ```
 
 如此，一个简单的 JWT 认证机制就算完成了。
@@ -414,22 +414,22 @@ app.use(
       el: '#root',
       methods: {
         auth() {
-          location.href = '/auth';
+          location.href = '/auth'
         },
         async getJSConfig() {
           const res = await axios.get('/getJSConfig', {
             params: {
               url: location.href,
             },
-          });
-          console.log(res);
+          })
+          console.log(res)
         },
       },
       mounted() {
         // ...
-        this.getJSConfig();
+        this.getJSConfig()
       },
-    });
+    })
   </script>
 </body>
 ```
@@ -439,21 +439,21 @@ app.use(
 ```javascript
 // 排序并返回处理后的字符串
 function raw(args) {
-  let keys = Object.keys(args);
-  const newArgs = {};
-  keys = keys.sort();
+  let keys = Object.keys(args)
+  const newArgs = {}
+  keys = keys.sort()
   for (let i = 0; i < keys.length; i++) {
-    let key = keys[i];
-    newArgs[key.toLowerCase()] = args[key];
+    let key = keys[i]
+    newArgs[key.toLowerCase()] = args[key]
   }
 
-  let string = '';
-  const newKeys = Object.keys(newArgs);
+  let string = ''
+  const newKeys = Object.keys(newArgs)
   for (let i = 0; i < newKeys.length; i++) {
-    let k = newKeys[i];
-    string += '&' + k + '=' + newArgs[k];
+    let k = newKeys[i]
+    string += '&' + k + '=' + newArgs[k]
   }
-  return string.substr(1);
+  return string.substr(1)
 }
 
 /*
@@ -469,47 +469,47 @@ function sign(nonceStr, jsapi_ticket, timestamp, url) {
     nonceStr: nonceStr,
     timestamp: timestamp,
     url: url,
-  };
-  const string = raw(ret);
+  }
+  const string = raw(ret)
   const retStr = crypto
     .createHash('sha1')
     .update(string)
-    .digest('hex');
-  return retStr;
+    .digest('hex')
+  return retStr
 }
 
 // 获取 jsapi_ticket
 async function getJsApiTicket() {
   if (await checkAccessToken('ticketCache')) {
-    const ticketInfo = await HGETALL('ticketCache');
-    return ticketInfo;
+    const ticketInfo = await HGETALL('ticketCache')
+    return ticketInfo
   }
-  const url = 'https://api.weixin.qq.com/cgi-bin/ticket/getticket';
-  const tokenInfo = await getAccessToken(APP_ID, APP_SECRET);
+  const url = 'https://api.weixin.qq.com/cgi-bin/ticket/getticket'
+  const tokenInfo = await getAccessToken(APP_ID, APP_SECRET)
   const { data: ticketRet } = await axios.get(url, {
     params: {
       access_token: tokenInfo.access_token,
       type: 'jsapi',
     },
-  });
+  })
   const ticketInfo = {
     access_token: ticketRet.ticket,
     expires_in: ticketRet.expires_in,
     updateTime: new Date().getTime(),
-  };
-  await hmset('ticketCache', ticketInfo);
-  return ticketInfo;
+  }
+  await hmset('ticketCache', ticketInfo)
+  return ticketInfo
 }
 
 router.get('/getJsConfig', async ctx => {
   // https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html#62
-  const ticketInfo = await getJsApiTicket();
+  const ticketInfo = await getJsApiTicket()
   const nonceStr = Math.random()
     .toString(36)
-    .substr(2, 15);
-  const jsAPITicket = ticketInfo.access_token;
-  const timestamp = Math.floor(Date.now() / 1000) + '';
-  const signature = sign(nonceStr, jsAPITicket, timestamp, ctx.query.url);
+    .substr(2, 15)
+  const jsAPITicket = ticketInfo.access_token
+  const timestamp = Math.floor(Date.now() / 1000) + ''
+  const signature = sign(nonceStr, jsAPITicket, timestamp, ctx.query.url)
 
   ctx.body = {
     debug: false,
@@ -518,8 +518,8 @@ router.get('/getJsConfig', async ctx => {
     nonceStr: nonceStr,
     signature: signature,
     jsApiList: [],
-  };
-});
+  }
+})
 ```
 
 前台拿到了关键信息，现在就可以开始通过 `config` 接口注入权限验证配置：
@@ -552,7 +552,7 @@ async getJSConfig() {
 对于用户触发时才调用的接口，则可以直接调用，不需要放在 `ready` 函数中。
 
 ```javascript
-wx.ready(function() {});
+wx.ready(function() {})
 ```
 
 另外，你还可以通过 `error` 接口处理失败验证。

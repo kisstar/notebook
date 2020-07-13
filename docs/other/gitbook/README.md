@@ -12,24 +12,23 @@
 
 `GitBook` 可以制作出精美的电子书，而且支持输出多种文档格式：
 
-* **静态站点**：`GitBook` 默认输出该种格式，生成的静态站点可直接托管搭载 Github Pages 服务上。
-* **PDF**：需要安装 `gitbook-pdf` 依赖。
-* **eBook**：需要安装 `ebook-convert`。
-* **单HTML网页**：支持将内容输出为单页的 `HTML`。
-* **JSON**：一般用于电子书的调试或元数据提取。
+- **静态站点**：`GitBook` 默认输出该种格式，生成的静态站点可直接托管搭载 Github Pages 服务上。
+- **PDF**：需要安装 `gitbook-pdf` 依赖。
+- **eBook**：需要安装 `ebook-convert`。
+- **单 HTML 网页**：支持将内容输出为单页的 `HTML`。
+- **JSON**：一般用于电子书的调试或元数据提取。
 
 ## 安装 Node.js
 
-因为 `GitBook` 是基于 `Node.js` 的工具，所以我们首先需要安装 `Node.js`（[下载地址](https://nodejs.org/en/download/)），找到对应平台的版本安装即可。
-现在安装 `Node.js` 都会默认安装 `npm`（包管理工具），所以我们不用单独安装 `npm`，安装完成通过以下命令检查是否安装成功：
+因为 `GitBook` 是基于 `Node.js` 的工具，所以我们首先需要安装 `Node.js`（[下载地址](https://nodejs.org/en/download/)），找到对应平台的版本安装即可。现在安装 `Node.js` 都会默认安装 `npm`（包管理工具），所以我们不用单独安装 `npm`，安装完成通过以下命令检查是否安装成功：
 
-``` bash
+```bash
 node -v
 ```
 
 以上命令在 `node` 安装成功后会显示 `node` 的版本号。
 
-``` bash
+```bash
 npm -v
 ```
 
@@ -39,13 +38,13 @@ npm -v
 
 当上面的工具都安装完成后打开命令行，执行以下命令安装 `GitBook`：
 
-``` bash
+```bash
 npm install -g gitbook-cli
 ```
 
 检测安装是否成功：
 
-``` bash
+```bash
 gitbook-cli -v
 ```
 
@@ -57,25 +56,25 @@ gitbook-cli -v
 
 如果将第一本电子书的名字取名 `mybook`，那么创建该电子书的方法有两个，首先你可以创建一个文件夹名为 `mybook` 然后在终端打开该文件夹并执行下面的命令：
 
-``` bash
+```bash
 gitbook init
 ```
 
 或者你也可以直接在任一目录下打开终端执行以下命令：
 
-``` bash
+```bash
 gitbook init mybook
 ```
 
 创建好电子书后会在该文件下生成 `README.md` 和 `SUMMARY.md` 两个文件，其中 `README.md` 就是静态网站首页的内容，也就是电子书的封面，而 `SUMMARY.md` 是整个电子书的目录，为了一睹为快我们先执行下面的命令来本地查看以下书籍的样貌：
 
-``` bash
+```bash
 gitbook serve
 ```
 
 运行该命令后会启动本地服务器，通过 [http://localhost:4000/](http://localhost:4000/) 即可预览书籍，同时在书籍的文件夹中会生成一个 `_book` 文件夹, 里面的内容即为生成的 `html` 文件. 当然我们也可以使用下面命令来生成网页而不开启服务器：
 
-``` bash
+```bash
 gitbook build
 ```
 
@@ -88,12 +87,12 @@ gitbook build
 ```md
 # Summary
 
-* [Part I](part1/README.md)
-    * [Writing is nice](part1/writing.md)
-    * [GitBook is nice](part1/gitbook.md)
-* [Part II](part2/README.md)
-    * [We love JavaScript](part2/JavaScript.md)
-    * [Better tools for authors](part2/better_tools.md)
+- [Part I](part1/README.md)
+  - [Writing is nice](part1/writing.md)
+  - [GitBook is nice](part1/gitbook.md)
+- [Part II](part2/README.md)
+  - [We love JavaScript](part2/JavaScript.md)
+  - [Better tools for authors](part2/better_tools.md)
 ```
 
 另外为了更好地体现目录的层次感，我们可以通过使用标题（heading）或者水平分割线（horizontal line）标志将 `GitBook` 分为几个不同的部分：
@@ -103,107 +102,107 @@ gitbook build
 
 ### Part I
 
-* [Writing is nice](part1/writing.md)
-* [GitBook is nice](part1/gitbook.md)
+- [Writing is nice](part1/writing.md)
+- [GitBook is nice](part1/gitbook.md)
 
 ### Part II
 
-* [We love JavaScript](part2/JavaScript.md)
-* [Better tools for authors](part2/better_tools.md)
+- [We love JavaScript](part2/JavaScript.md)
+- [Better tools for authors](part2/better_tools.md)
 
-----
+---
 
-* [Last part without title](part3/title.md)
+- [Last part without title](part3/title.md)
 ```
 
 ## 配置
 
 简单的介绍一下 `Gitbook` 的一些配置信息，当然前面我们已经看见了完整的电子书，所以说这些配置并不是必须的，但根据自己的需要可以对其中的配置项进行设置，整个书籍的配置都记录在默认根目录下的 `book.json` 文件中。
 
-* **title**-设置书本的名称。
+- **title**-设置书本的名称。
 
 ```json
 {
-    "title": "<书本的名称>"
+  "title": "<书本的名称>"
 }
 ```
 
-* **author**-作者的相关信息。
+- **author**-作者的相关信息。
 
 ```json
 {
-    "author": "<作者的姓名>"
+  "author": "<作者的姓名>"
 }
 ```
 
-* **description**-书本的描述信息。
+- **description**-书本的描述信息。
 
 ```json
 {
-    "description": "<书本的主讲内容>"
+  "description": "<书本的主讲内容>"
 }
 ```
 
-* **language**-`Gitbook` 使用的语言。
+- **language**-`Gitbook` 使用的语言。
 
 在版本 `v3.2.3` 中 `Gitbook` 语言的 [ISO code](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)，其默认值为 `en`，配置使用简体中文：
 
 ```json
 {
-    "language": "zh-hans"
+  "language": "zh-hans"
 }
 ```
 
-* **gitbook**-指定使用的 `Gitbook` 的版本号。
+- **gitbook**-指定使用的 `Gitbook` 的版本号。
 
 ```json
 {
-    "gitbook": ">= 3.2.3"
+  "gitbook": ">= 3.2.3"
 }
 ```
 
-* **root**-指定存放 `GitBook` 文件（除 `book.json`）的根目录。
+- **root**-指定存放 `GitBook` 文件（除 `book.json`）的根目录。
 
 ```json
 {
-    "root": "."
+  "root": "."
 }
 ```
 
-* **links**-在左侧导航添加链接。
+- **links**-在左侧导航添加链接。
 
 ```json
 {
-    "links": {
-        "sidebar": {
-            "home": "https://anani1994.github.io/blog/#/"
-        }
+  "links": {
+    "sidebar": {
+      "home": "https://anani1994.github.io/blog/#/"
     }
+  }
 }
 ```
 
-* **styles**-自定义页面样式， 默认情况下各 `generator` 对应的 `css` 文件。
+- **styles**-自定义页面样式， 默认情况下各 `generator` 对应的 `css` 文件。
 
 ```json
 {
-    "styles": {
-        "website": "styles/website.css",
-        "ebook": "styles/ebook.css",
-        "pdf": "styles/pdf.css",
-        "mobi": "styles/mobi.css",
-        "epub": "styles/epub.css"
-    }
+  "styles": {
+    "website": "styles/website.css",
+    "ebook": "styles/ebook.css",
+    "pdf": "styles/pdf.css",
+    "mobi": "styles/mobi.css",
+    "epub": "styles/epub.css"
+  }
 }
 ```
 
-* **structure**-指定 `Readme`、`Summary`、`Glossary` 和 `Languages` 对应的文件名，下面是这几个文件对应变量以及默认值：
+- **structure**-指定 `Readme`、`Summary`、`Glossary` 和 `Languages` 对应的文件名，下面是这几个文件对应变量以及默认值：
 
-| 变量 | 含义和默认值 |
-|:----|:----|
-|`structure.readme` | `Readme file name (defaults to README.md)` |
-|`structure.summary` | `Summary file name (defaults to SUMMARY.md)`|
-|`structure.glossary`| `Glossary file name (defaults to GLOSSARY.md)` |
-|`structure.languages`| `Languages file name (defaults to LANGS.md)`|
+| 变量                  | 含义和默认值                                   |
+| :-------------------- | :--------------------------------------------- |
+| `structure.readme`    | `Readme file name (defaults to README.md)`     |
+| `structure.summary`   | `Summary file name (defaults to SUMMARY.md)`   |
+| `structure.glossary`  | `Glossary file name (defaults to GLOSSARY.md)` |
+| `structure.languages` | `Languages file name (defaults to LANGS.md)`   |
 
 ## 插件
 
@@ -211,21 +210,19 @@ gitbook build
 
 在初始化的 `Gitbook` 中其实已经内置了几款插件，写下此文时 `Gitbook` 的版本为 `v3.2.3`，其中内置的插件包括：
 
-* [fontsettings](https://www.npmjs.com/package/gitbook-plugin-fontsettings)
-* [highlight](https://www.npmjs.com/package/gitbook-plugin-highlight)
-* [livereload](https://www.npmjs.com/package/gitbook-plugin-livereload)
-* [lunr](https://www.npmjs.com/package/gitbook-plugin-lunr)
-* [search](https://www.npmjs.com/package/gitbook-plugin-search)
-* [sharing](https://www.npmjs.com/package/gitbook-plugin-sharing)
-* [test](https://www.npmjs.com/package/gitbook-plugin-test)
+- [fontsettings](https://www.npmjs.com/package/gitbook-plugin-fontsettings)
+- [highlight](https://www.npmjs.com/package/gitbook-plugin-highlight)
+- [livereload](https://www.npmjs.com/package/gitbook-plugin-livereload)
+- [lunr](https://www.npmjs.com/package/gitbook-plugin-lunr)
+- [search](https://www.npmjs.com/package/gitbook-plugin-search)
+- [sharing](https://www.npmjs.com/package/gitbook-plugin-sharing)
+- [test](https://www.npmjs.com/package/gitbook-plugin-test)
 
 如果我们需要禁用其中的某个插件时，只需要在 `book.json` 文件中的 `plugin` 字段下进行配置，配置的格式就是减号加上插件的名称，比如这里以禁用代码高亮插件 `highlight` 为例：
 
 ```json
 {
-    "plugins": [
-        "-highlight"
-    ]
+  "plugins": ["-highlight"]
 }
 ```
 
@@ -233,30 +230,26 @@ gitbook build
 
 ```json
 {
-    "plugins": [
-        "code"
-    ]
+  "plugins": ["code"]
 }
 ```
 
 然后进行安装，插件的安装的方式有三种：
 
-* 直接使用命令 `gitbook install` 进行安装。
-* 通过包管理器 `npm` 或 `yarn` 进行安装(插件包的命名规则为 `gitbook-plugin-` 前缀加上自定义包名，所以以 `code` 插件为例的安装命令为 `npm install gitbook-plugin-code` 或 `yarn add gitbook-plugin-code`)。
-* 从源码 `GitHub` 地址中下载，放到 `node_modules` 文件夹里。
+- 直接使用命令 `gitbook install` 进行安装。
+- 通过包管理器 `npm` 或 `yarn` 进行安装(插件包的命名规则为 `gitbook-plugin-` 前缀加上自定义包名，所以以 `code` 插件为例的安装命令为 `npm install gitbook-plugin-code` 或 `yarn add gitbook-plugin-code`)。
+- 从源码 `GitHub` 地址中下载，放到 `node_modules` 文件夹里。
 
 最后对该插件进行配置(某些插件不需要配置)，依旧以 `code` 插件为例在 `book.json` 文件中的 `pluginsConfig` 字段下进行配置：
 
 ```json
 {
-    "plugins": [
-        "code"
-    ],
-    "pluginsConfig": {
-        "code": {
-            "copyButtons": false
-        }
+  "plugins": ["code"],
+  "pluginsConfig": {
+    "code": {
+      "copyButtons": false
     }
+  }
 }
 ```
 
@@ -264,7 +257,7 @@ gitbook build
 
 ```json
 {
-    "gitbook": "3.2.3"
+  "gitbook": "3.2.3"
 }
 ```
 
@@ -272,30 +265,28 @@ gitbook build
 
 ```json
 {
-    "plugins": [
-        "code@0.1.0"
-    ]
+  "plugins": ["code@0.1.0"]
 }
 ```
 
 这里列举的插件在 `GitBook` 的 `3.2.3` 版本中可以正常工作。另外这里只是列举几款常用的插件，如果有其它的需求，可以参考文末的提供的链接查看更多插件及其使用方法，或者直接到 [插件官网](https://plugins.gitbook.com/) 区搜索相关插件，目前为止已经有七百多款插件。
 
-* [disqus](https://plugins.gitbook.com/plugin/disqus)(评论功能，由于是国外的网站，所以国内的访问速度比较惨淡，国内可以使用 Gitalk 来代替也是一个很好的实现。)
-* [code](https://plugins.gitbook.com/plugin/code-postman)(为代码块添加行号和复制按钮，复制按钮可关闭，单行代码无行号。)
-* [splitter](https://plugins.gitbook.com/plugin/splitter)(使得侧边栏宽度可调节。)
-* [page-copyright](https://plugins.gitbook.com/plugin/page-copyright)(给每个添加页脚包括有二维码、版权信息、文章修改时间等。)
-* [anchor-navigation-ex](https://plugins.gitbook.com/plugin/anchor-navigation-ex)(提供添加悬浮目录和返回顶部按钮等功能。)
-* [terminal](https://plugins.gitbook.com/plugin/terminal)(模拟终端的显示样式，包括 flat 和 ubuntu 等几种风格。)
-* [custom-favicon](https://plugins.gitbook.com/plugin/custom-favicon)(更换网页的图标，另外 favicon 插件也具备同样的功能且更全。)
-* [edit-link](https://plugins.gitbook.com/plugin/edit-link)(在页面顶部赋予编辑该页源代码链接的按钮。)
+- [disqus](https://plugins.gitbook.com/plugin/disqus)(评论功能，由于是国外的网站，所以国内的访问速度比较惨淡，国内可以使用 Gitalk 来代替也是一个很好的实现。)
+- [code](https://plugins.gitbook.com/plugin/code-postman)(为代码块添加行号和复制按钮，复制按钮可关闭，单行代码无行号。)
+- [splitter](https://plugins.gitbook.com/plugin/splitter)(使得侧边栏宽度可调节。)
+- [page-copyright](https://plugins.gitbook.com/plugin/page-copyright)(给每个添加页脚包括有二维码、版权信息、文章修改时间等。)
+- [anchor-navigation-ex](https://plugins.gitbook.com/plugin/anchor-navigation-ex)(提供添加悬浮目录和返回顶部按钮等功能。)
+- [terminal](https://plugins.gitbook.com/plugin/terminal)(模拟终端的显示样式，包括 flat 和 ubuntu 等几种风格。)
+- [custom-favicon](https://plugins.gitbook.com/plugin/custom-favicon)(更换网页的图标，另外 favicon 插件也具备同样的功能且更全。)
+- [edit-link](https://plugins.gitbook.com/plugin/edit-link)(在页面顶部赋予编辑该页源代码链接的按钮。)
 
 ## 参考资料
 
-* [Gitbook](https://www.gitbook.com/)
-* [Gitbook Github 地址](https://github.com/GitbookIO/gitbook)
-* [GitBook 文档](https://help.gitbook.com/)
-* [Gitbook 工具链文档](https://toolchain.gitbook.com/)
-* [编辑工具](https://legacy.gitbook.com/editor)
-* [官方插件](https://plugins.gitbook.com/)
-* [GitBook 插件整理](https://www.jianshu.com/p/427b8bb066e6)(网络文章，收集大部分常用插件并给出了大部分插件的使用方式)
-* [Gitbook 使用教程](http://gitbook.zhangjikai.com/)(网络教程，完整介绍从安装到配置以及插件等的使用)
+- [Gitbook](https://www.gitbook.com/)
+- [Gitbook Github 地址](https://github.com/GitbookIO/gitbook)
+- [GitBook 文档](https://help.gitbook.com/)
+- [Gitbook 工具链文档](https://toolchain.gitbook.com/)
+- [编辑工具](https://legacy.gitbook.com/editor)
+- [官方插件](https://plugins.gitbook.com/)
+- [GitBook 插件整理](https://www.jianshu.com/p/427b8bb066e6)(网络文章，收集大部分常用插件并给出了大部分插件的使用方式)
+- [Gitbook 使用教程](http://gitbook.zhangjikai.com/)(网络教程，完整介绍从安装到配置以及插件等的使用)

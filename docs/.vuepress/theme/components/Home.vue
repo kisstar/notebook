@@ -34,23 +34,23 @@
 </template>
 
 <script>
-import NavLink from '@theme/components/NavLink.vue';
+import NavLink from '@theme/components/NavLink.vue'
 
 export default {
   name: 'Home',
   components: { NavLink },
   computed: {
     data() {
-      return this.$page.frontmatter;
+      return this.$page.frontmatter
     },
     actionLink() {
       return {
         link: this.data.actionLink,
         text: this.data.actionText,
-      };
+      }
     },
   },
-};
+}
 </script>
 
 <style lang="stylus">

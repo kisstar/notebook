@@ -63,11 +63,11 @@ yarn config set cache-folder <path>
 
 `yarn init` 通过交互式会话带你创建一个 `package.json` 文件。 一些默认值比如 `license` 和初始版本可以在 `yarn` 的 `init-*` 配置里找到，你可以对下面的这些默认配置进行更改。
 
-* init-author-name
-* init-author-email
-* init-author-url
-* init-version
-* init-license
+- init-author-name
+- init-author-email
+- init-author-url
+- init-version
+- init-license
 
 ```bash
 # --yes/-y 参数会跳过上面提到的交互式会话，并生成一个基于你的默认值的 package.json 文件
@@ -174,7 +174,7 @@ yarn info lodash [homepage | version | description]
 
 ```json
 {
-    "test": "jest"
+  "test": "jest"
 }
 ```
 
@@ -192,4 +192,4 @@ yarn self-update
 
 ## 参考资料
 
-* [Yarn](https://yarnpkg.com/zh-Hans/)
+- [Yarn](https://yarnpkg.com/zh-Hans/)

@@ -416,5 +416,5 @@ systemctl start keepalived.service
 ## 参考
 
 - [鸟哥的 Linux 私房菜 -- 程序管理与 SELinux 初探](http://cn.linux.vbird.org/linux_basic/0440processcontrol_5.php)
-- [生产环境之Nginx高可用方案 - SimpleWu - 博客园](https://www.cnblogs.com/SimpleWu/p/11004902.html)
+- [生产环境之 Nginx 高可用方案 - SimpleWu - 博客园](https://www.cnblogs.com/SimpleWu/p/11004902.html)
 - [Nginx.mmap](https://besterwin.gitee.io/blogs/knowledge/middle/Nginx.html)

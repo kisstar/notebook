@@ -74,6 +74,6 @@ nvm uninstall <version>
 
 ## 参考链接
 
-* [http://bubkoo.com/2017/01/08/quick-tip-multiple-versions-node-nvm/](http://bubkoo.com/2017/01/08/quick-tip-multiple-versions-node-nvm/)
-* [https://www.imooc.com/article/17674](https://www.imooc.com/article/17674)
-* [https://github.com/creationix/nvm](https://github.com/creationix/nvm)
+- [http://bubkoo.com/2017/01/08/quick-tip-multiple-versions-node-nvm/](http://bubkoo.com/2017/01/08/quick-tip-multiple-versions-node-nvm/)
+- [https://www.imooc.com/article/17674](https://www.imooc.com/article/17674)
+- [https://github.com/creationix/nvm](https://github.com/creationix/nvm)
