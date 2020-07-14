@@ -9,7 +9,7 @@
     "commit": "git-cz",
     "lint:md": "markdownlint **/*.md",
     "lint:style": "stylelint --fix \"docs/.vuepress/**/*.less\" --syntax less",
-    "lint:js": "eslint --cache --ext .js .",
+    "lint:js": "eslint --cache --ext .js docs/.vuepress",
     "lint:vue": "eslint --cache --ext .vue docs/.vuepress",
     "lint:prettier": "prettier --check \"**/*\" --end-of-line auto",
     "prettier": "prettier -c --write \"**/*\"",
