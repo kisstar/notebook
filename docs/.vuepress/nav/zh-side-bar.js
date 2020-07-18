@@ -326,7 +326,7 @@ module.exports = {
     {
       title: '基础',
       sidebarDepth: 2,
-      children: ['', 'basis/commit-lint', 'basis/eslint'],
+      children: ['', 'basis/commit-lint', 'basis/eslint', 'basis/stylelint'],
     },
   ],
   '/': [''],
