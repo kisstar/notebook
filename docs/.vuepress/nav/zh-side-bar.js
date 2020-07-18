@@ -6,21 +6,14 @@ module.exports = {
       children: ['', 'basis/box-model'],
     },
     {
+      title: 'LESS',
+      sidebarDepth: 2,
+      children: ['less', 'less/basis/meet-less', 'less/advanced/use-advanced'],
+    },
+    {
       title: '面试',
       sidebarDepth: 2,
       children: ['interview/css-hv-center'],
-    },
-  ],
-  '/less/': [
-    {
-      title: '基础',
-      sidebarDepth: 2,
-      children: ['', 'basis/meet-less'],
-    },
-    {
-      title: '进阶',
-      sidebarDepth: 2,
-      children: ['advanced/use-advanced'],
     },
   ],
   '/js/': [
@@ -327,6 +320,13 @@ module.exports = {
       title: 'GitBook',
       sidebarDepth: 2,
       children: ['gitbook/'],
+    },
+  ],
+  '/project/': [
+    {
+      title: '基础',
+      sidebarDepth: 2,
+      children: ['', 'basis/commit-lint', 'basis/eslint'],
     },
   ],
   '/': [''],

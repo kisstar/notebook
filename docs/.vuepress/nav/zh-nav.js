@@ -14,10 +14,6 @@ module.exports = [
             link: '/css/',
           },
           {
-            text: 'LESS',
-            link: '/less/',
-          },
-          {
             text: 'JavaScript',
             link: '/js/',
           },
@@ -58,6 +54,10 @@ module.exports = [
           {
             text: 'WeChat',
             link: '/wechat/',
+          },
+          {
+            text: 'Project',
+            link: '/project/',
           },
         ],
       },
