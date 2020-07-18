@@ -139,6 +139,8 @@ module.exports = {
     },
     {
       title: '插件',
+      sidebarDepth: 2,
+      children: ['plugin/common-plugin'],
     },
   ],
   '/algorithm/': [
