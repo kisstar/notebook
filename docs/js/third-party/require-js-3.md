@@ -1,10 +1,10 @@
 # RequireJS (四)
 
-RequireJS 实现 JSON 服务。
+RequireJS 实现 JSONP 服务。
 
-## 传统的 jsonp 服务
+## 传统的 JSONP 服务
 
-由于浏览器同源策略的影响，`Ajax` 请求不能跨域获取数据。
+由于浏览器同源策略的影响，Ajax 请求不能跨域获取数据。
 
 所谓"同源"指的是"三个相同"：
 
@@ -14,11 +14,13 @@ RequireJS 实现 JSON 服务。
 
 同源政策的目的，是为了保证用户信息的安全，防止恶意的网站窃取数据。如果非同源，共有三种行为受到限制：
 
-- `Cookie`、`LocalStorage` 和 `IndexDB` 无法读取。
+- Cookie、LocalStorage 和 IndexDB 无法读取。
 - DOM 无法获得。
 - AJAX 请求不能发送。
 
-那么 `Ajax` 请求如何规避这个限制呢？我们知道 JSONP 是服务器与客户端跨源通信的常用方法。它的基本思想是，网页通过添加一个 `<script>` 元素，向服务器请求 JSON 数据，这种做法不受同源政策限制；服务器收到请求后，将数据放在一个指定名字的回调函数里传回来。
+那么 Ajax 请求如何规避这个限制呢？JSONP 就是服务器与客户端跨源通信的常用方法。
+
+JSONP 的基本思想是，网页通过添加一个 `<script>` 元素，向服务器请求 JSON 数据，由于这种做法不受同源政策限制；服务器收到请求后，将数据放在一个指定名字的回调函数里传回来。
 
 ```javascript
 /**
@@ -48,11 +50,11 @@ function loaded(arg) {
 }
 ```
 
-## RequireJS 的 jsonp 服务
+## RequireJS 的 JSONP 服务
 
-前面介绍到 RequireJS 的运行机制是通过 `script` 标签来加载模块，所以我们也可以通过 RequireJS 来实现 JSON 服务。
+前面介绍到 RequireJS 的运行机制是通过 `script` 标签来加载模块，所以我们也可以通过 RequireJS 来实现 JSONP 服务。
 
-在使用 RequireJS 实现 JSON 服务时，我们需要把后台返回的数据写成 `define()` 函数的形式。
+在使用 RequireJS 实现 JSONP 服务时，我们需要把后台返回的数据写成 `define()` 函数的形式。
 
 ```javascript
 // 后台的数据形式

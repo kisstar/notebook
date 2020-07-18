@@ -2,7 +2,7 @@
 home: true
 heroImage: /hero.jpg
 heroText: Kisstar's notebook
-tagline: If you can't explain it simply, you don't understand it well enough.
+tagline: The faintest ink is better than the best memory.
 actionText: 查看更多
 actionLink: /js/
 features:

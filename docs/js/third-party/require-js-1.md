@@ -4,41 +4,46 @@ RequireJS 的基本使用方法。
 
 ## 基本 API
 
-**RequireJS 会定义三个变量：`define`，`require`，`requirejs`，其中 `require === requirejs`，由于 `require` 更加简短，语义化也更好，所以我们一般见到和用得最多的就是 `require`。**
+RequireJS 定义了三个变量：`define`，`require`，`requirejs`，其中后两者是严格相等的。
 
-`define()` 函数是用来定义一个模块，可以接受三个参数：
+要使用模块首先需要通过 `define()` 函数来定义一个模块，可以接受三个参数：
 
-- 第一个参数是模块名，一般模块名不需要被指定，由相关工具自动为其命名；
+- 模块名，一般模块名不需要被指定，由相关工具自动为其命名；
 - 第二个参数是一个数组，指明了此模块的依赖；
-- 第三个参数就是此模块的具体实现。它大概就像下图一样：
+- 模块的具体实现。
 
-<img :src="$withBase('/images/js/require_define.png')" alt="require_define">
+<img class="center" height="350" :src="$withBase('/images/js/require_define.png')" alt="require_define">
 
 如果我们定义了模块名，则在指定依赖这个模块时，必须使用同名模块名。
 
-`require()` 函数接受两个参数：
+对应的 `require()` 函数接受两个参数：
 
 - 第一个参数是一个数组，表示所依赖的模块；
 - 第二个参数是一个回调函数，当前面指定的模块都加载成功后，它将被调用。加载的模块会以参数形式传入该函数，从而在回调函数内部就可以使用这些模块。
 
-`require` 通过异步加载依赖的模块，从而解决了 JS 阻塞页面渲染，另外指定的回调函数会在其依赖的所有模块加载完之后再执行，从而又解决了依赖性的问题。
+RequireJS 通过异步加载依赖的模块，从而解决了 JS 阻塞页面渲染，另外指定的回调函数会在其依赖的所有模块加载完之后再执行，从而又解决了依赖性的问题。
 
 ## 主模块
 
 **"主模块"，意思是整个网页的入口代码，所有代码都从这儿开始运行。**
 
-我们可以在主模块里设置 `require` 的全局配置，并通过设置脚本的 `script` 标签的 `data-main` 属性来引入主模块，因为这个属性指定的 JavaScript 文件将在加载完 `reuqire.js` 后处理，在我们把 `require.config` 的配置加入到其中后，就可以使每一个页面都使用这个配置。
+我们可以在主模块里设置 RequireJS 的全局配置，并通过设置脚本的 `script` 标签的 `data-main` 属性来引入主模块，因为这个属性指定的 JavaScript 文件将在加载完 `reuqire.js` 后处理，在我们把 `require.config` 的配置加入到其中后，就可以使每一个页面都使用这个配置。
 
-另外，`data-main` 属性还有一个重要的功能，当在 `script` 标签指定 `data-main` 属性时，`require` 会默认的将 `data-main` 指定的 JavaScript 为根路径。
+另外，`data-main` 属性还有一个重要的功能，当在 `script` 标签指定 `data-main` 属性时，RequireJS 会默认的将 `data-main` 指定的 JavaScript 为根路径。
 
 当然我们也可以直接再使用另外一个 `script` 标签来引入主模块，不过此时默认的根路径则为页面所在的路径。
 
 就像下面这个例子一样：
 
-```markdown
+```bash
 # 目录结构
 
-└─ test.html └─text.txt └─js └─main.js └─ require.js └─say.hello.js
+└─ test.html
+└─text.txt
+└─js
+   └─main.js
+   └─ require.js
+   └─say.hello.js
 ```
 
 ```html

@@ -1,6 +1,6 @@
 # 跨域
 
-对于前端的同学来说，跨域是一个老生常谈的问题，无论是在面试还是在工作中，总会涉及到跨域的问题。因此理解和懂得如何解决跨域问题尤为重要。
+对于前端的同学来说，跨域是一个老生常谈的问题，无论是在面试还是在工作中，总会涉及到跨域的问题。
 
 ## 什么是跨域
 
@@ -51,7 +51,9 @@ document.domain // 打印当前页面的源，默认端口为 80
 
 CORS（Cross-Origin Resource Sharing，跨源资源共享）就是使用自定义的 HTTP 头部让浏览器与服务器进行沟通，从而决定请求或响应是应该成功，还是应该失败。
 
-在发送 GET 或 POST 请求时，需要给它附加一个额外的 `Origin` 头部，其中包含请求页面的源信息（协议、域名和端口），以便服务器根据这个头部信息来决定是否给予响应。下面是 `Origin` 头部的一个示例：
+在发送 GET 或 POST 请求时，需要给它附加一个额外的 `Origin` 头部，其中包含请求页面的源信息（协议、域名和端口），以便服务器根据这个头部信息来决定是否给予响应。
+
+下面是 `Origin` 头部的一个示例：
 
 ```javascript
 Origin: http://www.anani.net
@@ -80,13 +82,13 @@ Access-Control-Allow-Origin: http://www.anani.net
 
 浏览器将 CORS 请求分成两类：简单请求（simple request）和非简单请求（not-so-simple request）。只要同时满足以下两大条件，就属于简单请求：
 
-请求方法是以下三种方法之一：
+1、请求方法是以下三种方法之一：
 
 - HEAD
 - GET
 - POST
 
-HTTP 的头信息不超出以下几种字段：
+2、HTTP 的头信息不超出以下几种字段：
 
 - Accept
 - Accept-Language
@@ -96,22 +98,24 @@ HTTP 的头信息不超出以下几种字段：
 
 对于普通请求和复杂请求浏览器的处理方式不一样，更多信息参考 [跨域资源共享 CORS 详解](http://www.ruanyifeng.com/blog/2016/04/cors.html)。
 
-如下所述，默认情况下，跨源请求不提供凭据（cookie、HTTP 认证及客户端 SSL 证明等）。通过将 `withCredentials` 属性设置为 `true`，可以指定某个请求应该发送凭据。如果服务器接受带凭据的请求，会用下面的 HTTP 头部来响应。
+默认情况下，跨源请求不提供凭据（cookie、HTTP 认证及客户端 SSL 证明等）。通过将 `withCredentials` 属性设置为 `true`，可以指定某个请求应该发送凭据。如果服务器接受带凭据的请求，会用下面的 HTTP 头部来响应。
 
 ```javascript
 Access-Control-Allow-Credentials: true
 ```
 
-另一方面，开发者必须在 AJAX 请求中打开 `withCredentials` 属性。
+另一方面，开发者必须在 AJAX 请求中打开 `withCredentials` 属性。否则，即使服务器同意发送 `Cookie`，浏览器也不会发送。
 
 ```javascript
 var xhr = new XMLHttpRequest()
 xhr.withCredentials = true
 ```
 
-否则，即使服务器同意发送 `Cookie`，浏览器也不会发送。或者，服务器要求设置 `Cookie`，浏览器也不会处理。但是，如果省略 `withCredentials` 设置，有的浏览器还是会一起发送 `Cookie`。这时，可以显式关闭 `withCredentials`。
+或者，服务器要求设置 `Cookie`，浏览器也不会处理。但是，如果省略 `withCredentials` 设置，有的浏览器还是会一起发送 `Cookie`。这时，可以显式关闭 `withCredentials`。
 
-需要注意的是，如果要发送 `Cookie`，`Access-Control-Allow-Origin` 就不能设为星号，必须指定明确的、与请求网页一致的域名。同时，`Cookie` 依然遵循同源政策，只有用服务器域名设置的 `Cookie` 才会上传，其他域名的 `Cookie` 并不会上传，且（跨源）原网页代码中的 `document.cookie` 也无法读取服务器域名下的 `Cookie`。
+需要注意的是，如果要发送 `Cookie`，`Access-Control-Allow-Origin` 就不能设为星号，必须指定明确的、与请求网页一致的域名。
+
+同时，`Cookie` 依然遵循同源政策，只有用服务器域名设置的 `Cookie` 才会上传，其他域名的 `Cookie` 并不会上传，且（跨源）原网页代码中的 `document.cookie` 也无法读取服务器域名下的 `Cookie`。
 
 ### 图像 Ping
 
@@ -223,22 +227,22 @@ var message = {
 socket.send(JSON.stringify(message))
 ```
 
-当服务器向客户端发来消息时，`WebSocket` 对象就会触发 `message` 事件。这个 `message` 事件与 其他传递消息的协议类似，也是把返回的数据保存在 `event.data` 属性中。
+当服务器向客户端发来消息时，WebSocket 对象就会触发 `message` 事件。这个 `message` 事件与 其他传递消息的协议类似，也是把返回的数据保存在 `event.data` 属性中。
 
 #### 其它事件
 
-`WebSocket` 对象还有其他三个事件，在连接生命周期的不同阶段触发。
+WebSocket 对象还有其他三个事件，在连接生命周期的不同阶段触发。
 
 - **open**：在成功建立连接时触发。
 - **error**：在发生错误时触发，连接不能持续。
 - **close**：在连接关闭时触发。该事件事件的 `event` 对象有额外的属性：`wasClean`、`code` 和 `reason`。
-- wasClean 是一个布尔值，表示连接是否已经明确地关闭；
-- code 是服务器返回的数值状态码；
-- reason 是一个字符串，包含服务器发回的消息。
+- `wasClean` 是一个布尔值，表示连接是否已经明确地关闭；
+- `code` 是服务器返回的数值状态码；
+- `reason` 是一个字符串，包含服务器发回的消息。
 
-- 必须给 `WebSocket` 构造函数传入绝对 URL。
-- 同源策略对 Web Sockets 不适用，因此可以通过它打开到任何站点的连接  (是否会与某个域中的页面通信，完全取决于服务器。)。
-- `WebSocket` 对象不支持 DOM2 级事件侦听器，因此必须使用 DOM0 级语法分别定义每个事件处理程序。
+- 必须给 WebSocket 构造函数传入绝对 URL。
+- 同源策略对 Web Sockets 不适用，因此可以通过它打开到任何站点的连接  (是否会与某个域中的页面通信，完全取决于服务器)。
+- WebSocket 对象不支持 DOM2 级事件侦听器，因此必须使用 DOM0 级语法分别定义每个事件处理程序。
 
 ## 其它技术
 
@@ -246,37 +250,51 @@ socket.send(JSON.stringify(message))
 
 ### Comet
 
-`Comet` 指的是一种更高级的 `Ajax` 技术（经常也有人称为“服务器 推送” ）。它们明显的区别就是 `Ajax` 是一种从页面向服务器请求数据的技术，而 `Comet` 则是一种服务器向页面推送数据的技术。
+Comet 指的是一种更高级的 Ajax 技术（经常也有人称为“服务器 推送” ）。它们明显的区别就是 Ajax 是一种从页面向服务器请求数据的技术，而 Comet 则是一种服务器向页面推送数据的技术。
 
-`Comet` 能够让信息近乎实时地被推送到页面上，非常适合处理体育比赛的分数和股票报价。有两种实现 `Comet` 的方式：长轮询和流。长轮询是传统轮询（也称为短轮询）的一个翻版，即浏览器定时向服务器发送请求，看有没有更新的数据。下面示了短轮询的时间线：
+Comet 能够让信息近乎实时地被推送到页面上，非常适合处理体育比赛的分数和股票报价。
+
+有两种实现 Comet 的方式：长轮询和流。长轮询是传统轮询（也称为短轮询）的一个翻版，即浏览器定时向服务器发送请求，看有没有更新的数据。
+
+短轮询的时间线：
 
 <img :src="$withBase('/images/js/short_rotation_training.jpg')" alt="short_rotation_training">
 
-长轮询把短轮询颠倒了一下。页面发起一个到服务器的请求，然后服务器一直保持连接打开，直到有数据可发送。发送完数据之后，浏览器关闭连接，随即又发起一个到服务器的新请求。这一过程在页面打开期间一直持续不断。下面示了长轮询的时间线：
+长轮询把短轮询颠倒了一下。页面发起一个到服务器的请求，然后服务器一直保持连接打开，直到有数据可发送。
+
+发送完数据之后，浏览器关闭连接，随即又发起一个到服务器的新请求。这一过程在页面打开期间一直持续不断。
+
+长轮询的时间线：
 
 <img :src="$withBase('/images/js/long_rotation_training.jpg')" alt="long_rotation_training">
 
-第二种流行的 `Comet` 实现是 HTTP 流：浏览器向服务器发送一个请求，而服务器保持连接打开，然后周期性地向浏览器发送数据。
+第二种流行的 Comet 实现是 HTTP 流：浏览器向服务器发送一个请求，而服务器保持连接打开，然后周期性地向浏览器发送数据。
 
 ### 服务器发送事件
 
-SSE（Server-Sent Events，服务器发送事件）是围绕只读 `Comet` 交互推出的 API 或者模式。SSE API 用于创建到服务器的单向连接，服务器通过这个连接可以发送任意数量的数据。服务器响应的 MIME 类型必须是 `text/event-stream`，而且是浏览器中的 JavaScript API 能解析格式输出。SSE 支持短轮询、长轮询和 HTTP 流，而且能在断开连接时自动确定何时重新连接。
+SSE（Server-Sent Events，服务器发送事件）是围绕只读 Comet 交互推出的 API 或者模式。
+
+SSE API 用于创建到服务器的单向连接，服务器通过这个连接可以发送任意数量的数据。服务器响应的 MIME 类型必须是 `text/event-stream`，而且是浏览器中的 JavaScript API 能解析格式输出。
+
+SSE 支持短轮询、长轮询和 HTTP 流，而且能在断开连接时自动确定何时重新连接。
 
 #### SSE API
 
-SSE 的 JavaScript API 与其他传递消息的 JavaScript API 很相似。要预订新的事件流，首先要创建一个新的 `EventSource` 对象，并传进一个入口点：
+SSE 的 JavaScript API 与其他传递消息的 JavaScript API 很相似。要预订新的事件流，首先要创建一个新的 EventSource 对象，并传进一个入口点：
 
 ```javascript
 var source = new EventSource('myevents.php')
 ```
 
-注意，传入的 URL 必须与创建对象的页面同源（相同的 URL 模式、域及端口）。`EventSource` 的实例有一个 `readyState` 属性，值为 0 表示正连接到服务器，值为 1 表示打开了连接，值为 2 表示关闭 了连接。
+注意，传入的 URL 必须与创建对象的页面同源（相同的 URL 模式、域及端口）。
 
-另外，还有以下三个事件。
+EventSource 的实例有一个 `readyState` 属性，值为 0 表示正连接到服务器，值为 1 表示打开了连接，值为 2 表示关闭 了连接。
 
-- open：在建立连接时触发。
-- message：在从服务器接收到新事件时触发，数据存在于 `event.data`。
-- error：在无法建立连接时触发。
+另外，还有以下三个事件：
+
+- `open`：在建立连接时触发。
+- `message`：在从服务器接收到新事件时触发，数据存在于 `event.data`。
+- `error`：在无法建立连接时触发。
 
 #### 时间流
 
@@ -291,7 +309,7 @@ data: foo
 id: 1
 ```
 
-设置了 ID 后，`EventSource` 对象会跟踪上一次触发的事件。如果连接断开，会向服务器发送一个 包含名为 `Last-Event-ID` 的特殊 HTTP 头部的请求，以便服务器知道下一次该触发哪个事件。
+设置了 ID 后，EventSource 对象会跟踪上一次触发的事件。如果连接断开，会向服务器发送一个 包含名为 `Last-Event-ID` 的特殊 HTTP 头部的请求，以便服务器知道下一次该触发哪个事件。
 
 ### 附录
 

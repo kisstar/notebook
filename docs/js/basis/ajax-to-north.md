@@ -113,7 +113,7 @@ function addURLParam(url, key, value) {
 }
 ```
 
-### POST 方法
+### POST 请求
 
 在 `open()` 方法第一个参数的位置传入 "POST"，就可以初始化一个 POST 请求，通常用于向服务器发送应该被保存的数据。
 

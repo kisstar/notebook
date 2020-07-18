@@ -1,5 +1,7 @@
 # 写出输出结果并给出分析
 
+## Example_0
+
 ```javascript
 function Foo() {
   getName = function() {
@@ -30,15 +32,13 @@ new Foo().getName()
 new new Foo().getName()
 ```
 
-进入全局执行上下文。
-
-执行上下文编译阶段：
+代码执行时，首先进入全局执行上下文，在执行上下文编译阶段：
 
 1. 参数处理（无）；
 2. 函数声明：`function Foo() { // ... }` 和 `function getName() { console.log(5) }`；
 3. 变量声明：存在一个 `var` 声明，由于与上面已经声明的函数同名，所以会被忽略。
 
-执行文的执行阶段：
+然后进入执行文的执行阶段：
 
 赋值：
 
@@ -60,7 +60,7 @@ new new Foo().getName()
    1. 根据执行顺序属性的读取高于无参的 `new` 关键字，所以这里会先取得 `Foo` 上的 `getName` 方法。
    2. 通过 `new` 关键字调用得到的方法，**输出 2**。
 6. `new Foo().getName();`
-   1. 根据执行顺序 new(带参数列表) 的优先级高于函数调用，所以这里先执行 `new Foo()`，此时 `new Foo().getName();` 相当于 `Foo实例.getName();`。
+   1. 根据执行顺序 `new`(带参数列表) 的优先级高于函数调用，所以这里先执行 `new Foo()`，此时 `new Foo().getName();` 相当于 `Foo实例.getName();`。
    2. 实例上由于不存在 `getName` 方法，根据原型链将找到 `Foo.prototype.getName` 方法并执行，见赋值步骤 2，**输出 3**。
 7. `new new Foo().getName();`：
    1. 同上，先执行 `new Foo()` 得到结果 `new Foo实例.getName();`；根据原型链找到赋值步骤 2 中的方法。
