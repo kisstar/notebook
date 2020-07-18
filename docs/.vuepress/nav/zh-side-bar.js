@@ -241,6 +241,7 @@ module.exports = {
         'npm/basis/pkg-json',
         'npm/basis/pkg-lock',
         'npm/basis/npmrc',
+        'npm/basis/command',
         'npm/advanced/npm-command',
       ],
     },
