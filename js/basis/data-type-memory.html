@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>数据类型和内存 | notes | Kisstar</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    
+    <meta name="description" content="Kisstar's personal notes">
+    <link rel="preload" href="/notebook/assets/css/0.styles.ba285c9d.css" as="style"><link rel="preload" href="/notebook/assets/js/app.aa7af78b.js" as="script"><link rel="preload" href="/notebook/assets/js/1.57f7f090.js" as="script"><link rel="preload" href="/notebook/assets/js/67.a6a96488.js" as="script"><link rel="prefetch" href="/notebook/assets/js/10.2b6c53c0.js"><link rel="prefetch" href="/notebook/assets/js/100.08626c45.js"><link rel="prefetch" href="/notebook/assets/js/101.fd37248f.js"><link rel="prefetch" href="/notebook/assets/js/102.0d4c6038.js"><link rel="prefetch" href="/notebook/assets/js/103.d98ae525.js"><link rel="prefetch" href="/notebook/assets/js/104.97a71466.js"><link rel="prefetch" href="/notebook/assets/js/105.dbce727f.js"><link rel="prefetch" href="/notebook/assets/js/106.b1f1787a.js"><link rel="prefetch" href="/notebook/assets/js/107.fd995118.js"><link rel="prefetch" href="/notebook/assets/js/108.71c3e33d.js"><link rel="prefetch" href="/notebook/assets/js/109.1b87d96a.js"><link rel="prefetch" href="/notebook/assets/js/11.f82d1a0e.js"><link rel="prefetch" href="/notebook/assets/js/110.ad9f6e24.js"><link rel="prefetch" href="/notebook/assets/js/111.c490018d.js"><link rel="prefetch" href="/notebook/assets/js/112.ca2162cc.js"><link rel="prefetch" href="/notebook/assets/js/113.323e192d.js"><link rel="prefetch" href="/notebook/assets/js/114.922a12fc.js"><link rel="prefetch" href="/notebook/assets/js/115.61a9548a.js"><link rel="prefetch" href="/notebook/assets/js/116.4d67af5b.js"><link rel="prefetch" href="/notebook/assets/js/117.d37341f2.js"><link rel="prefetch" href="/notebook/assets/js/118.9f14423f.js"><link rel="prefetch" href="/notebook/assets/js/119.35cbcc8e.js"><link rel="prefetch" href="/notebook/assets/js/12.fab2b116.js"><link rel="prefetch" href="/notebook/assets/js/120.b97f2b67.js"><link rel="prefetch" href="/notebook/assets/js/121.2995593f.js"><link rel="prefetch" href="/notebook/assets/js/122.d8125cbf.js"><link rel="prefetch" href="/notebook/assets/js/123.611bbffa.js"><link rel="prefetch" href="/notebook/assets/js/124.25a31878.js"><link rel="prefetch" href="/notebook/assets/js/125.9748a0aa.js"><link rel="prefetch" href="/notebook/assets/js/126.8a595e85.js"><link rel="prefetch" href="/notebook/assets/js/127.77fcf4ec.js"><link rel="prefetch" href="/notebook/assets/js/128.c17dd6a1.js"><link rel="prefetch" href="/notebook/assets/js/129.9ce772f7.js"><link rel="prefetch" href="/notebook/assets/js/13.811b852a.js"><link rel="prefetch" href="/notebook/assets/js/130.5e1994d8.js"><link rel="prefetch" href="/notebook/assets/js/131.1721ec89.js"><link rel="prefetch" href="/notebook/assets/js/132.da5b3aa7.js"><link rel="prefetch" href="/notebook/assets/js/133.9e0c528e.js"><link rel="prefetch" href="/notebook/assets/js/134.1459527a.js"><link rel="prefetch" href="/notebook/assets/js/135.fe86a741.js"><link rel="prefetch" href="/notebook/assets/js/136.237544cc.js"><link rel="prefetch" href="/notebook/assets/js/137.953da90a.js"><link rel="prefetch" href="/notebook/assets/js/138.ac361a3a.js"><link rel="prefetch" href="/notebook/assets/js/139.f9734f4a.js"><link rel="prefetch" href="/notebook/assets/js/14.28f692df.js"><link rel="prefetch" href="/notebook/assets/js/140.8d611c3c.js"><link rel="prefetch" href="/notebook/assets/js/141.a9f43f85.js"><link rel="prefetch" href="/notebook/assets/js/142.ff4652db.js"><link rel="prefetch" href="/notebook/assets/js/143.65369fb5.js"><link rel="prefetch" href="/notebook/assets/js/144.9729c0b9.js"><link rel="prefetch" href="/notebook/assets/js/145.2cb2b167.js"><link rel="prefetch" href="/notebook/assets/js/15.2ac6e120.js"><link rel="prefetch" href="/notebook/assets/js/16.3df76f6c.js"><link rel="prefetch" href="/notebook/assets/js/17.2ecd997d.js"><link rel="prefetch" href="/notebook/assets/js/18.ccf35f23.js"><link rel="prefetch" href="/notebook/assets/js/19.3f47be07.js"><link rel="prefetch" href="/notebook/assets/js/20.273c5197.js"><link rel="prefetch" href="/notebook/assets/js/21.c1ab2dbf.js"><link rel="prefetch" href="/notebook/assets/js/22.1706f4b1.js"><link rel="prefetch" href="/notebook/assets/js/23.7acdcfb5.js"><link rel="prefetch" href="/notebook/assets/js/24.24ee23fd.js"><link rel="prefetch" href="/notebook/assets/js/25.b7824d73.js"><link rel="prefetch" href="/notebook/assets/js/26.06f2e071.js"><link rel="prefetch" href="/notebook/assets/js/27.52e059ab.js"><link rel="prefetch" href="/notebook/assets/js/28.72c7a1b6.js"><link rel="prefetch" href="/notebook/assets/js/29.8c8bd7f5.js"><link rel="prefetch" href="/notebook/assets/js/3.613671f7.js"><link rel="prefetch" href="/notebook/assets/js/30.3ee8072b.js"><link rel="prefetch" href="/notebook/assets/js/31.52b55dc4.js"><link rel="prefetch" href="/notebook/assets/js/32.2ecd4fed.js"><link rel="prefetch" href="/notebook/assets/js/33.2cecc7f3.js"><link rel="prefetch" href="/notebook/assets/js/34.f719a620.js"><link rel="prefetch" href="/notebook/assets/js/35.9993a6df.js"><link rel="prefetch" href="/notebook/assets/js/36.e3cb3be7.js"><link rel="prefetch" href="/notebook/assets/js/37.b658eb75.js"><link rel="prefetch" href="/notebook/assets/js/38.94e8a1b7.js"><link rel="prefetch" href="/notebook/assets/js/39.372d3cab.js"><link rel="prefetch" href="/notebook/assets/js/4.7854aa68.js"><link rel="prefetch" href="/notebook/assets/js/40.df7fd952.js"><link rel="prefetch" href="/notebook/assets/js/41.e0bafb75.js"><link rel="prefetch" href="/notebook/assets/js/42.345d0ded.js"><link rel="prefetch" href="/notebook/assets/js/43.9bb2c9e5.js"><link rel="prefetch" href="/notebook/assets/js/44.af794072.js"><link rel="prefetch" href="/notebook/assets/js/45.0a387434.js"><link rel="prefetch" href="/notebook/assets/js/46.07fc69c0.js"><link rel="prefetch" href="/notebook/assets/js/47.26e36fc6.js"><link rel="prefetch" href="/notebook/assets/js/48.30eeb5c9.js"><link rel="prefetch" href="/notebook/assets/js/49.743e4176.js"><link rel="prefetch" href="/notebook/assets/js/5.f41ed205.js"><link rel="prefetch" href="/notebook/assets/js/50.3dd607fc.js"><link rel="prefetch" href="/notebook/assets/js/51.3db8408d.js"><link rel="prefetch" href="/notebook/assets/js/52.59f72aef.js"><link rel="prefetch" href="/notebook/assets/js/53.78f29fcf.js"><link rel="prefetch" href="/notebook/assets/js/54.0f271b54.js"><link rel="prefetch" href="/notebook/assets/js/55.e07f8d12.js"><link rel="prefetch" href="/notebook/assets/js/56.f21d6317.js"><link rel="prefetch" href="/notebook/assets/js/57.d92b89dd.js"><link rel="prefetch" href="/notebook/assets/js/58.4acb0e6a.js"><link rel="prefetch" href="/notebook/assets/js/59.291f5942.js"><link rel="prefetch" href="/notebook/assets/js/6.df46a4f2.js"><link rel="prefetch" href="/notebook/assets/js/60.3a4d7a0e.js"><link rel="prefetch" href="/notebook/assets/js/61.caf434a9.js"><link rel="prefetch" href="/notebook/assets/js/62.a8ff8aa4.js"><link rel="prefetch" href="/notebook/assets/js/63.cbc33a9f.js"><link rel="prefetch" href="/notebook/assets/js/64.0e05b0f8.js"><link rel="prefetch" href="/notebook/assets/js/65.97df2d2e.js"><link rel="prefetch" href="/notebook/assets/js/66.d7c158f4.js"><link rel="prefetch" href="/notebook/assets/js/68.9ed5f9d2.js"><link rel="prefetch" href="/notebook/assets/js/69.9ce06536.js"><link rel="prefetch" href="/notebook/assets/js/7.66a08183.js"><link rel="prefetch" href="/notebook/assets/js/70.1b0d8118.js"><link rel="prefetch" href="/notebook/assets/js/71.2cf92660.js"><link rel="prefetch" href="/notebook/assets/js/72.bdb7875c.js"><link rel="prefetch" href="/notebook/assets/js/73.352ee162.js"><link rel="prefetch" href="/notebook/assets/js/74.2b669abd.js"><link rel="prefetch" href="/notebook/assets/js/75.fd46cfa4.js"><link rel="prefetch" href="/notebook/assets/js/76.63fd55bc.js"><link rel="prefetch" href="/notebook/assets/js/77.87088eac.js"><link rel="prefetch" href="/notebook/assets/js/78.311f4f1f.js"><link rel="prefetch" href="/notebook/assets/js/79.a7ee085d.js"><link rel="prefetch" href="/notebook/assets/js/8.22d6eb59.js"><link rel="prefetch" href="/notebook/assets/js/80.e40628e4.js"><link rel="prefetch" href="/notebook/assets/js/81.a5e2568d.js"><link rel="prefetch" href="/notebook/assets/js/82.dd6b9619.js"><link rel="prefetch" href="/notebook/assets/js/83.f4c7fda2.js"><link rel="prefetch" href="/notebook/assets/js/84.49fe282d.js"><link rel="prefetch" href="/notebook/assets/js/85.db81dac6.js"><link rel="prefetch" href="/notebook/assets/js/86.2beb6e86.js"><link rel="prefetch" href="/notebook/assets/js/87.b071f303.js"><link rel="prefetch" href="/notebook/assets/js/88.c708c390.js"><link rel="prefetch" href="/notebook/assets/js/89.1dc97c9a.js"><link rel="prefetch" href="/notebook/assets/js/9.0f0efc3a.js"><link rel="prefetch" href="/notebook/assets/js/90.c9dc37c0.js"><link rel="prefetch" href="/notebook/assets/js/91.b4a565db.js"><link rel="prefetch" href="/notebook/assets/js/92.0c1697c7.js"><link rel="prefetch" href="/notebook/assets/js/93.c63d131a.js"><link rel="prefetch" href="/notebook/assets/js/94.4dbee65b.js"><link rel="prefetch" href="/notebook/assets/js/95.14c03696.js"><link rel="prefetch" href="/notebook/assets/js/96.bc7b6e9b.js"><link rel="prefetch" href="/notebook/assets/js/97.ae992193.js"><link rel="prefetch" href="/notebook/assets/js/98.601bafa8.js"><link rel="prefetch" href="/notebook/assets/js/99.af7b929b.js">
+    <link rel="stylesheet" href="/notebook/assets/css/0.styles.ba285c9d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/notebook/" class="home-link router-link-active"><img src="/notebook/logo.png" alt="notes | Kisstar" class="logo"> <span class="site-name can-hide">notes | Kisstar</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="IT" class="dropdown-title"><span class="title">IT</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          FED
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/html/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-subitem"><a href="/notebook/css/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-subitem"><a href="/notebook/js/" class="nav-link router-link-active">
+  JavaScript
+</a></li><li class="dropdown-subitem"><a href="/notebook/ts/" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-subitem"><a href="/notebook/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-subitem"><a href="/notebook/react/" class="nav-link">
+  React
+</a></li><li class="dropdown-subitem"><a href="/notebook/web/" class="nav-link">
+  WEB
+</a></li></ul></li><li class="dropdown-item"><h4>
+          BED
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/nodejs/" class="nav-link">
+  NodeJS
+</a></li><li class="dropdown-subitem"><a href="/notebook/webpack/" class="nav-link">
+  Webpack
+</a></li></ul></li><li class="dropdown-item"><h4>
+          OTHER
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/wechat/" class="nav-link">
+  WeChat
+</a></li><li class="dropdown-subitem"><a href="/notebook/project/" class="nav-link">
+  Project
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="DevTools" class="dropdown-title"><span class="title">DevTools</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/vim/" class="nav-link">
+  Vim
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Computer" class="dropdown-title"><span class="title">Computer</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/cp/" class="nav-link">
+  Computer Basis
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/algorithm/" class="nav-link">
+  Algorithm
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/windows/" class="nav-link">
+  Windows
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/database/" class="nav-link">
+  Database
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Cloud" class="dropdown-title"><span class="title">Cloud</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/docker/" class="nav-link">
+  Docker
+</a></li></ul></div></div><div class="nav-item"><a href="/notebook/collection/" class="nav-link">
+  Collection
+</a></div><div class="nav-item"><a href="/notebook/other/" class="nav-link">
+  Other
+</a></div><div class="nav-item"><a href="https://github.com/kisstar/notebook/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="IT" class="dropdown-title"><span class="title">IT</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          FED
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/html/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-subitem"><a href="/notebook/css/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-subitem"><a href="/notebook/js/" class="nav-link router-link-active">
+  JavaScript
+</a></li><li class="dropdown-subitem"><a href="/notebook/ts/" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-subitem"><a href="/notebook/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-subitem"><a href="/notebook/react/" class="nav-link">
+  React
+</a></li><li class="dropdown-subitem"><a href="/notebook/web/" class="nav-link">
+  WEB
+</a></li></ul></li><li class="dropdown-item"><h4>
+          BED
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/nodejs/" class="nav-link">
+  NodeJS
+</a></li><li class="dropdown-subitem"><a href="/notebook/webpack/" class="nav-link">
+  Webpack
+</a></li></ul></li><li class="dropdown-item"><h4>
+          OTHER
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/wechat/" class="nav-link">
+  WeChat
+</a></li><li class="dropdown-subitem"><a href="/notebook/project/" class="nav-link">
+  Project
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="DevTools" class="dropdown-title"><span class="title">DevTools</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/vim/" class="nav-link">
+  Vim
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Computer" class="dropdown-title"><span class="title">Computer</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/cp/" class="nav-link">
+  Computer Basis
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/algorithm/" class="nav-link">
+  Algorithm
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/windows/" class="nav-link">
+  Windows
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/database/" class="nav-link">
+  Database
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Cloud" class="dropdown-title"><span class="title">Cloud</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/docker/" class="nav-link">
+  Docker
+</a></li></ul></div></div><div class="nav-item"><a href="/notebook/collection/" class="nav-link">
+  Collection
+</a></div><div class="nav-item"><a href="/notebook/other/" class="nav-link">
+  Other
+</a></div><div class="nav-item"><a href="https://github.com/kisstar/notebook/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>基础</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notebook/js/" aria-current="page" class="sidebar-link">JavaScript</a></li><li><a href="/notebook/js/basis/meet-js.html" class="sidebar-link">JavaScript 基础</a></li><li><a href="/notebook/js/basis/reference-type.html" class="sidebar-link">引用类型</a></li><li><a href="/notebook/js/basis/data-type-memory.html" aria-current="page" class="active sidebar-link">数据类型和内存</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/notebook/js/basis/data-type-memory.html#栈内存和堆内存" class="sidebar-link">栈内存和堆内存</a></li><li class="sidebar-sub-header"><a href="/notebook/js/basis/data-type-memory.html#复制变量值" class="sidebar-link">复制变量值</a></li><li class="sidebar-sub-header"><a href="/notebook/js/basis/data-type-memory.html#参数传递" class="sidebar-link">参数传递</a></li><li class="sidebar-sub-header"><a href="/notebook/js/basis/data-type-memory.html#show-me-the-code" class="sidebar-link">Show me the code</a></li><li class="sidebar-sub-header"><a href="/notebook/js/basis/data-type-memory.html#参考资料" class="sidebar-link">参考资料</a></li></ul></li><li><a href="/notebook/js/basis/handle-error.html" class="sidebar-link">错误处理</a></li><li><a href="/notebook/js/basis/ajax-to-north.html" class="sidebar-link">AJAX 指北</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>进阶</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>面试</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>第三方</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>奇思妙想</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="数据类型和内存"><a href="#数据类型和内存" class="header-anchor">#</a> 数据类型和内存</h1> <p>ECMAScript 变量可能包含两种不同数据类型的值：基本类型值和引用类型值。</p> <p>在将一个值赋给变量时，解析器必须确定这个值是基本类型值还是引用类型值，以此来决定如何分配内存空间。</p> <p>与其他语言不同，JavaScript 并不允许直接访问内存中的位置， 也就是说不能直接操作对象的内存空间，而常常提及的内存空间就是栈内存和堆内存。</p> <h2 id="栈内存和堆内存"><a href="#栈内存和堆内存" class="header-anchor">#</a> 栈内存和堆内存</h2> <p>栈的优势就是存取速度比堆要快，仅次于直接位于 CPU 中的寄存器，但缺点是，存在栈中的数据大小与生存期必须是确定的，缺乏灵活性。</p> <p>堆的优势是可以动态地分配内存大小，生存期也不必事先告诉编译器，垃圾收集器会自动地收走这些不再使用的数据，但是缺点是由于在运行时动态分配内存，所以存取速度较慢。</p> <p>相对于简单数据类型而言，他们占用内存比较小，如果放在堆中，查找会浪费很多时间，而把堆中的数据放入栈中也会影响栈的效率。</p> <p>在 JavaScript 中基本类型值是存储在栈中的简单数据段，也就是说，他们的值直接存储在变量访问的位置。而像对象和数组这样可以无限拓展的，正好放在可以动态分配大小的堆中。最后指向对象的变量，实际保存的是指向堆内存保存对象的地址值。因此在操作对象时，实际上是在操作对象的引用而不是实际的对象。 所以，引用类型的值是按引用访问的。</p> <h2 id="复制变量值"><a href="#复制变量值" class="header-anchor">#</a> 复制变量值</h2> <p>如果从一个变量向另一个变量复制基本类型的值，会在变量对象上创建一个新值，然后把该值复制到为新变量分配的位置上。</p> <img src="/notebook/images/js/SimpleDataTypes.png" alt="SimpleDataTypes"> <p>当从一个变量向另一个变量复制引用类型的值时， 同样也会将存储在变量对象中的值复制一份放到为新变量分配的空间中。不同的是，这个值的副本实际上是一个指针（内存地址值），而这个指针指向存储在堆中的一个对象。复制操作结束后，两个变量实际上将引用同一个对象。因此，改变其中一个变量，就会影响另一个变量。</p> <img src="/notebook/images/js/ComplexDataTypes.png" alt="ComplexDataTypes"> <h2 id="参数传递"><a href="#参数传递" class="header-anchor">#</a> 参数传递</h2> <p>ECMAScript 中所有函数的参数都是按值传递的。也就是说，把函数外部的值复制给函数内部的参数，就和把值从一个变量复制到另一个变量一样。基本类型值的传递如同基本类型变量的复制一样，而引用类型值的传递，则如同引用类型变量的复制一样。</p> <p>有时候人们在局部作用域中修改的对象会在全局作用域中反映出来，就觉得参数是按引用传递的，究其根本原理来说，这样的理解是错误的。</p> <p>参数实际上是函数的局部变量，在向参数传递基本类型的值时，被传递的值会被复制给一个参数。在向参数传递引用类型的值时，会把这个值在内存中的地址复制给一个局部变量，因此这个局部变量的变化会反映在函数的外部。</p> <h2 id="show-me-the-code"><a href="#show-me-the-code" class="header-anchor">#</a> Show me the code</h2> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// 第一种方式</span>
+<span class="token keyword">var</span> num <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  num <span class="token operator">+=</span> <span class="token number">1</span>
+<span class="token punctuation">}</span>
+<span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span> <span class="token comment">// 2</span>
+
+<span class="token comment">// 第二种方式</span>
+<span class="token keyword">var</span> num <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token parameter">num</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  num <span class="token operator">+=</span> <span class="token number">1</span>
+<span class="token punctuation">}</span>
+<span class="token function">fn</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span> <span class="token comment">// 1</span>
+</code></pre></div><p>第一种方式，由于并没有给函数传值，所以其实函数操作的是全局的变量，因此打印了我们通常想要的结果。</p> <p>第二种方式中给函数传递了函数，按照上面所说的把函数外部的值复制给函数内部的参数，就和把值从一个变量复制到另一个变量一样，所以全局作用域中的的变量 <code>num</code> 把值赋值给内部的变量 <code>num</code> 后，内外的 <code>num</code> 就没什么关系了，打印时打印的是全局的变量 <code>num</code>，而内部的 <code>num</code> 值在函数结束后就被销毁了。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// 第一种方式</span>
+<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">'Anani'</span><span class="token punctuation">,</span>
+  age<span class="token operator">:</span> <span class="token number">24</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token parameter">obj</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">;</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'Sharon'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>obj<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">23</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">fn</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span>name<span class="token punctuation">,</span> obj<span class="token punctuation">.</span>age<span class="token punctuation">)</span> <span class="token comment">// Sharon 23</span>
+
+<span class="token comment">// 第二种方式</span>
+<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">'Anani'</span><span class="token punctuation">,</span>
+  age<span class="token operator">:</span> <span class="token number">24</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token parameter">obj</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+    name<span class="token operator">:</span> <span class="token string">'Sharon'</span><span class="token punctuation">,</span>
+    age<span class="token operator">:</span> <span class="token number">23</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">fn</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span>name<span class="token punctuation">,</span> obj<span class="token punctuation">.</span>age<span class="token punctuation">)</span> <span class="token comment">// Anani 24</span>
+</code></pre></div><p>同理第一种方式中，外部变量把值赋值给了内部的变量，不同的是，这个值是一个指针（地址值），它们指向的是内存中的同一个变量，所以内部的改变会同时体现在外部的变量上面。</p> <p>第二种方式中，很大的区别是，它不是对内存中的对象进行操作，而是在外部变量将值赋值给内部的变量后，又创建了一个对象，并把这个对象的引用给了内部的值，和基本数据类型一样，它并不会影响外部的变量的值，而内部的这个变量同样在函数结束后被销毁。</p> <h2 id="参考资料"><a href="#参考资料" class="header-anchor">#</a> 参考资料</h2> <ul><li>JavaScript 高级程序设计(第 3 版)</li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/notebook/js/basis/reference-type.html" class="prev">
+        引用类型
+      </a></span> <span class="next"><a href="/notebook/js/basis/handle-error.html">
+        错误处理
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/notebook/assets/js/app.aa7af78b.js" defer></script><script src="/notebook/assets/js/1.57f7f090.js" defer></script><script src="/notebook/assets/js/67.a6a96488.js" defer></script>
+  </body>
+</html>

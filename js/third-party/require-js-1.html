@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>RequireJS (二) | notes | Kisstar</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    
+    <meta name="description" content="Kisstar's personal notes">
+    <link rel="preload" href="/notebook/assets/css/0.styles.ba285c9d.css" as="style"><link rel="preload" href="/notebook/assets/js/app.aa7af78b.js" as="script"><link rel="preload" href="/notebook/assets/js/1.57f7f090.js" as="script"><link rel="preload" href="/notebook/assets/js/77.87088eac.js" as="script"><link rel="prefetch" href="/notebook/assets/js/10.2b6c53c0.js"><link rel="prefetch" href="/notebook/assets/js/100.08626c45.js"><link rel="prefetch" href="/notebook/assets/js/101.fd37248f.js"><link rel="prefetch" href="/notebook/assets/js/102.0d4c6038.js"><link rel="prefetch" href="/notebook/assets/js/103.d98ae525.js"><link rel="prefetch" href="/notebook/assets/js/104.97a71466.js"><link rel="prefetch" href="/notebook/assets/js/105.dbce727f.js"><link rel="prefetch" href="/notebook/assets/js/106.b1f1787a.js"><link rel="prefetch" href="/notebook/assets/js/107.fd995118.js"><link rel="prefetch" href="/notebook/assets/js/108.71c3e33d.js"><link rel="prefetch" href="/notebook/assets/js/109.1b87d96a.js"><link rel="prefetch" href="/notebook/assets/js/11.f82d1a0e.js"><link rel="prefetch" href="/notebook/assets/js/110.ad9f6e24.js"><link rel="prefetch" href="/notebook/assets/js/111.c490018d.js"><link rel="prefetch" href="/notebook/assets/js/112.ca2162cc.js"><link rel="prefetch" href="/notebook/assets/js/113.323e192d.js"><link rel="prefetch" href="/notebook/assets/js/114.922a12fc.js"><link rel="prefetch" href="/notebook/assets/js/115.61a9548a.js"><link rel="prefetch" href="/notebook/assets/js/116.4d67af5b.js"><link rel="prefetch" href="/notebook/assets/js/117.d37341f2.js"><link rel="prefetch" href="/notebook/assets/js/118.9f14423f.js"><link rel="prefetch" href="/notebook/assets/js/119.35cbcc8e.js"><link rel="prefetch" href="/notebook/assets/js/12.fab2b116.js"><link rel="prefetch" href="/notebook/assets/js/120.b97f2b67.js"><link rel="prefetch" href="/notebook/assets/js/121.2995593f.js"><link rel="prefetch" href="/notebook/assets/js/122.d8125cbf.js"><link rel="prefetch" href="/notebook/assets/js/123.611bbffa.js"><link rel="prefetch" href="/notebook/assets/js/124.25a31878.js"><link rel="prefetch" href="/notebook/assets/js/125.9748a0aa.js"><link rel="prefetch" href="/notebook/assets/js/126.8a595e85.js"><link rel="prefetch" href="/notebook/assets/js/127.77fcf4ec.js"><link rel="prefetch" href="/notebook/assets/js/128.c17dd6a1.js"><link rel="prefetch" href="/notebook/assets/js/129.9ce772f7.js"><link rel="prefetch" href="/notebook/assets/js/13.811b852a.js"><link rel="prefetch" href="/notebook/assets/js/130.5e1994d8.js"><link rel="prefetch" href="/notebook/assets/js/131.1721ec89.js"><link rel="prefetch" href="/notebook/assets/js/132.da5b3aa7.js"><link rel="prefetch" href="/notebook/assets/js/133.9e0c528e.js"><link rel="prefetch" href="/notebook/assets/js/134.1459527a.js"><link rel="prefetch" href="/notebook/assets/js/135.fe86a741.js"><link rel="prefetch" href="/notebook/assets/js/136.237544cc.js"><link rel="prefetch" href="/notebook/assets/js/137.953da90a.js"><link rel="prefetch" href="/notebook/assets/js/138.ac361a3a.js"><link rel="prefetch" href="/notebook/assets/js/139.f9734f4a.js"><link rel="prefetch" href="/notebook/assets/js/14.28f692df.js"><link rel="prefetch" href="/notebook/assets/js/140.8d611c3c.js"><link rel="prefetch" href="/notebook/assets/js/141.a9f43f85.js"><link rel="prefetch" href="/notebook/assets/js/142.ff4652db.js"><link rel="prefetch" href="/notebook/assets/js/143.65369fb5.js"><link rel="prefetch" href="/notebook/assets/js/144.9729c0b9.js"><link rel="prefetch" href="/notebook/assets/js/145.2cb2b167.js"><link rel="prefetch" href="/notebook/assets/js/15.2ac6e120.js"><link rel="prefetch" href="/notebook/assets/js/16.3df76f6c.js"><link rel="prefetch" href="/notebook/assets/js/17.2ecd997d.js"><link rel="prefetch" href="/notebook/assets/js/18.ccf35f23.js"><link rel="prefetch" href="/notebook/assets/js/19.3f47be07.js"><link rel="prefetch" href="/notebook/assets/js/20.273c5197.js"><link rel="prefetch" href="/notebook/assets/js/21.c1ab2dbf.js"><link rel="prefetch" href="/notebook/assets/js/22.1706f4b1.js"><link rel="prefetch" href="/notebook/assets/js/23.7acdcfb5.js"><link rel="prefetch" href="/notebook/assets/js/24.24ee23fd.js"><link rel="prefetch" href="/notebook/assets/js/25.b7824d73.js"><link rel="prefetch" href="/notebook/assets/js/26.06f2e071.js"><link rel="prefetch" href="/notebook/assets/js/27.52e059ab.js"><link rel="prefetch" href="/notebook/assets/js/28.72c7a1b6.js"><link rel="prefetch" href="/notebook/assets/js/29.8c8bd7f5.js"><link rel="prefetch" href="/notebook/assets/js/3.613671f7.js"><link rel="prefetch" href="/notebook/assets/js/30.3ee8072b.js"><link rel="prefetch" href="/notebook/assets/js/31.52b55dc4.js"><link rel="prefetch" href="/notebook/assets/js/32.2ecd4fed.js"><link rel="prefetch" href="/notebook/assets/js/33.2cecc7f3.js"><link rel="prefetch" href="/notebook/assets/js/34.f719a620.js"><link rel="prefetch" href="/notebook/assets/js/35.9993a6df.js"><link rel="prefetch" href="/notebook/assets/js/36.e3cb3be7.js"><link rel="prefetch" href="/notebook/assets/js/37.b658eb75.js"><link rel="prefetch" href="/notebook/assets/js/38.94e8a1b7.js"><link rel="prefetch" href="/notebook/assets/js/39.372d3cab.js"><link rel="prefetch" href="/notebook/assets/js/4.7854aa68.js"><link rel="prefetch" href="/notebook/assets/js/40.df7fd952.js"><link rel="prefetch" href="/notebook/assets/js/41.e0bafb75.js"><link rel="prefetch" href="/notebook/assets/js/42.345d0ded.js"><link rel="prefetch" href="/notebook/assets/js/43.9bb2c9e5.js"><link rel="prefetch" href="/notebook/assets/js/44.af794072.js"><link rel="prefetch" href="/notebook/assets/js/45.0a387434.js"><link rel="prefetch" href="/notebook/assets/js/46.07fc69c0.js"><link rel="prefetch" href="/notebook/assets/js/47.26e36fc6.js"><link rel="prefetch" href="/notebook/assets/js/48.30eeb5c9.js"><link rel="prefetch" href="/notebook/assets/js/49.743e4176.js"><link rel="prefetch" href="/notebook/assets/js/5.f41ed205.js"><link rel="prefetch" href="/notebook/assets/js/50.3dd607fc.js"><link rel="prefetch" href="/notebook/assets/js/51.3db8408d.js"><link rel="prefetch" href="/notebook/assets/js/52.59f72aef.js"><link rel="prefetch" href="/notebook/assets/js/53.78f29fcf.js"><link rel="prefetch" href="/notebook/assets/js/54.0f271b54.js"><link rel="prefetch" href="/notebook/assets/js/55.e07f8d12.js"><link rel="prefetch" href="/notebook/assets/js/56.f21d6317.js"><link rel="prefetch" href="/notebook/assets/js/57.d92b89dd.js"><link rel="prefetch" href="/notebook/assets/js/58.4acb0e6a.js"><link rel="prefetch" href="/notebook/assets/js/59.291f5942.js"><link rel="prefetch" href="/notebook/assets/js/6.df46a4f2.js"><link rel="prefetch" href="/notebook/assets/js/60.3a4d7a0e.js"><link rel="prefetch" href="/notebook/assets/js/61.caf434a9.js"><link rel="prefetch" href="/notebook/assets/js/62.a8ff8aa4.js"><link rel="prefetch" href="/notebook/assets/js/63.cbc33a9f.js"><link rel="prefetch" href="/notebook/assets/js/64.0e05b0f8.js"><link rel="prefetch" href="/notebook/assets/js/65.97df2d2e.js"><link rel="prefetch" href="/notebook/assets/js/66.d7c158f4.js"><link rel="prefetch" href="/notebook/assets/js/67.a6a96488.js"><link rel="prefetch" href="/notebook/assets/js/68.9ed5f9d2.js"><link rel="prefetch" href="/notebook/assets/js/69.9ce06536.js"><link rel="prefetch" href="/notebook/assets/js/7.66a08183.js"><link rel="prefetch" href="/notebook/assets/js/70.1b0d8118.js"><link rel="prefetch" href="/notebook/assets/js/71.2cf92660.js"><link rel="prefetch" href="/notebook/assets/js/72.bdb7875c.js"><link rel="prefetch" href="/notebook/assets/js/73.352ee162.js"><link rel="prefetch" href="/notebook/assets/js/74.2b669abd.js"><link rel="prefetch" href="/notebook/assets/js/75.fd46cfa4.js"><link rel="prefetch" href="/notebook/assets/js/76.63fd55bc.js"><link rel="prefetch" href="/notebook/assets/js/78.311f4f1f.js"><link rel="prefetch" href="/notebook/assets/js/79.a7ee085d.js"><link rel="prefetch" href="/notebook/assets/js/8.22d6eb59.js"><link rel="prefetch" href="/notebook/assets/js/80.e40628e4.js"><link rel="prefetch" href="/notebook/assets/js/81.a5e2568d.js"><link rel="prefetch" href="/notebook/assets/js/82.dd6b9619.js"><link rel="prefetch" href="/notebook/assets/js/83.f4c7fda2.js"><link rel="prefetch" href="/notebook/assets/js/84.49fe282d.js"><link rel="prefetch" href="/notebook/assets/js/85.db81dac6.js"><link rel="prefetch" href="/notebook/assets/js/86.2beb6e86.js"><link rel="prefetch" href="/notebook/assets/js/87.b071f303.js"><link rel="prefetch" href="/notebook/assets/js/88.c708c390.js"><link rel="prefetch" href="/notebook/assets/js/89.1dc97c9a.js"><link rel="prefetch" href="/notebook/assets/js/9.0f0efc3a.js"><link rel="prefetch" href="/notebook/assets/js/90.c9dc37c0.js"><link rel="prefetch" href="/notebook/assets/js/91.b4a565db.js"><link rel="prefetch" href="/notebook/assets/js/92.0c1697c7.js"><link rel="prefetch" href="/notebook/assets/js/93.c63d131a.js"><link rel="prefetch" href="/notebook/assets/js/94.4dbee65b.js"><link rel="prefetch" href="/notebook/assets/js/95.14c03696.js"><link rel="prefetch" href="/notebook/assets/js/96.bc7b6e9b.js"><link rel="prefetch" href="/notebook/assets/js/97.ae992193.js"><link rel="prefetch" href="/notebook/assets/js/98.601bafa8.js"><link rel="prefetch" href="/notebook/assets/js/99.af7b929b.js">
+    <link rel="stylesheet" href="/notebook/assets/css/0.styles.ba285c9d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/notebook/" class="home-link router-link-active"><img src="/notebook/logo.png" alt="notes | Kisstar" class="logo"> <span class="site-name can-hide">notes | Kisstar</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="IT" class="dropdown-title"><span class="title">IT</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          FED
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/html/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-subitem"><a href="/notebook/css/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-subitem"><a href="/notebook/js/" class="nav-link router-link-active">
+  JavaScript
+</a></li><li class="dropdown-subitem"><a href="/notebook/ts/" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-subitem"><a href="/notebook/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-subitem"><a href="/notebook/react/" class="nav-link">
+  React
+</a></li><li class="dropdown-subitem"><a href="/notebook/web/" class="nav-link">
+  WEB
+</a></li></ul></li><li class="dropdown-item"><h4>
+          BED
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/nodejs/" class="nav-link">
+  NodeJS
+</a></li><li class="dropdown-subitem"><a href="/notebook/webpack/" class="nav-link">
+  Webpack
+</a></li></ul></li><li class="dropdown-item"><h4>
+          OTHER
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/wechat/" class="nav-link">
+  WeChat
+</a></li><li class="dropdown-subitem"><a href="/notebook/project/" class="nav-link">
+  Project
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="DevTools" class="dropdown-title"><span class="title">DevTools</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/vim/" class="nav-link">
+  Vim
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Computer" class="dropdown-title"><span class="title">Computer</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/cp/" class="nav-link">
+  Computer Basis
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/algorithm/" class="nav-link">
+  Algorithm
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/windows/" class="nav-link">
+  Windows
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/database/" class="nav-link">
+  Database
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Cloud" class="dropdown-title"><span class="title">Cloud</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/docker/" class="nav-link">
+  Docker
+</a></li></ul></div></div><div class="nav-item"><a href="/notebook/collection/" class="nav-link">
+  Collection
+</a></div><div class="nav-item"><a href="/notebook/other/" class="nav-link">
+  Other
+</a></div><div class="nav-item"><a href="https://github.com/kisstar/notebook/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="IT" class="dropdown-title"><span class="title">IT</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          FED
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/html/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-subitem"><a href="/notebook/css/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-subitem"><a href="/notebook/js/" class="nav-link router-link-active">
+  JavaScript
+</a></li><li class="dropdown-subitem"><a href="/notebook/ts/" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-subitem"><a href="/notebook/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-subitem"><a href="/notebook/react/" class="nav-link">
+  React
+</a></li><li class="dropdown-subitem"><a href="/notebook/web/" class="nav-link">
+  WEB
+</a></li></ul></li><li class="dropdown-item"><h4>
+          BED
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/nodejs/" class="nav-link">
+  NodeJS
+</a></li><li class="dropdown-subitem"><a href="/notebook/webpack/" class="nav-link">
+  Webpack
+</a></li></ul></li><li class="dropdown-item"><h4>
+          OTHER
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/wechat/" class="nav-link">
+  WeChat
+</a></li><li class="dropdown-subitem"><a href="/notebook/project/" class="nav-link">
+  Project
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="DevTools" class="dropdown-title"><span class="title">DevTools</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/vim/" class="nav-link">
+  Vim
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Computer" class="dropdown-title"><span class="title">Computer</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/cp/" class="nav-link">
+  Computer Basis
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/algorithm/" class="nav-link">
+  Algorithm
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/windows/" class="nav-link">
+  Windows
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/database/" class="nav-link">
+  Database
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Cloud" class="dropdown-title"><span class="title">Cloud</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/docker/" class="nav-link">
+  Docker
+</a></li></ul></div></div><div class="nav-item"><a href="/notebook/collection/" class="nav-link">
+  Collection
+</a></div><div class="nav-item"><a href="/notebook/other/" class="nav-link">
+  Other
+</a></div><div class="nav-item"><a href="https://github.com/kisstar/notebook/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>基础</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>进阶</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>面试</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>第三方</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notebook/js/third-party/require-js-0.html" class="sidebar-link">RequireJS（一）</a></li><li><a href="/notebook/js/third-party/require-js-1.html" aria-current="page" class="active sidebar-link">RequireJS (二)</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/notebook/js/third-party/require-js-1.html#基本-api" class="sidebar-link">基本 API</a></li><li class="sidebar-sub-header"><a href="/notebook/js/third-party/require-js-1.html#主模块" class="sidebar-link">主模块</a></li><li class="sidebar-sub-header"><a href="/notebook/js/third-party/require-js-1.html#模块的加载" class="sidebar-link">模块的加载</a></li><li class="sidebar-sub-header"><a href="/notebook/js/third-party/require-js-1.html#基本配置" class="sidebar-link">基本配置</a></li><li class="sidebar-sub-header"><a href="/notebook/js/third-party/require-js-1.html#参考资料" class="sidebar-link">参考资料</a></li></ul></li><li><a href="/notebook/js/third-party/require-js-2.html" class="sidebar-link">RequireJS (三)</a></li><li><a href="/notebook/js/third-party/require-js-3.html" class="sidebar-link">RequireJS (四)</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>奇思妙想</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="requirejs-二"><a href="#requirejs-二" class="header-anchor">#</a> RequireJS (二)</h1> <p>RequireJS 的基本使用方法。</p> <h2 id="基本-api"><a href="#基本-api" class="header-anchor">#</a> 基本 API</h2> <p>RequireJS 定义了三个变量：<code>define</code>，<code>require</code>，<code>requirejs</code>，其中后两者是严格相等的。</p> <p>要使用模块首先需要通过 <code>define()</code> 函数来定义一个模块，可以接受三个参数：</p> <ul><li>模块名，一般模块名不需要被指定，由相关工具自动为其命名；</li> <li>第二个参数是一个数组，指明了此模块的依赖；</li> <li>模块的具体实现。</li></ul> <img height="350" src="/notebook/images/js/require_define.png" alt="require_define" class="center"> <p>如果我们定义了模块名，则在指定依赖这个模块时，必须使用同名模块名。</p> <p>对应的 <code>require()</code> 函数接受两个参数：</p> <ul><li>第一个参数是一个数组，表示所依赖的模块；</li> <li>第二个参数是一个回调函数，当前面指定的模块都加载成功后，它将被调用。加载的模块会以参数形式传入该函数，从而在回调函数内部就可以使用这些模块。</li></ul> <p>RequireJS 通过异步加载依赖的模块，从而解决了 JS 阻塞页面渲染，另外指定的回调函数会在其依赖的所有模块加载完之后再执行，从而又解决了依赖性的问题。</p> <h2 id="主模块"><a href="#主模块" class="header-anchor">#</a> 主模块</h2> <p><strong>&quot;主模块&quot;，意思是整个网页的入口代码，所有代码都从这儿开始运行。</strong></p> <p>我们可以在主模块里设置 RequireJS 的全局配置，并通过设置脚本的 <code>script</code> 标签的 <code>data-main</code> 属性来引入主模块，因为这个属性指定的 JavaScript 文件将在加载完 <code>reuqire.js</code> 后处理，在我们把 <code>require.config</code> 的配置加入到其中后，就可以使每一个页面都使用这个配置。</p> <p>另外，<code>data-main</code> 属性还有一个重要的功能，当在 <code>script</code> 标签指定 <code>data-main</code> 属性时，RequireJS 会默认的将 <code>data-main</code> 指定的 JavaScript 为根路径。</p> <p>当然我们也可以直接再使用另外一个 <code>script</code> 标签来引入主模块，不过此时默认的根路径则为页面所在的路径。</p> <p>就像下面这个例子一样：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 目录结构</span>
+
+└─ test.html
+└─text.txt
+└─js
+   └─main.js
+   └─ require.js
+   └─say.hello.js
+</code></pre></div><div class="language-html extra-class"><pre class="language-html"><code><span class="token doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>utf-8<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>RequireJS<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>viewport<span class="token punctuation">&quot;</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>width=device-width, initial-scale=1<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token comment">&lt;!-- 通过 script 标签的 src 属性引入 RequireJS --&gt;</span>
+    <span class="token comment">&lt;!-- 通过 script 标签的 data-main 属性引入主模块，此时根路径为 js 目录 --&gt;</span>
+    <span class="token comment">&lt;!-- 加载完 reuqire.js 后执行 main.js --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>js/require.js<span class="token punctuation">&quot;</span></span> <span class="token attr-name">data-main</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>js/main<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>Hello world<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h2 id="模块的加载"><a href="#模块的加载" class="header-anchor">#</a> 模块的加载</h2> <p>在加载本地的模块时，我们可以在 <code>require()</code> 函数的第一个参数里指明模块的加载路径。比如上面在 <code>main.js</code> 文件里依赖 <code>say.hello.js</code> 文件，我们可以这样写：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// main.js</span>
+<span class="token function">require</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'say.hello'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'success'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// say.hello.js</span>
+<span class="token function">define</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">function</span> <span class="token function">sayHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'Hello'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">sayHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>安装如前展示的目录将几个文件对应放置后，用浏览器打开 <code>test.html</code> 文件，此时会在加载完 <code>require.js</code> 文件后执行 <code>main.js</code>(主模块)，由于主模块依赖 <code>say.hello.js</code>(其它模块) 文件，所以主模块中的回调函数会在其它它依赖模块加载完后执行，也就是只有当我们确认弹出框后，控制台才会打印 <code>success</code>。</p> <h2 id="基本配置"><a href="#基本配置" class="header-anchor">#</a> 基本配置</h2> <p>首先我们前面提到的，根据主模块引入方式的差异，RequireJS 的根路径也会存在不同，那么有没有什么方法让它不受引入方式的影响呢，这就需要使用到 RequireJS 的 <code>require.config()</code> 方法来进行配置。</p> <p>自然我们也可以在每个页面中加入配置，但那样会显得十分麻烦，所以可以把全局配置写在主模块里。</p> <p>配置模块路径：简单点说就是给模块起一个更短更好记的名字，不需要在写依赖时写一串的路径。</p> <p>比如我们需要下载 CDN 上的 <code>jQuery</code> 时，我们可以照下面这样写：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// main.js</span>
+require<span class="token punctuation">.</span><span class="token function">config</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  paths<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 本地文件可以配置</span>
+    <span class="token comment">// 配置的路径可以是一个</span>
+    sayHello<span class="token operator">:</span> <span class="token string">'say.hello'</span><span class="token punctuation">,</span>
+    <span class="token comment">// 服务器上的也可以配置</span>
+    <span class="token comment">// 配置的路径也可以是一个数组，如果前一个路径获取失败会尝试依次从后面的路径下载</span>
+    <span class="token comment">// 直到下载成功或读取完整个数组</span>
+    <span class="token comment">// 注意配置的路径中不能有 .js 后缀</span>
+    jquery<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'https://cdn.bootcss.com/jquery/1.10.2/jquery.min'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token function">require</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'jquery'</span><span class="token punctuation">,</span> <span class="token string">'sayHello'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">$</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'success'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>在使用 RequireJS 时，加载模块时不能写 <code>.js</code> 后缀。</p> <p>上面例子中的 <code>callback</code> 函数中发现有 <code>$</code> 参数，这个就是依赖的 <code>jquery</code> 模块的输出变量，如果你依赖多个模块，可以依次写入多个参数来使用，由于 <code>sayHello</code> 模块不存在输出变量，所以上面的回调函数只有一个参数。参数的放置顺序应该与前面依赖模块的书写顺序一致。</p> <h2 id="参考资料"><a href="#参考资料" class="header-anchor">#</a> 参考资料</h2> <ul><li><a href="http://www.runoob.com/w3cnote/requirejs-tutorial-1.html" target="_blank" rel="noopener noreferrer">菜鸟教程<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://www.ibm.com/developerworks/cn/web/1209_shiwei_requirejs/index.html" target="_blank" rel="noopener noreferrer">IBM<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="http://www.ruanyifeng.com/blog/2012/11/require_js.html" target="_blank" rel="noopener noreferrer">阮一峰的网络日志<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://www.imooc.com/learn/787" target="_blank" rel="noopener noreferrer">慕课网<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/notebook/js/third-party/require-js-0.html" class="prev">
+        RequireJS（一）
+      </a></span> <span class="next"><a href="/notebook/js/third-party/require-js-2.html">
+        RequireJS (三)
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/notebook/assets/js/app.aa7af78b.js" defer></script><script src="/notebook/assets/js/1.57f7f090.js" defer></script><script src="/notebook/assets/js/77.87088eac.js" defer></script>
+  </body>
+</html>
