@@ -3,7 +3,7 @@ prev: false
 next: false
 ---
 
-# Less
+# 邂逅
 
 **Less** 扩充了 CSS 语言，增加了诸如变量、混合（mixin）、运算、函数等功能。
 

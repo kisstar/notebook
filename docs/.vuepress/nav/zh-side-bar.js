@@ -8,7 +8,7 @@ module.exports = {
     {
       title: 'LESS',
       sidebarDepth: 2,
-      children: ['less', 'less/basis/meet-less', 'less/advanced/use-advanced'],
+      children: ['less/', 'less/basis/meet-less', 'less/advanced/use-advanced'],
     },
     {
       title: '面试',
@@ -281,7 +281,6 @@ module.exports = {
         'basis/mount',
         'basis/user-log',
         'basis/user-manage',
-        'basis/shell',
         'basis/view-help',
       ],
     },
@@ -289,6 +288,11 @@ module.exports = {
       title: 'Ubuntu',
       sidebarDepth: 2,
       children: ['ubuntu/install', 'ubuntu/dev-0', 'ubuntu/dev-1'],
+    },
+    {
+      title: 'Shell',
+      sidebarDepth: 2,
+      children: ['shell/meet-shell', 'shell/demo'],
     },
   ],
   '/webpack/': [
