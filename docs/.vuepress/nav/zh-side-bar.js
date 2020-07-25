@@ -335,5 +335,12 @@ module.exports = {
       children: ['', 'basis/commit-lint', 'basis/eslint', 'basis/stylelint'],
     },
   ],
+  '/ts/': [
+    {
+      title: '基础',
+      sidebarDepth: 2,
+      children: ['', 'basis/meet-ts', 'basis/enum'],
+    },
+  ],
   '/': [''],
 }

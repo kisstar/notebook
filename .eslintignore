@@ -1,2 +1,3 @@
+docs/.vuepress/dist
 /dist
 /lib/yarn/releases
