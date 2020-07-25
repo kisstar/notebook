@@ -339,7 +339,7 @@ module.exports = {
     {
       title: '基础',
       sidebarDepth: 2,
-      children: ['', 'basis/meet-ts', 'basis/enum'],
+      children: ['', 'basis/meet-ts', 'basis/enum', 'basis/term'],
     },
   ],
   '/': [''],

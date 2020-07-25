@@ -122,6 +122,32 @@ create(null) // OK
 create(42) // Error
 ```
 
+## 字面量类型
+
+在 TypeScript 中具有字符串字面量类型和数字字面量类型。
+
+字符串字面量类型允许你指定字符串必须的固定值。在实际应用中，字符串字面量类型可以与联合类型，类型保护和类型别名很好的配合。
+
+```js
+type Easing = 'ease-in' | 'ease-out' | 'ease-in-out'
+class UIElement {
+  animate(dx: number, dy: number, easing: Easing) {
+    if (easing === 'ease-in') {
+      // ...
+    } else if (easing === 'ease-out') {
+    } else if (easing === 'ease-in-out') {
+    } else {
+      // error! should not pass null or undefined.
+    }
+  }
+}
+
+const button = new UIElement()
+button.animate(0, 0, 'ease-in')
+```
+
+数字字面量类型与字符串字面量类型类似。
+
 ## 函数
 
 在 TypeScript 中可以对函数的输入和输出都进行约束。
