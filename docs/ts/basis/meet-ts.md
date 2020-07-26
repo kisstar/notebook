@@ -12,7 +12,7 @@ let u: undefined = undefined
 let n: null = null
 ```
 
-默认情况下 `null` 和 `undefined` 是所有类型的子类型。 就是说你可以将其赋值给任何其它类型。
+默认情况下 `null` 和 `undefined` 是所有类型的子类型。就是说你可以将其赋值给任何其它类型。
 
 - 布尔值
 
@@ -69,7 +69,7 @@ let x: [string, number] = ['hello', 10]
 
 - 枚举
 
-使用枚举类型可以为一组数值赋予友好的名字，默认情况下，从 0 开始为元素编号。 你也可以手动的指定成员的数值。
+使用枚举类型可以为一组数值赋予友好的名字，默认情况下，从 0 开始为元素编号。你也可以手动的指定成员的数值。
 
 ```js
 enum Color {Red, Green, Blue}
@@ -175,3 +175,34 @@ function sum(x: number, y: number, z: number = 9): number {
 ```
 
 另外，ES6 中，可以使用 `...rest` 的方式获取函数中的剩余参数（rest 参数），此时 `rest` 其实是一个数组，所以可以用数组的类型来定义它。
+
+## 接口
+
+在 TypeScript 中，我们可以使用接口（Interfaces）来定义对象的类型。类型检查器不会去检查属性的顺序，只要相应的属性存在并且类型也是对的就可以。
+
+```js
+interface Person {
+  name: string;
+  age: number;
+}
+```
+
+接口里的属性不全都是必需的。有些是只在某些条件下存在，或者根本不存在，这时候可以用可选属性：
+
+```js
+interface Person {
+  name: string;
+  age: number;
+  profession: string;
+}
+```
+
+另外，一些对象属性只能在对象刚刚创建的时候修改其值。你可以在属性名前用 `readonly` 来指定只读属性:
+
+```js
+interface Person {
+  readonly name: string;
+  age: number;
+  profession: string;
+}
+```
