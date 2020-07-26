@@ -11,6 +11,11 @@ module.exports = {
       children: ['less/', 'less/basis/meet-less', 'less/advanced/use-advanced'],
     },
     {
+      title: 'SCSS',
+      sidebarDepth: 2,
+      children: ['scss/', 'scss/basis/meet-scss', 'scss/advanced/syntax'],
+    },
+    {
       title: '面试',
       sidebarDepth: 2,
       children: ['interview/css-hv-center'],
