@@ -361,5 +361,12 @@ module.exports = {
       children: ['advanced/term', 'advanced/type-guard'],
     },
   ],
+  '/vscode/': [
+    {
+      title: '基础',
+      sidebarDepth: 2,
+      children: ['', 'basis/meet-vscode'],
+    },
+  ],
   '/': [''],
 }
