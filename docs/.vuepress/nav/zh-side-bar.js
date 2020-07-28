@@ -301,6 +301,11 @@ module.exports = {
       sidebarDepth: 2,
       children: ['shell/meet-shell', 'shell/demo'],
     },
+    {
+      title: 'Common',
+      sidebarDepth: 2,
+      children: ['common/', 'common/ssh', 'common/curl'],
+    },
   ],
   '/webpack/': [
     {
