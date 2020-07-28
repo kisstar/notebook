@@ -73,7 +73,11 @@ module.exports = {
     {
       title: '奇思妙想',
       sidebarDepth: 2,
-      children: ['fantastic-ideas/advanced-func'],
+      children: [
+        'fantastic-ideas/better-code',
+        'fantastic-ideas/throttle-debounce',
+        'fantastic-ideas/advanced-func',
+      ],
     },
   ],
   '/vue/': [

@@ -235,3 +235,10 @@ Ajax 将 Web 体验从“浏览页面”转变为了“与应用程序进行交�
 - 客户端发送 `If-Modifid-Since` 字段进行确认从指定日期后是否有更改，如果没有改变，服务端返回一个 “304 Not Modified”，并包含有 `Last-Modified` 字段。
 
 此文为 [高性能网站建设指南](https://m.douban.com/book/subject/3132277/) 的读书笔记。
+
+## 扩展阅读
+
+- [14 个 JavaScript 代码优化技巧](https://mp.weixin.qq.com/s/rLlB9kOB15c-T-e69tnEnw)
+- [优化基于文本的资产的编码和传送大小  |  Web Fundamentals  |  Google Developers](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/optimize-encoding-and-transfer#minification_preprocessing_context-specific_optimizations)
+- [Efficiently load JavaScript with defer and async](https://flaviocopes.com/javascript-async-defer/)
+- [Using Web Workers - Web APIs | MDN](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)

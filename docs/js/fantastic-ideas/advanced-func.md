@@ -179,47 +179,6 @@ var getInfo = bind(obj, obj.getInfo, 24)
 window.addEventListener('click', getInfo)
 ```
 
-## 函数节流
-
-浏览器中某些计算和 DOM 处理要比其他的昂贵很多，连续尝试进行过多的 DOM 相关操作可能会导致浏览器挂起，有时候甚至会崩溃。
-
-比如，在 `onresize` 事件处理程序内部如果尝试进行 DOM 操作，其高频率的更改可能会让浏览器崩溃。
-
-为了绕开这个问题，可以使用定时器对该函数进行节流，其基本思想就是某些代码不可以在没有间断的情况连续重复执行。所以第一次调用函数时就设置一个定时器，只在指定时间后才能调用第二次。
-
-```javascript
-// 或称函数防抖
-/**
- * @param method {function} 要执行的函数
- * @param context {obj} 执行环境
- */
-function throttle(method, context) {
-  clearTimeout(method.tId)
-  method.tId = setTimeout(function() {
-    method.call(context)
-  }, 100)
-}
-
-// 另一种方式
-/**
- * @param method {string} 回调函数
- * @param context {object} 执行环境
- * @param delay {number} 间隔时间
- */
-function throttle(method, context, delay) {
-  let wait = false
-  return function() {
-    if (!wait) {
-      method.apply(context)
-      wait = true
-      setTimeout(() => {
-        wait = false
-      }, delay)
-    }
-  }
-}
-```
-
 ## 参考资料
 
 - JavaScript 高级程序设计(第 3 版)
