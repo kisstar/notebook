@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Docker Compose | notes | Kisstar</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    
+    <meta name="description" content="Kisstar's personal notes">
+    <link rel="preload" href="/notebook/assets/css/0.styles.ba285c9d.css" as="style"><link rel="preload" href="/notebook/assets/js/app.695981a2.js" as="script"><link rel="preload" href="/notebook/assets/js/1.7e5e7c03.js" as="script"><link rel="preload" href="/notebook/assets/js/47.82a7b3c0.js" as="script"><link rel="prefetch" href="/notebook/assets/js/10.5555a36f.js"><link rel="prefetch" href="/notebook/assets/js/100.f759079e.js"><link rel="prefetch" href="/notebook/assets/js/101.4fe3f882.js"><link rel="prefetch" href="/notebook/assets/js/102.0bbcc40c.js"><link rel="prefetch" href="/notebook/assets/js/103.90fb8e92.js"><link rel="prefetch" href="/notebook/assets/js/104.2613f631.js"><link rel="prefetch" href="/notebook/assets/js/105.1904e1fe.js"><link rel="prefetch" href="/notebook/assets/js/106.d4b86328.js"><link rel="prefetch" href="/notebook/assets/js/107.73982f13.js"><link rel="prefetch" href="/notebook/assets/js/108.2506538f.js"><link rel="prefetch" href="/notebook/assets/js/109.f6883728.js"><link rel="prefetch" href="/notebook/assets/js/11.80c95b7f.js"><link rel="prefetch" href="/notebook/assets/js/110.4107267a.js"><link rel="prefetch" href="/notebook/assets/js/111.5a9ced4c.js"><link rel="prefetch" href="/notebook/assets/js/112.52c3ae0d.js"><link rel="prefetch" href="/notebook/assets/js/113.2c286cc0.js"><link rel="prefetch" href="/notebook/assets/js/114.d91302a3.js"><link rel="prefetch" href="/notebook/assets/js/115.066e05bf.js"><link rel="prefetch" href="/notebook/assets/js/116.f4902c30.js"><link rel="prefetch" href="/notebook/assets/js/117.1089d492.js"><link rel="prefetch" href="/notebook/assets/js/118.45a6de9c.js"><link rel="prefetch" href="/notebook/assets/js/119.d27d6f1c.js"><link rel="prefetch" href="/notebook/assets/js/12.a4370376.js"><link rel="prefetch" href="/notebook/assets/js/120.3a7544cf.js"><link rel="prefetch" href="/notebook/assets/js/121.e030c429.js"><link rel="prefetch" href="/notebook/assets/js/122.20d28e30.js"><link rel="prefetch" href="/notebook/assets/js/123.4ca971e2.js"><link rel="prefetch" href="/notebook/assets/js/124.dc81944f.js"><link rel="prefetch" href="/notebook/assets/js/125.9c84d174.js"><link rel="prefetch" href="/notebook/assets/js/126.3ceca69a.js"><link rel="prefetch" href="/notebook/assets/js/127.d785ce87.js"><link rel="prefetch" href="/notebook/assets/js/128.ded8a375.js"><link rel="prefetch" href="/notebook/assets/js/129.98f7f226.js"><link rel="prefetch" href="/notebook/assets/js/13.8382045a.js"><link rel="prefetch" href="/notebook/assets/js/130.e591be27.js"><link rel="prefetch" href="/notebook/assets/js/131.9b6eb4fd.js"><link rel="prefetch" href="/notebook/assets/js/132.9b58abc7.js"><link rel="prefetch" href="/notebook/assets/js/133.90f097b7.js"><link rel="prefetch" href="/notebook/assets/js/134.16d3fa5f.js"><link rel="prefetch" href="/notebook/assets/js/135.6b326d91.js"><link rel="prefetch" href="/notebook/assets/js/136.494c3bd6.js"><link rel="prefetch" href="/notebook/assets/js/137.766b0b1f.js"><link rel="prefetch" href="/notebook/assets/js/138.08806114.js"><link rel="prefetch" href="/notebook/assets/js/139.0865299b.js"><link rel="prefetch" href="/notebook/assets/js/14.74c5da83.js"><link rel="prefetch" href="/notebook/assets/js/140.44e67ab5.js"><link rel="prefetch" href="/notebook/assets/js/141.1d1140ec.js"><link rel="prefetch" href="/notebook/assets/js/142.3cec12cd.js"><link rel="prefetch" href="/notebook/assets/js/143.dc8cbbbb.js"><link rel="prefetch" href="/notebook/assets/js/144.6ff451a3.js"><link rel="prefetch" href="/notebook/assets/js/145.c11d2acb.js"><link rel="prefetch" href="/notebook/assets/js/146.e5d225b6.js"><link rel="prefetch" href="/notebook/assets/js/147.c219c2a1.js"><link rel="prefetch" href="/notebook/assets/js/148.6cba05ca.js"><link rel="prefetch" href="/notebook/assets/js/149.4367d290.js"><link rel="prefetch" href="/notebook/assets/js/15.862c4dd8.js"><link rel="prefetch" href="/notebook/assets/js/150.1d38502b.js"><link rel="prefetch" href="/notebook/assets/js/151.ebae6be4.js"><link rel="prefetch" href="/notebook/assets/js/152.7675d7f0.js"><link rel="prefetch" href="/notebook/assets/js/153.e5aa90e2.js"><link rel="prefetch" href="/notebook/assets/js/154.f2a6e85f.js"><link rel="prefetch" href="/notebook/assets/js/155.c857ce10.js"><link rel="prefetch" href="/notebook/assets/js/156.63fe524f.js"><link rel="prefetch" href="/notebook/assets/js/157.782f4bda.js"><link rel="prefetch" href="/notebook/assets/js/158.141c4127.js"><link rel="prefetch" href="/notebook/assets/js/159.db9dc02b.js"><link rel="prefetch" href="/notebook/assets/js/16.151452c5.js"><link rel="prefetch" href="/notebook/assets/js/160.7bda9824.js"><link rel="prefetch" href="/notebook/assets/js/161.c0b105a1.js"><link rel="prefetch" href="/notebook/assets/js/162.ad132d74.js"><link rel="prefetch" href="/notebook/assets/js/17.0587d61f.js"><link rel="prefetch" href="/notebook/assets/js/18.4d2b05f7.js"><link rel="prefetch" href="/notebook/assets/js/19.8cb4d2c4.js"><link rel="prefetch" href="/notebook/assets/js/20.01878a40.js"><link rel="prefetch" href="/notebook/assets/js/21.69361956.js"><link rel="prefetch" href="/notebook/assets/js/22.fe7d91ac.js"><link rel="prefetch" href="/notebook/assets/js/23.f8465087.js"><link rel="prefetch" href="/notebook/assets/js/24.922b6297.js"><link rel="prefetch" href="/notebook/assets/js/25.c43768cb.js"><link rel="prefetch" href="/notebook/assets/js/26.043f1db4.js"><link rel="prefetch" href="/notebook/assets/js/27.9ef023fd.js"><link rel="prefetch" href="/notebook/assets/js/28.9636beff.js"><link rel="prefetch" href="/notebook/assets/js/29.91916113.js"><link rel="prefetch" href="/notebook/assets/js/3.b70f0b3f.js"><link rel="prefetch" href="/notebook/assets/js/30.65aed714.js"><link rel="prefetch" href="/notebook/assets/js/31.08345366.js"><link rel="prefetch" href="/notebook/assets/js/32.0068cefa.js"><link rel="prefetch" href="/notebook/assets/js/33.744c5b33.js"><link rel="prefetch" href="/notebook/assets/js/34.5f64f72e.js"><link rel="prefetch" href="/notebook/assets/js/35.87a400e4.js"><link rel="prefetch" href="/notebook/assets/js/36.b0ea269e.js"><link rel="prefetch" href="/notebook/assets/js/37.7b90c95f.js"><link rel="prefetch" href="/notebook/assets/js/38.19a82643.js"><link rel="prefetch" href="/notebook/assets/js/39.abd4cb3c.js"><link rel="prefetch" href="/notebook/assets/js/4.02b78e18.js"><link rel="prefetch" href="/notebook/assets/js/40.e00b1569.js"><link rel="prefetch" href="/notebook/assets/js/41.5889ce56.js"><link rel="prefetch" href="/notebook/assets/js/42.0bf17165.js"><link rel="prefetch" href="/notebook/assets/js/43.449d90d0.js"><link rel="prefetch" href="/notebook/assets/js/44.c6a48e91.js"><link rel="prefetch" href="/notebook/assets/js/45.a1d21b57.js"><link rel="prefetch" href="/notebook/assets/js/46.c96f7f00.js"><link rel="prefetch" href="/notebook/assets/js/48.d614f857.js"><link rel="prefetch" href="/notebook/assets/js/49.1c852f85.js"><link rel="prefetch" href="/notebook/assets/js/5.aca53e6b.js"><link rel="prefetch" href="/notebook/assets/js/50.515b01de.js"><link rel="prefetch" href="/notebook/assets/js/51.0f9a7a02.js"><link rel="prefetch" href="/notebook/assets/js/52.1202f062.js"><link rel="prefetch" href="/notebook/assets/js/53.31c3a9c5.js"><link rel="prefetch" href="/notebook/assets/js/54.8b169b8e.js"><link rel="prefetch" href="/notebook/assets/js/55.9b7df2f0.js"><link rel="prefetch" href="/notebook/assets/js/56.4e1f287a.js"><link rel="prefetch" href="/notebook/assets/js/57.9515797e.js"><link rel="prefetch" href="/notebook/assets/js/58.3fbe5aac.js"><link rel="prefetch" href="/notebook/assets/js/59.898334ad.js"><link rel="prefetch" href="/notebook/assets/js/6.ae5c2b7f.js"><link rel="prefetch" href="/notebook/assets/js/60.842f6d02.js"><link rel="prefetch" href="/notebook/assets/js/61.46faa661.js"><link rel="prefetch" href="/notebook/assets/js/62.c6d6e425.js"><link rel="prefetch" href="/notebook/assets/js/63.97adbd06.js"><link rel="prefetch" href="/notebook/assets/js/64.1b88dee7.js"><link rel="prefetch" href="/notebook/assets/js/65.54d6c336.js"><link rel="prefetch" href="/notebook/assets/js/66.f1ddc697.js"><link rel="prefetch" href="/notebook/assets/js/67.3ce55620.js"><link rel="prefetch" href="/notebook/assets/js/68.178403c5.js"><link rel="prefetch" href="/notebook/assets/js/69.356702b3.js"><link rel="prefetch" href="/notebook/assets/js/7.851811b0.js"><link rel="prefetch" href="/notebook/assets/js/70.d4f2df1b.js"><link rel="prefetch" href="/notebook/assets/js/71.ea0d3661.js"><link rel="prefetch" href="/notebook/assets/js/72.42a2f1c4.js"><link rel="prefetch" href="/notebook/assets/js/73.351005ef.js"><link rel="prefetch" href="/notebook/assets/js/74.1bc0f519.js"><link rel="prefetch" href="/notebook/assets/js/75.186107dd.js"><link rel="prefetch" href="/notebook/assets/js/76.a30fddd4.js"><link rel="prefetch" href="/notebook/assets/js/77.548802cd.js"><link rel="prefetch" href="/notebook/assets/js/78.695d98cd.js"><link rel="prefetch" href="/notebook/assets/js/79.1f195e5d.js"><link rel="prefetch" href="/notebook/assets/js/8.6629bfc2.js"><link rel="prefetch" href="/notebook/assets/js/80.7e5bf821.js"><link rel="prefetch" href="/notebook/assets/js/81.1aef26c7.js"><link rel="prefetch" href="/notebook/assets/js/82.98fb7874.js"><link rel="prefetch" href="/notebook/assets/js/83.cb222248.js"><link rel="prefetch" href="/notebook/assets/js/84.490eeeb4.js"><link rel="prefetch" href="/notebook/assets/js/85.f6d0b63d.js"><link rel="prefetch" href="/notebook/assets/js/86.92a3a079.js"><link rel="prefetch" href="/notebook/assets/js/87.39b4bda3.js"><link rel="prefetch" href="/notebook/assets/js/88.bf7ab095.js"><link rel="prefetch" href="/notebook/assets/js/89.99ace825.js"><link rel="prefetch" href="/notebook/assets/js/9.93ce6aed.js"><link rel="prefetch" href="/notebook/assets/js/90.17093654.js"><link rel="prefetch" href="/notebook/assets/js/91.4913cc92.js"><link rel="prefetch" href="/notebook/assets/js/92.37a40f65.js"><link rel="prefetch" href="/notebook/assets/js/93.f1f887df.js"><link rel="prefetch" href="/notebook/assets/js/94.f1db30fd.js"><link rel="prefetch" href="/notebook/assets/js/95.a61036d2.js"><link rel="prefetch" href="/notebook/assets/js/96.ed173e16.js"><link rel="prefetch" href="/notebook/assets/js/97.765420ba.js"><link rel="prefetch" href="/notebook/assets/js/98.29fddfc0.js"><link rel="prefetch" href="/notebook/assets/js/99.9e475ad7.js">
+    <link rel="stylesheet" href="/notebook/assets/css/0.styles.ba285c9d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/notebook/" class="home-link router-link-active"><img src="/notebook/logo.png" alt="notes | Kisstar" class="logo"> <span class="site-name can-hide">notes | Kisstar</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="IT" class="dropdown-title"><span class="title">IT</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          FED
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/html/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-subitem"><a href="/notebook/css/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-subitem"><a href="/notebook/js/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-subitem"><a href="/notebook/ts/" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-subitem"><a href="/notebook/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-subitem"><a href="/notebook/react/" class="nav-link">
+  React
+</a></li><li class="dropdown-subitem"><a href="/notebook/web/" class="nav-link">
+  WEB
+</a></li></ul></li><li class="dropdown-item"><h4>
+          BED
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/nodejs/" class="nav-link">
+  NodeJS
+</a></li><li class="dropdown-subitem"><a href="/notebook/webpack/" class="nav-link">
+  Webpack
+</a></li></ul></li><li class="dropdown-item"><h4>
+          OTHER
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/wechat/" class="nav-link">
+  WeChat
+</a></li><li class="dropdown-subitem"><a href="/notebook/project/" class="nav-link">
+  Project
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="DevTools" class="dropdown-title"><span class="title">DevTools</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/vim/" class="nav-link">
+  Vim
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Computer" class="dropdown-title"><span class="title">Computer</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/cp/" class="nav-link">
+  Computer Basis
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/algorithm/" class="nav-link">
+  Algorithm
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/windows/" class="nav-link">
+  Windows
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/database/" class="nav-link">
+  Database
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Cloud" class="dropdown-title"><span class="title">Cloud</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/docker/" class="nav-link router-link-active">
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/dev-ops/" class="nav-link">
+  DevOps
+</a></li></ul></div></div><div class="nav-item"><a href="/notebook/collection/" class="nav-link">
+  Collection
+</a></div><div class="nav-item"><a href="/notebook/other/" class="nav-link">
+  Other
+</a></div><div class="nav-item"><a href="https://github.com/kisstar/notebook/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="IT" class="dropdown-title"><span class="title">IT</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          FED
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/html/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-subitem"><a href="/notebook/css/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-subitem"><a href="/notebook/js/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-subitem"><a href="/notebook/ts/" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-subitem"><a href="/notebook/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-subitem"><a href="/notebook/react/" class="nav-link">
+  React
+</a></li><li class="dropdown-subitem"><a href="/notebook/web/" class="nav-link">
+  WEB
+</a></li></ul></li><li class="dropdown-item"><h4>
+          BED
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/nodejs/" class="nav-link">
+  NodeJS
+</a></li><li class="dropdown-subitem"><a href="/notebook/webpack/" class="nav-link">
+  Webpack
+</a></li></ul></li><li class="dropdown-item"><h4>
+          OTHER
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/wechat/" class="nav-link">
+  WeChat
+</a></li><li class="dropdown-subitem"><a href="/notebook/project/" class="nav-link">
+  Project
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="DevTools" class="dropdown-title"><span class="title">DevTools</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/vim/" class="nav-link">
+  Vim
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Computer" class="dropdown-title"><span class="title">Computer</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/cp/" class="nav-link">
+  Computer Basis
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/algorithm/" class="nav-link">
+  Algorithm
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/windows/" class="nav-link">
+  Windows
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/database/" class="nav-link">
+  Database
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Cloud" class="dropdown-title"><span class="title">Cloud</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/docker/" class="nav-link router-link-active">
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/dev-ops/" class="nav-link">
+  DevOps
+</a></li></ul></div></div><div class="nav-item"><a href="/notebook/collection/" class="nav-link">
+  Collection
+</a></div><div class="nav-item"><a href="/notebook/other/" class="nav-link">
+  Other
+</a></div><div class="nav-item"><a href="https://github.com/kisstar/notebook/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>基础</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notebook/docker/" aria-current="page" class="sidebar-link">Docker</a></li><li><a href="/notebook/docker/basis/meet-docker.html" class="sidebar-link">认识 Docker</a></li><li><a href="/notebook/docker/basis/command.html" class="sidebar-link">基础命令</a></li><li><a href="/notebook/docker/basis/image.html" class="sidebar-link">镜像</a></li><li><a href="/notebook/docker/basis/dockerfile.html" class="sidebar-link">Dockerfile</a></li><li><a href="/notebook/docker/basis/data-volume.html" class="sidebar-link">数据卷</a></li><li><a href="/notebook/docker/basis/docker-compose.html" aria-current="page" class="active sidebar-link">Docker Compose</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/notebook/docker/basis/docker-compose.html#安装" class="sidebar-link">安装</a></li><li class="sidebar-sub-header"><a href="/notebook/docker/basis/docker-compose.html#指令说明" class="sidebar-link">指令说明</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/notebook/docker/basis/docker-compose.html#version" class="sidebar-link">version</a></li><li class="sidebar-sub-header"><a href="/notebook/docker/basis/docker-compose.html#volumes" class="sidebar-link">volumes</a></li><li class="sidebar-sub-header"><a href="/notebook/docker/basis/docker-compose.html#networks" class="sidebar-link">networks</a></li><li class="sidebar-sub-header"><a href="/notebook/docker/basis/docker-compose.html#services" class="sidebar-link">services</a></li></ul></li><li class="sidebar-sub-header"><a href="/notebook/docker/basis/docker-compose.html#服务配置说明" class="sidebar-link">服务配置说明</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/notebook/docker/basis/docker-compose.html#build" class="sidebar-link">build</a></li><li class="sidebar-sub-header"><a href="/notebook/docker/basis/docker-compose.html#image" class="sidebar-link">image</a></li><li class="sidebar-sub-header"><a href="/notebook/docker/basis/docker-compose.html#container-name" class="sidebar-link">container_name</a></li><li class="sidebar-sub-header"><a href="/notebook/docker/basis/docker-compose.html#environment" class="sidebar-link">environment</a></li><li class="sidebar-sub-header"><a href="/notebook/docker/basis/docker-compose.html#env-file" class="sidebar-link">env_file</a></li><li class="sidebar-sub-header"><a href="/notebook/docker/basis/docker-compose.html#volumes-2" class="sidebar-link">volumes</a></li><li class="sidebar-sub-header"><a href="/notebook/docker/basis/docker-compose.html#networks-2" class="sidebar-link">networks</a></li><li class="sidebar-sub-header"><a href="/notebook/docker/basis/docker-compose.html#expose" class="sidebar-link">expose</a></li><li class="sidebar-sub-header"><a href="/notebook/docker/basis/docker-compose.html#command" class="sidebar-link">command</a></li><li class="sidebar-sub-header"><a href="/notebook/docker/basis/docker-compose.html#entrypoint" class="sidebar-link">entrypoint</a></li><li class="sidebar-sub-header"><a href="/notebook/docker/basis/docker-compose.html#depends-on" class="sidebar-link">depends_on</a></li><li class="sidebar-sub-header"><a href="/notebook/docker/basis/docker-compose.html#network-mode" class="sidebar-link">network_mode</a></li><li class="sidebar-sub-header"><a href="/notebook/docker/basis/docker-compose.html#logging" class="sidebar-link">logging</a></li><li class="sidebar-sub-header"><a href="/notebook/docker/basis/docker-compose.html#secrets" class="sidebar-link">secrets</a></li><li class="sidebar-sub-header"><a href="/notebook/docker/basis/docker-compose.html#restart" class="sidebar-link">restart</a></li><li class="sidebar-sub-header"><a href="/notebook/docker/basis/docker-compose.html#extra-hosts" class="sidebar-link">extra_hosts</a></li><li class="sidebar-sub-header"><a href="/notebook/docker/basis/docker-compose.html#devices" class="sidebar-link">devices</a></li><li class="sidebar-sub-header"><a href="/notebook/docker/basis/docker-compose.html#dns" class="sidebar-link">dns</a></li><li class="sidebar-sub-header"><a href="/notebook/docker/basis/docker-compose.html#dns-search" class="sidebar-link">dns_search</a></li><li class="sidebar-sub-header"><a href="/notebook/docker/basis/docker-compose.html#cap-add，cap-drop" class="sidebar-link">capadd，capdrop</a></li><li class="sidebar-sub-header"><a href="/notebook/docker/basis/docker-compose.html#cgroup-parent" class="sidebar-link">cgroup_parent</a></li><li class="sidebar-sub-header"><a href="/notebook/docker/basis/docker-compose.html#healthcheck" class="sidebar-link">healthcheck</a></li><li class="sidebar-sub-header"><a href="/notebook/docker/basis/docker-compose.html#ulimits" class="sidebar-link">ulimits</a></li><li class="sidebar-sub-header"><a href="/notebook/docker/basis/docker-compose.html#sysctls" class="sidebar-link">sysctls</a></li><li class="sidebar-sub-header"><a href="/notebook/docker/basis/docker-compose.html#tmpfs" class="sidebar-link">tmpfs</a></li><li class="sidebar-sub-header"><a href="/notebook/docker/basis/docker-compose.html#stop-signal" class="sidebar-link">stop_signal</a></li><li class="sidebar-sub-header"><a href="/notebook/docker/basis/docker-compose.html#stop-grace-period" class="sidebar-link">stopgraceperiod</a></li><li class="sidebar-sub-header"><a href="/notebook/docker/basis/docker-compose.html#security-opt" class="sidebar-link">security_opt</a></li></ul></li><li class="sidebar-sub-header"><a href="/notebook/docker/basis/docker-compose.html#参考" class="sidebar-link">参考</a></li></ul></li><li><a href="/notebook/docker/basis/private-registry.html" class="sidebar-link">Docker 私有仓库</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="docker-compose"><a href="#docker-compose" class="header-anchor">#</a> Docker Compose</h1> <p>Dockerfile 可以让用户管理一个单独的应用容器；而 Compose 则允许用户在一个模板（YAML 格式）中定义一组相关联的应用容器（被称为一个 project，即项目）。</p> <p>Compose 使用的三个步骤：</p> <ol><li>使用 Dockerfile 定义应用程序的环境。</li> <li>使用 <code>docker-compose.yml</code> 定义构成应用程序的服务，这样它们可以在隔离环境中一起运行。</li> <li>最后，执行 <code>docker-compose up</code> 命令来启动并运行整个应用程序。</li></ol> <h2 id="安装"><a href="#安装" class="header-anchor">#</a> 安装</h2> <p>Linux 上我们可以从 Github 上下载它的二进制包来使用，最新发行的版本地址：<a href="https://github.com/docker/compose/releases" target="_blank" rel="noopener noreferrer">https://github.com/docker/compose/releases<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>。</p> <p>运行以下命令以下载 Docker Compose 的当前稳定版本：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">sudo</span> <span class="token function">curl</span> -L <span class="token string">&quot;https://github.com/docker/compose/releases/download/1.26.0/docker-compose-<span class="token variable"><span class="token variable">$(</span><span class="token function">uname</span> -s<span class="token variable">)</span></span>-<span class="token variable"><span class="token variable">$(</span><span class="token function">uname</span> -m<span class="token variable">)</span></span>&quot;</span> -o /usr/local/bin/docker-compose
+</code></pre></div><p>要安装不同版本的 Compose，只需将 <code>1.26.0</code> 替换为要使用的 Compose 版本。</p> <p>接着，将可执行权限应用于二进制文件：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">sudo</span> <span class="token function">chmod</span> +x /usr/local/bin/docker-compose
+</code></pre></div><p>创建软链：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">sudo</span> <span class="token function">ln</span> -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+</code></pre></div><p>最后，测试是否安装成功：</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ docker-compose --version
+docker-compose version <span class="token number">1.24</span>.1, build 4667896b
+</code></pre></div><p>查看<a href="https://docs.docker.com/compose/install/" target="_blank" rel="noopener noreferrer">官网说明<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>，了解更多环境的按照方式。</p> <h2 id="指令说明"><a href="#指令说明" class="header-anchor">#</a> 指令说明</h2> <p>执行 <code>docker-compose [COMMAND] --help</code> 可以查看具体某个命令的使用说明。</p> <h3 id="version"><a href="#version" class="header-anchor">#</a> version</h3> <p>指定本 <code>yml</code> 是依从哪个版本的 <code>compose</code> 制定的。</p> <h3 id="volumes"><a href="#volumes" class="header-anchor">#</a> volumes</h3> <p>虽然可以作为服务声明的一部分动态声明卷，但同样允许您创建可跨多个服务重用的命名卷（不依赖卷），并且可以使用 Docker 命令行或 API 轻松检索和检查。</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3.8'</span>
+
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">db</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> db
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> data<span class="token punctuation">-</span>volume<span class="token punctuation">:</span>/var/lib/db
+  <span class="token key atrule">backup</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> backup<span class="token punctuation">-</span>service
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> data<span class="token punctuation">-</span>volume<span class="token punctuation">:</span>/var/lib/backup/data
+
+<span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+  <span class="token key atrule">data-volume</span><span class="token punctuation">:</span>
+</code></pre></div><p>顶级卷键下的条目可以为空，在这种情况下，它使用由引擎配置的默认驱动程序。</p> <h3 id="networks"><a href="#networks" class="header-anchor">#</a> networks</h3> <p>顶级 <code>networks</code> 允许您指定要创建的网络。</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">networks</span><span class="token punctuation">:</span>
+  <span class="token key atrule">some-network</span><span class="token punctuation">:</span>
+    <span class="token comment"># Use a custom driver</span>
+    <span class="token key atrule">driver</span><span class="token punctuation">:</span> custom<span class="token punctuation">-</span>driver<span class="token punctuation">-</span><span class="token number">1</span>
+  <span class="token key atrule">other-network</span><span class="token punctuation">:</span>
+    <span class="token comment"># Use a custom driver which takes special options</span>
+    <span class="token key atrule">driver</span><span class="token punctuation">:</span> custom<span class="token punctuation">-</span>driver<span class="token punctuation">-</span><span class="token number">2</span>
+</code></pre></div><h3 id="services"><a href="#services" class="header-anchor">#</a> services</h3> <p>服务配置。</p> <h2 id="服务配置说明"><a href="#服务配置说明" class="header-anchor">#</a> 服务配置说明</h2> <p>服务定义包含应用于为该服务启动的每个容器的配置，非常类似于将命令行参数传递给 <code>docker run</code>。</p> <h3 id="build"><a href="#build" class="header-anchor">#</a> build</h3> <p>指定为构建镜像上下文路径。</p> <p>例如 <code>webapp</code> 服务，指定为从上下文路径 <code>./dir/Dockerfile</code> 所构建的镜像：</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3.8'</span>
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">webapp</span><span class="token punctuation">:</span>
+    <span class="token key atrule">build</span><span class="token punctuation">:</span> ./dir
+</code></pre></div><p>或者，作为具有在上下文指定的路径的对象，以及可选的 Dockerfile 和 <code>args</code>：</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3.8'</span>
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">webapp</span><span class="token punctuation">:</span>
+    <span class="token key atrule">build</span><span class="token punctuation">:</span>
+      <span class="token key atrule">context</span><span class="token punctuation">:</span> ./dir
+      <span class="token key atrule">dockerfile</span><span class="token punctuation">:</span> Dockerfile<span class="token punctuation">-</span>alternate
+      <span class="token key atrule">args</span><span class="token punctuation">:</span>
+        <span class="token key atrule">buildno</span><span class="token punctuation">:</span> <span class="token number">1</span>
+</code></pre></div><p>其中；</p> <ul><li><code>context</code>：上下文路径。</li> <li><code>dockerfile</code>：指定构建镜像的 Dockerfile 文件名。</li> <li><code>args</code>：添加构建参数，这是只能在构建过程中访问的环境变量。</li> <li><code>labels</code>：设置构建镜像的标签。</li> <li><code>target</code>：多层构建，可以指定构建哪一层。</li></ul> <h3 id="image"><a href="#image" class="header-anchor">#</a> image</h3> <p>指定容器运行的镜像。以下格式都可以：</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">image</span><span class="token punctuation">:</span> redis
+<span class="token key atrule">image</span><span class="token punctuation">:</span> ubuntu<span class="token punctuation">:</span><span class="token number">14.04</span>
+<span class="token key atrule">image</span><span class="token punctuation">:</span> tutum/influxdb
+<span class="token key atrule">image</span><span class="token punctuation">:</span> example<span class="token punctuation">-</span>registry.com<span class="token punctuation">:</span>4000/postgresql
+<span class="token key atrule">image</span><span class="token punctuation">:</span> a4bc65fd <span class="token comment"># 镜像id</span>
+</code></pre></div><h3 id="container-name"><a href="#container-name" class="header-anchor">#</a> container_name</h3> <p>指定自定义容器名称，而不是生成的默认名称。</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">container_name</span><span class="token punctuation">:</span> my<span class="token punctuation">-</span>web<span class="token punctuation">-</span>container
+</code></pre></div><h3 id="environment"><a href="#environment" class="header-anchor">#</a> environment</h3> <p>添加环境变量。您可以使用数组或字典、任何布尔值，布尔值需要用引号引起来，以确保 YML 解析器不会将其转换为 True 或 False。</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">environment</span><span class="token punctuation">:</span>
+  <span class="token key atrule">RACK_ENV</span><span class="token punctuation">:</span> development
+  <span class="token key atrule">SHOW</span><span class="token punctuation">:</span> <span class="token string">'true'</span>
+</code></pre></div><h3 id="env-file"><a href="#env-file" class="header-anchor">#</a> env_file</h3> <p>从文件添加环境变量。可以是单个值或列表的多个值。</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">env_file</span><span class="token punctuation">:</span> .env
+</code></pre></div><p>也可以是列表格式：</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">env_file</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> ./common.env
+  <span class="token punctuation">-</span> ./apps/web.env
+  <span class="token punctuation">-</span> /opt/secrets.env
+</code></pre></div><h3 id="volumes-2"><a href="#volumes-2" class="header-anchor">#</a> volumes</h3> <p>将主机的数据卷或着文件挂载到容器里。</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3.7'</span>
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">db</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> postgres<span class="token punctuation">:</span>latest
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token string">'/localhost/postgres.sock:/var/run/postgres/postgres.sock'</span>
+      <span class="token punctuation">-</span> <span class="token string">'/localhost/data:/var/lib/postgresql/data'</span>
+</code></pre></div><h3 id="networks-2"><a href="#networks-2" class="header-anchor">#</a> networks</h3> <p>配置容器连接的网络，引用顶级 <code>networks</code> 下的条目。</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">some-service</span><span class="token punctuation">:</span>
+    <span class="token key atrule">networks</span><span class="token punctuation">:</span>
+      <span class="token key atrule">some-network</span><span class="token punctuation">:</span>
+        <span class="token key atrule">aliases</span><span class="token punctuation">:</span>
+          <span class="token punctuation">-</span> alias1
+      <span class="token key atrule">other-network</span><span class="token punctuation">:</span>
+        <span class="token key atrule">aliases</span><span class="token punctuation">:</span>
+          <span class="token punctuation">-</span> alias2
+</code></pre></div><p><code>aliases</code>：同一网络上的其他容器可以使用服务名称或此别名来连接到对应容器的服务。</p> <h3 id="expose"><a href="#expose" class="header-anchor">#</a> expose</h3> <p>暴露端口，但不映射到宿主机，只被连接的服务访问。</p> <p>仅可以指定内部端口为参数：</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">expose</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token string">'3000'</span>
+  <span class="token punctuation">-</span> <span class="token string">'8000'</span>
+</code></pre></div><h3 id="command"><a href="#command" class="header-anchor">#</a> command</h3> <p>覆盖容器启动的默认命令。</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">command</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'bundle'</span><span class="token punctuation">,</span> <span class="token string">'exec'</span><span class="token punctuation">,</span> <span class="token string">'thin'</span><span class="token punctuation">,</span> <span class="token string">'-p'</span><span class="token punctuation">,</span> <span class="token string">'3000'</span><span class="token punctuation">]</span>
+</code></pre></div><h3 id="entrypoint"><a href="#entrypoint" class="header-anchor">#</a> entrypoint</h3> <p>覆盖容器默认的 <code>entrypoint</code>。</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">entrypoint</span><span class="token punctuation">:</span> /code/entrypoint.sh
+</code></pre></div><p>也可以是以下格式：</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">entrypoint</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> php
+  <span class="token punctuation">-</span> <span class="token punctuation">-</span>d
+  <span class="token punctuation">-</span> zend_extension=/usr/local/lib/php/extensions/no<span class="token punctuation">-</span>debug<span class="token punctuation">-</span>non<span class="token punctuation">-</span>zts<span class="token punctuation">-</span>20100525/xdebug.so
+  <span class="token punctuation">-</span> <span class="token punctuation">-</span>d
+  <span class="token punctuation">-</span> memory_limit=<span class="token punctuation">-</span><span class="token number">1</span>
+  <span class="token punctuation">-</span> vendor/bin/phpunit
+</code></pre></div><h3 id="depends-on"><a href="#depends-on" class="header-anchor">#</a> depends_on</h3> <p>设置依赖关系。</p> <ul><li>docker-compose up：以依赖性顺序启动服务。在以下示例中，先启动 <code>db</code> 和 <code>redis</code>，才会启动 <code>web</code>。</li> <li>docker-compose up SERVICE：自动包含 SERVICE 的依赖项。在以下示例中，<code>docker-compose up web</code> 还将创建并启动 <code>db</code> 和 <code>redis</code>。</li> <li>docker-compose stop：按依赖关系顺序停止服务。在以下示例中，<code>web</code> 在 <code>db</code> 和 <code>redis</code> 之前停止。</li></ul> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3.7'</span>
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">web</span><span class="token punctuation">:</span>
+    <span class="token key atrule">build</span><span class="token punctuation">:</span> .
+    <span class="token key atrule">depends_on</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> db
+      <span class="token punctuation">-</span> redis
+  <span class="token key atrule">redis</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> redis
+  <span class="token key atrule">db</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> postgres
+</code></pre></div><p>注意：<code>web</code> 服务不会等待 <code>redis</code> 和 <code>db</code> 完全启动之后才启动。</p> <h3 id="network-mode"><a href="#network-mode" class="header-anchor">#</a> network_mode</h3> <p>设置网络模式。</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">network_mode</span><span class="token punctuation">:</span> <span class="token string">&quot;bridge&quot;</span>
+<span class="token key atrule">network_mode</span><span class="token punctuation">:</span> <span class="token string">&quot;host&quot;</span>
+<span class="token key atrule">network_mode</span><span class="token punctuation">:</span> <span class="token string">&quot;none&quot;</span>
+<span class="token key atrule">network_mode</span><span class="token punctuation">:</span> <span class="token string">&quot;service:[service name]&quot;</span>
+<span class="token key atrule">network_mode</span><span class="token punctuation">:</span> <span class="token string">&quot;container:[container name/id]&quot;</span>
+</code></pre></div><h3 id="logging"><a href="#logging" class="header-anchor">#</a> logging</h3> <p>服务的日志记录配置。</p> <p><code>driver</code>：指定服务容器的日志记录驱动程序，默认值为 <code>json-file</code>。有以下三个选项</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">driver</span><span class="token punctuation">:</span> <span class="token string">&quot;json-file&quot;</span>
+<span class="token key atrule">driver</span><span class="token punctuation">:</span> <span class="token string">&quot;syslog&quot;</span>
+<span class="token key atrule">driver</span><span class="token punctuation">:</span> <span class="token string">&quot;none&quot;</span>
+</code></pre></div><p>仅在 <code>json-file</code> 驱动程序下，可以使用以下参数，限制日志得数量和大小。</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">logging</span><span class="token punctuation">:</span>
+  <span class="token key atrule">driver</span><span class="token punctuation">:</span> json<span class="token punctuation">-</span>file
+  <span class="token key atrule">options</span><span class="token punctuation">:</span>
+    <span class="token key atrule">max-size</span><span class="token punctuation">:</span> <span class="token string">'200k'</span> <span class="token comment"># 单个文件大小为200k</span>
+    <span class="token key atrule">max-file</span><span class="token punctuation">:</span> <span class="token string">'10'</span> <span class="token comment"># 最多10个文件</span>
+</code></pre></div><p>当达到文件限制上限，会自动删除旧得文件。</p> <p><code>syslog</code> 驱动程序下，可以使用 <code>syslog-address</code> 指定日志接收地址。</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">logging</span><span class="token punctuation">:</span>
+  <span class="token key atrule">driver</span><span class="token punctuation">:</span> syslog
+  <span class="token key atrule">options</span><span class="token punctuation">:</span>
+    <span class="token key atrule">syslog-address</span><span class="token punctuation">:</span> <span class="token string">'tcp://192.168.0.42:123'</span>
+</code></pre></div><h3 id="secrets"><a href="#secrets" class="header-anchor">#</a> secrets</h3> <p>存储敏感数据，例如密码：</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3.1'</span>
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+
+<span class="token key atrule">mysql</span><span class="token punctuation">:</span>
+  <span class="token key atrule">image</span><span class="token punctuation">:</span> mysql
+  <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+    <span class="token key atrule">MYSQL_ROOT_PASSWORD_FILE</span><span class="token punctuation">:</span> /run/secrets/my_secret
+  <span class="token key atrule">secrets</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> my_secret
+
+<span class="token key atrule">secrets</span><span class="token punctuation">:</span>
+  <span class="token key atrule">my_secret</span><span class="token punctuation">:</span>
+    <span class="token key atrule">file</span><span class="token punctuation">:</span> ./my_secret.txt
+</code></pre></div><h3 id="restart"><a href="#restart" class="header-anchor">#</a> restart</h3> <ul><li><code>no</code>：是默认的重启策略，在任何情况下都不会重启容器。</li> <li><code>always</code>：容器总是重新启动。</li> <li><code>on-failure</code>：在容器非正常退出时（退出状态非 0），才会重启容器。</li> <li><code>unless-stopped</code>：在容器退出时总是重启容器，但是不考虑在 Docker 守护进程启动时就已经停止了的容器</li></ul> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">restart</span><span class="token punctuation">:</span> <span class="token string">&quot;no&quot;</span>
+<span class="token key atrule">restart</span><span class="token punctuation">:</span> always
+<span class="token key atrule">restart</span><span class="token punctuation">:</span> on<span class="token punctuation">-</span>failure
+<span class="token key atrule">restart</span><span class="token punctuation">:</span> unless<span class="token punctuation">-</span>stopped
+</code></pre></div><p>注：<code>swarm</code> 集群模式，请改用 <code>restart_policy</code>。</p> <h3 id="extra-hosts"><a href="#extra-hosts" class="header-anchor">#</a> extra_hosts</h3> <p>添加主机名映射。类似 <code>docker client --add-host</code>。</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">extra_hosts</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token string">'somehost:162.242.195.82'</span>
+  <span class="token punctuation">-</span> <span class="token string">'otherhost:50.31.209.229'</span>
+</code></pre></div><p>以上会在此服务的内部容器中 <code>/etc/hosts</code> 创建一个具有 <code>ip</code> 地址和主机名的映射关系：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token number">162.242</span>.195.82  somehost
+<span class="token number">50.31</span>.209.229   otherhost
+</code></pre></div><h3 id="devices"><a href="#devices" class="header-anchor">#</a> devices</h3> <p>指定设备映射列表。</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">devices</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token string">'/dev/ttyUSB0:/dev/ttyUSB0'</span>
+</code></pre></div><h3 id="dns"><a href="#dns" class="header-anchor">#</a> dns</h3> <p>自定义 DNS 服务器，可以是单个值或列表的多个值。</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">dns</span><span class="token punctuation">:</span> 8.8.8.8
+
+<span class="token key atrule">dns</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> 8.8.8.8
+  <span class="token punctuation">-</span> 9.9.9.9
+</code></pre></div><h3 id="dns-search"><a href="#dns-search" class="header-anchor">#</a> dns_search</h3> <p>自定义 DNS 搜索域。可以是单个值或列表。</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">dns_search</span><span class="token punctuation">:</span> example.com
+
+<span class="token key atrule">dns_search</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> dc1.example.com
+  <span class="token punctuation">-</span> dc2.example.com
+</code></pre></div><h3 id="cap-add，cap-drop"><a href="#cap-add，cap-drop" class="header-anchor">#</a> cap_add，cap_drop</h3> <p>添加或删除容器拥有的宿主机的内核功能。</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">cap_add</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> ALL <span class="token comment"># 开启全部权限</span>
+
+<span class="token key atrule">cap_drop</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> SYS_PTRACE <span class="token comment"># 关闭 ptrace权限</span>
+</code></pre></div><h3 id="cgroup-parent"><a href="#cgroup-parent" class="header-anchor">#</a> cgroup_parent</h3> <p>为容器指定父 <code>cgroup</code> 组，意味着将继承该组的资源限制。</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">cgroup_parent</span><span class="token punctuation">:</span> m<span class="token punctuation">-</span>executor<span class="token punctuation">-</span>abcd
+</code></pre></div><h3 id="healthcheck"><a href="#healthcheck" class="header-anchor">#</a> healthcheck</h3> <p>用于检测 Docker 服务是否健康运行。</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">healthcheck</span><span class="token punctuation">:</span>
+  <span class="token key atrule">test</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'CMD'</span><span class="token punctuation">,</span> <span class="token string">'curl'</span><span class="token punctuation">,</span> <span class="token string">'-f'</span><span class="token punctuation">,</span> <span class="token string">'http://localhost'</span><span class="token punctuation">]</span> <span class="token comment"># 设置检测程序</span>
+  <span class="token key atrule">interval</span><span class="token punctuation">:</span> 1m30s <span class="token comment"># 设置检测间隔</span>
+  <span class="token key atrule">timeout</span><span class="token punctuation">:</span> 10s <span class="token comment"># 设置检测超时时间</span>
+  <span class="token key atrule">retries</span><span class="token punctuation">:</span> <span class="token number">3</span> <span class="token comment"># 设置重试次数</span>
+  <span class="token key atrule">start_period</span><span class="token punctuation">:</span> 40s <span class="token comment"># 启动后，多少秒开始启动检测程序</span>
+</code></pre></div><h3 id="ulimits"><a href="#ulimits" class="header-anchor">#</a> ulimits</h3> <p>覆盖容器默认的 <code>ulimit</code>。</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">ulimits</span><span class="token punctuation">:</span>
+  <span class="token key atrule">nproc</span><span class="token punctuation">:</span> <span class="token number">65535</span>
+  <span class="token key atrule">nofile</span><span class="token punctuation">:</span>
+    <span class="token key atrule">soft</span><span class="token punctuation">:</span> <span class="token number">20000</span>
+    <span class="token key atrule">hard</span><span class="token punctuation">:</span> <span class="token number">40000</span>
+</code></pre></div><h3 id="sysctls"><a href="#sysctls" class="header-anchor">#</a> sysctls</h3> <p>设置容器中的内核参数，可以使用数组或字典格式。</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">sysctls</span><span class="token punctuation">:</span>
+  <span class="token key atrule">net.core.somaxconn</span><span class="token punctuation">:</span> <span class="token number">1024</span>
+  <span class="token key atrule">net.ipv4.tcp_syncookies</span><span class="token punctuation">:</span> <span class="token number">0</span>
+
+<span class="token key atrule">sysctls</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> net.core.somaxconn=1024
+  <span class="token punctuation">-</span> net.ipv4.tcp_syncookies=0
+</code></pre></div><h3 id="tmpfs"><a href="#tmpfs" class="header-anchor">#</a> tmpfs</h3> <p>在容器内安装一个临时文件系统。可以是单个值或列表的多个值。</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">tmpfs</span><span class="token punctuation">:</span> /run
+
+<span class="token key atrule">tmpfs</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> /run
+  <span class="token punctuation">-</span> /tmp
+</code></pre></div><h3 id="stop-signal"><a href="#stop-signal" class="header-anchor">#</a> stop_signal</h3> <p>设置停止容器的替代信号。默认情况下使用 SIGTERM 。</p> <p>以下示例，使用 SIGUSR1 替代信号 SIGTERM 来停止容器。</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">stop_signal</span><span class="token punctuation">:</span> SIGUSR1
+</code></pre></div><h3 id="stop-grace-period"><a href="#stop-grace-period" class="header-anchor">#</a> stop_grace_period</h3> <p>指定在容器无法处理 SIGTERM (或者任何 stop_signal 的信号)，等待多久后发送 SIGKILL 信号关闭容器。</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">stop_grace_period</span><span class="token punctuation">:</span> 1s <span class="token comment"># 等待 1 秒</span>
+<span class="token key atrule">stop_grace_period</span><span class="token punctuation">:</span> 1m30s <span class="token comment"># 等待 1 分 30 秒</span>
+</code></pre></div><h3 id="security-opt"><a href="#security-opt" class="header-anchor">#</a> security_opt</h3> <p>修改容器默认的 <code>schema</code> 标签。</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code>security<span class="token punctuation">-</span>opt：
+  <span class="token punctuation">-</span> label<span class="token punctuation">:</span>user<span class="token punctuation">:</span>USER   <span class="token comment"># 设置容器的用户标签</span>
+  <span class="token punctuation">-</span> label<span class="token punctuation">:</span>role<span class="token punctuation">:</span>ROLE   <span class="token comment"># 设置容器的角色标签</span>
+  <span class="token punctuation">-</span> label<span class="token punctuation">:</span>type<span class="token punctuation">:</span>TYPE   <span class="token comment"># 设置容器的安全策略标签</span>
+  <span class="token punctuation">-</span> label<span class="token punctuation">:</span>level<span class="token punctuation">:</span>LEVEL  <span class="token comment"># 设置容器的安全等级标签</span>
+</code></pre></div><h2 id="参考"><a href="#参考" class="header-anchor">#</a> 参考</h2> <ul><li><a href="https://docs.docker.com/compose/compose-file/" target="_blank" rel="noopener noreferrer">Compose file version 3 reference | Docker Documentation<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/notebook/docker/basis/data-volume.html" class="prev">
+        数据卷
+      </a></span> <span class="next"><a href="/notebook/docker/basis/private-registry.html">
+        Docker 私有仓库
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/notebook/assets/js/app.695981a2.js" defer></script><script src="/notebook/assets/js/1.7e5e7c03.js" defer></script><script src="/notebook/assets/js/47.82a7b3c0.js" defer></script>
+  </body>
+</html>

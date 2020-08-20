@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>盒模型 | notes | Kisstar</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    
+    <meta name="description" content="Kisstar's personal notes">
+    <link rel="preload" href="/notebook/assets/css/0.styles.ba285c9d.css" as="style"><link rel="preload" href="/notebook/assets/js/app.695981a2.js" as="script"><link rel="preload" href="/notebook/assets/js/1.7e5e7c03.js" as="script"><link rel="preload" href="/notebook/assets/js/31.08345366.js" as="script"><link rel="prefetch" href="/notebook/assets/js/10.5555a36f.js"><link rel="prefetch" href="/notebook/assets/js/100.f759079e.js"><link rel="prefetch" href="/notebook/assets/js/101.4fe3f882.js"><link rel="prefetch" href="/notebook/assets/js/102.0bbcc40c.js"><link rel="prefetch" href="/notebook/assets/js/103.90fb8e92.js"><link rel="prefetch" href="/notebook/assets/js/104.2613f631.js"><link rel="prefetch" href="/notebook/assets/js/105.1904e1fe.js"><link rel="prefetch" href="/notebook/assets/js/106.d4b86328.js"><link rel="prefetch" href="/notebook/assets/js/107.73982f13.js"><link rel="prefetch" href="/notebook/assets/js/108.2506538f.js"><link rel="prefetch" href="/notebook/assets/js/109.f6883728.js"><link rel="prefetch" href="/notebook/assets/js/11.80c95b7f.js"><link rel="prefetch" href="/notebook/assets/js/110.4107267a.js"><link rel="prefetch" href="/notebook/assets/js/111.5a9ced4c.js"><link rel="prefetch" href="/notebook/assets/js/112.52c3ae0d.js"><link rel="prefetch" href="/notebook/assets/js/113.2c286cc0.js"><link rel="prefetch" href="/notebook/assets/js/114.d91302a3.js"><link rel="prefetch" href="/notebook/assets/js/115.066e05bf.js"><link rel="prefetch" href="/notebook/assets/js/116.f4902c30.js"><link rel="prefetch" href="/notebook/assets/js/117.1089d492.js"><link rel="prefetch" href="/notebook/assets/js/118.45a6de9c.js"><link rel="prefetch" href="/notebook/assets/js/119.d27d6f1c.js"><link rel="prefetch" href="/notebook/assets/js/12.a4370376.js"><link rel="prefetch" href="/notebook/assets/js/120.3a7544cf.js"><link rel="prefetch" href="/notebook/assets/js/121.e030c429.js"><link rel="prefetch" href="/notebook/assets/js/122.20d28e30.js"><link rel="prefetch" href="/notebook/assets/js/123.4ca971e2.js"><link rel="prefetch" href="/notebook/assets/js/124.dc81944f.js"><link rel="prefetch" href="/notebook/assets/js/125.9c84d174.js"><link rel="prefetch" href="/notebook/assets/js/126.3ceca69a.js"><link rel="prefetch" href="/notebook/assets/js/127.d785ce87.js"><link rel="prefetch" href="/notebook/assets/js/128.ded8a375.js"><link rel="prefetch" href="/notebook/assets/js/129.98f7f226.js"><link rel="prefetch" href="/notebook/assets/js/13.8382045a.js"><link rel="prefetch" href="/notebook/assets/js/130.e591be27.js"><link rel="prefetch" href="/notebook/assets/js/131.9b6eb4fd.js"><link rel="prefetch" href="/notebook/assets/js/132.9b58abc7.js"><link rel="prefetch" href="/notebook/assets/js/133.90f097b7.js"><link rel="prefetch" href="/notebook/assets/js/134.16d3fa5f.js"><link rel="prefetch" href="/notebook/assets/js/135.6b326d91.js"><link rel="prefetch" href="/notebook/assets/js/136.494c3bd6.js"><link rel="prefetch" href="/notebook/assets/js/137.766b0b1f.js"><link rel="prefetch" href="/notebook/assets/js/138.08806114.js"><link rel="prefetch" href="/notebook/assets/js/139.0865299b.js"><link rel="prefetch" href="/notebook/assets/js/14.74c5da83.js"><link rel="prefetch" href="/notebook/assets/js/140.44e67ab5.js"><link rel="prefetch" href="/notebook/assets/js/141.1d1140ec.js"><link rel="prefetch" href="/notebook/assets/js/142.3cec12cd.js"><link rel="prefetch" href="/notebook/assets/js/143.dc8cbbbb.js"><link rel="prefetch" href="/notebook/assets/js/144.6ff451a3.js"><link rel="prefetch" href="/notebook/assets/js/145.c11d2acb.js"><link rel="prefetch" href="/notebook/assets/js/146.e5d225b6.js"><link rel="prefetch" href="/notebook/assets/js/147.c219c2a1.js"><link rel="prefetch" href="/notebook/assets/js/148.6cba05ca.js"><link rel="prefetch" href="/notebook/assets/js/149.4367d290.js"><link rel="prefetch" href="/notebook/assets/js/15.862c4dd8.js"><link rel="prefetch" href="/notebook/assets/js/150.1d38502b.js"><link rel="prefetch" href="/notebook/assets/js/151.ebae6be4.js"><link rel="prefetch" href="/notebook/assets/js/152.7675d7f0.js"><link rel="prefetch" href="/notebook/assets/js/153.e5aa90e2.js"><link rel="prefetch" href="/notebook/assets/js/154.f2a6e85f.js"><link rel="prefetch" href="/notebook/assets/js/155.c857ce10.js"><link rel="prefetch" href="/notebook/assets/js/156.63fe524f.js"><link rel="prefetch" href="/notebook/assets/js/157.782f4bda.js"><link rel="prefetch" href="/notebook/assets/js/158.141c4127.js"><link rel="prefetch" href="/notebook/assets/js/159.db9dc02b.js"><link rel="prefetch" href="/notebook/assets/js/16.151452c5.js"><link rel="prefetch" href="/notebook/assets/js/160.7bda9824.js"><link rel="prefetch" href="/notebook/assets/js/161.c0b105a1.js"><link rel="prefetch" href="/notebook/assets/js/162.ad132d74.js"><link rel="prefetch" href="/notebook/assets/js/17.0587d61f.js"><link rel="prefetch" href="/notebook/assets/js/18.4d2b05f7.js"><link rel="prefetch" href="/notebook/assets/js/19.8cb4d2c4.js"><link rel="prefetch" href="/notebook/assets/js/20.01878a40.js"><link rel="prefetch" href="/notebook/assets/js/21.69361956.js"><link rel="prefetch" href="/notebook/assets/js/22.fe7d91ac.js"><link rel="prefetch" href="/notebook/assets/js/23.f8465087.js"><link rel="prefetch" href="/notebook/assets/js/24.922b6297.js"><link rel="prefetch" href="/notebook/assets/js/25.c43768cb.js"><link rel="prefetch" href="/notebook/assets/js/26.043f1db4.js"><link rel="prefetch" href="/notebook/assets/js/27.9ef023fd.js"><link rel="prefetch" href="/notebook/assets/js/28.9636beff.js"><link rel="prefetch" href="/notebook/assets/js/29.91916113.js"><link rel="prefetch" href="/notebook/assets/js/3.b70f0b3f.js"><link rel="prefetch" href="/notebook/assets/js/30.65aed714.js"><link rel="prefetch" href="/notebook/assets/js/32.0068cefa.js"><link rel="prefetch" href="/notebook/assets/js/33.744c5b33.js"><link rel="prefetch" href="/notebook/assets/js/34.5f64f72e.js"><link rel="prefetch" href="/notebook/assets/js/35.87a400e4.js"><link rel="prefetch" href="/notebook/assets/js/36.b0ea269e.js"><link rel="prefetch" href="/notebook/assets/js/37.7b90c95f.js"><link rel="prefetch" href="/notebook/assets/js/38.19a82643.js"><link rel="prefetch" href="/notebook/assets/js/39.abd4cb3c.js"><link rel="prefetch" href="/notebook/assets/js/4.02b78e18.js"><link rel="prefetch" href="/notebook/assets/js/40.e00b1569.js"><link rel="prefetch" href="/notebook/assets/js/41.5889ce56.js"><link rel="prefetch" href="/notebook/assets/js/42.0bf17165.js"><link rel="prefetch" href="/notebook/assets/js/43.449d90d0.js"><link rel="prefetch" href="/notebook/assets/js/44.c6a48e91.js"><link rel="prefetch" href="/notebook/assets/js/45.a1d21b57.js"><link rel="prefetch" href="/notebook/assets/js/46.c96f7f00.js"><link rel="prefetch" href="/notebook/assets/js/47.82a7b3c0.js"><link rel="prefetch" href="/notebook/assets/js/48.d614f857.js"><link rel="prefetch" href="/notebook/assets/js/49.1c852f85.js"><link rel="prefetch" href="/notebook/assets/js/5.aca53e6b.js"><link rel="prefetch" href="/notebook/assets/js/50.515b01de.js"><link rel="prefetch" href="/notebook/assets/js/51.0f9a7a02.js"><link rel="prefetch" href="/notebook/assets/js/52.1202f062.js"><link rel="prefetch" href="/notebook/assets/js/53.31c3a9c5.js"><link rel="prefetch" href="/notebook/assets/js/54.8b169b8e.js"><link rel="prefetch" href="/notebook/assets/js/55.9b7df2f0.js"><link rel="prefetch" href="/notebook/assets/js/56.4e1f287a.js"><link rel="prefetch" href="/notebook/assets/js/57.9515797e.js"><link rel="prefetch" href="/notebook/assets/js/58.3fbe5aac.js"><link rel="prefetch" href="/notebook/assets/js/59.898334ad.js"><link rel="prefetch" href="/notebook/assets/js/6.ae5c2b7f.js"><link rel="prefetch" href="/notebook/assets/js/60.842f6d02.js"><link rel="prefetch" href="/notebook/assets/js/61.46faa661.js"><link rel="prefetch" href="/notebook/assets/js/62.c6d6e425.js"><link rel="prefetch" href="/notebook/assets/js/63.97adbd06.js"><link rel="prefetch" href="/notebook/assets/js/64.1b88dee7.js"><link rel="prefetch" href="/notebook/assets/js/65.54d6c336.js"><link rel="prefetch" href="/notebook/assets/js/66.f1ddc697.js"><link rel="prefetch" href="/notebook/assets/js/67.3ce55620.js"><link rel="prefetch" href="/notebook/assets/js/68.178403c5.js"><link rel="prefetch" href="/notebook/assets/js/69.356702b3.js"><link rel="prefetch" href="/notebook/assets/js/7.851811b0.js"><link rel="prefetch" href="/notebook/assets/js/70.d4f2df1b.js"><link rel="prefetch" href="/notebook/assets/js/71.ea0d3661.js"><link rel="prefetch" href="/notebook/assets/js/72.42a2f1c4.js"><link rel="prefetch" href="/notebook/assets/js/73.351005ef.js"><link rel="prefetch" href="/notebook/assets/js/74.1bc0f519.js"><link rel="prefetch" href="/notebook/assets/js/75.186107dd.js"><link rel="prefetch" href="/notebook/assets/js/76.a30fddd4.js"><link rel="prefetch" href="/notebook/assets/js/77.548802cd.js"><link rel="prefetch" href="/notebook/assets/js/78.695d98cd.js"><link rel="prefetch" href="/notebook/assets/js/79.1f195e5d.js"><link rel="prefetch" href="/notebook/assets/js/8.6629bfc2.js"><link rel="prefetch" href="/notebook/assets/js/80.7e5bf821.js"><link rel="prefetch" href="/notebook/assets/js/81.1aef26c7.js"><link rel="prefetch" href="/notebook/assets/js/82.98fb7874.js"><link rel="prefetch" href="/notebook/assets/js/83.cb222248.js"><link rel="prefetch" href="/notebook/assets/js/84.490eeeb4.js"><link rel="prefetch" href="/notebook/assets/js/85.f6d0b63d.js"><link rel="prefetch" href="/notebook/assets/js/86.92a3a079.js"><link rel="prefetch" href="/notebook/assets/js/87.39b4bda3.js"><link rel="prefetch" href="/notebook/assets/js/88.bf7ab095.js"><link rel="prefetch" href="/notebook/assets/js/89.99ace825.js"><link rel="prefetch" href="/notebook/assets/js/9.93ce6aed.js"><link rel="prefetch" href="/notebook/assets/js/90.17093654.js"><link rel="prefetch" href="/notebook/assets/js/91.4913cc92.js"><link rel="prefetch" href="/notebook/assets/js/92.37a40f65.js"><link rel="prefetch" href="/notebook/assets/js/93.f1f887df.js"><link rel="prefetch" href="/notebook/assets/js/94.f1db30fd.js"><link rel="prefetch" href="/notebook/assets/js/95.a61036d2.js"><link rel="prefetch" href="/notebook/assets/js/96.ed173e16.js"><link rel="prefetch" href="/notebook/assets/js/97.765420ba.js"><link rel="prefetch" href="/notebook/assets/js/98.29fddfc0.js"><link rel="prefetch" href="/notebook/assets/js/99.9e475ad7.js">
+    <link rel="stylesheet" href="/notebook/assets/css/0.styles.ba285c9d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/notebook/" class="home-link router-link-active"><img src="/notebook/logo.png" alt="notes | Kisstar" class="logo"> <span class="site-name can-hide">notes | Kisstar</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="IT" class="dropdown-title"><span class="title">IT</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          FED
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/html/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-subitem"><a href="/notebook/css/" class="nav-link router-link-active">
+  CSS
+</a></li><li class="dropdown-subitem"><a href="/notebook/js/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-subitem"><a href="/notebook/ts/" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-subitem"><a href="/notebook/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-subitem"><a href="/notebook/react/" class="nav-link">
+  React
+</a></li><li class="dropdown-subitem"><a href="/notebook/web/" class="nav-link">
+  WEB
+</a></li></ul></li><li class="dropdown-item"><h4>
+          BED
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/nodejs/" class="nav-link">
+  NodeJS
+</a></li><li class="dropdown-subitem"><a href="/notebook/webpack/" class="nav-link">
+  Webpack
+</a></li></ul></li><li class="dropdown-item"><h4>
+          OTHER
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/wechat/" class="nav-link">
+  WeChat
+</a></li><li class="dropdown-subitem"><a href="/notebook/project/" class="nav-link">
+  Project
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="DevTools" class="dropdown-title"><span class="title">DevTools</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/vim/" class="nav-link">
+  Vim
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Computer" class="dropdown-title"><span class="title">Computer</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/cp/" class="nav-link">
+  Computer Basis
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/algorithm/" class="nav-link">
+  Algorithm
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/windows/" class="nav-link">
+  Windows
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/database/" class="nav-link">
+  Database
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Cloud" class="dropdown-title"><span class="title">Cloud</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/docker/" class="nav-link">
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/dev-ops/" class="nav-link">
+  DevOps
+</a></li></ul></div></div><div class="nav-item"><a href="/notebook/collection/" class="nav-link">
+  Collection
+</a></div><div class="nav-item"><a href="/notebook/other/" class="nav-link">
+  Other
+</a></div><div class="nav-item"><a href="https://github.com/kisstar/notebook/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="IT" class="dropdown-title"><span class="title">IT</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          FED
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/html/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-subitem"><a href="/notebook/css/" class="nav-link router-link-active">
+  CSS
+</a></li><li class="dropdown-subitem"><a href="/notebook/js/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-subitem"><a href="/notebook/ts/" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-subitem"><a href="/notebook/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-subitem"><a href="/notebook/react/" class="nav-link">
+  React
+</a></li><li class="dropdown-subitem"><a href="/notebook/web/" class="nav-link">
+  WEB
+</a></li></ul></li><li class="dropdown-item"><h4>
+          BED
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/nodejs/" class="nav-link">
+  NodeJS
+</a></li><li class="dropdown-subitem"><a href="/notebook/webpack/" class="nav-link">
+  Webpack
+</a></li></ul></li><li class="dropdown-item"><h4>
+          OTHER
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/wechat/" class="nav-link">
+  WeChat
+</a></li><li class="dropdown-subitem"><a href="/notebook/project/" class="nav-link">
+  Project
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="DevTools" class="dropdown-title"><span class="title">DevTools</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/vim/" class="nav-link">
+  Vim
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Computer" class="dropdown-title"><span class="title">Computer</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/cp/" class="nav-link">
+  Computer Basis
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/algorithm/" class="nav-link">
+  Algorithm
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/windows/" class="nav-link">
+  Windows
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/database/" class="nav-link">
+  Database
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Cloud" class="dropdown-title"><span class="title">Cloud</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/docker/" class="nav-link">
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/dev-ops/" class="nav-link">
+  DevOps
+</a></li></ul></div></div><div class="nav-item"><a href="/notebook/collection/" class="nav-link">
+  Collection
+</a></div><div class="nav-item"><a href="/notebook/other/" class="nav-link">
+  Other
+</a></div><div class="nav-item"><a href="https://github.com/kisstar/notebook/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>基础</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notebook/css/" aria-current="page" class="sidebar-link">CSS</a></li><li><a href="/notebook/css/basis/box-model.html" aria-current="page" class="active sidebar-link">盒模型</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/notebook/css/basis/box-model.html#基础概念" class="sidebar-link">基础概念</a></li><li class="sidebar-sub-header"><a href="/notebook/css/basis/box-model.html#规定元素的盒类型" class="sidebar-link">规定元素的盒类型</a></li><li class="sidebar-sub-header"><a href="/notebook/css/basis/box-model.html#盒子的嵌套" class="sidebar-link">盒子的嵌套</a></li><li class="sidebar-sub-header"><a href="/notebook/css/basis/box-model.html#外边距合并" class="sidebar-link">外边距合并</a></li><li class="sidebar-sub-header"><a href="/notebook/css/basis/box-model.html#块格式化上下文（bfc）" class="sidebar-link">块格式化上下文（BFC）</a></li><li class="sidebar-sub-header"><a href="/notebook/css/basis/box-model.html#参考资料" class="sidebar-link">参考资料</a></li></ul></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>LESS</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>SCSS</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>面试</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="盒模型"><a href="#盒模型" class="header-anchor">#</a> 盒模型</h1> <p><strong>CSS 基础框盒模型（CSS basic box model）</strong> 是 CSS 规范的一个模块，常被直译为盒子模型、盒模型或框模型。</p> <p>它定义了一种长方形的盒子，包括它们各自的内边距（padding）与外边距（margin ），并根据视觉格式化模型来生成元素，对其进行布置、编排、布局（layout）。</p> <h2 id="基础概念"><a href="#基础概念" class="header-anchor">#</a> 基础概念</h2> <p>当对一个文档进行布局的时候，浏览器的渲染引擎会根据盒模型，将所有元素表示为一个个矩形的盒子。</p> <p>每个盒子由四个部分（或称区域）组成，其效用由它们各自的边界（Edge）所定义。与盒子的四个组成区域相对应，每个盒子有四个边界：</p> <img src="/notebook/images/css/boxmodel.png" alt="boxmodel"> <ul><li>内容边界（Content Edge）：由内容边界限制，容纳着元素的“真实”内容，例如文本、图像等，它的尺寸就是 <code>content-box</code> 的尺寸。</li> <li>内边距边界（Padding Edge）：由内边距边界限制，扩展自内容区域，负责延伸内容区域的背景，填充元素中内容与边框的间距。它的尺寸就是 <code>padding-box</code> 的尺寸。</li> <li>边框边界（Border Edge）：由边框边界限制，扩展自内边距区域，是容纳边框的区域。其尺寸就是 <code>border-box</code> 的尺寸。</li> <li>外边框边界（Margin Edge）：由外边距边界限制，用空白区域扩展边框区域，以分开相邻的元素。它的尺寸为 <code>margin-box</code> 的尺寸。</li></ul> <p>同几者密切相关的 CSS 属性包括 <code>box-sizing</code> 和 <code>background-clip</code>。</p> <p><code>box-sizing</code> 属性定义了 <code>user agent</code> 应该如何计算一个元素的总宽度和总高度，可能的值主要包括 <code>content-box</code>（默认）和 <code>border-box</code>。</p> <ul><li>在默认情况（标准盒模型）下，<code>width</code> 与 <code>height</code> 只包括内容的宽和高， 不包括边框（border）、内边距（padding）和边距（margin）。</li> <li>而后者（IE 模型）的 <code>width</code> 和 <code>height</code> 属性则包括内容，内边距和边框，但不包括外边距。</li></ul> <img src="/notebook/images/css/W3C_and_Internet_Explorer_box_models.png" alt="W3C_and_Internet_Explorer_box_models"> <p>对于 <code>background-clip</code> 属性，它被用来设置元素的背景（背景图片或颜色）是否延伸到边框下面。可能的值主要包括 <code>border-box</code>（默认）、<code>padding-box</code>、<code>content-box</code>。</p> <ul><li>默认情况下（<code>border-box</code>），背景延伸至边框外沿，且在边框下层。</li> <li>当设置为 <code>padding-box</code> 时，背景延伸至内边距外沿。</li> <li>而对于 <code>content-box</code>，背景被裁剪至内容区外沿。</li></ul> <h2 id="规定元素的盒类型"><a href="#规定元素的盒类型" class="header-anchor">#</a> 规定元素的盒类型</h2> <p>每个元素都具有默认的盒子模型，但我们仍然可以显式的声明或改变一个元素的盒模型。</p> <p>当我们把 CSS 属性 <code>display</code> 设置为 <code>block</code>、<code>list-item</code>、<code>table</code> 等时就会使元素变为块级元素，每个块级元素生成一个主块级盒来包含子级盒。</p> <p>对应的，每个行级元素也会生成一个行级盒，行级盒可分布于多行中。当我们把 CSS 属性 <code>display</code> 设置为 <code>inline</code>，<code>inline-block</code> 等时就会使元素变为行级元素。</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+  <span class="token selector">p</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 50em<span class="token punctuation">;</span>
+    <span class="token property">padding</span><span class="token punctuation">:</span> 1em<span class="token punctuation">;</span>
+    <span class="token property">line-height</span><span class="token punctuation">:</span> 2<span class="token punctuation">;</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> #ccf<span class="token punctuation">;</span>
+    <span class="token property">border</span><span class="token punctuation">:</span> 2px solid #00f<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token selector">span</span> <span class="token punctuation">{</span>
+    <span class="token property">margin-top</span><span class="token punctuation">:</span> 1px<span class="token punctuation">;</span>
+    <span class="token property">padding-top</span><span class="token punctuation">:</span> 1px<span class="token punctuation">;</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> #fcc<span class="token punctuation">;</span>
+    <span class="token property">border</span><span class="token punctuation">:</span> 2px solid #f00<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span>
+    Learn to Code HTML &amp; CSS is a simple and comprehensive guide dedicated to helping beginners
+    learn HTML and CSS. Outlining the fundamentals, this guide works through all common elements of
+    front-end design and development.
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>运行上面的例子，可以发现由 <code>span</code> 标签产生的行级盒子在内容过多时产生了换行，但只在第一行有左边框，在最后一行有右边框，这正是因为行级盒子内容过多时产生了自动换行，而对于换行后的几行内容仍然属于一个行级盒子。</p> <p>也正是由于上面的特性，我们在对多行的行级盒子设置 <code>margin-left</code> 时会发现只对第一行有效。</p> <p>另外，行级盒子的 <code>margin-top</code> 和 <code>margin-bottom</code> 不会产生效果，其 <code>padding-top</code> 和 <code>padding-bottom</code> 也不会影响布局（不会撑开父元素）。</p> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>当 <code>display</code> 设置为 <code>inline-block</code> 时，此元素会生成一个行级盒，所以会在行内显示，而同时又为其内容产生了块级盒，所以除了在行内显示外，它表现出的确是块级元素的特征。</p></div> <h2 id="盒子的嵌套"><a href="#盒子的嵌套" class="header-anchor">#</a> 盒子的嵌套</h2> <p>在块级盒子中：</p> <ul><li>可以包含多个子块级盒子。</li> <li>可以包含多个子行级盒子。</li> <li>其中不在行级元素中的文字，会生成匿名的行级盒。</li> <li>其中不能同时存在块级和行级盒子，遇到此种情况，将会生成匿名的块级盒子来包裹行级盒。</li></ul> <p>在行级盒子中：</p> <ul><li>可以包含行级盒子。</li> <li>可以包含一个块级盒子，其中与块级盒子并列的行级盒子会被匿名的块级盒子包裹。</li></ul> <h2 id="外边距合并"><a href="#外边距合并" class="header-anchor">#</a> 外边距合并</h2> <p>块级元素的上外边距和下外边距有时会合并（或折叠）为一个外边距，其大小取其中的最大者，这种行为称为外边距折叠（margin collapsing），有时也称为外边距合并。</p> <p>外边距的折叠通常发生在下面三种情况：</p> <ul><li><p>相邻元素之间</p> <p>相邻元素之间的外边距会折叠（除非后一个元素清除之前的浮动）。</p></li> <li><p>父元素与其第一个或最后一个子元素之间</p> <p>如果在父元素与其第一个子元素之间不存在边框、内边距、行内内容，也没有创建块格式化上下文、或者清除浮动将两者的 <code>margin-top</code> 分开；或者在父元素与其最后一个子元素之间不存在边框、内边距、行内内容、<code>height</code>、<code>min-height</code>、<code>max-height</code> 将两者的 <code>margin-bottom</code> 分开，那么这两对外边距之间会产生折叠。此时子元素的外边距会“溢出”到父元素的外面。</p></li> <li><p>空的块级元素</p> <p>如果一个块级元素中不包含任何内容，并且在其 <code>margin-top</code> 与 <code>margin-bottom</code> 之间没有边框、内边距、行内内容、<code>height</code>、<code>min-height</code> 将两者分开，则该元素的上下外边距会折叠。</p></li></ul> <p>对外边距的含义，可以简单的理解为规定了元素外多大区域内不能摆放其它盒子，这对于理解外边距合并很有用。</p> <p>以相邻元素为例：</p> <div class="language-less extra-class"><pre class="language-less"><code><span class="token selector">.top</span> <span class="token punctuation">{</span>
+  <span class="token property">margin-bottom</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.bottom</span> <span class="token punctuation">{</span>
+  <span class="token property">margin-top</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>top<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>top<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>bottom<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>bottom<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>此时，因为上面的元素规定其下方 <code>20px</code> 内不允许放其它的盒子，下面的元素规定其上方 <code>10px</code> 内不允许放置其它盒子，所以两者之间只要保留 <code>20px</code> 的距离就同时满足两者的条件了，因此产生了折叠。</p> <p>另外，还有一些值得注意的地方：</p> <ul><li>浮动元素和绝对定位元素的外边距不会折叠。</li> <li>即使某一外边距为 0，这些规则仍然适用。所以第一个或最后一个子元素的外边距可能会 “溢出” 到父元素的外面。</li> <li>如果参与折叠的外边距中包含负值，折叠后的外边距的值为最大的正边距与最小的负边距（即绝对值最大的负边距）的和。</li> <li>如果所有参与折叠的外边距都为负，折叠后的外边距的值为最小的负边距的值。这一规则适用于相邻元素和嵌套元素。</li></ul> <h2 id="块格式化上下文（bfc）"><a href="#块格式化上下文（bfc）" class="header-anchor">#</a> 块格式化上下文（BFC）</h2> <p><strong>块格式化上下文（Block Formatting Context，BFC）</strong> 是 Web 页面可视化 CSS 渲染的一部分，是块盒子的布局过程发生的区域，也是浮动元素与其他元素交互的区域。</p> <p>常见的产生块级上下文的方式包括：</p> <ul><li>浮动元素（元素的 <code>float</code> 不是 <code>none</code>）。</li> <li>绝对定位元素（元素的 <code>position</code> 为 <code>absolute</code> 或 <code>fixed</code>）。</li> <li><code>overflow</code> 值不为 <code>visible</code> 的块元素。</li> <li><code>display</code> 值为 <code>inline-block</code>、<code>table-cell</code>、<code>table-caption</code>、<code>flex</code>、<code>grid</code>、<code>flow-root</code> 的元素。</li></ul> <p>由于外边距折叠（Margin collapsing）只会发生在属于同一 BFC 的块级元素之间，因此我们可以通过创建 BFC 来解决外边距合并的问题。</p> <div class="language-less extra-class"><pre class="language-less"><code><span class="token selector">.generate-bfc</span> <span class="token punctuation">{</span>
+  <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.top</span> <span class="token punctuation">{</span>
+  <span class="token property">margin-bottom</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.bottom</span> <span class="token punctuation">{</span>
+  <span class="token property">margin-top</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>generate-bfc<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>top<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>top<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>bottom<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>bottom<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>因为，块格式化上下文包含的是创建它的元素内部的所有内容，所以我们在 <code>.top</code> 元素的父元素上产生了 BFC，此时两者的外边距将不会产生折叠。</p> <p>另外，浮动定位和清除浮动时只会应用于同一个 BFC 内的元素，所以利用 BFC 解决由浮动产生的高度塌陷也很简单，只需要在浮动元素的父元素上创建 BFC 就可以让让浮动元素也参与高度计算。</p> <h2 id="参考资料"><a href="#参考资料" class="header-anchor">#</a> 参考资料</h2> <ul><li><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Box_Model" target="_blank" rel="noopener noreferrer">CSS 基础框盒模型 - CSS（层叠样式表） | MDN<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://www.zhangxinxu.com/wordpress/2012/04/inline-block-space-remove-%e5%8e%bb%e9%99%a4%e9%97%b4%e8%b7%9d/" target="_blank" rel="noopener noreferrer">去除 inline-block 元素间间距的 N 种方法 « 张鑫旭-鑫空间-鑫生活<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/notebook/css/" class="prev router-link-active">
+        CSS
+      </a></span> <span class="next"><a href="/notebook/css/less/">
+        邂逅
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/notebook/assets/js/app.695981a2.js" defer></script><script src="/notebook/assets/js/1.7e5e7c03.js" defer></script><script src="/notebook/assets/js/31.08345366.js" defer></script>
+  </body>
+</html>
