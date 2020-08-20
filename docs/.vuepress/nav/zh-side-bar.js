@@ -368,5 +368,12 @@ module.exports = {
       children: ['', 'basis/meet-vscode'],
     },
   ],
+  '/dev-ops/': [
+    {
+      title: '基础',
+      sidebarDepth: 2,
+      children: ['', 'basis/circle-ci'],
+    },
+  ],
   '/': [''],
 }

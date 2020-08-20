@@ -116,6 +116,10 @@ module.exports = [
         text: 'Docker',
         link: '/docker/',
       },
+      {
+        text: 'DevOps',
+        link: '/dev-ops/',
+      },
     ],
   },
   {
