@@ -291,7 +291,6 @@ module.exports = {
         'basis/mount',
         'basis/user-log',
         'basis/user-manage',
-        'basis/ssh',
         'basis/view-help',
       ],
     },
