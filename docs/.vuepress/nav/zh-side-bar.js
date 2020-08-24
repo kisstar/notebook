@@ -48,6 +48,7 @@ module.exports = {
         'advanced/create-object',
         'advanced/ergodic',
         'advanced/context-scope',
+        'advanced/module',
       ],
     },
     {
