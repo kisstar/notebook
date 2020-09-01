@@ -32,6 +32,7 @@ module.exports = {
         'basis/data-type-memory',
         'basis/handle-error',
         'basis/ajax-to-north',
+        'basis/meet-regexp',
       ],
     },
     {
