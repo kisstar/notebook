@@ -73,6 +73,18 @@ module.exports = {
       ],
     },
     {
+      title: '读书笔记',
+      sidebarDepth: 2,
+      children: [
+        'read/ydkjs0',
+        'read/ydkjs1',
+        'read/ydkjs2',
+        'read/ydkjs3',
+        'read/ydkjs4',
+        'read/ydkjs5',
+      ],
+    },
+    {
       title: '奇思妙想',
       sidebarDepth: 2,
       children: [
