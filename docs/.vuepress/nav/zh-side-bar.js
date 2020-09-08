@@ -84,6 +84,7 @@ module.exports = {
         'read/ydkjs5',
         'read/ydkjs6',
         'read/ydkjs7',
+        'read/ydkjs8',
       ],
     },
     {
