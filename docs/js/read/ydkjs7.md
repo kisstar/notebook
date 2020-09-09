@@ -1,4 +1,4 @@
-# 原生函数
+# YDKJS-原生函数
 
 JavaScript 的内建函数（built-in function），也叫原生函数（native function），常见的原生函数有：
 
