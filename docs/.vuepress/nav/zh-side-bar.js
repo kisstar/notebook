@@ -104,6 +104,7 @@ module.exports = {
         'fantastic-ideas/better-code',
         'fantastic-ideas/throttle-debounce',
         'fantastic-ideas/advanced-func',
+        'fantastic-ideas/fresh',
       ],
     },
   ],
@@ -148,6 +149,11 @@ module.exports = {
       title: '基础',
       sidebarDepth: 2,
       children: ['', 'basis/github-work', 'basis/common-scene'],
+    },
+    {
+      title: '命令',
+      sidebarDepth: 2,
+      children: ['command/log'],
     },
     {
       title: '进阶',
