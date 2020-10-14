@@ -40,10 +40,12 @@ function throttle(method, context, delay) {
  * @param context {obj} 执行环境
  */
 function debounce(method, context) {
-  clearTimeout(method.tId)
-  method.tId = setTimeout(function() {
-    method.call(context)
-  }, 100)
+  return function() {
+    clearTimeout(method.tId)
+    method.tId = setTimeout(function() {
+      method.call(context)
+    }, 100)
+  }
 }
 ```
 

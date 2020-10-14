@@ -332,7 +332,7 @@ if (Boolean(a)) {
 关于对象（对象/函数/数组）和标量基本类型（字符串/数字/布尔值）之间的相等比较：
 
 - 如果 `Type(x)` 是字符串或数字，`Type(y)` 是对象，则返回 `x == ToPrimitive(y)` 的结果；
-- 如果 `Type(x)` 是对象，`Type(y)` 是字符串或数字，则返回 `ToPromitive(x) == y` 的结果。
+- 如果 `Type(x)` 是对象，`Type(y)` 是字符串或数字，则返回 `ToPrimitive(x) == y` 的结果。
 
 ### 比较少见的情况
 
