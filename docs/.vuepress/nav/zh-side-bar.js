@@ -110,6 +110,13 @@ module.exports = {
       ],
     },
   ],
+  '/ng/': [
+    {
+      title: '基础',
+      sidebarDepth: 2,
+      children: ['', 'basis/basic-grammar'],
+    },
+  ],
   '/vue/': [
     {
       title: '基础',

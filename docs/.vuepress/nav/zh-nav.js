@@ -22,6 +22,10 @@ module.exports = [
             link: '/ts/',
           },
           {
+            text: 'AngularJS',
+            link: '/ng/',
+          },
+          {
             text: 'Vue',
             link: '/vue/',
           },
