@@ -56,6 +56,10 @@ module.exports = [
         text: 'OTHER',
         items: [
           {
+            text: 'Electron',
+            link: '/electron/',
+          },
+          {
             text: 'WeChat',
             link: '/wechat/',
           },

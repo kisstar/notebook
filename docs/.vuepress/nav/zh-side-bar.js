@@ -423,5 +423,12 @@ module.exports = {
       children: ['', 'basis/circle-ci'],
     },
   ],
+  '/electron/': [
+    {
+      title: '基础',
+      sidebarDepth: 2,
+      children: [''],
+    },
+  ],
   '/': [''],
 }
