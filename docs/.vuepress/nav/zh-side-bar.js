@@ -315,6 +315,13 @@ module.exports = {
       ],
     },
   ],
+  '/mac/': [
+    {
+      title: '基础',
+      sidebarDepth: 2,
+      children: ['', 'homebrew'],
+    },
+  ],
   '/linux/': [
     {
       title: '基础',

@@ -100,6 +100,10 @@ module.exports = [
         link: '/linux/',
       },
       {
+        text: 'Mac',
+        link: '/mac/',
+      },
+      {
         text: 'Windows',
         link: '/windows/',
       },
