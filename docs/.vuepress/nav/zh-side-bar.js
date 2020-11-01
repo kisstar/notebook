@@ -114,7 +114,7 @@ module.exports = {
     {
       title: '基础',
       sidebarDepth: 2,
-      children: ['', 'basis/basic-grammar'],
+      children: ['', 'basis/basic-grammar', 'basis/ng-class'],
     },
   ],
   '/vue/': [
