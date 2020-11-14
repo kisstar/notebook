@@ -98,18 +98,18 @@ angular.module('App', [])
 - 一段 HTML 文本。
 - 一个可以接受两个参数的函数，参数为 `tElement` 和 `tAttrs`，并返回一个代表模板的字符串。`tElement` 和 `tAttrs` 中的 `t` 代表 `template`，是相对于 `instance` 的。
 
-AngularJS 会同处理 HTML 一样处理模板字符串。所以我们可以就像是使用普通的 HTML 一样，比如模板中可以通过大括号标记来访问作用域，例如 `{{ expression }}`。
+AngularJS 会同处理 HTML 一样处理模板字符串。所以我们可以就像是使用普通的 HTML 一样，比如模板中可以通过大括号标记来访问作用域。
 
 需要注意的是，如果模板字符串中含有多个 DOM 元素，或者只由一个单独的文本节点构成，那它必须被包含在一个父元素内。换句话说，必须存在一个根 DOM 元素。
 
 另外，对于换行的模版字符串需要在每一行末尾的添加反斜线，这样 AngularJS 才能正确解析多行字符串。
 
 ```javascript
-template: '\
-    <div>\
-        <p>Hello world!</P>\
-        <p>I like AngularJS!</P>\
-    </div>\'
+template: `
+    <div>
+        <p>Hello world!</P>
+        <p>I like AngularJS!</P>
+    </div>`
 ```
 
 ### templateUrl（字符串或函数）
@@ -121,7 +121,7 @@ template: '\
 
 无论哪种方式，模板的 URL 都将通过 AngularJS 内置的安全层，特别是 `$getTrusted ResourceUrl`，这样可以保护模板不会被不信任的源加载。
 
-默认情况下，调用指令时会在后台通过 `Ajax` 来请求 HTML 模板文件。所以需要清楚的是，模板加载是异步的，意味着编译和链接要暂停，等待模板加载完成。为了避免延迟，可以在部署应用之前对 HTML 模板进行缓存。模板加载后，AngularJS 会将它默认缓存到 `$templateCache` 服务中。
+默认情况下，调用指令时会在后台通过 Ajax 来请求 HTML 模板文件。所以需要清楚的是，模板加载是异步的，意味着编译和链接要暂停，等待模板加载完成。为了避免延迟，可以在部署应用之前对 HTML 模板进行缓存。模板加载后，AngularJS 会将它默认缓存到 `$templateCache` 服务中。
 
 ### replace（布尔型）
 
@@ -244,7 +244,7 @@ angular.module('myApp').directive('myDirective', function() {
 
 ### 编译阶段
 
-在编译阶段，AngularJS 会遍历整个 HTML 文档并根据 `JavaScript` 中的指令定义来处理页面上声明的指令。
+在编译阶段，AngularJS 会遍历整个 HTML 文档并根据 JavaScript 中的指令定义来处理页面上声明的指令。
 
 每一个指令的模板中都可能含有另外一个指令，另外一个指令也可能会有自己的模板。当 AngularJS 调用 HTML 文档根部的指令时，会遍历其中所有的模板，模板中也可能包含带有模板的指令，若有则继续遍历。
 
@@ -260,7 +260,7 @@ angular.module('myApp').directive('myDirective', function() {
 
 ### compile（对象或函数）
 
-compile 选项可以返回一个对象或函数。
+`compile` 选项可以返回一个对象或函数。
 
 `compile` 选项本身并不会被频繁使用，但是 `link` 函数则会被经常使用。**当我们设置 `link` 选项， 实际上是创建了一个 `postLink()` 链接函数**，以便 `compile()` 函数可以定义链接函数。
 
@@ -280,7 +280,11 @@ compile: function(tEle, tAttrs, transcludeFn) {
 
 通常情况下，如果设置了 `compile` 函数，说明我们希望在指令和实时数据被放到 DOM 中之前进行 DOM 操作，在这个函数中进行诸如添加和删除节点等 DOM 操作是安全的。
 
-> [!NOTE|label:Note] > `compile` 和 `link` 选项是互斥的。如果同时设置了这两个选项，那么会把 `compile` 所返回的函数当作链接函数，而 `link` 选项本身则会被忽略。编译函数负责对模板 DOM 进行转换。链接函数负责将作用域和 DOM 进行链接。
+::: tip
+
+`compile` 和 `link` 选项是互斥的。如果同时设置了这两个选项，那么会把 `compile` 所返回的函数当作链接函数，而 `link` 选项本身则会被忽略。编译函数负责对模板 DOM 进行转换。链接函数负责将作用域和 DOM 进行链接。
+
+:::
 
 ### link 函数
 
