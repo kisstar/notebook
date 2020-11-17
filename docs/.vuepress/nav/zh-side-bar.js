@@ -120,6 +120,7 @@ module.exports = {
         'basis/ng-class',
         'basis/custom-component',
         'basis/services',
+        'basis/angular-radio',
       ],
     },
   ],
