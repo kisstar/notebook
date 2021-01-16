@@ -158,7 +158,12 @@ module.exports = {
     {
       title: '基础',
       sidebarDepth: 2,
-      children: ['', 'basis/performance'],
+      children: ['basis/performance'],
+    },
+    {
+      title: '视频',
+      sidebarDepth: 2,
+      children: ['video/basic'],
     },
     {
       title: '面试',
