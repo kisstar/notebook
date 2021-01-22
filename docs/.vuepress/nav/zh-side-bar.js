@@ -158,12 +158,17 @@ module.exports = {
     {
       title: '基础',
       sidebarDepth: 2,
-      children: ['basis/performance'],
+      children: ['', 'basis/performance'],
     },
     {
       title: '视频',
       sidebarDepth: 2,
       children: ['video/basic'],
+    },
+    {
+      title: 'Chrome',
+      sidebarDepth: 2,
+      children: ['chrome/intro'],
     },
     {
       title: '面试',
