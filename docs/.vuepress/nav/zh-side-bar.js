@@ -72,6 +72,7 @@ module.exports = {
         'third-party/require-js-2',
         'third-party/require-js-3',
         'third-party/jquery-0',
+        'third-party/jquery-1',
       ],
     },
     {
