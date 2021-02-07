@@ -168,7 +168,12 @@ module.exports = {
     {
       title: 'Chrome',
       sidebarDepth: 2,
-      children: ['chrome/intro'],
+      children: [
+        'chrome/intro',
+        'chrome/network',
+        'chrome/network-reference',
+        'chrome/network-issues',
+      ],
     },
     {
       title: '面试',
