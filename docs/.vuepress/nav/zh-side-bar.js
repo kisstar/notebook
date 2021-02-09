@@ -345,6 +345,7 @@ module.exports = {
         'basis/process-thread',
         'basis/network',
         'basis/how-internet-work',
+        'basis/binary',
       ],
     },
   ],
