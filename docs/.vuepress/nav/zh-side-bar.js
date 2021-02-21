@@ -75,6 +75,7 @@ module.exports = {
         'third-party/jquery-1',
         'third-party/jquery-2',
         'third-party/jquery-3',
+        'third-party/jquery-4',
       ],
     },
     {
