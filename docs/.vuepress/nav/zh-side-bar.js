@@ -34,6 +34,7 @@ module.exports = {
         'basis/ajax-to-north',
         'basis/meet-regexp',
         'basis/pwa',
+        'basis/js-binary',
       ],
     },
     {
