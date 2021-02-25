@@ -67,6 +67,10 @@ module.exports = [
             text: 'Project',
             link: '/project/',
           },
+          {
+            text: 'Video',
+            link: '/video/',
+          },
         ],
       },
     ],
