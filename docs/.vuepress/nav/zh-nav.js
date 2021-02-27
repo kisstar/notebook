@@ -43,12 +43,16 @@ module.exports = [
         text: 'BED',
         items: [
           {
-            text: 'NodeJS',
-            link: '/nodejs/',
-          },
-          {
             text: 'Webpack',
             link: '/webpack/',
+          },
+          {
+            text: 'Electron',
+            link: '/electron/',
+          },
+          {
+            text: 'NodeJS',
+            link: '/nodejs/',
           },
         ],
       },
@@ -56,20 +60,16 @@ module.exports = [
         text: 'OTHER',
         items: [
           {
-            text: 'Electron',
-            link: '/electron/',
-          },
-          {
             text: 'WeChat',
             link: '/wechat/',
           },
           {
-            text: 'Project',
-            link: '/project/',
-          },
-          {
             text: 'Video',
             link: '/video/',
+          },
+          {
+            text: 'Project',
+            link: '/project/',
           },
         ],
       },
@@ -89,6 +89,10 @@ module.exports = [
       {
         text: 'Vim',
         link: '/vim/',
+      },
+      {
+        text: 'Chrome',
+        link: '/chrome/',
       },
     ],
   },

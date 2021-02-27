@@ -22,7 +22,7 @@
 
 所以视频需要进行编码，通过消除连续图像之间的冗余信息来压缩视频。如何实现压缩，就要设计各种算法，以下是视频编码发展简史：
 
-<img :src="$withBase('/images/web/codec-history.png')" alt="编码器发展史">
+<img :src="$withBase('/images/video/basis/codec-history.png')" alt="编码器发展史">
 
 可见历程中主要分为两大国际标准组织：ISO/IEC 和 ITU-T。ITU-T 制定的视频编码标准称为 H.26x 系列，包括 H.261、H.263（H.263+，H.263++）等等，主要用于基于网络传输的视频通信。ISO/IEC 的动态图像专家组（MPEG）制定 MPEG 系列，主要用于视频存储、广播电视、网络流媒体等。
 
@@ -38,7 +38,7 @@ VPx 系列编码实际上也已经有很长的历史了，在 Google 的介入�
 
 容器与编解码器之间的区别很重要，因为具有相同容器的文件可以使用不同的编解码器来编码其内容，下图说明了这种结构：
 
-<img :src="$withBase('/images/web/media-container-onion.png')" alt="媒体文件结构">
+<img :src="$withBase('/images/video/basis/media-container-onion.png')" alt="媒体文件结构">
 
 并非所有浏览器都支持最新的容器和编解码器，但所有现代的浏览器都支持 MP4 文件，这使它们成为媒体容器的不错的常规选择。
 
@@ -58,7 +58,7 @@ Flash(Adobe Flash) 既指 Adobe Flash Professional(Adobe Animate，可创建 SWF
 
 Adobe Flash Player 最初设计目的为播放二维向量动画，但至此之后成为适合开发创造丰富性互联网应用程序、流视频音频的工具。
 
-<img :src="$withBase('/images/web/install-flash.png')" alt="Flash">
+<img :src="$withBase('/images/video/basis/install-flash.png')" alt="Flash">
 
 Flash Player 使用矢量图形的技术来最小化文件的大小以及创造节省网络带宽和下载时间的文件。因此 Flash 成为嵌入网页中的小游戏、动画、广告、以及图形用户界面常用的格式。
 
@@ -171,7 +171,7 @@ HLS 的工作原理是把整个流分成一个个小的基于 HTTP 的文件来�
 
 在开始一个流媒体会话时，客户端会下载一个包含元数据的扩展 M3U (m3u8) 播放列表文件，用于寻找可用的媒体流。
 
-<img :src="$withBase('/images/web/HLS.png')" alt="HLS">
+<img :src="$withBase('/images/video/basis/HLS.png')" alt="HLS">
 
 HLS 具有以下优点：
 

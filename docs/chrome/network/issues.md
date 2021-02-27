@@ -6,7 +6,7 @@
 
 同一时刻会有六个请求同时下载。之后，一系列的请求被排队或暂停。一旦前六个请求中的一个完成，队列中的一个请求就会启动。
 
-<img :src="$withBase('/images/web/stalled.png')" alt="network_stalled">
+<img :src="$withBase('/images/chrome/network/issues/stalled.png')" alt="network_stalled">
 
 这是因为当在一个域上发出的请求太多，在 HTTP/1.0 或 HTTP/1.1 连接上，Chrome 允许每个主机最多同时进行 6 个 TCP 连接。
 
@@ -20,7 +20,7 @@
 
 请求要花很长时间等待从服务器接收第一个字节。
 
-<img :src="$withBase('/images/web/slow-ttfb.png')" alt="network_slow-ttfb">
+<img :src="$withBase('/images/chrome/network/issues/slow-ttfb.png')" alt="network_slow-ttfb">
 
 原因：
 
@@ -36,7 +36,7 @@
 
 一个请求需要花费很长时间去下载内容。
 
-<img :src="$withBase('/images/web/slow-content-download.png')" alt="network_slow-content-download">
+<img :src="$withBase('/images/chrome/network/issues/slow-content-download.png')" alt="network_slow-content-download">
 
 原因：
 

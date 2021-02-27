@@ -162,21 +162,6 @@ module.exports = {
       children: ['', 'basis/performance'],
     },
     {
-      title: '视频',
-      sidebarDepth: 2,
-      children: ['video/basic'],
-    },
-    {
-      title: 'Chrome',
-      sidebarDepth: 2,
-      children: [
-        'chrome/intro',
-        'chrome/network',
-        'chrome/network-reference',
-        'chrome/network-issues',
-      ],
-    },
-    {
       title: '面试',
       sidebarDepth: 2,
       children: ['interview/url2ui'],
@@ -463,6 +448,30 @@ module.exports = {
       title: '基础',
       sidebarDepth: 2,
       children: [''],
+    },
+  ],
+  '/chrome/': [
+    {
+      title: '基础',
+      sidebarDepth: 2,
+      children: [''],
+    },
+    {
+      title: '网络',
+      sidebarDepth: 2,
+      children: ['network/', 'network/reference', 'network/issues'],
+    },
+  ],
+  '/video/': [
+    {
+      title: '基础',
+      sidebarDepth: 2,
+      children: [''],
+    },
+    {
+      title: 'FFmpeg',
+      sidebarDepth: 2,
+      children: ['ffmpeg/basic'],
     },
   ],
   '/': [''],
