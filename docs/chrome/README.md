@@ -1,3 +1,8 @@
+---
+prev: false
+next: false
+---
+
 # Chrome 开发者工具
 
 Chrome 开发者工具是一套内置于 Google Chrome 中的 Web 开发和调试工具，可用来对网站进行迭代、调试和分析。

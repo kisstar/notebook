@@ -474,5 +474,12 @@ module.exports = {
       children: ['ffmpeg/basic'],
     },
   ],
+  '/c/': [
+    {
+      title: '基础',
+      sidebarDepth: 2,
+      children: ['', 'basis/'],
+    },
+  ],
   '/': [''],
 }

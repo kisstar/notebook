@@ -54,6 +54,10 @@ module.exports = [
             text: 'NodeJS',
             link: '/nodejs/',
           },
+          {
+            text: 'C/C++',
+            link: '/c/',
+          },
         ],
       },
       {
