@@ -62,6 +62,7 @@ module.exports = {
         'interview/scope',
         'interview/all-around',
         'interview/cross-domain',
+        'interview/parse-url',
       ],
     },
     {
