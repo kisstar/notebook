@@ -365,6 +365,11 @@ module.exports = {
       ],
     },
     {
+      title: '进阶',
+      sidebarDepth: 2,
+      children: ['advanced/xargs'],
+    },
+    {
       title: 'Ubuntu',
       sidebarDepth: 2,
       children: ['ubuntu/install', 'ubuntu/dev-0', 'ubuntu/dev-1'],
