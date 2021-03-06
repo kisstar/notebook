@@ -407,14 +407,14 @@ module.exports = {
   ],
   '/other/': [
     {
-      title: 'Want',
+      title: 'Dev',
       sidebarDepth: 2,
-      children: [''],
+      children: ['dev/proxy'],
     },
     {
       title: 'GitBook',
       sidebarDepth: 2,
-      children: ['gitbook/'],
+      children: ['gitbook/elementary-guide'],
     },
   ],
   '/project/': [
