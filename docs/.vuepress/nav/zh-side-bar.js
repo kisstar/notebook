@@ -367,7 +367,7 @@ module.exports = {
     {
       title: '进阶',
       sidebarDepth: 2,
-      children: ['advanced/xargs'],
+      children: ['advanced/xargs', 'advanced/awk'],
     },
     {
       title: 'Ubuntu',
