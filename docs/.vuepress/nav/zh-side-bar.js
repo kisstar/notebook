@@ -1,3 +1,7 @@
+const jsNav = require('./zh/js')
+const algorithmNav = require('./zh/algorithm')
+const linuxNav = require('./zh/linux')
+
 module.exports = {
   '/css/': [
     {
@@ -21,103 +25,7 @@ module.exports = {
       children: ['interview/css-hv-center'],
     },
   ],
-  '/js/': [
-    {
-      title: '基础',
-      sidebarDepth: 2,
-      children: [
-        '',
-        'basis/meet-js',
-        'basis/reference-type',
-        'basis/data-type-memory',
-        'basis/handle-error',
-        'basis/ajax-to-north',
-        'basis/meet-regexp',
-        'basis/pwa',
-        'basis/js-binary',
-      ],
-    },
-    {
-      title: '进阶',
-      sidebarDepth: 2,
-      children: [
-        'advanced/data-type',
-        'advanced/func-progression',
-        'advanced/this',
-        'advanced/closure',
-        'advanced/prototype',
-        'advanced/inherit',
-        'advanced/single-thread',
-        'advanced/create-object',
-        'advanced/ergodic',
-        'advanced/context-scope',
-        'advanced/module',
-      ],
-    },
-    {
-      title: '面试',
-      sidebarDepth: 2,
-      children: [
-        'interview/unique-array',
-        'interview/scope',
-        'interview/all-around',
-        'interview/cross-domain',
-        'interview/parse-url',
-      ],
-    },
-    {
-      title: '第三方',
-      sidebarDepth: 2,
-      children: [
-        'third-party/require-js-0',
-        'third-party/require-js-1',
-        'third-party/require-js-2',
-        'third-party/require-js-3',
-        'third-party/jquery-0',
-        'third-party/jquery-1',
-        'third-party/jquery-2',
-        'third-party/jquery-3',
-        'third-party/jquery-4',
-        'third-party/jquery-5',
-      ],
-    },
-    {
-      title: '读书笔记',
-      sidebarDepth: 2,
-      children: [
-        'read/ydkjs0',
-        'read/ydkjs1',
-        'read/ydkjs2',
-        'read/ydkjs3',
-        'read/ydkjs4',
-        'read/ydkjs5',
-        'read/ydkjs6',
-        'read/ydkjs7',
-        'read/ydkjs8',
-        'read/ydkjs9',
-        'read/ydkjs10',
-        'read/ydkjs11',
-        'read/ydkjs12',
-        'read/ydkjs13',
-        'read/ydkjs14',
-        'read/ydkjs15',
-        'read/ydkjs16',
-        'read/ydkjs17',
-        'read/ydkjs18',
-        'read/ydkjs19',
-      ],
-    },
-    {
-      title: '奇思妙想',
-      sidebarDepth: 2,
-      children: [
-        'fantastic-ideas/better-code',
-        'fantastic-ideas/throttle-debounce',
-        'fantastic-ideas/advanced-func',
-        'fantastic-ideas/fresh',
-      ],
-    },
-  ],
+  '/js/': jsNav,
   '/ng/': [
     {
       title: '基础',
@@ -203,59 +111,7 @@ module.exports = {
       children: ['plugin/common-plugin'],
     },
   ],
-  '/algorithm/': [
-    {
-      title: '基础',
-      sidebarDepth: 2,
-      children: [''],
-    },
-    {
-      title: '栈',
-      sidebarDepth: 2,
-      children: ['stack/'],
-    },
-    {
-      title: '队列',
-      sidebarDepth: 2,
-      children: ['queue/'],
-    },
-    {
-      title: '链表',
-      sidebarDepth: 2,
-      children: [
-        'linked-list/',
-        'linked-list/doubly-linked-list',
-        'linked-list/reverse-list',
-        'linked-list/swap-pairs',
-      ],
-    },
-    {
-      title: '集合',
-      sidebarDepth: 2,
-      children: ['set/'],
-    },
-    {
-      title: '字典',
-      sidebarDepth: 2,
-      children: ['dictionary/', 'dictionary/hash-table'],
-    },
-    {
-      title: '树',
-      sidebarDepth: 2,
-      children: ['tree/', 'tree/avl-tree'],
-    },
-    {
-      title: '排序',
-      sidebarDepth: 2,
-      children: [
-        'sort/',
-        'sort/bubble-sort',
-        'sort/insertion-sort',
-        'sort/merge-sort',
-        'sort/selection-sort',
-      ],
-    },
-  ],
+  '/algorithm/': algorithmNav,
   '/wechat/': [
     {
       title: '基础',
@@ -344,48 +200,7 @@ module.exports = {
       children: ['', 'homebrew'],
     },
   ],
-  '/linux/': [
-    {
-      title: '基础',
-      sidebarDepth: 2,
-      children: [
-        '',
-        'basis/meet-linux',
-        'basis/open-close',
-        'basis/file-search',
-        'basis/file-handling',
-        'basis/file-view',
-        'basis/dir-manage',
-        'basis/compress-file',
-        'basis/linux-link',
-        'basis/disk-management',
-        'basis/mount',
-        'basis/user-log',
-        'basis/user-manage',
-        'basis/view-help',
-      ],
-    },
-    {
-      title: '进阶',
-      sidebarDepth: 2,
-      children: ['advanced/xargs', 'advanced/awk'],
-    },
-    {
-      title: 'Ubuntu',
-      sidebarDepth: 2,
-      children: ['ubuntu/install', 'ubuntu/dev-0', 'ubuntu/dev-1'],
-    },
-    {
-      title: 'Shell',
-      sidebarDepth: 2,
-      children: ['shell/meet-shell', 'shell/demo'],
-    },
-    {
-      title: 'Common',
-      sidebarDepth: 2,
-      children: ['common/', 'common/ssh', 'common/curl'],
-    },
-  ],
+  '/linux/': linuxNav,
   '/webpack/': [
     {
       title: '基础',

@@ -6,11 +6,11 @@
 
 系统偏好设置 → 网络 → 选择已链接网络 → 高级：
 
-<img :src="$withBase('/images/other/dev/mac-proxy-1')" alt="mac_proxy">
+<img :src="$withBase('/images/other/dev/mac-proxy-1.png')" alt="mac_proxy">
 
 选择代理 Tab，勾选需要代理的方式，比如选中自动代理然后在 URL 处填写对应的 PAC 地址：
 
-<img :src="$withBase('/images/other/dev/mac-proxy-2')" alt="mac_proxy">
+<img :src="$withBase('/images/other/dev/mac-proxy-2.png')" alt="mac_proxy">
 
 ## 配置 Git 代理
 
