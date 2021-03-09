@@ -222,6 +222,11 @@ module.exports = {
   ],
   '/other/': [
     {
+      title: 'Truth',
+      sidebarDepth: 2,
+      children: ['popularization-science/key', 'popularization-science/message'],
+    },
+    {
       title: 'Dev',
       sidebarDepth: 2,
       children: ['dev/proxy'],
