@@ -22,7 +22,7 @@ module.exports = [
   {
     title: '进阶',
     sidebarDepth: 2,
-    children: ['advanced/xargs', 'advanced/awk'],
+    children: ['advanced/xargs', 'advanced/awk', 'advanced/grep'],
   },
   {
     title: 'Ubuntu',
