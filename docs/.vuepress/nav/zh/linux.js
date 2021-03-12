@@ -20,14 +20,14 @@ module.exports = [
     ],
   },
   {
-    title: '进阶',
+    title: 'Common',
     sidebarDepth: 2,
-    children: ['advanced/xargs', 'advanced/awk', 'advanced/grep'],
+    children: ['common/', 'common/ssh', 'common/curl', 'common/grep'],
   },
   {
-    title: 'Ubuntu',
+    title: '进阶',
     sidebarDepth: 2,
-    children: ['ubuntu/install', 'ubuntu/dev-0', 'ubuntu/dev-1'],
+    children: ['advanced/xargs', 'advanced/awk'],
   },
   {
     title: 'Shell',
@@ -35,8 +35,8 @@ module.exports = [
     children: ['shell/meet-shell', 'shell/demo'],
   },
   {
-    title: 'Common',
+    title: 'Ubuntu',
     sidebarDepth: 2,
-    children: ['common/', 'common/ssh', 'common/curl'],
+    children: ['ubuntu/install', 'ubuntu/dev-0', 'ubuntu/dev-1'],
   },
 ]
