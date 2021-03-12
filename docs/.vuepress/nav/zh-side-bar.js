@@ -298,7 +298,7 @@ module.exports = {
     {
       title: 'FFmpeg',
       sidebarDepth: 2,
-      children: ['ffmpeg/basic', 'ffmpeg/dev'],
+      children: ['ffmpeg/', 'ffmpeg/basic', 'ffmpeg/dev'],
     },
   ],
   '/c/': [
