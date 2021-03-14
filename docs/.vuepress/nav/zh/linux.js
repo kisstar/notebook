@@ -22,7 +22,7 @@ module.exports = [
   {
     title: 'Common',
     sidebarDepth: 2,
-    children: ['common/', 'common/ssh', 'common/curl', 'common/grep'],
+    children: ['common/', 'common/ssh', 'common/curl', 'common/grep', 'common/netstat'],
   },
   {
     title: '进阶',
