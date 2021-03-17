@@ -103,7 +103,7 @@ module.exports = {
     {
       title: '基础',
       sidebarDepth: 2,
-      children: ['', 'basis/usage', 'basis/config'],
+      children: ['', 'basis/usage', 'basis/common', 'basis/config'],
     },
     {
       title: '插件',
