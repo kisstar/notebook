@@ -308,5 +308,6 @@ module.exports = {
       children: ['', 'basis/'],
     },
   ],
+  '/collection/': ['video'],
   '/': [''],
 }
