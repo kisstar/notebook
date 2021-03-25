@@ -309,5 +309,6 @@ module.exports = {
     },
   ],
   '/collection/': ['video'],
+  '/021/': ['', 'koa'],
   '/': [''],
 }
