@@ -12,9 +12,21 @@
 
 `@commitlint/prompt-cli` 包就是这样一个存在，它有助于快速编写提交消息，并确保它们符合配置中的提交约定。
 
+```bash
+npm i -D @commitlint/prompt-cli
+```
+
 `@commitlint/prompt-cli` 的使用也很简单，安装它并使用它提供的 `commit` 命令进行提交即可。
 
-编写符合中配置的提交约定的提交消息的另一个交互式工具包是 `commitizen`，当你使用它进行提交时系统将提示你需要填写的所有必需提交字段。
+```json
+{
+  "scripts": {
+    "commit": "commit"
+  }
+}
+```
+
+编写符合中配置的提交约定的提交消息的另一个交互式工具包是 `commitizen`，当你使用它进行提交时系统也将提示你需要填写的所有必需提交字段。
 
 ```bash
 yarn add -D commitizen

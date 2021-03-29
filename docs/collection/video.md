@@ -10,6 +10,7 @@
 - [jsmpeg 系列一 基础知识 字符处理 ArrayBuffer TypedArray](https://www.jianshu.com/p/b9a77b1891a7)
 - [H5 直播系列一 Blob File FileReader URL](https://www.jianshu.com/p/04a9227a5af2)
 - [前端视频帧提取 ffmpeg + Webassembly](https://juejin.cn/post/6854573219454844935)
+- [web 实战：video 结合 canvas 实现视频在线截图](https://developer.aliyun.com/article/610027)
 
 ## YUV
 
