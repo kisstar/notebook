@@ -229,7 +229,7 @@ module.exports = {
     {
       title: 'Dev',
       sidebarDepth: 2,
-      children: ['dev/proxy'],
+      children: ['dev/proxy', 'dev/chares'],
     },
     {
       title: 'GitBook',
