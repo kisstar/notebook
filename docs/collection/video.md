@@ -1,8 +1,11 @@
 # video
 
+- [初探视频原理和 FFmpeg](https://juejin.cn/post/6864520204731285511)
+- [洞察 video 超能力系列——玩转 flv](https://juejin.cn/post/6844903656161034254)
 - [在 HTML5 上开发音视频应用的五种思路](https://www.huaweicloud.com/articles/d1a4831fbbca94929ff41261f8e3f118.html)
 - [数字视频介绍](https://github.com/leandromoreira/digital_video_introduction/blob/master/README-cn.md)
 - [写给小白的实时音视频技术入门提纲](https://my.oschina.net/jb2011/blog/1819841)
+- [WEB 视频开发-强大的 MSE](https://mp.weixin.qq.com/s/R3dHZBTJzy4yxVCYTdYaIg)
 - [音视频技术开发实战](https://cloud.tencent.com/edu/learning/live-1161)
 - [如何将 Canvas 绘制过程转为视频](https://mp.weixin.qq.com/s/8MjYFLhsiuJu__ECT8KXQQ)
 - [从 Chrome 源码 video 实现到 Web H265 Player](https://mp.weixin.qq.com/s/RDpp2Opjh3LAxYczeHac5g)
@@ -17,6 +20,12 @@
 ## 系列文章
 
 - [音视频平凡之路](https://www.zhihu.com/column/c_1355961056406290432)
+- [mediasource-和 mediasource 相关的内容-阿里云开发者社区](https://developer.aliyun.com/articlezt/8919530-1.html)
+- [VCB-Studio 教程专栏](https://vcb-s.nmm-hd.org/)
+
+## MP4
+
+- [视频基础和 MP4 容器解封装](https://juejin.cn/post/6901218687081480206)
 
 ## YUV
 
@@ -45,6 +54,11 @@
 - [安卓移动端 video 标签将页面元素覆盖](https://segmentfault.com/a/1190000018355836)
 - [HLS error ("video append failed")](https://github.com/videojs/video.js/issues/7008)
 - [why in some mobile phone can`t play went the first .ts file loaded](https://github.com/videojs/video.js/issues/6017)
+- [移动端自定义 video 播放控件 controls（带播放暂停，进度条拖拽）](https://blog.csdn.net/weixin_39924326/article/details/94619971)
+
+## Video.js
+
+- [H5 播放器源码解读 (video.js)](https://www.jianshu.com/p/3790878aa090)
 
 ## WebRTC
 
@@ -63,6 +77,11 @@
 - [基于本地代理的边下边播技术分析](https://my.oschina.net/zhying13/blog/4371240)
 - [头条都在用的边下边播功能](https://zhuanlan.zhihu.com/p/359693279)
 
+## Gif
+
+- [纯前端实现可传图可字幕台词定制的 GIF 表情生成器](https://www.zhangxinxu.com/wordpress/2018/05/js-custom-gif-generate/)
+- [斗图神器--纯前端实现视频转 GIF 制作表情包（已开源）](https://juejin.cn/post/6844903753309487111)
+
 ## SDK
 
 - [使用 canvas 播放视频](https://github.com/fregante/video-canvas)
@@ -72,3 +91,5 @@
 - [video to gif 视频转 gif 制作表情包插件](https://github.com/ColdDay/VideoToGIF)
 - [screen recorder & annotation tool for Chrome](https://github.com/alyssaxuu/screenity)
 - [Animated Gif Capture](https://github.com/demouth/AnimatedGifCapture)
+- [Movie focused HTML5 Player](https://github.com/BMSVieira/moovie.js)
+- [videojs-resolution-switcher](https://github.com/kmoskwiak/videojs-resolution-switcher)
