@@ -50,7 +50,7 @@ module.exports = {
     {
       title: '进阶',
       sidebarDepth: 2,
-      children: ['advanced/vue-mvvm'],
+      children: ['advanced/vue-mvvm', 'advanced/vue3-response-principle'],
     },
     {
       title: '面试',

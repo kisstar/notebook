@@ -592,8 +592,6 @@ document.querySelector('.name').oninput = e => (opt.data.message = e.target.valu
 
 ## Vue.set || this.\$set
 
-## 总结
-
 ## 缺点
 
 - Object.defineProperty 是 ES5 中一个无法 shim 的特性，这也就是 Vue 不支持 IE8 以及更低版本浏览器的原因。
