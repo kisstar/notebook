@@ -93,3 +93,4 @@
 - [Animated Gif Capture](https://github.com/demouth/AnimatedGifCapture)
 - [Movie focused HTML5 Player](https://github.com/BMSVieira/moovie.js)
 - [videojs-resolution-switcher](https://github.com/kmoskwiak/videojs-resolution-switcher)
+- [Movie focused HTML5 Player](https://github.com/BMSVieira/moovie.js)

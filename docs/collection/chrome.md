@@ -1,5 +1,11 @@
 # Chrome
 
+- [15 DevTool Secrets for JavaScript Developers](https://blog.asayer.io/15-devtool-secrets-for-javascript-developers)
+
+## 视频
+
+- [Introduction to Dev Tools](https://frontendmasters.com/courses/dev-tools/?utm_source=javascriptweekly&utm_medium=email&utm_campaign=devtools)
+
 ## 插件
 
 - [2021 年 10 款优质 Chrome 浏览器插件推荐](http://liujinkai.com/2021/03/03/chrome-extension-recommend-2021/?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)

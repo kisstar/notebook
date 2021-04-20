@@ -2,6 +2,7 @@
 
 - [Introduction to Event Loop Utilization in Node.js](https://nodesource.com/blog/event-loop-utilization-nodejs)
 - [Node.js 软肋之 CPU 密集型任务](https://www.infoq.cn/article/nodejs-weakness-cpu-intensive-tasks)
+- [Building A Video Streaming App With Nuxt.js, Node And Express](https://www.smashingmagazine.com/2021/04/building-video-streaming-app-nuxtjs-node-express/)
 
 ## Egg
 
