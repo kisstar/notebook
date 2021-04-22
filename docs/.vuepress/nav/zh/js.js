@@ -12,6 +12,7 @@ module.exports = [
       'basis/meet-regexp',
       'basis/pwa',
       'basis/js-binary',
+      'basis/ajax',
     ],
   },
   {
