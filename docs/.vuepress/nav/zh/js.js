@@ -90,6 +90,7 @@ module.exports = [
     sidebarDepth: 2,
     children: [
       'fantastic-ideas/better-code',
+      'fantastic-ideas/clean-code',
       'fantastic-ideas/throttle-debounce',
       'fantastic-ideas/advanced-func',
       'fantastic-ideas/fresh',
