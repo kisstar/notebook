@@ -296,6 +296,11 @@ module.exports = {
       children: ['', 'basis/concept', 'basis/operation-set'],
     },
     {
+      title: '进阶',
+      sidebarDepth: 2,
+      children: ['advanced/h265'],
+    },
+    {
       title: 'FFmpeg',
       sidebarDepth: 2,
       children: ['ffmpeg/', 'ffmpeg/basic', 'ffmpeg/dev'],
