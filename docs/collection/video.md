@@ -14,8 +14,12 @@
 - [H5 直播系列一 Blob File FileReader URL](https://www.jianshu.com/p/04a9227a5af2)
 - [前端视频帧提取 ffmpeg + Webassembly](https://juejin.cn/post/6854573219454844935)
 - [web 实战：video 结合 canvas 实现视频在线截图](https://developer.aliyun.com/article/610027)
-- [从 0 到 1 实现 Web 端 H.265 播放器：视频解码篇](https://mp.weixin.qq.com/s/f7f-4E2b07f4K0FduEg4YA)
 - [使用 FFmpeg 与 WebAssembly 实现纯前端视频截帧](https://mp.weixin.qq.com/s/0iSYwZWn6Q26TlluJIgi_Q)
+
+## ★★★★★
+
+- [Web 端 H.265 播放器研发解密](https://fed.taobao.org/blog/taofed/do71ct/web-player-h265/)
+- [从 0 到 1 实现 Web 端 H.265 播放器：视频解码篇](https://mp.weixin.qq.com/s/f7f-4E2b07f4K0FduEg4YA)
 
 ## 系列文章
 
