@@ -77,6 +77,29 @@ function unique(arr) {
 }
 ```
 
+```js
+;(function() {
+  Array.prototype.unique = function() {
+    var item,
+      temp = {}
+    for (var i = 0; i < this.length; i++) {
+      item = this[i]
+      if (typeof temp[item] !== 'undefined') {
+        // 直接删除当前项会导致后续的数据都往前移
+        // 所以，直接将当前项与最后一项交换，然后删除最后一项（但这样会改变数组元素的出现顺序）
+        this[i] = this[this.length - 1]
+        this.length--
+        i--
+        continue
+      }
+      temp[item] = true
+    }
+    temp = null
+    return this
+  }
+})()
+```
+
 - **ES6 Set**
 
 ```javascript

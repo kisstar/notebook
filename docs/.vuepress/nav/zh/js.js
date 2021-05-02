@@ -37,6 +37,7 @@ module.exports = [
     sidebarDepth: 2,
     children: [
       'interview/unique-array',
+      'interview/flat',
       'interview/scope',
       'interview/all-around',
       'interview/cross-domain',

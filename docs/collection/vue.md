@@ -3,6 +3,7 @@
 - [Vue 简史](https://juejin.cn/post/6844903789405683719)
 - [Vue 2.0——渐进式前端解决方案](https://www.infoq.cn/article/vue-2-progressive-front-end-solution)
 - [[译]尤雨溪：Vue3 的设计过程](https://juejin.cn/post/6844903823937372174)
+- [7 个有用的 Vue 开发技巧](https://juejin.cn/post/6844903848050589704)
 
 ## 响应式
 
