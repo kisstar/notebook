@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Angular 是如何监听数据变化的（一） | notes | Kisstar</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    
+    <meta name="description" content="Kisstar's personal notes">
+    <link rel="preload" href="/notebook/assets/css/0.styles.b13da641.css" as="style"><link rel="preload" href="/notebook/assets/js/app.d2525610.js" as="script"><link rel="preload" href="/notebook/assets/js/1.0ed4caaf.js" as="script"><link rel="preload" href="/notebook/assets/js/183.ee1bffef.js" as="script"><link rel="prefetch" href="/notebook/assets/js/10.474fe4d7.js"><link rel="prefetch" href="/notebook/assets/js/100.c6de51f5.js"><link rel="prefetch" href="/notebook/assets/js/101.297b80a6.js"><link rel="prefetch" href="/notebook/assets/js/102.671042f0.js"><link rel="prefetch" href="/notebook/assets/js/103.a4414990.js"><link rel="prefetch" href="/notebook/assets/js/104.5f326d1b.js"><link rel="prefetch" href="/notebook/assets/js/105.7d48691a.js"><link rel="prefetch" href="/notebook/assets/js/106.f9e2d3d6.js"><link rel="prefetch" href="/notebook/assets/js/107.3dfec344.js"><link rel="prefetch" href="/notebook/assets/js/108.64e0d2ce.js"><link rel="prefetch" href="/notebook/assets/js/109.c4b5ca14.js"><link rel="prefetch" href="/notebook/assets/js/11.f5ac12d4.js"><link rel="prefetch" href="/notebook/assets/js/110.2803df2c.js"><link rel="prefetch" href="/notebook/assets/js/111.e059e845.js"><link rel="prefetch" href="/notebook/assets/js/112.32498864.js"><link rel="prefetch" href="/notebook/assets/js/113.486abba6.js"><link rel="prefetch" href="/notebook/assets/js/114.2d88bb98.js"><link rel="prefetch" href="/notebook/assets/js/115.1b24dcc9.js"><link rel="prefetch" href="/notebook/assets/js/116.74a7e55c.js"><link rel="prefetch" href="/notebook/assets/js/117.748d98d9.js"><link rel="prefetch" href="/notebook/assets/js/118.2ff07d0b.js"><link rel="prefetch" href="/notebook/assets/js/119.ee1cf35b.js"><link rel="prefetch" href="/notebook/assets/js/12.18a51a50.js"><link rel="prefetch" href="/notebook/assets/js/120.534b8406.js"><link rel="prefetch" href="/notebook/assets/js/121.b728e838.js"><link rel="prefetch" href="/notebook/assets/js/122.530e17ec.js"><link rel="prefetch" href="/notebook/assets/js/123.3026ab36.js"><link rel="prefetch" href="/notebook/assets/js/124.0a3f74f7.js"><link rel="prefetch" href="/notebook/assets/js/125.d5362d6d.js"><link rel="prefetch" href="/notebook/assets/js/126.12262d78.js"><link rel="prefetch" href="/notebook/assets/js/127.7a3ce301.js"><link rel="prefetch" href="/notebook/assets/js/128.08c7e66c.js"><link rel="prefetch" href="/notebook/assets/js/129.6d2c5dde.js"><link rel="prefetch" href="/notebook/assets/js/13.d51e68a7.js"><link rel="prefetch" href="/notebook/assets/js/130.26713517.js"><link rel="prefetch" href="/notebook/assets/js/131.e4470d34.js"><link rel="prefetch" href="/notebook/assets/js/132.e61d0276.js"><link rel="prefetch" href="/notebook/assets/js/133.6f731828.js"><link rel="prefetch" href="/notebook/assets/js/134.be500b7d.js"><link rel="prefetch" href="/notebook/assets/js/135.918c41a0.js"><link rel="prefetch" href="/notebook/assets/js/136.fa550828.js"><link rel="prefetch" href="/notebook/assets/js/137.9f6cceb3.js"><link rel="prefetch" href="/notebook/assets/js/138.49ed9255.js"><link rel="prefetch" href="/notebook/assets/js/139.a06e7d39.js"><link rel="prefetch" href="/notebook/assets/js/14.2f72b127.js"><link rel="prefetch" href="/notebook/assets/js/140.1c46603a.js"><link rel="prefetch" href="/notebook/assets/js/141.25a371c3.js"><link rel="prefetch" href="/notebook/assets/js/142.3a8418ef.js"><link rel="prefetch" href="/notebook/assets/js/143.3b1f5644.js"><link rel="prefetch" href="/notebook/assets/js/144.bf130a4b.js"><link rel="prefetch" href="/notebook/assets/js/145.1b64bc1e.js"><link rel="prefetch" href="/notebook/assets/js/146.f48d4ddb.js"><link rel="prefetch" href="/notebook/assets/js/147.6335e830.js"><link rel="prefetch" href="/notebook/assets/js/148.50471b20.js"><link rel="prefetch" href="/notebook/assets/js/149.c57f1b59.js"><link rel="prefetch" href="/notebook/assets/js/15.2ca416a7.js"><link rel="prefetch" href="/notebook/assets/js/150.9ef4236e.js"><link rel="prefetch" href="/notebook/assets/js/151.a99db080.js"><link rel="prefetch" href="/notebook/assets/js/152.14eb132e.js"><link rel="prefetch" href="/notebook/assets/js/153.d6835009.js"><link rel="prefetch" href="/notebook/assets/js/154.1c8c82b7.js"><link rel="prefetch" href="/notebook/assets/js/155.8e861480.js"><link rel="prefetch" href="/notebook/assets/js/156.f0ad16cf.js"><link rel="prefetch" href="/notebook/assets/js/157.cc6d2da1.js"><link rel="prefetch" href="/notebook/assets/js/158.8ab0edc3.js"><link rel="prefetch" href="/notebook/assets/js/159.9ea2a0d4.js"><link rel="prefetch" href="/notebook/assets/js/16.591f2b9f.js"><link rel="prefetch" href="/notebook/assets/js/160.f7a049ee.js"><link rel="prefetch" href="/notebook/assets/js/161.1903318c.js"><link rel="prefetch" href="/notebook/assets/js/162.80477370.js"><link rel="prefetch" href="/notebook/assets/js/163.2928ab8b.js"><link rel="prefetch" href="/notebook/assets/js/164.f0ccc741.js"><link rel="prefetch" href="/notebook/assets/js/165.bc336df4.js"><link rel="prefetch" href="/notebook/assets/js/166.640ad893.js"><link rel="prefetch" href="/notebook/assets/js/167.2d588db1.js"><link rel="prefetch" href="/notebook/assets/js/168.88751527.js"><link rel="prefetch" href="/notebook/assets/js/169.181d672a.js"><link rel="prefetch" href="/notebook/assets/js/17.7ca8627c.js"><link rel="prefetch" href="/notebook/assets/js/170.d36703bd.js"><link rel="prefetch" href="/notebook/assets/js/171.f7f8e405.js"><link rel="prefetch" href="/notebook/assets/js/172.bb346c7b.js"><link rel="prefetch" href="/notebook/assets/js/173.66fc692d.js"><link rel="prefetch" href="/notebook/assets/js/174.f318c08c.js"><link rel="prefetch" href="/notebook/assets/js/175.0afcbeaf.js"><link rel="prefetch" href="/notebook/assets/js/176.bd381032.js"><link rel="prefetch" href="/notebook/assets/js/177.e4cf3975.js"><link rel="prefetch" href="/notebook/assets/js/178.27499c99.js"><link rel="prefetch" href="/notebook/assets/js/179.52cc4a50.js"><link rel="prefetch" href="/notebook/assets/js/18.3e19faa2.js"><link rel="prefetch" href="/notebook/assets/js/180.db0a883b.js"><link rel="prefetch" href="/notebook/assets/js/181.1cdc1877.js"><link rel="prefetch" href="/notebook/assets/js/182.573193fb.js"><link rel="prefetch" href="/notebook/assets/js/184.342841c1.js"><link rel="prefetch" href="/notebook/assets/js/185.978b29f2.js"><link rel="prefetch" href="/notebook/assets/js/186.7a252a54.js"><link rel="prefetch" href="/notebook/assets/js/187.a08f2b0f.js"><link rel="prefetch" href="/notebook/assets/js/188.ce469ef8.js"><link rel="prefetch" href="/notebook/assets/js/189.73e9a622.js"><link rel="prefetch" href="/notebook/assets/js/19.dc07d24c.js"><link rel="prefetch" href="/notebook/assets/js/190.59526ee2.js"><link rel="prefetch" href="/notebook/assets/js/191.f1b51128.js"><link rel="prefetch" href="/notebook/assets/js/192.e79c2302.js"><link rel="prefetch" href="/notebook/assets/js/193.4d109708.js"><link rel="prefetch" href="/notebook/assets/js/194.684a970d.js"><link rel="prefetch" href="/notebook/assets/js/195.cf33c516.js"><link rel="prefetch" href="/notebook/assets/js/196.e69d8b1f.js"><link rel="prefetch" href="/notebook/assets/js/197.59f2c668.js"><link rel="prefetch" href="/notebook/assets/js/198.f31164ee.js"><link rel="prefetch" href="/notebook/assets/js/199.dbffd3ce.js"><link rel="prefetch" href="/notebook/assets/js/20.184be7eb.js"><link rel="prefetch" href="/notebook/assets/js/200.7d4e5fde.js"><link rel="prefetch" href="/notebook/assets/js/201.99912ae1.js"><link rel="prefetch" href="/notebook/assets/js/202.b4f820de.js"><link rel="prefetch" href="/notebook/assets/js/203.d8462a66.js"><link rel="prefetch" href="/notebook/assets/js/204.60879beb.js"><link rel="prefetch" href="/notebook/assets/js/205.0bb38096.js"><link rel="prefetch" href="/notebook/assets/js/206.395acbbe.js"><link rel="prefetch" href="/notebook/assets/js/207.f0ee7206.js"><link rel="prefetch" href="/notebook/assets/js/208.f95acaed.js"><link rel="prefetch" href="/notebook/assets/js/209.7f968427.js"><link rel="prefetch" href="/notebook/assets/js/21.ee5efea4.js"><link rel="prefetch" href="/notebook/assets/js/210.3d50dcca.js"><link rel="prefetch" href="/notebook/assets/js/211.856c0eed.js"><link rel="prefetch" href="/notebook/assets/js/212.876bb62f.js"><link rel="prefetch" href="/notebook/assets/js/213.f6e59a2f.js"><link rel="prefetch" href="/notebook/assets/js/214.a806095a.js"><link rel="prefetch" href="/notebook/assets/js/215.31d97cd1.js"><link rel="prefetch" href="/notebook/assets/js/216.4c9004a2.js"><link rel="prefetch" href="/notebook/assets/js/217.324e4f7f.js"><link rel="prefetch" href="/notebook/assets/js/218.6b2d2bb9.js"><link rel="prefetch" href="/notebook/assets/js/219.1f3542b8.js"><link rel="prefetch" href="/notebook/assets/js/22.5e41fdff.js"><link rel="prefetch" href="/notebook/assets/js/220.5c254ed0.js"><link rel="prefetch" href="/notebook/assets/js/221.4e412ded.js"><link rel="prefetch" href="/notebook/assets/js/222.cb8b6e65.js"><link rel="prefetch" href="/notebook/assets/js/223.d3b647d5.js"><link rel="prefetch" href="/notebook/assets/js/224.76793b55.js"><link rel="prefetch" href="/notebook/assets/js/225.c181b9e5.js"><link rel="prefetch" href="/notebook/assets/js/226.08a6a839.js"><link rel="prefetch" href="/notebook/assets/js/227.ce411683.js"><link rel="prefetch" href="/notebook/assets/js/228.91976dcc.js"><link rel="prefetch" href="/notebook/assets/js/229.a6e61aa2.js"><link rel="prefetch" href="/notebook/assets/js/23.fe3792a7.js"><link rel="prefetch" href="/notebook/assets/js/230.8f61d7f0.js"><link rel="prefetch" href="/notebook/assets/js/231.349fe77c.js"><link rel="prefetch" href="/notebook/assets/js/232.ae0a12f3.js"><link rel="prefetch" href="/notebook/assets/js/233.a26c69e6.js"><link rel="prefetch" href="/notebook/assets/js/234.dc52afc3.js"><link rel="prefetch" href="/notebook/assets/js/235.22c99927.js"><link rel="prefetch" href="/notebook/assets/js/236.cad939cc.js"><link rel="prefetch" href="/notebook/assets/js/237.8f0b6e9e.js"><link rel="prefetch" href="/notebook/assets/js/238.10dad5f1.js"><link rel="prefetch" href="/notebook/assets/js/239.67576d11.js"><link rel="prefetch" href="/notebook/assets/js/24.4f2929e9.js"><link rel="prefetch" href="/notebook/assets/js/240.80c44cfa.js"><link rel="prefetch" href="/notebook/assets/js/241.49ccc17e.js"><link rel="prefetch" href="/notebook/assets/js/242.ff228801.js"><link rel="prefetch" href="/notebook/assets/js/243.4cdb9405.js"><link rel="prefetch" href="/notebook/assets/js/244.3f112ae8.js"><link rel="prefetch" href="/notebook/assets/js/245.b8741dd2.js"><link rel="prefetch" href="/notebook/assets/js/246.bb5c1069.js"><link rel="prefetch" href="/notebook/assets/js/247.9795c57d.js"><link rel="prefetch" href="/notebook/assets/js/248.2c602df4.js"><link rel="prefetch" href="/notebook/assets/js/249.6d15bb03.js"><link rel="prefetch" href="/notebook/assets/js/25.fd5fe753.js"><link rel="prefetch" href="/notebook/assets/js/250.ba5c5c20.js"><link rel="prefetch" href="/notebook/assets/js/251.b063a803.js"><link rel="prefetch" href="/notebook/assets/js/252.9883c2f0.js"><link rel="prefetch" href="/notebook/assets/js/253.726ccc80.js"><link rel="prefetch" href="/notebook/assets/js/254.5460b6fd.js"><link rel="prefetch" href="/notebook/assets/js/255.d21476a2.js"><link rel="prefetch" href="/notebook/assets/js/256.1deea404.js"><link rel="prefetch" href="/notebook/assets/js/257.39070319.js"><link rel="prefetch" href="/notebook/assets/js/258.3905af96.js"><link rel="prefetch" href="/notebook/assets/js/26.76abd46f.js"><link rel="prefetch" href="/notebook/assets/js/27.f2636a73.js"><link rel="prefetch" href="/notebook/assets/js/28.0d7acfbe.js"><link rel="prefetch" href="/notebook/assets/js/29.cefced41.js"><link rel="prefetch" href="/notebook/assets/js/3.de177589.js"><link rel="prefetch" href="/notebook/assets/js/30.07afbba5.js"><link rel="prefetch" href="/notebook/assets/js/31.92551101.js"><link rel="prefetch" href="/notebook/assets/js/32.7dbc8c5e.js"><link rel="prefetch" href="/notebook/assets/js/33.40be7a79.js"><link rel="prefetch" href="/notebook/assets/js/34.1fd46fa9.js"><link rel="prefetch" href="/notebook/assets/js/35.74659d57.js"><link rel="prefetch" href="/notebook/assets/js/36.9a90f4b1.js"><link rel="prefetch" href="/notebook/assets/js/37.be41554b.js"><link rel="prefetch" href="/notebook/assets/js/38.f1b5d5e7.js"><link rel="prefetch" href="/notebook/assets/js/39.9d8b698d.js"><link rel="prefetch" href="/notebook/assets/js/4.02b78e18.js"><link rel="prefetch" href="/notebook/assets/js/40.550cb413.js"><link rel="prefetch" href="/notebook/assets/js/41.c0e1b97c.js"><link rel="prefetch" href="/notebook/assets/js/42.ed95ea00.js"><link rel="prefetch" href="/notebook/assets/js/43.ec860995.js"><link rel="prefetch" href="/notebook/assets/js/44.521f6234.js"><link rel="prefetch" href="/notebook/assets/js/45.22bb8568.js"><link rel="prefetch" href="/notebook/assets/js/46.94969701.js"><link rel="prefetch" href="/notebook/assets/js/47.b5f6c15c.js"><link rel="prefetch" href="/notebook/assets/js/48.0563c806.js"><link rel="prefetch" href="/notebook/assets/js/49.15483326.js"><link rel="prefetch" href="/notebook/assets/js/5.de4f8656.js"><link rel="prefetch" href="/notebook/assets/js/50.12b3841f.js"><link rel="prefetch" href="/notebook/assets/js/51.6148daa1.js"><link rel="prefetch" href="/notebook/assets/js/52.24c01f7a.js"><link rel="prefetch" href="/notebook/assets/js/53.989c3207.js"><link rel="prefetch" href="/notebook/assets/js/54.fe5ccc4e.js"><link rel="prefetch" href="/notebook/assets/js/55.81f71fbe.js"><link rel="prefetch" href="/notebook/assets/js/56.6e71b059.js"><link rel="prefetch" href="/notebook/assets/js/57.e515307c.js"><link rel="prefetch" href="/notebook/assets/js/58.f6553847.js"><link rel="prefetch" href="/notebook/assets/js/59.6d588f88.js"><link rel="prefetch" href="/notebook/assets/js/6.ae5c2b7f.js"><link rel="prefetch" href="/notebook/assets/js/60.6e49b323.js"><link rel="prefetch" href="/notebook/assets/js/61.db8c65b9.js"><link rel="prefetch" href="/notebook/assets/js/62.ea1c68f4.js"><link rel="prefetch" href="/notebook/assets/js/63.e548bbea.js"><link rel="prefetch" href="/notebook/assets/js/64.2ea2f349.js"><link rel="prefetch" href="/notebook/assets/js/65.ce3611e8.js"><link rel="prefetch" href="/notebook/assets/js/66.85466984.js"><link rel="prefetch" href="/notebook/assets/js/67.4b7a7a16.js"><link rel="prefetch" href="/notebook/assets/js/68.0fa048bf.js"><link rel="prefetch" href="/notebook/assets/js/69.d00e8e77.js"><link rel="prefetch" href="/notebook/assets/js/7.be4a2204.js"><link rel="prefetch" href="/notebook/assets/js/70.aa43fa88.js"><link rel="prefetch" href="/notebook/assets/js/71.4c337f0b.js"><link rel="prefetch" href="/notebook/assets/js/72.27dfb4fd.js"><link rel="prefetch" href="/notebook/assets/js/73.8c45959d.js"><link rel="prefetch" href="/notebook/assets/js/74.90ee0f92.js"><link rel="prefetch" href="/notebook/assets/js/75.ede3a6a2.js"><link rel="prefetch" href="/notebook/assets/js/76.e9a0dfce.js"><link rel="prefetch" href="/notebook/assets/js/77.3beb5afe.js"><link rel="prefetch" href="/notebook/assets/js/78.c5e692fa.js"><link rel="prefetch" href="/notebook/assets/js/79.dda3280a.js"><link rel="prefetch" href="/notebook/assets/js/8.961dbf83.js"><link rel="prefetch" href="/notebook/assets/js/80.b9017279.js"><link rel="prefetch" href="/notebook/assets/js/81.159f8048.js"><link rel="prefetch" href="/notebook/assets/js/82.102fa355.js"><link rel="prefetch" href="/notebook/assets/js/83.9711b3c2.js"><link rel="prefetch" href="/notebook/assets/js/84.63a04b23.js"><link rel="prefetch" href="/notebook/assets/js/85.9a60c82c.js"><link rel="prefetch" href="/notebook/assets/js/86.385d1ae9.js"><link rel="prefetch" href="/notebook/assets/js/87.297c6ea6.js"><link rel="prefetch" href="/notebook/assets/js/88.46cb0381.js"><link rel="prefetch" href="/notebook/assets/js/89.4bda3310.js"><link rel="prefetch" href="/notebook/assets/js/9.1fac9f2d.js"><link rel="prefetch" href="/notebook/assets/js/90.0d6547a9.js"><link rel="prefetch" href="/notebook/assets/js/91.ad469783.js"><link rel="prefetch" href="/notebook/assets/js/92.3fd1bc0e.js"><link rel="prefetch" href="/notebook/assets/js/93.3727e6f5.js"><link rel="prefetch" href="/notebook/assets/js/94.6d80f42e.js"><link rel="prefetch" href="/notebook/assets/js/95.a87df1ec.js"><link rel="prefetch" href="/notebook/assets/js/96.5ee494a0.js"><link rel="prefetch" href="/notebook/assets/js/97.059a6403.js"><link rel="prefetch" href="/notebook/assets/js/98.9f97a773.js"><link rel="prefetch" href="/notebook/assets/js/99.56296d34.js">
+    <link rel="stylesheet" href="/notebook/assets/css/0.styles.b13da641.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/notebook/" class="home-link router-link-active"><img src="/notebook/logo.png" alt="notes | Kisstar" class="logo"> <span class="site-name can-hide">notes | Kisstar</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="IT" class="dropdown-title"><span class="title">IT</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          FED
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/html/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-subitem"><a href="/notebook/css/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-subitem"><a href="/notebook/js/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-subitem"><a href="/notebook/ts/" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-subitem"><a href="/notebook/ng/" class="nav-link router-link-active">
+  AngularJS
+</a></li><li class="dropdown-subitem"><a href="/notebook/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-subitem"><a href="/notebook/react/" class="nav-link">
+  React
+</a></li><li class="dropdown-subitem"><a href="/notebook/web/" class="nav-link">
+  WEB
+</a></li></ul></li><li class="dropdown-item"><h4>
+          BED
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/webpack/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-subitem"><a href="/notebook/electron/" class="nav-link">
+  Electron
+</a></li><li class="dropdown-subitem"><a href="/notebook/nodejs/" class="nav-link">
+  NodeJS
+</a></li><li class="dropdown-subitem"><a href="/notebook/c/" class="nav-link">
+  C/C++
+</a></li></ul></li><li class="dropdown-item"><h4>
+          OTHER
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/wechat/" class="nav-link">
+  WeChat
+</a></li><li class="dropdown-subitem"><a href="/notebook/video/" class="nav-link">
+  Video
+</a></li><li class="dropdown-subitem"><a href="/notebook/project/" class="nav-link">
+  Project
+</a></li><li class="dropdown-subitem"><a href="/notebook/021/" class="nav-link">
+  021
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="DevTools" class="dropdown-title"><span class="title">DevTools</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/vim/" class="nav-link">
+  Vim
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/chrome/" class="nav-link">
+  Chrome
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Computer" class="dropdown-title"><span class="title">Computer</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/cp/" class="nav-link">
+  Computer Basis
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/algorithm/" class="nav-link">
+  Algorithm
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/mac/" class="nav-link">
+  Mac
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/windows/" class="nav-link">
+  Windows
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/database/" class="nav-link">
+  Database
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Cloud" class="dropdown-title"><span class="title">Cloud</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/docker/" class="nav-link">
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/dev-ops/" class="nav-link">
+  DevOps
+</a></li></ul></div></div><div class="nav-item"><a href="/notebook/collection/" class="nav-link">
+  Collection
+</a></div><div class="nav-item"><a href="/notebook/other/" class="nav-link">
+  Other
+</a></div><div class="nav-item"><a href="https://github.com/kisstar/notebook/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="IT" class="dropdown-title"><span class="title">IT</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          FED
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/html/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-subitem"><a href="/notebook/css/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-subitem"><a href="/notebook/js/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-subitem"><a href="/notebook/ts/" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-subitem"><a href="/notebook/ng/" class="nav-link router-link-active">
+  AngularJS
+</a></li><li class="dropdown-subitem"><a href="/notebook/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-subitem"><a href="/notebook/react/" class="nav-link">
+  React
+</a></li><li class="dropdown-subitem"><a href="/notebook/web/" class="nav-link">
+  WEB
+</a></li></ul></li><li class="dropdown-item"><h4>
+          BED
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/webpack/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-subitem"><a href="/notebook/electron/" class="nav-link">
+  Electron
+</a></li><li class="dropdown-subitem"><a href="/notebook/nodejs/" class="nav-link">
+  NodeJS
+</a></li><li class="dropdown-subitem"><a href="/notebook/c/" class="nav-link">
+  C/C++
+</a></li></ul></li><li class="dropdown-item"><h4>
+          OTHER
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/wechat/" class="nav-link">
+  WeChat
+</a></li><li class="dropdown-subitem"><a href="/notebook/video/" class="nav-link">
+  Video
+</a></li><li class="dropdown-subitem"><a href="/notebook/project/" class="nav-link">
+  Project
+</a></li><li class="dropdown-subitem"><a href="/notebook/021/" class="nav-link">
+  021
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="DevTools" class="dropdown-title"><span class="title">DevTools</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/vim/" class="nav-link">
+  Vim
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/chrome/" class="nav-link">
+  Chrome
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Computer" class="dropdown-title"><span class="title">Computer</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/cp/" class="nav-link">
+  Computer Basis
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/algorithm/" class="nav-link">
+  Algorithm
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/mac/" class="nav-link">
+  Mac
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/windows/" class="nav-link">
+  Windows
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/database/" class="nav-link">
+  Database
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Cloud" class="dropdown-title"><span class="title">Cloud</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/docker/" class="nav-link">
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/dev-ops/" class="nav-link">
+  DevOps
+</a></li></ul></div></div><div class="nav-item"><a href="/notebook/collection/" class="nav-link">
+  Collection
+</a></div><div class="nav-item"><a href="/notebook/other/" class="nav-link">
+  Other
+</a></div><div class="nav-item"><a href="https://github.com/kisstar/notebook/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>基础</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>进阶</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notebook/ng/advanced/listeners.html" aria-current="page" class="active sidebar-link">Angular 是如何监听数据变化的（一）</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="angular-是如何监听数据变化的（一）"><a href="#angular-是如何监听数据变化的（一）" class="header-anchor">#</a> Angular 是如何监听数据变化的（一）</h1> <p>学好一门框架最好的办法，那就是实现它。</p> <p>接下来我们将借助 Lo-Dash 库来处理一些在数组和对象上的底层操作，慢慢的构建一个简单的 AngularJS 框架，虽然该框架本身并没有使用 Lo-Dash 库，但是这并不影响，我们更多的是应该关注该框架的主要思想和实现方式。</p> <p>当我们在使用 AngularJS 框架时，几乎无时无刻不在与 <code>$scope</code> 对象打交道，那么它到底是什么呢，我们先从框架中 <code>$digest</code> 的实现来逐步理解它。事实上，<code>$scope</code> 并不神秘，因为它就是一个普通的 JavaScript 对象，我们通过一个构造函数来获取到它。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">/**
+ * @description
+ * 顶级作用域的构造函数
+ * @returns { object }
+ */</span>
+<span class="token keyword">function</span> <span class="token function">Scope</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+</code></pre></div><p>然后，在 AngularJS 中 <code>$watch</code> 和 <code>$digest</code> 通常是同时存在的，前者指定了你关心的数据和对应的函数，后者则在你关心的数据发生改变时触发对应的函数。多数时候我们关心的数据不止一个，因此我们使用 <code>$$watchers</code> 来进行存储，现在改进一下前面的构造函数。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">/**
+ * @description
+ * 顶级作用域的构造函数
+ * @returns { object }
+ */</span>
+<span class="token keyword">function</span> <span class="token function">Scope</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>$$watchers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>然后实现 <code>$watch</code> 方法来将关心的数据和对应的方法存储起来。为了将来便于取消监听因此我们返回一个函数，执行该函数时，将此监听器从数组中移除。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">/**
+ * @description
+ * @param { function | string } watchFn 指定关注的数据
+ * @param { function } listenerFn 在数据变更时执行的函数
+ * @returns { function } 运行该函数可以取消对应的监听
+ */</span>
+<span class="token class-name">Scope</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">$watch</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">watchFn<span class="token punctuation">,</span> listenerFn</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> watcher <span class="token operator">=</span> <span class="token punctuation">{</span>
+    watchFn<span class="token operator">:</span> watchFn<span class="token punctuation">,</span>
+    listenerFn<span class="token operator">:</span> listenerFn<span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>$$watchers<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>watcher<span class="token punctuation">)</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    _<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>$$watchers<span class="token punctuation">,</span> watcher<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>最后，我们需要 <code>$digest</code> 方法来检测数据是否发生了改变，如果发生了改变则触发相应的函数。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">/**
+ * @description
+ * 至少调用一次所有在作用域上注册过的监听器
+ * @returns { void }
+ */</span>
+<span class="token class-name">Scope</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">$digest</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> self <span class="token operator">=</span> <span class="token keyword">this</span>
+  _<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>$$watchers<span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">watcher</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> newValue <span class="token operator">=</span> watcher<span class="token punctuation">.</span><span class="token function">watchFn</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span>
+    <span class="token keyword">var</span> oldValue <span class="token operator">=</span> watcher<span class="token punctuation">.</span>last
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>newValue <span class="token operator">!==</span> oldValue<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      watcher<span class="token punctuation">.</span>last <span class="token operator">=</span> newValue
+      watcher<span class="token punctuation">.</span><span class="token function">listenerFn</span><span class="token punctuation">(</span>newValue<span class="token punctuation">,</span> oldValue<span class="token punctuation">,</span> self<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>可见在上面的函数中，我们使用 <code>last</code> 属性来存储了上一次监听的值，并在每次改变后更新它的值。不过问题是现在它并没有初始值（undefined），当使用的开发者给定的初始值就是 <code>undefined</code> 时，那么它是无法检测到变化的。</p> <p>为了解决上面的问题，我们可以在添加监听相关的信息时，给定 <code>last</code> 属性的初始值为一个函数，因为函数在 JavaScript 中只与它自己相等。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">/**
+ * @description
+ * 作为监听'对象'的初始值
+ */</span>
+<span class="token keyword">function</span> <span class="token function">initWatchVal</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token class-name">Scope</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">$watch</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">watchFn<span class="token punctuation">,</span> listenerFn</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> watcher <span class="token operator">=</span> <span class="token punctuation">{</span>
+    watchFn<span class="token operator">:</span> watchFn<span class="token punctuation">,</span>
+    listenerFn<span class="token operator">:</span> listenerFn<span class="token punctuation">,</span>
+    last<span class="token operator">:</span> initWatchVal<span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// ... 省略部分代码</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>不过我们不能把这个函数暴露给使用的开发者，因为这会造成误解，因此在传递给处理函数时需要进行一次判断。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token class-name">Scope</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">$digest</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> self <span class="token operator">=</span> <span class="token keyword">this</span>
+  _<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>$$watchers<span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">watcher</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> newValue <span class="token operator">=</span> watcher<span class="token punctuation">.</span><span class="token function">watchFn</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span>
+    <span class="token keyword">var</span> oldValue <span class="token operator">=</span> watcher<span class="token punctuation">.</span>last
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>newValue <span class="token operator">!==</span> oldValue<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      watcher<span class="token punctuation">.</span>last <span class="token operator">=</span> newValue
+      watcher<span class="token punctuation">.</span><span class="token function">listenerFn</span><span class="token punctuation">(</span>newValue<span class="token punctuation">,</span> oldValue <span class="token operator">===</span> initWatchVal <span class="token operator">?</span> <span class="token keyword">undefined</span> <span class="token operator">:</span> oldValue<span class="token punctuation">,</span> self<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>现在还有两个显著的问题，我们实现的 <code>$watch</code> 目前第一个参数只能接受函数，但是在 AngularJS 中它同时支持字符串，而且第二个参数如果没有传入函数也将会报错，我们需要对这两中清空进行处理。</p> <p>首先检测第一个参数如果是字符串，则读取当前 <code>Scope</code> 对象上对应的值，然后创建一个空函数，如果第二个参数不是函数时就用空函数代替。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">/**
+ * @description
+ * 空函数
+ */</span>
+<span class="token keyword">function</span> <span class="token function">noop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token class-name">Scope</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">$watch</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">watchFn<span class="token punctuation">,</span> listenerFn</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> self <span class="token operator">=</span> <span class="token keyword">this</span>
+  <span class="token keyword">var</span> watcher <span class="token operator">=</span> <span class="token punctuation">{</span>
+    watchFn<span class="token operator">:</span> watchFn<span class="token punctuation">,</span>
+    listenerFn<span class="token operator">:</span> listenerFn<span class="token punctuation">,</span>
+    last<span class="token operator">:</span> initWatchVal<span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>_<span class="token punctuation">.</span><span class="token function">isString</span><span class="token punctuation">(</span>watchFn<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    watcher<span class="token punctuation">.</span><span class="token function-variable function">watchFn</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> _<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> watchFn<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">'.'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>_<span class="token punctuation">.</span><span class="token function">isFunction</span><span class="token punctuation">(</span>listenerFn<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    watcher<span class="token punctuation">.</span>listenerFn <span class="token operator">=</span> noop
+  <span class="token punctuation">}</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>$$watchers<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>watcher<span class="token punctuation">)</span>
+  <span class="token comment">// ... 省略部分代码</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>现在看起来基本的功能已经实现了，但事实上目前位置如果在处理函数中改变了监听的数据，那么程序是感知不到的，因此我们需要创建 <code>$digest</code> 循环，直到监听的所有数据不再发生变化为止。</p> <p>我们把现在的 <code>$digest</code> 函数改名为 <code>$$digestOnce</code>，它把所有的监听器运行一次，返回一个布尔值，表示数据是否是脏的。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">/**
+ * @description
+ * 数据改变时执行对应的处理函数
+ * @returns { boolean } 数据是否是脏的
+ */</span>
+<span class="token class-name">Scope</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">$$digestOnce</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> self <span class="token operator">=</span> <span class="token keyword">this</span>
+  <span class="token keyword">var</span> dirty <span class="token operator">=</span> <span class="token boolean">false</span>
+  <span class="token keyword">var</span> newValue<span class="token punctuation">,</span> oldValue
+  _<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>$$watchers<span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">watcher</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    newValue <span class="token operator">=</span> watcher<span class="token punctuation">.</span><span class="token function">watchFn</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span>
+    oldValue <span class="token operator">=</span> watcher<span class="token punctuation">.</span>last
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>newValue <span class="token operator">!==</span> oldValue<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      watcher<span class="token punctuation">.</span>last <span class="token operator">=</span> newValue
+      dirty <span class="token operator">=</span> <span class="token boolean">true</span>
+      watcher<span class="token punctuation">.</span><span class="token function">listenerFn</span><span class="token punctuation">(</span>newValue<span class="token punctuation">,</span> oldValue <span class="token operator">===</span> initWatchVal <span class="token operator">?</span> <span class="token keyword">undefined</span> <span class="token operator">:</span> oldValue<span class="token punctuation">,</span> self<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token keyword">return</span> dirty
+<span class="token punctuation">}</span>
+</code></pre></div><p>然后，我们重新定义 <code>$digest</code>，它作为一个“外层循环”来运行，当有变更发生的时候，调用 <code>$$digestOnce</code> 函数。不过需要注意的是，有时候会发生监听的数据一直在改变的情况，为了防止无休止的 <code>$digest</code> 循环，我们需要设置最大的循环次数。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">var</span> <span class="token constant">TTL</span> <span class="token operator">=</span> <span class="token number">10</span> <span class="token comment">// 最大循环次数</span>
+
+<span class="token comment">/**
+ * @description
+ * 至少调用一次所有在作用域上注册过的监听器
+ * 如果数据产生改变则重复调用，直到所有监控的值都不再变化（规定最大次数为 10）
+ * @returns { void }
+ */</span>
+<span class="token class-name">Scope</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">$digest</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> ttl <span class="token operator">=</span> <span class="token constant">TTL</span>
+  <span class="token keyword">var</span> dirty <span class="token operator">=</span> <span class="token boolean">false</span>
+  <span class="token keyword">do</span> <span class="token punctuation">{</span>
+    dirty <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$$digestOnce</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>dirty <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>ttl<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">throw</span> <span class="token string">'10 digest iterations reached'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span> <span class="token keyword">while</span> <span class="token punctuation">(</span>dirty<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>这里有一个需要优化的地方就是在一次 <code>$digest</code> 循环中，我们会把所有的 <code>watch</code> 都执行一遍，然后在所有的数据不再改变或到达 TTL 边界之前会继续整个循环。事实上我们可以记录上一次循环中最后一个脏值所在的 <code>watcher</code>，后一次脏值检测到该值已经不脏时就可以直接跳出循环了，因为此时所有的数据已经是干净的。</p> <p>我们使用 <code>$$lastDirtyWatch</code> 来记录上一次脏值所在的 <code>watcher</code>。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">Scope</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>$$watchers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token comment">// 存储监听器的相关信息，包括监听的数据和对应的处理函数等</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>$$lastDirtyWatch <span class="token operator">=</span> <span class="token keyword">null</span> <span class="token comment">// 前一次循环中最后的脏值所在的 watcher 对象</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>在每一次执行 <code>$digest</code> 时将 <code>$$lastDirtyWatch</code> 置为 <code>null</code> 以保证第一轮的完整循环。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token class-name">Scope</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">$digest</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> ttl <span class="token operator">=</span> <span class="token constant">TTL</span>
+  <span class="token keyword">var</span> dirty <span class="token operator">=</span> <span class="token boolean">false</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>$$lastDirtyWatch <span class="token operator">=</span> <span class="token keyword">null</span>
+  <span class="token comment">// ... 省略部分代码</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>在数据发生改变时，将 <code>$$lastDirtyWatch</code> 执行对应的 <code>watcher</code>，这样就取到了上一次脏值所在的 <code>watcher</code>。然后遇到干净的值进行判断，如果等于记录的值则直接退出遍历。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token class-name">Scope</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">$$digestOnce</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ... 省略部分代码</span>
+  _<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>$$watchers<span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">watcher</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    newValue <span class="token operator">=</span> watcher<span class="token punctuation">.</span><span class="token function">watchFn</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span>
+    oldValue <span class="token operator">=</span> watcher<span class="token punctuation">.</span>last
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>newValue <span class="token operator">!==</span> oldValue<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      self<span class="token punctuation">.</span>$$lastDirtyWatch <span class="token operator">=</span> watcher
+      <span class="token comment">// ... 省略部分代码</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>self<span class="token punctuation">.</span>$$lastDirtyWatch <span class="token operator">===</span> watcher<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token boolean">false</span> <span class="token comment">// exit iteration</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token keyword">return</span> dirty
+<span class="token punctuation">}</span>
+</code></pre></div><p>同时为了避免 <code>$watch</code> 嵌套（在 <code>$watch</code> 的处理函数中添加 <code>$watch</code>）使用带来的不良影响（在此次检测第二轮循环中，后者出现在记录的 <code>watcher</code> 后面，所以不会被执行），我们需要在每次添加 <code>watcher</code> 时重置 <code>$$lastDirtyWatch</code>。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token class-name">Scope</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">$watch</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">watchFn<span class="token punctuation">,</span> listenerFn</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ... 省略部分代码</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>$$lastDirtyWatch <span class="token operator">=</span> <span class="token keyword">null</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    _<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>$$watchers<span class="token punctuation">,</span> watcher<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>回到 <code>$$digestOnce</code> 函数中，我们使用了绝对等于来判断值前后是否发生了改变。这存在一个明显的问题，当我们关注的数据是一个对象时，如果该对象上面的属性发生变化时，我们是感知不到的，为了解决这个问题我们通过 <code>$watch</code> 函数传入的第三个函数来开启基于值的检测，它会遍历对象的属性来进行对应的判断。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token class-name">Scope</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">$watch</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">watchFn<span class="token punctuation">,</span> listenerFn<span class="token punctuation">,</span> objectEquality</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> self <span class="token operator">=</span> <span class="token keyword">this</span>
+  <span class="token keyword">var</span> watcher <span class="token operator">=</span> <span class="token punctuation">{</span>
+    watchFn<span class="token operator">:</span> watchFn<span class="token punctuation">,</span>
+    listenerFn<span class="token operator">:</span> listenerFn<span class="token punctuation">,</span>
+    last<span class="token operator">:</span> initWatchVal<span class="token punctuation">,</span>
+    eq<span class="token operator">:</span> <span class="token operator">!</span><span class="token operator">!</span>objectEquality<span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// ... 省略部分代码</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>现在我们在 <code>$$digestOnce</code> 中检测相应 <code>watcher</code> 的 <code>eq</code> 属性的值来使用不同的判断规则。这里有两点需要注意，在 JavaScript 中 <code>NaN</code> 和任何值都不相等，包括它自己，所以需要进行特殊判断，否则会触及 TTL；另外，就是在开启对对象进行值的比较时，存储新值的时候不能直接赋值，而是对其进行一次深拷贝。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token class-name">Scope</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">$$digestOnce</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> self <span class="token operator">=</span> <span class="token keyword">this</span>
+  <span class="token keyword">var</span> dirty <span class="token operator">=</span> <span class="token boolean">false</span>
+  <span class="token keyword">var</span> newValue<span class="token punctuation">,</span> oldValue<span class="token punctuation">,</span> equal
+  _<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>$$watchers<span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">watcher</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    newValue <span class="token operator">=</span> watcher<span class="token punctuation">.</span><span class="token function">watchFn</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span>
+    oldValue <span class="token operator">=</span> watcher<span class="token punctuation">.</span>last
+    equal <span class="token operator">=</span> watcher<span class="token punctuation">.</span>eq
+      <span class="token operator">?</span> _<span class="token punctuation">.</span><span class="token function">isEqual</span><span class="token punctuation">(</span>newValue<span class="token punctuation">,</span> oldValue<span class="token punctuation">)</span>
+      <span class="token operator">:</span> newValue <span class="token operator">===</span> oldValue <span class="token operator">||</span> <span class="token punctuation">(</span>_<span class="token punctuation">.</span><span class="token function">isNaN</span><span class="token punctuation">(</span>newValue<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> _<span class="token punctuation">.</span><span class="token function">isNaN</span><span class="token punctuation">(</span>oldValue<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>newValue <span class="token operator">!==</span> oldValue <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>equal<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      self<span class="token punctuation">.</span>$$lastDirtyWatch <span class="token operator">=</span> watcher
+      watcher<span class="token punctuation">.</span>last <span class="token operator">=</span> watcher<span class="token punctuation">.</span>eq <span class="token operator">?</span> _<span class="token punctuation">.</span><span class="token function">cloneDeep</span><span class="token punctuation">(</span>newValue<span class="token punctuation">)</span> <span class="token operator">:</span> newValue
+      dirty <span class="token operator">=</span> <span class="token boolean">true</span>
+      watcher<span class="token punctuation">.</span><span class="token function">listenerFn</span><span class="token punctuation">(</span>newValue<span class="token punctuation">,</span> oldValue <span class="token operator">===</span> initWatchVal <span class="token operator">?</span> <span class="token keyword">undefined</span> <span class="token operator">:</span> oldValue<span class="token punctuation">,</span> self<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>self<span class="token punctuation">.</span>$$lastDirtyWatch <span class="token operator">===</span> watcher<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token boolean">false</span> <span class="token comment">// exit iteration</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token keyword">return</span> dirty
+<span class="token punctuation">}</span>
+</code></pre></div><p>在 AngularJS 中，有几种方式可以在作用域的上下文上执行代码，最简单的一种就是 <code>$eval</code> 函数。它使用一个函数作参数，所做的事情是立即执行这个传入的函数，并且把当前 <code>Scope</code> 当作参数传递给它，返回的是这个函数的返回值。<code>$eval</code> 也可以有第二个参数，它所做的仅仅是把这个参数传递给这个函数。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">/**
+ * @description
+ * 把当前作用域和一个传入的参数作为参数传给传入的函数并立即执行这个函数
+ * @param { function } 需要运行的函数或表达式
+ * @param { any } 传递给运行函数的参数
+ * @returns { any } 取决于传入的函数
+ */</span>
+<span class="token class-name">Scope</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">$eval</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">expr<span class="token punctuation">,</span> locals</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">expr</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> locals<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>其实，我们熟知的 <code>$apply</code> 方法就是基于脏值检测和 <code>$eval</code> 方法来实现的，使用函数作参数，它用 <code>$eval</code> 执行这个函数，最后通过 <code>$digest</code> 触发 <code>digest</code> 循环。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">/**
+ * @description
+ * 执行传入的函数后触发 digest 循环
+ * @param { function } 需要被执行的函数
+ * @returns { void }
+ */</span>
+<span class="token class-name">Scope</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">$apply</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">expr</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$eval</span><span class="token punctuation">(</span>expr<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span> <span class="token keyword">finally</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$digest</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>但在 AngularJS 中有一种延迟代码的方式，就是使用 <code>$evalAsync</code> 函数。它接受一个函数，把它放到队列中，然后在当前正持续的 <code>digest</code> 中或者下一次 <code>digest</code> 之前执行（你可以在一个监听器的监听函数中延迟执行一些代码，即使它已经被延迟了，仍然会在现有的 <code>digest</code> 遍历中被执行）。</p> <p>实现这个功能，我们使用 <code>$$asyncQueue</code> 来记录队列中成员。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">Scope</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>$$watchers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token comment">// 存储监听器的相关信息，包括监听的数据和对应的处理函数等</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>$$lastDirtyWatch <span class="token operator">=</span> <span class="token keyword">null</span> <span class="token comment">// 前一次循环中最后的脏值所在的 watcher 对象</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>$$asyncQueue <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token comment">// 异步队列，在当前正持续的 digest 中或者下一次 digest 之前执行</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>然后，我们实现 <code>$evalAsync</code> 函数来将指定的方法加入到队列中。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">/**
+ * @description
+ * 将指定的函数加入到异步队列中
+ * @param { function } 加入到执行队列的函数
+ * @returns { void }
+ */</span>
+<span class="token class-name">Scope</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">$evalAsync</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">expr</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>$$asyncQueue<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    scope<span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">,</span>
+    expression<span class="token operator">:</span> expr<span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>最后在 <code>digest</code> 之前对队列中的成员进行一次调用。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token class-name">Scope</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">$digest</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> ttl <span class="token operator">=</span> <span class="token constant">TTL</span>
+  <span class="token keyword">var</span> dirty <span class="token operator">=</span> <span class="token boolean">false</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>$$lastDirtyWatch <span class="token operator">=</span> <span class="token keyword">null</span>
+  <span class="token keyword">do</span> <span class="token punctuation">{</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>$$asyncQueue<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">var</span> asyncTask <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$$asyncQueue<span class="token punctuation">.</span><span class="token function">shift</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      asyncTask<span class="token punctuation">.</span>scope<span class="token punctuation">.</span><span class="token function">$eval</span><span class="token punctuation">(</span>asyncTask<span class="token punctuation">.</span>expression<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    dirty <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$$digestOnce</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>dirty <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>ttl<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">throw</span> <span class="token string">'10 digest iterations reached'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span> <span class="token keyword">while</span> <span class="token punctuation">(</span>dirty<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>目前还存在一个问题，就是如果我们在 <code>$watch</code> 中通过 <code>$evalAsync</code> 添加成员。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">var</span> scope <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Scope</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+scope<span class="token punctuation">.</span>num <span class="token operator">=</span> <span class="token number">0</span>
+scope<span class="token punctuation">.</span>asyncEvaluatedTimes <span class="token operator">=</span> <span class="token number">0</span>
+scope<span class="token punctuation">.</span><span class="token function">$watch</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">scope</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>scope<span class="token punctuation">.</span>asyncEvaluatedTimes <span class="token operator">&lt;</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    scope<span class="token punctuation">.</span><span class="token function">$evalAsync</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">scope</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      scope<span class="token punctuation">.</span>asyncEvaluatedTimes<span class="token operator">++</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>scope<span class="token punctuation">.</span>asyncEvaluatedTimes<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> scope<span class="token punctuation">.</span>num
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+scope<span class="token punctuation">.</span><span class="token function">$digest</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><p>按理上面 <code>$$asyncQueue</code> 中的成员在一次 <code>$digest</code> 循环中应该被调用两次，但是由于在第二调用前由于检测到数据是干净的，所有就会退出循环，从而导致队列中的成员也不会被调用了，而我们期望的时，它应该在本次启动的循环中执行，因此我们需要改变一下退出循环的条件。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token class-name">Scope</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">$digest</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ... 省略部分代码</span>
+  <span class="token keyword">do</span> <span class="token punctuation">{</span>
+    <span class="token comment">// ... 省略部分代码</span>
+  <span class="token punctuation">}</span> <span class="token keyword">while</span> <span class="token punctuation">(</span>dirty <span class="token operator">||</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$$asyncQueue<span class="token punctuation">.</span>length<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>可见，上面我们列举的例子中我们使用了判断，以确定是否添加队列，如果忘记设定条件，那么队列永远也不会是空的，这样就会一直调用 <code>$digest</code> 循环。因此，我们必须设置一个临界点，在达到时也抛出异常。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token class-name">Scope</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">$digest</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ... 省略部分代码</span>
+  <span class="token keyword">do</span> <span class="token punctuation">{</span>
+    <span class="token comment">// ... 省略部分代码</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>dirty <span class="token operator">||</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$$asyncQueue<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>ttl<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">throw</span> <span class="token string">'10 digest iterations reached'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span> <span class="token keyword">while</span> <span class="token punctuation">(</span>dirty <span class="token operator">||</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$$asyncQueue<span class="token punctuation">.</span>length<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><code>$evalAsync</code> 需要确定要延迟执行的函数队列会“很快”被执行，由于它的执行依赖 <code>$digest</code> 循环，因此我们需要知道当前是否有 <code>$digest</code> 循环，如果没有则需要启动循环。我们通过 <code>$$phase</code> 来记录当前正在执行的工作。</p> <p>首先我们创建两个函数来控制<code>$$phase</code> 的值。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">/**
+ * @description
+ * 设置程序所处阶段名称
+ * @param { string } phase 设置的阶段名称
+ * @returns { void }
+ */</span>
+<span class="token class-name">Scope</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">$beginPhase</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">phase</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>$$phase<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">throw</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$$phase <span class="token operator">+</span> <span class="token string">' already in progress.'</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>$$phase <span class="token operator">=</span> phase
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * @description
+ * 清除当前程序所在阶段的描述
+ * @returns { void }
+ */</span>
+<span class="token class-name">Scope</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">$clearPhase</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>$$phase <span class="token operator">=</span> <span class="token keyword">null</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>初始时 <code>$$phase</code> 的值应该是空。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">Scope</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>$$watchers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token comment">// 存储监听器的相关信息，包括监听的数据和对应的处理函数等</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>$$lastDirtyWatch <span class="token operator">=</span> <span class="token keyword">null</span> <span class="token comment">// 前一次循环中最后的脏值所在的 watcher 对象</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>$$asyncQueue <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token comment">// 异步队列，在当前正持续的 digest 中或者下一次 digest 之前执行</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>$$phase <span class="token operator">=</span> <span class="token keyword">null</span> <span class="token comment">// 当前程序所处的阶段</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>当处于 <code>$digest</code> 循环时，它应该是 <code>$digest</code>，并在结束后清除。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token class-name">Scope</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">$digest</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> ttl <span class="token operator">=</span> <span class="token constant">TTL</span>
+  <span class="token keyword">var</span> dirty <span class="token operator">=</span> <span class="token boolean">false</span>
+  <span class="token keyword">var</span> asyncTask
+  <span class="token keyword">this</span><span class="token punctuation">.</span>$$lastDirtyWatch <span class="token operator">=</span> <span class="token keyword">null</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$beginPhase</span><span class="token punctuation">(</span><span class="token string">'$digest'</span><span class="token punctuation">)</span>
+  <span class="token keyword">do</span> <span class="token punctuation">{</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>$$asyncQueue<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      asyncTask <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$$asyncQueue<span class="token punctuation">.</span><span class="token function">shift</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      asyncTask<span class="token punctuation">.</span>scope<span class="token punctuation">.</span><span class="token function">$eval</span><span class="token punctuation">(</span>asyncTask<span class="token punctuation">.</span>expression<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    dirty <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$$digestOnce</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>dirty <span class="token operator">||</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$$asyncQueue<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>ttl<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$clearPhase</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token keyword">throw</span> <span class="token string">'10 digest iterations reached'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span> <span class="token keyword">while</span> <span class="token punctuation">(</span>dirty <span class="token operator">||</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$$asyncQueue<span class="token punctuation">.</span>length<span class="token punctuation">)</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$clearPhase</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>当 <code>$apply</code> 调用期间它应该是 <code>$apply</code>，并在结束后清除。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token class-name">Scope</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">$apply</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">expr</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$beginPhase</span><span class="token punctuation">(</span><span class="token string">'$apply'</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$eval</span><span class="token punctuation">(</span>expr<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span> <span class="token keyword">finally</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$clearPhase</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$digest</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>最终，把对 <code>$digest</code> 的调度放进 <code>$evalAsync</code>。它会检测作用域上现有的阶段变量，如果没有（也没有已列入计划的异步任务），就把这个 <code>digest</code> 列入计划。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token class-name">Scope</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">$evalAsync</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">expr</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> self <span class="token operator">=</span> <span class="token keyword">this</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>self<span class="token punctuation">.</span>$$phase <span class="token operator">&amp;&amp;</span> self<span class="token punctuation">.</span>$$asyncQueue<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>$$asyncQueue<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$digest</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  self<span class="token punctuation">.</span>$$asyncQueue<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    scope<span class="token operator">:</span> self<span class="token punctuation">,</span>
+    expression<span class="token operator">:</span> expr<span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>现在，我可以保证不管何时、何地，调用 <code>$evalAsync</code>，都可以确定有一个 <code>digest</code> 会在不远的将来发生。</p> <p>有时候，特别是在大量的 HTTP 请求存在的地方，我们可能会频繁的调用 <code>digest</code>，显然这存在一些不必要的开销。为了处理这种情况引进了 <code>$$applyAsync</code> 函数，它有点类似与 <code>$apply</code>，但它不会立即执行传入的函数，也不会立即启动 <code>digest</code>，它只是将最近的几个 <code>digest</code> 合成为一个。</p> <p>同样的我们一个使用一个属性（$$$applyAsyncQueue ）来记录队列，初始时为一个空数组。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">Scope</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ... 省略部分代码</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>$applyAsyncQueue <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token comment">// 调用队列</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>然后实现一个函数来向队列中添加成员，在这个函数中我们把队列中的函数放在一个函数中调用，然后把这个函数给 <code>$apply</code> 进行异步调用。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">/**
+ * @description
+ * 将指定函数或表达式加入调用队列，进行异步调用
+ * 主要目的是优化快速发生的事情($apply())。让他们只需要一个单一的 digest，$$applyAsyncId 正是协助完成此事的
+ * @param { function } 将要执行的函数
+ * @returns { void }
+ */</span>
+<span class="token class-name">Scope</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">$applyAsync</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">expr</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> self <span class="token operator">=</span> <span class="token keyword">this</span>
+  self<span class="token punctuation">.</span>$$applyAsyncQueue<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    self<span class="token punctuation">.</span><span class="token function">$eval</span><span class="token punctuation">(</span>expr<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    self<span class="token punctuation">.</span><span class="token function">$apply</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">while</span> <span class="token punctuation">(</span>self<span class="token punctuation">.</span>$$applyAsyncQueue<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        self<span class="token punctuation">.</span>$$applyAsyncQueue<span class="token punctuation">.</span><span class="token function">shift</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>现在为了实现上面提及的优化，我们需要使用一个变量（$$applyAsyncId）来记录调用是否已经启动，它的初始值同样为空，然后在调用的时候检测该值，如果未启动则启动异步调用并赋予其值，最后还需要在调用完成后重置该值。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">Scope</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ... 省略部分代码</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>$$applyAsyncId <span class="token operator">=</span> <span class="token keyword">null</span> <span class="token comment">// 调用队列的调用 ID</span>
+<span class="token punctuation">}</span>
+
+<span class="token class-name">Scope</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">$applyAsync</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">expr</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ... 省略部分代码</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>self<span class="token punctuation">.</span>$$applyAsyncId <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    self<span class="token punctuation">.</span>$$applyAsyncId <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      self<span class="token punctuation">.</span><span class="token function">$apply</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>self<span class="token punctuation">.</span>$$applyAsyncQueue<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          self<span class="token punctuation">.</span>$$applyAsyncQueue<span class="token punctuation">.</span><span class="token function">shift</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        self<span class="token punctuation">.</span>$$applyAsyncId <span class="token operator">=</span> <span class="token keyword">null</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>还有一个需要注意的地方，如果一个 <code>digest</code> 由于其它原因已经启动了，那么应该在该 <code>digest</code> 中执行完调用队列，然后清除计时器。现在先将调用的方法提取出来。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">/**
+ * @description
+ * 陆续调用调用队列中的成员后清除
+ * @returns { void }
+ */</span>
+<span class="token class-name">Scope</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">$$flushApplyAsync</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>$$applyAsyncQueue<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>$$applyAsyncQueue<span class="token punctuation">.</span><span class="token function">shift</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>$$applyAsyncId <span class="token operator">=</span> <span class="token keyword">null</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>然后替换掉最新实现 <code>$applyAsync</code> 中的相应部分。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token class-name">Scope</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">$applyAsync</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">expr</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ... 省略部分代码</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>self<span class="token punctuation">.</span>$$applyAsyncId <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    self<span class="token punctuation">.</span>$$applyAsyncId <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      self<span class="token punctuation">.</span><span class="token function">$apply</span><span class="token punctuation">(</span><span class="token function">_</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>$$flushApplyAsync<span class="token punctuation">,</span> self<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>最后，我们需要实现在 <code>digest</code> 中执行完调用队列的部分。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token class-name">Scope</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">$digest</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> ttl <span class="token operator">=</span> <span class="token constant">TTL</span>
+  <span class="token keyword">var</span> dirty <span class="token operator">=</span> <span class="token boolean">false</span>
+  <span class="token keyword">var</span> asyncTask
+  <span class="token keyword">this</span><span class="token punctuation">.</span>$$lastDirtyWatch <span class="token operator">=</span> <span class="token keyword">null</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$beginPhase</span><span class="token punctuation">(</span><span class="token string">'$digest'</span><span class="token punctuation">)</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>$$applyAsyncId<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">clearTimeout</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>$$applyAsyncId<span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$$flushApplyAsync</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// ... 省略部分代码</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>现在在 <code>digest</code> 循环前、中都存在相应的函数队列，相应的也存在在 <code>digest</code> 循环后执行函数队列，我们使用 <code>$$postDigestQueue</code> 来记录。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">Scope</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ... 省略部分代码</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>$$postDigestQueue <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token comment">// 在 digest 循环后执行的函数队列</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>我们使用 <code>$$postDigest</code> 方法来向其中添加成员。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">/**
+ * @description
+ * 向 digest 循环后调用的函数队列中添加成员
+ * @param { function } 添加的需要执行的函数
+ * @returns { void }
+ */</span>
+<span class="token class-name">Scope</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">$$postDigest</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">fn</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>$$postDigestQueue<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>fn<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>最后，我们在 <code>digest</code> 循环的尾部调用队列中的函数。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token class-name">Scope</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">$digest</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ... 省略部分代码</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$clearPhase</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>$$postDigestQueue<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>$$postDigestQueue<span class="token punctuation">.</span><span class="token function">shift</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>目前位置，我们未对传入队列的函数进行过排错处理，它很可能会导致我们的程序出错，显然这是不合理的，我们简单的先将调用函数队列的部分放到 <code>try-catach</code> 语句块中，然后把捕获到的错误抛到控制台。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token class-name">Scope</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">$$digestOnce</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> self <span class="token operator">=</span> <span class="token keyword">this</span>
+  <span class="token keyword">var</span> dirty <span class="token operator">=</span> <span class="token boolean">false</span>
+  <span class="token keyword">var</span> newValue<span class="token punctuation">,</span> oldValue<span class="token punctuation">,</span> equal
+  _<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>$$watchers<span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">watcher</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+      newValue <span class="token operator">=</span> watcher<span class="token punctuation">.</span><span class="token function">watchFn</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span>
+      oldValue <span class="token operator">=</span> watcher<span class="token punctuation">.</span>last
+      equal <span class="token operator">=</span> watcher<span class="token punctuation">.</span>eq
+        <span class="token operator">?</span> _<span class="token punctuation">.</span><span class="token function">isEqual</span><span class="token punctuation">(</span>newValue<span class="token punctuation">,</span> oldValue<span class="token punctuation">)</span>
+        <span class="token operator">:</span> newValue <span class="token operator">===</span> oldValue <span class="token operator">||</span> <span class="token punctuation">(</span>_<span class="token punctuation">.</span><span class="token function">isNaN</span><span class="token punctuation">(</span>newValue<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> _<span class="token punctuation">.</span><span class="token function">isNaN</span><span class="token punctuation">(</span>oldValue<span class="token punctuation">)</span><span class="token punctuation">)</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>newValue <span class="token operator">!==</span> oldValue <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>equal<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        self<span class="token punctuation">.</span>$$lastDirtyWatch <span class="token operator">=</span> watcher
+        watcher<span class="token punctuation">.</span>last <span class="token operator">=</span> watcher<span class="token punctuation">.</span>eq <span class="token operator">?</span> _<span class="token punctuation">.</span><span class="token function">cloneDeep</span><span class="token punctuation">(</span>newValue<span class="token punctuation">)</span> <span class="token operator">:</span> newValue
+        dirty <span class="token operator">=</span> <span class="token boolean">true</span>
+        watcher<span class="token punctuation">.</span><span class="token function">listenerFn</span><span class="token punctuation">(</span>newValue<span class="token punctuation">,</span> oldValue <span class="token operator">===</span> initWatchVal <span class="token operator">?</span> <span class="token keyword">undefined</span> <span class="token operator">:</span> oldValue<span class="token punctuation">,</span> self<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>self<span class="token punctuation">.</span>$$lastDirtyWatch <span class="token operator">===</span> watcher<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token boolean">false</span> <span class="token comment">// exit iteration</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token keyword">return</span> dirty
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token class-name">Scope</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">$digest</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> ttl <span class="token operator">=</span> <span class="token constant">TTL</span>
+  <span class="token keyword">var</span> dirty <span class="token operator">=</span> <span class="token boolean">false</span>
+  <span class="token keyword">var</span> asyncTask
+  <span class="token keyword">this</span><span class="token punctuation">.</span>$$lastDirtyWatch <span class="token operator">=</span> <span class="token keyword">null</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$beginPhase</span><span class="token punctuation">(</span><span class="token string">'$digest'</span><span class="token punctuation">)</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>$$applyAsyncId<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">clearTimeout</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>$$applyAsyncId<span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$$flushApplyAsync</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">do</span> <span class="token punctuation">{</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>$$asyncQueue<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">try</span> <span class="token punctuation">{</span>
+        asyncTask <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$$asyncQueue<span class="token punctuation">.</span><span class="token function">shift</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        asyncTask<span class="token punctuation">.</span>scope<span class="token punctuation">.</span><span class="token function">$eval</span><span class="token punctuation">(</span>asyncTask<span class="token punctuation">.</span>expression<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    dirty <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$$digestOnce</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>dirty <span class="token operator">||</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$$asyncQueue<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>ttl<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$clearPhase</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token keyword">throw</span> <span class="token string">'10 digest iterations reached'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span> <span class="token keyword">while</span> <span class="token punctuation">(</span>dirty <span class="token operator">||</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$$asyncQueue<span class="token punctuation">.</span>length<span class="token punctuation">)</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$clearPhase</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>$$postDigestQueue<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>$$postDigestQueue<span class="token punctuation">.</span><span class="token function">shift</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token class-name">Scope</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">$$flushApplyAsync</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>$$applyAsyncQueue<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>$$applyAsyncQueue<span class="token punctuation">.</span><span class="token function">shift</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>$$applyAsyncId <span class="token operator">=</span> <span class="token keyword">null</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>还记得我们之前实现的删除监听器的方法吗，它存在一个问题。比如在添加三个监听器时，中间的一个在指定关注的数据后就调用取消监听器的方法，所以在执行到第二个 <code>watcher</code> 时，整个 <code>watcher</code> 集合都会向左移动，导致在循环中调用不到后一个 <code>watcher</code>。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">var</span> scope <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Scope</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+scope<span class="token punctuation">.</span><span class="token function">$watch</span><span class="token punctuation">(</span>
+  <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span>
+<span class="token keyword">var</span> destroyWatch <span class="token operator">=</span> scope<span class="token punctuation">.</span><span class="token function">$watch</span><span class="token punctuation">(</span>
+  <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function">destroyWatch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span>
+scope<span class="token punctuation">.</span><span class="token function">$watch</span><span class="token punctuation">(</span>
+  <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span>
+scope<span class="token punctuation">.</span><span class="token function">$digest</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><p>解决的方法就是在添加 <code>watcher</code> 时，在整个集合的头部添加，然后从右向左的执行。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token class-name">Scope</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">$watch</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">watchFn<span class="token punctuation">,</span> listenerFn<span class="token punctuation">,</span> objectEquality</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ... 省略部分代码</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>$$watchers<span class="token punctuation">.</span><span class="token function">unshift</span><span class="token punctuation">(</span>watcher<span class="token punctuation">)</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>$$lastDirtyWatch <span class="token operator">=</span> <span class="token keyword">null</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    _<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>$$watchers<span class="token punctuation">,</span> watcher<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token class-name">Scope</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">$$digestOnce</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> self <span class="token operator">=</span> <span class="token keyword">this</span>
+  <span class="token keyword">var</span> dirty <span class="token operator">=</span> <span class="token boolean">false</span>
+  <span class="token keyword">var</span> newValue<span class="token punctuation">,</span> oldValue<span class="token punctuation">,</span> equal
+  _<span class="token punctuation">.</span><span class="token function">forEachRight</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>$$watchers<span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">watcher</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// ... 省略部分代码</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token keyword">return</span> dirty
+<span class="token punctuation">}</span>
+</code></pre></div><p>现在看起来好像没什么问题了，但是如果我们在第一个 <code>watcher</code> 中消除第二个 <code>watcher</code> 呢？</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">var</span> scope <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Scope</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+scope<span class="token punctuation">.</span><span class="token function">$watch</span><span class="token punctuation">(</span>
+  <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token function">destroyWatch</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span>
+<span class="token keyword">var</span> destroyWatch <span class="token operator">=</span> scope<span class="token punctuation">.</span><span class="token function">$watch</span><span class="token punctuation">(</span>
+  <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span>
+scope<span class="token punctuation">.</span><span class="token function">$watch</span><span class="token punctuation">(</span>
+  <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span>
+scope<span class="token punctuation">.</span><span class="token function">$digest</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><p>上面的例子中，我们成功的检测和执行第一个 <code>watcher</code>，然后把其存在了 <code>$$lastDirtyWatch</code> 中，紧接着在其处理函数中又消除第二个 <code>watcher</code>，所以它会被立即执行第二次，现在由于它关注的值是干净的了，所以同样也不会继续循环，导致从始至终第三个 <code>watcher</code> 都没有被执行过。</p> <p>为了解决这个问题，我们可以在移除 <code>watcher</code> 的时候，将 <code>$$lastDirtyWatch</code> 的值设置为空。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token class-name">Scope</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">$watch</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">watchFn<span class="token punctuation">,</span> listenerFn<span class="token punctuation">,</span> objectEquality</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ... 省略部分代码</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    _<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>$$watchers<span class="token punctuation">,</span> watcher<span class="token punctuation">)</span>
+    self<span class="token punctuation">.</span>$$lastDirtyWatch <span class="token operator">=</span> <span class="token keyword">null</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>最后，还有一种情况，如果第一个 <code>watcher</code> 不仅仅移除了自己又同时移除了下一个 <code>watcher</code> 呢？</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">var</span> scope <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Scope</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">var</span> destroyWatch1 <span class="token operator">=</span> scope<span class="token punctuation">.</span><span class="token function">$watch</span><span class="token punctuation">(</span>
+  <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token function">destroyWatch1</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token function">destroyWatch2</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span>
+<span class="token keyword">var</span> destroyWatch2 <span class="token operator">=</span> scope<span class="token punctuation">.</span><span class="token function">$watch</span><span class="token punctuation">(</span>
+  <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span>
+scope<span class="token punctuation">.</span><span class="token function">$watch</span><span class="token punctuation">(</span>
+  <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span>
+scope<span class="token punctuation">.</span><span class="token function">$digest</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><p>显然这会导致一个错误（调用不存在的 watcher），解决方法很简单，就是在处理 <code>watcher</code> 之前进行一次判断。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token class-name">Scope</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">$$digestOnce</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> self <span class="token operator">=</span> <span class="token keyword">this</span>
+  <span class="token keyword">var</span> dirty <span class="token operator">=</span> <span class="token boolean">false</span>
+  <span class="token keyword">var</span> newValue<span class="token punctuation">,</span> oldValue<span class="token punctuation">,</span> equal
+  _<span class="token punctuation">.</span><span class="token function">forEachRight</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>$$watchers<span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">watcher</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>watcher<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        newValue <span class="token operator">=</span> watcher<span class="token punctuation">.</span><span class="token function">watchFn</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span>
+        oldValue <span class="token operator">=</span> watcher<span class="token punctuation">.</span>last
+        equal <span class="token operator">=</span> watcher<span class="token punctuation">.</span>eq
+          <span class="token operator">?</span> _<span class="token punctuation">.</span><span class="token function">isEqual</span><span class="token punctuation">(</span>newValue<span class="token punctuation">,</span> oldValue<span class="token punctuation">)</span>
+          <span class="token operator">:</span> newValue <span class="token operator">===</span> oldValue <span class="token operator">||</span> <span class="token punctuation">(</span>_<span class="token punctuation">.</span><span class="token function">isNaN</span><span class="token punctuation">(</span>newValue<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> _<span class="token punctuation">.</span><span class="token function">isNaN</span><span class="token punctuation">(</span>oldValue<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>newValue <span class="token operator">!==</span> oldValue <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>equal<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          self<span class="token punctuation">.</span>$$lastDirtyWatch <span class="token operator">=</span> watcher
+          watcher<span class="token punctuation">.</span>last <span class="token operator">=</span> watcher<span class="token punctuation">.</span>eq <span class="token operator">?</span> _<span class="token punctuation">.</span><span class="token function">cloneDeep</span><span class="token punctuation">(</span>newValue<span class="token punctuation">)</span> <span class="token operator">:</span> newValue
+          dirty <span class="token operator">=</span> <span class="token boolean">true</span>
+          watcher<span class="token punctuation">.</span><span class="token function">listenerFn</span><span class="token punctuation">(</span>newValue<span class="token punctuation">,</span> oldValue <span class="token operator">===</span> initWatchVal <span class="token operator">?</span> <span class="token keyword">undefined</span> <span class="token operator">:</span> oldValue<span class="token punctuation">,</span> self<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>self<span class="token punctuation">.</span>$$lastDirtyWatch <span class="token operator">===</span> watcher<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">return</span> <span class="token boolean">false</span> <span class="token comment">// exit iteration</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token keyword">return</span> dirty
+<span class="token punctuation">}</span>
+</code></pre></div><p>终于，一次普通的监听处理完成了，不过，有时候我们需要同时监听多个数据，然后具有同一个处理函数。那么要一个个添加吗？</p> <p>在 AngularJS 还提供了一个 <code>$watchGroup</code> 方法来解决这个问题。它的本质就是上面我们说的一个一个的添加，只不过这些工作都是内部自己处理的，我们只需要提供关注的数据和对应的处理函数就好了，现在就来实现它。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">/**
+ * @description
+ * 使用一个监听器监听多个数据
+ * @param { string[] | function[] } 多个监听对象组成的数组
+ * @param { function } 监听对象中有变化时的处理器，可以接受到的参数为新值组成的数组、旧值组成的数组、作用域对象
+ * @returns { function } 清除注册的监听组
+ */</span>
+<span class="token class-name">Scope</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">$watchGroup</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">watchFns<span class="token punctuation">,</span> listenerFn</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> self <span class="token operator">=</span> <span class="token keyword">this</span>
+  <span class="token keyword">var</span> destroyFunctions <span class="token operator">=</span> _<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>watchFns<span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">watchFn</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    self<span class="token punctuation">.</span><span class="token function">$watch</span><span class="token punctuation">(</span>watchFn<span class="token punctuation">,</span> listenerFn<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    _<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>destroyFunctions<span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">destroyFunction</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">destroyFunction</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>上面的函数实现得很简单，但它很好得说明了整个原理。</p> <p>由于我们关注的应该是多个数据，因此我们应该将多个数据变化前后的值都放到一个数组中，以便在处理函数中进行处理，为此我们需要在处理函数下做下改进。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token class-name">Scope</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">$watchGroup</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">watchFns<span class="token punctuation">,</span> listenerFn</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> self <span class="token operator">=</span> <span class="token keyword">this</span>
+  <span class="token keyword">var</span> newValues <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token keyword">var</span> oldValues <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token keyword">var</span> destroyFunctions <span class="token operator">=</span> _<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>watchFns<span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">watchFn<span class="token punctuation">,</span> i</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    self<span class="token punctuation">.</span><span class="token function">$watch</span><span class="token punctuation">(</span>watchFn<span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">newValue<span class="token punctuation">,</span> oldValue<span class="token punctuation">,</span> self</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      newValues<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> newValue
+      oldValues<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> oldValue
+      <span class="token function">listenerFn</span><span class="token punctuation">(</span>newValues<span class="token punctuation">,</span> oldValues<span class="token punctuation">,</span> self<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token comment">// ... 省略部分代码</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>现在关注的数据中任何一个变换都会调用一次处理函数，问题是如果在短时间内，其中的数据多个都发生变换，那么处理函数也将被调用多次，而且新旧值数组中的数据也显得比较混乱，容易使人疑惑。所以我们先把处理函数的调用提取出来，并使用变量（changeReactionScheduled）来记录是否已经调用，如果调用了则不需要再次调用，当然这需要异步来实现，否则直接就执行了，这里我们使用之前实现的 <code>$evalAsync</code>。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token class-name">Scope</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">$watchGroup</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">watchFns<span class="token punctuation">,</span> listenerFn</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> self <span class="token operator">=</span> <span class="token keyword">this</span>
+  <span class="token keyword">var</span> newValues <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token keyword">var</span> oldValues <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token keyword">var</span> changeReactionScheduled <span class="token operator">=</span> <span class="token boolean">false</span>
+  <span class="token keyword">var</span> <span class="token function-variable function">watchGroupListener</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">listenerFn</span><span class="token punctuation">(</span>newValues<span class="token punctuation">,</span> oldValues<span class="token punctuation">,</span> self<span class="token punctuation">)</span>
+    changeReactionScheduled <span class="token operator">=</span> <span class="token boolean">false</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">var</span> destroyFunctions <span class="token operator">=</span> _<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>watchFns<span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">watchFn<span class="token punctuation">,</span> i</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    self<span class="token punctuation">.</span><span class="token function">$watch</span><span class="token punctuation">(</span>watchFn<span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">newValue<span class="token punctuation">,</span> oldValue<span class="token punctuation">,</span> self</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      newValues<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> newValue
+      oldValues<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> oldValue
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>changeReactionScheduled<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        changeReactionScheduled <span class="token operator">=</span> <span class="token boolean">true</span>
+        self<span class="token punctuation">.</span><span class="token function">$evalAsync</span><span class="token punctuation">(</span>watchGroupListener<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token comment">// ... 省略部分代码</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>需要注意的是，由于我们用数组记录前后的数据，所以即使第一次数据是相同的，使用者也不能在处理函数中直接用绝对等于来得到为'真'的结果。因此我们需要对第一次做特殊处理，将新旧值都传入同一个对象。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token class-name">Scope</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">$watchGroup</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">watchFns<span class="token punctuation">,</span> listenerFn</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> self <span class="token operator">=</span> <span class="token keyword">this</span>
+  <span class="token keyword">var</span> newValues <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token keyword">var</span> oldValues <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token keyword">var</span> changeReactionScheduled <span class="token operator">=</span> <span class="token boolean">false</span>
+  <span class="token keyword">var</span> isFirst <span class="token operator">=</span> <span class="token boolean">true</span>
+  <span class="token keyword">var</span> <span class="token function-variable function">watchGroupListener</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>isFirst<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      isFirst <span class="token operator">=</span> <span class="token boolean">false</span>
+      <span class="token function">listenerFn</span><span class="token punctuation">(</span>newValues<span class="token punctuation">,</span> newValues<span class="token punctuation">,</span> self<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token function">listenerFn</span><span class="token punctuation">(</span>newValues<span class="token punctuation">,</span> oldValues<span class="token punctuation">,</span> self<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    changeReactionScheduled <span class="token operator">=</span> <span class="token boolean">false</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// ... 省略部分代码</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>最后，对于指定的关注的数据为空时，相当于我们什么也没有做，而在 AngularJS 中它会调用一次指定的监听器，因此我们在这里对参数做一下判断。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token class-name">Scope</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">$watchGroup</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">watchFns<span class="token punctuation">,</span> listenerFn</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> self <span class="token operator">=</span> <span class="token keyword">this</span>
+  <span class="token keyword">var</span> newValues <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token keyword">var</span> oldValues <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token keyword">var</span> changeReactionScheduled <span class="token operator">=</span> <span class="token boolean">false</span>
+  <span class="token keyword">var</span> isFirst <span class="token operator">=</span> <span class="token boolean">true</span>
+  <span class="token keyword">var</span> <span class="token function-variable function">watchGroupListener</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>isFirst<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      isFirst <span class="token operator">=</span> <span class="token boolean">false</span>
+      <span class="token function">listenerFn</span><span class="token punctuation">(</span>newValues<span class="token punctuation">,</span> newValues<span class="token punctuation">,</span> self<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token function">listenerFn</span><span class="token punctuation">(</span>newValues<span class="token punctuation">,</span> oldValues<span class="token punctuation">,</span> self<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    changeReactionScheduled <span class="token operator">=</span> <span class="token boolean">false</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>watchFns<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    self<span class="token punctuation">.</span><span class="token function">$evalAsync</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">listenerFn</span><span class="token punctuation">(</span>newValues<span class="token punctuation">,</span> newValues<span class="token punctuation">,</span> self<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// ... 省略部分代码</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>同样的，我们需要对它加上一个类似取消的功能，因此我们对判断的地方进行改进。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>watchFns<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> shouldCall <span class="token operator">=</span> <span class="token boolean">true</span>
+  self<span class="token punctuation">.</span><span class="token function">$evalAsync</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>shouldCall<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">listenerFn</span><span class="token punctuation">(</span>newValues<span class="token punctuation">,</span> newValues<span class="token punctuation">,</span> self<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    shouldCall <span class="token operator">=</span> <span class="token boolean">false</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>现在，一个基础的结构已经呈现出来了。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/notebook/ng/basis/angular-dev.html" class="prev">
+        搭建 webpack-angular 基础开发环境
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/notebook/assets/js/app.d2525610.js" defer></script><script src="/notebook/assets/js/1.0ed4caaf.js" defer></script><script src="/notebook/assets/js/183.ee1bffef.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>YDKJS-异步和性能 | notes | Kisstar</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    
+    <meta name="description" content="Kisstar's personal notes">
+    <link rel="preload" href="/notebook/assets/css/0.styles.b13da641.css" as="style"><link rel="preload" href="/notebook/assets/js/app.d2525610.js" as="script"><link rel="preload" href="/notebook/assets/js/1.0ed4caaf.js" as="script"><link rel="preload" href="/notebook/assets/js/125.d5362d6d.js" as="script"><link rel="prefetch" href="/notebook/assets/js/10.474fe4d7.js"><link rel="prefetch" href="/notebook/assets/js/100.c6de51f5.js"><link rel="prefetch" href="/notebook/assets/js/101.297b80a6.js"><link rel="prefetch" href="/notebook/assets/js/102.671042f0.js"><link rel="prefetch" href="/notebook/assets/js/103.a4414990.js"><link rel="prefetch" href="/notebook/assets/js/104.5f326d1b.js"><link rel="prefetch" href="/notebook/assets/js/105.7d48691a.js"><link rel="prefetch" href="/notebook/assets/js/106.f9e2d3d6.js"><link rel="prefetch" href="/notebook/assets/js/107.3dfec344.js"><link rel="prefetch" href="/notebook/assets/js/108.64e0d2ce.js"><link rel="prefetch" href="/notebook/assets/js/109.c4b5ca14.js"><link rel="prefetch" href="/notebook/assets/js/11.f5ac12d4.js"><link rel="prefetch" href="/notebook/assets/js/110.2803df2c.js"><link rel="prefetch" href="/notebook/assets/js/111.e059e845.js"><link rel="prefetch" href="/notebook/assets/js/112.32498864.js"><link rel="prefetch" href="/notebook/assets/js/113.486abba6.js"><link rel="prefetch" href="/notebook/assets/js/114.2d88bb98.js"><link rel="prefetch" href="/notebook/assets/js/115.1b24dcc9.js"><link rel="prefetch" href="/notebook/assets/js/116.74a7e55c.js"><link rel="prefetch" href="/notebook/assets/js/117.748d98d9.js"><link rel="prefetch" href="/notebook/assets/js/118.2ff07d0b.js"><link rel="prefetch" href="/notebook/assets/js/119.ee1cf35b.js"><link rel="prefetch" href="/notebook/assets/js/12.18a51a50.js"><link rel="prefetch" href="/notebook/assets/js/120.534b8406.js"><link rel="prefetch" href="/notebook/assets/js/121.b728e838.js"><link rel="prefetch" href="/notebook/assets/js/122.530e17ec.js"><link rel="prefetch" href="/notebook/assets/js/123.3026ab36.js"><link rel="prefetch" href="/notebook/assets/js/124.0a3f74f7.js"><link rel="prefetch" href="/notebook/assets/js/126.12262d78.js"><link rel="prefetch" href="/notebook/assets/js/127.7a3ce301.js"><link rel="prefetch" href="/notebook/assets/js/128.08c7e66c.js"><link rel="prefetch" href="/notebook/assets/js/129.6d2c5dde.js"><link rel="prefetch" href="/notebook/assets/js/13.d51e68a7.js"><link rel="prefetch" href="/notebook/assets/js/130.26713517.js"><link rel="prefetch" href="/notebook/assets/js/131.e4470d34.js"><link rel="prefetch" href="/notebook/assets/js/132.e61d0276.js"><link rel="prefetch" href="/notebook/assets/js/133.6f731828.js"><link rel="prefetch" href="/notebook/assets/js/134.be500b7d.js"><link rel="prefetch" href="/notebook/assets/js/135.918c41a0.js"><link rel="prefetch" href="/notebook/assets/js/136.fa550828.js"><link rel="prefetch" href="/notebook/assets/js/137.9f6cceb3.js"><link rel="prefetch" href="/notebook/assets/js/138.49ed9255.js"><link rel="prefetch" href="/notebook/assets/js/139.a06e7d39.js"><link rel="prefetch" href="/notebook/assets/js/14.2f72b127.js"><link rel="prefetch" href="/notebook/assets/js/140.1c46603a.js"><link rel="prefetch" href="/notebook/assets/js/141.25a371c3.js"><link rel="prefetch" href="/notebook/assets/js/142.3a8418ef.js"><link rel="prefetch" href="/notebook/assets/js/143.3b1f5644.js"><link rel="prefetch" href="/notebook/assets/js/144.bf130a4b.js"><link rel="prefetch" href="/notebook/assets/js/145.1b64bc1e.js"><link rel="prefetch" href="/notebook/assets/js/146.f48d4ddb.js"><link rel="prefetch" href="/notebook/assets/js/147.6335e830.js"><link rel="prefetch" href="/notebook/assets/js/148.50471b20.js"><link rel="prefetch" href="/notebook/assets/js/149.c57f1b59.js"><link rel="prefetch" href="/notebook/assets/js/15.2ca416a7.js"><link rel="prefetch" href="/notebook/assets/js/150.9ef4236e.js"><link rel="prefetch" href="/notebook/assets/js/151.a99db080.js"><link rel="prefetch" href="/notebook/assets/js/152.14eb132e.js"><link rel="prefetch" href="/notebook/assets/js/153.d6835009.js"><link rel="prefetch" href="/notebook/assets/js/154.1c8c82b7.js"><link rel="prefetch" href="/notebook/assets/js/155.8e861480.js"><link rel="prefetch" href="/notebook/assets/js/156.f0ad16cf.js"><link rel="prefetch" href="/notebook/assets/js/157.cc6d2da1.js"><link rel="prefetch" href="/notebook/assets/js/158.8ab0edc3.js"><link rel="prefetch" href="/notebook/assets/js/159.9ea2a0d4.js"><link rel="prefetch" href="/notebook/assets/js/16.591f2b9f.js"><link rel="prefetch" href="/notebook/assets/js/160.f7a049ee.js"><link rel="prefetch" href="/notebook/assets/js/161.1903318c.js"><link rel="prefetch" href="/notebook/assets/js/162.80477370.js"><link rel="prefetch" href="/notebook/assets/js/163.2928ab8b.js"><link rel="prefetch" href="/notebook/assets/js/164.f0ccc741.js"><link rel="prefetch" href="/notebook/assets/js/165.bc336df4.js"><link rel="prefetch" href="/notebook/assets/js/166.640ad893.js"><link rel="prefetch" href="/notebook/assets/js/167.2d588db1.js"><link rel="prefetch" href="/notebook/assets/js/168.88751527.js"><link rel="prefetch" href="/notebook/assets/js/169.181d672a.js"><link rel="prefetch" href="/notebook/assets/js/17.7ca8627c.js"><link rel="prefetch" href="/notebook/assets/js/170.d36703bd.js"><link rel="prefetch" href="/notebook/assets/js/171.f7f8e405.js"><link rel="prefetch" href="/notebook/assets/js/172.bb346c7b.js"><link rel="prefetch" href="/notebook/assets/js/173.66fc692d.js"><link rel="prefetch" href="/notebook/assets/js/174.f318c08c.js"><link rel="prefetch" href="/notebook/assets/js/175.0afcbeaf.js"><link rel="prefetch" href="/notebook/assets/js/176.bd381032.js"><link rel="prefetch" href="/notebook/assets/js/177.e4cf3975.js"><link rel="prefetch" href="/notebook/assets/js/178.27499c99.js"><link rel="prefetch" href="/notebook/assets/js/179.52cc4a50.js"><link rel="prefetch" href="/notebook/assets/js/18.3e19faa2.js"><link rel="prefetch" href="/notebook/assets/js/180.db0a883b.js"><link rel="prefetch" href="/notebook/assets/js/181.1cdc1877.js"><link rel="prefetch" href="/notebook/assets/js/182.573193fb.js"><link rel="prefetch" href="/notebook/assets/js/183.ee1bffef.js"><link rel="prefetch" href="/notebook/assets/js/184.342841c1.js"><link rel="prefetch" href="/notebook/assets/js/185.978b29f2.js"><link rel="prefetch" href="/notebook/assets/js/186.7a252a54.js"><link rel="prefetch" href="/notebook/assets/js/187.a08f2b0f.js"><link rel="prefetch" href="/notebook/assets/js/188.ce469ef8.js"><link rel="prefetch" href="/notebook/assets/js/189.73e9a622.js"><link rel="prefetch" href="/notebook/assets/js/19.dc07d24c.js"><link rel="prefetch" href="/notebook/assets/js/190.59526ee2.js"><link rel="prefetch" href="/notebook/assets/js/191.f1b51128.js"><link rel="prefetch" href="/notebook/assets/js/192.e79c2302.js"><link rel="prefetch" href="/notebook/assets/js/193.4d109708.js"><link rel="prefetch" href="/notebook/assets/js/194.684a970d.js"><link rel="prefetch" href="/notebook/assets/js/195.cf33c516.js"><link rel="prefetch" href="/notebook/assets/js/196.e69d8b1f.js"><link rel="prefetch" href="/notebook/assets/js/197.59f2c668.js"><link rel="prefetch" href="/notebook/assets/js/198.f31164ee.js"><link rel="prefetch" href="/notebook/assets/js/199.dbffd3ce.js"><link rel="prefetch" href="/notebook/assets/js/20.184be7eb.js"><link rel="prefetch" href="/notebook/assets/js/200.7d4e5fde.js"><link rel="prefetch" href="/notebook/assets/js/201.99912ae1.js"><link rel="prefetch" href="/notebook/assets/js/202.b4f820de.js"><link rel="prefetch" href="/notebook/assets/js/203.d8462a66.js"><link rel="prefetch" href="/notebook/assets/js/204.60879beb.js"><link rel="prefetch" href="/notebook/assets/js/205.0bb38096.js"><link rel="prefetch" href="/notebook/assets/js/206.395acbbe.js"><link rel="prefetch" href="/notebook/assets/js/207.f0ee7206.js"><link rel="prefetch" href="/notebook/assets/js/208.f95acaed.js"><link rel="prefetch" href="/notebook/assets/js/209.7f968427.js"><link rel="prefetch" href="/notebook/assets/js/21.ee5efea4.js"><link rel="prefetch" href="/notebook/assets/js/210.3d50dcca.js"><link rel="prefetch" href="/notebook/assets/js/211.856c0eed.js"><link rel="prefetch" href="/notebook/assets/js/212.876bb62f.js"><link rel="prefetch" href="/notebook/assets/js/213.f6e59a2f.js"><link rel="prefetch" href="/notebook/assets/js/214.a806095a.js"><link rel="prefetch" href="/notebook/assets/js/215.31d97cd1.js"><link rel="prefetch" href="/notebook/assets/js/216.4c9004a2.js"><link rel="prefetch" href="/notebook/assets/js/217.324e4f7f.js"><link rel="prefetch" href="/notebook/assets/js/218.6b2d2bb9.js"><link rel="prefetch" href="/notebook/assets/js/219.1f3542b8.js"><link rel="prefetch" href="/notebook/assets/js/22.5e41fdff.js"><link rel="prefetch" href="/notebook/assets/js/220.5c254ed0.js"><link rel="prefetch" href="/notebook/assets/js/221.4e412ded.js"><link rel="prefetch" href="/notebook/assets/js/222.cb8b6e65.js"><link rel="prefetch" href="/notebook/assets/js/223.d3b647d5.js"><link rel="prefetch" href="/notebook/assets/js/224.76793b55.js"><link rel="prefetch" href="/notebook/assets/js/225.c181b9e5.js"><link rel="prefetch" href="/notebook/assets/js/226.08a6a839.js"><link rel="prefetch" href="/notebook/assets/js/227.ce411683.js"><link rel="prefetch" href="/notebook/assets/js/228.91976dcc.js"><link rel="prefetch" href="/notebook/assets/js/229.a6e61aa2.js"><link rel="prefetch" href="/notebook/assets/js/23.fe3792a7.js"><link rel="prefetch" href="/notebook/assets/js/230.8f61d7f0.js"><link rel="prefetch" href="/notebook/assets/js/231.349fe77c.js"><link rel="prefetch" href="/notebook/assets/js/232.ae0a12f3.js"><link rel="prefetch" href="/notebook/assets/js/233.a26c69e6.js"><link rel="prefetch" href="/notebook/assets/js/234.dc52afc3.js"><link rel="prefetch" href="/notebook/assets/js/235.22c99927.js"><link rel="prefetch" href="/notebook/assets/js/236.cad939cc.js"><link rel="prefetch" href="/notebook/assets/js/237.8f0b6e9e.js"><link rel="prefetch" href="/notebook/assets/js/238.10dad5f1.js"><link rel="prefetch" href="/notebook/assets/js/239.67576d11.js"><link rel="prefetch" href="/notebook/assets/js/24.4f2929e9.js"><link rel="prefetch" href="/notebook/assets/js/240.80c44cfa.js"><link rel="prefetch" href="/notebook/assets/js/241.49ccc17e.js"><link rel="prefetch" href="/notebook/assets/js/242.ff228801.js"><link rel="prefetch" href="/notebook/assets/js/243.4cdb9405.js"><link rel="prefetch" href="/notebook/assets/js/244.3f112ae8.js"><link rel="prefetch" href="/notebook/assets/js/245.b8741dd2.js"><link rel="prefetch" href="/notebook/assets/js/246.bb5c1069.js"><link rel="prefetch" href="/notebook/assets/js/247.9795c57d.js"><link rel="prefetch" href="/notebook/assets/js/248.2c602df4.js"><link rel="prefetch" href="/notebook/assets/js/249.6d15bb03.js"><link rel="prefetch" href="/notebook/assets/js/25.fd5fe753.js"><link rel="prefetch" href="/notebook/assets/js/250.ba5c5c20.js"><link rel="prefetch" href="/notebook/assets/js/251.b063a803.js"><link rel="prefetch" href="/notebook/assets/js/252.9883c2f0.js"><link rel="prefetch" href="/notebook/assets/js/253.726ccc80.js"><link rel="prefetch" href="/notebook/assets/js/254.5460b6fd.js"><link rel="prefetch" href="/notebook/assets/js/255.d21476a2.js"><link rel="prefetch" href="/notebook/assets/js/256.1deea404.js"><link rel="prefetch" href="/notebook/assets/js/257.39070319.js"><link rel="prefetch" href="/notebook/assets/js/258.3905af96.js"><link rel="prefetch" href="/notebook/assets/js/26.76abd46f.js"><link rel="prefetch" href="/notebook/assets/js/27.f2636a73.js"><link rel="prefetch" href="/notebook/assets/js/28.0d7acfbe.js"><link rel="prefetch" href="/notebook/assets/js/29.cefced41.js"><link rel="prefetch" href="/notebook/assets/js/3.de177589.js"><link rel="prefetch" href="/notebook/assets/js/30.07afbba5.js"><link rel="prefetch" href="/notebook/assets/js/31.92551101.js"><link rel="prefetch" href="/notebook/assets/js/32.7dbc8c5e.js"><link rel="prefetch" href="/notebook/assets/js/33.40be7a79.js"><link rel="prefetch" href="/notebook/assets/js/34.1fd46fa9.js"><link rel="prefetch" href="/notebook/assets/js/35.74659d57.js"><link rel="prefetch" href="/notebook/assets/js/36.9a90f4b1.js"><link rel="prefetch" href="/notebook/assets/js/37.be41554b.js"><link rel="prefetch" href="/notebook/assets/js/38.f1b5d5e7.js"><link rel="prefetch" href="/notebook/assets/js/39.9d8b698d.js"><link rel="prefetch" href="/notebook/assets/js/4.02b78e18.js"><link rel="prefetch" href="/notebook/assets/js/40.550cb413.js"><link rel="prefetch" href="/notebook/assets/js/41.c0e1b97c.js"><link rel="prefetch" href="/notebook/assets/js/42.ed95ea00.js"><link rel="prefetch" href="/notebook/assets/js/43.ec860995.js"><link rel="prefetch" href="/notebook/assets/js/44.521f6234.js"><link rel="prefetch" href="/notebook/assets/js/45.22bb8568.js"><link rel="prefetch" href="/notebook/assets/js/46.94969701.js"><link rel="prefetch" href="/notebook/assets/js/47.b5f6c15c.js"><link rel="prefetch" href="/notebook/assets/js/48.0563c806.js"><link rel="prefetch" href="/notebook/assets/js/49.15483326.js"><link rel="prefetch" href="/notebook/assets/js/5.de4f8656.js"><link rel="prefetch" href="/notebook/assets/js/50.12b3841f.js"><link rel="prefetch" href="/notebook/assets/js/51.6148daa1.js"><link rel="prefetch" href="/notebook/assets/js/52.24c01f7a.js"><link rel="prefetch" href="/notebook/assets/js/53.989c3207.js"><link rel="prefetch" href="/notebook/assets/js/54.fe5ccc4e.js"><link rel="prefetch" href="/notebook/assets/js/55.81f71fbe.js"><link rel="prefetch" href="/notebook/assets/js/56.6e71b059.js"><link rel="prefetch" href="/notebook/assets/js/57.e515307c.js"><link rel="prefetch" href="/notebook/assets/js/58.f6553847.js"><link rel="prefetch" href="/notebook/assets/js/59.6d588f88.js"><link rel="prefetch" href="/notebook/assets/js/6.ae5c2b7f.js"><link rel="prefetch" href="/notebook/assets/js/60.6e49b323.js"><link rel="prefetch" href="/notebook/assets/js/61.db8c65b9.js"><link rel="prefetch" href="/notebook/assets/js/62.ea1c68f4.js"><link rel="prefetch" href="/notebook/assets/js/63.e548bbea.js"><link rel="prefetch" href="/notebook/assets/js/64.2ea2f349.js"><link rel="prefetch" href="/notebook/assets/js/65.ce3611e8.js"><link rel="prefetch" href="/notebook/assets/js/66.85466984.js"><link rel="prefetch" href="/notebook/assets/js/67.4b7a7a16.js"><link rel="prefetch" href="/notebook/assets/js/68.0fa048bf.js"><link rel="prefetch" href="/notebook/assets/js/69.d00e8e77.js"><link rel="prefetch" href="/notebook/assets/js/7.be4a2204.js"><link rel="prefetch" href="/notebook/assets/js/70.aa43fa88.js"><link rel="prefetch" href="/notebook/assets/js/71.4c337f0b.js"><link rel="prefetch" href="/notebook/assets/js/72.27dfb4fd.js"><link rel="prefetch" href="/notebook/assets/js/73.8c45959d.js"><link rel="prefetch" href="/notebook/assets/js/74.90ee0f92.js"><link rel="prefetch" href="/notebook/assets/js/75.ede3a6a2.js"><link rel="prefetch" href="/notebook/assets/js/76.e9a0dfce.js"><link rel="prefetch" href="/notebook/assets/js/77.3beb5afe.js"><link rel="prefetch" href="/notebook/assets/js/78.c5e692fa.js"><link rel="prefetch" href="/notebook/assets/js/79.dda3280a.js"><link rel="prefetch" href="/notebook/assets/js/8.961dbf83.js"><link rel="prefetch" href="/notebook/assets/js/80.b9017279.js"><link rel="prefetch" href="/notebook/assets/js/81.159f8048.js"><link rel="prefetch" href="/notebook/assets/js/82.102fa355.js"><link rel="prefetch" href="/notebook/assets/js/83.9711b3c2.js"><link rel="prefetch" href="/notebook/assets/js/84.63a04b23.js"><link rel="prefetch" href="/notebook/assets/js/85.9a60c82c.js"><link rel="prefetch" href="/notebook/assets/js/86.385d1ae9.js"><link rel="prefetch" href="/notebook/assets/js/87.297c6ea6.js"><link rel="prefetch" href="/notebook/assets/js/88.46cb0381.js"><link rel="prefetch" href="/notebook/assets/js/89.4bda3310.js"><link rel="prefetch" href="/notebook/assets/js/9.1fac9f2d.js"><link rel="prefetch" href="/notebook/assets/js/90.0d6547a9.js"><link rel="prefetch" href="/notebook/assets/js/91.ad469783.js"><link rel="prefetch" href="/notebook/assets/js/92.3fd1bc0e.js"><link rel="prefetch" href="/notebook/assets/js/93.3727e6f5.js"><link rel="prefetch" href="/notebook/assets/js/94.6d80f42e.js"><link rel="prefetch" href="/notebook/assets/js/95.a87df1ec.js"><link rel="prefetch" href="/notebook/assets/js/96.5ee494a0.js"><link rel="prefetch" href="/notebook/assets/js/97.059a6403.js"><link rel="prefetch" href="/notebook/assets/js/98.9f97a773.js"><link rel="prefetch" href="/notebook/assets/js/99.56296d34.js">
+    <link rel="stylesheet" href="/notebook/assets/css/0.styles.b13da641.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/notebook/" class="home-link router-link-active"><img src="/notebook/logo.png" alt="notes | Kisstar" class="logo"> <span class="site-name can-hide">notes | Kisstar</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="IT" class="dropdown-title"><span class="title">IT</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          FED
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/html/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-subitem"><a href="/notebook/css/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-subitem"><a href="/notebook/js/" class="nav-link router-link-active">
+  JavaScript
+</a></li><li class="dropdown-subitem"><a href="/notebook/ts/" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-subitem"><a href="/notebook/ng/" class="nav-link">
+  AngularJS
+</a></li><li class="dropdown-subitem"><a href="/notebook/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-subitem"><a href="/notebook/react/" class="nav-link">
+  React
+</a></li><li class="dropdown-subitem"><a href="/notebook/web/" class="nav-link">
+  WEB
+</a></li></ul></li><li class="dropdown-item"><h4>
+          BED
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/webpack/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-subitem"><a href="/notebook/electron/" class="nav-link">
+  Electron
+</a></li><li class="dropdown-subitem"><a href="/notebook/nodejs/" class="nav-link">
+  NodeJS
+</a></li><li class="dropdown-subitem"><a href="/notebook/c/" class="nav-link">
+  C/C++
+</a></li></ul></li><li class="dropdown-item"><h4>
+          OTHER
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/wechat/" class="nav-link">
+  WeChat
+</a></li><li class="dropdown-subitem"><a href="/notebook/video/" class="nav-link">
+  Video
+</a></li><li class="dropdown-subitem"><a href="/notebook/project/" class="nav-link">
+  Project
+</a></li><li class="dropdown-subitem"><a href="/notebook/021/" class="nav-link">
+  021
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="DevTools" class="dropdown-title"><span class="title">DevTools</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/vim/" class="nav-link">
+  Vim
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/chrome/" class="nav-link">
+  Chrome
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Computer" class="dropdown-title"><span class="title">Computer</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/cp/" class="nav-link">
+  Computer Basis
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/algorithm/" class="nav-link">
+  Algorithm
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/mac/" class="nav-link">
+  Mac
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/windows/" class="nav-link">
+  Windows
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/database/" class="nav-link">
+  Database
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Cloud" class="dropdown-title"><span class="title">Cloud</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/docker/" class="nav-link">
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/dev-ops/" class="nav-link">
+  DevOps
+</a></li></ul></div></div><div class="nav-item"><a href="/notebook/collection/" class="nav-link">
+  Collection
+</a></div><div class="nav-item"><a href="/notebook/other/" class="nav-link">
+  Other
+</a></div><div class="nav-item"><a href="https://github.com/kisstar/notebook/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="IT" class="dropdown-title"><span class="title">IT</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          FED
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/html/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-subitem"><a href="/notebook/css/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-subitem"><a href="/notebook/js/" class="nav-link router-link-active">
+  JavaScript
+</a></li><li class="dropdown-subitem"><a href="/notebook/ts/" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-subitem"><a href="/notebook/ng/" class="nav-link">
+  AngularJS
+</a></li><li class="dropdown-subitem"><a href="/notebook/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-subitem"><a href="/notebook/react/" class="nav-link">
+  React
+</a></li><li class="dropdown-subitem"><a href="/notebook/web/" class="nav-link">
+  WEB
+</a></li></ul></li><li class="dropdown-item"><h4>
+          BED
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/webpack/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-subitem"><a href="/notebook/electron/" class="nav-link">
+  Electron
+</a></li><li class="dropdown-subitem"><a href="/notebook/nodejs/" class="nav-link">
+  NodeJS
+</a></li><li class="dropdown-subitem"><a href="/notebook/c/" class="nav-link">
+  C/C++
+</a></li></ul></li><li class="dropdown-item"><h4>
+          OTHER
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/wechat/" class="nav-link">
+  WeChat
+</a></li><li class="dropdown-subitem"><a href="/notebook/video/" class="nav-link">
+  Video
+</a></li><li class="dropdown-subitem"><a href="/notebook/project/" class="nav-link">
+  Project
+</a></li><li class="dropdown-subitem"><a href="/notebook/021/" class="nav-link">
+  021
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="DevTools" class="dropdown-title"><span class="title">DevTools</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/vim/" class="nav-link">
+  Vim
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/chrome/" class="nav-link">
+  Chrome
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Computer" class="dropdown-title"><span class="title">Computer</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/cp/" class="nav-link">
+  Computer Basis
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/algorithm/" class="nav-link">
+  Algorithm
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/mac/" class="nav-link">
+  Mac
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/windows/" class="nav-link">
+  Windows
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/database/" class="nav-link">
+  Database
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Cloud" class="dropdown-title"><span class="title">Cloud</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/docker/" class="nav-link">
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/dev-ops/" class="nav-link">
+  DevOps
+</a></li></ul></div></div><div class="nav-item"><a href="/notebook/collection/" class="nav-link">
+  Collection
+</a></div><div class="nav-item"><a href="/notebook/other/" class="nav-link">
+  Other
+</a></div><div class="nav-item"><a href="https://github.com/kisstar/notebook/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>基础</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>进阶</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>面试</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>第三方</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>读书笔记</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notebook/js/read/ydkjs0.html" class="sidebar-link">YDKJS-作用域</a></li><li><a href="/notebook/js/read/ydkjs1.html" class="sidebar-link">YDKJS-This</a></li><li><a href="/notebook/js/read/ydkjs2.html" class="sidebar-link">YDKJS-对象</a></li><li><a href="/notebook/js/read/ydkjs3.html" class="sidebar-link">YDKJS-类</a></li><li><a href="/notebook/js/read/ydkjs4.html" class="sidebar-link">YDKJS-原型</a></li><li><a href="/notebook/js/read/ydkjs5.html" class="sidebar-link">YDKJS-委托</a></li><li><a href="/notebook/js/read/ydkjs6.html" class="sidebar-link">YDKJS-类型</a></li><li><a href="/notebook/js/read/ydkjs7.html" class="sidebar-link">YDKJS-原生函数</a></li><li><a href="/notebook/js/read/ydkjs8.html" class="sidebar-link">YDKJS-强制类型转换</a></li><li><a href="/notebook/js/read/ydkjs9.html" class="sidebar-link">YDKJS-语法</a></li><li><a href="/notebook/js/read/ydkjs10.html" class="sidebar-link">YDKJS-混合环境 JavaScript</a></li><li><a href="/notebook/js/read/ydkjs11.html" aria-current="page" class="active sidebar-link">YDKJS-异步和性能</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/notebook/js/read/ydkjs11.html#分块的程序" class="sidebar-link">分块的程序</a></li><li class="sidebar-sub-header"><a href="/notebook/js/read/ydkjs11.html#事件循环" class="sidebar-link">事件循环</a></li><li class="sidebar-sub-header"><a href="/notebook/js/read/ydkjs11.html#并行线程" class="sidebar-link">并行线程</a></li><li class="sidebar-sub-header"><a href="/notebook/js/read/ydkjs11.html#并发" class="sidebar-link">并发</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/notebook/js/read/ydkjs11.html#交互性" class="sidebar-link">交互性</a></li></ul></li><li class="sidebar-sub-header"><a href="/notebook/js/read/ydkjs11.html#协作" class="sidebar-link">协作</a></li><li class="sidebar-sub-header"><a href="/notebook/js/read/ydkjs11.html#任务" class="sidebar-link">任务</a></li><li class="sidebar-sub-header"><a href="/notebook/js/read/ydkjs11.html#语句顺序" class="sidebar-link">语句顺序</a></li></ul></li><li><a href="/notebook/js/read/ydkjs12.html" class="sidebar-link">YDKJS-回调</a></li><li><a href="/notebook/js/read/ydkjs13.html" class="sidebar-link">YDKJS-Promise</a></li><li><a href="/notebook/js/read/ydkjs14.html" class="sidebar-link">YDKJS-生成器</a></li><li><a href="/notebook/js/read/ydkjs15.html" class="sidebar-link">YDKJS-程序性能</a></li><li><a href="/notebook/js/read/ydkjs16.html" class="sidebar-link">YDKJS-性能测试与调优</a></li><li><a href="/notebook/js/read/ydkjs17.html" class="sidebar-link">YDKJS-asynquence 库</a></li><li><a href="/notebook/js/read/ydkjs18.html" class="sidebar-link">YDKJS-高级异步模式</a></li><li><a href="/notebook/js/read/ydkjs19.html" class="sidebar-link">YDKJS-编程</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>奇思妙想</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="ydkjs-异步和性能"><a href="#ydkjs-异步和性能" class="header-anchor">#</a> YDKJS-异步和性能</h1> <p>如何表达和控制持续一段时间（程序的一部分现在运行，而另一部分则在将来运行——现在和将来之间有段间隙，在这段间隙中，程序没有活跃执行）的程序行为？</p> <p>几乎所有重要的程序（特别是 JavaScript 程序）都需要通过这样或那样的方法来管理这段时间间隙，这时可能是在等待用户输入、从数据库或文件系统中请求数据、通过网络发送数据并等待响应，或者是在以固定时间间隔执行重复任务（比如动画）。</p> <p>事实上，程序中现在运行的部分和将来运行的部分之间的关系就是异步编程的核心。</p> <h2 id="分块的程序"><a href="#分块的程序" class="header-anchor">#</a> 分块的程序</h2> <p>可以把 JavaScript 程序写在单个文件中，但是这个程序几乎一定是由多个块构成的。这些块中只有一个是现在执行，其余的则会在将来执行。最常见的块单位是函数。</p> <p>可能会遇到的问题是程序中将来执行的部分并不一定在现在运行的部分执行完之后就立即执行。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// ajax(..) 是某个库中提供的某个 Ajax 函数</span>
+<span class="token keyword">var</span> data <span class="token operator">=</span> <span class="token function">ajax</span><span class="token punctuation">(</span><span class="token string">'http://some.url.1'</span><span class="token punctuation">)</span>
+<span class="token comment">// data 中通常不会包含 Ajax 结果</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+</code></pre></div><p>从现在到将来的“等待”，最简单的方法是使用一个通常称为回调函数的函数：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// ajax(..) 是某个库中提供的某个 Ajax 函数</span>
+<span class="token function">ajax</span><span class="token punctuation">(</span><span class="token string">'http://some.url.1'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token function">myCallbackFunction</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token comment">// 在这里可以得到 Ajax 结果</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>任何时候，只要把一段代码包装成一个函数，并指定它在响应某个事件（定时器、鼠标点击、Ajax 响应等）时执行，你就是在代码中创建了一个将来执行的块，也由此在这个程序中引入了异步机制。</p> <p>另外，在许多程序（不只是 JavaScript）中，I/O 是非常低速的阻塞部分。所以，（从页面 /UI 的角度来说）浏览器在后台异步处理控制台 I/O 能够提高性能。</p> <p>如果在调试的过程中遇到对象在 <code>console.log(..)</code> 语句之后被修改，可你却看到了意料之外的结果，要意识到这可能是这种 I/O 的异步化造成的。</p> <h2 id="事件循环"><a href="#事件循环" class="header-anchor">#</a> 事件循环</h2> <p>JavaScript 引擎并不是独立运行的，它运行在宿主环境中。</p> <p>所有这些环境都有一个共同“点”（thread，也指线程），即它们都提供了一种机制来处理程序中多个块的执行，且执行每块时调用 JavaScript 引擎，这种机制被称为事件循环。</p> <p>换句话说，JavaScript 引擎本身并没有时间的概念，只是一个按需执行 JavaScript 任意代码片段的环境。“事件”（JavaScript 代码执行）调度总是由包含它的环境进行。</p> <p>那么具体什么是事件循环？借助下面的伪代码可以很好的说明这个问题：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// eventLoop是一个用作队列的数组</span>
+<span class="token comment">// （先进，先出）</span>
+<span class="token keyword">var</span> eventLoop <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">var</span> event
+<span class="token comment">// “永远”执行</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 一次tick</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>eventLoop<span class="token punctuation">.</span>length <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 拿到队列中的下一个事件</span>
+    event <span class="token operator">=</span> eventLoop<span class="token punctuation">.</span><span class="token function">shift</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token comment">// 现在，执行下一个事件</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+      <span class="token function">event</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">reportError</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>有一个用 <code>while</code> 循环实现的持续运行的循环，循环的每一轮称为一个 <code>tick</code>。对每个 <code>tick</code> 而言，如果在队列中有等待事件，那么就会从队列中摘下一个事件并执行。这些事件就是你的回调函数。</p> <p>需要注意的是 <code>setTimeout(..)</code> 并没有把你的回调函数挂在事件循环队列中。它所做的是设定一个定时器。当定时器到时后，环境会把你的回调函数放在事件循环中，这样，在未来某个时刻的 tick 会摘下并执行这个回调。</p> <p>如果此时队列中已经存在多个项目，那么就会进入等待，直到前面的任务完成后才会执行，这也解释了为什么 <code>setTimeout(..)</code> 定时器的精度可能不高。</p> <h2 id="并行线程"><a href="#并行线程" class="header-anchor">#</a> 并行线程</h2> <p>异步是关于现在和将来的时间间隙，而并行是关于能够同时发生的事情。</p> <p>并行计算最常见的工具就是进程和线程。进程和线程独立运行，并可能同时运行：在不同的处理器，甚至不同的计算机上，但多个线程能够共享单个进程的内存。</p> <p>与之相对的是，事件循环把自身的工作分成一个个任务并顺序执行，不允许对共享内存的并行访问和修改。通过分立线程中彼此合作的事件循环，并行和顺序执行可以共存。</p> <p>并行线程的交替执行和异步事件的交替调度，其粒度是完全不同的。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">later</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  answer <span class="token operator">=</span> answer <span class="token operator">*</span> <span class="token number">2</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Meaning of life:'</span><span class="token punctuation">,</span> answer<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>尽管 <code>later()</code> 的所有内容被看作单独的一个事件循环队列表项，但如果考虑到这段代码是运行在一个线程中，实际上可能有很多个不同的底层运算。</p> <p>在单线程环境中，线程队列中的这些项目是底层运算确实是无所谓的，因为线程本身不会被中断。但如果是在并行系统中，同一个程序中可能有两个不同的线程在运转，这时很可能就会得到不确定的结果。</p> <p>JavaScript 从不跨线程共享数据，这意味着不需要考虑这一层次的不确定性。但是这并不意味着 JavaScript 总是确定性的。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">20</span>
+<span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  a <span class="token operator">=</span> a <span class="token operator">+</span> <span class="token number">1</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  a <span class="token operator">=</span> a <span class="token operator">*</span> <span class="token number">2</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// ajax(..) 是某个库中提供的某个 Ajax 函数</span>
+<span class="token function">ajax</span><span class="token punctuation">(</span><span class="token string">'http://some.url.1'</span><span class="token punctuation">,</span> foo<span class="token punctuation">)</span>
+<span class="token function">ajax</span><span class="token punctuation">(</span><span class="token string">'http://some.url.2'</span><span class="token punctuation">,</span> bar<span class="token punctuation">)</span>
+</code></pre></div><p>由于 JavaScript 的单线程特性，<code>foo()</code>（以及 bar()）中的代码具有原子性。也就是说，一旦 <code>foo()</code> 开始运行，它的所有代码都会在 <code>bar()</code> 中的任意代码运行之前完成，或者相反。这称为完整运行（run-to-completion）特性。</p> <p>但就像示例中所展示的，<code>foo()</code> 和 <code>bar()</code> 的相对顺序改变可能会导致不同结果（41 或 42）。但是，这种不确定性是在函数（事件）顺序级别上，而不是多线程情况下的语句顺序级别。</p> <p>在 JavaScript 的特性中，这种函数顺序的不确定性就是通常所说的竞态条件（race condition），<code>foo()</code> 和 <code>bar()</code> 相互竞争，看谁先运行。具体来说，因为无法可靠预测最终结果，所以才是竞态条件。</p> <h2 id="并发"><a href="#并发" class="header-anchor">#</a> 并发</h2> <p>现在让我们来设想一个展示状态更新列表的网站，其随着用户向下滚动列表而逐渐加载更多内容。要正确地实现这一特性，需要（至少）两个独立的“进程”同时运行（也就是说，是在同一段时间内，并不需要在同一时刻）。</p> <p>第一个“进程”在用户向下滚动页面触发 onscroll 事件时响应这些事件（发起 Ajax 请求要求新的内容）。第二个“进程”接收 Ajax 响应（把内容展示到页面）。</p> <p>如果用户滚动页面足够快的话，在等待第一个响应返回并处理的时候可能会看到两个或更多 <code>onscroll</code> 事件被触发，因此将得到快速触发彼此交替的 <code>onscroll</code> 事件和 Ajax 响应事件：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">/*
+
+onscroll, 请求1 &lt;--- 进程1启动
+onscroll, 请求2
+响应1 &lt;--- 进程2启动
+onscroll, 请求3
+响应2
+响应3
+onscroll, 请求4
+onscroll, 请求5
+onscroll, 请求6
+响应4
+onscroll, 请求7 &lt;--- 进程1结束
+响应6
+响应5
+响应7 &lt;--- 进程2结束
+
+*/</span>
+</code></pre></div><p>“进程”1 和“进程”2 并发运行（任务级并行），但是它们的各个事件是在事件循环队列中依次运行的。单线程事件循环是并发的一种形式。</p> <h3 id="交互性"><a href="#交互性" class="header-anchor">#</a> 交互性</h3> <p>两个或多个“进程”在同一个程序内并发地交替运行它们的步骤/事件时，如果这些任务彼此不相关，就不一定需要交互。如果进程间没有相互影响的话，不确定性是完全可以接受的。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> res <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token parameter">results</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span>foo <span class="token operator">=</span> results
+<span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">bar</span><span class="token punctuation">(</span><span class="token parameter">results</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span>bar <span class="token operator">=</span> results
+<span class="token punctuation">}</span>
+
+<span class="token comment">// ajax(..) 是某个库提供的某个 Ajax 函数</span>
+<span class="token function">ajax</span><span class="token punctuation">(</span><span class="token string">'http://some.url.1'</span><span class="token punctuation">,</span> foo<span class="token punctuation">)</span>
+<span class="token function">ajax</span><span class="token punctuation">(</span><span class="token string">'http://some.url.2'</span><span class="token punctuation">,</span> bar<span class="token punctuation">)</span>
+</code></pre></div><p><code>foo()</code> 和 <code>bar()</code> 是两个并发执行的“进程”，按照什么顺序执行是不确定的。但是，我们构建程序的方式使得无论按哪种顺序执行都无所谓，因为它们是独立运行的，不会相互影响。</p> <p>这并不是竞态条件 <code>bug</code>，因为不管顺序如何，代码总会正常工作。</p> <p>更常见的情况是，并发的“进程”需要相互交流，通过作用域或 DOM 间接交互。如果出现这样的交互，就需要对它们的交互进行协调以避免竞态的出现。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> res <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">function</span> <span class="token function">response</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// ajax(..) 是某个库中提供的某个 Ajax 函数</span>
+<span class="token function">ajax</span><span class="token punctuation">(</span><span class="token string">'http://some.url.1'</span><span class="token punctuation">,</span> response<span class="token punctuation">)</span>
+<span class="token function">ajax</span><span class="token punctuation">(</span><span class="token string">'http://some.url.2'</span><span class="token punctuation">,</span> response<span class="token punctuation">)</span>
+</code></pre></div><p>我们假定期望的行为是 <code>res[0]</code> 中放调用 <code>&quot;http://some.url.1&quot;</code> 的结果，<code>res[1]</code> 中放调用 <code>&quot;http://some.url.2&quot;</code> 的结果。有时候可能是这样，但有时候却恰好相反，这要视哪个调用先完成而定。</p> <p>所以，可以协调交互顺序来处理这样的竞态条件：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> res <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">function</span> <span class="token function">response</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>data<span class="token punctuation">.</span>url <span class="token operator">==</span> <span class="token string">'http://some.url.1'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    res<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> data
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>data<span class="token punctuation">.</span>url <span class="token operator">==</span> <span class="token string">'http://some.url.2'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    res<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> data
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// ajax(..) 是某个库中提供的某个 Ajax 函数</span>
+<span class="token function">ajax</span><span class="token punctuation">(</span><span class="token string">'http://some.url.1'</span><span class="token punctuation">,</span> response<span class="token punctuation">)</span>
+<span class="token function">ajax</span><span class="token punctuation">(</span><span class="token string">'http://some.url.2'</span><span class="token punctuation">,</span> response<span class="token punctuation">)</span>
+</code></pre></div><p>现在，不管哪一个 Ajax 响应先返回我们都可以得到想要的结果。</p> <p>另一种可能遇到的并发交互条件有时称为竞态（race），但是更精确的叫法是门闩（latch）。它的特性可以描述为“只有第一名取胜”。在这里，不确定性是可以接受的，因为它明确指出了这一点是可以接受的：需要“竞争”到终点，且只有唯一的胜利者。</p> <h2 id="协作"><a href="#协作" class="header-anchor">#</a> 协作</h2> <p>还有一种并发合作方式，称为并发协作（cooperative concurrency）。这里的重点不再是通过共享作用域中的值进行交互（尽管这也是允许的）。这里的目标是取到一个长期运行的“进程”，并将其分割成多个步骤或多批任务，使得其他并发“进程”有机会将自己的运算插入到事件循环队列中交替运行。</p> <p>比如，我们需要遍历很长的结果列表进行值转换的 Ajax 响应处理函数：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> res <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token comment">// response(..) 从 Ajax 调用中取得结果数组</span>
+<span class="token keyword">function</span> <span class="token function">response</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 添加到已有的 res 数组</span>
+  res <span class="token operator">=</span> res<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>
+    <span class="token comment">// 创建一个新的变换数组把所有 data 值加倍</span>
+    data<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">val</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> val <span class="token operator">*</span> <span class="token number">2</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// ajax(..) 是某个库中提供的某个 Ajax 函数</span>
+<span class="token function">ajax</span><span class="token punctuation">(</span><span class="token string">'http://some.url.1'</span><span class="token punctuation">,</span> response<span class="token punctuation">)</span>
+<span class="token function">ajax</span><span class="token punctuation">(</span><span class="token string">'http://some.url.2'</span><span class="token punctuation">,</span> response<span class="token punctuation">)</span>
+</code></pre></div><p>这样的“进程”运行时，页面上的其他代码都不能运行，包括不能有其他的 <code>response(..)</code> 调用或 UI 刷新，甚至是像滚动、输入、按钮点击这样的用户事件。</p> <p>所以，要创建一个协作性更强更友好且不会霸占事件循环队列的并发系统，你可以异步地批处理这些结果。每次处理之后返回事件循环，让其他等待事件有机会运行。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> res <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">function</span> <span class="token function">response</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 一次处理 1000 个</span>
+  <span class="token keyword">var</span> chunk <span class="token operator">=</span> data<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span>
+  res <span class="token operator">=</span> res<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>
+    chunk<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">val</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> val <span class="token operator">*</span> <span class="token number">2</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">)</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>data<span class="token punctuation">.</span>length <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 异步调度下一次批处理</span>
+    <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">response</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// ajax(..) 是某个库中提供的某个 Ajax 函数</span>
+<span class="token function">ajax</span><span class="token punctuation">(</span><span class="token string">'http://some.url.1'</span><span class="token punctuation">,</span> response<span class="token punctuation">)</span>
+<span class="token function">ajax</span><span class="token punctuation">(</span><span class="token string">'http://some.url.2'</span><span class="token punctuation">,</span> response<span class="token punctuation">)</span>
+</code></pre></div><p>我们把数据集合放在最多包含 1000 条项目的块中。这样，我们就确保了“进程”运行时间会很短，并使用 <code>setTimeout(..0)</code>（hack）进行异步调度。</p> <h2 id="任务"><a href="#任务" class="header-anchor">#</a> 任务</h2> <p>在 ES6 中，有一个新的概念建立在事件循环队列之上，叫作任务队列（job queue）。</p> <p>我认为对于任务队列最好的理解方式就是，它是挂在事件循环队列的每个 <code>tick</code> 之后的一个队列。在事件循环的每个 <code>tick</code> 中，可能出现的异步动作不会导致一个完整的新事件添加到事件循环队列中，而会在当前 <code>tick</code> 的任务队列末尾添加一个项目（一个任务）。</p> <p>事件循环队列类似于一个游乐园游戏：玩过了一个游戏之后，你需要重新到队尾排队才能再玩一次。而任务队列类似于玩过了游戏之后，插队接着继续玩。</p> <p>设想一个调度任务（直接地，不要 hack）的 API，称其为 <code>schedule(..)</code>。考虑：</p> <div class="language-js extra-class"><pre class="language-js"><code>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'A'</span><span class="token punctuation">)</span>
+<span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'B'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+<span class="token function">schedule</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'C'</span><span class="token punctuation">)</span>
+  <span class="token function">schedule</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'D'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>可能你认为这里会打印出 A B C D，但实际打印的结果是 A C D B。因为任务处理是在当前事件循环 <code>tick</code> 结尾处，且定时器触发是为了调度下一个事件循环 <code>tick</code>（如果可用的话）。</p> <h2 id="语句顺序"><a href="#语句顺序" class="header-anchor">#</a> 语句顺序</h2> <p>代码中语句的顺序和 JavaScript 引擎执行语句的顺序并不一定要一致。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> a<span class="token punctuation">,</span> b
+a <span class="token operator">=</span> <span class="token number">10</span>
+b <span class="token operator">=</span> <span class="token number">30</span>
+a <span class="token operator">=</span> a <span class="token operator">+</span> <span class="token number">1</span>
+b <span class="token operator">=</span> b <span class="token operator">+</span> <span class="token number">1</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a <span class="token operator">+</span> b<span class="token punctuation">)</span> <span class="token comment">// 42</span>
+</code></pre></div><p>这段代码中没有显式的异步（除了前面介绍过的很少见的异步 I/O），所以很可能它的执行过程是从上到下一行行进行的。</p> <p>但是，JavaScript 引擎在编译这段代码之后可能会发现通过（安全地）重新安排这些语句的顺序有可能提高执行速度。比如，引擎可能会发现，其实这样执行会更快：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> a<span class="token punctuation">,</span> b
+a <span class="token operator">=</span> <span class="token number">10</span>
+a<span class="token operator">++</span>
+b <span class="token operator">=</span> <span class="token number">30</span>
+b<span class="token operator">++</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a <span class="token operator">+</span> b<span class="token punctuation">)</span> <span class="token comment">// 42</span>
+<span class="token comment">// 或者这样</span>
+<span class="token keyword">var</span> a<span class="token punctuation">,</span> b
+a <span class="token operator">=</span> <span class="token number">11</span>
+b <span class="token operator">=</span> <span class="token number">31</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a <span class="token operator">+</span> b<span class="token punctuation">)</span> <span class="token comment">// 42</span>
+
+<span class="token comment">// 或者甚至这样</span>
+<span class="token comment">// 因为 a 和 b 不会被再次使用</span>
+<span class="token comment">// 我们可以 inline，从而完全不需要它们</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">42</span><span class="token punctuation">)</span> <span class="token comment">// 42</span>
+</code></pre></div><p>所以说，代码编写的方式（从上到下的模式）和编译后执行的方式之间的联系非常脆弱。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/notebook/js/read/ydkjs10.html" class="prev">
+        YDKJS-混合环境 JavaScript
+      </a></span> <span class="next"><a href="/notebook/js/read/ydkjs12.html">
+        YDKJS-回调
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/notebook/assets/js/app.d2525610.js" defer></script><script src="/notebook/assets/js/1.0ed4caaf.js" defer></script><script src="/notebook/assets/js/125.d5362d6d.js" defer></script>
+  </body>
+</html>

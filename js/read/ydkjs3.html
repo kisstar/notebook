@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>YDKJS-类 | notes | Kisstar</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    
+    <meta name="description" content="Kisstar's personal notes">
+    <link rel="preload" href="/notebook/assets/css/0.styles.b13da641.css" as="style"><link rel="preload" href="/notebook/assets/js/app.d2525610.js" as="script"><link rel="preload" href="/notebook/assets/js/1.0ed4caaf.js" as="script"><link rel="preload" href="/notebook/assets/js/135.918c41a0.js" as="script"><link rel="prefetch" href="/notebook/assets/js/10.474fe4d7.js"><link rel="prefetch" href="/notebook/assets/js/100.c6de51f5.js"><link rel="prefetch" href="/notebook/assets/js/101.297b80a6.js"><link rel="prefetch" href="/notebook/assets/js/102.671042f0.js"><link rel="prefetch" href="/notebook/assets/js/103.a4414990.js"><link rel="prefetch" href="/notebook/assets/js/104.5f326d1b.js"><link rel="prefetch" href="/notebook/assets/js/105.7d48691a.js"><link rel="prefetch" href="/notebook/assets/js/106.f9e2d3d6.js"><link rel="prefetch" href="/notebook/assets/js/107.3dfec344.js"><link rel="prefetch" href="/notebook/assets/js/108.64e0d2ce.js"><link rel="prefetch" href="/notebook/assets/js/109.c4b5ca14.js"><link rel="prefetch" href="/notebook/assets/js/11.f5ac12d4.js"><link rel="prefetch" href="/notebook/assets/js/110.2803df2c.js"><link rel="prefetch" href="/notebook/assets/js/111.e059e845.js"><link rel="prefetch" href="/notebook/assets/js/112.32498864.js"><link rel="prefetch" href="/notebook/assets/js/113.486abba6.js"><link rel="prefetch" href="/notebook/assets/js/114.2d88bb98.js"><link rel="prefetch" href="/notebook/assets/js/115.1b24dcc9.js"><link rel="prefetch" href="/notebook/assets/js/116.74a7e55c.js"><link rel="prefetch" href="/notebook/assets/js/117.748d98d9.js"><link rel="prefetch" href="/notebook/assets/js/118.2ff07d0b.js"><link rel="prefetch" href="/notebook/assets/js/119.ee1cf35b.js"><link rel="prefetch" href="/notebook/assets/js/12.18a51a50.js"><link rel="prefetch" href="/notebook/assets/js/120.534b8406.js"><link rel="prefetch" href="/notebook/assets/js/121.b728e838.js"><link rel="prefetch" href="/notebook/assets/js/122.530e17ec.js"><link rel="prefetch" href="/notebook/assets/js/123.3026ab36.js"><link rel="prefetch" href="/notebook/assets/js/124.0a3f74f7.js"><link rel="prefetch" href="/notebook/assets/js/125.d5362d6d.js"><link rel="prefetch" href="/notebook/assets/js/126.12262d78.js"><link rel="prefetch" href="/notebook/assets/js/127.7a3ce301.js"><link rel="prefetch" href="/notebook/assets/js/128.08c7e66c.js"><link rel="prefetch" href="/notebook/assets/js/129.6d2c5dde.js"><link rel="prefetch" href="/notebook/assets/js/13.d51e68a7.js"><link rel="prefetch" href="/notebook/assets/js/130.26713517.js"><link rel="prefetch" href="/notebook/assets/js/131.e4470d34.js"><link rel="prefetch" href="/notebook/assets/js/132.e61d0276.js"><link rel="prefetch" href="/notebook/assets/js/133.6f731828.js"><link rel="prefetch" href="/notebook/assets/js/134.be500b7d.js"><link rel="prefetch" href="/notebook/assets/js/136.fa550828.js"><link rel="prefetch" href="/notebook/assets/js/137.9f6cceb3.js"><link rel="prefetch" href="/notebook/assets/js/138.49ed9255.js"><link rel="prefetch" href="/notebook/assets/js/139.a06e7d39.js"><link rel="prefetch" href="/notebook/assets/js/14.2f72b127.js"><link rel="prefetch" href="/notebook/assets/js/140.1c46603a.js"><link rel="prefetch" href="/notebook/assets/js/141.25a371c3.js"><link rel="prefetch" href="/notebook/assets/js/142.3a8418ef.js"><link rel="prefetch" href="/notebook/assets/js/143.3b1f5644.js"><link rel="prefetch" href="/notebook/assets/js/144.bf130a4b.js"><link rel="prefetch" href="/notebook/assets/js/145.1b64bc1e.js"><link rel="prefetch" href="/notebook/assets/js/146.f48d4ddb.js"><link rel="prefetch" href="/notebook/assets/js/147.6335e830.js"><link rel="prefetch" href="/notebook/assets/js/148.50471b20.js"><link rel="prefetch" href="/notebook/assets/js/149.c57f1b59.js"><link rel="prefetch" href="/notebook/assets/js/15.2ca416a7.js"><link rel="prefetch" href="/notebook/assets/js/150.9ef4236e.js"><link rel="prefetch" href="/notebook/assets/js/151.a99db080.js"><link rel="prefetch" href="/notebook/assets/js/152.14eb132e.js"><link rel="prefetch" href="/notebook/assets/js/153.d6835009.js"><link rel="prefetch" href="/notebook/assets/js/154.1c8c82b7.js"><link rel="prefetch" href="/notebook/assets/js/155.8e861480.js"><link rel="prefetch" href="/notebook/assets/js/156.f0ad16cf.js"><link rel="prefetch" href="/notebook/assets/js/157.cc6d2da1.js"><link rel="prefetch" href="/notebook/assets/js/158.8ab0edc3.js"><link rel="prefetch" href="/notebook/assets/js/159.9ea2a0d4.js"><link rel="prefetch" href="/notebook/assets/js/16.591f2b9f.js"><link rel="prefetch" href="/notebook/assets/js/160.f7a049ee.js"><link rel="prefetch" href="/notebook/assets/js/161.1903318c.js"><link rel="prefetch" href="/notebook/assets/js/162.80477370.js"><link rel="prefetch" href="/notebook/assets/js/163.2928ab8b.js"><link rel="prefetch" href="/notebook/assets/js/164.f0ccc741.js"><link rel="prefetch" href="/notebook/assets/js/165.bc336df4.js"><link rel="prefetch" href="/notebook/assets/js/166.640ad893.js"><link rel="prefetch" href="/notebook/assets/js/167.2d588db1.js"><link rel="prefetch" href="/notebook/assets/js/168.88751527.js"><link rel="prefetch" href="/notebook/assets/js/169.181d672a.js"><link rel="prefetch" href="/notebook/assets/js/17.7ca8627c.js"><link rel="prefetch" href="/notebook/assets/js/170.d36703bd.js"><link rel="prefetch" href="/notebook/assets/js/171.f7f8e405.js"><link rel="prefetch" href="/notebook/assets/js/172.bb346c7b.js"><link rel="prefetch" href="/notebook/assets/js/173.66fc692d.js"><link rel="prefetch" href="/notebook/assets/js/174.f318c08c.js"><link rel="prefetch" href="/notebook/assets/js/175.0afcbeaf.js"><link rel="prefetch" href="/notebook/assets/js/176.bd381032.js"><link rel="prefetch" href="/notebook/assets/js/177.e4cf3975.js"><link rel="prefetch" href="/notebook/assets/js/178.27499c99.js"><link rel="prefetch" href="/notebook/assets/js/179.52cc4a50.js"><link rel="prefetch" href="/notebook/assets/js/18.3e19faa2.js"><link rel="prefetch" href="/notebook/assets/js/180.db0a883b.js"><link rel="prefetch" href="/notebook/assets/js/181.1cdc1877.js"><link rel="prefetch" href="/notebook/assets/js/182.573193fb.js"><link rel="prefetch" href="/notebook/assets/js/183.ee1bffef.js"><link rel="prefetch" href="/notebook/assets/js/184.342841c1.js"><link rel="prefetch" href="/notebook/assets/js/185.978b29f2.js"><link rel="prefetch" href="/notebook/assets/js/186.7a252a54.js"><link rel="prefetch" href="/notebook/assets/js/187.a08f2b0f.js"><link rel="prefetch" href="/notebook/assets/js/188.ce469ef8.js"><link rel="prefetch" href="/notebook/assets/js/189.73e9a622.js"><link rel="prefetch" href="/notebook/assets/js/19.dc07d24c.js"><link rel="prefetch" href="/notebook/assets/js/190.59526ee2.js"><link rel="prefetch" href="/notebook/assets/js/191.f1b51128.js"><link rel="prefetch" href="/notebook/assets/js/192.e79c2302.js"><link rel="prefetch" href="/notebook/assets/js/193.4d109708.js"><link rel="prefetch" href="/notebook/assets/js/194.684a970d.js"><link rel="prefetch" href="/notebook/assets/js/195.cf33c516.js"><link rel="prefetch" href="/notebook/assets/js/196.e69d8b1f.js"><link rel="prefetch" href="/notebook/assets/js/197.59f2c668.js"><link rel="prefetch" href="/notebook/assets/js/198.f31164ee.js"><link rel="prefetch" href="/notebook/assets/js/199.dbffd3ce.js"><link rel="prefetch" href="/notebook/assets/js/20.184be7eb.js"><link rel="prefetch" href="/notebook/assets/js/200.7d4e5fde.js"><link rel="prefetch" href="/notebook/assets/js/201.99912ae1.js"><link rel="prefetch" href="/notebook/assets/js/202.b4f820de.js"><link rel="prefetch" href="/notebook/assets/js/203.d8462a66.js"><link rel="prefetch" href="/notebook/assets/js/204.60879beb.js"><link rel="prefetch" href="/notebook/assets/js/205.0bb38096.js"><link rel="prefetch" href="/notebook/assets/js/206.395acbbe.js"><link rel="prefetch" href="/notebook/assets/js/207.f0ee7206.js"><link rel="prefetch" href="/notebook/assets/js/208.f95acaed.js"><link rel="prefetch" href="/notebook/assets/js/209.7f968427.js"><link rel="prefetch" href="/notebook/assets/js/21.ee5efea4.js"><link rel="prefetch" href="/notebook/assets/js/210.3d50dcca.js"><link rel="prefetch" href="/notebook/assets/js/211.856c0eed.js"><link rel="prefetch" href="/notebook/assets/js/212.876bb62f.js"><link rel="prefetch" href="/notebook/assets/js/213.f6e59a2f.js"><link rel="prefetch" href="/notebook/assets/js/214.a806095a.js"><link rel="prefetch" href="/notebook/assets/js/215.31d97cd1.js"><link rel="prefetch" href="/notebook/assets/js/216.4c9004a2.js"><link rel="prefetch" href="/notebook/assets/js/217.324e4f7f.js"><link rel="prefetch" href="/notebook/assets/js/218.6b2d2bb9.js"><link rel="prefetch" href="/notebook/assets/js/219.1f3542b8.js"><link rel="prefetch" href="/notebook/assets/js/22.5e41fdff.js"><link rel="prefetch" href="/notebook/assets/js/220.5c254ed0.js"><link rel="prefetch" href="/notebook/assets/js/221.4e412ded.js"><link rel="prefetch" href="/notebook/assets/js/222.cb8b6e65.js"><link rel="prefetch" href="/notebook/assets/js/223.d3b647d5.js"><link rel="prefetch" href="/notebook/assets/js/224.76793b55.js"><link rel="prefetch" href="/notebook/assets/js/225.c181b9e5.js"><link rel="prefetch" href="/notebook/assets/js/226.08a6a839.js"><link rel="prefetch" href="/notebook/assets/js/227.ce411683.js"><link rel="prefetch" href="/notebook/assets/js/228.91976dcc.js"><link rel="prefetch" href="/notebook/assets/js/229.a6e61aa2.js"><link rel="prefetch" href="/notebook/assets/js/23.fe3792a7.js"><link rel="prefetch" href="/notebook/assets/js/230.8f61d7f0.js"><link rel="prefetch" href="/notebook/assets/js/231.349fe77c.js"><link rel="prefetch" href="/notebook/assets/js/232.ae0a12f3.js"><link rel="prefetch" href="/notebook/assets/js/233.a26c69e6.js"><link rel="prefetch" href="/notebook/assets/js/234.dc52afc3.js"><link rel="prefetch" href="/notebook/assets/js/235.22c99927.js"><link rel="prefetch" href="/notebook/assets/js/236.cad939cc.js"><link rel="prefetch" href="/notebook/assets/js/237.8f0b6e9e.js"><link rel="prefetch" href="/notebook/assets/js/238.10dad5f1.js"><link rel="prefetch" href="/notebook/assets/js/239.67576d11.js"><link rel="prefetch" href="/notebook/assets/js/24.4f2929e9.js"><link rel="prefetch" href="/notebook/assets/js/240.80c44cfa.js"><link rel="prefetch" href="/notebook/assets/js/241.49ccc17e.js"><link rel="prefetch" href="/notebook/assets/js/242.ff228801.js"><link rel="prefetch" href="/notebook/assets/js/243.4cdb9405.js"><link rel="prefetch" href="/notebook/assets/js/244.3f112ae8.js"><link rel="prefetch" href="/notebook/assets/js/245.b8741dd2.js"><link rel="prefetch" href="/notebook/assets/js/246.bb5c1069.js"><link rel="prefetch" href="/notebook/assets/js/247.9795c57d.js"><link rel="prefetch" href="/notebook/assets/js/248.2c602df4.js"><link rel="prefetch" href="/notebook/assets/js/249.6d15bb03.js"><link rel="prefetch" href="/notebook/assets/js/25.fd5fe753.js"><link rel="prefetch" href="/notebook/assets/js/250.ba5c5c20.js"><link rel="prefetch" href="/notebook/assets/js/251.b063a803.js"><link rel="prefetch" href="/notebook/assets/js/252.9883c2f0.js"><link rel="prefetch" href="/notebook/assets/js/253.726ccc80.js"><link rel="prefetch" href="/notebook/assets/js/254.5460b6fd.js"><link rel="prefetch" href="/notebook/assets/js/255.d21476a2.js"><link rel="prefetch" href="/notebook/assets/js/256.1deea404.js"><link rel="prefetch" href="/notebook/assets/js/257.39070319.js"><link rel="prefetch" href="/notebook/assets/js/258.3905af96.js"><link rel="prefetch" href="/notebook/assets/js/26.76abd46f.js"><link rel="prefetch" href="/notebook/assets/js/27.f2636a73.js"><link rel="prefetch" href="/notebook/assets/js/28.0d7acfbe.js"><link rel="prefetch" href="/notebook/assets/js/29.cefced41.js"><link rel="prefetch" href="/notebook/assets/js/3.de177589.js"><link rel="prefetch" href="/notebook/assets/js/30.07afbba5.js"><link rel="prefetch" href="/notebook/assets/js/31.92551101.js"><link rel="prefetch" href="/notebook/assets/js/32.7dbc8c5e.js"><link rel="prefetch" href="/notebook/assets/js/33.40be7a79.js"><link rel="prefetch" href="/notebook/assets/js/34.1fd46fa9.js"><link rel="prefetch" href="/notebook/assets/js/35.74659d57.js"><link rel="prefetch" href="/notebook/assets/js/36.9a90f4b1.js"><link rel="prefetch" href="/notebook/assets/js/37.be41554b.js"><link rel="prefetch" href="/notebook/assets/js/38.f1b5d5e7.js"><link rel="prefetch" href="/notebook/assets/js/39.9d8b698d.js"><link rel="prefetch" href="/notebook/assets/js/4.02b78e18.js"><link rel="prefetch" href="/notebook/assets/js/40.550cb413.js"><link rel="prefetch" href="/notebook/assets/js/41.c0e1b97c.js"><link rel="prefetch" href="/notebook/assets/js/42.ed95ea00.js"><link rel="prefetch" href="/notebook/assets/js/43.ec860995.js"><link rel="prefetch" href="/notebook/assets/js/44.521f6234.js"><link rel="prefetch" href="/notebook/assets/js/45.22bb8568.js"><link rel="prefetch" href="/notebook/assets/js/46.94969701.js"><link rel="prefetch" href="/notebook/assets/js/47.b5f6c15c.js"><link rel="prefetch" href="/notebook/assets/js/48.0563c806.js"><link rel="prefetch" href="/notebook/assets/js/49.15483326.js"><link rel="prefetch" href="/notebook/assets/js/5.de4f8656.js"><link rel="prefetch" href="/notebook/assets/js/50.12b3841f.js"><link rel="prefetch" href="/notebook/assets/js/51.6148daa1.js"><link rel="prefetch" href="/notebook/assets/js/52.24c01f7a.js"><link rel="prefetch" href="/notebook/assets/js/53.989c3207.js"><link rel="prefetch" href="/notebook/assets/js/54.fe5ccc4e.js"><link rel="prefetch" href="/notebook/assets/js/55.81f71fbe.js"><link rel="prefetch" href="/notebook/assets/js/56.6e71b059.js"><link rel="prefetch" href="/notebook/assets/js/57.e515307c.js"><link rel="prefetch" href="/notebook/assets/js/58.f6553847.js"><link rel="prefetch" href="/notebook/assets/js/59.6d588f88.js"><link rel="prefetch" href="/notebook/assets/js/6.ae5c2b7f.js"><link rel="prefetch" href="/notebook/assets/js/60.6e49b323.js"><link rel="prefetch" href="/notebook/assets/js/61.db8c65b9.js"><link rel="prefetch" href="/notebook/assets/js/62.ea1c68f4.js"><link rel="prefetch" href="/notebook/assets/js/63.e548bbea.js"><link rel="prefetch" href="/notebook/assets/js/64.2ea2f349.js"><link rel="prefetch" href="/notebook/assets/js/65.ce3611e8.js"><link rel="prefetch" href="/notebook/assets/js/66.85466984.js"><link rel="prefetch" href="/notebook/assets/js/67.4b7a7a16.js"><link rel="prefetch" href="/notebook/assets/js/68.0fa048bf.js"><link rel="prefetch" href="/notebook/assets/js/69.d00e8e77.js"><link rel="prefetch" href="/notebook/assets/js/7.be4a2204.js"><link rel="prefetch" href="/notebook/assets/js/70.aa43fa88.js"><link rel="prefetch" href="/notebook/assets/js/71.4c337f0b.js"><link rel="prefetch" href="/notebook/assets/js/72.27dfb4fd.js"><link rel="prefetch" href="/notebook/assets/js/73.8c45959d.js"><link rel="prefetch" href="/notebook/assets/js/74.90ee0f92.js"><link rel="prefetch" href="/notebook/assets/js/75.ede3a6a2.js"><link rel="prefetch" href="/notebook/assets/js/76.e9a0dfce.js"><link rel="prefetch" href="/notebook/assets/js/77.3beb5afe.js"><link rel="prefetch" href="/notebook/assets/js/78.c5e692fa.js"><link rel="prefetch" href="/notebook/assets/js/79.dda3280a.js"><link rel="prefetch" href="/notebook/assets/js/8.961dbf83.js"><link rel="prefetch" href="/notebook/assets/js/80.b9017279.js"><link rel="prefetch" href="/notebook/assets/js/81.159f8048.js"><link rel="prefetch" href="/notebook/assets/js/82.102fa355.js"><link rel="prefetch" href="/notebook/assets/js/83.9711b3c2.js"><link rel="prefetch" href="/notebook/assets/js/84.63a04b23.js"><link rel="prefetch" href="/notebook/assets/js/85.9a60c82c.js"><link rel="prefetch" href="/notebook/assets/js/86.385d1ae9.js"><link rel="prefetch" href="/notebook/assets/js/87.297c6ea6.js"><link rel="prefetch" href="/notebook/assets/js/88.46cb0381.js"><link rel="prefetch" href="/notebook/assets/js/89.4bda3310.js"><link rel="prefetch" href="/notebook/assets/js/9.1fac9f2d.js"><link rel="prefetch" href="/notebook/assets/js/90.0d6547a9.js"><link rel="prefetch" href="/notebook/assets/js/91.ad469783.js"><link rel="prefetch" href="/notebook/assets/js/92.3fd1bc0e.js"><link rel="prefetch" href="/notebook/assets/js/93.3727e6f5.js"><link rel="prefetch" href="/notebook/assets/js/94.6d80f42e.js"><link rel="prefetch" href="/notebook/assets/js/95.a87df1ec.js"><link rel="prefetch" href="/notebook/assets/js/96.5ee494a0.js"><link rel="prefetch" href="/notebook/assets/js/97.059a6403.js"><link rel="prefetch" href="/notebook/assets/js/98.9f97a773.js"><link rel="prefetch" href="/notebook/assets/js/99.56296d34.js">
+    <link rel="stylesheet" href="/notebook/assets/css/0.styles.b13da641.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/notebook/" class="home-link router-link-active"><img src="/notebook/logo.png" alt="notes | Kisstar" class="logo"> <span class="site-name can-hide">notes | Kisstar</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="IT" class="dropdown-title"><span class="title">IT</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          FED
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/html/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-subitem"><a href="/notebook/css/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-subitem"><a href="/notebook/js/" class="nav-link router-link-active">
+  JavaScript
+</a></li><li class="dropdown-subitem"><a href="/notebook/ts/" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-subitem"><a href="/notebook/ng/" class="nav-link">
+  AngularJS
+</a></li><li class="dropdown-subitem"><a href="/notebook/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-subitem"><a href="/notebook/react/" class="nav-link">
+  React
+</a></li><li class="dropdown-subitem"><a href="/notebook/web/" class="nav-link">
+  WEB
+</a></li></ul></li><li class="dropdown-item"><h4>
+          BED
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/webpack/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-subitem"><a href="/notebook/electron/" class="nav-link">
+  Electron
+</a></li><li class="dropdown-subitem"><a href="/notebook/nodejs/" class="nav-link">
+  NodeJS
+</a></li><li class="dropdown-subitem"><a href="/notebook/c/" class="nav-link">
+  C/C++
+</a></li></ul></li><li class="dropdown-item"><h4>
+          OTHER
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/wechat/" class="nav-link">
+  WeChat
+</a></li><li class="dropdown-subitem"><a href="/notebook/video/" class="nav-link">
+  Video
+</a></li><li class="dropdown-subitem"><a href="/notebook/project/" class="nav-link">
+  Project
+</a></li><li class="dropdown-subitem"><a href="/notebook/021/" class="nav-link">
+  021
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="DevTools" class="dropdown-title"><span class="title">DevTools</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/vim/" class="nav-link">
+  Vim
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/chrome/" class="nav-link">
+  Chrome
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Computer" class="dropdown-title"><span class="title">Computer</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/cp/" class="nav-link">
+  Computer Basis
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/algorithm/" class="nav-link">
+  Algorithm
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/mac/" class="nav-link">
+  Mac
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/windows/" class="nav-link">
+  Windows
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/database/" class="nav-link">
+  Database
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Cloud" class="dropdown-title"><span class="title">Cloud</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/docker/" class="nav-link">
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/dev-ops/" class="nav-link">
+  DevOps
+</a></li></ul></div></div><div class="nav-item"><a href="/notebook/collection/" class="nav-link">
+  Collection
+</a></div><div class="nav-item"><a href="/notebook/other/" class="nav-link">
+  Other
+</a></div><div class="nav-item"><a href="https://github.com/kisstar/notebook/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="IT" class="dropdown-title"><span class="title">IT</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          FED
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/html/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-subitem"><a href="/notebook/css/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-subitem"><a href="/notebook/js/" class="nav-link router-link-active">
+  JavaScript
+</a></li><li class="dropdown-subitem"><a href="/notebook/ts/" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-subitem"><a href="/notebook/ng/" class="nav-link">
+  AngularJS
+</a></li><li class="dropdown-subitem"><a href="/notebook/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-subitem"><a href="/notebook/react/" class="nav-link">
+  React
+</a></li><li class="dropdown-subitem"><a href="/notebook/web/" class="nav-link">
+  WEB
+</a></li></ul></li><li class="dropdown-item"><h4>
+          BED
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/webpack/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-subitem"><a href="/notebook/electron/" class="nav-link">
+  Electron
+</a></li><li class="dropdown-subitem"><a href="/notebook/nodejs/" class="nav-link">
+  NodeJS
+</a></li><li class="dropdown-subitem"><a href="/notebook/c/" class="nav-link">
+  C/C++
+</a></li></ul></li><li class="dropdown-item"><h4>
+          OTHER
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/wechat/" class="nav-link">
+  WeChat
+</a></li><li class="dropdown-subitem"><a href="/notebook/video/" class="nav-link">
+  Video
+</a></li><li class="dropdown-subitem"><a href="/notebook/project/" class="nav-link">
+  Project
+</a></li><li class="dropdown-subitem"><a href="/notebook/021/" class="nav-link">
+  021
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="DevTools" class="dropdown-title"><span class="title">DevTools</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/vim/" class="nav-link">
+  Vim
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/chrome/" class="nav-link">
+  Chrome
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Computer" class="dropdown-title"><span class="title">Computer</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/cp/" class="nav-link">
+  Computer Basis
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/algorithm/" class="nav-link">
+  Algorithm
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/mac/" class="nav-link">
+  Mac
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/windows/" class="nav-link">
+  Windows
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/database/" class="nav-link">
+  Database
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Cloud" class="dropdown-title"><span class="title">Cloud</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/docker/" class="nav-link">
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/dev-ops/" class="nav-link">
+  DevOps
+</a></li></ul></div></div><div class="nav-item"><a href="/notebook/collection/" class="nav-link">
+  Collection
+</a></div><div class="nav-item"><a href="/notebook/other/" class="nav-link">
+  Other
+</a></div><div class="nav-item"><a href="https://github.com/kisstar/notebook/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>基础</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>进阶</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>面试</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>第三方</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>读书笔记</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notebook/js/read/ydkjs0.html" class="sidebar-link">YDKJS-作用域</a></li><li><a href="/notebook/js/read/ydkjs1.html" class="sidebar-link">YDKJS-This</a></li><li><a href="/notebook/js/read/ydkjs2.html" class="sidebar-link">YDKJS-对象</a></li><li><a href="/notebook/js/read/ydkjs3.html" aria-current="page" class="active sidebar-link">YDKJS-类</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/notebook/js/read/ydkjs3.html#构造函数" class="sidebar-link">构造函数</a></li><li class="sidebar-sub-header"><a href="/notebook/js/read/ydkjs3.html#继承" class="sidebar-link">继承</a></li><li class="sidebar-sub-header"><a href="/notebook/js/read/ydkjs3.html#多态" class="sidebar-link">多态</a></li><li class="sidebar-sub-header"><a href="/notebook/js/read/ydkjs3.html#混入" class="sidebar-link">混入</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/notebook/js/read/ydkjs3.html#显式混入" class="sidebar-link">显式混入</a></li><li class="sidebar-sub-header"><a href="/notebook/js/read/ydkjs3.html#隐式混入" class="sidebar-link">隐式混入</a></li></ul></li></ul></li><li><a href="/notebook/js/read/ydkjs4.html" class="sidebar-link">YDKJS-原型</a></li><li><a href="/notebook/js/read/ydkjs5.html" class="sidebar-link">YDKJS-委托</a></li><li><a href="/notebook/js/read/ydkjs6.html" class="sidebar-link">YDKJS-类型</a></li><li><a href="/notebook/js/read/ydkjs7.html" class="sidebar-link">YDKJS-原生函数</a></li><li><a href="/notebook/js/read/ydkjs8.html" class="sidebar-link">YDKJS-强制类型转换</a></li><li><a href="/notebook/js/read/ydkjs9.html" class="sidebar-link">YDKJS-语法</a></li><li><a href="/notebook/js/read/ydkjs10.html" class="sidebar-link">YDKJS-混合环境 JavaScript</a></li><li><a href="/notebook/js/read/ydkjs11.html" class="sidebar-link">YDKJS-异步和性能</a></li><li><a href="/notebook/js/read/ydkjs12.html" class="sidebar-link">YDKJS-回调</a></li><li><a href="/notebook/js/read/ydkjs13.html" class="sidebar-link">YDKJS-Promise</a></li><li><a href="/notebook/js/read/ydkjs14.html" class="sidebar-link">YDKJS-生成器</a></li><li><a href="/notebook/js/read/ydkjs15.html" class="sidebar-link">YDKJS-程序性能</a></li><li><a href="/notebook/js/read/ydkjs16.html" class="sidebar-link">YDKJS-性能测试与调优</a></li><li><a href="/notebook/js/read/ydkjs17.html" class="sidebar-link">YDKJS-asynquence 库</a></li><li><a href="/notebook/js/read/ydkjs18.html" class="sidebar-link">YDKJS-高级异步模式</a></li><li><a href="/notebook/js/read/ydkjs19.html" class="sidebar-link">YDKJS-编程</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>奇思妙想</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="ydkjs-类"><a href="#ydkjs-类" class="header-anchor">#</a> YDKJS-类</h1> <p>类(Class): 用来描述具有相同的属性和方法的对象的集合。它定义了该集合中每个对象所共有的属性和方法。</p> <p>在相当长的一段时间里，JavaScript 只有一些近似类的语法元素（比如 new 和 instanceof），不过在后来的 ES6 中新增了一些元素，比如 <code>class</code> 关键字。</p> <p><code>class</code> 关键字的出现并不意味着在 JavaScript 中有类，因为 JavaScript 的机制其实和类完全不同。</p> <p>事实上，在软件设计中类是一种可选的模式，你可以根据需要自己根据决定是否在 JavaScript 中使用它。</p> <h2 id="构造函数"><a href="#构造函数" class="header-anchor">#</a> 构造函数</h2> <p>类和实例的关系就好比建筑蓝图和一栋建筑，图中设计了一栋建筑应该具备的结构，建筑工人会按照蓝图建造建筑，之后建筑工人也可以到下一个地方，把所有工作都重复一遍，再创建一份副本。</p> <p>具体的创造细节是由一个特殊的类方法构造的，这个方法名通常和类名相同，被称为构造函数。这个方法的任务就是初始化实例需要的所有信息（状态）。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">class</span> <span class="token class-name">CoolGuy</span> <span class="token punctuation">{</span>
+  specialTrick <span class="token operator">=</span> nothing
+
+  <span class="token function">CoolGuy</span><span class="token punctuation">(</span><span class="token parameter">trick</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    specialTrick <span class="token operator">=</span> trick
+  <span class="token punctuation">}</span>
+
+  <span class="token function">showOff</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">output</span><span class="token punctuation">(</span><span class="token string">&quot;Here's my trick: &quot;</span><span class="token punctuation">,</span> specialTrick<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>我们可以调用类构造函数来生成一个 CoolGuy 实例：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> Joe <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CoolGuy</span><span class="token punctuation">(</span><span class="token string">'jumping rope'</span><span class="token punctuation">)</span> <span class="token comment">// 实际上调用的就是构造函数 CoolGuy()，它会返回一个对象（也就是类的实例）</span>
+Joe<span class="token punctuation">.</span><span class="token function">showOff</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 这是我的绝技：跳绳</span>
+</code></pre></div><p>类构造函数属于类，而且通常和类同名。此外，构造函数大多需要用 <code>new</code> 来调，这样语言引擎才知道你想要构造一个新的类实例。</p> <h2 id="继承"><a href="#继承" class="header-anchor">#</a> 继承</h2> <p>在面向类的语言中，你可以先定义一个类，然后定义一个继承前者的类。后者通常被称为“子类”，前者通常被称为“父类”（基类）。</p> <p>定义好一个子类之后，相对于父类来说它就是一个独立并且完全不同的类。子类会包含父类行为的原始副本，但是也可以重写所有继承的行为甚至定义新行为。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">class</span> <span class="token class-name">Vehicle</span> <span class="token punctuation">{</span>
+  engines <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+  <span class="token function">ignition</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">output</span><span class="token punctuation">(</span><span class="token string">&quot;Turning on my engine.&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">drive</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">ignition</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">output</span><span class="token punctuation">(</span><span class="token string">&quot;Steering and moving forward!&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Car</span> inherits Vehicle <span class="token punctuation">{</span>
+  wheels <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
+
+  <span class="token function">drive</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    inherited<span class="token operator">:</span> <span class="token function">drive</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">output</span><span class="token punctuation">(</span><span class="token string">&quot;Rolling on all &quot;</span><span class="token punctuation">,</span> wheels<span class="token punctuation">,</span> <span class="token string">&quot; wheels!&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">SpeedBoat</span> inherits Vehicle <span class="token punctuation">{</span>
+  engines <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+
+  <span class="token function">ignition</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">output</span><span class="token punctuation">(</span><span class="token string">&quot;Turning on my &quot;</span><span class="token punctuation">,</span> engines<span class="token punctuation">,</span> <span class="token string">&quot; engines.&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">pilot</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    inherited<span class="token operator">:</span> <span class="token function">drive</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">output</span><span class="token punctuation">(</span><span class="token string">&quot;Speeding through the water with ease!&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>我们通过定义 Vehicle 类来假设一种发动机，一种点火方式，一种驾驶方法。但不可能制造一个通用的“交通工具”，因为这个类只是一个抽象的概念。</p> <p>接下来我们定义了两类具体的交通工具：Car 和 SpeedBoat。它们都从 Vehicle 继承了通用的特性并根据自身类别修改了某些特性。汽车需要四个轮子，快艇需要两个动机，因此它必须启动两个发动机的点火装置。</p> <h2 id="多态"><a href="#多态" class="header-anchor">#</a> 多态</h2> <p>在上面的示例中，Car 重写了继承自父类的 <code>drive()</code> 方法，但是之后 Car 调用了 <code>inherited:drive()</code> 方法，这表明 Car 可以引用继承来的原始 <code>drive()</code> 方法。快艇的 <code>pilot()</code> 方法同样引用了原始 <code>drive()</code> 方法。</p> <p>这个技术被称为多态或者虚拟多态。在本例中，更恰当的说法是相对多态：任何方法都可以引用继承层次中高层的方法（无论高层的方法名和当前方法名是否相同）。</p> <p>在许多语言中可以使用 <code>super</code> 来代替本例中的 <code>inherited:</code>，它的含义是“超类”（superclass），表示当前类的父类/祖先类。</p> <p>多态的另一个方面是，在继承链的不同层次中一个方法名可以被多次定义，当调用方法时会自动选择合适的定义。</p> <p>在之前的代码中就有两个这样的例子：<code>drive()</code> 被定义在 Vehicle 和 Car 中，<code>ignition()</code> 被定义在 Vehicle 和 SpeedBoat 中。</p> <p>多态并不表示子类和父类有关联，子类得到的只是父类的一份副本。类的继承其实就是复制。</p> <h2 id="混入"><a href="#混入" class="header-anchor">#</a> 混入</h2> <p>在继承或者实例化时，JavaScript 的对象机制并不会自动执行复制行为。简单来说，JavaScript 中只有对象，并不存在可以被实例化的“类”。一个对象并不会被复制到其他对象，它们会被关联起来</p> <p>由于在其他语言中类表现出来的都是复制行为，因此 JavaScript 开发者也想出了一个方法来模拟类的复制行为，这个方法就是混入。接下来我们会看到两种类型的混入：显式和隐式。</p> <h3 id="显式混入"><a href="#显式混入" class="header-anchor">#</a> 显式混入</h3> <p>非常简单的 <code>mixin(..)</code> 例子 :</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">mixin</span><span class="token punctuation">(</span><span class="token parameter">sourceObj<span class="token punctuation">,</span> targetObj</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> key <span class="token keyword">in</span> sourceObj<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 只会在不存在的情况下复制</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token punctuation">(</span>key <span class="token keyword">in</span> targetObj<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      targetObj<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> sourceObj<span class="token punctuation">[</span>key<span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">return</span> targetObj
+<span class="token punctuation">}</span>
+</code></pre></div><p>回顾一下之前提到的 Vehicle 和 Car。由于 JavaScript 不会自动实现 Vehicle 到 Car 的复制行为，所以我们需要手动实现复制功能：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> Vehicle <span class="token operator">=</span> <span class="token punctuation">{</span>
+  engines<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+
+  <span class="token function-variable function">ignition</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Turning on my engine.'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token function-variable function">drive</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">ignition</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Steering and moving forward!'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> Car <span class="token operator">=</span> <span class="token function">mixin</span><span class="token punctuation">(</span>Vehicle<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  wheels<span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+
+  <span class="token function-variable function">drive</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    Vehicle<span class="token punctuation">.</span><span class="token function">drive</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Rolling on all '</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>wheels <span class="token operator">+</span> <span class="token string">' wheels!'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>现在 Car 中就有了一份 Vehicle 属性和函数的副本了（从技术角度来说，函数实际上没有被复制，复制的是函数引用）。</p> <p>在支持相对多态的面向类的语言中，Car 和 Vehicle 之间的联系只在类定义的开头被创建，从而只需要在这一个地方维护两个类的联系。这里的显式伪多态可以模拟多重继承，所以它会进一步增加代码的复杂度和维护难度，因此应当尽量避免使用显式伪多态。</p> <p>显式混入模式的一种变体被称为“寄生继承”，它既是显式的又是隐式的：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">Vehicle</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>engines <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token punctuation">}</span>
+
+<span class="token class-name">Vehicle</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">ignition</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Turning on my engine.'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token class-name">Vehicle</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">drive</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">ignition</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Steering and moving forward!'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">Car</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// car 是一个 Vehicle 的实例</span>
+  <span class="token keyword">var</span> car <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vehicle</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token comment">// 接着我们对 car 进行定制</span>
+  car<span class="token punctuation">.</span>wheels <span class="token operator">=</span> <span class="token number">4</span>
+  <span class="token comment">// 保存到 Vehicle::drive() 的特殊引用</span>
+  <span class="token keyword">var</span> vehDrive <span class="token operator">=</span> car<span class="token punctuation">.</span>drive
+  <span class="token comment">// 重写 Vehicle::drive()</span>
+  car<span class="token punctuation">.</span><span class="token function-variable function">drive</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">vehDrive</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Rolling on all '</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>wheels <span class="token operator">+</span> <span class="token string">' wheels!'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> car
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> myCar <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Car</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+myCar<span class="token punctuation">.</span><span class="token function">drive</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><p>如你所见，首先我们复制一份 Vehicle 父类（对象）的定义，然后混入子类（对象）的定义（如果需要的话保留到父类的特殊引用），然后用这个复合对象构建实例。</p> <h3 id="隐式混入"><a href="#隐式混入" class="header-anchor">#</a> 隐式混入</h3> <p>隐式混入和之前提到的显式伪多态很像，因此也具备同样的问题：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> Something <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">cool</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>greeting <span class="token operator">=</span> <span class="token string">'Hello World'</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>count <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>count <span class="token operator">?</span> <span class="token keyword">this</span><span class="token punctuation">.</span>count <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">:</span> <span class="token number">1</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+Something<span class="token punctuation">.</span><span class="token function">cool</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+Something<span class="token punctuation">.</span>greeting <span class="token comment">// &quot;Hello World&quot;</span>
+Something<span class="token punctuation">.</span>count <span class="token comment">// 1</span>
+
+<span class="token keyword">var</span> Another <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">cool</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 隐式把 Something 混入 Another</span>
+    Something<span class="token punctuation">.</span><span class="token function">cool</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+Another<span class="token punctuation">.</span><span class="token function">cool</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+Another<span class="token punctuation">.</span>greeting <span class="token comment">// &quot;Hello World&quot;</span>
+Another<span class="token punctuation">.</span>count <span class="token comment">// 1 （count 不是共享状态）</span>
+</code></pre></div><p>通过在构造函数调用或者方法调用中使用 <code>Something.cool.call( this )</code>，我们实际上“借用”了函数 <code>Something.cool()</code> 并在 Another 的上下文中调用了它。</p> <p>最终的结果是 <code>Something.cool()</code> 中的赋值操作都会应用在 Another 对象上而不是 Something 对象上。因此，我们把 Something 的行为“混入”到了 Another 中。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/notebook/js/read/ydkjs2.html" class="prev">
+        YDKJS-对象
+      </a></span> <span class="next"><a href="/notebook/js/read/ydkjs4.html">
+        YDKJS-原型
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/notebook/assets/js/app.d2525610.js" defer></script><script src="/notebook/assets/js/1.0ed4caaf.js" defer></script><script src="/notebook/assets/js/135.918c41a0.js" defer></script>
+  </body>
+</html>

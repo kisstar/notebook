@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Storybook for React | notes | Kisstar</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    
+    <meta name="description" content="Kisstar's personal notes">
+    <link rel="preload" href="/notebook/assets/css/0.styles.b13da641.css" as="style"><link rel="preload" href="/notebook/assets/js/app.d2525610.js" as="script"><link rel="preload" href="/notebook/assets/js/1.0ed4caaf.js" as="script"><link rel="preload" href="/notebook/assets/js/219.1f3542b8.js" as="script"><link rel="prefetch" href="/notebook/assets/js/10.474fe4d7.js"><link rel="prefetch" href="/notebook/assets/js/100.c6de51f5.js"><link rel="prefetch" href="/notebook/assets/js/101.297b80a6.js"><link rel="prefetch" href="/notebook/assets/js/102.671042f0.js"><link rel="prefetch" href="/notebook/assets/js/103.a4414990.js"><link rel="prefetch" href="/notebook/assets/js/104.5f326d1b.js"><link rel="prefetch" href="/notebook/assets/js/105.7d48691a.js"><link rel="prefetch" href="/notebook/assets/js/106.f9e2d3d6.js"><link rel="prefetch" href="/notebook/assets/js/107.3dfec344.js"><link rel="prefetch" href="/notebook/assets/js/108.64e0d2ce.js"><link rel="prefetch" href="/notebook/assets/js/109.c4b5ca14.js"><link rel="prefetch" href="/notebook/assets/js/11.f5ac12d4.js"><link rel="prefetch" href="/notebook/assets/js/110.2803df2c.js"><link rel="prefetch" href="/notebook/assets/js/111.e059e845.js"><link rel="prefetch" href="/notebook/assets/js/112.32498864.js"><link rel="prefetch" href="/notebook/assets/js/113.486abba6.js"><link rel="prefetch" href="/notebook/assets/js/114.2d88bb98.js"><link rel="prefetch" href="/notebook/assets/js/115.1b24dcc9.js"><link rel="prefetch" href="/notebook/assets/js/116.74a7e55c.js"><link rel="prefetch" href="/notebook/assets/js/117.748d98d9.js"><link rel="prefetch" href="/notebook/assets/js/118.2ff07d0b.js"><link rel="prefetch" href="/notebook/assets/js/119.ee1cf35b.js"><link rel="prefetch" href="/notebook/assets/js/12.18a51a50.js"><link rel="prefetch" href="/notebook/assets/js/120.534b8406.js"><link rel="prefetch" href="/notebook/assets/js/121.b728e838.js"><link rel="prefetch" href="/notebook/assets/js/122.530e17ec.js"><link rel="prefetch" href="/notebook/assets/js/123.3026ab36.js"><link rel="prefetch" href="/notebook/assets/js/124.0a3f74f7.js"><link rel="prefetch" href="/notebook/assets/js/125.d5362d6d.js"><link rel="prefetch" href="/notebook/assets/js/126.12262d78.js"><link rel="prefetch" href="/notebook/assets/js/127.7a3ce301.js"><link rel="prefetch" href="/notebook/assets/js/128.08c7e66c.js"><link rel="prefetch" href="/notebook/assets/js/129.6d2c5dde.js"><link rel="prefetch" href="/notebook/assets/js/13.d51e68a7.js"><link rel="prefetch" href="/notebook/assets/js/130.26713517.js"><link rel="prefetch" href="/notebook/assets/js/131.e4470d34.js"><link rel="prefetch" href="/notebook/assets/js/132.e61d0276.js"><link rel="prefetch" href="/notebook/assets/js/133.6f731828.js"><link rel="prefetch" href="/notebook/assets/js/134.be500b7d.js"><link rel="prefetch" href="/notebook/assets/js/135.918c41a0.js"><link rel="prefetch" href="/notebook/assets/js/136.fa550828.js"><link rel="prefetch" href="/notebook/assets/js/137.9f6cceb3.js"><link rel="prefetch" href="/notebook/assets/js/138.49ed9255.js"><link rel="prefetch" href="/notebook/assets/js/139.a06e7d39.js"><link rel="prefetch" href="/notebook/assets/js/14.2f72b127.js"><link rel="prefetch" href="/notebook/assets/js/140.1c46603a.js"><link rel="prefetch" href="/notebook/assets/js/141.25a371c3.js"><link rel="prefetch" href="/notebook/assets/js/142.3a8418ef.js"><link rel="prefetch" href="/notebook/assets/js/143.3b1f5644.js"><link rel="prefetch" href="/notebook/assets/js/144.bf130a4b.js"><link rel="prefetch" href="/notebook/assets/js/145.1b64bc1e.js"><link rel="prefetch" href="/notebook/assets/js/146.f48d4ddb.js"><link rel="prefetch" href="/notebook/assets/js/147.6335e830.js"><link rel="prefetch" href="/notebook/assets/js/148.50471b20.js"><link rel="prefetch" href="/notebook/assets/js/149.c57f1b59.js"><link rel="prefetch" href="/notebook/assets/js/15.2ca416a7.js"><link rel="prefetch" href="/notebook/assets/js/150.9ef4236e.js"><link rel="prefetch" href="/notebook/assets/js/151.a99db080.js"><link rel="prefetch" href="/notebook/assets/js/152.14eb132e.js"><link rel="prefetch" href="/notebook/assets/js/153.d6835009.js"><link rel="prefetch" href="/notebook/assets/js/154.1c8c82b7.js"><link rel="prefetch" href="/notebook/assets/js/155.8e861480.js"><link rel="prefetch" href="/notebook/assets/js/156.f0ad16cf.js"><link rel="prefetch" href="/notebook/assets/js/157.cc6d2da1.js"><link rel="prefetch" href="/notebook/assets/js/158.8ab0edc3.js"><link rel="prefetch" href="/notebook/assets/js/159.9ea2a0d4.js"><link rel="prefetch" href="/notebook/assets/js/16.591f2b9f.js"><link rel="prefetch" href="/notebook/assets/js/160.f7a049ee.js"><link rel="prefetch" href="/notebook/assets/js/161.1903318c.js"><link rel="prefetch" href="/notebook/assets/js/162.80477370.js"><link rel="prefetch" href="/notebook/assets/js/163.2928ab8b.js"><link rel="prefetch" href="/notebook/assets/js/164.f0ccc741.js"><link rel="prefetch" href="/notebook/assets/js/165.bc336df4.js"><link rel="prefetch" href="/notebook/assets/js/166.640ad893.js"><link rel="prefetch" href="/notebook/assets/js/167.2d588db1.js"><link rel="prefetch" href="/notebook/assets/js/168.88751527.js"><link rel="prefetch" href="/notebook/assets/js/169.181d672a.js"><link rel="prefetch" href="/notebook/assets/js/17.7ca8627c.js"><link rel="prefetch" href="/notebook/assets/js/170.d36703bd.js"><link rel="prefetch" href="/notebook/assets/js/171.f7f8e405.js"><link rel="prefetch" href="/notebook/assets/js/172.bb346c7b.js"><link rel="prefetch" href="/notebook/assets/js/173.66fc692d.js"><link rel="prefetch" href="/notebook/assets/js/174.f318c08c.js"><link rel="prefetch" href="/notebook/assets/js/175.0afcbeaf.js"><link rel="prefetch" href="/notebook/assets/js/176.bd381032.js"><link rel="prefetch" href="/notebook/assets/js/177.e4cf3975.js"><link rel="prefetch" href="/notebook/assets/js/178.27499c99.js"><link rel="prefetch" href="/notebook/assets/js/179.52cc4a50.js"><link rel="prefetch" href="/notebook/assets/js/18.3e19faa2.js"><link rel="prefetch" href="/notebook/assets/js/180.db0a883b.js"><link rel="prefetch" href="/notebook/assets/js/181.1cdc1877.js"><link rel="prefetch" href="/notebook/assets/js/182.573193fb.js"><link rel="prefetch" href="/notebook/assets/js/183.ee1bffef.js"><link rel="prefetch" href="/notebook/assets/js/184.342841c1.js"><link rel="prefetch" href="/notebook/assets/js/185.978b29f2.js"><link rel="prefetch" href="/notebook/assets/js/186.7a252a54.js"><link rel="prefetch" href="/notebook/assets/js/187.a08f2b0f.js"><link rel="prefetch" href="/notebook/assets/js/188.ce469ef8.js"><link rel="prefetch" href="/notebook/assets/js/189.73e9a622.js"><link rel="prefetch" href="/notebook/assets/js/19.dc07d24c.js"><link rel="prefetch" href="/notebook/assets/js/190.59526ee2.js"><link rel="prefetch" href="/notebook/assets/js/191.f1b51128.js"><link rel="prefetch" href="/notebook/assets/js/192.e79c2302.js"><link rel="prefetch" href="/notebook/assets/js/193.4d109708.js"><link rel="prefetch" href="/notebook/assets/js/194.684a970d.js"><link rel="prefetch" href="/notebook/assets/js/195.cf33c516.js"><link rel="prefetch" href="/notebook/assets/js/196.e69d8b1f.js"><link rel="prefetch" href="/notebook/assets/js/197.59f2c668.js"><link rel="prefetch" href="/notebook/assets/js/198.f31164ee.js"><link rel="prefetch" href="/notebook/assets/js/199.dbffd3ce.js"><link rel="prefetch" href="/notebook/assets/js/20.184be7eb.js"><link rel="prefetch" href="/notebook/assets/js/200.7d4e5fde.js"><link rel="prefetch" href="/notebook/assets/js/201.99912ae1.js"><link rel="prefetch" href="/notebook/assets/js/202.b4f820de.js"><link rel="prefetch" href="/notebook/assets/js/203.d8462a66.js"><link rel="prefetch" href="/notebook/assets/js/204.60879beb.js"><link rel="prefetch" href="/notebook/assets/js/205.0bb38096.js"><link rel="prefetch" href="/notebook/assets/js/206.395acbbe.js"><link rel="prefetch" href="/notebook/assets/js/207.f0ee7206.js"><link rel="prefetch" href="/notebook/assets/js/208.f95acaed.js"><link rel="prefetch" href="/notebook/assets/js/209.7f968427.js"><link rel="prefetch" href="/notebook/assets/js/21.ee5efea4.js"><link rel="prefetch" href="/notebook/assets/js/210.3d50dcca.js"><link rel="prefetch" href="/notebook/assets/js/211.856c0eed.js"><link rel="prefetch" href="/notebook/assets/js/212.876bb62f.js"><link rel="prefetch" href="/notebook/assets/js/213.f6e59a2f.js"><link rel="prefetch" href="/notebook/assets/js/214.a806095a.js"><link rel="prefetch" href="/notebook/assets/js/215.31d97cd1.js"><link rel="prefetch" href="/notebook/assets/js/216.4c9004a2.js"><link rel="prefetch" href="/notebook/assets/js/217.324e4f7f.js"><link rel="prefetch" href="/notebook/assets/js/218.6b2d2bb9.js"><link rel="prefetch" href="/notebook/assets/js/22.5e41fdff.js"><link rel="prefetch" href="/notebook/assets/js/220.5c254ed0.js"><link rel="prefetch" href="/notebook/assets/js/221.4e412ded.js"><link rel="prefetch" href="/notebook/assets/js/222.cb8b6e65.js"><link rel="prefetch" href="/notebook/assets/js/223.d3b647d5.js"><link rel="prefetch" href="/notebook/assets/js/224.76793b55.js"><link rel="prefetch" href="/notebook/assets/js/225.c181b9e5.js"><link rel="prefetch" href="/notebook/assets/js/226.08a6a839.js"><link rel="prefetch" href="/notebook/assets/js/227.ce411683.js"><link rel="prefetch" href="/notebook/assets/js/228.91976dcc.js"><link rel="prefetch" href="/notebook/assets/js/229.a6e61aa2.js"><link rel="prefetch" href="/notebook/assets/js/23.fe3792a7.js"><link rel="prefetch" href="/notebook/assets/js/230.8f61d7f0.js"><link rel="prefetch" href="/notebook/assets/js/231.349fe77c.js"><link rel="prefetch" href="/notebook/assets/js/232.ae0a12f3.js"><link rel="prefetch" href="/notebook/assets/js/233.a26c69e6.js"><link rel="prefetch" href="/notebook/assets/js/234.dc52afc3.js"><link rel="prefetch" href="/notebook/assets/js/235.22c99927.js"><link rel="prefetch" href="/notebook/assets/js/236.cad939cc.js"><link rel="prefetch" href="/notebook/assets/js/237.8f0b6e9e.js"><link rel="prefetch" href="/notebook/assets/js/238.10dad5f1.js"><link rel="prefetch" href="/notebook/assets/js/239.67576d11.js"><link rel="prefetch" href="/notebook/assets/js/24.4f2929e9.js"><link rel="prefetch" href="/notebook/assets/js/240.80c44cfa.js"><link rel="prefetch" href="/notebook/assets/js/241.49ccc17e.js"><link rel="prefetch" href="/notebook/assets/js/242.ff228801.js"><link rel="prefetch" href="/notebook/assets/js/243.4cdb9405.js"><link rel="prefetch" href="/notebook/assets/js/244.3f112ae8.js"><link rel="prefetch" href="/notebook/assets/js/245.b8741dd2.js"><link rel="prefetch" href="/notebook/assets/js/246.bb5c1069.js"><link rel="prefetch" href="/notebook/assets/js/247.9795c57d.js"><link rel="prefetch" href="/notebook/assets/js/248.2c602df4.js"><link rel="prefetch" href="/notebook/assets/js/249.6d15bb03.js"><link rel="prefetch" href="/notebook/assets/js/25.fd5fe753.js"><link rel="prefetch" href="/notebook/assets/js/250.ba5c5c20.js"><link rel="prefetch" href="/notebook/assets/js/251.b063a803.js"><link rel="prefetch" href="/notebook/assets/js/252.9883c2f0.js"><link rel="prefetch" href="/notebook/assets/js/253.726ccc80.js"><link rel="prefetch" href="/notebook/assets/js/254.5460b6fd.js"><link rel="prefetch" href="/notebook/assets/js/255.d21476a2.js"><link rel="prefetch" href="/notebook/assets/js/256.1deea404.js"><link rel="prefetch" href="/notebook/assets/js/257.39070319.js"><link rel="prefetch" href="/notebook/assets/js/258.3905af96.js"><link rel="prefetch" href="/notebook/assets/js/26.76abd46f.js"><link rel="prefetch" href="/notebook/assets/js/27.f2636a73.js"><link rel="prefetch" href="/notebook/assets/js/28.0d7acfbe.js"><link rel="prefetch" href="/notebook/assets/js/29.cefced41.js"><link rel="prefetch" href="/notebook/assets/js/3.de177589.js"><link rel="prefetch" href="/notebook/assets/js/30.07afbba5.js"><link rel="prefetch" href="/notebook/assets/js/31.92551101.js"><link rel="prefetch" href="/notebook/assets/js/32.7dbc8c5e.js"><link rel="prefetch" href="/notebook/assets/js/33.40be7a79.js"><link rel="prefetch" href="/notebook/assets/js/34.1fd46fa9.js"><link rel="prefetch" href="/notebook/assets/js/35.74659d57.js"><link rel="prefetch" href="/notebook/assets/js/36.9a90f4b1.js"><link rel="prefetch" href="/notebook/assets/js/37.be41554b.js"><link rel="prefetch" href="/notebook/assets/js/38.f1b5d5e7.js"><link rel="prefetch" href="/notebook/assets/js/39.9d8b698d.js"><link rel="prefetch" href="/notebook/assets/js/4.02b78e18.js"><link rel="prefetch" href="/notebook/assets/js/40.550cb413.js"><link rel="prefetch" href="/notebook/assets/js/41.c0e1b97c.js"><link rel="prefetch" href="/notebook/assets/js/42.ed95ea00.js"><link rel="prefetch" href="/notebook/assets/js/43.ec860995.js"><link rel="prefetch" href="/notebook/assets/js/44.521f6234.js"><link rel="prefetch" href="/notebook/assets/js/45.22bb8568.js"><link rel="prefetch" href="/notebook/assets/js/46.94969701.js"><link rel="prefetch" href="/notebook/assets/js/47.b5f6c15c.js"><link rel="prefetch" href="/notebook/assets/js/48.0563c806.js"><link rel="prefetch" href="/notebook/assets/js/49.15483326.js"><link rel="prefetch" href="/notebook/assets/js/5.de4f8656.js"><link rel="prefetch" href="/notebook/assets/js/50.12b3841f.js"><link rel="prefetch" href="/notebook/assets/js/51.6148daa1.js"><link rel="prefetch" href="/notebook/assets/js/52.24c01f7a.js"><link rel="prefetch" href="/notebook/assets/js/53.989c3207.js"><link rel="prefetch" href="/notebook/assets/js/54.fe5ccc4e.js"><link rel="prefetch" href="/notebook/assets/js/55.81f71fbe.js"><link rel="prefetch" href="/notebook/assets/js/56.6e71b059.js"><link rel="prefetch" href="/notebook/assets/js/57.e515307c.js"><link rel="prefetch" href="/notebook/assets/js/58.f6553847.js"><link rel="prefetch" href="/notebook/assets/js/59.6d588f88.js"><link rel="prefetch" href="/notebook/assets/js/6.ae5c2b7f.js"><link rel="prefetch" href="/notebook/assets/js/60.6e49b323.js"><link rel="prefetch" href="/notebook/assets/js/61.db8c65b9.js"><link rel="prefetch" href="/notebook/assets/js/62.ea1c68f4.js"><link rel="prefetch" href="/notebook/assets/js/63.e548bbea.js"><link rel="prefetch" href="/notebook/assets/js/64.2ea2f349.js"><link rel="prefetch" href="/notebook/assets/js/65.ce3611e8.js"><link rel="prefetch" href="/notebook/assets/js/66.85466984.js"><link rel="prefetch" href="/notebook/assets/js/67.4b7a7a16.js"><link rel="prefetch" href="/notebook/assets/js/68.0fa048bf.js"><link rel="prefetch" href="/notebook/assets/js/69.d00e8e77.js"><link rel="prefetch" href="/notebook/assets/js/7.be4a2204.js"><link rel="prefetch" href="/notebook/assets/js/70.aa43fa88.js"><link rel="prefetch" href="/notebook/assets/js/71.4c337f0b.js"><link rel="prefetch" href="/notebook/assets/js/72.27dfb4fd.js"><link rel="prefetch" href="/notebook/assets/js/73.8c45959d.js"><link rel="prefetch" href="/notebook/assets/js/74.90ee0f92.js"><link rel="prefetch" href="/notebook/assets/js/75.ede3a6a2.js"><link rel="prefetch" href="/notebook/assets/js/76.e9a0dfce.js"><link rel="prefetch" href="/notebook/assets/js/77.3beb5afe.js"><link rel="prefetch" href="/notebook/assets/js/78.c5e692fa.js"><link rel="prefetch" href="/notebook/assets/js/79.dda3280a.js"><link rel="prefetch" href="/notebook/assets/js/8.961dbf83.js"><link rel="prefetch" href="/notebook/assets/js/80.b9017279.js"><link rel="prefetch" href="/notebook/assets/js/81.159f8048.js"><link rel="prefetch" href="/notebook/assets/js/82.102fa355.js"><link rel="prefetch" href="/notebook/assets/js/83.9711b3c2.js"><link rel="prefetch" href="/notebook/assets/js/84.63a04b23.js"><link rel="prefetch" href="/notebook/assets/js/85.9a60c82c.js"><link rel="prefetch" href="/notebook/assets/js/86.385d1ae9.js"><link rel="prefetch" href="/notebook/assets/js/87.297c6ea6.js"><link rel="prefetch" href="/notebook/assets/js/88.46cb0381.js"><link rel="prefetch" href="/notebook/assets/js/89.4bda3310.js"><link rel="prefetch" href="/notebook/assets/js/9.1fac9f2d.js"><link rel="prefetch" href="/notebook/assets/js/90.0d6547a9.js"><link rel="prefetch" href="/notebook/assets/js/91.ad469783.js"><link rel="prefetch" href="/notebook/assets/js/92.3fd1bc0e.js"><link rel="prefetch" href="/notebook/assets/js/93.3727e6f5.js"><link rel="prefetch" href="/notebook/assets/js/94.6d80f42e.js"><link rel="prefetch" href="/notebook/assets/js/95.a87df1ec.js"><link rel="prefetch" href="/notebook/assets/js/96.5ee494a0.js"><link rel="prefetch" href="/notebook/assets/js/97.059a6403.js"><link rel="prefetch" href="/notebook/assets/js/98.9f97a773.js"><link rel="prefetch" href="/notebook/assets/js/99.56296d34.js">
+    <link rel="stylesheet" href="/notebook/assets/css/0.styles.b13da641.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/notebook/" class="home-link router-link-active"><img src="/notebook/logo.png" alt="notes | Kisstar" class="logo"> <span class="site-name can-hide">notes | Kisstar</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="IT" class="dropdown-title"><span class="title">IT</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          FED
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/html/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-subitem"><a href="/notebook/css/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-subitem"><a href="/notebook/js/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-subitem"><a href="/notebook/ts/" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-subitem"><a href="/notebook/ng/" class="nav-link">
+  AngularJS
+</a></li><li class="dropdown-subitem"><a href="/notebook/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-subitem"><a href="/notebook/react/" class="nav-link router-link-active">
+  React
+</a></li><li class="dropdown-subitem"><a href="/notebook/web/" class="nav-link">
+  WEB
+</a></li></ul></li><li class="dropdown-item"><h4>
+          BED
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/webpack/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-subitem"><a href="/notebook/electron/" class="nav-link">
+  Electron
+</a></li><li class="dropdown-subitem"><a href="/notebook/nodejs/" class="nav-link">
+  NodeJS
+</a></li><li class="dropdown-subitem"><a href="/notebook/c/" class="nav-link">
+  C/C++
+</a></li></ul></li><li class="dropdown-item"><h4>
+          OTHER
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/wechat/" class="nav-link">
+  WeChat
+</a></li><li class="dropdown-subitem"><a href="/notebook/video/" class="nav-link">
+  Video
+</a></li><li class="dropdown-subitem"><a href="/notebook/project/" class="nav-link">
+  Project
+</a></li><li class="dropdown-subitem"><a href="/notebook/021/" class="nav-link">
+  021
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="DevTools" class="dropdown-title"><span class="title">DevTools</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/vim/" class="nav-link">
+  Vim
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/chrome/" class="nav-link">
+  Chrome
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Computer" class="dropdown-title"><span class="title">Computer</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/cp/" class="nav-link">
+  Computer Basis
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/algorithm/" class="nav-link">
+  Algorithm
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/mac/" class="nav-link">
+  Mac
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/windows/" class="nav-link">
+  Windows
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/database/" class="nav-link">
+  Database
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Cloud" class="dropdown-title"><span class="title">Cloud</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/docker/" class="nav-link">
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/dev-ops/" class="nav-link">
+  DevOps
+</a></li></ul></div></div><div class="nav-item"><a href="/notebook/collection/" class="nav-link">
+  Collection
+</a></div><div class="nav-item"><a href="/notebook/other/" class="nav-link">
+  Other
+</a></div><div class="nav-item"><a href="https://github.com/kisstar/notebook/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="IT" class="dropdown-title"><span class="title">IT</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          FED
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/html/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-subitem"><a href="/notebook/css/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-subitem"><a href="/notebook/js/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-subitem"><a href="/notebook/ts/" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-subitem"><a href="/notebook/ng/" class="nav-link">
+  AngularJS
+</a></li><li class="dropdown-subitem"><a href="/notebook/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-subitem"><a href="/notebook/react/" class="nav-link router-link-active">
+  React
+</a></li><li class="dropdown-subitem"><a href="/notebook/web/" class="nav-link">
+  WEB
+</a></li></ul></li><li class="dropdown-item"><h4>
+          BED
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/webpack/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-subitem"><a href="/notebook/electron/" class="nav-link">
+  Electron
+</a></li><li class="dropdown-subitem"><a href="/notebook/nodejs/" class="nav-link">
+  NodeJS
+</a></li><li class="dropdown-subitem"><a href="/notebook/c/" class="nav-link">
+  C/C++
+</a></li></ul></li><li class="dropdown-item"><h4>
+          OTHER
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/wechat/" class="nav-link">
+  WeChat
+</a></li><li class="dropdown-subitem"><a href="/notebook/video/" class="nav-link">
+  Video
+</a></li><li class="dropdown-subitem"><a href="/notebook/project/" class="nav-link">
+  Project
+</a></li><li class="dropdown-subitem"><a href="/notebook/021/" class="nav-link">
+  021
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="DevTools" class="dropdown-title"><span class="title">DevTools</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/vim/" class="nav-link">
+  Vim
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/chrome/" class="nav-link">
+  Chrome
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Computer" class="dropdown-title"><span class="title">Computer</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/cp/" class="nav-link">
+  Computer Basis
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/algorithm/" class="nav-link">
+  Algorithm
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/mac/" class="nav-link">
+  Mac
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/windows/" class="nav-link">
+  Windows
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/database/" class="nav-link">
+  Database
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Cloud" class="dropdown-title"><span class="title">Cloud</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/docker/" class="nav-link">
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/dev-ops/" class="nav-link">
+  DevOps
+</a></li></ul></div></div><div class="nav-item"><a href="/notebook/collection/" class="nav-link">
+  Collection
+</a></div><div class="nav-item"><a href="/notebook/other/" class="nav-link">
+  Other
+</a></div><div class="nav-item"><a href="https://github.com/kisstar/notebook/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>基础</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notebook/react/" aria-current="page" class="sidebar-link">React</a></li><li><a href="/notebook/react/basis/react-hooks.html" class="sidebar-link">React Hooks</a></li><li><a href="/notebook/react/basis/story-react.html" aria-current="page" class="active sidebar-link">Storybook for React</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/notebook/react/basis/story-react.html#install" class="sidebar-link">Install</a></li><li class="sidebar-sub-header"><a href="/notebook/react/basis/story-react.html#story" class="sidebar-link">Story</a></li><li class="sidebar-sub-header"><a href="/notebook/react/basis/story-react.html#browse-stories" class="sidebar-link">Browse Stories</a></li><li class="sidebar-sub-header"><a href="/notebook/react/basis/story-react.html#write-stories" class="sidebar-link">Write Stories</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/notebook/react/basis/story-react.html#parameters" class="sidebar-link">Parameters</a></li><li class="sidebar-sub-header"><a href="/notebook/react/basis/story-react.html#decorators" class="sidebar-link">Decorators</a></li><li class="sidebar-sub-header"><a href="/notebook/react/basis/story-react.html#naming-components-and-hierarchy" class="sidebar-link">Naming components and hierarchy</a></li></ul></li><li class="sidebar-sub-header"><a href="/notebook/react/basis/story-react.html#writing-docs" class="sidebar-link">Writing Docs</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/notebook/react/basis/story-react.html#replacing-docspage" class="sidebar-link">Replacing DocsPage</a></li><li class="sidebar-sub-header"><a href="/notebook/react/basis/story-react.html#remixing-docspage-using-doc-blocks" class="sidebar-link">Remixing DocsPage using doc blocks</a></li><li class="sidebar-sub-header"><a href="/notebook/react/basis/story-react.html#mdx" class="sidebar-link">MDX</a></li><li class="sidebar-sub-header"><a href="/notebook/react/basis/story-react.html#doc-blocks" class="sidebar-link">Doc Blocks</a></li></ul></li><li class="sidebar-sub-header"><a href="/notebook/react/basis/story-react.html#发布" class="sidebar-link">发布</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="storybook-for-react"><a href="#storybook-for-react" class="header-anchor">#</a> Storybook for React</h1> <p>Storybook 是一个用于 UI 开发的工具，它通过隔离组件使开发变得更快更容易。</p> <p>通过 Storybook 你可以自动地对组件进行可视化测试，以防止出现错误。结合插件生态系统你可以做更多的事情，比如优化响应式布局或验证可访问性。</p> <h2 id="install"><a href="#install" class="header-anchor">#</a> Install</h2> <p>要使用 Storybook 你可以在现有的项目下执行下面的命令：</p> <div class="language-bash extra-class"><pre class="language-bash"><code>npx sb init
+</code></pre></div><p>注意：<code>sb init</code> 命令不能在空项目下运行，它需要一个由框架（Create React App，Vue CLI 或则其它 ...）创建好的项目。</p> <p>执行该命令会自动安装所需要的依赖，并添加默认的配置、必要的脚本命令，以及一些基础的 Story 案例以正常启动程序。</p> <p>待一切准本就绪你可以使用下面的命令来查看效果：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">npm</span> run storybook
+</code></pre></div><p>它将在本地启动 Storybook 并输出地址。根据您的系统配置，它会在一个新的浏览器标签中自动打开地址。</p> <p>顺利的话，你将看到下面的画面：</p> <img src="/notebook/images/react/example-welcome.png" alt="example-welcome"> <p>你可以通过点击上面的链接来阅读更多关于 Storybook 的知识，进一步地了解如何配置和定制选项。</p> <h2 id="story"><a href="#story" class="header-anchor">#</a> Story</h2> <p>Story 是一个用于捕获 UI 组件的呈现状态的函数，你为每个组件编写多个 Story，描述组件可以支持的所有状态。</p> <p>在提供的案列中，每个示例组件都有一组事例，显示它所支持的状态。您可以浏览 UI 中的 Story ，并在以 <code>.stories.js</code> 或 <code>.stories.ts</code> 结尾的文件中查看它们背后的代码。</p> <p>示例中的 Story 都是用 <code>Component Story Format</code> 格式编写的，CSF 是一种基于 ES6 模块的标准，用于编写组件示例。</p> <p>利用 Storybook 的 <a href="https://storybook.js.org/docs/react/writing-stories/args" target="_blank" rel="noopener noreferrer">args<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 概念（以机器可读的方式描述按钮的参数），可以动态改变和组合参数：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// We create a “template” of how args map to rendering</span>
+<span class="token keyword">const</span> <span class="token function-variable function">Template</span> <span class="token operator">=</span> <span class="token parameter">args</span> <span class="token operator">=&gt;</span> <span class="token operator">&lt;</span>Button <span class="token punctuation">{</span><span class="token operator">...</span>args<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+
+<span class="token comment">// Each story then reuses that template</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> Primary <span class="token operator">=</span> <span class="token function">Template</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+Primary<span class="token punctuation">.</span>args <span class="token operator">=</span> <span class="token punctuation">{</span>
+  primary<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  label<span class="token operator">:</span> <span class="token string">'Button'</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>使用 <code>args</code> 之后，按钮的相关参数可以在控件选项卡中动态的编辑。</p> <h2 id="browse-stories"><a href="#browse-stories" class="header-anchor">#</a> Browse Stories</h2> <p>每个以 <code>.stories.js</code> 或 <code>.stories.ts</code> 结尾的文件中定义了一个组件的所有故事。每个故事都有一个相应的侧边栏条目，当你点击一个故事，它呈现在画布上（一个独立的 iframe）。</p> <p>通过在侧边栏点击故事或使用键盘快捷键可以故事之间快速跳转。</p> <p>另外，Storybook 还提供了一些节省时间的工具，在工具栏中包含的工具允许您调整故事在画布中呈现的方式。</p> <img src="/notebook/images/react/tollbar.png" alt="tollbar"> <p>同时，与画布并列的 Docs 选项卡显示了自动生成的关于组件的文档(从源代码推断)。在与团队共享可重用组件时，使用文档非常有用。</p> <img src="/notebook/images/react/docs.png" alt="docs"> <p>工具栏是可定制的，可以使用全局变量快速切换主题和语言，或者从社区安装 Storybook 工具栏 Addons 来启用高级工作流。</p> <p>Addons 是扩展 Storybook 核心功能的插件。你可以在 <code>addons</code> 面板中找到它们，这是 Storybook UI 在 Canvas 下一个预留的位置，每个选项卡显示插件为所选故事生成的元数据、日志或静态分析。</p> <img src="/notebook/images/react/addons.png" alt="addons"> <p><strong>Controls</strong>：允许您与组件的参数进行动态交互。</p> <p><strong>Actions</strong>：帮助您验证交互是否通过回调生成正确的输出。例如，如果您查看头组件的“登录”情况，我们可以验证单击“注销”按钮是否会触发 onLogout 回调，该回调将由使用头的组件提供。</p> <h2 id="write-stories"><a href="#write-stories" class="header-anchor">#</a> Write Stories</h2> <p>为一个组件编写 Story 时，可以在同目录下创建一个同名的以 <code>.stories.js|ts</code> 结尾的文件，Story 文件仅用于开发。</p> <p>在 Story 文件中默认导出的元数据将控制 Storybook 如何列出你的故事，以及提供插件使用的信息。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// Button.stories.js</span>
+
+<span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Button <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./Button'</span>
+
+<span class="token comment">// metadata</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  title<span class="token operator">:</span> <span class="token string">'Components/Button'</span><span class="token punctuation">,</span>
+  component<span class="token operator">:</span> Button<span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>定义组件的 Story 需要使用 CSF 文件的命名导出，您可以重命名您需要的任何特定故事。例如，给它一个更清晰的名字：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// Button.stories.js</span>
+
+<span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Button <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./Button'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">Primary</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token operator">&lt;</span>Button primary label<span class="token operator">=</span><span class="token string">&quot;Button&quot;</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+
+<span class="token comment">// rename Primary to New Name</span>
+Primary<span class="token punctuation">.</span>storyName <span class="token operator">=</span> <span class="token string">'New Name'</span>
+</code></pre></div><p>你可以在文件中像导出 Primary Story 一样导出更多的 Story，但这存在一些重复的工作，为此你可以借助 <code>args</code> 通过为组件的故事定义一个主模板来优化此模式。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// Button.stories.js</span>
+
+<span class="token comment">// We create a “template” of how args map to rendering</span>
+<span class="token keyword">const</span> <span class="token function-variable function">Template</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">args</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token operator">&lt;</span>Button <span class="token punctuation">{</span><span class="token operator">...</span>args<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Each story then reuses that template</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> Primary <span class="token operator">=</span> <span class="token function">Template</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Primary<span class="token punctuation">.</span>args <span class="token operator">=</span> <span class="token punctuation">{</span> background<span class="token operator">=</span><span class="token string">&quot;#ff0&quot;</span><span class="token punctuation">,</span>  label<span class="token operator">:</span> <span class="token string">'Button'</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> Secondary <span class="token operator">=</span> <span class="token function">Template</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Secondary<span class="token punctuation">.</span>args <span class="token operator">=</span> <span class="token punctuation">{</span>  <span class="token operator">...</span>Primary<span class="token punctuation">.</span>args<span class="token punctuation">,</span>  label<span class="token operator">:</span> <span class="token string">'Submit'</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><p>Args 的指定也可以是组件级别的，如果你在组件级别定义 <code>args</code>，除非将其覆盖，否则此类参数将适用于组件的所有故事。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// Button.stories.js</span>
+
+<span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span>
+<span class="token keyword">import</span> Button <span class="token keyword">from</span> <span class="token string">'./Button'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  title<span class="token operator">:</span> <span class="token string">'Button'</span><span class="token punctuation">,</span>
+  component<span class="token operator">:</span> Button<span class="token punctuation">,</span>
+  args<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Now all Button stories will be primary.</span>
+    primary<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="parameters"><a href="#parameters" class="header-anchor">#</a> Parameters</h3> <p>Parameters 是 Storybook 定义 Story 的静态元数据的方法，通常用于控制 Storybook 功能和插件的行为。故事的参数可用于在一个故事或一组故事的级别为各种附加组件提供配置。</p> <p>例如，我们可以使用 <code>parameters.backgrounds</code> 定义在选择故事时定义哪些背景出现在背景工具栏中：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// Button.story.js</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> Primary <span class="token operator">=</span> <span class="token function">Template</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+Primary<span class="token punctuation">.</span>args <span class="token operator">=</span> <span class="token punctuation">{</span>
+  primary<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  label<span class="token operator">:</span> <span class="token string">'Button'</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+Primary<span class="token punctuation">.</span>parameters <span class="token operator">=</span> <span class="token punctuation">{</span>
+  backgrounds<span class="token operator">:</span> <span class="token punctuation">{</span>
+    values<span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">'red'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token string">'#f00'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">'green'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token string">'#0f0'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>组件级的配置方式与 Args 的配置类似，同时你还可以进行全局性的配置，这将在所有的 Story 中生效：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// .storybook/preview.js</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> parameters <span class="token operator">=</span> <span class="token punctuation">{</span>
+  backgrounds<span class="token operator">:</span> <span class="token punctuation">{</span>
+    values<span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">'red'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token string">'#f00'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">'green'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token string">'#0f0'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>如果同时设置了全局、组件和 Story 级别的 Parameters，那么 Story 参数会覆盖组件参数，而组件参数会覆盖全局参数。</p> <p>另外需要注意的是不同级别的 Parameters 只能被覆盖而不会被丢弃，这意味着可以逐层覆盖单个特定的子参数，但仍保留全局定义的大多数参数。</p> <h3 id="decorators"><a href="#decorators" class="header-anchor">#</a> Decorators</h3> <p>Decorators 是一种用额外的 “rendering” 功能包装 Story 的方法。</p> <p>组件创建时通常会假设它们呈现的位置，您的样式可能需要主题或布局包装，或者您的 UI 可能期望某些上下文或数据提供程序。一个简单的例子是为一个 Story 提供边距：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// Button.stories.js</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> Primary <span class="token operator">=</span> …
+Primary<span class="token punctuation">.</span>decorators <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token parameter">Story</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token operator">&lt;</span>div style<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span> margin<span class="token operator">:</span> <span class="token string">'3em'</span> <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>Story<span class="token operator">/</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span><span class="token punctuation">]</span>
+</code></pre></div><p>Decorators 的配置也可以是组件级和全局的，要为所有的 Story 工作你可以在 <code>.storybook/preview.js</code> 文件中进行设置：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> decorators <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token parameter">Story</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>div style<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span> margin<span class="token operator">:</span> <span class="token string">'3em'</span> <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>Story <span class="token operator">/</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span>
+</code></pre></div><p>当我们同时指定多个级别的 Decorators 时，所有装饰器将按以下顺序运行：全局 -&gt; 组件 -&gt; Story 装饰器。</p> <h3 id="naming-components-and-hierarchy"><a href="#naming-components-and-hierarchy" class="header-anchor">#</a> Naming components and hierarchy</h3> <p>您可以在默认导出的数据中通过指定 <code>title</code> 属性的值来控制着边栏中显示的名称。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// Button.stories.js</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  title<span class="token operator">:</span> <span class="token string">'Button'</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>你还可以在可扩展界面中对相关组件进行分组，以帮助 Storybook 进行组织。为此，请使用 <code>/</code> 作为分隔符：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// Button.stories.js</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  title<span class="token operator">:</span> <span class="token string">'Design System/Common/Button'</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>默认情况下，Story 按导入顺序排序。你可以通过在 <code>.storybook/preview.js</code> 文件中覆盖 Parameters 的 <code>options.storySort</code> 字段来修改这一行为：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">export</span> <span class="token keyword">const</span> parameters <span class="token operator">=</span> <span class="token punctuation">{</span>
+  options<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">storySort</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span>
+      a<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>kind <span class="token operator">===</span> b<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>kind <span class="token operator">?</span> <span class="token number">0</span> <span class="token operator">:</span> a<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>id<span class="token punctuation">.</span><span class="token function">localeCompare</span><span class="token punctuation">(</span>b<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>id<span class="token punctuation">,</span> <span class="token keyword">undefined</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> numeric<span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><code>options.storySort</code> 也可以是一个对象：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// .storybook/preview.js</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> parameters <span class="token operator">=</span> <span class="token punctuation">{</span>
+  options<span class="token operator">:</span> <span class="token punctuation">{</span>
+    storySort<span class="token operator">:</span> <span class="token punctuation">{</span>
+      method<span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+      order<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      locales<span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><table><thead><tr><th style="text-align:left;">Field</th> <th style="text-align:left;">Type</th> <th style="text-align:left;">Description</th> <th style="text-align:left;">Required</th> <th style="text-align:left;">Default Value</th> <th style="text-align:left;">Example</th></tr></thead> <tbody><tr><td style="text-align:left;">method</td> <td style="text-align:left;">String</td> <td style="text-align:left;">Tells Storybook in which order the stories are displayed</td> <td style="text-align:left;">No</td> <td style="text-align:left;">Storybook configuration</td> <td style="text-align:left;">'alphabetical'</td></tr> <tr><td style="text-align:left;">order</td> <td style="text-align:left;">Array</td> <td style="text-align:left;">The stories to be show, ordered by supplied name</td> <td style="text-align:left;">No</td> <td style="text-align:left;">Empty Array []</td> <td style="text-align:left;">['Intro', 'Components']</td></tr> <tr><td style="text-align:left;">locales</td> <td style="text-align:left;">String</td> <td style="text-align:left;">The locale required to be displayed</td> <td style="text-align:left;">No</td> <td style="text-align:left;">System locale</td> <td style="text-align:left;">en-US</td></tr></tbody></table> <p>要使用自定义列表对故事进行排序，可以使用 <code>order</code> 数组，与 <code>order</code> 列表中的项目不匹配的故事将出现在列表中的项目之后。</p> <h2 id="writing-docs"><a href="#writing-docs" class="header-anchor">#</a> Writing Docs</h2> <p>DocsPage 在 Storybook 中是零配置的默认文档，它将您的 Story，文本描述，<code>docgen</code> 注释，<code>args</code> 表和代码示例聚合到每个组件的单个页面中。</p> <p>Storybook 使用 Story 文件默认导出中的 <code>component</code> 键来提取组件的属性和描述：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// MyComponent.stories.js</span>
+
+<span class="token keyword">import</span> <span class="token punctuation">{</span> MyComponent <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./MyComponent'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  title<span class="token operator">:</span> <span class="token string">'MyComponent'</span><span class="token punctuation">,</span>
+  component<span class="token operator">:</span> MyComponent<span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// your templates and stories</span>
+</code></pre></div><p>有时候一些组件是组合使用的，单独存在可能没有任何意义。此时，你可以通过 <code>subcomponents</code> 字段来指定相关的组件：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// ButtonGroup.stories.js</span>
+
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Button<span class="token punctuation">,</span> ButtonGroup <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'../ButtonGroup'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  title<span class="token operator">:</span> <span class="token string">'Path/to/ButtonGroup'</span><span class="token punctuation">,</span>
+  component<span class="token operator">:</span> ButtonGroup<span class="token punctuation">,</span>
+  subcomponents<span class="token operator">:</span> <span class="token punctuation">{</span> Button <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>子组件参数表格将与主要组件一起显示在选项卡式界面中。选项卡标题将与子组件对象的键相对应。</p> <h3 id="replacing-docspage"><a href="#replacing-docspage" class="header-anchor">#</a> Replacing DocsPage</h3> <p>你可以通过覆盖 <code>docs.page</code> 的值在整个 Storybook 中替换默认的 DocsPage 模版，主要包括以下几种形式：</p> <ul><li>使用 <code>null</code> 删除文档。</li> <li>使用 MDX 文档。</li> <li>带有自定义组件。</li></ul> <p>覆盖的方式包括 Story 级、组件级和全局三种方式，全局覆盖你需要在 <code>.storybook/preview.js</code> 中进行修改：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// .storybook/preview.js</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> parameters <span class="token punctuation">{</span> docs<span class="token operator">:</span> <span class="token punctuation">{</span> page<span class="token operator">:</span> <span class="token keyword">null</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="remixing-docspage-using-doc-blocks"><a href="#remixing-docspage-using-doc-blocks" class="header-anchor">#</a> Remixing DocsPage using doc blocks</h3> <p>Doc blocks 是 Storybook Docs 的基础构建块，如果要对默认的 DocsPage 进行较小的自定义，但又不想编写自己的 MDX，则可以重新混合 DocsPage。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// Button.stories.js</span>
+
+<span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span>
+
+<span class="token keyword">import</span> <span class="token punctuation">{</span>
+  Title<span class="token punctuation">,</span>
+  Subtitle<span class="token punctuation">,</span>
+  Description<span class="token punctuation">,</span>
+  Primary<span class="token punctuation">,</span>
+  Props<span class="token punctuation">,</span>
+  Stories<span class="token punctuation">,</span>
+  <span class="token constant">PRIMARY_STORY</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@storybook/addon-docs/blocks'</span>
+
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Button <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./Button'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  title<span class="token operator">:</span> <span class="token string">'Components/Button'</span><span class="token punctuation">,</span>
+  component<span class="token operator">:</span> Button<span class="token punctuation">,</span>
+  parameters<span class="token operator">:</span> <span class="token punctuation">{</span>
+    docs<span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token function-variable function">page</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
+        <span class="token operator">&lt;</span><span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span>Title <span class="token operator">/</span><span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span>Subtitle <span class="token operator">/</span><span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span>Description <span class="token operator">/</span><span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span>Primary <span class="token operator">/</span><span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span>ArgsTable story<span class="token operator">=</span><span class="token punctuation">{</span><span class="token constant">PRIMARY_STORY</span><span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span>Stories <span class="token operator">/</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+      <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>借此您可以重新排序，添加或省略文档块，而不会失去 Storybook 的自动 <code>docgen</code> 功能。</p> <h3 id="mdx"><a href="#mdx" class="header-anchor">#</a> MDX</h3> <p>MDX 是一个结合了 Markdown 和 JSX 的<a href="https://mdxjs.com/" target="_blank" rel="noopener noreferrer">标准文件格式<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>。这意味着您可以在文档中使用 Markdown 的简洁语法，以及在文件中的任意位置自由嵌入 JSX 组件。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span><span class="token operator">-</span> Checkbox<span class="token punctuation">.</span>stories<span class="token punctuation">.</span>mdx <span class="token operator">--</span><span class="token operator">&gt;</span>
+
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Meta<span class="token punctuation">,</span> Story<span class="token punctuation">,</span> Canvas <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@storybook/addon-docs/blocks'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Checkbox <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./Checkbox'</span><span class="token punctuation">;</span>
+
+<span class="token operator">&lt;</span>Meta title<span class="token operator">=</span><span class="token string">&quot;MDX/Checkbox&quot;</span> component<span class="token operator">=</span><span class="token punctuation">{</span>Checkbox<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+
+# Checkbox
+
+With <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">MDX</span><span class="token template-punctuation string">`</span></span> we can define a story <span class="token keyword">for</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Checkbox</span><span class="token template-punctuation string">`</span></span> right <span class="token keyword">in</span> the middle <span class="token keyword">of</span> our
+Markdown documentation<span class="token punctuation">.</span>
+
+<span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span><span class="token operator">-</span> This is your Story template <span class="token keyword">function</span><span class="token punctuation">,</span> shown here <span class="token keyword">in</span> React <span class="token operator">--</span><span class="token operator">&gt;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">Template</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">args</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token operator">&lt;</span>Checkbox <span class="token punctuation">{</span><span class="token operator">...</span>args<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+
+<span class="token operator">&lt;</span>Canvas<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>Story name<span class="token operator">=</span><span class="token string">&quot;Unchecked&quot;</span> args<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span>
+      label<span class="token operator">:</span> <span class="token string">'Unchecked'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>
+    <span class="token punctuation">{</span><span class="token function">Template</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+   <span class="token operator">&lt;</span><span class="token operator">/</span>Story<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>Story name<span class="token operator">=</span><span class="token string">&quot;Checked&quot;</span> args<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span>
+      label<span class="token operator">:</span> <span class="token string">'Unchecked'</span><span class="token punctuation">,</span>
+      checked<span class="token operator">:</span> <span class="token boolean">true</span>
+    <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>
+    <span class="token punctuation">{</span><span class="token function">Template</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+   <span class="token operator">&lt;</span><span class="token operator">/</span>Story<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>Canvas<span class="token operator">&gt;</span>
+</code></pre></div><p>通过给 Meta 组件传递 <code>parameters</code> 和 <code>decorators</code> 属性可以在 MDX 中添加装饰器和参数 P。</p> <h3 id="doc-blocks"><a href="#doc-blocks" class="header-anchor">#</a> Doc Blocks</h3> <p>Doc Blocks 是 Storybook 文档页面的基础。默认，DocsPage 使用以下块的组合自动为您的每个组件构建一个页面。</p> <h4 id="argstable"><a href="#argstable" class="header-anchor">#</a> ArgsTable</h4> <p>Storybook 文档会自动为支持的框架中的组件生成组件 ArgsTable，这些表列出了参数（<a href="https://storybook.js.org/docs/react/writing-stories/args" target="_blank" rel="noopener noreferrer">args<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 的简称），甚至与 <a href="https://storybook.js.org/docs/react/essentials/controls" target="_blank" rel="noopener noreferrer">controls<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 结合允许您更改当前渲染的故事的参数。</p> <p>你可以在组件中通过对属性进行注释，以此让 Storybook 提取到更多有用的信息：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// Button.js</span>
+
+<span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span>
+<span class="token keyword">import</span> PropTypes <span class="token keyword">from</span> <span class="token string">'prop-types'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">Button</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> isDisabled<span class="token punctuation">,</span> content <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>button type<span class="token operator">=</span><span class="token string">&quot;button&quot;</span> disabled<span class="token operator">=</span><span class="token punctuation">{</span>isDisabled<span class="token punctuation">}</span><span class="token operator">&gt;</span>
+      <span class="token punctuation">{</span>content<span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+Button<span class="token punctuation">.</span>propTypes <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">/**
+   Checks if the button should be disabled
+  */</span>
+  isDisabled<span class="token operator">:</span> PropTypes<span class="token punctuation">.</span>bool<span class="token punctuation">.</span>isRequired<span class="token punctuation">,</span>
+  <span class="token comment">/**
+  The display content of the button
+  */</span>
+  content<span class="token operator">:</span> PropTypes<span class="token punctuation">.</span>string<span class="token punctuation">.</span>isRequired<span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>同时，你也可以对 ArgsTables 进行自定义：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// Button.stories.js</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  title<span class="token operator">:</span> <span class="token string">'Button'</span><span class="token punctuation">,</span>
+  component<span class="token operator">:</span> Button<span class="token punctuation">,</span>
+  argTypes<span class="token operator">:</span> <span class="token punctuation">{</span>
+    label<span class="token operator">:</span> <span class="token punctuation">{</span>
+      description<span class="token operator">:</span> <span class="token string">'overwritten description'</span><span class="token punctuation">,</span>
+      table<span class="token operator">:</span> <span class="token punctuation">{</span>
+        type<span class="token operator">:</span> <span class="token punctuation">{</span>
+          summary<span class="token operator">:</span> <span class="token string">'something short'</span><span class="token punctuation">,</span>
+          detail<span class="token operator">:</span> <span class="token string">'something really really long'</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      control<span class="token operator">:</span> <span class="token punctuation">{</span>
+        type<span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>ArgsTable 中控件的配置方式与 <a href="https://storybook.js.org/docs/react/essentials/controls" target="_blank" rel="noopener noreferrer">controls<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 插件面板非常相似，它在幕后使用相同的组件和机制。</p> <h4 id="source"><a href="#source" class="header-anchor">#</a> Source</h4> <p>如果要自定义显示 Story 的源代码片段，请设置 <code>docs.source.code</code> 参数：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// Button.stories.js</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">CustomSource</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function">Template</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+CustomSource<span class="token punctuation">.</span>parameters <span class="token operator">=</span> <span class="token punctuation">{</span>
+    docs<span class="token operator">:</span> <span class="token punctuation">{</span>
+        source<span class="token operator">:</span> <span class="token punctuation">{</span>
+            code<span class="token operator">:</span> <span class="token string">'Some custom string here'</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><p>关于组件的说明会自动从其源代码中位于组件上方的 <code>docgen</code> 中提取。也可以通过 <code>docs.description</code> 参数设置。</p> <h2 id="发布"><a href="#发布" class="header-anchor">#</a> 发布</h2> <p>您可以像发布文档一样发布您的 Storybook，在初始化时我们已经将相关的命令作为脚本包含在了 <code>package.json</code> 文件中：</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">&quot;scripts&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;build-storybook-docs&quot;</span><span class="token operator">:</span> <span class="token string">&quot;build-storybook -s public -o ./dist&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>更多详细说明请阅读 <a href="https://storybook.js.org/" target="_blank" rel="noopener noreferrer">官方文档<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/notebook/react/basis/react-hooks.html" class="prev">
+        React Hooks
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/notebook/assets/js/app.d2525610.js" defer></script><script src="/notebook/assets/js/1.0ed4caaf.js" defer></script><script src="/notebook/assets/js/219.1f3542b8.js" defer></script>
+  </body>
+</html>

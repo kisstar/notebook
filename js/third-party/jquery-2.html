@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>jQuery() 是怎么工作的 | notes | Kisstar</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    
+    <meta name="description" content="Kisstar's personal notes">
+    <link rel="preload" href="/notebook/assets/css/0.styles.b13da641.css" as="style"><link rel="preload" href="/notebook/assets/js/app.d2525610.js" as="script"><link rel="preload" href="/notebook/assets/js/1.0ed4caaf.js" as="script"><link rel="preload" href="/notebook/assets/js/144.bf130a4b.js" as="script"><link rel="prefetch" href="/notebook/assets/js/10.474fe4d7.js"><link rel="prefetch" href="/notebook/assets/js/100.c6de51f5.js"><link rel="prefetch" href="/notebook/assets/js/101.297b80a6.js"><link rel="prefetch" href="/notebook/assets/js/102.671042f0.js"><link rel="prefetch" href="/notebook/assets/js/103.a4414990.js"><link rel="prefetch" href="/notebook/assets/js/104.5f326d1b.js"><link rel="prefetch" href="/notebook/assets/js/105.7d48691a.js"><link rel="prefetch" href="/notebook/assets/js/106.f9e2d3d6.js"><link rel="prefetch" href="/notebook/assets/js/107.3dfec344.js"><link rel="prefetch" href="/notebook/assets/js/108.64e0d2ce.js"><link rel="prefetch" href="/notebook/assets/js/109.c4b5ca14.js"><link rel="prefetch" href="/notebook/assets/js/11.f5ac12d4.js"><link rel="prefetch" href="/notebook/assets/js/110.2803df2c.js"><link rel="prefetch" href="/notebook/assets/js/111.e059e845.js"><link rel="prefetch" href="/notebook/assets/js/112.32498864.js"><link rel="prefetch" href="/notebook/assets/js/113.486abba6.js"><link rel="prefetch" href="/notebook/assets/js/114.2d88bb98.js"><link rel="prefetch" href="/notebook/assets/js/115.1b24dcc9.js"><link rel="prefetch" href="/notebook/assets/js/116.74a7e55c.js"><link rel="prefetch" href="/notebook/assets/js/117.748d98d9.js"><link rel="prefetch" href="/notebook/assets/js/118.2ff07d0b.js"><link rel="prefetch" href="/notebook/assets/js/119.ee1cf35b.js"><link rel="prefetch" href="/notebook/assets/js/12.18a51a50.js"><link rel="prefetch" href="/notebook/assets/js/120.534b8406.js"><link rel="prefetch" href="/notebook/assets/js/121.b728e838.js"><link rel="prefetch" href="/notebook/assets/js/122.530e17ec.js"><link rel="prefetch" href="/notebook/assets/js/123.3026ab36.js"><link rel="prefetch" href="/notebook/assets/js/124.0a3f74f7.js"><link rel="prefetch" href="/notebook/assets/js/125.d5362d6d.js"><link rel="prefetch" href="/notebook/assets/js/126.12262d78.js"><link rel="prefetch" href="/notebook/assets/js/127.7a3ce301.js"><link rel="prefetch" href="/notebook/assets/js/128.08c7e66c.js"><link rel="prefetch" href="/notebook/assets/js/129.6d2c5dde.js"><link rel="prefetch" href="/notebook/assets/js/13.d51e68a7.js"><link rel="prefetch" href="/notebook/assets/js/130.26713517.js"><link rel="prefetch" href="/notebook/assets/js/131.e4470d34.js"><link rel="prefetch" href="/notebook/assets/js/132.e61d0276.js"><link rel="prefetch" href="/notebook/assets/js/133.6f731828.js"><link rel="prefetch" href="/notebook/assets/js/134.be500b7d.js"><link rel="prefetch" href="/notebook/assets/js/135.918c41a0.js"><link rel="prefetch" href="/notebook/assets/js/136.fa550828.js"><link rel="prefetch" href="/notebook/assets/js/137.9f6cceb3.js"><link rel="prefetch" href="/notebook/assets/js/138.49ed9255.js"><link rel="prefetch" href="/notebook/assets/js/139.a06e7d39.js"><link rel="prefetch" href="/notebook/assets/js/14.2f72b127.js"><link rel="prefetch" href="/notebook/assets/js/140.1c46603a.js"><link rel="prefetch" href="/notebook/assets/js/141.25a371c3.js"><link rel="prefetch" href="/notebook/assets/js/142.3a8418ef.js"><link rel="prefetch" href="/notebook/assets/js/143.3b1f5644.js"><link rel="prefetch" href="/notebook/assets/js/145.1b64bc1e.js"><link rel="prefetch" href="/notebook/assets/js/146.f48d4ddb.js"><link rel="prefetch" href="/notebook/assets/js/147.6335e830.js"><link rel="prefetch" href="/notebook/assets/js/148.50471b20.js"><link rel="prefetch" href="/notebook/assets/js/149.c57f1b59.js"><link rel="prefetch" href="/notebook/assets/js/15.2ca416a7.js"><link rel="prefetch" href="/notebook/assets/js/150.9ef4236e.js"><link rel="prefetch" href="/notebook/assets/js/151.a99db080.js"><link rel="prefetch" href="/notebook/assets/js/152.14eb132e.js"><link rel="prefetch" href="/notebook/assets/js/153.d6835009.js"><link rel="prefetch" href="/notebook/assets/js/154.1c8c82b7.js"><link rel="prefetch" href="/notebook/assets/js/155.8e861480.js"><link rel="prefetch" href="/notebook/assets/js/156.f0ad16cf.js"><link rel="prefetch" href="/notebook/assets/js/157.cc6d2da1.js"><link rel="prefetch" href="/notebook/assets/js/158.8ab0edc3.js"><link rel="prefetch" href="/notebook/assets/js/159.9ea2a0d4.js"><link rel="prefetch" href="/notebook/assets/js/16.591f2b9f.js"><link rel="prefetch" href="/notebook/assets/js/160.f7a049ee.js"><link rel="prefetch" href="/notebook/assets/js/161.1903318c.js"><link rel="prefetch" href="/notebook/assets/js/162.80477370.js"><link rel="prefetch" href="/notebook/assets/js/163.2928ab8b.js"><link rel="prefetch" href="/notebook/assets/js/164.f0ccc741.js"><link rel="prefetch" href="/notebook/assets/js/165.bc336df4.js"><link rel="prefetch" href="/notebook/assets/js/166.640ad893.js"><link rel="prefetch" href="/notebook/assets/js/167.2d588db1.js"><link rel="prefetch" href="/notebook/assets/js/168.88751527.js"><link rel="prefetch" href="/notebook/assets/js/169.181d672a.js"><link rel="prefetch" href="/notebook/assets/js/17.7ca8627c.js"><link rel="prefetch" href="/notebook/assets/js/170.d36703bd.js"><link rel="prefetch" href="/notebook/assets/js/171.f7f8e405.js"><link rel="prefetch" href="/notebook/assets/js/172.bb346c7b.js"><link rel="prefetch" href="/notebook/assets/js/173.66fc692d.js"><link rel="prefetch" href="/notebook/assets/js/174.f318c08c.js"><link rel="prefetch" href="/notebook/assets/js/175.0afcbeaf.js"><link rel="prefetch" href="/notebook/assets/js/176.bd381032.js"><link rel="prefetch" href="/notebook/assets/js/177.e4cf3975.js"><link rel="prefetch" href="/notebook/assets/js/178.27499c99.js"><link rel="prefetch" href="/notebook/assets/js/179.52cc4a50.js"><link rel="prefetch" href="/notebook/assets/js/18.3e19faa2.js"><link rel="prefetch" href="/notebook/assets/js/180.db0a883b.js"><link rel="prefetch" href="/notebook/assets/js/181.1cdc1877.js"><link rel="prefetch" href="/notebook/assets/js/182.573193fb.js"><link rel="prefetch" href="/notebook/assets/js/183.ee1bffef.js"><link rel="prefetch" href="/notebook/assets/js/184.342841c1.js"><link rel="prefetch" href="/notebook/assets/js/185.978b29f2.js"><link rel="prefetch" href="/notebook/assets/js/186.7a252a54.js"><link rel="prefetch" href="/notebook/assets/js/187.a08f2b0f.js"><link rel="prefetch" href="/notebook/assets/js/188.ce469ef8.js"><link rel="prefetch" href="/notebook/assets/js/189.73e9a622.js"><link rel="prefetch" href="/notebook/assets/js/19.dc07d24c.js"><link rel="prefetch" href="/notebook/assets/js/190.59526ee2.js"><link rel="prefetch" href="/notebook/assets/js/191.f1b51128.js"><link rel="prefetch" href="/notebook/assets/js/192.e79c2302.js"><link rel="prefetch" href="/notebook/assets/js/193.4d109708.js"><link rel="prefetch" href="/notebook/assets/js/194.684a970d.js"><link rel="prefetch" href="/notebook/assets/js/195.cf33c516.js"><link rel="prefetch" href="/notebook/assets/js/196.e69d8b1f.js"><link rel="prefetch" href="/notebook/assets/js/197.59f2c668.js"><link rel="prefetch" href="/notebook/assets/js/198.f31164ee.js"><link rel="prefetch" href="/notebook/assets/js/199.dbffd3ce.js"><link rel="prefetch" href="/notebook/assets/js/20.184be7eb.js"><link rel="prefetch" href="/notebook/assets/js/200.7d4e5fde.js"><link rel="prefetch" href="/notebook/assets/js/201.99912ae1.js"><link rel="prefetch" href="/notebook/assets/js/202.b4f820de.js"><link rel="prefetch" href="/notebook/assets/js/203.d8462a66.js"><link rel="prefetch" href="/notebook/assets/js/204.60879beb.js"><link rel="prefetch" href="/notebook/assets/js/205.0bb38096.js"><link rel="prefetch" href="/notebook/assets/js/206.395acbbe.js"><link rel="prefetch" href="/notebook/assets/js/207.f0ee7206.js"><link rel="prefetch" href="/notebook/assets/js/208.f95acaed.js"><link rel="prefetch" href="/notebook/assets/js/209.7f968427.js"><link rel="prefetch" href="/notebook/assets/js/21.ee5efea4.js"><link rel="prefetch" href="/notebook/assets/js/210.3d50dcca.js"><link rel="prefetch" href="/notebook/assets/js/211.856c0eed.js"><link rel="prefetch" href="/notebook/assets/js/212.876bb62f.js"><link rel="prefetch" href="/notebook/assets/js/213.f6e59a2f.js"><link rel="prefetch" href="/notebook/assets/js/214.a806095a.js"><link rel="prefetch" href="/notebook/assets/js/215.31d97cd1.js"><link rel="prefetch" href="/notebook/assets/js/216.4c9004a2.js"><link rel="prefetch" href="/notebook/assets/js/217.324e4f7f.js"><link rel="prefetch" href="/notebook/assets/js/218.6b2d2bb9.js"><link rel="prefetch" href="/notebook/assets/js/219.1f3542b8.js"><link rel="prefetch" href="/notebook/assets/js/22.5e41fdff.js"><link rel="prefetch" href="/notebook/assets/js/220.5c254ed0.js"><link rel="prefetch" href="/notebook/assets/js/221.4e412ded.js"><link rel="prefetch" href="/notebook/assets/js/222.cb8b6e65.js"><link rel="prefetch" href="/notebook/assets/js/223.d3b647d5.js"><link rel="prefetch" href="/notebook/assets/js/224.76793b55.js"><link rel="prefetch" href="/notebook/assets/js/225.c181b9e5.js"><link rel="prefetch" href="/notebook/assets/js/226.08a6a839.js"><link rel="prefetch" href="/notebook/assets/js/227.ce411683.js"><link rel="prefetch" href="/notebook/assets/js/228.91976dcc.js"><link rel="prefetch" href="/notebook/assets/js/229.a6e61aa2.js"><link rel="prefetch" href="/notebook/assets/js/23.fe3792a7.js"><link rel="prefetch" href="/notebook/assets/js/230.8f61d7f0.js"><link rel="prefetch" href="/notebook/assets/js/231.349fe77c.js"><link rel="prefetch" href="/notebook/assets/js/232.ae0a12f3.js"><link rel="prefetch" href="/notebook/assets/js/233.a26c69e6.js"><link rel="prefetch" href="/notebook/assets/js/234.dc52afc3.js"><link rel="prefetch" href="/notebook/assets/js/235.22c99927.js"><link rel="prefetch" href="/notebook/assets/js/236.cad939cc.js"><link rel="prefetch" href="/notebook/assets/js/237.8f0b6e9e.js"><link rel="prefetch" href="/notebook/assets/js/238.10dad5f1.js"><link rel="prefetch" href="/notebook/assets/js/239.67576d11.js"><link rel="prefetch" href="/notebook/assets/js/24.4f2929e9.js"><link rel="prefetch" href="/notebook/assets/js/240.80c44cfa.js"><link rel="prefetch" href="/notebook/assets/js/241.49ccc17e.js"><link rel="prefetch" href="/notebook/assets/js/242.ff228801.js"><link rel="prefetch" href="/notebook/assets/js/243.4cdb9405.js"><link rel="prefetch" href="/notebook/assets/js/244.3f112ae8.js"><link rel="prefetch" href="/notebook/assets/js/245.b8741dd2.js"><link rel="prefetch" href="/notebook/assets/js/246.bb5c1069.js"><link rel="prefetch" href="/notebook/assets/js/247.9795c57d.js"><link rel="prefetch" href="/notebook/assets/js/248.2c602df4.js"><link rel="prefetch" href="/notebook/assets/js/249.6d15bb03.js"><link rel="prefetch" href="/notebook/assets/js/25.fd5fe753.js"><link rel="prefetch" href="/notebook/assets/js/250.ba5c5c20.js"><link rel="prefetch" href="/notebook/assets/js/251.b063a803.js"><link rel="prefetch" href="/notebook/assets/js/252.9883c2f0.js"><link rel="prefetch" href="/notebook/assets/js/253.726ccc80.js"><link rel="prefetch" href="/notebook/assets/js/254.5460b6fd.js"><link rel="prefetch" href="/notebook/assets/js/255.d21476a2.js"><link rel="prefetch" href="/notebook/assets/js/256.1deea404.js"><link rel="prefetch" href="/notebook/assets/js/257.39070319.js"><link rel="prefetch" href="/notebook/assets/js/258.3905af96.js"><link rel="prefetch" href="/notebook/assets/js/26.76abd46f.js"><link rel="prefetch" href="/notebook/assets/js/27.f2636a73.js"><link rel="prefetch" href="/notebook/assets/js/28.0d7acfbe.js"><link rel="prefetch" href="/notebook/assets/js/29.cefced41.js"><link rel="prefetch" href="/notebook/assets/js/3.de177589.js"><link rel="prefetch" href="/notebook/assets/js/30.07afbba5.js"><link rel="prefetch" href="/notebook/assets/js/31.92551101.js"><link rel="prefetch" href="/notebook/assets/js/32.7dbc8c5e.js"><link rel="prefetch" href="/notebook/assets/js/33.40be7a79.js"><link rel="prefetch" href="/notebook/assets/js/34.1fd46fa9.js"><link rel="prefetch" href="/notebook/assets/js/35.74659d57.js"><link rel="prefetch" href="/notebook/assets/js/36.9a90f4b1.js"><link rel="prefetch" href="/notebook/assets/js/37.be41554b.js"><link rel="prefetch" href="/notebook/assets/js/38.f1b5d5e7.js"><link rel="prefetch" href="/notebook/assets/js/39.9d8b698d.js"><link rel="prefetch" href="/notebook/assets/js/4.02b78e18.js"><link rel="prefetch" href="/notebook/assets/js/40.550cb413.js"><link rel="prefetch" href="/notebook/assets/js/41.c0e1b97c.js"><link rel="prefetch" href="/notebook/assets/js/42.ed95ea00.js"><link rel="prefetch" href="/notebook/assets/js/43.ec860995.js"><link rel="prefetch" href="/notebook/assets/js/44.521f6234.js"><link rel="prefetch" href="/notebook/assets/js/45.22bb8568.js"><link rel="prefetch" href="/notebook/assets/js/46.94969701.js"><link rel="prefetch" href="/notebook/assets/js/47.b5f6c15c.js"><link rel="prefetch" href="/notebook/assets/js/48.0563c806.js"><link rel="prefetch" href="/notebook/assets/js/49.15483326.js"><link rel="prefetch" href="/notebook/assets/js/5.de4f8656.js"><link rel="prefetch" href="/notebook/assets/js/50.12b3841f.js"><link rel="prefetch" href="/notebook/assets/js/51.6148daa1.js"><link rel="prefetch" href="/notebook/assets/js/52.24c01f7a.js"><link rel="prefetch" href="/notebook/assets/js/53.989c3207.js"><link rel="prefetch" href="/notebook/assets/js/54.fe5ccc4e.js"><link rel="prefetch" href="/notebook/assets/js/55.81f71fbe.js"><link rel="prefetch" href="/notebook/assets/js/56.6e71b059.js"><link rel="prefetch" href="/notebook/assets/js/57.e515307c.js"><link rel="prefetch" href="/notebook/assets/js/58.f6553847.js"><link rel="prefetch" href="/notebook/assets/js/59.6d588f88.js"><link rel="prefetch" href="/notebook/assets/js/6.ae5c2b7f.js"><link rel="prefetch" href="/notebook/assets/js/60.6e49b323.js"><link rel="prefetch" href="/notebook/assets/js/61.db8c65b9.js"><link rel="prefetch" href="/notebook/assets/js/62.ea1c68f4.js"><link rel="prefetch" href="/notebook/assets/js/63.e548bbea.js"><link rel="prefetch" href="/notebook/assets/js/64.2ea2f349.js"><link rel="prefetch" href="/notebook/assets/js/65.ce3611e8.js"><link rel="prefetch" href="/notebook/assets/js/66.85466984.js"><link rel="prefetch" href="/notebook/assets/js/67.4b7a7a16.js"><link rel="prefetch" href="/notebook/assets/js/68.0fa048bf.js"><link rel="prefetch" href="/notebook/assets/js/69.d00e8e77.js"><link rel="prefetch" href="/notebook/assets/js/7.be4a2204.js"><link rel="prefetch" href="/notebook/assets/js/70.aa43fa88.js"><link rel="prefetch" href="/notebook/assets/js/71.4c337f0b.js"><link rel="prefetch" href="/notebook/assets/js/72.27dfb4fd.js"><link rel="prefetch" href="/notebook/assets/js/73.8c45959d.js"><link rel="prefetch" href="/notebook/assets/js/74.90ee0f92.js"><link rel="prefetch" href="/notebook/assets/js/75.ede3a6a2.js"><link rel="prefetch" href="/notebook/assets/js/76.e9a0dfce.js"><link rel="prefetch" href="/notebook/assets/js/77.3beb5afe.js"><link rel="prefetch" href="/notebook/assets/js/78.c5e692fa.js"><link rel="prefetch" href="/notebook/assets/js/79.dda3280a.js"><link rel="prefetch" href="/notebook/assets/js/8.961dbf83.js"><link rel="prefetch" href="/notebook/assets/js/80.b9017279.js"><link rel="prefetch" href="/notebook/assets/js/81.159f8048.js"><link rel="prefetch" href="/notebook/assets/js/82.102fa355.js"><link rel="prefetch" href="/notebook/assets/js/83.9711b3c2.js"><link rel="prefetch" href="/notebook/assets/js/84.63a04b23.js"><link rel="prefetch" href="/notebook/assets/js/85.9a60c82c.js"><link rel="prefetch" href="/notebook/assets/js/86.385d1ae9.js"><link rel="prefetch" href="/notebook/assets/js/87.297c6ea6.js"><link rel="prefetch" href="/notebook/assets/js/88.46cb0381.js"><link rel="prefetch" href="/notebook/assets/js/89.4bda3310.js"><link rel="prefetch" href="/notebook/assets/js/9.1fac9f2d.js"><link rel="prefetch" href="/notebook/assets/js/90.0d6547a9.js"><link rel="prefetch" href="/notebook/assets/js/91.ad469783.js"><link rel="prefetch" href="/notebook/assets/js/92.3fd1bc0e.js"><link rel="prefetch" href="/notebook/assets/js/93.3727e6f5.js"><link rel="prefetch" href="/notebook/assets/js/94.6d80f42e.js"><link rel="prefetch" href="/notebook/assets/js/95.a87df1ec.js"><link rel="prefetch" href="/notebook/assets/js/96.5ee494a0.js"><link rel="prefetch" href="/notebook/assets/js/97.059a6403.js"><link rel="prefetch" href="/notebook/assets/js/98.9f97a773.js"><link rel="prefetch" href="/notebook/assets/js/99.56296d34.js">
+    <link rel="stylesheet" href="/notebook/assets/css/0.styles.b13da641.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/notebook/" class="home-link router-link-active"><img src="/notebook/logo.png" alt="notes | Kisstar" class="logo"> <span class="site-name can-hide">notes | Kisstar</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="IT" class="dropdown-title"><span class="title">IT</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          FED
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/html/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-subitem"><a href="/notebook/css/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-subitem"><a href="/notebook/js/" class="nav-link router-link-active">
+  JavaScript
+</a></li><li class="dropdown-subitem"><a href="/notebook/ts/" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-subitem"><a href="/notebook/ng/" class="nav-link">
+  AngularJS
+</a></li><li class="dropdown-subitem"><a href="/notebook/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-subitem"><a href="/notebook/react/" class="nav-link">
+  React
+</a></li><li class="dropdown-subitem"><a href="/notebook/web/" class="nav-link">
+  WEB
+</a></li></ul></li><li class="dropdown-item"><h4>
+          BED
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/webpack/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-subitem"><a href="/notebook/electron/" class="nav-link">
+  Electron
+</a></li><li class="dropdown-subitem"><a href="/notebook/nodejs/" class="nav-link">
+  NodeJS
+</a></li><li class="dropdown-subitem"><a href="/notebook/c/" class="nav-link">
+  C/C++
+</a></li></ul></li><li class="dropdown-item"><h4>
+          OTHER
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/wechat/" class="nav-link">
+  WeChat
+</a></li><li class="dropdown-subitem"><a href="/notebook/video/" class="nav-link">
+  Video
+</a></li><li class="dropdown-subitem"><a href="/notebook/project/" class="nav-link">
+  Project
+</a></li><li class="dropdown-subitem"><a href="/notebook/021/" class="nav-link">
+  021
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="DevTools" class="dropdown-title"><span class="title">DevTools</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/vim/" class="nav-link">
+  Vim
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/chrome/" class="nav-link">
+  Chrome
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Computer" class="dropdown-title"><span class="title">Computer</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/cp/" class="nav-link">
+  Computer Basis
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/algorithm/" class="nav-link">
+  Algorithm
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/mac/" class="nav-link">
+  Mac
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/windows/" class="nav-link">
+  Windows
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/database/" class="nav-link">
+  Database
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Cloud" class="dropdown-title"><span class="title">Cloud</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/docker/" class="nav-link">
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/dev-ops/" class="nav-link">
+  DevOps
+</a></li></ul></div></div><div class="nav-item"><a href="/notebook/collection/" class="nav-link">
+  Collection
+</a></div><div class="nav-item"><a href="/notebook/other/" class="nav-link">
+  Other
+</a></div><div class="nav-item"><a href="https://github.com/kisstar/notebook/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="IT" class="dropdown-title"><span class="title">IT</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          FED
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/html/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-subitem"><a href="/notebook/css/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-subitem"><a href="/notebook/js/" class="nav-link router-link-active">
+  JavaScript
+</a></li><li class="dropdown-subitem"><a href="/notebook/ts/" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-subitem"><a href="/notebook/ng/" class="nav-link">
+  AngularJS
+</a></li><li class="dropdown-subitem"><a href="/notebook/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-subitem"><a href="/notebook/react/" class="nav-link">
+  React
+</a></li><li class="dropdown-subitem"><a href="/notebook/web/" class="nav-link">
+  WEB
+</a></li></ul></li><li class="dropdown-item"><h4>
+          BED
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/webpack/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-subitem"><a href="/notebook/electron/" class="nav-link">
+  Electron
+</a></li><li class="dropdown-subitem"><a href="/notebook/nodejs/" class="nav-link">
+  NodeJS
+</a></li><li class="dropdown-subitem"><a href="/notebook/c/" class="nav-link">
+  C/C++
+</a></li></ul></li><li class="dropdown-item"><h4>
+          OTHER
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/wechat/" class="nav-link">
+  WeChat
+</a></li><li class="dropdown-subitem"><a href="/notebook/video/" class="nav-link">
+  Video
+</a></li><li class="dropdown-subitem"><a href="/notebook/project/" class="nav-link">
+  Project
+</a></li><li class="dropdown-subitem"><a href="/notebook/021/" class="nav-link">
+  021
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="DevTools" class="dropdown-title"><span class="title">DevTools</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/vim/" class="nav-link">
+  Vim
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/chrome/" class="nav-link">
+  Chrome
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Computer" class="dropdown-title"><span class="title">Computer</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/cp/" class="nav-link">
+  Computer Basis
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/algorithm/" class="nav-link">
+  Algorithm
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/mac/" class="nav-link">
+  Mac
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/windows/" class="nav-link">
+  Windows
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/database/" class="nav-link">
+  Database
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Cloud" class="dropdown-title"><span class="title">Cloud</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/docker/" class="nav-link">
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/dev-ops/" class="nav-link">
+  DevOps
+</a></li></ul></div></div><div class="nav-item"><a href="/notebook/collection/" class="nav-link">
+  Collection
+</a></div><div class="nav-item"><a href="/notebook/other/" class="nav-link">
+  Other
+</a></div><div class="nav-item"><a href="https://github.com/kisstar/notebook/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>基础</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>进阶</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>面试</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>第三方</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notebook/js/third-party/require-js-0.html" class="sidebar-link">RequireJS（一）</a></li><li><a href="/notebook/js/third-party/require-js-1.html" class="sidebar-link">RequireJS (二)</a></li><li><a href="/notebook/js/third-party/require-js-2.html" class="sidebar-link">RequireJS (三)</a></li><li><a href="/notebook/js/third-party/require-js-3.html" class="sidebar-link">RequireJS (四)</a></li><li><a href="/notebook/js/third-party/jquery-0.html" class="sidebar-link">jQuery 的整体结构</a></li><li><a href="/notebook/js/third-party/jquery-1.html" class="sidebar-link">jQuery 中的扩展（拷贝）方式</a></li><li><a href="/notebook/js/third-party/jquery-2.html" aria-current="page" class="active sidebar-link">jQuery() 是怎么工作的</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/notebook/js/third-party/jquery-2.html#附录" class="sidebar-link">附录</a></li></ul></li><li><a href="/notebook/js/third-party/jquery-3.html" class="sidebar-link">jQuery 中的工具函数和方法</a></li><li><a href="/notebook/js/third-party/jquery-4.html" class="sidebar-link">jQuery 中的 DOM 操作</a></li><li><a href="/notebook/js/third-party/jquery-5.html" class="sidebar-link">jQuery 中的回调</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>读书笔记</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>奇思妙想</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="jquery-是怎么工作的"><a href="#jquery-是怎么工作的" class="header-anchor">#</a> jQuery() 是怎么工作的</h1> <p>文中涉及到 jQuery 暴露的接口：</p> <ul><li>jQuery.merge</li> <li>jQuery.makeArray</li> <li>jQuery.parseHTML</li> <li>jQuery.htmlPrefilter</li> <li>jQuery.inArray</li> <li>jQuery.contains（未作详细说明）</li> <li>jQuery.fn.remove（未作详细说明）</li> <li>jQuery.fn.attr（未作详细说明）</li> <li>jQuery.fn.find（未作详细说明）</li></ul> <p>其它私有函数：</p> <ul><li>buildFragment</li> <li>isAttached（未作详细说明）</li> <li>getAll</li> <li>setGlobalEval（未作详细说明）</li></ul> <p>在指定 <code>jQuery.fn</code> 的原型时同时还指定了一系列的基础方法，了解这些方法之前我们需要了解一下运行 <code>jQuery()</code> 时做了什么，我们知道 jQuery 函数内实际上是调用了 <code>init</code> 函数，所以我们接下来看看这个函数中的内容（L3133）：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">;</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">window<span class="token punctuation">,</span> noGlobal</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> document <span class="token operator">=</span> window<span class="token punctuation">.</span>document
+  <span class="token keyword">var</span> rootjQuery
+
+  jQuery<span class="token punctuation">.</span>fn<span class="token punctuation">.</span><span class="token function-variable function">init</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">selector<span class="token punctuation">,</span> context<span class="token punctuation">,</span> root</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 如果没有传入选择器将会直接返回实例</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>selector<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// init 方法接受一个候补的 rootjQuery 以此提供对 jQuery.sub 的支持</span>
+    <span class="token comment">// jQuery.sub 可创建一个新的 jQuery 副本，其属性和方法可以修改，而不会影响原来的 jQuery 对象，本质上类似于原型链继承</span>
+    root <span class="token operator">=</span> root <span class="token operator">||</span> rootjQuery
+
+    <span class="token comment">// Handle HTML strings</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> selector <span class="token operator">===</span> <span class="token string">'string'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// ...</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>selector<span class="token punctuation">.</span>nodeType<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 如果参数 selector 含有属性 nodeType，则认为它是一个 DOM 元素</span>
+      <span class="token comment">// 此时设置第一个元素指向该 DOM 元素、属性 length 为 1，然后返回包含了该 DOM 元素引用的 jQuery 对象</span>
+      <span class="token keyword">this</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> selector
+      <span class="token keyword">this</span><span class="token punctuation">.</span>length <span class="token operator">=</span> <span class="token number">1</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span>
+
+      <span class="token comment">// HANDLE: $(function)</span>
+      <span class="token comment">// 判断 root.ready 是否存在，存在则执行 root.ready(selector)，否则执行该方法，通常情况下 root 就是 rootjQuery</span>
+      <span class="token comment">// 从后面 rootjQuery 的赋值来看，不难发现我们通常使用的 $(function) 就是 $(document).ready(function) 的简写方式</span>
+      <span class="token comment">// 那么 $(document).ready(function) 里面究竟发生了什么？这部分将在 jQuery 的事件部分揭晓 ......</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isFunction</span><span class="token punctuation">(</span>selector<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> root<span class="token punctuation">.</span>ready <span class="token operator">!==</span> <span class="token keyword">undefined</span>
+        <span class="token operator">?</span> root<span class="token punctuation">.</span><span class="token function">ready</span><span class="token punctuation">(</span>selector<span class="token punctuation">)</span>
+        <span class="token operator">:</span> <span class="token comment">// Execute immediately if ready is not present</span>
+          <span class="token function">selector</span><span class="token punctuation">(</span>jQuery<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> jQuery<span class="token punctuation">.</span><span class="token function">makeArray</span><span class="token punctuation">(</span>selector<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  rootjQuery <span class="token operator">=</span> <span class="token function">jQuery</span><span class="token punctuation">(</span>document<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>函数体内主要包含五个部分：没有传入选择器、传入非空字符串、传入了原生 DOM 以及传入一个函数，最后则是返回 <code>jQuery.makeArray</code> 函数处理后的结果。</p> <p>代码中的注释已经解释了其中接种情况的处理方式，比较疑惑的是判断为 DOM 元素之后的处理方法，为什么这样处理呢？事实上我们通过 jQuery 获取元素时得到元素都是以索引的形式存在与实例中：</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>jquery-3.5.1.js<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>使用下面的结果我们将会得到如图所示的对象结果：</p> <p>所以如果我们已经拿到了 DOM 元素就是直接按照这种形式写入到示例对象中，与此相关的另一种处理就是 <code>jQuery.makeArray</code> 函数（L397）：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">;</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">window<span class="token punctuation">,</span> noGlobal</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  jQuery<span class="token punctuation">.</span><span class="token function">extend</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token comment">// results is for internal usage only</span>
+    <span class="token function-variable function">makeArray</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">arr<span class="token punctuation">,</span> results</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">var</span> ret <span class="token operator">=</span> results <span class="token operator">||</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>arr <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isArrayLike</span><span class="token punctuation">(</span><span class="token function">Object</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          jQuery<span class="token punctuation">.</span><span class="token function">merge</span><span class="token punctuation">(</span>ret<span class="token punctuation">,</span> <span class="token keyword">typeof</span> arr <span class="token operator">===</span> <span class="token string">'string'</span> <span class="token operator">?</span> <span class="token punctuation">[</span>arr<span class="token punctuation">]</span> <span class="token operator">:</span> arr<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+          <span class="token function">push</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>ret<span class="token punctuation">,</span> arr<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+
+      <span class="token keyword">return</span> ret
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>向外暴露的 <code>makeArray</code> 函数主要是转换一个类似数组的对象成为真正的 JavaScript 数组，通过上面的代码我们可以看到其内部又是通过 <code>jQuery.merge</code> 方法来实现的（L420）：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">;</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">window<span class="token punctuation">,</span> noGlobal</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  jQuery<span class="token punctuation">.</span><span class="token function">extend</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token function-variable function">merge</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">first<span class="token punctuation">,</span> second</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">var</span> len <span class="token operator">=</span> <span class="token operator">+</span>second<span class="token punctuation">.</span>length<span class="token punctuation">,</span>
+        j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span>
+        i <span class="token operator">=</span> first<span class="token punctuation">.</span>length
+
+      <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> len<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        first<span class="token punctuation">[</span>i<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> second<span class="token punctuation">[</span>j<span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+
+      first<span class="token punctuation">.</span>length <span class="token operator">=</span> i
+
+      <span class="token keyword">return</span> first
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>如你所见，这个方法的实现很简单就是遍历后者然后添加在前者中，类似于数组的 <code>concat</code> 方法。另外，在 <code>makeArray</code> 方法中使用时它的第一个参数总是一个空数组，所以执行结束后我们总可以得到一个真的数组。</p> <p>回到 <code>makeArray</code> 方法，这里更多需要关注的是其在内部的用法。根据提示它的第二个参数（需包含 length 属性）应该只在内部提供，此时对于 <code>jQuery.makeArray(selector, this)</code> 来说：</p> <ul><li>如果 <code>selector</code> 是数组或伪数组（如 jQuery 对象、字符串），则都合并到当前 jQuery 对象中；</li> <li>如果是其他类型的值，则作为元素放入当前 jQuery 对象中（由 <code>push.call(ret, arr);</code> 添加）。</li></ul> <p>然而，在 init 函数中字符串的参数并不会走到这里，应该在前面的一个条件分支中已经对字符串的参数进行了处理：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">;</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">window<span class="token punctuation">,</span> noGlobal</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> rquickExpr <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^(?:\s*(&lt;[\w\W]+&gt;)[^&gt;]*|#([\w-]+))$</span><span class="token regex-delimiter">/</span></span>
+
+  jQuery<span class="token punctuation">.</span>fn<span class="token punctuation">.</span><span class="token function-variable function">init</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">selector<span class="token punctuation">,</span> context<span class="token punctuation">,</span> root</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// ...</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> selector <span class="token operator">===</span> <span class="token string">'string'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>selector<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">===</span> <span class="token string">'&lt;'</span> <span class="token operator">&amp;&amp;</span> selector<span class="token punctuation">[</span>selector<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">===</span> <span class="token string">'&gt;'</span> <span class="token operator">&amp;&amp;</span> selector<span class="token punctuation">.</span>length <span class="token operator">&gt;=</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// Assume that strings that start and end with &lt;&gt; are HTML and skip the regex check</span>
+        match <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token keyword">null</span><span class="token punctuation">,</span> selector<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">]</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        match <span class="token operator">=</span> rquickExpr<span class="token punctuation">.</span><span class="token function">exec</span><span class="token punctuation">(</span>selector<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+
+      <span class="token comment">// 如果是 HTML 字符串或则没有指定上下文时的 ID 选择器</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>match <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span>match<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token operator">!</span>context<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 如果不存在则使用 root，如果 context 是一个 jQuery 对象则使用 context</span>
+        <span class="token comment">// HANDLE: $(expr, $(...))</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>context <span class="token operator">||</span> context<span class="token punctuation">.</span>jquery<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>context <span class="token operator">||</span> root<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>selector<span class="token punctuation">)</span>
+
+        <span class="token comment">// HANDLE: $(expr, context)</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 这里 this.constructor 其实就是 jQuery 函数</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">constructor</span><span class="token punctuation">(</span>context<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>selector<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// ...</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>进入这个分支后首先判断了 <code>selector</code> 是否是类似于 <code>&lt;[\w]&gt;</code> 这样的结构，这通常是要创建元素，否则的话就会进行后续的正则匹配，这个正则主要匹配以标签开头的内容（<code>&lt;div&gt;hello</code>）和 ID 选择器（<code>#id</code>），它们通过 <code>exec</code> 匹配结果形如：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// &lt;div&gt;hello:  [&quot;&lt;div&gt;hello&quot;, &quot;&lt;div&gt;&quot;, undefined, index: 0, input: &quot;&lt;div&gt;hello&quot;, groups: undefined]</span>
+<span class="token comment">// #id:         [&quot;#id&quot;, undefined, &quot;id&quot;, index: 0, input: &quot;#id&quot;, groups: undefined]</span>
+
+<span class="token comment">// 而类似于 `&lt;[\w]&gt;` 的结构</span>
+<span class="token comment">// &lt;div&gt;:       [null, selector, null]</span>
+</code></pre></div><p>接下来检查匹配的结果，如果拥有匹配且匹配中第二项有值或者 <code>context</code> 不存在时再次进入一个分支，此时主要包括创建 HTML 或通过 ID 选择器选择元素两种情况，所以内部根据匹配结果中第二项的值再次进行了细分：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// ...</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span>match <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span>match<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token operator">!</span>context<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// HANDLE: $(html) -&gt; $(array)</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>match<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 确保 context 是原生的，以支持 $('&lt;div&gt;', document) 或 $('&lt;div&gt;', $(document)) 两种写法</span>
+    context <span class="token operator">=</span> context <span class="token keyword">instanceof</span> <span class="token class-name">jQuery</span> <span class="token operator">?</span> context<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">:</span> context
+
+    <span class="token comment">// Option to run scripts is true for back-compat</span>
+    <span class="token comment">// Intentionally let the error be thrown if parseHTML is not present</span>
+    jQuery<span class="token punctuation">.</span><span class="token function">merge</span><span class="token punctuation">(</span>
+      <span class="token keyword">this</span><span class="token punctuation">,</span>
+      jQuery<span class="token punctuation">.</span><span class="token function">parseHTML</span><span class="token punctuation">(</span>
+        match<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        context <span class="token operator">&amp;&amp;</span> context<span class="token punctuation">.</span>nodeType <span class="token operator">?</span> context<span class="token punctuation">.</span>ownerDocument <span class="token operator">||</span> context <span class="token operator">:</span> document<span class="token punctuation">,</span>
+        <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span>
+
+    <span class="token comment">// HANDLE: $(html, props)</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>rsingleTag<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>match<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> jQuery<span class="token punctuation">.</span><span class="token function">isPlainObject</span><span class="token punctuation">(</span>context<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">for</span> <span class="token punctuation">(</span>match <span class="token keyword">in</span> context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 如果 jQuery 上存在该方法，那么将作为方法进行调用</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isFunction</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">[</span>match<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">this</span><span class="token punctuation">[</span>match<span class="token punctuation">]</span><span class="token punctuation">(</span>context<span class="token punctuation">[</span>match<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+          <span class="token comment">// 否则当作属性处理</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span>match<span class="token punctuation">,</span> context<span class="token punctuation">[</span>match<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> <span class="token keyword">this</span>
+
+    <span class="token comment">// HANDLE: $(#id)</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    elem <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span>match<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>elem<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// Inject the element directly into the jQuery object</span>
+      <span class="token keyword">this</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> elem
+      <span class="token keyword">this</span><span class="token punctuation">.</span>length <span class="token operator">=</span> <span class="token number">1</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>根据上面对匹配结果的说明，如果匹配的第二项没有值就是需要通过选择器来查找元素，对于 ID 选择器我们可以直接使用原生的 <code>getElementById</code> 方法获取到 DOM 元素，然后将其放置到当前的 jQuery 对象上，最后直接返回该对象。</p> <p>而另外一种情况要更复杂一点，首先我们需要确认接收到的 <code>context</code> 是原生的而非 jQuery 对象，通常来说 <code>context</code> 总是 <code>document</code>，不过也可以指定 <code>iframe</code> 中的 <code>document</code>，这几乎没什么用处，不过 jQuery 依然提供了支持。</p> <p>接着调用了 <code>jQuery.parseHTML</code> 方法对 HTML 字符串进行处理，该方法接受三个参数（L10300）：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">;</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">window<span class="token punctuation">,</span> noGlobal</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> rsingleTag <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^&lt;([a-z][^\/\0&gt;:\x20\t\r\n\f]*)[\x20\t\r\n\f]*\/?&gt;(?:&lt;\/\1&gt;|)$</span><span class="token regex-delimiter">/</span><span class="token regex-flags">i</span></span>
+  <span class="token keyword">var</span> support <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token comment">// 在 Safari 8 文档中，通过 document.implementation.createHTMLDocument 创建同级的兄弟表单：第二个将成为第一个的子级。</span>
+  <span class="token comment">// 因此这种情况下不应使用该方法，查看更多：https://bugs.webkit.org/show_bug.cgi?id=137337</span>
+  support<span class="token punctuation">.</span>createHTMLDocument <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> body <span class="token operator">=</span> document<span class="token punctuation">.</span>implementation<span class="token punctuation">.</span><span class="token function">createHTMLDocument</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span>body
+    body<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">'&lt;form&gt;&lt;/form&gt;&lt;form&gt;&lt;/form&gt;'</span>
+    <span class="token keyword">return</span> body<span class="token punctuation">.</span>childNodes<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">2</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+  <span class="token comment">// 第一个参数应该是一个 HTML 字符串</span>
+  <span class="token comment">// 第二个参数默认是 document，将在此上下文中创建片段</span>
+  <span class="token comment">// 第三个参数决定了 HTML 字符串中的 script 标签中的内容是否被执行</span>
+  jQuery<span class="token punctuation">.</span><span class="token function-variable function">parseHTML</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">data<span class="token punctuation">,</span> context<span class="token punctuation">,</span> keepScripts</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> data <span class="token operator">!==</span> <span class="token string">'string'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> context <span class="token operator">===</span> <span class="token string">'boolean'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      keepScripts <span class="token operator">=</span> context
+      context <span class="token operator">=</span> <span class="token boolean">false</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">var</span> base<span class="token punctuation">,</span> parsed<span class="token punctuation">,</span> scripts
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// Stop scripts or inline event handlers from being executed immediately</span>
+      <span class="token comment">// by using document.implementation</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>support<span class="token punctuation">.</span>createHTMLDocument<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        context <span class="token operator">=</span> document<span class="token punctuation">.</span>implementation<span class="token punctuation">.</span><span class="token function">createHTMLDocument</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+
+        <span class="token comment">// 根据当前文档地址创建了一个 base 元素，以便让包含 URL 的新建元素的地址得到正确解析 (gh-2965)</span>
+        base <span class="token operator">=</span> context<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'base'</span><span class="token punctuation">)</span>
+        base<span class="token punctuation">.</span>href <span class="token operator">=</span> document<span class="token punctuation">.</span>location<span class="token punctuation">.</span>href
+        context<span class="token punctuation">.</span>head<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>base<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        context <span class="token operator">=</span> document
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    parsed <span class="token operator">=</span> rsingleTag<span class="token punctuation">.</span><span class="token function">exec</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+    scripts <span class="token operator">=</span> <span class="token operator">!</span>keepScripts <span class="token operator">&amp;&amp;</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+    <span class="token comment">// 单标签，包括： &lt;div&gt; | &lt;div /&gt; | &lt;div&gt;&lt;/div&gt;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>parsed<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token punctuation">[</span>context<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span>parsed<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+
+    parsed <span class="token operator">=</span> <span class="token function">buildFragment</span><span class="token punctuation">(</span><span class="token punctuation">[</span>data<span class="token punctuation">]</span><span class="token punctuation">,</span> context<span class="token punctuation">,</span> scripts<span class="token punctuation">)</span>
+
+    <span class="token comment">// 如果第三个参数是 false，那么这里的 scripts 就是一个数组，传递到 buildFragment 中会把所有的 script 标签放在里面</span>
+    <span class="token comment">// 因此在这里我们通过这个数组移除其中的所有脚本元素</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>scripts <span class="token operator">&amp;&amp;</span> scripts<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">jQuery</span><span class="token punctuation">(</span>scripts<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> jQuery<span class="token punctuation">.</span><span class="token function">merge</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> parsed<span class="token punctuation">.</span>childNodes<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>在内部处理参数时，如果没有指定上下文就会根据兼容性来确定。如果对 <code>document.implementation.createHTMLDocument</code> 支持良好就会使用通过其创建的文档，否则直接使用当前文档。</p> <p>接着我们使用正则判断当前需要创建的元素是否是一个单标签，如果是的话我们就是用 <code>createElement</code> 进行创建，然后将结果放在数组中返回。如果不是呢？我们将调用 <code>buildFragment</code> 函数进行处理（L5002）：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">;</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">window<span class="token punctuation">,</span> noGlobal</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> rhtml <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">&lt;|&amp;#?\w+;</span><span class="token regex-delimiter">/</span></span>
+  <span class="token keyword">var</span> rtagName <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">&lt;([a-z][^\/\0&gt;\x20\t\r\n\f]*)</span><span class="token regex-delimiter">/</span><span class="token regex-flags">i</span></span>
+  <span class="token keyword">var</span> rscriptType <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^$|^module$|\/(?:java|ecma)script</span><span class="token regex-delimiter">/</span><span class="token regex-flags">i</span></span>
+
+  <span class="token keyword">function</span> <span class="token function">buildFragment</span><span class="token punctuation">(</span><span class="token parameter">elems<span class="token punctuation">,</span> context<span class="token punctuation">,</span> scripts<span class="token punctuation">,</span> selection<span class="token punctuation">,</span> ignored</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> elem<span class="token punctuation">,</span>
+      tmp<span class="token punctuation">,</span>
+      tag<span class="token punctuation">,</span>
+      wrap<span class="token punctuation">,</span>
+      attached<span class="token punctuation">,</span>
+      j<span class="token punctuation">,</span>
+      fragment <span class="token operator">=</span> context<span class="token punctuation">.</span><span class="token function">createDocumentFragment</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      nodes <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span>
+      l <span class="token operator">=</span> elems<span class="token punctuation">.</span>length
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> l<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      elem <span class="token operator">=</span> elems<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>elem <span class="token operator">||</span> elem <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">toType</span><span class="token punctuation">(</span>elem<span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'object'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token comment">// 对于 DOM 元素（根据 nodeType 判断），直接放入 nodes 数组中</span>
+          jQuery<span class="token punctuation">.</span><span class="token function">merge</span><span class="token punctuation">(</span>nodes<span class="token punctuation">,</span> elem<span class="token punctuation">.</span>nodeType <span class="token operator">?</span> <span class="token punctuation">[</span>elem<span class="token punctuation">]</span> <span class="token operator">:</span> elem<span class="token punctuation">)</span>
+
+          <span class="token comment">// 对于不是 HTML 标签的字符串，创建文本节点对象（textNode），放入 nodes 数组中</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>rhtml<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>elem<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          nodes<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>context<span class="token punctuation">.</span><span class="token function">createTextNode</span><span class="token punctuation">(</span>elem<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+          <span class="token comment">// 将 HTML 字符串转成 DOM 元素，放入 nodes 数组中</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+          <span class="token comment">// q: 为什么要创建一个 div 元素充当容器？</span>
+          tmp <span class="token operator">=</span> tmp <span class="token operator">||</span> fragment<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>context<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+          <span class="token comment">// Deserialize a standard representation</span>
+          tag <span class="token operator">=</span> <span class="token punctuation">(</span>rtagName<span class="token punctuation">.</span><span class="token function">exec</span><span class="token punctuation">(</span>elem<span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token punctuation">[</span><span class="token string">''</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+          wrap <span class="token operator">=</span> wrapMap<span class="token punctuation">[</span>tag<span class="token punctuation">]</span> <span class="token operator">||</span> wrapMap<span class="token punctuation">.</span>_default
+          tmp<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> wrap<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> jQuery<span class="token punctuation">.</span><span class="token function">htmlPrefilter</span><span class="token punctuation">(</span>elem<span class="token punctuation">)</span> <span class="token operator">+</span> wrap<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span>
+
+          <span class="token comment">// 获取我们真正需要创建的内容</span>
+          j <span class="token operator">=</span> wrap<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+          <span class="token keyword">while</span> <span class="token punctuation">(</span>j<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            tmp <span class="token operator">=</span> tmp<span class="token punctuation">.</span>lastChild
+          <span class="token punctuation">}</span>
+
+          <span class="token comment">// 将结果放入 nodes 数组中</span>
+          jQuery<span class="token punctuation">.</span><span class="token function">merge</span><span class="token punctuation">(</span>nodes<span class="token punctuation">,</span> tmp<span class="token punctuation">.</span>childNodes<span class="token punctuation">)</span>
+
+          <span class="token comment">// 目前，从 HTML 字符串创建的元素有一个 parentNode 属性，而事实上它应该是孤立的</span>
+          <span class="token comment">// 所以，我们移除文档片段中的内容以确保创建的节点是孤立的 (#12392)</span>
+          tmp <span class="token operator">=</span> fragment<span class="token punctuation">.</span>firstChild
+          tmp<span class="token punctuation">.</span>textContent <span class="token operator">=</span> <span class="token string">''</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// Remove wrapper from fragment</span>
+    fragment<span class="token punctuation">.</span>textContent <span class="token operator">=</span> <span class="token string">''</span>
+
+    i <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>elem <span class="token operator">=</span> nodes<span class="token punctuation">[</span>i<span class="token operator">++</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 跳过上下文集合中已有的元素 (trac-4087)，并将其放置到 ignored 数组中</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>selection <span class="token operator">&amp;&amp;</span> jQuery<span class="token punctuation">.</span><span class="token function">inArray</span><span class="token punctuation">(</span>elem<span class="token punctuation">,</span> selection<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>ignored<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          ignored<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>elem<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">continue</span>
+      <span class="token punctuation">}</span>
+
+      attached <span class="token operator">=</span> <span class="token function">isAttached</span><span class="token punctuation">(</span>elem<span class="token punctuation">)</span>
+
+      <span class="token comment">// Append to fragment</span>
+      tmp <span class="token operator">=</span> <span class="token function">getAll</span><span class="token punctuation">(</span>fragment<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>elem<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'script'</span><span class="token punctuation">)</span>
+
+      <span class="token comment">// Preserve script evaluation history</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>attached<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">setGlobalEval</span><span class="token punctuation">(</span>tmp<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+
+      <span class="token comment">// Capture executables</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>scripts<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        j <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>elem <span class="token operator">=</span> tmp<span class="token punctuation">[</span>j<span class="token operator">++</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token comment">// q: ???</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span>rscriptType<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>elem<span class="token punctuation">.</span>type <span class="token operator">||</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            scripts<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>elem<span class="token punctuation">)</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> fragment
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>进入 <code>buildFragment</code> 函数内部，根据传递进来的每一项的内容分成三种情况进行处理，其中对于第三种（HTML 字符串）的处理相对比较复杂。首先我们通过正则拿到了将要创建的元素标签。</p> <p>接着由于在 DIV 元素下创建表格元素将会被忽略，因此我们对于表格相关的元素需要手动拼接上正确的结构，为此我们创建了一个 <code>wrapMap</code> 对象，里面记录了需要处理的元素和其应该具备的结构：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">;</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">window<span class="token punctuation">,</span> noGlobal</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 对于文档中缺少的部分，HTML 可以自动补充，但 XHTML 不会，为此我们必须正确的关闭下列标签以支持 XHTML (#13200)</span>
+  <span class="token keyword">var</span> wrapMap <span class="token operator">=</span> <span class="token punctuation">{</span>
+    thead<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'&lt;table&gt;'</span><span class="token punctuation">,</span> <span class="token string">'&lt;/table&gt;'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    col<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'&lt;table&gt;&lt;colgroup&gt;'</span><span class="token punctuation">,</span> <span class="token string">'&lt;/colgroup&gt;&lt;/table&gt;'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    tr<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'&lt;table&gt;&lt;tbody&gt;'</span><span class="token punctuation">,</span> <span class="token string">'&lt;/tbody&gt;&lt;/table&gt;'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    td<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">'&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;'</span><span class="token punctuation">,</span> <span class="token string">'&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+
+    _default<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+  wrapMap<span class="token punctuation">.</span>tbody <span class="token operator">=</span> wrapMap<span class="token punctuation">.</span>tfoot <span class="token operator">=</span> wrapMap<span class="token punctuation">.</span>colgroup <span class="token operator">=</span> wrapMap<span class="token punctuation">.</span>caption <span class="token operator">=</span> wrapMap<span class="token punctuation">.</span>thead
+  wrapMap<span class="token punctuation">.</span>th <span class="token operator">=</span> wrapMap<span class="token punctuation">.</span>td
+  <span class="token comment">// Support: IE &lt;=9 only</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>support<span class="token punctuation">.</span>option<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    wrapMap<span class="token punctuation">.</span>optgroup <span class="token operator">=</span> wrapMap<span class="token punctuation">.</span>option <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">&quot;&lt;select multiple='multiple'&gt;&quot;</span><span class="token punctuation">,</span> <span class="token string">'&lt;/select&gt;'</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>在拼接的过程中我们还使用了 <code>htmlPrefilter</code> 方法对标签作进一步处理，不过就目前而言它什么也没做（L6161）：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">;</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">window<span class="token punctuation">,</span> noGlobal</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  jQuery<span class="token punctuation">.</span><span class="token function">extend</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token function-variable function">htmlPrefilter</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">html</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> html
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>如此一来，拼接的结果相对于我们真正需要的内容增加了一些额外的结构，如何拿到我们最初需要的内容呢？这里 jQuery 非常巧妙的在 <code>wrapMap</code> 的值中记录了元素所在的层次，所以通过紧接着的 <code>while</code> 循环就能顺利得到我们想要的。</p> <p>那么上面为什么要先创建一个 DIV 元素呢？因为我们为了接住了 <code>innerHTML</code> 属性让 HTML 字符串变为真的元素，而空白文档并不具备。</p> <p>现在我们已经将创建好的元素放置到了一个数组中，再接下来的处理中我们跳过了已存在于上下文中的元素，通过 <code>jQuery.inArray</code> 方法（L414）：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">;</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">window<span class="token punctuation">,</span> noGlobal</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  jQuery<span class="token punctuation">.</span><span class="token function">exend</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token function-variable function">inArray</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">elem<span class="token punctuation">,</span> arr<span class="token punctuation">,</span> i</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> arr <span class="token operator">==</span> <span class="token keyword">null</span> <span class="token operator">?</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token operator">:</span> <span class="token function">indexOf</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> elem<span class="token punctuation">,</span> i<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>然后判断元素是否是游离状态，根据 <code>isAttached</code> 函数：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">;</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">window<span class="token punctuation">,</span> noGlobal</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> <span class="token function-variable function">isAttached</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">elem</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 检测一个元素是否包含另一个元素。不支持文档、文本和注释节点。</span>
+    <span class="token keyword">return</span> jQuery<span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span>elem<span class="token punctuation">.</span>ownerDocument<span class="token punctuation">,</span> elem<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>此函数内部直接调用了 <code>jQuery.contains</code> 方法，而该方法实际上就是 Sizzle 上的 <code>contains</code> 方法，对 Sizzle 的部分这里我们先不做展开，需要知道的就是这里如果元素还在文档中，那么将会返回 <code>true</code>。</p> <p>接着我们将元素添加到空白文档片段中，同时将元素交给了 <code>getAll</code> 函数以获取其中的脚本元素（L4961）：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">;</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">window<span class="token punctuation">,</span> noGlobal</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">function</span> <span class="token function">nodeName</span><span class="token punctuation">(</span><span class="token parameter">elem<span class="token punctuation">,</span> name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> elem<span class="token punctuation">.</span>nodeName <span class="token operator">&amp;&amp;</span> elem<span class="token punctuation">.</span>nodeName<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">===</span> name<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">function</span> <span class="token function">getAll</span><span class="token punctuation">(</span><span class="token parameter">context<span class="token punctuation">,</span> tag</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Support: IE &lt;=9 - 11 only</span>
+    <span class="token comment">// Use typeof to avoid zero-argument method invocation on host objects (#15151)</span>
+    <span class="token keyword">var</span> ret
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> context<span class="token punctuation">.</span>getElementsByTagName <span class="token operator">!==</span> <span class="token string">'undefined'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      ret <span class="token operator">=</span> context<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span>tag <span class="token operator">||</span> <span class="token string">'*'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> context<span class="token punctuation">.</span>querySelectorAll <span class="token operator">!==</span> <span class="token string">'undefined'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      ret <span class="token operator">=</span> context<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span>tag <span class="token operator">||</span> <span class="token string">'*'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      ret <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// q: ???</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>tag <span class="token operator">===</span> <span class="token keyword">undefined</span> <span class="token operator">||</span> <span class="token punctuation">(</span>tag <span class="token operator">&amp;&amp;</span> <span class="token function">nodeName</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span> tag<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> jQuery<span class="token punctuation">.</span><span class="token function">merge</span><span class="token punctuation">(</span><span class="token punctuation">[</span>context<span class="token punctuation">]</span><span class="token punctuation">,</span> ret<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> ret
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p><s>然后将根据上面 <code>isAttached</code> 函数的判断，在非游离状态说明将调用 <code>setGlobalEval</code> 函数（其内主要涉及数据的存储部分，在此不做扩展）将相应的脚本元素设置为已经执行过了。</s></p> <p>而且，如果第三个参数存在就继续将脚本元素添加到这个对象中，最后返回整个文档片段。</p> <p>是时候回到 <code>jQuery.parseHTML</code> 方法了，当我们 <code>keepScripts</code> 为假时我们需要移除文档片段中的脚本元素，而这里脚本元素已经在 <code>buildFragment</code> 函数中添加到 <code>scripts</code> 元素中了，具体的移除途径涉及到了数据存储模块，所以这里不进行展开，可以简单的理解为使用的是 <code>Node.removeChild</code> 方法。</p> <p>最后我们返回了 <code>jQuery.merge</code> 方法对文档片段中节点集合处理后得到一个节点数组。</p> <p>再进一步，我们回到 <code>init</code> 方法中，现在我们拿到了 <code>jQuery.parseHTML</code> 方法处理后的结果，接着再交给 <code>jQuery.merge</code> 方法进行处理，现在其中的元素都会被放置到当前的 jQuery 对象上。</p> <p>事实上到目前为止，在这个分支中对元素的创建部分已经完成了，不过针对于单标签的情况，jQuery 还支持在创建时同时指定一些属性（也不完全是）：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'&lt;li&gt;&lt;/li&gt;'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  title<span class="token operator">:</span> <span class="token string">'Hello'</span><span class="token punctuation">,</span> <span class="token comment">// 设置属性</span>
+  html<span class="token operator">:</span> <span class="token string">'World'</span><span class="token punctuation">,</span> <span class="token comment">// jQuery 对象存在该方法会当作方法进行调用</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>设置属性时使用到了 <code>jQuery.attr</code> 方法，其中涉及内容这里先不进行展开，目前可以简单的理解为 <code>Element.setAttribute()</code> 方法。</p> <p>胜利在望了，让我们再回一层到选择器为字符串时的剩余两种情况，这里主要对上下文做了判断，到最后其实两者都会变成调用 jQuery 对象的 <code>find</code> 方法。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'ul'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token string">'li'</span><span class="token punctuation">)</span> <span class="token comment">// jQuery(document).find('li');</span>
+<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'ul'</span><span class="token punctuation">,</span> <span class="token function">$</span><span class="token punctuation">(</span>document<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token string">'li'</span><span class="token punctuation">)</span> <span class="token comment">// jQuery(document).find('li');</span>
+<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'ul'</span><span class="token punctuation">,</span> document<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token string">'li'</span><span class="token punctuation">)</span> <span class="token comment">//jQuery(document).find('li');</span>
+</code></pre></div><p>由于 <code>find</code> 方法又涉及到了 Sizzle 部分，所以这里就不进行展开了，目前我们可以简单的认为它的行为和 <code>$.makeArray(document.querySelectorAll(selector), $())</code> 类似。</p> <p>好吧，到此终于算告一个段落了。</p> <h2 id="附录"><a href="#附录" class="header-anchor">#</a> 附录</h2> <ul><li>DOMImplementation 对象提供了不依赖于任何 <code>document</code> 的方法，通过它执行的操作独立于文档对象模型的任何特定实例。</li> <li><code>Node.ownerDocument</code> 只读属性会返回当前节点的顶层的 <code>document</code> 对象，如果在文档节点自身上使用此属性则结果是 <code>null</code>。</li> <li><code>Node.compareDocumentPosition()</code> 可以比较当前节点与任意文档中的另一个节点的位置关系。</li> <li><code>Node.contains()</code> 返回的是一个布尔值，来表示传入的节点是否为该节点的后代节点（对自身也会返回 true）。</li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/notebook/js/third-party/jquery-1.html" class="prev">
+        jQuery 中的扩展（拷贝）方式
+      </a></span> <span class="next"><a href="/notebook/js/third-party/jquery-3.html">
+        jQuery 中的工具函数和方法
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/notebook/assets/js/app.d2525610.js" defer></script><script src="/notebook/assets/js/1.0ed4caaf.js" defer></script><script src="/notebook/assets/js/144.bf130a4b.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>YDKJS-语法 | notes | Kisstar</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    
+    <meta name="description" content="Kisstar's personal notes">
+    <link rel="preload" href="/notebook/assets/css/0.styles.b13da641.css" as="style"><link rel="preload" href="/notebook/assets/js/app.d2525610.js" as="script"><link rel="preload" href="/notebook/assets/js/1.0ed4caaf.js" as="script"><link rel="preload" href="/notebook/assets/js/141.25a371c3.js" as="script"><link rel="prefetch" href="/notebook/assets/js/10.474fe4d7.js"><link rel="prefetch" href="/notebook/assets/js/100.c6de51f5.js"><link rel="prefetch" href="/notebook/assets/js/101.297b80a6.js"><link rel="prefetch" href="/notebook/assets/js/102.671042f0.js"><link rel="prefetch" href="/notebook/assets/js/103.a4414990.js"><link rel="prefetch" href="/notebook/assets/js/104.5f326d1b.js"><link rel="prefetch" href="/notebook/assets/js/105.7d48691a.js"><link rel="prefetch" href="/notebook/assets/js/106.f9e2d3d6.js"><link rel="prefetch" href="/notebook/assets/js/107.3dfec344.js"><link rel="prefetch" href="/notebook/assets/js/108.64e0d2ce.js"><link rel="prefetch" href="/notebook/assets/js/109.c4b5ca14.js"><link rel="prefetch" href="/notebook/assets/js/11.f5ac12d4.js"><link rel="prefetch" href="/notebook/assets/js/110.2803df2c.js"><link rel="prefetch" href="/notebook/assets/js/111.e059e845.js"><link rel="prefetch" href="/notebook/assets/js/112.32498864.js"><link rel="prefetch" href="/notebook/assets/js/113.486abba6.js"><link rel="prefetch" href="/notebook/assets/js/114.2d88bb98.js"><link rel="prefetch" href="/notebook/assets/js/115.1b24dcc9.js"><link rel="prefetch" href="/notebook/assets/js/116.74a7e55c.js"><link rel="prefetch" href="/notebook/assets/js/117.748d98d9.js"><link rel="prefetch" href="/notebook/assets/js/118.2ff07d0b.js"><link rel="prefetch" href="/notebook/assets/js/119.ee1cf35b.js"><link rel="prefetch" href="/notebook/assets/js/12.18a51a50.js"><link rel="prefetch" href="/notebook/assets/js/120.534b8406.js"><link rel="prefetch" href="/notebook/assets/js/121.b728e838.js"><link rel="prefetch" href="/notebook/assets/js/122.530e17ec.js"><link rel="prefetch" href="/notebook/assets/js/123.3026ab36.js"><link rel="prefetch" href="/notebook/assets/js/124.0a3f74f7.js"><link rel="prefetch" href="/notebook/assets/js/125.d5362d6d.js"><link rel="prefetch" href="/notebook/assets/js/126.12262d78.js"><link rel="prefetch" href="/notebook/assets/js/127.7a3ce301.js"><link rel="prefetch" href="/notebook/assets/js/128.08c7e66c.js"><link rel="prefetch" href="/notebook/assets/js/129.6d2c5dde.js"><link rel="prefetch" href="/notebook/assets/js/13.d51e68a7.js"><link rel="prefetch" href="/notebook/assets/js/130.26713517.js"><link rel="prefetch" href="/notebook/assets/js/131.e4470d34.js"><link rel="prefetch" href="/notebook/assets/js/132.e61d0276.js"><link rel="prefetch" href="/notebook/assets/js/133.6f731828.js"><link rel="prefetch" href="/notebook/assets/js/134.be500b7d.js"><link rel="prefetch" href="/notebook/assets/js/135.918c41a0.js"><link rel="prefetch" href="/notebook/assets/js/136.fa550828.js"><link rel="prefetch" href="/notebook/assets/js/137.9f6cceb3.js"><link rel="prefetch" href="/notebook/assets/js/138.49ed9255.js"><link rel="prefetch" href="/notebook/assets/js/139.a06e7d39.js"><link rel="prefetch" href="/notebook/assets/js/14.2f72b127.js"><link rel="prefetch" href="/notebook/assets/js/140.1c46603a.js"><link rel="prefetch" href="/notebook/assets/js/142.3a8418ef.js"><link rel="prefetch" href="/notebook/assets/js/143.3b1f5644.js"><link rel="prefetch" href="/notebook/assets/js/144.bf130a4b.js"><link rel="prefetch" href="/notebook/assets/js/145.1b64bc1e.js"><link rel="prefetch" href="/notebook/assets/js/146.f48d4ddb.js"><link rel="prefetch" href="/notebook/assets/js/147.6335e830.js"><link rel="prefetch" href="/notebook/assets/js/148.50471b20.js"><link rel="prefetch" href="/notebook/assets/js/149.c57f1b59.js"><link rel="prefetch" href="/notebook/assets/js/15.2ca416a7.js"><link rel="prefetch" href="/notebook/assets/js/150.9ef4236e.js"><link rel="prefetch" href="/notebook/assets/js/151.a99db080.js"><link rel="prefetch" href="/notebook/assets/js/152.14eb132e.js"><link rel="prefetch" href="/notebook/assets/js/153.d6835009.js"><link rel="prefetch" href="/notebook/assets/js/154.1c8c82b7.js"><link rel="prefetch" href="/notebook/assets/js/155.8e861480.js"><link rel="prefetch" href="/notebook/assets/js/156.f0ad16cf.js"><link rel="prefetch" href="/notebook/assets/js/157.cc6d2da1.js"><link rel="prefetch" href="/notebook/assets/js/158.8ab0edc3.js"><link rel="prefetch" href="/notebook/assets/js/159.9ea2a0d4.js"><link rel="prefetch" href="/notebook/assets/js/16.591f2b9f.js"><link rel="prefetch" href="/notebook/assets/js/160.f7a049ee.js"><link rel="prefetch" href="/notebook/assets/js/161.1903318c.js"><link rel="prefetch" href="/notebook/assets/js/162.80477370.js"><link rel="prefetch" href="/notebook/assets/js/163.2928ab8b.js"><link rel="prefetch" href="/notebook/assets/js/164.f0ccc741.js"><link rel="prefetch" href="/notebook/assets/js/165.bc336df4.js"><link rel="prefetch" href="/notebook/assets/js/166.640ad893.js"><link rel="prefetch" href="/notebook/assets/js/167.2d588db1.js"><link rel="prefetch" href="/notebook/assets/js/168.88751527.js"><link rel="prefetch" href="/notebook/assets/js/169.181d672a.js"><link rel="prefetch" href="/notebook/assets/js/17.7ca8627c.js"><link rel="prefetch" href="/notebook/assets/js/170.d36703bd.js"><link rel="prefetch" href="/notebook/assets/js/171.f7f8e405.js"><link rel="prefetch" href="/notebook/assets/js/172.bb346c7b.js"><link rel="prefetch" href="/notebook/assets/js/173.66fc692d.js"><link rel="prefetch" href="/notebook/assets/js/174.f318c08c.js"><link rel="prefetch" href="/notebook/assets/js/175.0afcbeaf.js"><link rel="prefetch" href="/notebook/assets/js/176.bd381032.js"><link rel="prefetch" href="/notebook/assets/js/177.e4cf3975.js"><link rel="prefetch" href="/notebook/assets/js/178.27499c99.js"><link rel="prefetch" href="/notebook/assets/js/179.52cc4a50.js"><link rel="prefetch" href="/notebook/assets/js/18.3e19faa2.js"><link rel="prefetch" href="/notebook/assets/js/180.db0a883b.js"><link rel="prefetch" href="/notebook/assets/js/181.1cdc1877.js"><link rel="prefetch" href="/notebook/assets/js/182.573193fb.js"><link rel="prefetch" href="/notebook/assets/js/183.ee1bffef.js"><link rel="prefetch" href="/notebook/assets/js/184.342841c1.js"><link rel="prefetch" href="/notebook/assets/js/185.978b29f2.js"><link rel="prefetch" href="/notebook/assets/js/186.7a252a54.js"><link rel="prefetch" href="/notebook/assets/js/187.a08f2b0f.js"><link rel="prefetch" href="/notebook/assets/js/188.ce469ef8.js"><link rel="prefetch" href="/notebook/assets/js/189.73e9a622.js"><link rel="prefetch" href="/notebook/assets/js/19.dc07d24c.js"><link rel="prefetch" href="/notebook/assets/js/190.59526ee2.js"><link rel="prefetch" href="/notebook/assets/js/191.f1b51128.js"><link rel="prefetch" href="/notebook/assets/js/192.e79c2302.js"><link rel="prefetch" href="/notebook/assets/js/193.4d109708.js"><link rel="prefetch" href="/notebook/assets/js/194.684a970d.js"><link rel="prefetch" href="/notebook/assets/js/195.cf33c516.js"><link rel="prefetch" href="/notebook/assets/js/196.e69d8b1f.js"><link rel="prefetch" href="/notebook/assets/js/197.59f2c668.js"><link rel="prefetch" href="/notebook/assets/js/198.f31164ee.js"><link rel="prefetch" href="/notebook/assets/js/199.dbffd3ce.js"><link rel="prefetch" href="/notebook/assets/js/20.184be7eb.js"><link rel="prefetch" href="/notebook/assets/js/200.7d4e5fde.js"><link rel="prefetch" href="/notebook/assets/js/201.99912ae1.js"><link rel="prefetch" href="/notebook/assets/js/202.b4f820de.js"><link rel="prefetch" href="/notebook/assets/js/203.d8462a66.js"><link rel="prefetch" href="/notebook/assets/js/204.60879beb.js"><link rel="prefetch" href="/notebook/assets/js/205.0bb38096.js"><link rel="prefetch" href="/notebook/assets/js/206.395acbbe.js"><link rel="prefetch" href="/notebook/assets/js/207.f0ee7206.js"><link rel="prefetch" href="/notebook/assets/js/208.f95acaed.js"><link rel="prefetch" href="/notebook/assets/js/209.7f968427.js"><link rel="prefetch" href="/notebook/assets/js/21.ee5efea4.js"><link rel="prefetch" href="/notebook/assets/js/210.3d50dcca.js"><link rel="prefetch" href="/notebook/assets/js/211.856c0eed.js"><link rel="prefetch" href="/notebook/assets/js/212.876bb62f.js"><link rel="prefetch" href="/notebook/assets/js/213.f6e59a2f.js"><link rel="prefetch" href="/notebook/assets/js/214.a806095a.js"><link rel="prefetch" href="/notebook/assets/js/215.31d97cd1.js"><link rel="prefetch" href="/notebook/assets/js/216.4c9004a2.js"><link rel="prefetch" href="/notebook/assets/js/217.324e4f7f.js"><link rel="prefetch" href="/notebook/assets/js/218.6b2d2bb9.js"><link rel="prefetch" href="/notebook/assets/js/219.1f3542b8.js"><link rel="prefetch" href="/notebook/assets/js/22.5e41fdff.js"><link rel="prefetch" href="/notebook/assets/js/220.5c254ed0.js"><link rel="prefetch" href="/notebook/assets/js/221.4e412ded.js"><link rel="prefetch" href="/notebook/assets/js/222.cb8b6e65.js"><link rel="prefetch" href="/notebook/assets/js/223.d3b647d5.js"><link rel="prefetch" href="/notebook/assets/js/224.76793b55.js"><link rel="prefetch" href="/notebook/assets/js/225.c181b9e5.js"><link rel="prefetch" href="/notebook/assets/js/226.08a6a839.js"><link rel="prefetch" href="/notebook/assets/js/227.ce411683.js"><link rel="prefetch" href="/notebook/assets/js/228.91976dcc.js"><link rel="prefetch" href="/notebook/assets/js/229.a6e61aa2.js"><link rel="prefetch" href="/notebook/assets/js/23.fe3792a7.js"><link rel="prefetch" href="/notebook/assets/js/230.8f61d7f0.js"><link rel="prefetch" href="/notebook/assets/js/231.349fe77c.js"><link rel="prefetch" href="/notebook/assets/js/232.ae0a12f3.js"><link rel="prefetch" href="/notebook/assets/js/233.a26c69e6.js"><link rel="prefetch" href="/notebook/assets/js/234.dc52afc3.js"><link rel="prefetch" href="/notebook/assets/js/235.22c99927.js"><link rel="prefetch" href="/notebook/assets/js/236.cad939cc.js"><link rel="prefetch" href="/notebook/assets/js/237.8f0b6e9e.js"><link rel="prefetch" href="/notebook/assets/js/238.10dad5f1.js"><link rel="prefetch" href="/notebook/assets/js/239.67576d11.js"><link rel="prefetch" href="/notebook/assets/js/24.4f2929e9.js"><link rel="prefetch" href="/notebook/assets/js/240.80c44cfa.js"><link rel="prefetch" href="/notebook/assets/js/241.49ccc17e.js"><link rel="prefetch" href="/notebook/assets/js/242.ff228801.js"><link rel="prefetch" href="/notebook/assets/js/243.4cdb9405.js"><link rel="prefetch" href="/notebook/assets/js/244.3f112ae8.js"><link rel="prefetch" href="/notebook/assets/js/245.b8741dd2.js"><link rel="prefetch" href="/notebook/assets/js/246.bb5c1069.js"><link rel="prefetch" href="/notebook/assets/js/247.9795c57d.js"><link rel="prefetch" href="/notebook/assets/js/248.2c602df4.js"><link rel="prefetch" href="/notebook/assets/js/249.6d15bb03.js"><link rel="prefetch" href="/notebook/assets/js/25.fd5fe753.js"><link rel="prefetch" href="/notebook/assets/js/250.ba5c5c20.js"><link rel="prefetch" href="/notebook/assets/js/251.b063a803.js"><link rel="prefetch" href="/notebook/assets/js/252.9883c2f0.js"><link rel="prefetch" href="/notebook/assets/js/253.726ccc80.js"><link rel="prefetch" href="/notebook/assets/js/254.5460b6fd.js"><link rel="prefetch" href="/notebook/assets/js/255.d21476a2.js"><link rel="prefetch" href="/notebook/assets/js/256.1deea404.js"><link rel="prefetch" href="/notebook/assets/js/257.39070319.js"><link rel="prefetch" href="/notebook/assets/js/258.3905af96.js"><link rel="prefetch" href="/notebook/assets/js/26.76abd46f.js"><link rel="prefetch" href="/notebook/assets/js/27.f2636a73.js"><link rel="prefetch" href="/notebook/assets/js/28.0d7acfbe.js"><link rel="prefetch" href="/notebook/assets/js/29.cefced41.js"><link rel="prefetch" href="/notebook/assets/js/3.de177589.js"><link rel="prefetch" href="/notebook/assets/js/30.07afbba5.js"><link rel="prefetch" href="/notebook/assets/js/31.92551101.js"><link rel="prefetch" href="/notebook/assets/js/32.7dbc8c5e.js"><link rel="prefetch" href="/notebook/assets/js/33.40be7a79.js"><link rel="prefetch" href="/notebook/assets/js/34.1fd46fa9.js"><link rel="prefetch" href="/notebook/assets/js/35.74659d57.js"><link rel="prefetch" href="/notebook/assets/js/36.9a90f4b1.js"><link rel="prefetch" href="/notebook/assets/js/37.be41554b.js"><link rel="prefetch" href="/notebook/assets/js/38.f1b5d5e7.js"><link rel="prefetch" href="/notebook/assets/js/39.9d8b698d.js"><link rel="prefetch" href="/notebook/assets/js/4.02b78e18.js"><link rel="prefetch" href="/notebook/assets/js/40.550cb413.js"><link rel="prefetch" href="/notebook/assets/js/41.c0e1b97c.js"><link rel="prefetch" href="/notebook/assets/js/42.ed95ea00.js"><link rel="prefetch" href="/notebook/assets/js/43.ec860995.js"><link rel="prefetch" href="/notebook/assets/js/44.521f6234.js"><link rel="prefetch" href="/notebook/assets/js/45.22bb8568.js"><link rel="prefetch" href="/notebook/assets/js/46.94969701.js"><link rel="prefetch" href="/notebook/assets/js/47.b5f6c15c.js"><link rel="prefetch" href="/notebook/assets/js/48.0563c806.js"><link rel="prefetch" href="/notebook/assets/js/49.15483326.js"><link rel="prefetch" href="/notebook/assets/js/5.de4f8656.js"><link rel="prefetch" href="/notebook/assets/js/50.12b3841f.js"><link rel="prefetch" href="/notebook/assets/js/51.6148daa1.js"><link rel="prefetch" href="/notebook/assets/js/52.24c01f7a.js"><link rel="prefetch" href="/notebook/assets/js/53.989c3207.js"><link rel="prefetch" href="/notebook/assets/js/54.fe5ccc4e.js"><link rel="prefetch" href="/notebook/assets/js/55.81f71fbe.js"><link rel="prefetch" href="/notebook/assets/js/56.6e71b059.js"><link rel="prefetch" href="/notebook/assets/js/57.e515307c.js"><link rel="prefetch" href="/notebook/assets/js/58.f6553847.js"><link rel="prefetch" href="/notebook/assets/js/59.6d588f88.js"><link rel="prefetch" href="/notebook/assets/js/6.ae5c2b7f.js"><link rel="prefetch" href="/notebook/assets/js/60.6e49b323.js"><link rel="prefetch" href="/notebook/assets/js/61.db8c65b9.js"><link rel="prefetch" href="/notebook/assets/js/62.ea1c68f4.js"><link rel="prefetch" href="/notebook/assets/js/63.e548bbea.js"><link rel="prefetch" href="/notebook/assets/js/64.2ea2f349.js"><link rel="prefetch" href="/notebook/assets/js/65.ce3611e8.js"><link rel="prefetch" href="/notebook/assets/js/66.85466984.js"><link rel="prefetch" href="/notebook/assets/js/67.4b7a7a16.js"><link rel="prefetch" href="/notebook/assets/js/68.0fa048bf.js"><link rel="prefetch" href="/notebook/assets/js/69.d00e8e77.js"><link rel="prefetch" href="/notebook/assets/js/7.be4a2204.js"><link rel="prefetch" href="/notebook/assets/js/70.aa43fa88.js"><link rel="prefetch" href="/notebook/assets/js/71.4c337f0b.js"><link rel="prefetch" href="/notebook/assets/js/72.27dfb4fd.js"><link rel="prefetch" href="/notebook/assets/js/73.8c45959d.js"><link rel="prefetch" href="/notebook/assets/js/74.90ee0f92.js"><link rel="prefetch" href="/notebook/assets/js/75.ede3a6a2.js"><link rel="prefetch" href="/notebook/assets/js/76.e9a0dfce.js"><link rel="prefetch" href="/notebook/assets/js/77.3beb5afe.js"><link rel="prefetch" href="/notebook/assets/js/78.c5e692fa.js"><link rel="prefetch" href="/notebook/assets/js/79.dda3280a.js"><link rel="prefetch" href="/notebook/assets/js/8.961dbf83.js"><link rel="prefetch" href="/notebook/assets/js/80.b9017279.js"><link rel="prefetch" href="/notebook/assets/js/81.159f8048.js"><link rel="prefetch" href="/notebook/assets/js/82.102fa355.js"><link rel="prefetch" href="/notebook/assets/js/83.9711b3c2.js"><link rel="prefetch" href="/notebook/assets/js/84.63a04b23.js"><link rel="prefetch" href="/notebook/assets/js/85.9a60c82c.js"><link rel="prefetch" href="/notebook/assets/js/86.385d1ae9.js"><link rel="prefetch" href="/notebook/assets/js/87.297c6ea6.js"><link rel="prefetch" href="/notebook/assets/js/88.46cb0381.js"><link rel="prefetch" href="/notebook/assets/js/89.4bda3310.js"><link rel="prefetch" href="/notebook/assets/js/9.1fac9f2d.js"><link rel="prefetch" href="/notebook/assets/js/90.0d6547a9.js"><link rel="prefetch" href="/notebook/assets/js/91.ad469783.js"><link rel="prefetch" href="/notebook/assets/js/92.3fd1bc0e.js"><link rel="prefetch" href="/notebook/assets/js/93.3727e6f5.js"><link rel="prefetch" href="/notebook/assets/js/94.6d80f42e.js"><link rel="prefetch" href="/notebook/assets/js/95.a87df1ec.js"><link rel="prefetch" href="/notebook/assets/js/96.5ee494a0.js"><link rel="prefetch" href="/notebook/assets/js/97.059a6403.js"><link rel="prefetch" href="/notebook/assets/js/98.9f97a773.js"><link rel="prefetch" href="/notebook/assets/js/99.56296d34.js">
+    <link rel="stylesheet" href="/notebook/assets/css/0.styles.b13da641.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/notebook/" class="home-link router-link-active"><img src="/notebook/logo.png" alt="notes | Kisstar" class="logo"> <span class="site-name can-hide">notes | Kisstar</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="IT" class="dropdown-title"><span class="title">IT</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          FED
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/html/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-subitem"><a href="/notebook/css/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-subitem"><a href="/notebook/js/" class="nav-link router-link-active">
+  JavaScript
+</a></li><li class="dropdown-subitem"><a href="/notebook/ts/" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-subitem"><a href="/notebook/ng/" class="nav-link">
+  AngularJS
+</a></li><li class="dropdown-subitem"><a href="/notebook/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-subitem"><a href="/notebook/react/" class="nav-link">
+  React
+</a></li><li class="dropdown-subitem"><a href="/notebook/web/" class="nav-link">
+  WEB
+</a></li></ul></li><li class="dropdown-item"><h4>
+          BED
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/webpack/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-subitem"><a href="/notebook/electron/" class="nav-link">
+  Electron
+</a></li><li class="dropdown-subitem"><a href="/notebook/nodejs/" class="nav-link">
+  NodeJS
+</a></li><li class="dropdown-subitem"><a href="/notebook/c/" class="nav-link">
+  C/C++
+</a></li></ul></li><li class="dropdown-item"><h4>
+          OTHER
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/wechat/" class="nav-link">
+  WeChat
+</a></li><li class="dropdown-subitem"><a href="/notebook/video/" class="nav-link">
+  Video
+</a></li><li class="dropdown-subitem"><a href="/notebook/project/" class="nav-link">
+  Project
+</a></li><li class="dropdown-subitem"><a href="/notebook/021/" class="nav-link">
+  021
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="DevTools" class="dropdown-title"><span class="title">DevTools</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/vim/" class="nav-link">
+  Vim
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/chrome/" class="nav-link">
+  Chrome
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Computer" class="dropdown-title"><span class="title">Computer</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/cp/" class="nav-link">
+  Computer Basis
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/algorithm/" class="nav-link">
+  Algorithm
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/mac/" class="nav-link">
+  Mac
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/windows/" class="nav-link">
+  Windows
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/database/" class="nav-link">
+  Database
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Cloud" class="dropdown-title"><span class="title">Cloud</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/docker/" class="nav-link">
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/dev-ops/" class="nav-link">
+  DevOps
+</a></li></ul></div></div><div class="nav-item"><a href="/notebook/collection/" class="nav-link">
+  Collection
+</a></div><div class="nav-item"><a href="/notebook/other/" class="nav-link">
+  Other
+</a></div><div class="nav-item"><a href="https://github.com/kisstar/notebook/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="IT" class="dropdown-title"><span class="title">IT</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          FED
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/html/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-subitem"><a href="/notebook/css/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-subitem"><a href="/notebook/js/" class="nav-link router-link-active">
+  JavaScript
+</a></li><li class="dropdown-subitem"><a href="/notebook/ts/" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-subitem"><a href="/notebook/ng/" class="nav-link">
+  AngularJS
+</a></li><li class="dropdown-subitem"><a href="/notebook/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-subitem"><a href="/notebook/react/" class="nav-link">
+  React
+</a></li><li class="dropdown-subitem"><a href="/notebook/web/" class="nav-link">
+  WEB
+</a></li></ul></li><li class="dropdown-item"><h4>
+          BED
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/webpack/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-subitem"><a href="/notebook/electron/" class="nav-link">
+  Electron
+</a></li><li class="dropdown-subitem"><a href="/notebook/nodejs/" class="nav-link">
+  NodeJS
+</a></li><li class="dropdown-subitem"><a href="/notebook/c/" class="nav-link">
+  C/C++
+</a></li></ul></li><li class="dropdown-item"><h4>
+          OTHER
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/wechat/" class="nav-link">
+  WeChat
+</a></li><li class="dropdown-subitem"><a href="/notebook/video/" class="nav-link">
+  Video
+</a></li><li class="dropdown-subitem"><a href="/notebook/project/" class="nav-link">
+  Project
+</a></li><li class="dropdown-subitem"><a href="/notebook/021/" class="nav-link">
+  021
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="DevTools" class="dropdown-title"><span class="title">DevTools</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/vim/" class="nav-link">
+  Vim
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/chrome/" class="nav-link">
+  Chrome
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Computer" class="dropdown-title"><span class="title">Computer</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/cp/" class="nav-link">
+  Computer Basis
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/algorithm/" class="nav-link">
+  Algorithm
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/mac/" class="nav-link">
+  Mac
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/windows/" class="nav-link">
+  Windows
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/database/" class="nav-link">
+  Database
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Cloud" class="dropdown-title"><span class="title">Cloud</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/docker/" class="nav-link">
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/dev-ops/" class="nav-link">
+  DevOps
+</a></li></ul></div></div><div class="nav-item"><a href="/notebook/collection/" class="nav-link">
+  Collection
+</a></div><div class="nav-item"><a href="/notebook/other/" class="nav-link">
+  Other
+</a></div><div class="nav-item"><a href="https://github.com/kisstar/notebook/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>基础</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>进阶</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>面试</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>第三方</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>读书笔记</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notebook/js/read/ydkjs0.html" class="sidebar-link">YDKJS-作用域</a></li><li><a href="/notebook/js/read/ydkjs1.html" class="sidebar-link">YDKJS-This</a></li><li><a href="/notebook/js/read/ydkjs2.html" class="sidebar-link">YDKJS-对象</a></li><li><a href="/notebook/js/read/ydkjs3.html" class="sidebar-link">YDKJS-类</a></li><li><a href="/notebook/js/read/ydkjs4.html" class="sidebar-link">YDKJS-原型</a></li><li><a href="/notebook/js/read/ydkjs5.html" class="sidebar-link">YDKJS-委托</a></li><li><a href="/notebook/js/read/ydkjs6.html" class="sidebar-link">YDKJS-类型</a></li><li><a href="/notebook/js/read/ydkjs7.html" class="sidebar-link">YDKJS-原生函数</a></li><li><a href="/notebook/js/read/ydkjs8.html" class="sidebar-link">YDKJS-强制类型转换</a></li><li><a href="/notebook/js/read/ydkjs9.html" aria-current="page" class="active sidebar-link">YDKJS-语法</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/notebook/js/read/ydkjs9.html#语句的结果值" class="sidebar-link">语句的结果值</a></li><li class="sidebar-sub-header"><a href="/notebook/js/read/ydkjs9.html#表达式的副作用" class="sidebar-link">表达式的副作用</a></li><li class="sidebar-sub-header"><a href="/notebook/js/read/ydkjs9.html#上下文规则" class="sidebar-link">上下文规则</a></li><li class="sidebar-sub-header"><a href="/notebook/js/read/ydkjs9.html#运算符优先级" class="sidebar-link">运算符优先级</a></li><li class="sidebar-sub-header"><a href="/notebook/js/read/ydkjs9.html#自动分号" class="sidebar-link">自动分号</a></li><li class="sidebar-sub-header"><a href="/notebook/js/read/ydkjs9.html#错误" class="sidebar-link">错误</a></li><li class="sidebar-sub-header"><a href="/notebook/js/read/ydkjs9.html#函数参数" class="sidebar-link">函数参数</a></li><li class="sidebar-sub-header"><a href="/notebook/js/read/ydkjs9.html#try-finally" class="sidebar-link">try..finally</a></li><li class="sidebar-sub-header"><a href="/notebook/js/read/ydkjs9.html#switch" class="sidebar-link">switch</a></li><li class="sidebar-sub-header"><a href="/notebook/js/read/ydkjs9.html#参考" class="sidebar-link">参考</a></li></ul></li><li><a href="/notebook/js/read/ydkjs10.html" class="sidebar-link">YDKJS-混合环境 JavaScript</a></li><li><a href="/notebook/js/read/ydkjs11.html" class="sidebar-link">YDKJS-异步和性能</a></li><li><a href="/notebook/js/read/ydkjs12.html" class="sidebar-link">YDKJS-回调</a></li><li><a href="/notebook/js/read/ydkjs13.html" class="sidebar-link">YDKJS-Promise</a></li><li><a href="/notebook/js/read/ydkjs14.html" class="sidebar-link">YDKJS-生成器</a></li><li><a href="/notebook/js/read/ydkjs15.html" class="sidebar-link">YDKJS-程序性能</a></li><li><a href="/notebook/js/read/ydkjs16.html" class="sidebar-link">YDKJS-性能测试与调优</a></li><li><a href="/notebook/js/read/ydkjs17.html" class="sidebar-link">YDKJS-asynquence 库</a></li><li><a href="/notebook/js/read/ydkjs18.html" class="sidebar-link">YDKJS-高级异步模式</a></li><li><a href="/notebook/js/read/ydkjs19.html" class="sidebar-link">YDKJS-编程</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>奇思妙想</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="ydkjs-语法"><a href="#ydkjs-语法" class="header-anchor">#</a> YDKJS-语法</h1> <p>“句子”（sentence）是完整表达某个意思的一组词，由一个或多个“短语”（phrase）组成，它们之间由标点符号或连接词（and 和 or 等）连接起来。</p> <p>短语可以由更小的短语组成。有些短语是不完整的，不能独立表达意思；有些短语则相对完整，并且能够独立表达某个意思。这些规则就是英语的语法。</p> <p>JavaScript 的语法也是如此。语句相当于句子，表达式相当于短语，运算符则相当于标点符号和连接词。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">3</span> <span class="token operator">*</span> <span class="token number">6</span> <span class="token comment">// 声明语句：声明了变量，赋值表达式：对变量进行了赋值</span>
+b <span class="token comment">// 表达式语句</span>
+</code></pre></div><h2 id="语句的结果值"><a href="#语句的结果值" class="header-anchor">#</a> 语句的结果值</h2> <p>语句都有一个结果值（statement completion value，undefined 也算）。</p> <p>获得结果值最直接的方法是在浏览器开发控制台中输入语句，默认情况下控制台会显示所执行的最后一条语句的结果值。</p> <p>以赋值表达式 <code>b = a</code> 为例，其结果值是赋给 <code>b</code> 的值（18），但规范定义 <code>var</code> 的结果值是 <code>undefined</code>。如果在控制台中输入 <code>var a = 42</code> 会得到结果值 <code>undefined</code>，而非 42。</p> <p>但我们在代码中通常没有办法获得这个结果值的：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> b
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  b <span class="token operator">=</span> <span class="token number">4</span> <span class="token operator">+</span> <span class="token number">38</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 这样是行不通的</span>
+<span class="token keyword">var</span> a<span class="token punctuation">,</span> b<span class="token punctuation">;</span>
+a <span class="token operator">=</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ b <span class="token operator">=</span> <span class="token number">4</span> <span class="token operator">+</span> <span class="token number">38</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 这样可行，但是强烈不推荐</span>
+<span class="token keyword">var</span> a<span class="token punctuation">,</span> b
+a <span class="token operator">=</span> <span class="token function">eval</span><span class="token punctuation">(</span><span class="token string">'if (true) { b = 4 + 38; }'</span><span class="token punctuation">)</span>
+a <span class="token comment">// 42</span>
+</code></pre></div><p>可见，代码块的结果值就如同一个隐式的返回，即返回最后一个语句的结果值。</p> <h2 id="表达式的副作用"><a href="#表达式的副作用" class="header-anchor">#</a> 表达式的副作用</h2> <p>最常见的有副作用（也可能没有）的表达式是函数调用：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  a <span class="token operator">=</span> a <span class="token operator">+</span> <span class="token number">1</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 结果值：undefined。副作用：a的值被改变</span>
+</code></pre></div><p>递增运算符 <code>++</code> 和递减运算符 <code>--</code> 都是一元运算符，它们既可以用在操作数的前面，也可以用在后面。结合赋值操作，前置时会先赋值再运算：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">42</span>
+<span class="token keyword">var</span> b <span class="token operator">=</span> a<span class="token operator">++</span>
+
+a <span class="token comment">// 43</span>
+b <span class="token comment">// 42</span>
+</code></pre></div><p>也就是说 <code>++</code> 在前面时，如 <code>++a</code>，它的副作用（将 a 递增）产生在表达式返回结果值之前，而 <code>a++</code> 的副作用则产生在之后。</p> <p>如果不想使用前置递增或递减运算，也可以使用语句系列逗号运算符（statement-series comma operator）将多个独立的表达式语句串联成一个语句：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">42</span><span class="token punctuation">,</span>
+  b
+b <span class="token operator">=</span> <span class="token punctuation">(</span>a<span class="token operator">++</span><span class="token punctuation">,</span> a<span class="token punctuation">)</span>
+
+a <span class="token comment">// 43</span>
+b <span class="token comment">// 43</span>
+</code></pre></div><p>另外，<code>delete</code> 运算符的副作用就是属性被从对象中删除，更有趣的是赋值运算符：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c
+a <span class="token operator">=</span> b <span class="token operator">=</span> c <span class="token operator">=</span> <span class="token number">42</span> <span class="token comment">// 注意它和 var a = b = 42，后者如果 b 未声明非严格模式会自动声明一个全局变量，严格模式则会报错</span>
+</code></pre></div><h2 id="上下文规则"><a href="#上下文规则" class="header-anchor">#</a> 上下文规则</h2> <p>在 JavaScript 语法规则中，有时候同样的语法在不同的情况下会有不同的解释。</p> <p>譬如，大括号通常会在我们声明一个变量的时候遇到：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 假定函数bar()已经定义</span>
+<span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token punctuation">{</span>
+  foo<span class="token operator">:</span> <span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>如果将上例中的 <code>var a =</code> 去掉会发生什么情况呢？</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">{</span>
+  foo<span class="token operator">:</span> <span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>在这里大括号只是一个普通的代码块，更重要的是其中的 <code>foo: bar()</code> 是合法的， <code>foo:</code> 会被识别为一个标签。标签通常会在循环中被用到，结合 <code>continue</code> 和 <code>break</code> 语句实现类似于 <code>goto</code> 的语法。</p> <p>标签也能用于非循环代码块，但只有 <code>break</code> 才可以。我们可以对带标签的代码块使用 <code>break ___</code>，但是不能对带标签的非循环代码块使用 <code>continue ___</code>，也不能对不带标签的代码块使用 <code>break</code>。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 标签为 bar 的代码块</span>
+<span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  bar<span class="token operator">:</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Hello'</span><span class="token punctuation">)</span>
+    <span class="token keyword">break</span> bar
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'never runs'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'World'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">// Hello</span>
+<span class="token comment">// World</span>
+</code></pre></div><p>还有一个坑常被提到：</p> <div class="language-js extra-class"><pre class="language-js"><code>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment">// &quot;[object Object]&quot;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token operator">+</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">// 0</span>
+</code></pre></div><p>第一行代码中，<code>{}</code> 出现在 <code>+</code> 运算符表达式中，因此它被当作一个值（空对象）来处理。<code>[]</code> 会被强制类型转换为 <code>&quot;&quot;</code>，而 <code>{}</code> 会被强制类型转换为 <code>&quot;[object Object]&quot;</code>。</p> <p>但在第二行代码中，<code>{}</code> 被当作一个独立的空代码块（不执行任何操作）。代码块结尾不需要分号，所以这里不存在语法上的问题。最后 <code>+ []</code> 将 <code>[]</code> 显式强制类型转换为 0。</p> <p>另外还有一个很深的误会是认为 JavaScript 中有 <code>else if</code>，因为我们经常会写出下面这样的代码：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">if</span> <span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ..</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>b<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ..</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ..</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>事实上 JavaScript 没有 else if，但 if 和 else 只包含单条语句的时候可以省略代码块的，所以上面的代码实际上实际上是这样的：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">if</span> <span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ..</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>b<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// ..</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token comment">// ..</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>从 ES6 开始，<code>{ .. }</code> 也可用于“解构赋值”（destructuring assignment）。</p> <h2 id="运算符优先级"><a href="#运算符优先级" class="header-anchor">#</a> 运算符优先级</h2> <p>运算符的优先级决定了表达式中运算执行的先后顺序，优先级高的运算符最先被执行。</p> <p>逗号运算符对它的每个操作数求值（从左到右），并返回最后一个操作数的值。在 JavaScript 中，它的优先级最低。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">let</span> x <span class="token operator">=</span> <span class="token number">1</span>
+
+x <span class="token operator">=</span> <span class="token punctuation">(</span>x<span class="token operator">++</span><span class="token punctuation">,</span> x<span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token comment">// 2</span>
+x <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token comment">// 3</span>
+</code></pre></div><p>对 <code>&amp;&amp;</code> 和 <code>||</code> 来说，如果从左边的操作数能够得出结果，就可以忽略右边的操作数。我们将这种现象称为“短路”（即执行最短路径）。和条件运算符一起使用时，它们都会优先被计算。</p> <p>关联性决定了拥有相同优先级的运算符的执行顺序。左关联（左到右）相当于把左边的子表达式加上小括号 <code>(a OP b) OP c</code>，右关联（右到左）相当于 <code>a OP (b OP c)</code>。</p> <p>常见的条件运算符和赋值运算符都是右关联的。</p> <p>如果运算符优先级/关联规则能够令代码更为简洁，就使用运算符优先级/关联规则；而如果 <code>( )</code>（圆括号，在 JavaScript 中拥有最高优先级） 有助于提高代码可读性，就使用 <code>( )</code>。</p> <h2 id="自动分号"><a href="#自动分号" class="header-anchor">#</a> 自动分号</h2> <p>有时 JavaScript 会自动为代码行补上缺失的分号，即自动分号插入（Automatic Semicolon Insertion，ASI）。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token parameter">a</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>a<span class="token punctuation">)</span> <span class="token keyword">return</span>
+  a <span class="token operator">*=</span> <span class="token number">2</span>
+  <span class="token comment">// ..</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>由于 ASI 会在 <code>return</code> 后面自动加上 <code>;</code>，所以这里 <code>return</code> 语句并不包括第二行的 <code>a \*= 2</code>。</p> <p><code>return</code> 语句的跨度可以是多行，但是其后必须有换行符以外的代码：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">/*
+
+function foo(a) {
+ return (
+  a * 2 + 3 / 12
+ );
+}
+
+*/</span>
+</code></pre></div><p>建议在所有需要的地方加上分号，将对 ASI 的依赖降到最低。</p> <h2 id="错误"><a href="#错误" class="header-anchor">#</a> 错误</h2> <p>JavaScript 不仅有各种类型的运行时错误（TypeError、ReferenceError、SyntaxError 等），它的语法中也定义了一些编译时错误，这些在编译阶段发现的代码错误叫作“早期错误”。</p> <p>比如在严格模式中，使用同名的函数参数、对象中包含同名的属性、非法的正则表达式都会产生早起错误。</p> <p>这些错误在代码执行之前是无法用 <code>try..catch</code> 来捕获的，相反，它们还会导致解析/编译失败。</p> <p>ES6 规范定义了一个新概念，叫作 TDZ（Temporal Dead Zone，暂时性死区：指的是由于代码中的变量还没有初始化而不能被引用的情况）。最直观的例子是 ES6 规范中的 <code>let</code> 块作用域：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">{</span>
+  a <span class="token operator">=</span> <span class="token number">2</span> <span class="token comment">// ReferenceError!</span>
+  <span class="token keyword">let</span> a
+<span class="token punctuation">}</span>
+</code></pre></div><p>有意思的是，对未声明变量使用 <code>typeof</code> 不会产生错误，但在 TDZ 中却会报错：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">{</span>
+  <span class="token keyword">typeof</span> a <span class="token comment">// undefined</span>
+  <span class="token keyword">typeof</span> b <span class="token comment">// ReferenceError! (TDZ)</span>
+  <span class="token keyword">let</span> b
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="函数参数"><a href="#函数参数" class="header-anchor">#</a> 函数参数</h2> <p>另一个 TDZ 违规的例子是 ES6 中的参数默认值：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token number">3</span>
+<span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token parameter">a <span class="token operator">=</span> <span class="token number">42</span><span class="token punctuation">,</span> b <span class="token operator">=</span> a <span class="token operator">+</span> b <span class="token operator">+</span> <span class="token number">5</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ..</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><code>b = a + b + 5</code> 在参数 <code>b</code>（= 右边的 b，而不是函数外的那个）的 TDZ 中访问 <code>b</code>，所以会出错。而访问 <code>a</code> 却没有问题，因为此时刚好跨出了参数 <code>a</code> 的 TDZ。</p> <p>对 ES6 中的参数默认值而言，参数被省略或被赋值为 <code>undefined</code> 效果都一样，都是取该参数的默认值。然而某些情况下，它们之间还是有区别的：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token parameter">a <span class="token operator">=</span> <span class="token number">42</span><span class="token punctuation">,</span> b <span class="token operator">=</span> a <span class="token operator">+</span> <span class="token number">1</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arguments<span class="token punctuation">.</span>length<span class="token punctuation">,</span> a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> arguments<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> arguments<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 0 42 43 undefined undefined</span>
+<span class="token function">foo</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span> <span class="token comment">// 1 10 11 10 undefined</span>
+<span class="token function">foo</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span> <span class="token comment">// 2 10 11 10 undefined</span>
+<span class="token function">foo</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token comment">// 2 10 null 10 null</span>
+</code></pre></div><p>虽然参数 <code>a</code> 和 <code>b</code> 都有默认值，但是函数不带参数时，<code>arguments</code> 数组为空。</p> <p>相反，如果向函数传递 <code>undefined</code> 值，则 <code>arguments</code> 数组中会出现一个值为 <code>undefined</code> 的单元，而不是默认值。</p> <p>ES6 参数默认值会导致 <code>arguments</code> 数组和相对应的命名参数之间出现偏差，ES5 也会出现这种情况：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token parameter">a</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  a <span class="token operator">=</span> <span class="token number">42</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arguments<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">foo</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token comment">// 42 (linked)</span>
+<span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// undefined (not linked)</span>
+</code></pre></div><p>向函数传递参数时，<code>arguments</code> 数组中的对应单元会和命名参数建立关联（linkage）以得到相同的值。相反，不传递参数就不会建立关联。但是，在严格模式中并没有建立关联这一说。</p> <p>所以，在开发中不要依赖这种关联机制。需遵守一个原则，即不要同时访问命名参数和其对应的 <code>arguments</code> 数组单元。</p> <h2 id="try-finally"><a href="#try-finally" class="header-anchor">#</a> try..finally</h2> <p><code>finally</code> 中的代码总是会在 <code>try</code> 之后执行，如果有 <code>catch</code> 的话则在 <code>catch</code> 之后执行。也可以将 <code>finally</code> 中的代码看作一个回调函数，即无论出现什么情况最后一定会被调用。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token number">42</span>
+  <span class="token punctuation">}</span> <span class="token keyword">finally</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Hello'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'never runs'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">// Hello</span>
+<span class="token comment">// 42</span>
+</code></pre></div><p>虽然在 <code>try</code> 语句块中执行 <code>return</code> 了，但 <code>finally</code> 中的代码依然会执行。而且，<code>finally</code> 中的 <code>return</code> 会覆盖 <code>try</code> 和 <code>catch</code> 中 <code>return</code> 的返回值。</p> <p>如果在 <code>try</code> 语句块中通过 <code>throw</code> 抛出错误也是如此，在 <code>continue</code> 和 <code>break</code> 等控制语句中也不例外：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token keyword">continue</span>
+  <span class="token punctuation">}</span> <span class="token keyword">finally</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 0 1 2 3 4 5 6 7 8 9</span>
+</code></pre></div><p>如果 <code>finally</code> 中抛出异常（无论是有意还是无意），函数就会在此处终止。如果此前 <code>try</code> 中已经有 <code>return</code> 设置了返回值，则该值会被丢弃。</p> <p>事实上，还可以将 <code>finally</code> 和带标签的 <code>break</code> 混合使用：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  bar<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token number">42</span>
+    <span class="token punctuation">}</span> <span class="token keyword">finally</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 跳出标签为 bar 的代码块</span>
+      <span class="token keyword">break</span> bar
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Crazy'</span><span class="token punctuation">)</span>
+  <span class="token keyword">return</span> <span class="token string">'Hello'</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">// Crazy</span>
+<span class="token comment">// Hello</span>
+</code></pre></div><p>如你所见，但切勿这样操作。利用 <code>finally</code> 加带标签的 <code>break</code> 来跳过 <code>return</code> 只会让代码变得晦涩难懂。</p> <h2 id="switch"><a href="#switch" class="header-anchor">#</a> switch</h2> <p>使用 <code>switch</code> 语句首先需要设置表达式 <code>n</code>（通常是一个变量）。随后表达式的值会与结构中的每个 <code>case</code> 的值做比较。如果存在匹配，则与该 <code>case</code> 关联的代码块会被执行。直到 <code>break</code>、<code>return</code> 或者 <code>switch</code> 代码块结束。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">switch</span> <span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">case</span> <span class="token number">1</span><span class="token operator">:</span>
+    <span class="token comment">// 执行代码块 1</span>
+    <span class="token keyword">break</span>
+  <span class="token keyword">case</span> <span class="token number">2</span><span class="token operator">:</span>
+    <span class="token comment">// 执行代码块 2</span>
+    <span class="token keyword">break</span>
+  <span class="token keyword">default</span><span class="token operator">:</span>
+  <span class="token comment">// 与 case 1 和 case 2 不同时执行的代码</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>其中的比较方式将会采用严格相等。如果需要通过强制类型转换来进行相等比较，这时就需要做一些特殊处理：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">switch</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">case</span> n <span class="token operator">==</span> <span class="token number">1</span><span class="token operator">:</span>
+    <span class="token comment">// 执行代码块 1</span>
+    <span class="token keyword">break</span>
+  <span class="token keyword">case</span> n <span class="token operator">==</span> <span class="token number">2</span><span class="token operator">:</span>
+    <span class="token comment">// 执行代码块 2</span>
+    <span class="token keyword">break</span>
+  <span class="token keyword">default</span><span class="token operator">:</span>
+  <span class="token comment">// 与 case 1 和 case 2 不同时执行的代码</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>最后，<code>default</code> 是可选的，<code>break</code> 相关规则对 <code>default</code> 仍然适用：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">10</span>
+<span class="token keyword">switch</span> <span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">case</span> <span class="token number">1</span><span class="token operator">:</span>
+  <span class="token keyword">case</span> <span class="token number">2</span><span class="token operator">:</span>
+  <span class="token comment">// 永远执行不到这里</span>
+  <span class="token keyword">default</span><span class="token operator">:</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'default'</span><span class="token punctuation">)</span>
+  <span class="token keyword">case</span> <span class="token number">3</span><span class="token operator">:</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'3'</span><span class="token punctuation">)</span>
+    <span class="token keyword">break</span>
+  <span class="token keyword">case</span> <span class="token number">4</span><span class="token operator">:</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'4'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// default</span>
+<span class="token comment">// 3</span>
+</code></pre></div><p>这里首先遍历并找到所有匹配的 <code>case</code>，如果没有匹配则执行 <code>default</code> 中的代码。因为其中没有 <code>break</code>，所以继续执行已经遍历过的 <code>case 3</code> 代码块，直到 <code>break</code> 为止。</p> <h2 id="参考"><a href="#参考" class="header-anchor">#</a> 参考</h2> <ul><li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Operator_Precedence" target="_blank" rel="noopener noreferrer">运算符优先级 - JavaScript | MDN<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/notebook/js/read/ydkjs8.html" class="prev">
+        YDKJS-强制类型转换
+      </a></span> <span class="next"><a href="/notebook/js/read/ydkjs10.html">
+        YDKJS-混合环境 JavaScript
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/notebook/assets/js/app.d2525610.js" defer></script><script src="/notebook/assets/js/1.0ed4caaf.js" defer></script><script src="/notebook/assets/js/141.25a371c3.js" defer></script>
+  </body>
+</html>
