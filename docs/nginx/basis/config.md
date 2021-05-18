@@ -14,7 +14,7 @@ Nginx 的配置可以分为三大块：全局块、Events 块和 Http 块。
 worker_processes  1;
 ```
 
-这是 Nginx 服务器并发处理服务的关键配置，`worker_processes` 值越大，可以支持的并发处理量也越多，但是会受到硬件、软件等设备的制约
+这是 Nginx 服务器并发处理服务的关键配置，`worker_processes` 值越大，可以支持的并发处理量也越多，但是会受到硬件、软件等设备的制约。
 
 ## events
 

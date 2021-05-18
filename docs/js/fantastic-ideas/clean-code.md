@@ -134,10 +134,10 @@ function demo(type) {
     a()
   }
   if (type === 'b') {
-    a()
+    b()
   }
   if (type === 'c') {
-    a()
+    c()
   }
 }
 

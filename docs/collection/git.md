@@ -4,6 +4,7 @@
 - [使用 Git 丢失代码的 N 种操作，您中招了吗？](https://mp.weixin.qq.com/s/GAWbijZwOm35RbPYIvOKMw)
 - [Git 分支管理策略与工作流程](https://toutiao.io/k/82eogba)
 - [使用 Git Submodule 管理项目](https://juejin.cn/post/6844903492750934029)
+- [Git 各指令的本质，真是通俗易懂啊](https://mp.weixin.qq.com/s/X4pNmoASNEKYlQBsAITUtw)
 
 ## 进阶
 

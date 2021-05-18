@@ -40,6 +40,11 @@ module.exports = {
         'basis/angular-dev',
       ],
     },
+    {
+      title: '进阶',
+      sidebarDepth: 2,
+      children: ['advanced/listeners'],
+    },
   ],
   '/vue/': [
     {
@@ -147,11 +152,6 @@ module.exports = {
       title: '基础',
       sidebarDepth: 2,
       children: ['', 'basis/meet-nginx', 'basis/config'],
-    },
-    {
-      title: '进阶',
-      sidebarDepth: 2,
-      children: ['advanced/listeners'],
     },
   ],
   '/nodejs/': [
