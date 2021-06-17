@@ -293,7 +293,7 @@ module.exports = {
     {
       title: '基础',
       sidebarDepth: 2,
-      children: ['', 'basis/concept', 'basis/operation-set'],
+      children: ['', 'basis/concept', 'basis/operation-set', 'basis/autoplay'],
     },
     {
       title: '进阶',
