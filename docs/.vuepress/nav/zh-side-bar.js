@@ -86,12 +86,17 @@ module.exports = {
     {
       title: '基础',
       sidebarDepth: 2,
-      children: ['', 'basis/github-work', 'basis/common-scene'],
+      children: ['', 'basis/github-work'],
     },
     {
       title: '命令',
       sidebarDepth: 2,
       children: ['command/log'],
+    },
+    {
+      title: '场景',
+      sidebarDepth: 2,
+      children: ['scene/common-scene', 'scene/cross-repo-reuse'],
     },
     {
       title: '进阶',
