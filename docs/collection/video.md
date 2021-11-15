@@ -18,8 +18,12 @@
 
 ## ★★★★★
 
+- [How video streaming works on the web: An introduction](https://medium.com/canal-tech/how-video-streaming-works-on-the-web-an-introduction-7919739f7e1)
+- [优酷统一播放器业务框架演进之路](https://www.infoq.cn/article/z7614ihth6ate86gj3wp)
+- [爱奇艺知识的音视频通用播放架构实践](https://www.infoq.cn/article/Ay1Ufpi5gmkNdzvqdIub?utm_source=related_read_bottom&utm_medium=article)
 - [Web 端 H.265 播放器研发解密](https://fed.taobao.org/blog/taofed/do71ct/web-player-h265/)
 - [从 0 到 1 实现 Web 端 H.265 播放器：视频解码篇](https://mp.weixin.qq.com/s/f7f-4E2b07f4K0FduEg4YA)
+- [360 视频云 Web 前端 HEVC 播放器实践剖析](https://www.livevideostack.cn/news/34154/)
 
 ## 系列文章
 

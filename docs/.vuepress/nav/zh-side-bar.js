@@ -336,6 +336,7 @@ module.exports = {
     'linux',
     'mac',
     'blog',
+    'yarn',
     'other',
   ],
   '/021/': ['', 'koa'],

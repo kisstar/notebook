@@ -5,6 +5,7 @@
 - [Git 分支管理策略与工作流程](https://toutiao.io/k/82eogba)
 - [使用 Git Submodule 管理项目](https://juejin.cn/post/6844903492750934029)
 - [Git 各指令的本质，真是通俗易懂啊](https://mp.weixin.qq.com/s/X4pNmoASNEKYlQBsAITUtw)
+- [A few git tips you didn't know about](https://mislav.net/2010/07/git-tips/)
 
 ## 进阶
 
