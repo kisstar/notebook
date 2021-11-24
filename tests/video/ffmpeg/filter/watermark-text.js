@@ -1,5 +1,5 @@
 /**
- * @description 在视频的左上角添加一张图片
+ * @description 在视频的右上角添加文字水印
  */
 
 const fs = require('fs')
@@ -11,19 +11,15 @@ const resolve = (...args) => path.resolve(__dirname, '../../../../docs/.vuepress
 
 ;(async () => {
   const inputVideo = resolve('movies', 'video/come-here.mp4')
-  const inputImage = resolve('images', 'video/ffmpeg/duolaameng.jpg')
   const outputVideo = path.resolve('tmp', 'come-here.mp4')
 
   await ffmpeg.load()
   ffmpeg.FS('writeFile', 'come-here.mp4', await fetchFile(inputVideo))
-  ffmpeg.FS('writeFile', 'duolaameng.jpg', await fetchFile(inputImage))
   await ffmpeg.run(
     '-i',
     'come-here.mp4',
-    '-i',
-    'duolaameng.jpg',
-    '-filter_complex',
-    '[1:v]scale=176:144[logo];[0:v][logo]overlay=x=0:y=0',
+    '-vf',
+    "drawtext=fontsize=100:fontfile=FreeSerif.ttf:text='hello world':x=20:y=20",
     'come-here_filtered.mp4',
   )
   await fs.promises.writeFile(outputVideo, ffmpeg.FS('readFile', 'come-here_filtered.mp4'))

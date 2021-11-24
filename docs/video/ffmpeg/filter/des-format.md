@@ -1,4 +1,4 @@
-# 描述格式
+# 滤镜描述格式
 
 滤镜使用时的参数排列方式：
 
@@ -23,3 +23,7 @@ ffmpeg -i input.mp4 -i input.png -filter_complex "[1:v]scale=176:144[logo];[0:v]
 | pos  | 输入帧的位置，如果未知则是 NAN                     |
 | w    | 输入视频帧的宽度                                   |
 | h    | 输入视频帧的高度                                   |
+
+## Demo
+
+See: <https://github.com/kisstar/notebook/blob/master/tests/video/ffmpeg/filter/des-format.js>
