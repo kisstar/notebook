@@ -11,7 +11,7 @@
 
 要充分利用本教程，请打开演示并在演示页面上尝试这些功能。你可以先打开开发者工具，然后切换到网络面板中。刷新页面后，网络面板将所有网络活动记录在网络日志中。
 
-<img :src="$withBase('/images/chrome/network/index/log.png')" alt="network_log">
+<img :src="$withBase('/images/chrome/network/network/log.png')" alt="network_log">
 
 网络日志的每一行代表一个资源。默认情况下，资源按时间顺序列出。顶层资源通常是主 HTML 文档。底层资源是最后请求的资源。
 
@@ -32,7 +32,7 @@
 
 右键单击网络日志表的标题并选择域。现在显示每个资源的域。
 
-<img :src="$withBase('/images/chrome/network/index/domain.png')" alt="network_domain">
+<img :src="$withBase('/images/chrome/network/network/domain.png')" alt="network_domain">
 
 ## 模拟较慢的网络连接
 
@@ -40,11 +40,11 @@
 
 单击节流下拉列表，默认设置为“online”，你可以选择预设的一些网络配置，比如 `Slow 3G`：
 
-<img :src="$withBase('/images/chrome/network/index/throttling.png')" alt="network_throttling">
+<img :src="$withBase('/images/chrome/network/network/throttling.png')" alt="network_throttling">
 
 然后长按重新加载，选择空缓存和硬重新加载：
 
-<img :src="$withBase('/images/chrome/network/index/hardreload.png')" alt="network_hardreload">
+<img :src="$withBase('/images/chrome/network/network/hardreload.png')" alt="network_hardreload">
 
 在重复访问时，浏览器通常从其缓存中提供一些文件，从而加快页面加载。空缓存和硬重新加载会强制浏览器访问网络上的所有资源。当您想了解初次访问者如何体验页面加载时，这很有帮助。
 
@@ -52,7 +52,7 @@
 
 屏幕截图可以让您看到页面在加载时的外观：点击网络面板右上角的配置按钮，然后选中 `Capture Screenshots`，通过空缓存和硬重新加载工作流重新加载页面。
 
-<img :src="$withBase('/images/chrome/network/index/allscreenshots.png')" alt="network_allscreenshots">
+<img :src="$withBase('/images/chrome/network/network/allscreenshots.png')" alt="network_allscreenshots">
 
 单击第一个缩略图。DevTools 向您显示当时发生的网络活动。如果需要关闭截图面板，只需取消选中 `Capture Screenshots`，然后刷新页面。
 
@@ -60,7 +60,7 @@
 
 点击一条资源，将显示“头部”标签。使用此标签检查 HTTP 头：
 
-<img :src="$withBase('/images/chrome/network/index/headers.png')" alt="network_headers">
+<img :src="$withBase('/images/chrome/network/network/headers.png')" alt="network_headers">
 
 除此之外，在 Preview 标签页可以预览 HTML 的基本呈现，点击 Response 则可以看到返回的原始资源，最后 Timing 标签中显示了此资源的网络活动的详细情况。
 
@@ -70,7 +70,7 @@
 
 例如，假设您想检查您的资源是否使用了合理的缓存策略，你可以点击搜索图标，然后搜索面板将会显示在左侧：
 
-<img :src="$withBase('/images/chrome/network/index/search.png')" alt="network_search">
+<img :src="$withBase('/images/chrome/network/network/search.png')" alt="network_search">
 
 在输入框中键入 Cache-Control 并按 Enter 键。搜索窗格列出它在资源标头或内容中找到的所有缓存控制实例。
 
@@ -80,7 +80,7 @@
 
 DevTools 提供了大量的工作流来过滤出与当前任务无关的资源。
 
-<img :src="$withBase('/images/chrome/network/index/filters.png')" alt="network_filters">
+<img :src="$withBase('/images/chrome/network/network/filters.png')" alt="network_filters">
 
 在过滤器文本框中输入 `png`，只显示包含文本 `png` 的文件。在这种情况下，唯一与过滤器匹配的文件是 PNG 图像。
 
@@ -97,7 +97,7 @@ DevTools 提供了大量的工作流来过滤出与当前任务无关的资源�
 5. Click Add.
 6. Reload the page.
 
-<img :src="$withBase('/images/chrome/network/index/addblock.png')" alt="network_addblock">
+<img :src="$withBase('/images/chrome/network/network/addblock.png')" alt="network_addblock">
 
 如果要取消可以点击复选框。
 
