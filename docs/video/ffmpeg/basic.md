@@ -131,6 +131,16 @@ ffmpeg -i input.mp4 -an -c:v rawvideo -pix_fmt yuv420p out.yuv
 - -c:v: 指定 rawvideo 为视频的编码方式
 - -pix_fmt: 指定编码时的像素格式
 
+对原生视频数据进行播放：
+
+```bash
+ffplay -f rawvideo -video_size 1280x720 -pix_fmt yuv420p out.yuv
+```
+
+- -f: 指定将视频转成原始数据
+- -video-size: 指定分辨率
+- -pix_fmt: 默认为 yuv420p，使用默认值则可省略
+
 提取 PCM 数据：
 
 ```bash
