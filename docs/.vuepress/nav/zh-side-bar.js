@@ -289,6 +289,11 @@ module.exports = {
       children: [''],
     },
     {
+      title: '开发工具',
+      sidebarDepth: 2,
+      children: ['devtools/snippets'],
+    },
+    {
       title: '网络',
       sidebarDepth: 2,
       children: ['network/', 'network/reference', 'network/issues'],
