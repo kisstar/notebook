@@ -62,6 +62,11 @@ module.exports = {
       sidebarDepth: 2,
       children: ['interview/comm-between-comp'],
     },
+    {
+      title: '错误',
+      sidebarDepth: 2,
+      children: ['error/'],
+    },
   ],
   '/react/': [
     {
@@ -107,6 +112,11 @@ module.exports = {
       title: '问题',
       sidebarDepth: 2,
       children: ['bugfix', 'bugfix/00', 'bugfix/01'],
+    },
+    {
+      title: '错误',
+      sidebarDepth: 2,
+      children: ['error/'],
     },
   ],
   '/vim/': [
@@ -248,6 +258,11 @@ module.exports = {
       sidebarDepth: 2,
       children: ['', 'basis/commit-lint', 'basis/eslint', 'basis/stylelint'],
     },
+    {
+      title: '错误',
+      sidebarDepth: 2,
+      children: ['error/eslint'],
+    },
   ],
   '/ts/': [
     {
@@ -320,6 +335,11 @@ module.exports = {
         'ffmpeg/filter/des-format',
         'ffmpeg/filter/watermark',
       ],
+    },
+    {
+      title: '错误',
+      sidebarDepth: 2,
+      children: ['error/'],
     },
   ],
   '/c/': [
