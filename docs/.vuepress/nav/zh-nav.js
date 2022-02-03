@@ -152,7 +152,32 @@ module.exports = [
   },
   {
     text: 'Collection',
-    link: '/collection/',
+    items: [
+      {
+        text: 'System',
+        link: '/collection/system/',
+      },
+      {
+        text: 'Language',
+        link: '/collection/language/',
+      },
+      {
+        text: 'Framework',
+        link: '/collection/framework/',
+      },
+      {
+        text: 'DevTools',
+        link: '/collection/devtools/',
+      },
+      {
+        text: 'Knowledge',
+        link: '/collection/knowledge/',
+      },
+      {
+        text: 'Other',
+        link: '/collection/other/',
+      },
+    ],
   },
   {
     text: 'Other',
