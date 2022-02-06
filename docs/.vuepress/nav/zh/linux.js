@@ -32,7 +32,7 @@ module.exports = [
   {
     title: 'Shell',
     sidebarDepth: 2,
-    children: ['shell/meet-shell', 'shell/demo'],
+    children: ['shell/meet-shell', 'shell/demo', 'shell/constant'],
   },
   {
     title: 'Ubuntu',
