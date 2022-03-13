@@ -181,7 +181,20 @@ module.exports = [
   },
   {
     text: 'Other',
-    link: '/other/',
+    items: [
+      {
+        text: 'Truth',
+        link: '/other/popularization-science/',
+      },
+      {
+        text: 'Development',
+        link: '/other/dev/',
+      },
+      {
+        text: 'Gitbook',
+        link: '/other/gitbook/',
+      },
+    ],
   },
   {
     text: 'GitHub',

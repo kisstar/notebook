@@ -239,17 +239,21 @@ module.exports = {
     {
       title: 'Truth',
       sidebarDepth: 2,
-      children: ['popularization-science/key', 'popularization-science/message'],
+      children: [
+        'popularization-science/',
+        'popularization-science/key',
+        'popularization-science/message',
+      ],
     },
     {
       title: 'Dev',
       sidebarDepth: 2,
-      children: ['dev/proxy', 'dev/chares'],
+      children: ['dev/', 'dev/proxy', 'dev/chares'],
     },
     {
       title: 'GitBook',
       sidebarDepth: 2,
-      children: ['gitbook/elementary-guide'],
+      children: ['gitbook/', 'gitbook/elementary-guide'],
     },
   ],
   '/project/': [
