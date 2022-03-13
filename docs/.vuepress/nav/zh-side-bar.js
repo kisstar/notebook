@@ -334,6 +334,7 @@ module.exports = {
         'ffmpeg/dev',
         'ffmpeg/filter/des-format',
         'ffmpeg/filter/watermark',
+        'ffmpeg/common',
       ],
     },
     {
