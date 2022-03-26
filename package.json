@@ -74,7 +74,7 @@
   "dependencies": {
     "@ffmpeg/core": "^0.10.0",
     "@ffmpeg/ffmpeg": "^0.10.1",
-    "minimist": "^1.2.5",
+    "minimist": "^1.2.6",
     "shelljs": "^0.8.5"
   }
 }
