@@ -75,6 +75,10 @@ module.exports = [
             text: '项目工程',
             link: '/project/',
           },
+          {
+            text: '面试',
+            link: '/interview/',
+          },
         ],
       },
     ],

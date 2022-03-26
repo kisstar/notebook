@@ -41,7 +41,6 @@ function flat(arr) {
 function flat(arr) {
   let result = [],
     item
-
   ;(function _flat(arr) {
     for (var i = 0; i < arr.length; i++) {
       item = arr[i]

@@ -33,18 +33,6 @@ module.exports = [
     ],
   },
   {
-    title: '面试',
-    sidebarDepth: 2,
-    children: [
-      'interview/unique-array',
-      'interview/flat',
-      'interview/scope',
-      'interview/all-around',
-      'interview/cross-domain',
-      'interview/parse-url',
-    ],
-  },
-  {
     title: '第三方',
     sidebarDepth: 2,
     children: [

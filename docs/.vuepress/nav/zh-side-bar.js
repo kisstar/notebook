@@ -19,11 +19,6 @@ module.exports = {
       sidebarDepth: 2,
       children: ['scss/', 'scss/basis/meet-scss', 'scss/advanced/syntax'],
     },
-    {
-      title: '面试',
-      sidebarDepth: 2,
-      children: ['interview/css-hv-center'],
-    },
   ],
   '/js/': jsNav,
   '/ng/': [
@@ -58,11 +53,6 @@ module.exports = {
       children: ['advanced/vue-mvvm', 'advanced/vue3-response-principle'],
     },
     {
-      title: '面试',
-      sidebarDepth: 2,
-      children: ['interview/comm-between-comp'],
-    },
-    {
       title: '错误',
       sidebarDepth: 2,
       children: ['error/'],
@@ -80,11 +70,6 @@ module.exports = {
       title: '基础',
       sidebarDepth: 2,
       children: ['', 'basis/performance'],
-    },
-    {
-      title: '面试',
-      sidebarDepth: 2,
-      children: ['interview/url2ui'],
     },
   ],
   '/git/': [
@@ -160,6 +145,35 @@ module.exports = {
         'basis/docker-compose',
         'basis/private-registry',
       ],
+    },
+  ],
+  '/interview/': [
+    {
+      title: 'CSS',
+      sidebarDepth: 2,
+      children: ['css/css-hv-center'],
+    },
+    {
+      title: 'JavaScript',
+      sidebarDepth: 2,
+      children: [
+        'js/unique-array',
+        'js/flat',
+        'js/scope',
+        'js/all-around',
+        'js/cross-domain',
+        'js/parse-url',
+      ],
+    },
+    {
+      title: 'Vue',
+      sidebarDepth: 2,
+      children: ['vue/comm-between-comp'],
+    },
+    {
+      title: 'Web',
+      sidebarDepth: 2,
+      children: ['web/url2ui'],
     },
   ],
   '/nginx/': [
