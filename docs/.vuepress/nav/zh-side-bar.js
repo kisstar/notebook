@@ -111,7 +111,7 @@ module.exports = {
     {
       title: '问题',
       sidebarDepth: 2,
-      children: ['bugfix', 'bugfix/00', 'bugfix/01'],
+      children: ['bugfix/00', 'bugfix/01'],
     },
     {
       title: '错误',
@@ -254,6 +254,36 @@ module.exports = {
       title: 'GitBook',
       sidebarDepth: 2,
       children: ['gitbook/', 'gitbook/elementary-guide'],
+    },
+    {
+      title: 'Collection',
+      sidebarDepth: 3,
+      children: [
+        'collection/',
+        'collection/devtools/chrome',
+        'collection/devtools/git',
+        'collection/devtools/terminal',
+        'collection/devtools/yarn',
+
+        'collection/framework/framework',
+        'collection/framework/vue',
+        'collection/framework/react',
+        'collection/framework/svelte',
+
+        'collection/knowledge/video',
+
+        'collection/language/css',
+        'collection/language/js',
+        'collection/language/nodejs',
+        'collection/language/weixin',
+
+        'collection/system/computer',
+        'collection/system/mac',
+        'collection/system/linux',
+
+        'collection/other/blog',
+        'collection/other/other',
+      ],
     },
   ],
   '/project/': [
@@ -398,6 +428,5 @@ module.exports = {
       children: ['other/', 'other/blog', 'other/other'],
     },
   ],
-  '/021/': ['', 'koa'],
   '/': [''],
 }

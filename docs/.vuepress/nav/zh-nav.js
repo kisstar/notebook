@@ -68,16 +68,12 @@ module.exports = [
             link: '/wechat/',
           },
           {
-            text: 'Video',
+            text: '视频',
             link: '/video/',
           },
           {
-            text: 'Project',
+            text: '项目工程',
             link: '/project/',
-          },
-          {
-            text: '021',
-            link: '/021/',
           },
         ],
       },
@@ -151,36 +147,7 @@ module.exports = [
     ],
   },
   {
-    text: 'Collection',
-    items: [
-      {
-        text: 'System',
-        link: '/collection/system/',
-      },
-      {
-        text: 'Language',
-        link: '/collection/language/',
-      },
-      {
-        text: 'Framework',
-        link: '/collection/framework/',
-      },
-      {
-        text: 'DevTools',
-        link: '/collection/devtools/',
-      },
-      {
-        text: 'Knowledge',
-        link: '/collection/knowledge/',
-      },
-      {
-        text: 'Other',
-        link: '/collection/other/',
-      },
-    ],
-  },
-  {
-    text: 'Other',
+    text: 'Others',
     items: [
       {
         text: 'Truth',
@@ -194,12 +161,21 @@ module.exports = [
         text: 'Gitbook',
         link: '/other/gitbook/',
       },
+      {
+        text: 'Collection',
+        link: '/other/collection/',
+      },
     ],
   },
   {
-    text: 'GitHub',
-    link: 'https://github.com/kisstar/notebook/',
-    target: '_blank',
-    rel: 'noopener noreferrer',
+    text: 'About me',
+    items: [
+      {
+        text: 'GitHub',
+        link: 'https://github.com/kisstar/notebook/',
+        target: '_blank',
+        rel: 'noopener noreferrer',
+      },
+    ],
   },
 ]
