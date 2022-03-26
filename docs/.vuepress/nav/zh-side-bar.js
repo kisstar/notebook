@@ -147,6 +147,13 @@ module.exports = {
       ],
     },
   ],
+  '/install-equipment/': [
+    {
+      title: 'Ubuntu',
+      sidebarDepth: 2,
+      children: ['ubuntu/install', 'ubuntu/dev-0', 'ubuntu/dev-1'],
+    },
+  ],
   '/interview/': [
     {
       title: 'CSS',

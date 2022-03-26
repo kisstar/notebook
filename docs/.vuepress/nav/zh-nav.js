@@ -79,6 +79,10 @@ module.exports = [
             text: '面试',
             link: '/interview/',
           },
+          {
+            text: '装机指南',
+            link: '/install-equipment/',
+          },
         ],
       },
     ],

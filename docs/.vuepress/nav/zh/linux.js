@@ -34,9 +34,4 @@ module.exports = [
     sidebarDepth: 2,
     children: ['shell/meet-shell', 'shell/demo', 'shell/constant'],
   },
-  {
-    title: 'Ubuntu',
-    sidebarDepth: 2,
-    children: ['ubuntu/install', 'ubuntu/dev-0', 'ubuntu/dev-1'],
-  },
 ]
