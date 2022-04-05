@@ -5,6 +5,11 @@ module.exports = [
     children: [''],
   },
   {
+    title: '数组',
+    sidebarDepth: 2,
+    children: ['arr/', 'arr/136'],
+  },
+  {
     title: '栈',
     sidebarDepth: 2,
     children: ['stack/'],
