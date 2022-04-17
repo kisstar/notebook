@@ -182,6 +182,11 @@ module.exports = {
       sidebarDepth: 2,
       children: ['web/url2ui'],
     },
+    {
+      title: 'Algorithm',
+      sidebarDepth: 2,
+      children: ['algorithm/1602'],
+    },
   ],
   '/nginx/': [
     {
