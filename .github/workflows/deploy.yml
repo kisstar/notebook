@@ -1,0 +1,36 @@
+name: deploy
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'docs/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 12
+
+      - name: Install yarn
+      - run: npm install --global yarn
+
+      - name: Install packages with yarn
+      - run: yarn install
+
+      - name: Builds the app for production
+      - run: yarn run build
+
+      - name: Deploy with gh-pages
+      - run: |
+        git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+        npm run deploy:ci -- -u "github-actions-bot <support+actions@github.com>"
+        git remote remove origin
+      env:
+        GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        GITHUB_REPOSITORY: notebook

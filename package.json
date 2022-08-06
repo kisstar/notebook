@@ -18,6 +18,7 @@
     "predeploy": "yarn run build",
     "deploy:gitee": "gh-pages -d docs/.vuepress/dist -b master -r https://gitee.com/dongwanhong/notebook.git",
     "deploy:github": "gh-pages -d docs/.vuepress/dist -b gh-pages -r https://github.com/kisstar/notebook.git",
+    "deploy:ci": "gh-pages -d docs/.vuepress/dist -b gh-pages",
     "deploy": "yarn run deploy:gitee && yarn run deploy:github",
     "prepare": "husky install"
   },
