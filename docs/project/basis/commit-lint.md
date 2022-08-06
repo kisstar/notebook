@@ -6,27 +6,25 @@
 
 开源社区已经为我们总结出了一种用于给提交信息增加人机可读含义的规范，其名 [Conventional Commits][conventionalcommits]。
 
-## 交互式提交
-
-刚开始使用时，我们对提交规范可能会比较陌生，不知道存在哪些选项，又或者需要怎样选择，因此实现交互式的提交是有必要的。
-
-`@commitlint/prompt-cli` 包就是这样一个存在，它有助于快速编写提交消息，并确保它们符合配置中的提交约定。
+规范中推荐提交消息的结构应如下所示：
 
 ```bash
-npm i -D @commitlint/prompt-cli
+<type>[optional scope]: <description>
+
+[optional body]
+
+[optional footer(s)]
 ```
 
-`@commitlint/prompt-cli` 的使用也很简单，安装它并使用它提供的 `commit` 命令进行提交即可。
+其中开头部分表明了本次提交的类型（是添加功能还是修复错误等），范围则描述了修改的影响面，然后是一段简要的描述，更多详细的信息则可以在正文中进行描述。
 
-```json
-{
-  "scripts": {
-    "commit": "commit"
-  }
-}
-```
+最后在可选的脚注中还可以添加额外的内容，比如指明是否是一次破坏性变更，关联的任务卡片等。
 
-编写符合中配置的提交约定的提交消息的另一个交互式工具包是 `commitizen`，当你使用它进行提交时系统也将提示你需要填写的所有必需提交字段。
+## 交互式提交
+
+刚开始遵循规范提交信息时，我们对要求可能会比较陌生，不知道存在哪些选项，应该怎样选择，因此提供交互式的提交方式是有必要的。
+
+编写符合提交规范的提交消息的常用交互式工具包是 [commitizen][commitizen]，当你使用它进行提交时系统将提示你需要填写的所有必需提交字段。
 
 ```bash
 yarn add -D commitizen
@@ -73,7 +71,7 @@ yarn add -D cz-conventional-changelog
 
 ## 校验
 
-和 ESLint 一样的是，`commitlint` 自身只提供了检测的功能和一些最基础的规则。使用者需要根据这些规则配置出自己的规范。
+和 ESLint 一样的是，[commitlint][commitlint] 自身只提供了检测的功能和一些最基础的规则。使用者需要根据这些规则配置出自己的规范。
 
 ```bash
 # Install commitlint cli and conventional config
@@ -87,26 +85,49 @@ yarn add -D @commitlint/cli @commitlint/config-conventional
 echo "module.exports = {extends: ['@commitlint/config-conventional']};" > commitlint.config.js
 ```
 
+同时它也提供了 `@commitlint/prompt-cli` 包以便快速快速编写提交消息，并确保它们符合配置中的提交约定。
+
+```bash
+npm i -D @commitlint/prompt-cli
+```
+
+`@commitlint/prompt-cli` 的使用也很简单，安装它并使用它提供的 `commit` 命令进行提交即可。
+
+```json
+{
+  "scripts": {
+    "commit": "commit"
+  }
+}
+```
+
+不过相对而言 `commitizen` 表现更优，支持自定义不同的 Adapter，所以更多时候大家会使用后者。commitlint 官方也基于 cz-conventional-changelog 提供一个名为 @commitlint/cz-commitlint 的 Adapter。
+
 ## Git Hooks
 
 有时候我们可能会忘记校验提交信息，因此可以将其自动化，当我们提交时自动校验，`husky` 可以很好的做到这点。
 
 ```bash
+# 安装包
 yarn add -D husky
+
+# 开启 Git hooks
+npx husky install
+```
+
+为了让其它同学在开发时也能够自动校验，同时在 `package.json` 文件中配置安装后自动启用 Git 挂钩：
+
+```bash
+npm pkg set scripts.prepare "husky install"
 ```
 
 通过 `husky` 我们可以很容易的使用 Git hooks 对我们的提交信息进行校验。
 
-```json
-// package.json
-{
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  }
-}
+```bash
+npx husky add .husky/commit-msg 'npx --no -- commitlint --edit "$1"'
 ```
+
+对于 Windows 用户，如果在运行 `npx husky add ...` 时看到帮助消息，请尝试 `node node_modules/.bin/husky add ...` 代替。
 
 ## CHANGELOG
 
@@ -147,102 +168,33 @@ yarn run release --release-as patch # 1.0.0 -> 1.0.1
 
 另外，你还可以通过配置文件（.versionrc, .versionrc.json 或 .versionrc.js）对其进行配置，配置规范可以参考[conventional-changelog-config-spec][conventional_changelog_config_spec]。
 
-## 拓展
+## 总结
 
-目前，我们已经知道了如何书写友好的提交信息。进一步，可以了解一下如何自定义这些规则。
-
-### 自定义 Adapter
-
-如果你没有找到合适的 Adapter，那么你可以通过 [cz-customizable][cz-customizable] 来自定义交互时的行为。
+以上我们介绍了提交信息的规范，以及怎样才能方便大家进行书写和校验，下面总结了快捷配置的相关命令：
 
 ```bash
-yarn add cz-customizable
+# 支持交互式提交
+yarn add -D commitizen @commitlint/cz-commitlint
+npm pkg set config.commitizen.path "@commitlint/cz-commitlint"
+
+# 支持规范校验
+yarn add -D @commitlint/cli @commitlint/config-conventional
+npm pkg set config.commitlint.extends "@commitlint/config-conventional"
+
+# 配合 Git hooks 自动校验
+yarn add -D husky
+npx husky install
+npm pkg set scripts.prepare "husky install"
+npx husky add .husky/commit-msg 'npx --no -- commitlint --edit "$1"'
+
+# CHANGELOG
+yarn add -D standard-version
+npm pkg set scripts.release "standard-version"
 ```
 
-配置 `commitizen` 使用 `cz-customizable` 插件：
+注意上面的命令需要在 Node.js 16+ 行运行，不过你也可以安装上面的介绍手动进行安装。
 
-```json
-// package.json
-{
-  "config": {
-    "commitizen": {
-      "path": "node_modules/cz-customizable"
-    }
-  }
-}
-```
-
-最后在项目根目录下创建配置文件（.cz-config.js 或 .config/cz-config.js）或在 `package.json` 文件指定配置文件所在：
-
-```json
-{
-  "config": {
-    "cz-customizable": {
-      "config": "config/path/to/my/config.js"
-    }
-  }
-}
-```
-
-然后就是在你的配置文件中进行具体的配置了，具体可参考[官方介绍][cz-customizable-options]。
-
-### 校验自定义的 Adapter
-
-当我们使用 `cz-customizable` 做了违背 Angular 风格的提交说明时，就需要使用 `commitlint-config-cz` 而不是 `@commitlint/config-conventional` 规则对其进行校验。
-
-```bash
-commitlint-config-cz
-```
-
-在 `commitlint` 的配置文件中配置：
-
-```js
-module.exports = {
-  extends: ['cz'],
-}
-```
-
-## 自定义规则
-
-对于默认支持的规则，你可以在配置文件的 `rules` 字段进行配置。
-
-另外，每个插件可以导出一个包含额外规则的 `rules` 对象，其中 key 为规则的名称、值为校验函数。
-
-```js
-module.exports = {
-  rules: {
-    'dollar-sign': function(parsed, when, value) {
-      // rule implementation ...
-    },
-  },
-}
-```
-
-通过本地插件的方式可以很方便的添加额外的规则：
-
-```js
-// commitlint.config.js
-module.exports = {
-  rules: {
-    'hello-world-rule': [2, 'always'],
-  },
-  plugins: [
-    {
-      rules: {
-        'hello-world-rule': ({ subject }) => {
-          const HELLO_WORLD = 'Hello World'
-          return [
-            subject.includes(HELLO_WORLD),
-            `Your subject should contain ${HELLO_WORLD} message`,
-          ]
-        },
-      },
-    },
-  ],
-}
-```
-
-更多信息可以参考[官方介绍][reference-plugins]。
+最后书写规范的提交信息很重要，可以帮助大家进行代码 CR 和定位问题，但是否需要进行强制限制可以结合团队情况进行综合考虑，不过还是建议如此。
 
 ## Ref
 
@@ -253,14 +205,13 @@ module.exports = {
 - [优雅的提交你的 Git Commit Message - 掘金][5afc5242f265da0b7f44bee4]
 
 [conventionalcommits]: https://www.conventionalcommits.org/en/v1.0.0/
+[commitizen]: https://github.com/commitizen/cz-cli
+[commitlint]: https://github.com/conventional-changelog/commitlint
 [ng_contributing]: https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#commit
 [ng_developers]: https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#-git-commit-guidelines
 [git_cz]: https://github.com/streamich/git-cz
 [conventional_changelog_config_spec]: https://github.com/conventional-changelog/conventional-changelog-config-spec/
 [90384398]: https://blog.csdn.net/weixin_40817115/article/details/90384398
-[cz-customizable]: https://github.com/leoforfree/cz-customizable
-[cz-customizable-options]: https://github.com/leoforfree/cz-customizable#options
 [5cc4694a6fb9a03238106eb9]: https://juejin.im/post/5cc4694a6fb9a03238106eb9
 [5afc5242f265da0b7f44bee4]: https://juejin.im/post/5afc5242f265da0b7f44bee4
-[reference-plugins]: https://commitlint.js.org/#/reference-plugins
 [cz-conventional-changelog]: https://github.com/commitizen/cz-conventional-changelog#configuration
