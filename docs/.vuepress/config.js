@@ -9,6 +9,12 @@ module.exports = {
     logo: '/logo.png',
     nav: zhNav,
     sidebar: sidebarNav,
+    lastUpdated: '最近更新',
+    // 编辑链接
+    repo: 'kisstar/notebook',
+    docsDir: 'docs',
+    editLinks: true,
+    editLinkText: '在 GitHub 上编辑此页',
   },
   plugins: ['vuepress-plugin-mermaidjs'],
   nextLinks: false,
