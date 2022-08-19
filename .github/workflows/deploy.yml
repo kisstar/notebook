@@ -30,8 +30,27 @@ jobs:
       - name: Deploy with gh-pages
         run: |
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-          npm run deploy:ci -- -u "github-actions-bot <support+actions@github.com>"
+          gh-pages -d docs/.vuepress/dist -b gh-pages
           git remote remove origin
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           GITHUB_REPOSITORY: notebook
+
+      - name: Set ssh key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{GITEE_TOKEN}}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan "${{GITEE_IP}}" >> ~/.ssh/known_hosts
+        env:
+          GITEE_IP: 212.64.63.190
+          GITEE_TOKEN: ${{ secrets.GITEE_ACCESS_TOKEN }}
+
+      - name: Deploy with gh-pages
+        run: |
+          gh-pages -d docs/.vuepress/dist -b master -r git@gitee.com:dongwanhong/${GITEE_REPOSITORY}.git
+        env:
+          GITEE_REPOSITORY: notebook
+
+      - name: Remove ssh key
+        run: rm -rf ~/.ssh
