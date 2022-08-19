@@ -1,6 +1,6 @@
 # 书写友好的提交信息
 
-在书写提交信息时让其变得人机可读是非常重要的，查找问题可以通过搜索提交信息快速定位相关的提交记录。
+在书写提交信息时，让其变得人机可读是非常重要的。规范的提交信息对代码 CR 和问题定位等都很有帮助，尤其是在团队协作中，显得更为重要。
 
 ## 规范
 
@@ -50,6 +50,7 @@ yarn add -D cz-conventional-changelog
 配置：
 
 ```json
+// package.json
 {
   "config": {
     "commitizen": {
@@ -59,13 +60,13 @@ yarn add -D cz-conventional-changelog
 }
 ```
 
-`commitizen.path` 通过 `require.resolve` 加载，同时支持：
+指定的 `commitizen.path` 将通过 `require.resolve` 加载，同时支持：
 
-- Npm 模块
-- 相对于 `process.cwd()` 包含 `index.js` 文件的目录
-- 相对于 `process.cwd()` 的 `.js` 文件
-- 完整的相对文件名
-- 绝对路径
+- Npm 模块；
+- 相对于 `process.cwd()` 包含 `index.js` 文件的目录；
+- 相对于 `process.cwd()` 的 `.js` 文件；
+- 完整的相对文件名；
+- 绝对路径。
 
 更多配置可点击[查看更多][cz-conventional-changelog]。
 
@@ -155,8 +156,10 @@ yarn add -D standard-version
 # 假设你的项目的当前版本是 1.0.0
 # 使用 --pre-releases 生成 pre-release 标志
 yarn run release --prerelease # 1.0.0 -> 1.0.1-0; one more time: 1.0.1-0 -> 1.0.1-1
+
 # 如果要命名预发行版，可以通过 --prerelease <name> 指定名称
 yarn run release --prerelease alpha # 1.0.0 -> 1.0.1-alpha.0
+
 # 通过 --release-as 选项升级指定位的版本号
 # 你也可以同时 -prerelease 选项一起使用
 yarn run release --release-as major # 1.0.0 -> 2.0.0
@@ -170,7 +173,7 @@ yarn run release --release-as patch # 1.0.0 -> 1.0.1
 
 ## 总结
 
-以上我们介绍了提交信息的规范，以及怎样才能方便大家进行书写和校验，下面总结了快捷配置的相关命令：
+以上我们介绍了提交信息的规范，以及怎样才能方便大家进行书写和校验，下面总结了基础配置的命令清单：
 
 ```bash
 # 支持交互式提交
@@ -192,7 +195,7 @@ yarn add -D standard-version
 npm pkg set scripts.release "standard-version"
 ```
 
-注意上面的命令需要在 Node.js 16+ 行运行，不过你也可以安装上面的介绍手动进行安装。
+注意上面的命令需要在 Node.js 16+ 行运行，不过你也可以根据上面的介绍手动进行安装。
 
 最后书写规范的提交信息很重要，可以帮助大家进行代码 CR 和定位问题，但是否需要进行强制限制可以结合团队情况进行综合考虑，不过还是建议如此。
 
