@@ -202,6 +202,11 @@ module.exports = {
       children: ['', 'basis/nvm-use', 'basis/child-process', 'basis/cluster', 'basis/pm2'],
     },
     {
+      title: '进阶',
+      sidebarDepth: 2,
+      children: ['advanced/module'],
+    },
+    {
       title: 'Npm',
       sidebarDepth: 2,
       children: [
