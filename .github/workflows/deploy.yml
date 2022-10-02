@@ -27,10 +27,10 @@ jobs:
       - name: Builds the app for production
         run: yarn run build
 
-      - name: Deploy with gh-pages
+      - name: Deploy to GitHub using gh-pages
         run: |
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-          gh-pages -d docs/.vuepress/dist -b gh-pages
+          npx gh-pages -d docs/.vuepress/dist -b gh-pages
           git remote remove origin
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
@@ -46,9 +46,9 @@ jobs:
           GITEE_IP: 212.64.63.190
           GITEE_TOKEN: ${{ secrets.GITEE_ACCESS_TOKEN }}
 
-      - name: Deploy with gh-pages
+      - name: Deploy to Gitee using gh-pages
         run: |
-          gh-pages -d docs/.vuepress/dist -b master -r git@gitee.com:dongwanhong/${GITEE_REPOSITORY}.git
+          npx gh-pages -d docs/.vuepress/dist -b master -r git@gitee.com:dongwanhong/${GITEE_REPOSITORY}.git
         env:
           GITEE_REPOSITORY: notebook
 
