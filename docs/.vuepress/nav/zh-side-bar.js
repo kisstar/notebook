@@ -204,7 +204,7 @@ module.exports = {
     {
       title: '进阶',
       sidebarDepth: 2,
-      children: ['advanced/module'],
+      children: ['advanced/module', 'advanced/call-c'],
     },
     {
       title: 'Npm',
