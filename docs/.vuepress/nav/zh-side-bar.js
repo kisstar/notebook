@@ -359,7 +359,7 @@ module.exports = {
     {
       title: '基础',
       sidebarDepth: 2,
-      children: ['', 'basis/install', 'basis/start-up'],
+      children: ['', 'basis/install', 'basis/start-up', 'basis/project'],
     },
   ],
   '/chrome/': [
