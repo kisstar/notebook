@@ -27,6 +27,14 @@ jobs:
       - name: Builds the app for production
         run: yarn run build
 
+      - name: Set git user information
+        run: |
+          git config user.name $USER_NAME
+          git config user.email $USER_EMAIL
+        env:
+          USER_NAME: kisstar
+          USER_EMAIL: dwh.chn@foxmail.com
+
       - name: Deploy to GitHub using gh-pages
         run: |
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
