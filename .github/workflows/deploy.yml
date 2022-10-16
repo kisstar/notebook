@@ -46,17 +46,18 @@ jobs:
 
       - name: Set ssh key
         run: |
-          mkdir -p ~/.ssh
+          mkdir -p ~/.ssh/
           echo "$GITEE_TOKEN" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan "$GITEE_IP" >> ~/.ssh/known_hosts
+          ssh-keyscan gitee.com >> ~/.ssh/known_hosts
         env:
-          GITEE_IP: 212.64.63.190
           GITEE_TOKEN: ${{ secrets.GITEE_ACCESS_TOKEN }}
 
       - name: Deploy to Gitee using gh-pages
         run: |
-          npx gh-pages -d docs/.vuepress/dist -b master -r git@gitee.com:dongwanhong/${GITEE_REPOSITORY}.git
+          git remote add origin git@gitee.com:dongwanhong/${GITEE_REPOSITORY}.git
+          npx gh-pages -d docs/.vuepress/dist -b master
+          git remote remove origin
         env:
           GITEE_REPOSITORY: notebook
 
