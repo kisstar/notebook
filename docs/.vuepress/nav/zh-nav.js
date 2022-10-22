@@ -43,20 +43,24 @@ module.exports = [
         text: 'BED',
         items: [
           {
-            text: 'Webpack',
-            link: '/webpack/',
-          },
-          {
-            text: 'Electron',
-            link: '/electron/',
-          },
-          {
             text: 'NodeJS',
             link: '/nodejs/',
           },
           {
             text: 'C/C++',
             link: '/c/',
+          },
+          {
+            text: 'Webpack',
+            link: '/webpack/',
+          },
+          {
+            text: 'Vite',
+            link: '/vite/',
+          },
+          {
+            text: 'Electron',
+            link: '/electron/',
           },
         ],
       },
