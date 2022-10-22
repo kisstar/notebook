@@ -3,7 +3,7 @@
 要安装预编译的 Electron 二进制文件，首选方法是在你的应用程序中安装 Electron 作为开发依赖：
 
 ```bash
-npm install electron --save-dev
+yarn add electron --dev
 ```
 
 实际安装时经常会遇到如下错误：

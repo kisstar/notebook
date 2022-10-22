@@ -1,10 +1,5 @@
 module.exports = [
   {
-    title: '基础',
-    sidebarDepth: 2,
-    children: [''],
-  },
-  {
     title: '数组',
     sidebarDepth: 2,
     children: ['arr/', 'arr/136', 'arr/189', 'arr/560'],

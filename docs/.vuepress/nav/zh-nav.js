@@ -72,16 +72,12 @@ module.exports = [
             link: '/video/',
           },
           {
-            text: '项目工程',
-            link: '/project/',
-          },
-          {
             text: '面试',
             link: '/interview/',
           },
           {
-            text: '装机指南',
-            link: '/install-equipment/',
+            text: '项目工程',
+            link: '/project/',
           },
         ],
       },
@@ -135,6 +131,10 @@ module.exports = [
         text: 'Database',
         link: '/database/',
       },
+      {
+        text: '装机指南',
+        link: '/install-equipment/',
+      },
     ],
   },
   {
@@ -158,26 +158,32 @@ module.exports = [
     text: 'Others',
     items: [
       {
-        text: 'Truth',
-        link: '/other/popularization-science/',
-      },
-      {
         text: 'Development',
-        link: '/other/dev/',
+        link: '/dev/',
       },
       {
         text: 'Gitbook',
-        link: '/other/gitbook/',
+        link: '/gitbook/',
+      },
+      {
+        text: 'Truth',
+        link: '/popularization-science/',
       },
       {
         text: 'Collection',
-        link: '/other/collection/',
+        link: '/collection/',
       },
     ],
   },
   {
     text: 'About me',
     items: [
+      {
+        text: 'Blog',
+        link: 'https://kisstar.github.io/',
+        target: '_blank',
+        rel: 'noopener noreferrer',
+      },
       {
         text: 'GitHub',
         link: 'https://github.com/kisstar/notebook/',

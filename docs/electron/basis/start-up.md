@@ -21,7 +21,7 @@ app.whenReady().then(() => {
     width: 800,
     height: 600,
   })
-  win.loadURL('https:// www.baidu.com')
+  win.loadURL('https://www.baidu.com')
 })
 ```
 

@@ -7,7 +7,7 @@ module.exports = {
     {
       title: '基础',
       sidebarDepth: 2,
-      children: ['', 'basis/box-model'],
+      children: ['basis/box-model'],
     },
     {
       title: 'LESS',
@@ -26,7 +26,6 @@ module.exports = {
       title: '基础',
       sidebarDepth: 2,
       children: [
-        '',
         'basis/basic-grammar',
         'basis/ng-class',
         'basis/custom-component',
@@ -45,7 +44,7 @@ module.exports = {
     {
       title: '基础',
       sidebarDepth: 2,
-      children: ['', 'basis/vue-common-qa'],
+      children: ['basis/vue-common-qa'],
     },
     {
       title: '进阶',
@@ -62,21 +61,21 @@ module.exports = {
     {
       title: '基础',
       sidebarDepth: 2,
-      children: ['', 'basis/react-hooks', 'basis/story-react'],
+      children: ['basis/react-hooks', 'basis/story-react'],
     },
   ],
   '/web/': [
     {
       title: '基础',
       sidebarDepth: 2,
-      children: ['', 'basis/performance'],
+      children: ['basis/performance'],
     },
   ],
   '/git/': [
     {
       title: '基础',
       sidebarDepth: 2,
-      children: ['', 'basis/github-work'],
+      children: ['basis/github-work'],
     },
     {
       title: '命令',
@@ -108,7 +107,7 @@ module.exports = {
     {
       title: '基础',
       sidebarDepth: 2,
-      children: ['', 'basis/usage', 'basis/tab-win', 'basis/common', 'basis/config'],
+      children: ['basis/usage', 'basis/tab-win', 'basis/common', 'basis/config'],
     },
     {
       title: '插件',
@@ -121,14 +120,14 @@ module.exports = {
     {
       title: '基础',
       sidebarDepth: 2,
-      children: ['', 'basis/offiaccount'],
+      children: ['basis/offiaccount'],
     },
   ],
   '/windows/': [
     {
       title: '基础',
       sidebarDepth: 2,
-      children: ['', 'basis/key-map', 'basis/bat'],
+      children: ['basis/key-map', 'basis/bat'],
     },
   ],
   '/docker/': [
@@ -136,7 +135,6 @@ module.exports = {
       title: '基础',
       sidebarDepth: 2,
       children: [
-        '',
         'basis/meet-docker',
         'basis/command',
         'basis/image',
@@ -192,14 +190,14 @@ module.exports = {
     {
       title: '基础',
       sidebarDepth: 2,
-      children: ['', 'basis/meet-nginx', 'basis/config'],
+      children: ['basis/meet-nginx', 'basis/config'],
     },
   ],
   '/nodejs/': [
     {
       title: '基础',
       sidebarDepth: 2,
-      children: ['', 'basis/nvm-use', 'basis/child-process', 'basis/cluster', 'basis/pm2'],
+      children: ['basis/nvm-use', 'basis/child-process', 'basis/cluster', 'basis/pm2'],
     },
     {
       title: '进阶',
@@ -230,7 +228,6 @@ module.exports = {
       title: '基础',
       sidebarDepth: 2,
       children: [
-        '',
         'basis/cp-system',
         'basis/process-thread',
         'basis/network',
@@ -243,7 +240,7 @@ module.exports = {
     {
       title: '基础',
       sidebarDepth: 2,
-      children: ['', 'homebrew'],
+      children: ['homebrew'],
     },
   ],
   '/linux/': linuxNav,
@@ -251,7 +248,7 @@ module.exports = {
     {
       title: '基础',
       sidebarDepth: 2,
-      children: ['', 'basis/meet-webpack'],
+      children: ['basis/meet-webpack'],
     },
     {
       title: '进阶',
@@ -263,65 +260,35 @@ module.exports = {
     {
       title: '基础',
       sidebarDepth: 2,
-      children: ['', 'basis/meet-database', 'basis/common-command'],
+      children: ['basis/meet-database', 'basis/common-command'],
     },
   ],
-  '/other/': [
+  '/dev/': [
     {
-      title: 'Truth',
+      title: 'Development',
       sidebarDepth: 2,
-      children: [
-        'popularization-science/',
-        'popularization-science/key',
-        'popularization-science/message',
-      ],
+      children: ['proxy', 'chares'],
     },
-    {
-      title: 'Dev',
-      sidebarDepth: 2,
-      children: ['dev/', 'dev/proxy', 'dev/chares'],
-    },
+  ],
+  '/gitbook/': [
     {
       title: 'GitBook',
       sidebarDepth: 2,
-      children: ['gitbook/', 'gitbook/elementary-guide'],
+      children: ['elementary-guide'],
     },
+  ],
+  '/popularization-science/': [
     {
-      title: 'Collection',
-      sidebarDepth: 3,
-      children: [
-        'collection/',
-        'collection/devtools/chrome',
-        'collection/devtools/git',
-        'collection/devtools/terminal',
-        'collection/devtools/yarn',
-
-        'collection/framework/framework',
-        'collection/framework/vue',
-        'collection/framework/react',
-        'collection/framework/svelte',
-
-        'collection/knowledge/video',
-
-        'collection/language/css',
-        'collection/language/js',
-        'collection/language/nodejs',
-        'collection/language/weixin',
-
-        'collection/system/computer',
-        'collection/system/mac',
-        'collection/system/linux',
-
-        'collection/other/blog',
-        'collection/other/other',
-      ],
+      title: 'Truth',
+      sidebarDepth: 2,
+      children: ['key', 'message'],
     },
   ],
   '/project/': [
     {
       title: '基础',
       sidebarDepth: 2,
-      children: ['', 'basis/commit-lint', 'basis/eslint', 'basis/stylelint'],
+      children: ['basis/commit-lint', 'basis/eslint', 'basis/stylelint'],
     },
     {
       title: '错误',
@@ -333,7 +300,7 @@ module.exports = {
     {
       title: '基础',
       sidebarDepth: 2,
-      children: ['', 'basis/meet-ts', 'basis/enum', 'basis/note'],
+      children: ['basis/meet-ts', 'basis/enum', 'basis/note'],
     },
     {
       title: '进阶',
@@ -345,29 +312,24 @@ module.exports = {
     {
       title: '基础',
       sidebarDepth: 2,
-      children: ['', 'basis/meet-vscode'],
+      children: ['basis/meet-vscode'],
     },
   ],
   '/dev-ops/': [
     {
       title: '基础',
       sidebarDepth: 2,
-      children: ['', 'basis/circle-ci'],
+      children: ['basis/circle-ci'],
     },
   ],
   '/electron/': [
     {
       title: '基础',
       sidebarDepth: 2,
-      children: ['', 'basis/install', 'basis/start-up', 'basis/project'],
+      children: ['basis/install', 'basis/start-up', 'basis/project'],
     },
   ],
   '/chrome/': [
-    {
-      title: '基础',
-      sidebarDepth: 2,
-      children: [''],
-    },
     {
       title: '开发工具',
       sidebarDepth: 2,
@@ -383,7 +345,7 @@ module.exports = {
     {
       title: '基础',
       sidebarDepth: 2,
-      children: ['', 'basis/concept', 'basis/operation-set', 'basis/autoplay'],
+      children: ['basis/concept', 'basis/operation-set', 'basis/autoplay'],
     },
     {
       title: '进阶',
@@ -412,51 +374,39 @@ module.exports = {
     {
       title: '基础',
       sidebarDepth: 2,
-      children: ['', 'basis/'],
+      children: ['basis/'],
     },
   ],
   '/collection/': [
     {
       title: '系统',
       sidebarDepth: 2,
-      children: ['system/', 'system/computer', 'system/linux', 'system/mac'],
+      children: ['system/computer', 'system/linux', 'system/mac'],
     },
     {
       title: '语言',
       sidebarDepth: 2,
-      children: ['language/', 'language/css', 'language/js', 'language/nodejs', 'language/weixin'],
+      children: ['language/css', 'language/js', 'language/nodejs', 'language/weixin'],
     },
     {
       title: '框架',
       sidebarDepth: 2,
-      children: [
-        'framework/',
-        'framework/framework',
-        'framework/react',
-        'framework/vue',
-        'framework/svelte',
-      ],
+      children: ['framework/framework', 'framework/react', 'framework/vue', 'framework/svelte'],
     },
     {
       title: '知识',
       sidebarDepth: 2,
-      children: ['knowledge/', 'knowledge/video'],
+      children: ['knowledge/video'],
     },
     {
       title: '开发工具',
       sidebarDepth: 2,
-      children: [
-        'devtools/',
-        'devtools/chrome',
-        'devtools/git',
-        'devtools/terminal',
-        'devtools/yarn',
-      ],
+      children: ['devtools/chrome', 'devtools/git', 'devtools/terminal', 'devtools/yarn'],
     },
     {
       title: '其它',
       sidebarDepth: 2,
-      children: ['other/', 'other/blog', 'other/other'],
+      children: ['other/blog', 'other/other'],
     },
   ],
   '/': [''],

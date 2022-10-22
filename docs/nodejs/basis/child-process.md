@@ -181,7 +181,7 @@ const child = execFile('node', ['--version'], (error, stdout, _stderr) => {
 })
 ```
 
-类似的 `child_process.exec` 方法是对 `child_process.execFile` 方法，主要用于运行命令，参数直接使用空格分隔。
+类似的 `child_process.exec` 方法是对 `child_process.execFile` 方法的封装，主要用于运行命令，参数直接使用空格分隔。
 
 ```js
 const util = require('util')
