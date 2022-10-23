@@ -243,6 +243,13 @@ module.exports = {
       children: ['homebrew'],
     },
   ],
+  '/vite/': [
+    {
+      title: '基础',
+      sidebarDepth: 2,
+      children: ['basis/quick-start'],
+    },
+  ],
   '/linux/': linuxNav,
   '/webpack/': [
     {
