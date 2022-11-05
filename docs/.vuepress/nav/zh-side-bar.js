@@ -75,7 +75,7 @@ module.exports = {
     {
       title: '基础',
       sidebarDepth: 2,
-      children: ['basis/github-work'],
+      children: ['basis/github-work', 'basis/rebase-vs-merge'],
     },
     {
       title: '命令',
