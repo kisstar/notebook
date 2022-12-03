@@ -233,6 +233,7 @@ module.exports = {
         'basis/network',
         'basis/how-internet-work',
         'basis/binary',
+        'basis/cpu',
       ],
     },
   ],
