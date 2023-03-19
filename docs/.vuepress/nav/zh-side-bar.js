@@ -339,6 +339,11 @@ module.exports = {
   ],
   '/chrome/': [
     {
+      title: '基础',
+      sidebarDepth: 2,
+      children: ['basis/url'],
+    },
+    {
       title: '开发工具',
       sidebarDepth: 2,
       children: ['devtools/snippets'],
