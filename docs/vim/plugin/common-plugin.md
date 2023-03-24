@@ -1,20 +1,34 @@
 # 常用插件
 
-- [vim-airline/vim-airline](https://github.com/vim-airline/vim-airline)
-- [vim-airline-themes](https://github.com/vim-airline/vim-airline-themes)
-- [ctrlpvim/ctrlp.vim](https://github.com/ctrlpvim/ctrlp.vim)
-- [scrooloose/nerdtree](https://github.com/scrooloose/nerdtree)
-- [mattn/emmet-vim](https://github.com/mattn/emmet-vim)
-- [tpope/vim-surround](https://github.com/tpope/vim-surround)
-- [tpope/vim-repeat](https://github.com/tpope/vim-repeat)
-- [terryma/vim-multiple-curstomtom/tcomment_vim](https://github.com/terryma/vim-multiple-curstomtom/tcomment_vim)
-- [MarcWeber/vim-addon-mw-utils](https://github.com/MarcWeber/vim-addon-mw-utils)
-- [tomtom/tlib_vim](https://github.com/tomtom/tlib_vim)
-- [garbas/vim-snipmate](https://github.com/garbas/vim-snipmate)
-- [honza/vim-snippets](https://github.com/honza/vim-snippets)
-- [majutsushi/tagbar](https://github.com/majutsushi/tagbar)
-- [mileszs/ack.vim](https://github.com/mileszs/ack.vim)
-- [airblade/vim-gitgutter](https://github.com/airblade/vim-gitgutter)
+| 通用插件 | 描述 |
+| :-- | :-- |
+| [scrooloose/nerdtree](https://github.com/scrooloose/nerdtree) | 文件系统资源管理器 |
+| [ctrlpvim/ctrlp.vim](https://github.com/ctrlpvim/ctrlp.vim) | 支持完整路径的模糊匹配 |
+| [majutsushi/tagbar](https://github.com/majutsushi/tagbar) | 大纲式导航 |
+| [mileszs/ack.vim](https://github.com/mileszs/ack.vim) | 在项目里全局搜索某个单词 |
+| [airblade/vim-gitgutter](https://github.com/airblade/vim-gitgutter) | 显示 Git 变化 |
+| [tpope/vim-surround](https://github.com/tpope/vim-surround) | 提供强大的成对符号更改功能 |
+| [terryma/vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors) | 多游标操作 |
+| [vim-airline/vim-airline](https://github.com/vim-airline/vim-airline) | 提供更友好的状态栏 |
+
+| 提效插件                                                | 描述                     |
+| :------------------------------------------------------ | :----------------------- |
+| [tpope/vim-repeat](https://github.com/tpope/vim-repeat) | 扩展用点执行重复操作     |
+| [mattn/emmet-vim](https://github.com/mattn/emmet-vim)   | 快速书写 HTML 语法的工具 |
+
+<!-- 使用自动补全可安装以下依赖，包括插件本身和所依赖的插件 -->
+<!-- 如果需要自定义，则可以在 ~/.vim/snippets/ 目录下添加 *.snippets 文件 -->
+
+| 代码片段插件                                                                    | 描述 |
+| :------------------------------------------------------------------------------ | :--- |
+| [MarcWeber/vim-addon-mw-utils](https://github.com/MarcWeber/vim-addon-mw-utils) |      |
+| [tomtom/tlib_vim](https://github.com/tomtom/tlib_vim)                           |      |
+| [garbas/vim-snipmate](https://github.com/garbas/vim-snipmate)                   |      |
+| [honza/vim-snippets](https://github.com/honza/vim-snippets)                     |      |
+
+| UI 插件                                                                 | 描述                 |
+| :---------------------------------------------------------------------- | :------------------- |
+| [vim-airline-themes](https://github.com/vim-airline/vim-airline-themes) | vim-airline 的主题集 |
 
 ## vim-plug
 
@@ -79,6 +93,14 @@ let g:airline#extensions#tabline#enabled = 1
 # .vimrc
 set noshowmode
 ```
+
+如果你在使用 Tmux 的话，你还需要通过 TERM 环境变量来告诉其正确检测 256 种颜色：
+
+```bash
+export TERM=screen-256color
+```
+
+更多可查看回答 <https://stackoverflow.com/a/35086011>
 
 ## nerdtree
 
