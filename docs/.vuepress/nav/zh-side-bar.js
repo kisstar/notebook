@@ -112,7 +112,15 @@ module.exports = {
     {
       title: '插件',
       sidebarDepth: 2,
-      children: ['plugin/common-plugin', 'plugin/nerdtree'],
+      children: [
+        'plugin/common-plugin',
+        'plugin/nerdtree',
+        'plugin/ctrlp',
+        'plugin/surround',
+        'plugin/multiple-cursors',
+        'plugin/repeat',
+        'plugin/airline',
+      ],
     },
   ],
   '/algorithm/': algorithmNav,
