@@ -120,6 +120,7 @@ module.exports = {
         'plugin/multiple-cursors',
         'plugin/repeat',
         'plugin/airline',
+        'plugin/coc',
       ],
     },
   ],
