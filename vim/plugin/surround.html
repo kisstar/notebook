@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>vim-surround 成对符号操作 | notes | Kisstar</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="Kisstar&#39;s personal notes">
+    
+    <link rel="preload" href="/notebook/assets/css/0.styles.b6acd6de.css" as="style"><link rel="preload" href="/notebook/assets/js/app.6e0bf268.js" as="script"><link rel="preload" href="/notebook/assets/js/1.e436bc7d.js" as="script"><link rel="preload" href="/notebook/assets/js/277.a8ea1435.js" as="script"><link rel="prefetch" href="/notebook/assets/js/10.83b5e11d.js"><link rel="prefetch" href="/notebook/assets/js/100.aeedc0ca.js"><link rel="prefetch" href="/notebook/assets/js/101.c12cec8f.js"><link rel="prefetch" href="/notebook/assets/js/102.c9cc115a.js"><link rel="prefetch" href="/notebook/assets/js/103.4b6990aa.js"><link rel="prefetch" href="/notebook/assets/js/104.dcd21726.js"><link rel="prefetch" href="/notebook/assets/js/105.53183c38.js"><link rel="prefetch" href="/notebook/assets/js/106.b6350b5b.js"><link rel="prefetch" href="/notebook/assets/js/107.a5bb56e5.js"><link rel="prefetch" href="/notebook/assets/js/108.6b642a43.js"><link rel="prefetch" href="/notebook/assets/js/109.69cf46d7.js"><link rel="prefetch" href="/notebook/assets/js/11.2139d75d.js"><link rel="prefetch" href="/notebook/assets/js/110.de5f3036.js"><link rel="prefetch" href="/notebook/assets/js/111.44e65420.js"><link rel="prefetch" href="/notebook/assets/js/112.6be02111.js"><link rel="prefetch" href="/notebook/assets/js/113.049f12c8.js"><link rel="prefetch" href="/notebook/assets/js/114.57dd9933.js"><link rel="prefetch" href="/notebook/assets/js/115.123845e5.js"><link rel="prefetch" href="/notebook/assets/js/116.535a0c03.js"><link rel="prefetch" href="/notebook/assets/js/117.02e66b72.js"><link rel="prefetch" href="/notebook/assets/js/118.d16bd1cc.js"><link rel="prefetch" href="/notebook/assets/js/119.23a51075.js"><link rel="prefetch" href="/notebook/assets/js/12.69cfcb98.js"><link rel="prefetch" href="/notebook/assets/js/120.6388c5c8.js"><link rel="prefetch" href="/notebook/assets/js/121.4c69b3c5.js"><link rel="prefetch" href="/notebook/assets/js/122.3ea1ed31.js"><link rel="prefetch" href="/notebook/assets/js/123.004861cb.js"><link rel="prefetch" href="/notebook/assets/js/124.60c1b4d4.js"><link rel="prefetch" href="/notebook/assets/js/125.c6da09a2.js"><link rel="prefetch" href="/notebook/assets/js/126.8608d19a.js"><link rel="prefetch" href="/notebook/assets/js/127.25db8511.js"><link rel="prefetch" href="/notebook/assets/js/128.9c346f8d.js"><link rel="prefetch" href="/notebook/assets/js/129.2f4dafba.js"><link rel="prefetch" href="/notebook/assets/js/13.8443d333.js"><link rel="prefetch" href="/notebook/assets/js/130.454b919d.js"><link rel="prefetch" href="/notebook/assets/js/131.f9450723.js"><link rel="prefetch" href="/notebook/assets/js/132.defc533a.js"><link rel="prefetch" href="/notebook/assets/js/133.35998ce0.js"><link rel="prefetch" href="/notebook/assets/js/134.e32ed909.js"><link rel="prefetch" href="/notebook/assets/js/135.d6cff853.js"><link rel="prefetch" href="/notebook/assets/js/136.5d9be1f1.js"><link rel="prefetch" href="/notebook/assets/js/137.cf9b4ef6.js"><link rel="prefetch" href="/notebook/assets/js/138.2712a5f4.js"><link rel="prefetch" href="/notebook/assets/js/139.475fd23b.js"><link rel="prefetch" href="/notebook/assets/js/14.c02e95f2.js"><link rel="prefetch" href="/notebook/assets/js/140.6e6e4692.js"><link rel="prefetch" href="/notebook/assets/js/141.03861831.js"><link rel="prefetch" href="/notebook/assets/js/142.0fc1accc.js"><link rel="prefetch" href="/notebook/assets/js/143.f737b610.js"><link rel="prefetch" href="/notebook/assets/js/144.0b3ffe2f.js"><link rel="prefetch" href="/notebook/assets/js/145.01c7b27e.js"><link rel="prefetch" href="/notebook/assets/js/146.f96f7f2e.js"><link rel="prefetch" href="/notebook/assets/js/147.5b88bda7.js"><link rel="prefetch" href="/notebook/assets/js/148.ee88eb7c.js"><link rel="prefetch" href="/notebook/assets/js/149.07d4db68.js"><link rel="prefetch" href="/notebook/assets/js/15.6df6e68a.js"><link rel="prefetch" href="/notebook/assets/js/150.a1e7b9e5.js"><link rel="prefetch" href="/notebook/assets/js/151.e1063411.js"><link rel="prefetch" href="/notebook/assets/js/152.508a01ea.js"><link rel="prefetch" href="/notebook/assets/js/153.990da004.js"><link rel="prefetch" href="/notebook/assets/js/154.3e8024f6.js"><link rel="prefetch" href="/notebook/assets/js/155.dc2d3716.js"><link rel="prefetch" href="/notebook/assets/js/156.9ca91a56.js"><link rel="prefetch" href="/notebook/assets/js/157.d2596b7e.js"><link rel="prefetch" href="/notebook/assets/js/158.9e345f83.js"><link rel="prefetch" href="/notebook/assets/js/159.154f819a.js"><link rel="prefetch" href="/notebook/assets/js/16.e093ea32.js"><link rel="prefetch" href="/notebook/assets/js/160.641d9706.js"><link rel="prefetch" href="/notebook/assets/js/161.33e72ebe.js"><link rel="prefetch" href="/notebook/assets/js/162.bc8851a1.js"><link rel="prefetch" href="/notebook/assets/js/163.91d636d1.js"><link rel="prefetch" href="/notebook/assets/js/164.fe7e8c13.js"><link rel="prefetch" href="/notebook/assets/js/165.b599f10d.js"><link rel="prefetch" href="/notebook/assets/js/166.e4e443d3.js"><link rel="prefetch" href="/notebook/assets/js/167.ea926892.js"><link rel="prefetch" href="/notebook/assets/js/168.dba03735.js"><link rel="prefetch" href="/notebook/assets/js/169.1e0f93c7.js"><link rel="prefetch" href="/notebook/assets/js/17.e97a61e4.js"><link rel="prefetch" href="/notebook/assets/js/170.8894ebd1.js"><link rel="prefetch" href="/notebook/assets/js/171.eb397fb9.js"><link rel="prefetch" href="/notebook/assets/js/172.4b9d342a.js"><link rel="prefetch" href="/notebook/assets/js/173.f8848160.js"><link rel="prefetch" href="/notebook/assets/js/174.ee4eeb2f.js"><link rel="prefetch" href="/notebook/assets/js/175.69ae48c4.js"><link rel="prefetch" href="/notebook/assets/js/176.d469419d.js"><link rel="prefetch" href="/notebook/assets/js/177.d9eea55b.js"><link rel="prefetch" href="/notebook/assets/js/178.08c78567.js"><link rel="prefetch" href="/notebook/assets/js/179.74f7d31c.js"><link rel="prefetch" href="/notebook/assets/js/18.4043d600.js"><link rel="prefetch" href="/notebook/assets/js/180.83b409c4.js"><link rel="prefetch" href="/notebook/assets/js/181.6f419807.js"><link rel="prefetch" href="/notebook/assets/js/182.31834c74.js"><link rel="prefetch" href="/notebook/assets/js/183.448ce978.js"><link rel="prefetch" href="/notebook/assets/js/184.9003516d.js"><link rel="prefetch" href="/notebook/assets/js/185.c8a28bcc.js"><link rel="prefetch" href="/notebook/assets/js/186.d4a3e6ae.js"><link rel="prefetch" href="/notebook/assets/js/187.ea07b614.js"><link rel="prefetch" href="/notebook/assets/js/188.b8b32045.js"><link rel="prefetch" href="/notebook/assets/js/189.2a6f805e.js"><link rel="prefetch" href="/notebook/assets/js/19.a6e2fbcd.js"><link rel="prefetch" href="/notebook/assets/js/190.c998a6b5.js"><link rel="prefetch" href="/notebook/assets/js/191.67c45592.js"><link rel="prefetch" href="/notebook/assets/js/192.6a20505b.js"><link rel="prefetch" href="/notebook/assets/js/193.25996fa6.js"><link rel="prefetch" href="/notebook/assets/js/194.18bb18e2.js"><link rel="prefetch" href="/notebook/assets/js/195.91fe6f7b.js"><link rel="prefetch" href="/notebook/assets/js/196.89a63649.js"><link rel="prefetch" href="/notebook/assets/js/197.a416486c.js"><link rel="prefetch" href="/notebook/assets/js/198.add1be64.js"><link rel="prefetch" href="/notebook/assets/js/199.c53ad114.js"><link rel="prefetch" href="/notebook/assets/js/20.7ffeff28.js"><link rel="prefetch" href="/notebook/assets/js/200.2080b215.js"><link rel="prefetch" href="/notebook/assets/js/201.c2c9ef03.js"><link rel="prefetch" href="/notebook/assets/js/202.945bae1d.js"><link rel="prefetch" href="/notebook/assets/js/203.44d94300.js"><link rel="prefetch" href="/notebook/assets/js/204.6a95c802.js"><link rel="prefetch" href="/notebook/assets/js/205.b6f7d124.js"><link rel="prefetch" href="/notebook/assets/js/206.7f9fe043.js"><link rel="prefetch" href="/notebook/assets/js/207.f042abcc.js"><link rel="prefetch" href="/notebook/assets/js/208.18200b03.js"><link rel="prefetch" href="/notebook/assets/js/209.e7351427.js"><link rel="prefetch" href="/notebook/assets/js/21.c2a7c896.js"><link rel="prefetch" href="/notebook/assets/js/210.ff9cf018.js"><link rel="prefetch" href="/notebook/assets/js/211.e7400ae6.js"><link rel="prefetch" href="/notebook/assets/js/212.d2f085fe.js"><link rel="prefetch" href="/notebook/assets/js/213.16201e66.js"><link rel="prefetch" href="/notebook/assets/js/214.b583d422.js"><link rel="prefetch" href="/notebook/assets/js/215.dc23703a.js"><link rel="prefetch" href="/notebook/assets/js/216.b4048aac.js"><link rel="prefetch" href="/notebook/assets/js/217.bf92db37.js"><link rel="prefetch" href="/notebook/assets/js/218.647249b2.js"><link rel="prefetch" href="/notebook/assets/js/219.7231b516.js"><link rel="prefetch" href="/notebook/assets/js/22.2f61d550.js"><link rel="prefetch" href="/notebook/assets/js/220.24ab60fe.js"><link rel="prefetch" href="/notebook/assets/js/221.bde7940a.js"><link rel="prefetch" href="/notebook/assets/js/222.1c9e5489.js"><link rel="prefetch" href="/notebook/assets/js/223.f3564d88.js"><link rel="prefetch" href="/notebook/assets/js/224.07c2e99e.js"><link rel="prefetch" href="/notebook/assets/js/225.fc1fb5dc.js"><link rel="prefetch" href="/notebook/assets/js/226.919ba1a0.js"><link rel="prefetch" href="/notebook/assets/js/227.7b01d40d.js"><link rel="prefetch" href="/notebook/assets/js/228.3509f5f6.js"><link rel="prefetch" href="/notebook/assets/js/229.0c9437a8.js"><link rel="prefetch" href="/notebook/assets/js/23.cc1e79e6.js"><link rel="prefetch" href="/notebook/assets/js/230.479c6cf9.js"><link rel="prefetch" href="/notebook/assets/js/231.ff4c0c7e.js"><link rel="prefetch" href="/notebook/assets/js/232.72ddeca3.js"><link rel="prefetch" href="/notebook/assets/js/233.065a25f4.js"><link rel="prefetch" href="/notebook/assets/js/234.9966938b.js"><link rel="prefetch" href="/notebook/assets/js/235.07e40b30.js"><link rel="prefetch" href="/notebook/assets/js/236.4ddc112e.js"><link rel="prefetch" href="/notebook/assets/js/237.0a29b656.js"><link rel="prefetch" href="/notebook/assets/js/238.68c4365e.js"><link rel="prefetch" href="/notebook/assets/js/239.cb5eb5a8.js"><link rel="prefetch" href="/notebook/assets/js/24.d2a1317d.js"><link rel="prefetch" href="/notebook/assets/js/240.9c62574e.js"><link rel="prefetch" href="/notebook/assets/js/241.3c765fbd.js"><link rel="prefetch" href="/notebook/assets/js/242.a3c474ea.js"><link rel="prefetch" href="/notebook/assets/js/243.d42b5c1d.js"><link rel="prefetch" href="/notebook/assets/js/244.9cf501bb.js"><link rel="prefetch" href="/notebook/assets/js/245.d324fc6d.js"><link rel="prefetch" href="/notebook/assets/js/246.1095e41f.js"><link rel="prefetch" href="/notebook/assets/js/247.fb01268d.js"><link rel="prefetch" href="/notebook/assets/js/248.d875a4ff.js"><link rel="prefetch" href="/notebook/assets/js/249.bec9139e.js"><link rel="prefetch" href="/notebook/assets/js/25.477ba6d3.js"><link rel="prefetch" href="/notebook/assets/js/250.3effa478.js"><link rel="prefetch" href="/notebook/assets/js/251.44b2e27e.js"><link rel="prefetch" href="/notebook/assets/js/252.589a9bad.js"><link rel="prefetch" href="/notebook/assets/js/253.1d38df60.js"><link rel="prefetch" href="/notebook/assets/js/254.ea01d5f6.js"><link rel="prefetch" href="/notebook/assets/js/255.fe811ebe.js"><link rel="prefetch" href="/notebook/assets/js/256.d67c4963.js"><link rel="prefetch" href="/notebook/assets/js/257.4c7ebb8b.js"><link rel="prefetch" href="/notebook/assets/js/258.838b2888.js"><link rel="prefetch" href="/notebook/assets/js/259.00e6c96b.js"><link rel="prefetch" href="/notebook/assets/js/26.9a3e7c53.js"><link rel="prefetch" href="/notebook/assets/js/260.8f3b1b9e.js"><link rel="prefetch" href="/notebook/assets/js/261.3e496e5d.js"><link rel="prefetch" href="/notebook/assets/js/262.ccbd88e1.js"><link rel="prefetch" href="/notebook/assets/js/263.1ca2c746.js"><link rel="prefetch" href="/notebook/assets/js/264.3900b57d.js"><link rel="prefetch" href="/notebook/assets/js/265.7244108e.js"><link rel="prefetch" href="/notebook/assets/js/266.4a1d405e.js"><link rel="prefetch" href="/notebook/assets/js/267.0badad23.js"><link rel="prefetch" href="/notebook/assets/js/268.a2a39855.js"><link rel="prefetch" href="/notebook/assets/js/269.e9f4fbdf.js"><link rel="prefetch" href="/notebook/assets/js/27.d6e4f4b7.js"><link rel="prefetch" href="/notebook/assets/js/270.0eaf23db.js"><link rel="prefetch" href="/notebook/assets/js/271.f0857e47.js"><link rel="prefetch" href="/notebook/assets/js/272.3a0871b1.js"><link rel="prefetch" href="/notebook/assets/js/273.0132c7a4.js"><link rel="prefetch" href="/notebook/assets/js/274.b4390bff.js"><link rel="prefetch" href="/notebook/assets/js/275.b1f8690e.js"><link rel="prefetch" href="/notebook/assets/js/276.aec13cc6.js"><link rel="prefetch" href="/notebook/assets/js/278.4285c500.js"><link rel="prefetch" href="/notebook/assets/js/279.e2fa0a0e.js"><link rel="prefetch" href="/notebook/assets/js/28.f0d01aa1.js"><link rel="prefetch" href="/notebook/assets/js/280.95381977.js"><link rel="prefetch" href="/notebook/assets/js/281.060967f3.js"><link rel="prefetch" href="/notebook/assets/js/282.2a6fab31.js"><link rel="prefetch" href="/notebook/assets/js/283.75a99e33.js"><link rel="prefetch" href="/notebook/assets/js/284.235ffc0f.js"><link rel="prefetch" href="/notebook/assets/js/285.ba5545a6.js"><link rel="prefetch" href="/notebook/assets/js/286.55fb2c43.js"><link rel="prefetch" href="/notebook/assets/js/287.1b7f8687.js"><link rel="prefetch" href="/notebook/assets/js/288.14d72887.js"><link rel="prefetch" href="/notebook/assets/js/289.a22a78fc.js"><link rel="prefetch" href="/notebook/assets/js/29.7fdcf9a8.js"><link rel="prefetch" href="/notebook/assets/js/290.bdde2cac.js"><link rel="prefetch" href="/notebook/assets/js/291.77588c4b.js"><link rel="prefetch" href="/notebook/assets/js/292.4713bb6e.js"><link rel="prefetch" href="/notebook/assets/js/293.03b7733d.js"><link rel="prefetch" href="/notebook/assets/js/294.0dd1daa9.js"><link rel="prefetch" href="/notebook/assets/js/295.c44cf63d.js"><link rel="prefetch" href="/notebook/assets/js/296.8156dfae.js"><link rel="prefetch" href="/notebook/assets/js/297.7d3df54e.js"><link rel="prefetch" href="/notebook/assets/js/3.3f6cb498.js"><link rel="prefetch" href="/notebook/assets/js/30.81c32900.js"><link rel="prefetch" href="/notebook/assets/js/31.16e37042.js"><link rel="prefetch" href="/notebook/assets/js/32.70298a82.js"><link rel="prefetch" href="/notebook/assets/js/33.9cf20894.js"><link rel="prefetch" href="/notebook/assets/js/34.2c620b7c.js"><link rel="prefetch" href="/notebook/assets/js/35.dc80fa3b.js"><link rel="prefetch" href="/notebook/assets/js/36.ab3a3389.js"><link rel="prefetch" href="/notebook/assets/js/37.1209c622.js"><link rel="prefetch" href="/notebook/assets/js/38.f6d00013.js"><link rel="prefetch" href="/notebook/assets/js/39.3eef4985.js"><link rel="prefetch" href="/notebook/assets/js/4.c3794860.js"><link rel="prefetch" href="/notebook/assets/js/40.9d185028.js"><link rel="prefetch" href="/notebook/assets/js/41.4c1a5aed.js"><link rel="prefetch" href="/notebook/assets/js/42.1f9fad6f.js"><link rel="prefetch" href="/notebook/assets/js/43.ef471c38.js"><link rel="prefetch" href="/notebook/assets/js/44.eb334f36.js"><link rel="prefetch" href="/notebook/assets/js/45.802776ce.js"><link rel="prefetch" href="/notebook/assets/js/46.3d0be375.js"><link rel="prefetch" href="/notebook/assets/js/47.edc10d99.js"><link rel="prefetch" href="/notebook/assets/js/48.6bd7e103.js"><link rel="prefetch" href="/notebook/assets/js/49.1400d2b4.js"><link rel="prefetch" href="/notebook/assets/js/5.0e816b67.js"><link rel="prefetch" href="/notebook/assets/js/50.68dd496c.js"><link rel="prefetch" href="/notebook/assets/js/51.6c14f53f.js"><link rel="prefetch" href="/notebook/assets/js/52.4e898a9c.js"><link rel="prefetch" href="/notebook/assets/js/53.ed796011.js"><link rel="prefetch" href="/notebook/assets/js/54.8aafa757.js"><link rel="prefetch" href="/notebook/assets/js/55.2238eec4.js"><link rel="prefetch" href="/notebook/assets/js/56.8f5f9a7b.js"><link rel="prefetch" href="/notebook/assets/js/57.669f2f58.js"><link rel="prefetch" href="/notebook/assets/js/58.a6a6ed92.js"><link rel="prefetch" href="/notebook/assets/js/59.d3b9281a.js"><link rel="prefetch" href="/notebook/assets/js/6.2359cfcf.js"><link rel="prefetch" href="/notebook/assets/js/60.8a98a8b2.js"><link rel="prefetch" href="/notebook/assets/js/61.667bc9fa.js"><link rel="prefetch" href="/notebook/assets/js/62.5dc308f0.js"><link rel="prefetch" href="/notebook/assets/js/63.4641f18b.js"><link rel="prefetch" href="/notebook/assets/js/64.dafcae50.js"><link rel="prefetch" href="/notebook/assets/js/65.fa8bd063.js"><link rel="prefetch" href="/notebook/assets/js/66.ef28f0c7.js"><link rel="prefetch" href="/notebook/assets/js/67.77941444.js"><link rel="prefetch" href="/notebook/assets/js/68.ce694f69.js"><link rel="prefetch" href="/notebook/assets/js/69.7e8095bd.js"><link rel="prefetch" href="/notebook/assets/js/7.a655d03a.js"><link rel="prefetch" href="/notebook/assets/js/70.5b09ee8c.js"><link rel="prefetch" href="/notebook/assets/js/71.f36461ad.js"><link rel="prefetch" href="/notebook/assets/js/72.29ee0fae.js"><link rel="prefetch" href="/notebook/assets/js/73.2dc724f8.js"><link rel="prefetch" href="/notebook/assets/js/74.0140f810.js"><link rel="prefetch" href="/notebook/assets/js/75.2751ff4e.js"><link rel="prefetch" href="/notebook/assets/js/76.d546588e.js"><link rel="prefetch" href="/notebook/assets/js/77.5ea40f0c.js"><link rel="prefetch" href="/notebook/assets/js/78.976ae2cf.js"><link rel="prefetch" href="/notebook/assets/js/79.139daf4d.js"><link rel="prefetch" href="/notebook/assets/js/8.c8091f3b.js"><link rel="prefetch" href="/notebook/assets/js/80.2dcd179f.js"><link rel="prefetch" href="/notebook/assets/js/81.89389c66.js"><link rel="prefetch" href="/notebook/assets/js/82.0c9e728c.js"><link rel="prefetch" href="/notebook/assets/js/83.e6fcfa78.js"><link rel="prefetch" href="/notebook/assets/js/84.dc5306b2.js"><link rel="prefetch" href="/notebook/assets/js/85.9db29462.js"><link rel="prefetch" href="/notebook/assets/js/86.ddb69b5b.js"><link rel="prefetch" href="/notebook/assets/js/87.cd17c802.js"><link rel="prefetch" href="/notebook/assets/js/88.69cbc890.js"><link rel="prefetch" href="/notebook/assets/js/89.2d6edf73.js"><link rel="prefetch" href="/notebook/assets/js/9.b98ca110.js"><link rel="prefetch" href="/notebook/assets/js/90.f4c85d13.js"><link rel="prefetch" href="/notebook/assets/js/91.d1377a76.js"><link rel="prefetch" href="/notebook/assets/js/92.64602177.js"><link rel="prefetch" href="/notebook/assets/js/93.375eea3d.js"><link rel="prefetch" href="/notebook/assets/js/94.b87fb82c.js"><link rel="prefetch" href="/notebook/assets/js/95.ba92ae23.js"><link rel="prefetch" href="/notebook/assets/js/96.acca2100.js"><link rel="prefetch" href="/notebook/assets/js/97.ff77bc09.js"><link rel="prefetch" href="/notebook/assets/js/98.04f276bd.js"><link rel="prefetch" href="/notebook/assets/js/99.37995cc5.js">
+    <link rel="stylesheet" href="/notebook/assets/css/0.styles.b6acd6de.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/notebook/" class="home-link router-link-active"><img src="/notebook/logo.png" alt="notes | Kisstar" class="logo"> <span class="site-name can-hide">notes | Kisstar</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="IT" class="dropdown-title"><span class="title">IT</span> <span class="arrow down"></span></button> <button type="button" aria-label="IT" class="mobile-dropdown-title"><span class="title">IT</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          FED
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/html/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-subitem"><a href="/notebook/css/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-subitem"><a href="/notebook/js/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-subitem"><a href="/notebook/ts/" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-subitem"><a href="/notebook/ng/" class="nav-link">
+  AngularJS
+</a></li><li class="dropdown-subitem"><a href="/notebook/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-subitem"><a href="/notebook/react/" class="nav-link">
+  React
+</a></li><li class="dropdown-subitem"><a href="/notebook/web/" class="nav-link">
+  WEB
+</a></li></ul></li><li class="dropdown-item"><h4>
+          BED
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/nodejs/" class="nav-link">
+  NodeJS
+</a></li><li class="dropdown-subitem"><a href="/notebook/c/" class="nav-link">
+  C/C++
+</a></li><li class="dropdown-subitem"><a href="/notebook/webpack/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-subitem"><a href="/notebook/vite/" class="nav-link">
+  Vite
+</a></li><li class="dropdown-subitem"><a href="/notebook/electron/" class="nav-link">
+  Electron
+</a></li></ul></li><li class="dropdown-item"><h4>
+          OTHER
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/wechat/" class="nav-link">
+  WeChat
+</a></li><li class="dropdown-subitem"><a href="/notebook/video/" class="nav-link">
+  视频
+</a></li><li class="dropdown-subitem"><a href="/notebook/interview/" class="nav-link">
+  面试
+</a></li><li class="dropdown-subitem"><a href="/notebook/project/" class="nav-link">
+  项目工程
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="DevTools" class="dropdown-title"><span class="title">DevTools</span> <span class="arrow down"></span></button> <button type="button" aria-label="DevTools" class="mobile-dropdown-title"><span class="title">DevTools</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/vim/" class="nav-link router-link-active">
+  Vim
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/chrome/" class="nav-link">
+  Chrome
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Computer" class="dropdown-title"><span class="title">Computer</span> <span class="arrow down"></span></button> <button type="button" aria-label="Computer" class="mobile-dropdown-title"><span class="title">Computer</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/cp/" class="nav-link">
+  Computer Basis
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/algorithm/" class="nav-link">
+  Algorithm
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/mac/" class="nav-link">
+  Mac
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/windows/" class="nav-link">
+  Windows
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/database/" class="nav-link">
+  Database
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/install-equipment/" class="nav-link">
+  装机指南
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Cloud" class="dropdown-title"><span class="title">Cloud</span> <span class="arrow down"></span></button> <button type="button" aria-label="Cloud" class="mobile-dropdown-title"><span class="title">Cloud</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/docker/" class="nav-link">
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/dev-ops/" class="nav-link">
+  DevOps
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Others" class="dropdown-title"><span class="title">Others</span> <span class="arrow down"></span></button> <button type="button" aria-label="Others" class="mobile-dropdown-title"><span class="title">Others</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/dev/" class="nav-link">
+  Development
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/gitbook/" class="nav-link">
+  Gitbook
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/popularization-science/" class="nav-link">
+  Truth
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/collection/" class="nav-link">
+  Collection
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/en/" class="nav-link">
+  English
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="About me" class="dropdown-title"><span class="title">About me</span> <span class="arrow down"></span></button> <button type="button" aria-label="About me" class="mobile-dropdown-title"><span class="title">About me</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://kisstar.github.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Blog
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://github.com/kisstar/notebook/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <a href="https://github.com/kisstar/notebook" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="IT" class="dropdown-title"><span class="title">IT</span> <span class="arrow down"></span></button> <button type="button" aria-label="IT" class="mobile-dropdown-title"><span class="title">IT</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          FED
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/html/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-subitem"><a href="/notebook/css/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-subitem"><a href="/notebook/js/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-subitem"><a href="/notebook/ts/" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-subitem"><a href="/notebook/ng/" class="nav-link">
+  AngularJS
+</a></li><li class="dropdown-subitem"><a href="/notebook/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-subitem"><a href="/notebook/react/" class="nav-link">
+  React
+</a></li><li class="dropdown-subitem"><a href="/notebook/web/" class="nav-link">
+  WEB
+</a></li></ul></li><li class="dropdown-item"><h4>
+          BED
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/nodejs/" class="nav-link">
+  NodeJS
+</a></li><li class="dropdown-subitem"><a href="/notebook/c/" class="nav-link">
+  C/C++
+</a></li><li class="dropdown-subitem"><a href="/notebook/webpack/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-subitem"><a href="/notebook/vite/" class="nav-link">
+  Vite
+</a></li><li class="dropdown-subitem"><a href="/notebook/electron/" class="nav-link">
+  Electron
+</a></li></ul></li><li class="dropdown-item"><h4>
+          OTHER
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/wechat/" class="nav-link">
+  WeChat
+</a></li><li class="dropdown-subitem"><a href="/notebook/video/" class="nav-link">
+  视频
+</a></li><li class="dropdown-subitem"><a href="/notebook/interview/" class="nav-link">
+  面试
+</a></li><li class="dropdown-subitem"><a href="/notebook/project/" class="nav-link">
+  项目工程
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="DevTools" class="dropdown-title"><span class="title">DevTools</span> <span class="arrow down"></span></button> <button type="button" aria-label="DevTools" class="mobile-dropdown-title"><span class="title">DevTools</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/vim/" class="nav-link router-link-active">
+  Vim
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/chrome/" class="nav-link">
+  Chrome
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Computer" class="dropdown-title"><span class="title">Computer</span> <span class="arrow down"></span></button> <button type="button" aria-label="Computer" class="mobile-dropdown-title"><span class="title">Computer</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/cp/" class="nav-link">
+  Computer Basis
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/algorithm/" class="nav-link">
+  Algorithm
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/mac/" class="nav-link">
+  Mac
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/windows/" class="nav-link">
+  Windows
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/database/" class="nav-link">
+  Database
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/install-equipment/" class="nav-link">
+  装机指南
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Cloud" class="dropdown-title"><span class="title">Cloud</span> <span class="arrow down"></span></button> <button type="button" aria-label="Cloud" class="mobile-dropdown-title"><span class="title">Cloud</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/docker/" class="nav-link">
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/dev-ops/" class="nav-link">
+  DevOps
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Others" class="dropdown-title"><span class="title">Others</span> <span class="arrow down"></span></button> <button type="button" aria-label="Others" class="mobile-dropdown-title"><span class="title">Others</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/dev/" class="nav-link">
+  Development
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/gitbook/" class="nav-link">
+  Gitbook
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/popularization-science/" class="nav-link">
+  Truth
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/collection/" class="nav-link">
+  Collection
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/en/" class="nav-link">
+  English
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="About me" class="dropdown-title"><span class="title">About me</span> <span class="arrow down"></span></button> <button type="button" aria-label="About me" class="mobile-dropdown-title"><span class="title">About me</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://kisstar.github.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Blog
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://github.com/kisstar/notebook/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <a href="https://github.com/kisstar/notebook" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>基础</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>插件</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notebook/vim/plugin/common-plugin.html" class="sidebar-link">常用插件</a></li><li><a href="/notebook/vim/plugin/nerdtree.html" class="sidebar-link">NERDTree 文件资源管理器</a></li><li><a href="/notebook/vim/plugin/ctrlp.html" class="sidebar-link">ctrlp.vim 文件搜索</a></li><li><a href="/notebook/vim/plugin/surround.html" aria-current="page" class="active sidebar-link">vim-surround 成对符号操作</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/notebook/vim/plugin/surround.html#常见操作" class="sidebar-link">常见操作</a></li><li class="sidebar-sub-header"><a href="/notebook/vim/plugin/surround.html#标签操作" class="sidebar-link">标签操作</a></li><li class="sidebar-sub-header"><a href="/notebook/vim/plugin/surround.html#其它操作" class="sidebar-link">其它操作</a></li></ul></li><li><a href="/notebook/vim/plugin/multiple-cursors.html" class="sidebar-link">vim-multiple-cursors 多行编辑</a></li><li><a href="/notebook/vim/plugin/repeat.html" class="sidebar-link">vim-repeat 重复操作</a></li><li><a href="/notebook/vim/plugin/airline.html" class="sidebar-link">vim-airline 状态栏美化</a></li><li><a href="/notebook/vim/plugin/coc.html" class="sidebar-link">coc.nvim 智能补全</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="vim-surround-成对符号操作"><a href="#vim-surround-成对符号操作" class="header-anchor">#</a> vim-surround 成对符号操作</h1> <p>快速给词加环绕符号，例如单引号/双引号/括号/成对标签等。</p> <h2 id="常见操作"><a href="#常见操作" class="header-anchor">#</a> 常见操作</h2> <p>在 <code>&lt;motion&gt;</code> 定义的文本周围添加所需的环绕效果：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 添加(ys=you surround): ysiw&quot;</span>
+Hello -<span class="token operator">&gt;</span> <span class="token string">&quot;Hello&quot;</span>
+
+<span class="token comment"># 或者: csw&quot;</span>
+Hello -<span class="token operator">&gt;</span> <span class="token string">&quot;Hello&quot;</span>
+
+<span class="token comment"># 如果是在 visual modes: S &lt;desired&gt;</span>
+<span class="token comment"># 如: viwS&quot;</span>
+Hello -<span class="token operator">&gt;</span> <span class="token string">&quot;Hello&quot;</span>
+</code></pre></div><p>替换和删除：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 替换: cs&quot;'</span>
+<span class="token string">&quot;Hello world!&quot;</span> -<span class="token operator">&gt;</span> <span class="token string">'Hello world!'</span>
+
+<span class="token comment"># 删除: ds&quot;</span>
+<span class="token string">&quot;Hello world!&quot;</span> -<span class="token operator">&gt;</span> Hello world<span class="token operator">!</span>
+</code></pre></div><h2 id="标签操作"><a href="#标签操作" class="header-anchor">#</a> 标签操作</h2> <p>调整标签：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 替换-标签(t=tag): cst&quot;</span>
+<span class="token operator">&lt;</span>a<span class="token operator">&gt;</span>abc<span class="token operator">&lt;</span>/a<span class="token operator">&gt;</span> -<span class="token operator">&gt;</span> <span class="token string">&quot;abc&quot;</span>
+
+<span class="token comment"># cst&lt;html&gt;</span>
+<span class="token operator">&lt;</span>a<span class="token operator">&gt;</span>abc<span class="token operator">&lt;</span>/a<span class="token operator">&gt;</span> -<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>html<span class="token operator">&gt;</span>abc<span class="token operator">&lt;</span>/html<span class="token operator">&gt;</span>
+</code></pre></div><p>括号：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 左符号/右符号 =&gt; 带不带空格</span>
+cs<span class="token punctuation">(</span><span class="token punctuation">[</span>
+<span class="token punctuation">(</span>hello<span class="token punctuation">)</span> -<span class="token operator">&gt;</span> <span class="token punctuation">[</span> hello <span class="token punctuation">]</span>
+
+cs<span class="token punctuation">(</span><span class="token punctuation">]</span>
+<span class="token punctuation">(</span>hello<span class="token punctuation">)</span> -<span class="token operator">&gt;</span> <span class="token punctuation">[</span>hello<span class="token punctuation">]</span>
+</code></pre></div><h2 id="其它操作"><a href="#其它操作" class="header-anchor">#</a> 其它操作</h2> <p>多个单词：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 添加-两个词: veeS&quot;</span>
+hello world -<span class="token operator">&gt;</span> <span class="token string">&quot;hello world&quot;</span>
+</code></pre></div><p>针对行的操作：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 添加-当前到行尾: ys$&quot;</span>
+Hello world -<span class="token operator">&gt;</span> <span class="token string">&quot;Hello world&quot;</span>
+
+<span class="token comment"># 添加-整行: yss&quot;</span>
+Hello world -<span class="token operator">&gt;</span> <span class="token string">&quot;Hello world&quot;</span>
+
+<span class="token comment"># ySS&quot;</span>
+Hello world -<span class="token operator">&gt;</span>
+<span class="token string">&quot;
+    hello world
+&quot;</span>
+</code></pre></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/kisstar/notebook/edit/master/docs/vim/plugin/surround.md" target="_blank" rel="noopener noreferrer">在 GitHub 上编辑此页</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">最近更新:</span> <span class="time">4/22/2023, 7:17:23 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/notebook/vim/plugin/ctrlp.html" class="prev">
+        ctrlp.vim 文件搜索
+      </a></span> <span class="next"><a href="/notebook/vim/plugin/multiple-cursors.html">
+        vim-multiple-cursors 多行编辑
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/notebook/assets/js/app.6e0bf268.js" defer></script><script src="/notebook/assets/js/1.e436bc7d.js" defer></script><script src="/notebook/assets/js/277.a8ea1435.js" defer></script>
+  </body>
+</html>
