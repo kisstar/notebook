@@ -431,5 +431,12 @@ module.exports = {
       children: ['other/blog', 'other/other'],
     },
   ],
+  '/en/': [
+    {
+      title: '语法',
+      sidebarDepth: 2,
+      children: ['syntax/grammar-review'],
+    },
+  ],
   '/': [''],
 }

@@ -177,6 +177,10 @@ module.exports = [
         text: 'Collection',
         link: '/collection/',
       },
+      {
+        text: 'English',
+        link: '/en/',
+      },
     ],
   },
   {
