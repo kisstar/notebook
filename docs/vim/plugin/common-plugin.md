@@ -36,7 +36,8 @@ call plug#end()
 | [mileszs/ack.vim](https://github.com/mileszs/ack.vim) | 在项目里全局搜索某个单词 |
 | [airblade/vim-gitgutter](https://github.com/airblade/vim-gitgutter) | 显示 Git 变化 |
 | [tpope/vim-surround](https://github.com/tpope/vim-surround) | 提供强大的成对符号更改功能 |
-| [terryma/vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors) | 多游标操作 |
+| [jiangmiao/auto-pairs](https://github.com/jiangmiao/auto-pairs) | 插入和删除括号 |
+| [voldikss/vim-floaterm](https://github.com/voldikss/vim-floaterm) | 终端管理器 |
 | [vim-airline/vim-airline](https://github.com/vim-airline/vim-airline) | 提供更友好的状态栏 |
 
 | TypeScript 开发插件 | 描述 |
@@ -47,20 +48,32 @@ call plug#end()
 | [neoclide/coc.nvim](https://github.com/neoclide/coc.nvim) | 基于 NodeJS 的智能补全插件 |
 | `:CocInstall coc-tsserver` | 为 JavaScript 和 TypeScript 提供更丰富的语言功能 |
 
-| 提效插件                                                | 描述                     |
-| :------------------------------------------------------ | :----------------------- |
-| [tpope/vim-repeat](https://github.com/tpope/vim-repeat) | 扩展用点执行重复操作     |
-| [mattn/emmet-vim](https://github.com/mattn/emmet-vim)   | 快速书写 HTML 语法的工具 |
+| 提效插件 | 描述 |
+| :-- | :-- |
+| [terryma/vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors) | 多游标操作 |
+| [tpope/vim-repeat](https://github.com/tpope/vim-repeat) | 扩展用点执行重复操作 |
+| [mattn/emmet-vim](https://github.com/mattn/emmet-vim) | 快速书写 HTML 语法的工具 |
 
 <!-- 使用自动补全可安装以下依赖，包括插件本身和所依赖的插件 -->
 <!-- 如果需要自定义，则可以在 ~/.vim/snippets/ 目录下添加 *.snippets 文件 -->
 
-| 代码片段插件                                                                    | 描述 |
-| :------------------------------------------------------------------------------ | :--- |
-| [MarcWeber/vim-addon-mw-utils](https://github.com/MarcWeber/vim-addon-mw-utils) |      |
-| [tomtom/tlib_vim](https://github.com/tomtom/tlib_vim)                           |      |
-| [garbas/vim-snipmate](https://github.com/garbas/vim-snipmate)                   |      |
-| [honza/vim-snippets](https://github.com/honza/vim-snippets)                     |      |
+| 代码片段插件 | 描述 |
+| :-- | :-- |
+| `:CocInstall coc-snippets` | Coc.nvim 的代码片段解决方案 |
+| [MarcWeber/vim-addon-mw-utils](https://github.com/MarcWeber/vim-addon-mw-utils) |  |
+| [tomtom/tlib_vim](https://github.com/tomtom/tlib_vim) |  |
+| [garbas/vim-snipmate](https://github.com/garbas/vim-snipmate) |  |
+| [honza/vim-snippets](https://github.com/honza/vim-snippets) |  |
+
+| Git 插件                                                            | 描述               |
+| :------------------------------------------------------------------ | :----------------- |
+| [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive)         | Git 包装器插件     |
+| [airblade/vim-gitgutter](https://github.com/airblade/vim-gitgutter) | 侧边栏显示变化状态 |
+
+| 代码格式和规范插件         | 描述         |
+| :------------------------- | :----------- |
+| `:CocInstall coc-prettier` | 代码格式化   |
+| `:CocInstall coc-eslint`   | 代码规范校验 |
 
 | UI 插件                                                                 | 描述                 |
 | :---------------------------------------------------------------------- | :------------------- |
