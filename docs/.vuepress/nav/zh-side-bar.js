@@ -435,7 +435,7 @@ module.exports = {
     {
       title: '语法',
       sidebarDepth: 2,
-      children: ['syntax/grammar-review'],
+      children: ['syntax/grammar-review', 'syntax/classification-verb'],
     },
   ],
   '/': [''],
