@@ -64,13 +64,6 @@ module.exports = {
       children: ['basis/react-hooks', 'basis/story-react'],
     },
   ],
-  '/web/': [
-    {
-      title: '基础',
-      sidebarDepth: 2,
-      children: ['basis/performance'],
-    },
-  ],
   '/git/': [
     {
       title: '基础',
@@ -303,9 +296,14 @@ module.exports = {
   ],
   '/project/': [
     {
-      title: '基础',
+      title: '工程',
       sidebarDepth: 2,
       children: ['basis/commit-lint', 'basis/eslint', 'basis/stylelint'],
+    },
+    {
+      title: '网页',
+      sidebarDepth: 2,
+      children: ['web/', 'web/performance'],
     },
     {
       title: '错误',
