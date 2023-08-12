@@ -433,7 +433,7 @@ module.exports = {
     {
       title: '语法',
       sidebarDepth: 2,
-      children: ['syntax/grammar-review', 'syntax/classification-verb'],
+      children: ['syntax/grammar-review', 'syntax/classification-verb', 'syntax/verb-tense'],
     },
   ],
   '/': [''],
