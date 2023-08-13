@@ -250,13 +250,13 @@ The bus leaves at 8PM.
 I am going to eat a carrot.
 ```
 
-助动词 be 的变位 + 动词原形表示将来时态：
+助动词 be 的变位 + to + 动词原形表示将来时态：
 
 ```plaintext
 You are to eat a carrot.（有点命令的意味）
 ```
 
-也可以 + about + to + 动词原形表示将来时态：
+也可以助动词 be 的变位 + about + to + 动词原形表示将来时态：
 
 ```plaintext
 I am about to eat a carrot.
