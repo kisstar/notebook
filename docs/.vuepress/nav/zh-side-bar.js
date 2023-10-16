@@ -399,7 +399,12 @@ module.exports = {
     {
       title: '设计模式',
       sidebarDepth: 2,
-      children: ['design-pattern/', 'design-pattern/design-principles'],
+      children: [
+        'design-pattern/',
+        'design-pattern/design-principles',
+        'design-pattern/template-method',
+        'design-pattern/strategy',
+      ],
     },
   ],
   '/collection/': [
