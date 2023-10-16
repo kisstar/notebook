@@ -396,6 +396,11 @@ module.exports = {
       sidebarDepth: 2,
       children: ['basis/'],
     },
+    {
+      title: '设计模式',
+      sidebarDepth: 2,
+      children: ['design-pattern/', 'design-pattern/design-principles'],
+    },
   ],
   '/collection/': [
     {
