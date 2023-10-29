@@ -2,7 +2,7 @@ module.exports = [
   {
     title: '数组',
     sidebarDepth: 2,
-    children: ['arr/', 'arr/136', 'arr/189', 'arr/560'],
+    children: ['arr/', 'arr/136', 'arr/189', 'arr/560', 'arr/206'],
   },
   {
     title: '栈',
