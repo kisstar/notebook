@@ -2,7 +2,7 @@ module.exports = [
   {
     title: '数组',
     sidebarDepth: 2,
-    children: ['arr/', 'arr/136', 'arr/189', 'arr/560', 'arr/206'],
+    children: ['arr/', 'arr/136', 'arr/189', 'arr/560'],
   },
   {
     title: '栈',
@@ -20,8 +20,9 @@ module.exports = [
     children: [
       'linked-list/',
       'linked-list/doubly-linked-list',
-      'linked-list/reverse-list',
       'linked-list/swap-pairs',
+      'linked-list/206',
+      'linked-list/160',
     ],
   },
   {
