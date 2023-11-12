@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>合并两个有序链表 | notes | Kisstar</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="Kisstar&#39;s personal notes">
+    
+    <link rel="preload" href="/notebook/assets/css/0.styles.b6acd6de.css" as="style"><link rel="preload" href="/notebook/assets/js/app.e6442efc.js" as="script"><link rel="preload" href="/notebook/assets/js/1.e436bc7d.js" as="script"><link rel="preload" href="/notebook/assets/js/19.9e4ca889.js" as="script"><link rel="prefetch" href="/notebook/assets/js/10.0d9bb6d1.js"><link rel="prefetch" href="/notebook/assets/js/100.5da32ad7.js"><link rel="prefetch" href="/notebook/assets/js/101.1e1d11c8.js"><link rel="prefetch" href="/notebook/assets/js/102.23ab9e5b.js"><link rel="prefetch" href="/notebook/assets/js/103.da803fd4.js"><link rel="prefetch" href="/notebook/assets/js/104.6fd4aba1.js"><link rel="prefetch" href="/notebook/assets/js/105.0f35294b.js"><link rel="prefetch" href="/notebook/assets/js/106.c777b6fb.js"><link rel="prefetch" href="/notebook/assets/js/107.d89876ee.js"><link rel="prefetch" href="/notebook/assets/js/108.ac9d1895.js"><link rel="prefetch" href="/notebook/assets/js/109.17babc54.js"><link rel="prefetch" href="/notebook/assets/js/11.43a5213f.js"><link rel="prefetch" href="/notebook/assets/js/110.37d9372d.js"><link rel="prefetch" href="/notebook/assets/js/111.950c0f01.js"><link rel="prefetch" href="/notebook/assets/js/112.f84ae213.js"><link rel="prefetch" href="/notebook/assets/js/113.19853c16.js"><link rel="prefetch" href="/notebook/assets/js/114.68635fab.js"><link rel="prefetch" href="/notebook/assets/js/115.d4edf34e.js"><link rel="prefetch" href="/notebook/assets/js/116.f9ac8d54.js"><link rel="prefetch" href="/notebook/assets/js/117.183342e2.js"><link rel="prefetch" href="/notebook/assets/js/118.e903b6d8.js"><link rel="prefetch" href="/notebook/assets/js/119.3ff2c972.js"><link rel="prefetch" href="/notebook/assets/js/12.69cfcb98.js"><link rel="prefetch" href="/notebook/assets/js/120.6d4fe9c0.js"><link rel="prefetch" href="/notebook/assets/js/121.2de6ea93.js"><link rel="prefetch" href="/notebook/assets/js/122.3341f16d.js"><link rel="prefetch" href="/notebook/assets/js/123.e8e10507.js"><link rel="prefetch" href="/notebook/assets/js/124.730bc503.js"><link rel="prefetch" href="/notebook/assets/js/125.679873a8.js"><link rel="prefetch" href="/notebook/assets/js/126.4e884edd.js"><link rel="prefetch" href="/notebook/assets/js/127.26e5afe2.js"><link rel="prefetch" href="/notebook/assets/js/128.ffc8fffa.js"><link rel="prefetch" href="/notebook/assets/js/129.4109eafb.js"><link rel="prefetch" href="/notebook/assets/js/13.8443d333.js"><link rel="prefetch" href="/notebook/assets/js/130.e8d2cdf4.js"><link rel="prefetch" href="/notebook/assets/js/131.6ecc180c.js"><link rel="prefetch" href="/notebook/assets/js/132.f68ba5cf.js"><link rel="prefetch" href="/notebook/assets/js/133.4fd25439.js"><link rel="prefetch" href="/notebook/assets/js/134.db85ac75.js"><link rel="prefetch" href="/notebook/assets/js/135.18ce1dc1.js"><link rel="prefetch" href="/notebook/assets/js/136.a48a3dc0.js"><link rel="prefetch" href="/notebook/assets/js/137.8da2edd5.js"><link rel="prefetch" href="/notebook/assets/js/138.5832e72a.js"><link rel="prefetch" href="/notebook/assets/js/139.f30201f8.js"><link rel="prefetch" href="/notebook/assets/js/14.c02e95f2.js"><link rel="prefetch" href="/notebook/assets/js/140.1aba1f84.js"><link rel="prefetch" href="/notebook/assets/js/141.d628ca29.js"><link rel="prefetch" href="/notebook/assets/js/142.83a7c830.js"><link rel="prefetch" href="/notebook/assets/js/143.396f266b.js"><link rel="prefetch" href="/notebook/assets/js/144.96a69ab8.js"><link rel="prefetch" href="/notebook/assets/js/145.21946bc6.js"><link rel="prefetch" href="/notebook/assets/js/146.d270b2b1.js"><link rel="prefetch" href="/notebook/assets/js/147.98bea4a4.js"><link rel="prefetch" href="/notebook/assets/js/148.a34401a9.js"><link rel="prefetch" href="/notebook/assets/js/149.334b4a4c.js"><link rel="prefetch" href="/notebook/assets/js/15.6df6e68a.js"><link rel="prefetch" href="/notebook/assets/js/150.1247466d.js"><link rel="prefetch" href="/notebook/assets/js/151.c17f9289.js"><link rel="prefetch" href="/notebook/assets/js/152.5a3c55b1.js"><link rel="prefetch" href="/notebook/assets/js/153.96c477b9.js"><link rel="prefetch" href="/notebook/assets/js/154.14e00da2.js"><link rel="prefetch" href="/notebook/assets/js/155.7a3a180a.js"><link rel="prefetch" href="/notebook/assets/js/156.1b85149a.js"><link rel="prefetch" href="/notebook/assets/js/157.29097274.js"><link rel="prefetch" href="/notebook/assets/js/158.644b3b43.js"><link rel="prefetch" href="/notebook/assets/js/159.ee518ff4.js"><link rel="prefetch" href="/notebook/assets/js/16.e093ea32.js"><link rel="prefetch" href="/notebook/assets/js/160.46e5882f.js"><link rel="prefetch" href="/notebook/assets/js/161.cd088cfa.js"><link rel="prefetch" href="/notebook/assets/js/162.98f2e57b.js"><link rel="prefetch" href="/notebook/assets/js/163.5b44a831.js"><link rel="prefetch" href="/notebook/assets/js/164.827b9cc4.js"><link rel="prefetch" href="/notebook/assets/js/165.c759bb66.js"><link rel="prefetch" href="/notebook/assets/js/166.c71e08da.js"><link rel="prefetch" href="/notebook/assets/js/167.b6b337a9.js"><link rel="prefetch" href="/notebook/assets/js/168.675f8dde.js"><link rel="prefetch" href="/notebook/assets/js/169.d216a204.js"><link rel="prefetch" href="/notebook/assets/js/17.804b1ac0.js"><link rel="prefetch" href="/notebook/assets/js/170.8d2906f7.js"><link rel="prefetch" href="/notebook/assets/js/171.d3f17f3d.js"><link rel="prefetch" href="/notebook/assets/js/172.64f930f6.js"><link rel="prefetch" href="/notebook/assets/js/173.d135d315.js"><link rel="prefetch" href="/notebook/assets/js/174.c45ca9ac.js"><link rel="prefetch" href="/notebook/assets/js/175.fae85166.js"><link rel="prefetch" href="/notebook/assets/js/176.828eb1b4.js"><link rel="prefetch" href="/notebook/assets/js/177.db72ec0d.js"><link rel="prefetch" href="/notebook/assets/js/178.39081195.js"><link rel="prefetch" href="/notebook/assets/js/179.5098a370.js"><link rel="prefetch" href="/notebook/assets/js/18.8a86363e.js"><link rel="prefetch" href="/notebook/assets/js/180.83b269c5.js"><link rel="prefetch" href="/notebook/assets/js/181.58b40c63.js"><link rel="prefetch" href="/notebook/assets/js/182.2aa6c278.js"><link rel="prefetch" href="/notebook/assets/js/183.01fd65d4.js"><link rel="prefetch" href="/notebook/assets/js/184.c95e8615.js"><link rel="prefetch" href="/notebook/assets/js/185.918d91a2.js"><link rel="prefetch" href="/notebook/assets/js/186.4d04265b.js"><link rel="prefetch" href="/notebook/assets/js/187.77f183f9.js"><link rel="prefetch" href="/notebook/assets/js/188.3483b65d.js"><link rel="prefetch" href="/notebook/assets/js/189.e4e43045.js"><link rel="prefetch" href="/notebook/assets/js/190.0403f4a8.js"><link rel="prefetch" href="/notebook/assets/js/191.9f5457eb.js"><link rel="prefetch" href="/notebook/assets/js/192.9e2447f2.js"><link rel="prefetch" href="/notebook/assets/js/193.e62799ca.js"><link rel="prefetch" href="/notebook/assets/js/194.5d5801b1.js"><link rel="prefetch" href="/notebook/assets/js/195.cd30831c.js"><link rel="prefetch" href="/notebook/assets/js/196.d8721196.js"><link rel="prefetch" href="/notebook/assets/js/197.78599cce.js"><link rel="prefetch" href="/notebook/assets/js/198.f178e499.js"><link rel="prefetch" href="/notebook/assets/js/199.3591762a.js"><link rel="prefetch" href="/notebook/assets/js/20.b3278428.js"><link rel="prefetch" href="/notebook/assets/js/200.83ce21e6.js"><link rel="prefetch" href="/notebook/assets/js/201.1fbd9237.js"><link rel="prefetch" href="/notebook/assets/js/202.b3bf472b.js"><link rel="prefetch" href="/notebook/assets/js/203.32f109e1.js"><link rel="prefetch" href="/notebook/assets/js/204.f110670f.js"><link rel="prefetch" href="/notebook/assets/js/205.8cf46b36.js"><link rel="prefetch" href="/notebook/assets/js/206.4835d0bd.js"><link rel="prefetch" href="/notebook/assets/js/207.f572a72b.js"><link rel="prefetch" href="/notebook/assets/js/208.8ea476cc.js"><link rel="prefetch" href="/notebook/assets/js/209.76a468bd.js"><link rel="prefetch" href="/notebook/assets/js/21.be6fa869.js"><link rel="prefetch" href="/notebook/assets/js/210.5a8f025b.js"><link rel="prefetch" href="/notebook/assets/js/211.2d97a3ee.js"><link rel="prefetch" href="/notebook/assets/js/212.e7180742.js"><link rel="prefetch" href="/notebook/assets/js/213.65142da7.js"><link rel="prefetch" href="/notebook/assets/js/214.8aab2c98.js"><link rel="prefetch" href="/notebook/assets/js/215.67b38276.js"><link rel="prefetch" href="/notebook/assets/js/216.bd804ddf.js"><link rel="prefetch" href="/notebook/assets/js/217.c6ae984b.js"><link rel="prefetch" href="/notebook/assets/js/218.c3755da5.js"><link rel="prefetch" href="/notebook/assets/js/219.cadc5fda.js"><link rel="prefetch" href="/notebook/assets/js/22.a54d9823.js"><link rel="prefetch" href="/notebook/assets/js/220.c07e7871.js"><link rel="prefetch" href="/notebook/assets/js/221.4c0471f6.js"><link rel="prefetch" href="/notebook/assets/js/222.930bc61d.js"><link rel="prefetch" href="/notebook/assets/js/223.20e44ad7.js"><link rel="prefetch" href="/notebook/assets/js/224.fbf120ba.js"><link rel="prefetch" href="/notebook/assets/js/225.2c16962e.js"><link rel="prefetch" href="/notebook/assets/js/226.0c8ddb8a.js"><link rel="prefetch" href="/notebook/assets/js/227.1089b840.js"><link rel="prefetch" href="/notebook/assets/js/228.5e21306a.js"><link rel="prefetch" href="/notebook/assets/js/229.f1c5b8d6.js"><link rel="prefetch" href="/notebook/assets/js/23.c970019a.js"><link rel="prefetch" href="/notebook/assets/js/230.6b6df47d.js"><link rel="prefetch" href="/notebook/assets/js/231.4a9c7e21.js"><link rel="prefetch" href="/notebook/assets/js/232.791da2a3.js"><link rel="prefetch" href="/notebook/assets/js/233.a669cadd.js"><link rel="prefetch" href="/notebook/assets/js/234.84563481.js"><link rel="prefetch" href="/notebook/assets/js/235.d4f2542e.js"><link rel="prefetch" href="/notebook/assets/js/236.d8e6ae3e.js"><link rel="prefetch" href="/notebook/assets/js/237.e878212c.js"><link rel="prefetch" href="/notebook/assets/js/238.b23a6fa2.js"><link rel="prefetch" href="/notebook/assets/js/239.0674feb5.js"><link rel="prefetch" href="/notebook/assets/js/24.5a7a0001.js"><link rel="prefetch" href="/notebook/assets/js/240.79ebc5da.js"><link rel="prefetch" href="/notebook/assets/js/241.e9817450.js"><link rel="prefetch" href="/notebook/assets/js/242.a310b388.js"><link rel="prefetch" href="/notebook/assets/js/243.06a71032.js"><link rel="prefetch" href="/notebook/assets/js/244.3d50be9b.js"><link rel="prefetch" href="/notebook/assets/js/245.1d905399.js"><link rel="prefetch" href="/notebook/assets/js/246.84b5bce7.js"><link rel="prefetch" href="/notebook/assets/js/247.321996b2.js"><link rel="prefetch" href="/notebook/assets/js/248.fe0a4ef5.js"><link rel="prefetch" href="/notebook/assets/js/249.e7738362.js"><link rel="prefetch" href="/notebook/assets/js/25.0388f1f5.js"><link rel="prefetch" href="/notebook/assets/js/250.0c7abb58.js"><link rel="prefetch" href="/notebook/assets/js/251.5784bfde.js"><link rel="prefetch" href="/notebook/assets/js/252.a728bbd4.js"><link rel="prefetch" href="/notebook/assets/js/253.ac22897a.js"><link rel="prefetch" href="/notebook/assets/js/254.e0b4c68a.js"><link rel="prefetch" href="/notebook/assets/js/255.0171ca72.js"><link rel="prefetch" href="/notebook/assets/js/256.9b8587db.js"><link rel="prefetch" href="/notebook/assets/js/257.8afbc719.js"><link rel="prefetch" href="/notebook/assets/js/258.71a629e9.js"><link rel="prefetch" href="/notebook/assets/js/259.a7299d34.js"><link rel="prefetch" href="/notebook/assets/js/26.b2a2dad3.js"><link rel="prefetch" href="/notebook/assets/js/260.f5ab012c.js"><link rel="prefetch" href="/notebook/assets/js/261.6443d068.js"><link rel="prefetch" href="/notebook/assets/js/262.026d23fc.js"><link rel="prefetch" href="/notebook/assets/js/263.4d2c981d.js"><link rel="prefetch" href="/notebook/assets/js/264.05eaa73d.js"><link rel="prefetch" href="/notebook/assets/js/265.23690015.js"><link rel="prefetch" href="/notebook/assets/js/266.5751f343.js"><link rel="prefetch" href="/notebook/assets/js/267.3def3c60.js"><link rel="prefetch" href="/notebook/assets/js/268.ec62ce53.js"><link rel="prefetch" href="/notebook/assets/js/269.bd4c578f.js"><link rel="prefetch" href="/notebook/assets/js/27.3cf91866.js"><link rel="prefetch" href="/notebook/assets/js/270.36691c36.js"><link rel="prefetch" href="/notebook/assets/js/271.a5e7a6ea.js"><link rel="prefetch" href="/notebook/assets/js/272.4d968a6c.js"><link rel="prefetch" href="/notebook/assets/js/273.78877d37.js"><link rel="prefetch" href="/notebook/assets/js/274.5b18bc04.js"><link rel="prefetch" href="/notebook/assets/js/275.34b8949a.js"><link rel="prefetch" href="/notebook/assets/js/276.1c6dedde.js"><link rel="prefetch" href="/notebook/assets/js/277.a8819af8.js"><link rel="prefetch" href="/notebook/assets/js/278.0fb712ce.js"><link rel="prefetch" href="/notebook/assets/js/279.2e7df842.js"><link rel="prefetch" href="/notebook/assets/js/28.4fd6c634.js"><link rel="prefetch" href="/notebook/assets/js/280.c3ec4aa0.js"><link rel="prefetch" href="/notebook/assets/js/281.ef069410.js"><link rel="prefetch" href="/notebook/assets/js/282.9ecf7dff.js"><link rel="prefetch" href="/notebook/assets/js/283.dc3a1695.js"><link rel="prefetch" href="/notebook/assets/js/284.6261d839.js"><link rel="prefetch" href="/notebook/assets/js/285.969ae3cd.js"><link rel="prefetch" href="/notebook/assets/js/286.b7ac3e34.js"><link rel="prefetch" href="/notebook/assets/js/287.d1181a1b.js"><link rel="prefetch" href="/notebook/assets/js/288.84c42362.js"><link rel="prefetch" href="/notebook/assets/js/289.c3147399.js"><link rel="prefetch" href="/notebook/assets/js/29.d6e3e2e5.js"><link rel="prefetch" href="/notebook/assets/js/290.89167e03.js"><link rel="prefetch" href="/notebook/assets/js/291.f034c995.js"><link rel="prefetch" href="/notebook/assets/js/292.e8e41113.js"><link rel="prefetch" href="/notebook/assets/js/293.6dbdfc0a.js"><link rel="prefetch" href="/notebook/assets/js/294.557e737f.js"><link rel="prefetch" href="/notebook/assets/js/295.0200bb49.js"><link rel="prefetch" href="/notebook/assets/js/296.03c1c3be.js"><link rel="prefetch" href="/notebook/assets/js/297.47470d71.js"><link rel="prefetch" href="/notebook/assets/js/298.a84e5f9c.js"><link rel="prefetch" href="/notebook/assets/js/299.a4ee1f90.js"><link rel="prefetch" href="/notebook/assets/js/3.3f6cb498.js"><link rel="prefetch" href="/notebook/assets/js/30.e2232497.js"><link rel="prefetch" href="/notebook/assets/js/300.bd48b704.js"><link rel="prefetch" href="/notebook/assets/js/301.1749f7ae.js"><link rel="prefetch" href="/notebook/assets/js/302.4f252716.js"><link rel="prefetch" href="/notebook/assets/js/303.c55ae4ab.js"><link rel="prefetch" href="/notebook/assets/js/304.c32116c4.js"><link rel="prefetch" href="/notebook/assets/js/305.5ca5f8b2.js"><link rel="prefetch" href="/notebook/assets/js/306.b2268f4d.js"><link rel="prefetch" href="/notebook/assets/js/31.53dd2d2d.js"><link rel="prefetch" href="/notebook/assets/js/32.35144d4b.js"><link rel="prefetch" href="/notebook/assets/js/33.0a9576c2.js"><link rel="prefetch" href="/notebook/assets/js/34.6452715e.js"><link rel="prefetch" href="/notebook/assets/js/35.7a04a77a.js"><link rel="prefetch" href="/notebook/assets/js/36.b1181bb5.js"><link rel="prefetch" href="/notebook/assets/js/37.b0e28107.js"><link rel="prefetch" href="/notebook/assets/js/38.38d02aa3.js"><link rel="prefetch" href="/notebook/assets/js/39.b7173e0c.js"><link rel="prefetch" href="/notebook/assets/js/4.c3794860.js"><link rel="prefetch" href="/notebook/assets/js/40.191ae6ef.js"><link rel="prefetch" href="/notebook/assets/js/41.3f956a5c.js"><link rel="prefetch" href="/notebook/assets/js/42.06c41a76.js"><link rel="prefetch" href="/notebook/assets/js/43.c13e7f92.js"><link rel="prefetch" href="/notebook/assets/js/44.0bd4e0f5.js"><link rel="prefetch" href="/notebook/assets/js/45.d4496679.js"><link rel="prefetch" href="/notebook/assets/js/46.cf45da21.js"><link rel="prefetch" href="/notebook/assets/js/47.2f4e65ac.js"><link rel="prefetch" href="/notebook/assets/js/48.b0f2240d.js"><link rel="prefetch" href="/notebook/assets/js/49.7dcc2322.js"><link rel="prefetch" href="/notebook/assets/js/5.ec3fe394.js"><link rel="prefetch" href="/notebook/assets/js/50.56311c1f.js"><link rel="prefetch" href="/notebook/assets/js/51.a2a67bd9.js"><link rel="prefetch" href="/notebook/assets/js/52.e46239e9.js"><link rel="prefetch" href="/notebook/assets/js/53.92641e71.js"><link rel="prefetch" href="/notebook/assets/js/54.0515b228.js"><link rel="prefetch" href="/notebook/assets/js/55.18bf3439.js"><link rel="prefetch" href="/notebook/assets/js/56.7923c228.js"><link rel="prefetch" href="/notebook/assets/js/57.dfaac2c9.js"><link rel="prefetch" href="/notebook/assets/js/58.b5ed833e.js"><link rel="prefetch" href="/notebook/assets/js/59.2e1ac0e1.js"><link rel="prefetch" href="/notebook/assets/js/6.2359cfcf.js"><link rel="prefetch" href="/notebook/assets/js/60.14200f26.js"><link rel="prefetch" href="/notebook/assets/js/61.79d9f66c.js"><link rel="prefetch" href="/notebook/assets/js/62.589ea7ad.js"><link rel="prefetch" href="/notebook/assets/js/63.a3cda8a4.js"><link rel="prefetch" href="/notebook/assets/js/64.07a75bd5.js"><link rel="prefetch" href="/notebook/assets/js/65.8a074908.js"><link rel="prefetch" href="/notebook/assets/js/66.d9c38553.js"><link rel="prefetch" href="/notebook/assets/js/67.6a08619b.js"><link rel="prefetch" href="/notebook/assets/js/68.5048e3f9.js"><link rel="prefetch" href="/notebook/assets/js/69.03f3b57c.js"><link rel="prefetch" href="/notebook/assets/js/7.a655d03a.js"><link rel="prefetch" href="/notebook/assets/js/70.76b25eaa.js"><link rel="prefetch" href="/notebook/assets/js/71.10e0cb58.js"><link rel="prefetch" href="/notebook/assets/js/72.95233fa1.js"><link rel="prefetch" href="/notebook/assets/js/73.646872ca.js"><link rel="prefetch" href="/notebook/assets/js/74.0d27692e.js"><link rel="prefetch" href="/notebook/assets/js/75.e64b69b1.js"><link rel="prefetch" href="/notebook/assets/js/76.a76d14f4.js"><link rel="prefetch" href="/notebook/assets/js/77.9cac8c5c.js"><link rel="prefetch" href="/notebook/assets/js/78.237c482a.js"><link rel="prefetch" href="/notebook/assets/js/79.b022aaa1.js"><link rel="prefetch" href="/notebook/assets/js/8.c8091f3b.js"><link rel="prefetch" href="/notebook/assets/js/80.87ec6c22.js"><link rel="prefetch" href="/notebook/assets/js/81.472584ab.js"><link rel="prefetch" href="/notebook/assets/js/82.114c509c.js"><link rel="prefetch" href="/notebook/assets/js/83.e9336a58.js"><link rel="prefetch" href="/notebook/assets/js/84.e543031c.js"><link rel="prefetch" href="/notebook/assets/js/85.99c0668a.js"><link rel="prefetch" href="/notebook/assets/js/86.5ae0806f.js"><link rel="prefetch" href="/notebook/assets/js/87.85a13242.js"><link rel="prefetch" href="/notebook/assets/js/88.6e5dc1e3.js"><link rel="prefetch" href="/notebook/assets/js/89.6bd429d6.js"><link rel="prefetch" href="/notebook/assets/js/9.b23256bd.js"><link rel="prefetch" href="/notebook/assets/js/90.775900cb.js"><link rel="prefetch" href="/notebook/assets/js/91.93ae82ec.js"><link rel="prefetch" href="/notebook/assets/js/92.81988fc2.js"><link rel="prefetch" href="/notebook/assets/js/93.f5c3b234.js"><link rel="prefetch" href="/notebook/assets/js/94.187f175a.js"><link rel="prefetch" href="/notebook/assets/js/95.eb48b349.js"><link rel="prefetch" href="/notebook/assets/js/96.bde6db6d.js"><link rel="prefetch" href="/notebook/assets/js/97.b10d8f3f.js"><link rel="prefetch" href="/notebook/assets/js/98.588c93e9.js"><link rel="prefetch" href="/notebook/assets/js/99.a956fe4b.js">
+    <link rel="stylesheet" href="/notebook/assets/css/0.styles.b6acd6de.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/notebook/" class="home-link router-link-active"><img src="/notebook/logo.png" alt="notes | Kisstar" class="logo"> <span class="site-name can-hide">notes | Kisstar</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="IT" class="dropdown-title"><span class="title">IT</span> <span class="arrow down"></span></button> <button type="button" aria-label="IT" class="mobile-dropdown-title"><span class="title">IT</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          FED
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/html/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-subitem"><a href="/notebook/css/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-subitem"><a href="/notebook/js/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-subitem"><a href="/notebook/ts/" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-subitem"><a href="/notebook/ng/" class="nav-link">
+  AngularJS
+</a></li><li class="dropdown-subitem"><a href="/notebook/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-subitem"><a href="/notebook/react/" class="nav-link">
+  React
+</a></li></ul></li><li class="dropdown-item"><h4>
+          BED
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/nodejs/" class="nav-link">
+  NodeJS
+</a></li><li class="dropdown-subitem"><a href="/notebook/c/" class="nav-link">
+  C/C++
+</a></li><li class="dropdown-subitem"><a href="/notebook/webpack/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-subitem"><a href="/notebook/vite/" class="nav-link">
+  Vite
+</a></li><li class="dropdown-subitem"><a href="/notebook/electron/" class="nav-link">
+  Electron
+</a></li></ul></li><li class="dropdown-item"><h4>
+          OTHER
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/wechat/" class="nav-link">
+  WeChat
+</a></li><li class="dropdown-subitem"><a href="/notebook/video/" class="nav-link">
+  视频
+</a></li><li class="dropdown-subitem"><a href="/notebook/interview/" class="nav-link">
+  面试
+</a></li><li class="dropdown-subitem"><a href="/notebook/project/" class="nav-link">
+  项目工程
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="DevTools" class="dropdown-title"><span class="title">DevTools</span> <span class="arrow down"></span></button> <button type="button" aria-label="DevTools" class="mobile-dropdown-title"><span class="title">DevTools</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/vim/" class="nav-link">
+  Vim
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/chrome/" class="nav-link">
+  Chrome
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Computer" class="dropdown-title"><span class="title">Computer</span> <span class="arrow down"></span></button> <button type="button" aria-label="Computer" class="mobile-dropdown-title"><span class="title">Computer</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/cp/" class="nav-link">
+  Computer Basis
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/algorithm/" class="nav-link router-link-active">
+  Algorithm
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/mac/" class="nav-link">
+  Mac
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/windows/" class="nav-link">
+  Windows
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/database/" class="nav-link">
+  Database
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/install-equipment/" class="nav-link">
+  装机指南
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Cloud" class="dropdown-title"><span class="title">Cloud</span> <span class="arrow down"></span></button> <button type="button" aria-label="Cloud" class="mobile-dropdown-title"><span class="title">Cloud</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/docker/" class="nav-link">
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/dev-ops/" class="nav-link">
+  DevOps
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Others" class="dropdown-title"><span class="title">Others</span> <span class="arrow down"></span></button> <button type="button" aria-label="Others" class="mobile-dropdown-title"><span class="title">Others</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/dev/" class="nav-link">
+  Development
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/gitbook/" class="nav-link">
+  Gitbook
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/popularization-science/" class="nav-link">
+  Truth
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/collection/" class="nav-link">
+  Collection
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/en/" class="nav-link">
+  English
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="About me" class="dropdown-title"><span class="title">About me</span> <span class="arrow down"></span></button> <button type="button" aria-label="About me" class="mobile-dropdown-title"><span class="title">About me</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://kisstar.github.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Blog
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://github.com/kisstar/notebook/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <a href="https://github.com/kisstar/notebook" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="IT" class="dropdown-title"><span class="title">IT</span> <span class="arrow down"></span></button> <button type="button" aria-label="IT" class="mobile-dropdown-title"><span class="title">IT</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          FED
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/html/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-subitem"><a href="/notebook/css/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-subitem"><a href="/notebook/js/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-subitem"><a href="/notebook/ts/" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-subitem"><a href="/notebook/ng/" class="nav-link">
+  AngularJS
+</a></li><li class="dropdown-subitem"><a href="/notebook/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-subitem"><a href="/notebook/react/" class="nav-link">
+  React
+</a></li></ul></li><li class="dropdown-item"><h4>
+          BED
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/nodejs/" class="nav-link">
+  NodeJS
+</a></li><li class="dropdown-subitem"><a href="/notebook/c/" class="nav-link">
+  C/C++
+</a></li><li class="dropdown-subitem"><a href="/notebook/webpack/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-subitem"><a href="/notebook/vite/" class="nav-link">
+  Vite
+</a></li><li class="dropdown-subitem"><a href="/notebook/electron/" class="nav-link">
+  Electron
+</a></li></ul></li><li class="dropdown-item"><h4>
+          OTHER
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notebook/wechat/" class="nav-link">
+  WeChat
+</a></li><li class="dropdown-subitem"><a href="/notebook/video/" class="nav-link">
+  视频
+</a></li><li class="dropdown-subitem"><a href="/notebook/interview/" class="nav-link">
+  面试
+</a></li><li class="dropdown-subitem"><a href="/notebook/project/" class="nav-link">
+  项目工程
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="DevTools" class="dropdown-title"><span class="title">DevTools</span> <span class="arrow down"></span></button> <button type="button" aria-label="DevTools" class="mobile-dropdown-title"><span class="title">DevTools</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/vim/" class="nav-link">
+  Vim
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/chrome/" class="nav-link">
+  Chrome
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Computer" class="dropdown-title"><span class="title">Computer</span> <span class="arrow down"></span></button> <button type="button" aria-label="Computer" class="mobile-dropdown-title"><span class="title">Computer</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/cp/" class="nav-link">
+  Computer Basis
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/algorithm/" class="nav-link router-link-active">
+  Algorithm
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/mac/" class="nav-link">
+  Mac
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/windows/" class="nav-link">
+  Windows
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/database/" class="nav-link">
+  Database
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/install-equipment/" class="nav-link">
+  装机指南
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Cloud" class="dropdown-title"><span class="title">Cloud</span> <span class="arrow down"></span></button> <button type="button" aria-label="Cloud" class="mobile-dropdown-title"><span class="title">Cloud</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/docker/" class="nav-link">
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/dev-ops/" class="nav-link">
+  DevOps
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Others" class="dropdown-title"><span class="title">Others</span> <span class="arrow down"></span></button> <button type="button" aria-label="Others" class="mobile-dropdown-title"><span class="title">Others</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notebook/dev/" class="nav-link">
+  Development
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/gitbook/" class="nav-link">
+  Gitbook
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/popularization-science/" class="nav-link">
+  Truth
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/collection/" class="nav-link">
+  Collection
+</a></li><li class="dropdown-item"><!----> <a href="/notebook/en/" class="nav-link">
+  English
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="About me" class="dropdown-title"><span class="title">About me</span> <span class="arrow down"></span></button> <button type="button" aria-label="About me" class="mobile-dropdown-title"><span class="title">About me</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://kisstar.github.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Blog
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://github.com/kisstar/notebook/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <a href="https://github.com/kisstar/notebook" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>数组</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>栈</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>队列</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>链表</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notebook/algorithm/linked-list/" aria-current="page" class="sidebar-link">链表</a></li><li><a href="/notebook/algorithm/linked-list/doubly-linked-list.html" class="sidebar-link">双向链表</a></li><li><a href="/notebook/algorithm/linked-list/swap-pairs.html" class="sidebar-link">24.链表交换相邻节点</a></li><li><a href="/notebook/algorithm/linked-list/206.html" class="sidebar-link">反转链表</a></li><li><a href="/notebook/algorithm/linked-list/160.html" class="sidebar-link">相交链表</a></li><li><a href="/notebook/algorithm/linked-list/21.html" aria-current="page" class="active sidebar-link">合并两个有序链表</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/notebook/algorithm/linked-list/21.html#参考" class="sidebar-link">参考</a></li></ul></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>集合</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>字典</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>树</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>排序</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="合并两个有序链表"><a href="#合并两个有序链表" class="header-anchor">#</a> 合并两个有序链表</h1> <p>解题思路：</p> <ol><li>以其中一个链表为基准，开启外层循环遍历链表</li> <li>内层循环遍历另一个链表，如果内循环的链表节点值小于外层循环的链表节点值，则将内循环的链表节点插入结果链表，并更新内循环链表指针</li> <li>如果内循环的链表节点值大于外层循环的链表节点值，则将外层循环的链表节点插入结果链表，并更新外层循环链表指针</li> <li>如果外循环遍历完，则将内层循环的链表节点插入结果链表，并结束循环（避免内存循环的值比较大而导致在内循环过程中没有添加到结果链表中）</li></ol> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> <span class="token function-variable function">mergeTwoLists</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">list1<span class="token punctuation">,</span> list2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>list1 <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> list2
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>list2 <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> list1
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">let</span> p1 <span class="token operator">=</span> list1<span class="token punctuation">,</span>
+    p2 <span class="token operator">=</span> list2
+  <span class="token keyword">let</span> ret <span class="token comment">// 结果链表的头指针</span>
+  <span class="token keyword">let</span> curr <span class="token comment">// 结果链表的当前指针</span>
+
+  <span class="token comment">// 判断链表1和链表2哪个节点值小，将哪个节点值小的节点作为结果链表的头指针</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>p2<span class="token punctuation">.</span>val <span class="token operator">&lt;</span> p1<span class="token punctuation">.</span>val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    ret <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token operator">...</span>p2 <span class="token punctuation">}</span>
+    p2 <span class="token operator">=</span> p2<span class="token punctuation">.</span>next
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    ret <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token operator">...</span>p1 <span class="token punctuation">}</span>
+    p1 <span class="token operator">=</span> p1<span class="token punctuation">.</span>next
+  <span class="token punctuation">}</span>
+
+  curr <span class="token operator">=</span> ret
+
+  <span class="token comment">// 外循环遍历链表1</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span>p1 <span class="token operator">&amp;&amp;</span> p1<span class="token punctuation">.</span>val <span class="token operator">!==</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 内循环遍历链表2</span>
+    <span class="token comment">// 判断链表2的节点值是否小于等于链表1的节点值，如果小于等于则将链表2的节点插入结果链</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>p2 <span class="token operator">&amp;&amp;</span> p2<span class="token punctuation">.</span>val <span class="token operator">!==</span> <span class="token keyword">undefined</span> <span class="token operator">&amp;&amp;</span> p2<span class="token punctuation">.</span>val <span class="token operator">&lt;=</span> p1<span class="token punctuation">.</span>val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 插入结果链表</span>
+      curr<span class="token punctuation">.</span>next <span class="token operator">=</span> p2
+      <span class="token comment">// 更新结果链表指针</span>
+      curr <span class="token operator">=</span> p2
+      <span class="token comment">// 更新链表2指针</span>
+      p2 <span class="token operator">=</span> p2<span class="token punctuation">.</span>next
+    <span class="token punctuation">}</span>
+
+    curr<span class="token punctuation">.</span>next <span class="token operator">=</span> p1
+    curr <span class="token operator">=</span> p1
+    p1 <span class="token operator">=</span> p1<span class="token punctuation">.</span>next
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 判断链表2是否遍历完</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span>p2 <span class="token operator">&amp;&amp;</span> p2<span class="token punctuation">.</span>val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    curr<span class="token punctuation">.</span>next <span class="token operator">=</span> p2
+    curr <span class="token operator">=</span> p2
+    p2 <span class="token operator">=</span> p2<span class="token punctuation">.</span>next
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">return</span> ret
+<span class="token punctuation">}</span>
+</code></pre></div><p>同样的解题思路，官方提供了更简洁的写法：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> <span class="token function-variable function">mergeTwoLists</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">l1<span class="token punctuation">,</span> l2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> prehead <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ListNode</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+  <span class="token keyword">let</span> prev <span class="token operator">=</span> prehead
+
+  <span class="token keyword">while</span> <span class="token punctuation">(</span>l1 <span class="token operator">!=</span> <span class="token keyword">null</span> <span class="token operator">&amp;&amp;</span> l2 <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>l1<span class="token punctuation">.</span>val <span class="token operator">&lt;=</span> l2<span class="token punctuation">.</span>val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      prev<span class="token punctuation">.</span>next <span class="token operator">=</span> l1
+      l1 <span class="token operator">=</span> l1<span class="token punctuation">.</span>next
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      prev<span class="token punctuation">.</span>next <span class="token operator">=</span> l2
+      l2 <span class="token operator">=</span> l2<span class="token punctuation">.</span>next
+    <span class="token punctuation">}</span>
+
+    prev <span class="token operator">=</span> prev<span class="token punctuation">.</span>next
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 合并后 l1 和 l2 最多只有一个还未被合并完，我们直接将链表末尾指向未合并完的链表即可</span>
+  prev<span class="token punctuation">.</span>next <span class="token operator">=</span> l1 <span class="token operator">===</span> <span class="token keyword">null</span> <span class="token operator">?</span> l2 <span class="token operator">:</span> l1
+
+  <span class="token keyword">return</span> prehead<span class="token punctuation">.</span>next
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="参考"><a href="#参考" class="header-anchor">#</a> 参考</h2> <ul><li><a href="https://leetcode.cn/problems/merge-two-sorted-lists/description/" target="_blank" rel="noopener noreferrer">21. 合并两个有序链表 - 力扣（LeetCode）<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/kisstar/notebook/edit/master/docs/algorithm/linked-list/21.md" target="_blank" rel="noopener noreferrer">在 GitHub 上编辑此页</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">最近更新:</span> <span class="time">11/12/2023, 3:15:20 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/notebook/algorithm/linked-list/160.html" class="prev">
+        相交链表
+      </a></span> <span class="next"><a href="/notebook/algorithm/set/">
+        集合
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/notebook/assets/js/app.e6442efc.js" defer></script><script src="/notebook/assets/js/1.e436bc7d.js" defer></script><script src="/notebook/assets/js/19.9e4ca889.js" defer></script>
+  </body>
+</html>
