@@ -23,6 +23,7 @@ module.exports = [
       'linked-list/swap-pairs',
       'linked-list/206',
       'linked-list/160',
+      'linked-list/21',
     ],
   },
   {
