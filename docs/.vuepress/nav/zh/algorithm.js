@@ -26,6 +26,7 @@ module.exports = [
       'linked-list/21',
       'linked-list/86',
       'linked-list/142',
+      'linked-list/92',
     ],
   },
   {
