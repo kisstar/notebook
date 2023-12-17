@@ -7,7 +7,7 @@ module.exports = [
   {
     title: '栈',
     sidebarDepth: 2,
-    children: ['stack/'],
+    children: ['stack/', 'stack/20'],
   },
   {
     title: '队列',
