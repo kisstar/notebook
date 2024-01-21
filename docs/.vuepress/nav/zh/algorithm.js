@@ -7,7 +7,15 @@ module.exports = [
   {
     title: '栈',
     sidebarDepth: 2,
-    children: ['stack/', 'stack/20', 'stack/224', 'stack/155', 'stack/946', 'stack/739'],
+    children: [
+      'stack/',
+      'stack/20',
+      'stack/224',
+      'stack/155',
+      'stack/946',
+      'stack/739',
+      'stack/42',
+    ],
   },
   {
     title: '队列',
