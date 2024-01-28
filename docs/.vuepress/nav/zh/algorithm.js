@@ -20,7 +20,7 @@ module.exports = [
   {
     title: '队列',
     sidebarDepth: 2,
-    children: ['queue/'],
+    children: ['queue/', 'queue/232'],
   },
   {
     title: '链表',
