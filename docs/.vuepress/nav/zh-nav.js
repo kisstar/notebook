@@ -33,6 +33,10 @@ module.exports = [
             text: 'React',
             link: '/react/',
           },
+          {
+            text: 'WeChat',
+            link: '/wechat/',
+          },
         ],
       },
       {
@@ -63,14 +67,6 @@ module.exports = [
       {
         text: 'OTHER',
         items: [
-          {
-            text: 'WeChat',
-            link: '/wechat/',
-          },
-          {
-            text: '视频',
-            link: '/video/',
-          },
           {
             text: '面试',
             link: '/interview/',
@@ -130,6 +126,14 @@ module.exports = [
       {
         text: 'Database',
         link: '/database/',
+      },
+      {
+        text: '图形学',
+        link: '/cg/',
+      },
+      {
+        text: '视频',
+        link: '/video/',
       },
       {
         text: '装机指南',

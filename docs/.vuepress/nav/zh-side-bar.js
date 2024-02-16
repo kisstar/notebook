@@ -361,6 +361,13 @@ module.exports = {
       children: ['network/', 'network/reference', 'network/issues'],
     },
   ],
+  '/cg/': [
+    {
+      title: 'GLSL',
+      sidebarDepth: 2,
+      children: ['glsl/basis'],
+    },
+  ],
   '/video/': [
     {
       title: '基础',
