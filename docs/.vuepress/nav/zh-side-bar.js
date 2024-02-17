@@ -401,7 +401,7 @@ module.exports = {
     {
       title: '基础',
       sidebarDepth: 2,
-      children: ['basis/'],
+      children: ['basis/', 'basis/inherit'],
     },
     {
       title: '设计模式',
