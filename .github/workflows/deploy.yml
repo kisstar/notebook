@@ -35,31 +35,19 @@ jobs:
           USER_NAME: kisstar
           USER_EMAIL: dwh.chn@foxmail.com
 
-      - name: Deploy to GitHub using gh-pages
-        run: |
-          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-          npx gh-pages -d docs/.vuepress/dist -b gh-pages
-          git remote remove origin
-        env:
-          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          GITHUB_REPOSITORY: notebook
+      - name: Deploy with gh-pages for GitHub
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          repository-name: kisstar/notebook
+          branch: gh-pages
+          folder: docs/.vuepress/dist
+          token: ${{ secrets.ACCESS_TOKEN }}
 
-      - name: Set ssh key
-        run: |
-          mkdir -p ~/.ssh/
-          echo "$GITEE_TOKEN" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan gitee.com >> ~/.ssh/known_hosts
-        env:
-          GITEE_TOKEN: ${{ secrets.GITEE_ACCESS_TOKEN }}
-
-      - name: Deploy to Gitee using gh-pages
-        run: |
-          git remote add origin git@gitee.com:dongwanhong/${GITEE_REPOSITORY}.git
-          npx gh-pages -d docs/.vuepress/dist -b master
-          git remote remove origin
-        env:
-          GITEE_REPOSITORY: notebook
-
-      - name: Remove ssh key
-        run: rm -rf ~/.ssh
+      - name: Deploy with gh-pages for Gitee
+        uses: kisstar/git-pages-action@main
+        with:
+          git-hosts: gitee.com
+          repository-name: dongwanhong/notebook
+          branch: gh-pages
+          folder: docs/.vuepress/dist
+          ssh_private_key: ${{ secrets.GITEE_SSH_PRIVATE_KEY }}
