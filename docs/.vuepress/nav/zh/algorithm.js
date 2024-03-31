@@ -39,6 +39,7 @@ module.exports = [
       'linked-list/25',
       'linked-list/203',
       'linked-list/234',
+      'linked-list/328',
     ],
   },
   {
