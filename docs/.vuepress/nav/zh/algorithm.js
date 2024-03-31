@@ -20,7 +20,7 @@ module.exports = [
   {
     title: '队列',
     sidebarDepth: 2,
-    children: ['queue/', 'queue/232', 'queue/239', 'queue/641', 'queue/203', 'queue/25'],
+    children: ['queue/', 'queue/232', 'queue/239', 'queue/641'],
   },
   {
     title: '链表',
@@ -36,6 +36,9 @@ module.exports = [
       'linked-list/142',
       'linked-list/92',
       'linked-list/138',
+      'linked-list/25',
+      'linked-list/203',
+      'linked-list/234',
     ],
   },
   {
