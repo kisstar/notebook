@@ -66,6 +66,7 @@ module.exports = [
       'sort/insertion-sort',
       'sort/merge-sort',
       'sort/selection-sort',
+      'sort/88',
     ],
   },
 ]
