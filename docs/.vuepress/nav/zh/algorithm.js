@@ -68,6 +68,7 @@ module.exports = [
       'sort/selection-sort',
       'sort/88',
       'sort/75',
+      'sort/interview-16',
     ],
   },
 ]
