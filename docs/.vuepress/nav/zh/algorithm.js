@@ -70,6 +70,7 @@ module.exports = [
       'sort/75',
       'sort/interview-16',
       'sort/315',
+      'sort/23',
     ],
   },
 ]
