@@ -71,6 +71,7 @@ module.exports = [
       'sort/interview-16',
       'sort/315',
       'sort/23',
+      'sort/977',
     ],
   },
 ]
