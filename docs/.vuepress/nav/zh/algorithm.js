@@ -72,6 +72,7 @@ module.exports = [
       'sort/315',
       'sort/23',
       'sort/977',
+      'sort/11',
     ],
   },
 ]
